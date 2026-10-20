@@ -1,0 +1,55 @@
+{
+  "verified_at_utc": "2026-10-20T16:56:23.166017+00:00",
+  "command": "OpenDashboard.ps1 -NoBrowser",
+  "url": "http://127.0.0.1:8767/",
+  "version": "0.3.0",
+  "state": {
+    "run": null,
+    "campaign": null
+  },
+  "capabilities": {
+    "cpu": true,
+    "workers_max": 4,
+    "cuda": {
+      "ready": true,
+      "devices": [
+        {
+          "id": 0,
+          "name": "NVIDIA GeForce RTX 2060",
+          "compute_capability": [
+            7,
+            5
+          ],
+          "total_memory_bytes": 6442123264
+        }
+      ],
+      "environment": {
+        "mode": "cuda12_component_wheels",
+        "configured_cuda_path": null,
+        "dll_directories": [
+          "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin",
+          "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin"
+        ],
+        "libraries": {
+          "cudart": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin\\cudart64_12.dll",
+          "nvrtc": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin\\nvrtc64_120_0.dll"
+        },
+        "toolkit_root": null,
+        "package_versions": {
+          "cupy": "14.2.0",
+          "runtime": "12.9.79",
+          "nvrtc": "12.9.86"
+        }
+      },
+      "cupy_version": "14.2.0",
+      "driver_version": 13040,
+      "runtime_version": 12090,
+      "compiled_kernel_verified": true,
+      "current_device": 0,
+      "available": true
+    }
+  },
+  "cuda_path_removed_from_launcher_environment": true,
+  "launcher_stderr_empty": true,
+  "served_static_matches_tested_source": true
+}

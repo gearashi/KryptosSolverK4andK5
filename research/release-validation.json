@@ -4,8 +4,18 @@
   "date": "2026-10-20",
   "publication": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "status": "validated; awaiting publication",
-    "verified_source_commit": null
+    "status": "published; GitHub main and gearashi attribution verified",
+    "verified_source_commit": "5286188576226a55c18887f4e01bc344764796ae",
+    "verification": "GitHub API main ref equals the tested source commit; authenticated login, author, committer and contributor list are gearashi.",
+    "verified_at_utc": "2026-10-20T16:55:38.801290+00:00",
+    "evidence": "research/runs/release-N-004/github-publication.json",
+    "attribution": {
+      "author": "gearashi",
+      "committer": "gearashi",
+      "contributors": [
+        "gearashi"
+      ]
+    }
   },
   "historical_release": "research/runs/release-M-002/release-validation.json",
   "fresh_checkout": {
@@ -191,5 +201,19 @@
     "Source changes intentionally prevent resuming saved results against mismatched implementations.",
     "This closes the accepted implementation batch, not all possible future improvements."
   ],
-  "recorded_at_utc": "2026-10-20T16:50:11.913092+00:00"
+  "recorded_at_utc": "2026-10-20T16:50:11.913092+00:00",
+  "launcher_smoke": {
+    "evidence": "research/runs/release-N-004/local-dashboard.json",
+    "version": "0.3.0",
+    "url": "http://127.0.0.1:8767/",
+    "state": {
+      "run": null,
+      "campaign": null
+    },
+    "actual_compiled_cuda_probe_ready": true,
+    "cuda_path_unset": true,
+    "stderr_empty": true,
+    "served_static_matches_tested_source": true,
+    "verified_at_utc": "2026-10-20T16:56:23.166017+00:00"
+  }
 }

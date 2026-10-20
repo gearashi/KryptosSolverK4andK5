@@ -20,7 +20,7 @@
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
     "final_review_complete": true,
-    "publication_complete": false,
+    "publication_complete": true,
     "reviewed_actionable_backlog_complete": true
   },
   "entries": [
@@ -787,7 +787,7 @@
       "title": "Language-ranked joint unknown routes and keys",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -806,7 +806,7 @@
       "title": "Bounded automatic layered hypotheses",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -825,7 +825,7 @@
       "title": "Guided crib-compatible affine-family seeds",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -844,7 +844,7 @@
       "title": "Exact component and separator decomposition",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -863,7 +863,7 @@
       "title": "Verified completed-family reuse across campaigns",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -882,7 +882,7 @@
       "title": "Managed exact optimizer pause/resume",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -901,7 +901,7 @@
       "title": "Reserved K4-shaped competing-bank benchmarks",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -920,7 +920,7 @@
       "title": "Refitted stage and route ablations",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
       "evidence": [
         {
@@ -939,7 +939,7 @@
       "title": "Distinguish restored-parent work from frontier advancement",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "acceptance": "A timed-out decomposition consumes work but advances zero frontier nodes; managed duration grows2s to4s and reaches the same exact result within user bounds.",
       "evidence": [
         {
@@ -957,7 +957,7 @@
       "title": "Resume a child saved before the campaign outcome commit",
       "status": "validated",
       "decision": "accepted",
-      "stage": "integrated-release-verified",
+      "stage": "published-and-remote-verified",
       "acceptance": "A persisted nonterminal campaign job continues its existing limited child only after explicit resume; ordinary completed incomplete jobs retain their budgets.",
       "evidence": [
         {
@@ -1083,12 +1083,12 @@
   ],
   "delivery": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "verified_source_commit": null,
+    "verified_source_commit": "5286188576226a55c18887f4e01bc344764796ae",
     "local_url": "http://127.0.0.1:8767/",
     "startup": "OpenDashboard.cmd",
-    "state_at_delivery": "Version0.3.0 validated; publication and final idle local startup pending.",
-    "remaining": "Publish tested source, verify gearashi attribution, and start the local dashboard.",
-    "verified_at_utc": null
+    "state_at_delivery": "Version 0.3.0 is published and running locally, idle; actual compiled CUDA probe succeeded without CUDA_PATH.",
+    "remaining": null,
+    "verified_at_utc": "2026-10-20T16:56:23.166017+00:00"
   },
   "historical_phase_L_termination": {
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
