@@ -1,0 +1,15 @@
+{
+  "target": "custom",
+  "ciphertext": "DKBIJHIFGN",
+  "cribs": [{"start": 1, "text": "A"}],
+  "width": 4,
+  "period": 2,
+  "order": "TS",
+  "alphabet": "standard",
+  "model_path": "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json",
+  "top": 10,
+  "max_orders": 100,
+  "max_evaluations": 10000,
+  "max_states": 200000,
+  "time_limit_seconds": 5
+}

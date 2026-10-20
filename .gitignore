@@ -22,6 +22,7 @@ cupy_cache/
 !/research/source_snapshots/helpers-initial/
 !/research/source_snapshots/accelerated-initial/
 !/research/source_snapshots/release-M-*/
+!/research/source_snapshots/release-N-*/
 !/research/source_snapshots/sculpture-J/
 /research/source_snapshots/sculpture-J/*
 !/research/source_snapshots/sculpture-J/pk2_fixture.json
@@ -43,6 +44,7 @@ cupy_cache/
 /research/runs/*
 !/research/runs/release-L-*/
 !/research/runs/release-M-*/
+!/research/runs/release-N-*/
 !/research/runs/evaluation-J-001/
 /research/runs/evaluation-J-001/*
 !/research/runs/evaluation-J-001/artifacts/

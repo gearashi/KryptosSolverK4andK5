@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "Empty complete ablation has no fitting plaintext and no fabricated prediction",
+    "Refit label retains readable width",
+    "Campaign state words retain readable width",
+    "campaigns final mobile scroll is confined to tables",
+    "validation final mobile scroll is confined to tables",
+    "Managed exact saved run offers Resume exact search",
+    "Read-only verification launched no compute jobs",
+    "No JavaScript errors during final display checks"
+  ],
+  "errors": [],
+  "posts": [
+    "/api/campaigns/preview"
+  ],
+  "source_scope": "CSS-only readability refinement after25 successful functional assertions"
+}

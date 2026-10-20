@@ -196,6 +196,9 @@ def _truth_assessment(ranked,truth,complete):
 
 
 def run_validation(command,request):
+    if command=="validate-ablations":
+        from .ablations import run_ablations
+        return run_ablations(request)
     if command not in ("validate-holdout","validate-controls"):
         raise ValueError("unknown validation command")
     extra=({"target","ciphertext","cribs","withheld_positions"} if command=="validate-holdout"
@@ -238,7 +241,7 @@ def run_validation(command,request):
         length=None
         prepared=[]
         for row in cases:
-            _check(row,{"id","plaintext","source","generating_model_id","keys"})
+            _check(row,{"id","plaintext","source","generating_model_id","keys","language"})
             name,text,source=row.get("id"),row.get("plaintext"),row.get("source")
             if not isinstance(name,str) or not name or len(name)>80 or name in ids:
                 raise ValueError("control case IDs must be unique nonempty strings up to80characters")
@@ -246,6 +249,8 @@ def run_validation(command,request):
                 raise ValueError("control plaintexts must be distinct4..512letter uppercase strings")
             if not isinstance(source,str) or not source.strip() or len(source)>1000:
                 raise ValueError("each control needs an explicit source/authorship description")
+            if "language" in row and (not isinstance(row["language"],str) or not 1<=len(row["language"])<=40):
+                raise ValueError("control language must be a short explicit label")
             if length is not None and len(text)!=length:
                 raise ValueError("control passages must have identical lengths and mask layouts")
             length=len(text)
@@ -281,6 +286,8 @@ def run_validation(command,request):
             known={i:truth[i] for i in mask}
             pair={"id":row["id"],"source":row["source"],"seed":seed+index,
                   "generating_model_id":generator["id"],"generating_keys":row["keys"]}
+            if "language" in row:
+                pair["language"]=row["language"]
             for label,text in (("positive",truth),("null",null)):
                 cipher=literal_encrypt(text,row["keys"],generator["stages"],_alphabet(generator.get("alphabet","kryptos")))
                 selection,ranked=select_family_bank(cipher,known,mask,bank,models,bounds,deadline)

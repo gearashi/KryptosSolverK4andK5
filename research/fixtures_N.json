@@ -1,0 +1,68 @@
+{
+  "schema": "kryptos.reserved-authored-N.v1",
+  "reservation": "Text and mask saved before any candidate scoring. Newly authored controls, not native-speaker-certified or representative language samples. ASCII-only source prose; first97 letters after uppercase/filtering. No K4 crib words inserted.",
+  "mask_zero_based": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73
+  ],
+  "passages": [
+    {
+      "id": "english-1",
+      "language": "en",
+      "source_text": "The keeper opened the eastern gate before sunrise and counted the boats beside the narrow channel while a bell sounded beyond the sleeping houses.",
+      "plaintext": "THEKEEPEROPENEDTHEEASTERNGATEBEFORESUNRISEANDCOUNTEDTHEBOATSBESIDETHENARROWCHANNELWHILEABELLSOUND"
+    },
+    {
+      "id": "english-2",
+      "language": "en",
+      "source_text": "At the end of the corridor a small window faced the river and the student copied every mark into a notebook before returning the old map to its drawer.",
+      "plaintext": "ATTHEENDOFTHECORRIDORASMALLWINDOWFACEDTHERIVERANDTHESTUDENTCOPIEDEVERYMARKINTOANOTEBOOKBEFORERETU"
+    },
+    {
+      "id": "french-1",
+      "language": "fr",
+      "source_text": "Le gardien ouvrit la porte du jardin avant le lever du soleil et observa les oiseaux pres du bassin tandis que la ville restait silencieuse autour de lui.",
+      "plaintext": "LEGARDIENOUVRITLAPORTEDUJARDINAVANTLELEVERDUSOLEILETOBSERVALESOISEAUXPRESDUBASSINTANDISQUELAVILLE"
+    },
+    {
+      "id": "french-2",
+      "language": "fr",
+      "source_text": "Une petite lampe eclairait la table ou le voyageur avait pose sa carte et ses lettres puis il regarda longtemps la pluie tomber sur les pierres de la cour.",
+      "plaintext": "UNEPETITELAMPEECLAIRAITLATABLEOULEVOYAGEURAVAITPOSESACARTEETSESLETTRESPUISILREGARDALONGTEMPSLAPLU"
+    },
+    {
+      "id": "spanish-1",
+      "language": "es",
+      "source_text": "La viajera cruzo el puente al amanecer y observo las ventanas cerradas junto al rio mientras un anciano preparaba su barca para salir hacia la costa.",
+      "plaintext": "LAVIAJERACRUZOELPUENTEALAMANECERYOBSERVOLASVENTANASCERRADASJUNTOALRIOMIENTRASUNANCIANOPREPARABASU"
+    },
+    {
+      "id": "spanish-2",
+      "language": "es",
+      "source_text": "En la sala del archivo quedaba una caja de madera con varios cuadernos y una carta donde el maestro habia dibujado las calles del antiguo barrio.",
+      "plaintext": "ENLASALADELARCHIVOQUEDABAUNACAJADEMADERACONVARIOSCUADERNOSYUNACARTADONDEELMAESTROHABIADIBUJADOLAS"
+    }
+  ]
+}

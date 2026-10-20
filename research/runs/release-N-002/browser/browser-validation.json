@@ -1,0 +1,22 @@
+{
+  "schema": "kryptos.browser-validation.v1",
+  "recorded_at": "2026-10-13T20:21:39.985653+00:00",
+  "functional_assertions_passed": 25,
+  "read_only_assertions_passed": 8,
+  "javascript_errors": [],
+  "scope": "Actual local app0.3.0 on isolated8768 with synthetic CPU controls; ranked joint/replay, guided and exact decomposition, period8 saved frontier pause/resume/stop, bounded hypothesis grammar, completed cross-campaign family reuse, own-recipe replay, authored8-letter ablation, mobile and desktop views. No reserved multilingual benchmark rerun. No GPU work in this browser check.",
+  "prior_attempt": "../release-N-001/browser/attempt-before-adaptive-slices records9 successful assertions then a continuation timeout before the adaptive-slice fix; not counted as a successful final flow.",
+  "source_stage": "Functional flow used final Python adaptive slices and final JavaScript. A CSS-only evidence-table readability refinement followed;8 read-only checks and final captures verify that final CSS.",
+  "export_checks": "Already produced guided and stopped exact exports were recursively inspected: checkpoint_path,resume_path,checkpoint_written absent. No control tokens or request headers are recorded.",
+  "source_sha256": {
+    "kryptos/static/index.html": "34c81bf6ab6efae9eaddccbd32d5177e96f732beeff9071e131b8aad203d2c63",
+    "kryptos/static/app.js": "c0ee87805befebdcc5a197d82b5526b91fe9a8c6d35076c7b5a8674f6d0e9188",
+    "kryptos/static/style.css": "9586d34775d8350f6b241bb1fd87efd128157b3f61eefef755dd6155bbd6f46c",
+    "kryptos/joint_ranked.py": "9f2738688e824d14a353710e17fac12632a1b7f7a0c8a4ac0826dbc4aaed1037",
+    "tests/test_joint_ranked.py": "adf0946a7586bac0f882f7c4d39bad0a1e737c700aeea1f53269da22a7189c6c",
+    "tests/test_search_strategies_audit_N.py": "083008654c2c69941d13ad53f1eca945a917b30b46d3d8ef4421035384f36f4f",
+    "docs/JOINT_RANKING.md": "af623c91f80019966607c055c984bb1a4655a54f6887ee5519bfd01ccddff6b4",
+    "examples/joint-ranked.json": "e6dccb464560ac5094a6d7c0c15720b12b886a3f7e6deddda72c769408016ea3"
+  },
+  "paused_by_user": true
+}

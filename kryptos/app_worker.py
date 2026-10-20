@@ -21,12 +21,15 @@ def execute(job):
     if job["kind"]=="ping":
         return {"pid":os.getpid(),"protocol":"kryptos.private-worker.v1"}
     command=job["command"]
-    if command in ("validate-holdout","validate-controls"):
+    if command in ("validate-holdout","validate-controls","validate-ablations"):
         from .validation_protocols import run_validation
         return run_validation(command,job["request"])
     from .advanced_cli import run_advanced
     from .__main__ import _target,run_recovery,run_layers,run_grid,run_residues
     from .next_cli import run_next
+    if command=='joint-ranked':
+        from .joint_ranked import run_joint_ranked
+        return run_joint_ranked(job['request'],_target)
     first={"recover":run_recovery,"layers":run_layers,"grid":run_grid,"residues":run_residues}
     if command in first:
         return first[command](job["request"])

@@ -1,0 +1,61 @@
+{
+  "schema": "kryptos.browser-review.v1",
+  "reviewed_at": "2026-10-20T16:50:04.189459+00:00",
+  "browser_checks_passed": 43,
+  "browser_errors": [],
+  "browser_skips": [],
+  "node_tests": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "log": "browser-node-tests.txt"
+  },
+  "source_stage": "Frozen publication-N-004 package after actual frontier-progress resume fix; served static hashes match package and workspace.",
+  "hardware": [
+    {
+      "id": 0,
+      "name": "NVIDIA GeForce RTX 2060",
+      "compute_capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 6442123264
+    }
+  ],
+  "visual_review": {
+    "reviewed_images": [
+      "desktop-cuda-candidate.png",
+      "desktop-ablations.png",
+      "desktop-cross-campaign-reuse.png",
+      "mobile-workbench.png",
+      "mobile-inspector.png",
+      "mobile-campaigns.png",
+      "mobile-validation.png"
+    ],
+    "result": "Pass: desktop two-column layouts, mobile stacked layouts, candidate evidence, independent trace, ablation empty-family wording, and scroll-contained tables are readable with no page overflow.",
+    "scope_note": "Campaign desktop capture shows an intermediate reuse state before polling completed; saved reused-campaign.json and mobile capture show all three equivalent jobs completed. Screenshots are evidence of sampled UI states, not exhaustive accessibility testing."
+  },
+  "evidence_integrity": {
+    "indexed_files_verified": 30,
+    "credential_fields_checked": 0,
+    "unredacted_credential_fields": 0,
+    "served_static_matches_package_and_workspace": true
+  },
+  "source_sha256": {
+    "research/browser_validation.cjs": "e34e05f55b498f667975a6bd661d375ecf13f846cef88b760b59e02efd5ef81d",
+    "tests/browser_validation.test.cjs": "ad0efde659c4b98803bf3358d6c938c58d32e52a96a0c77f4c18d2ca65914225"
+  },
+  "evidence_sha256": {
+    "browser/files.json": "3645b805d5dc8d015f89d16659f8803495eeec1f6750460681a0631ef3a7176d",
+    "browser/browser-report.json": "c2a0681217ae0b051cafb2329adf953f25978f0cf024334e88ec66c6e4329534",
+    "browser-node-tests.txt": "33b7f545cd33fd582d022018862bf8cb9dc4aaf77355a5e34fe4402ac5792fac",
+    "browser-console.txt": "5489de4525c79a4997529286f29a7ffeef7a3882ecdae489147dbb2b25728f13"
+  },
+  "limitations": [
+    "Synthetic bounded browser workloads validate implementation and UI, not a Kryptos solution.",
+    "The reserved multilingual control bank was inspected in the UI but not rerun by this browser harness.",
+    "Only installed Chrome on Windows and responsive 390px mobile viewport were exercised."
+  ],
+  "cleanup": "Browser closed; runner verified no active run/campaign computation. Parent retains ownership of server shutdown.",
+  "production_files_changed_during_validation": []
+}

@@ -23,7 +23,7 @@ An acceptance record names the exact tested range, source/input revision, reprod
 4. Review the resulting system across correctness, performance, model coverage, usability and reliability. At least one reviewer should inspect a different perspective from the implementer. Add only concrete follow-ups discovered by this review.
 5. Keep, revise, reject or defer each idea based on its discriminator. Record the decision in the ledger and connect accepted follow-ups to the evidence that revealed them.
 
-The current accepted tracks are actual CPU/GPU batches, a recoverable local job service, the browser interface, exact correlated n-gram bounds, reporting-only sensitivity to letters forced by the model, and source-independent packaged geometry. Affine-family deduplication is deferred until a real multi-family scoring workflow exhibits duplication; it is not a current application requirement. Admission decisions and separate integration obligations remain explicit in the ledger.
+The phase N tracks are ranked unknown routes and keys, bounded generated layer hypotheses, guided feasible-family seeds, exact factor decomposition, verified reuse across campaigns, managed exact-search pause/resume, reserved K4-shaped controls, and refitted ablations. Earlier phases supplied CPU/CUDA workers, scoring bounds, saved jobs and source-independent geometry. Affine-family deduplication is now implemented in the campaign workflow; its earlier deferral is historical. Admission decisions, discovered recovery fixes and release validation remain explicit in the ledger.
 
 ## Closing a bounded improvement phase
 

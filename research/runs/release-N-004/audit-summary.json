@@ -1,0 +1,159 @@
+{
+  "schema": "kryptos.release-N-audit-summary.v1",
+  "created_utc": "2026-10-20T16:45:26.055791+00:00",
+  "audits": [
+    {
+      "kind": "search",
+      "manifest": "research/runs/release-N-004/search/manifest.json",
+      "manifest_sha256": "91e169e0015657bf096e0d8822d34d226735256a1b240eed3dee05ade9234bc2",
+      "result": "research/runs/release-N-004/search/result.json",
+      "result_sha256": "44136fdb4c3b6ad9505522cf9392e68b1a0e69c5fc9b2cbdefd62fb551cba8be",
+      "status": "completed",
+      "runtime_seconds": 2.281,
+      "input_count": 104,
+      "snapshot_inventory": "research/release-N-004-search-snapshot.json",
+      "snapshot_inventory_sha256": "d9c0a33a311e7d6731cda49de4c700d5de175ff69306f6ba2e11b565314ff626",
+      "snapshot_bytes": 964991
+    },
+    {
+      "kind": "validation",
+      "manifest": "research/runs/release-N-004/validation/manifest.json",
+      "manifest_sha256": "98dfc7fac82fae9e133068e41b0f23b25f97e067475e856eed7a04f3e35d5201",
+      "result": "research/runs/release-N-004/validation/result.json",
+      "result_sha256": "59f0139e33aca16c703aca4ac9471ea6b85667535995b6f6975ae4ff22b8b335",
+      "status": "completed",
+      "runtime_seconds": 4.906,
+      "input_count": 63,
+      "snapshot_inventory": "research/release-N-004-validation-snapshot.json",
+      "snapshot_inventory_sha256": "5705d840dce6da1e8936cf8f5252de066fe0e72ed652f161cbc27ede13133016",
+      "snapshot_bytes": 758278
+    },
+    {
+      "kind": "persistent",
+      "manifest": "research/runs/release-N-004/persistent/manifest.json",
+      "manifest_sha256": "c3db00ef0faa35aa15e2749fea2326c5ce10b969c00e676b5e4441d8615d3b15",
+      "result": "research/runs/release-N-004/persistent/result.json",
+      "result_sha256": "d6e4cefd22760d750c6a718841fc41604c3a1d894d606321ed521fe8fd8761cb",
+      "status": "completed",
+      "runtime_seconds": 70.797,
+      "input_count": 54,
+      "snapshot_inventory": "research/release-N-004-persistent-snapshot.json",
+      "snapshot_inventory_sha256": "5247e2f267835030961d7091dcb71006ce9e4ce3dd7acc1c7ef99280f17d88ab",
+      "snapshot_bytes": 645981
+    }
+  ],
+  "search": {
+    "guided_comparisons": 8,
+    "guided_outcomes": {
+      "higher": 8,
+      "equal": 0,
+      "lower": 0
+    },
+    "independent_guided_score_recipe_checks": 64,
+    "residual_cases": 60,
+    "residual_oracle_completions": 1164,
+    "chain_nodes_auto": 1,
+    "chain_nodes_off": 29,
+    "chain_elimination_operations": 606,
+    "joint_cases": 24,
+    "joint_oracle_completions": 97344,
+    "joint_retained_replays": 168
+  },
+  "validation": {
+    "summary": {
+      "positive_inputs": 6,
+      "paired_null_inputs": 6,
+      "completed_comparisons": 6,
+      "candidate_visits": 4316,
+      "positive_truth_rank_one": 6,
+      "nulls_with_surviving_wrong_candidates": 6
+    },
+    "controls_complete": true,
+    "ablations_complete": true,
+    "independent_generator_checks": 12,
+    "positive_truth_ranks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "null_truth_ranks": [
+      3,
+      2,
+      2,
+      1,
+      2,
+      7
+    ],
+    "null_best_minus_positive_best": [
+      -2.2973242321983864,
+      -3.4857598966944465,
+      -3.1134271689419304,
+      -2.8890139019012224,
+      -2.7900093306786147,
+      -2.8086978286500894
+    ]
+  },
+  "persistent": {
+    "passed": true,
+    "retained_checks": 240,
+    "records": [
+      {
+        "backend": "cpu",
+        "mode": "one-shot",
+        "pages": 20,
+        "evaluated": 5120,
+        "wall_seconds": 13.054263600031845,
+        "exact_cpu_rescores": 5120,
+        "device_cache_hits": 0
+      },
+      {
+        "backend": "cpu",
+        "mode": "persistent",
+        "pages": 20,
+        "evaluated": 5120,
+        "wall_seconds": 4.1892911999020725,
+        "exact_cpu_rescores": 5120,
+        "device_cache_hits": 0
+      },
+      {
+        "backend": "cuda",
+        "mode": "one-shot",
+        "pages": 20,
+        "evaluated": 5120,
+        "wall_seconds": 43.74547349999193,
+        "exact_cpu_rescores": 61,
+        "device_cache_hits": 0
+      },
+      {
+        "backend": "cuda",
+        "mode": "persistent",
+        "pages": 20,
+        "evaluated": 5120,
+        "wall_seconds": 5.159845800022595,
+        "exact_cpu_rescores": 61,
+        "device_cache_hits": 19
+      }
+    ],
+    "lifecycle": {
+      "active_cancel_killed_worker": true,
+      "crash_restarted": true,
+      "timeout_restarted": true,
+      "pids": [
+        20996,
+        33556,
+        61032,
+        57216
+      ]
+    }
+  },
+  "limits": [
+    "Frozen previously observed synthetic controls were reproduced, not newly reserved after outcomes.",
+    "Guided comparison budgets equal objective evaluations, not unique points or wall time.",
+    "Each reserved positive retains only one inequivalent plaintext family; overlapping records are aliases.",
+    "Twenty small fixed pages and retained top3 checks do not imply a general GPU speedup.",
+    "No K4/K5 search, authenticated decipherment, probability calibration or causal/historical stage necessity."
+  ]
+}

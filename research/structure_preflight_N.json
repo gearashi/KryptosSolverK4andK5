@@ -1,0 +1,813 @@
+{
+  "scope": "Zero-text algebra dimensions only, no fixture plaintexts or language scores accessed. All66 fixed candidates retained.",
+  "pair_priority": [
+    [
+      2,
+      10
+    ],
+    [
+      3,
+      10
+    ],
+    [
+      2,
+      14
+    ],
+    [
+      3,
+      14
+    ],
+    [
+      4,
+      14
+    ],
+    [
+      5,
+      14
+    ],
+    [
+      3,
+      15
+    ],
+    [
+      4,
+      15
+    ],
+    [
+      5,
+      15
+    ],
+    [
+      7,
+      14
+    ],
+    [
+      8,
+      10
+    ]
+  ],
+  "records": [
+    {
+      "width": 7,
+      "order": "SST",
+      "options": [
+        {
+          "periods": [
+            2,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            2,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            3,
+            14
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        },
+        {
+          "periods": [
+            4,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            5,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            3,
+            15
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            4,
+            15
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            5,
+            15
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            7,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            8,
+            10
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "width": 7,
+      "order": "STS",
+      "options": [
+        {
+          "periods": [
+            2,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            2,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            3,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            4,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            5,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            3,
+            15
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            4,
+            15
+          ],
+          "count": 456976,
+          "dimensions": [
+            4,
+            4
+          ]
+        },
+        {
+          "periods": [
+            5,
+            15
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            7,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            8,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "width": 7,
+      "order": "TSS",
+      "options": [
+        {
+          "periods": [
+            2,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            2,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            3,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            4,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            5,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            3,
+            15
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            4,
+            15
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            5,
+            15
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            7,
+            14
+          ],
+          "count": 141167095653376,
+          "dimensions": [
+            10,
+            10
+          ]
+        },
+        {
+          "periods": [
+            8,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "width": 10,
+      "order": "SST",
+      "options": [
+        {
+          "periods": [
+            2,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            10
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            2,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            3,
+            14
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        },
+        {
+          "periods": [
+            4,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            5,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            3,
+            15
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            4,
+            15
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            5,
+            15
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            7,
+            14
+          ],
+          "count": 26,
+          "dimensions": [
+            1,
+            1
+          ]
+        },
+        {
+          "periods": [
+            8,
+            10
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "width": 10,
+      "order": "STS",
+      "options": [
+        {
+          "periods": [
+            2,
+            10
+          ],
+          "count": 676,
+          "dimensions": [
+            2,
+            2
+          ]
+        },
+        {
+          "periods": [
+            3,
+            10
+          ],
+          "count": 676,
+          "dimensions": [
+            2,
+            2
+          ]
+        },
+        {
+          "periods": [
+            2,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            4,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            5,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            15
+          ],
+          "count": 456976,
+          "dimensions": [
+            4,
+            4
+          ]
+        },
+        {
+          "periods": [
+            4,
+            15
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        },
+        {
+          "periods": [
+            5,
+            15
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        },
+        {
+          "periods": [
+            7,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            8,
+            10
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "width": 10,
+      "order": "TSS",
+      "options": [
+        {
+          "periods": [
+            2,
+            10
+          ],
+          "count": 676,
+          "dimensions": [
+            2,
+            2
+          ]
+        },
+        {
+          "periods": [
+            3,
+            10
+          ],
+          "count": 676,
+          "dimensions": [
+            2,
+            2
+          ]
+        },
+        {
+          "periods": [
+            2,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            4,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            5,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            3,
+            15
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        },
+        {
+          "periods": [
+            4,
+            15
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        },
+        {
+          "periods": [
+            5,
+            15
+          ],
+          "count": 17576,
+          "dimensions": [
+            3,
+            3
+          ]
+        },
+        {
+          "periods": [
+            7,
+            14
+          ],
+          "count": 1,
+          "dimensions": [
+            0,
+            0
+          ]
+        },
+        {
+          "periods": [
+            8,
+            10
+          ],
+          "count": 676,
+          "dimensions": [
+            2,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}

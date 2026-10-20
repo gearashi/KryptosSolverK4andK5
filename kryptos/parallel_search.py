@@ -15,7 +15,8 @@ from .search_runtime import optimize_lazy,_validate
 
 
 ALLOWED_OPTIONS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries",
-                 "local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit"}
+                 "local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit",
+                 "decomposition","decomposition_max_entries","decomposition_max_operations"}
 
 
 def _one(job):

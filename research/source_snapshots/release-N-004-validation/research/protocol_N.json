@@ -1,0 +1,26 @@
+{
+  "schema": "kryptos.validation-N-frozen.v1",
+  "reservation": "Reserved before any candidate scores or recovery outcomes. Algebra-only preflight is recorded separately. No adaptive text/model tuning after scoring.",
+  "bank_selection": "For each width7,10 and orderSST,STS,TSS, first pair in structure_preflight_N.json with26..676 all-zero-crib completions. This uses the mask and model structure only.",
+  "fixture_sha256": "ae1e98cf145123d7365a3fe862c87c35fd04922a033a0ead2224557f92fdd326",
+  "requests": {
+    "validate-k4-shaped": "2c6ef05d5dd0253d1b7b1a4f57669cbbd8970786f1e06e81ae5b00cbd0b372e8",
+    "validate-ablations": "66411bd1adfe5e23f71ae8f440fb5e44006b7d3c2d664d5c5d9d0a48286b86de"
+  },
+  "bounds": {
+    "languages": 3,
+    "authored_cases": 6,
+    "paired_nulls": 6,
+    "bank_size": 6,
+    "max_candidates_per_family": 676,
+    "max_visits_per_input": 1500,
+    "max_visits_total": 18000,
+    "protocol_seconds": 30,
+    "ablation_protocol_seconds": 10
+  },
+  "nonclaims": [
+    "Not a probability calibration, authenticated solution, or representative multilingual benchmark.",
+    "Widths7/10 are declared ordinal row-fill layouts, not measured sculpture geometry.",
+    "Complete outcomes and censored outcomes are retained; no success threshold is required for publication."
+  ]
+}

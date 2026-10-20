@@ -1,0 +1,114 @@
+{
+  "browser-validation.json": {
+    "bytes": 2106,
+    "sha256": "6b33de88188edef358943a64cab6002f74ea646ef2311e69415b33b1c5fb6836"
+  },
+  "functional/authored-ablations.json": {
+    "bytes": 31007,
+    "sha256": "5421b6cac602fbdfa1e0e856a58951c4e82fc74fc91ed424d6969191ced39eea"
+  },
+  "functional/browser-report.json": {
+    "bytes": 22887,
+    "sha256": "a626aa88ab2d1c8814ae0e18c436351be0e341a91ab3b2d6994a85ae600e6f42"
+  },
+  "functional/cross-campaign-inspection.json": {
+    "bytes": 4129,
+    "sha256": "cc1ca45c25a14da5ee6aff4dd7975e0fb0af9b1106e31d51ef99b683a07a530c"
+  },
+  "functional/desktop-ablations.png": {
+    "bytes": 161082,
+    "sha256": "edeab39edbc775a6d933892e99d7775e537213a54803d2725c9b836303b1f77e"
+  },
+  "functional/desktop-cross-campaign-reuse.png": {
+    "bytes": 247742,
+    "sha256": "0939c883bebb0fe70a4b770eab89fd5afef7aa0363c37b3b44d83ee940f169be"
+  },
+  "functional/desktop-exact-paused.png": {
+    "bytes": 294910,
+    "sha256": "14c95d9cce2425416f02df1e42c19f9ecb46d55310f0ab8b1a1f276818195882"
+  },
+  "functional/desktop-generator-preview.png": {
+    "bytes": 178050,
+    "sha256": "63ca2c0d15e81664a464fb8426b0e58138cb9bb1bc2153218dffe0f7604aedae"
+  },
+  "functional/desktop-guided-decomposition.png": {
+    "bytes": 260809,
+    "sha256": "0920f4b8f88193586a3b1090e59e37d50142f3cf72514aa8c0d8b364f9a45a4d"
+  },
+  "functional/desktop-ranked-joint.png": {
+    "bytes": 341137,
+    "sha256": "f01343843088311952fc82f6da2549234f2f8cd29776b351e097c03929003d18"
+  },
+  "functional/desktop-ranked-trace.png": {
+    "bytes": 141844,
+    "sha256": "8a0af48fdba9129288657eefd1291867c934e2fb506513a2f5e81b56161cc53b"
+  },
+  "functional/exact-frontier.json": {
+    "bytes": 23629,
+    "sha256": "622b730f939267d87485c6290c4980f80b21afb666e11b544e5711d5bf714efe"
+  },
+  "functional/generated-campaign.json": {
+    "bytes": 148446,
+    "sha256": "cac7d99da5e32c739ed0b74415b760cf9591ba1548112c1cb92ee03084594e8f"
+  },
+  "functional/guided-decomposition.json": {
+    "bytes": 26459,
+    "sha256": "e75bb1fde4141697ab62df2317a5ff338a73d05c54bc97fe2c40c1c61e62ed3e"
+  },
+  "functional/mobile-campaigns.png": {
+    "bytes": 210292,
+    "sha256": "88181383c33581cdcdb1047bbeed2e63492a3dd76cb0232bf3d52db7b72bcceb"
+  },
+  "functional/mobile-inspector.png": {
+    "bytes": 98675,
+    "sha256": "8aa67c04fca99f6c14ce2625b0f969b1875e257c118a2c595a6af7e500dff6d3"
+  },
+  "functional/mobile-validation.png": {
+    "bytes": 131421,
+    "sha256": "896e04a7571a4c46a8378a92fbb04fc888c5a281ad79ffb0c7ea50fa35eba875"
+  },
+  "functional/mobile-workbench.png": {
+    "bytes": 201970,
+    "sha256": "3a065a0266a915fd0210bda2d0705709b1c039f5fb19d5a292d6116025b86221"
+  },
+  "functional/ranked-inspection.json": {
+    "bytes": 3433,
+    "sha256": "0bec928ab7bf6acdb9892b4ad3b00ef38e5d2945267de042d2e2c648b398c4a7"
+  },
+  "functional/ranked-joint.json": {
+    "bytes": 45872,
+    "sha256": "692fc29f6c79afb70b1bdf95c01295b465f1e350be984f47e68585c7e9972003"
+  },
+  "functional/reused-campaign.json": {
+    "bytes": 395691,
+    "sha256": "361f8a81f0cd6ec6eddd2f807ee8dbc0786376579e5369524be5fe682916ee9d"
+  },
+  "read-only/desktop-ablations-final.png": {
+    "bytes": 140158,
+    "sha256": "20ef0519f9bc1bac3195d9b0e77678518034c7958f0c6d2ad08c2be92c81b47d"
+  },
+  "read-only/desktop-campaigns-final.png": {
+    "bytes": 241558,
+    "sha256": "933c929735ef93bdd34591ab18e5b49809d2186f5c8517e2efe41d5e0f3dd959"
+  },
+  "read-only/mobile-campaigns-final.png": {
+    "bytes": 170613,
+    "sha256": "cc7dd6503f8ead2696d3adffbe9c4c571f5fa2ad467adacc877360a99ef497fd"
+  },
+  "read-only/mobile-validation-final.png": {
+    "bytes": 108225,
+    "sha256": "4fd400f658e399ff86a365c8b15290fd992e8648faf9f82b3348005c752a7fe9"
+  },
+  "read-only/report.json": {
+    "bytes": 642,
+    "sha256": "d17a18f1472074228d975e7972e2346c146949dc0a78e2a3cac82a91f4d9ba87"
+  },
+  "test_n.cjs": {
+    "bytes": 12730,
+    "sha256": "0c80e88213e832b9b1decf8034a31823ccd4b3eb372cf77c631f07b711090fe0"
+  },
+  "test_n_readonly.cjs": {
+    "bytes": 4077,
+    "sha256": "04698c38347d58dae23d5455980b0cc9bc654a1c8e4c2156d4ba0dda12826b8d"
+  }
+}

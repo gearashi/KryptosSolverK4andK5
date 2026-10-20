@@ -1,0 +1,27 @@
+{
+  "schema": "kryptos.independent-review.v1",
+  "recorded_at": "2026-10-13T20:08:06.080205+00:00",
+  "cases": 160,
+  "seed": 51013,
+  "status": "passed",
+  "tested_scope": [
+    "0..5 variables, heterogeneous domains1..3",
+    "0..7 factors, empty scopes, zero values, powers1..3",
+    "partial fixed assignments; exhaustive literal score products independent of runtime evaluator",
+    "exact decomposition optimum and original-coordinate lexical tie",
+    "each guided retained objective independently recomputed; sorted unique points"
+  ],
+  "limitations": [
+    "bounded synthetic table factors; not an exhaustive proof over all inputs",
+    "does not re-audit runtime integration or ngram adapter",
+    "guided results are feasible hints, not an optimality claim"
+  ],
+  "reproduction": ".venv/Scripts/python.exe -m unittest tests.test_search_strategies_audit_N -v",
+  "source_sha256": {
+    "kryptos/guided_search.py": "3c529bd5492754c694172ba982fb4124d3cd6e8d905b936339c3dd53a86f4d34",
+    "kryptos/factor_decomposition.py": "8219bbbd2b6ab56dbe1e36a92b48f262c21fe0aa9ce7326969ada501a3a2f1b4",
+    "tests/test_search_strategies_audit_N.py": "083008654c2c69941d13ad53f1eca945a917b30b46d3d8ef4421035384f36f4f"
+  },
+  "ad_hoc_process_wall_seconds": 0.480806,
+  "saved_unittest_reported_seconds": 0.086
+}

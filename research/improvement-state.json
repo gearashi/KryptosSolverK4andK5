@@ -1,7 +1,7 @@
 {
   "schema": "kryptos.improvement-ledger.v1",
   "created_date": "2026-10-13",
-  "phase": "M-complete-published-verified",
+  "phase": "N-eight-improvements-and-recursive-review",
   "goal_controller": "parent persistent goal; no scheduled automation",
   "allowed_statuses": [
     "proposed",
@@ -20,7 +20,7 @@
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
     "final_review_complete": true,
-    "publication_complete": true,
+    "publication_complete": false,
     "reviewed_actionable_backlog_complete": true
   },
   "entries": [
@@ -781,6 +781,194 @@
         }
       ],
       "dependencies": []
+    },
+    {
+      "id": "N01",
+      "title": "Language-ranked joint unknown routes and keys",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N02",
+      "title": "Bounded automatic layered hypotheses",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N03",
+      "title": "Guided crib-compatible affine-family seeds",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N04",
+      "title": "Exact component and separator decomposition",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N05",
+      "title": "Verified completed-family reuse across campaigns",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N06",
+      "title": "Managed exact optimizer pause/resume",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N07",
+      "title": "Reserved K4-shaped competing-bank benchmarks",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N08",
+      "title": "Refitted stage and route ablations",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N09",
+      "title": "Distinguish restored-parent work from frontier advancement",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "acceptance": "A timed-out decomposition consumes work but advances zero frontier nodes; managed duration grows2s to4s and reaches the same exact result within user bounds.",
+      "evidence": [
+        {
+          "path": "research/runs/release-N-004/fresh-checkout-tests.txt",
+          "result": "New regression and full actual-CUDA suite passed."
+        },
+        {
+          "path": "research/runs/release-N-004/browser/browser-report.json",
+          "result": "Browser verifies managed continuation and frontier progress."
+        }
+      ]
+    },
+    {
+      "id": "N10",
+      "title": "Resume a child saved before the campaign outcome commit",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "acceptance": "A persisted nonterminal campaign job continues its existing limited child only after explicit resume; ordinary completed incomplete jobs retain their budgets.",
+      "evidence": [
+        {
+          "path": "research/runs/release-N-004/fresh-checkout-tests.txt",
+          "result": "New regression and full actual-CUDA suite passed."
+        },
+        {
+          "path": "research/runs/release-N-004/browser/browser-report.json",
+          "result": "Browser verifies managed continuation and frontier progress."
+        }
+      ]
     }
   ],
   "reviews": [
@@ -871,18 +1059,45 @@
         "This closes the reviewed implementation backlog, not the open mathematical problem or all possible future improvements."
       ],
       "remaining_delivery": null
+    },
+    {
+      "id": "review-N-open",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "findings": [
+        "User explicitly authorized all eight newly reviewed improvements and further useful follow-ups."
+      ],
+      "complete_post_integration_review": false
+    },
+    {
+      "id": "review-N-final-20261020",
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900",
+      "findings": [
+        "All eight accepted features have integrated finite evidence.",
+        "Two additional resume gaps were found, fixed and covered by regressions.",
+        "The suspected varying-top cache issue is inapplicable: current app scans uniformly retain20 candidates.",
+        "The reserved positive bank has only one inequivalent surviving family per positive; broader family-discrimination claims remain unsupported.",
+        "CPU outperformed CUDA on the fixed small pages; no general GPU speedup claimed."
+      ],
+      "complete_post_integration_review": true
     }
   ],
   "delivery": {
-    "repository": "https://github.com/gearashi/KryptosSolverK4AndK5",
-    "verified_source_commit": "9fa53c468689b916c04eb4231c33924a0fc9e6e6",
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "verified_source_commit": null,
     "local_url": "http://127.0.0.1:8767/",
     "startup": "OpenDashboard.cmd",
-    "state_at_delivery": "Idle; CUDA compiled readiness probe succeeded; no run or campaign active; app version 0.2.0",
-    "remaining": null,
-    "verified_at_utc": "2026-10-13T19:46:45.435671+00:00"
+    "state_at_delivery": "Version0.3.0 validated; publication and final idle local startup pending.",
+    "remaining": "Publish tested source, verify gearashi attribution, and start the local dashboard.",
+    "verified_at_utc": null
   },
   "historical_phase_L_termination": {
+    "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
+    "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
+    "final_review_complete": true,
+    "publication_complete": true,
+    "reviewed_actionable_backlog_complete": true
+  },
+  "historical_phase_M_termination": {
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
     "final_review_complete": true,

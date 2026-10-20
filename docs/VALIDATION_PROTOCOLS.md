@@ -32,6 +32,8 @@ The [frozen fast preset](../examples/validate-controls.json) has two newly autho
 
 ## Request bounds and censoring
 
+Checkpoint N adds a frozen separated-clue control bank and `validate-ablations` with explicit refitted variants. [The N validation notes](../research/validation_N_notes.md) specify the authored multilingual fixtures, algebra-only period selection, all66 structural checks, withheld-label boundary and scheduled-frame semantics. The new presets are `examples/validate-k4-shaped.json` and `examples/validate-ablations.json`. `research/run_validation_N.py` provides the bounded owned-process audit and portable input snapshot.
+
 Both commands require `model_paths` (1–5 explicit frozen models sharing order and normalization) and `model_bank` (1–16 unique records). Each bank record contains `id`, `layer_model` (`general` or `scheduled`), `alphabet`, `stages`, and optional scheduled `cells`. Controls require at least two bank records and 2–8 cases. Invalid inputs fail explicitly.
 
 `max_candidates_per_family` is 1–17576. `max_total_candidates` is 1–100000 per input, counting model visits before cross-family deduplication. `top` is 1–20. `time_limit_seconds` is a shared cooperative protocol limit up to 30 seconds, with separate algebra work/memory caps. Families larger than a candidate cap are not arbitrarily sampled. An exhausted wall-clock budget can censor later inputs; incomplete paired comparisons report `null`, not a reassuring score difference. No empirical p-value or solution probability is produced.

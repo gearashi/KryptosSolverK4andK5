@@ -20,7 +20,7 @@ from .resource_governor import validate_resources,next_batch_size,MAX_EVENTS
 from .process_lifetime import launch_owned
 
 ROOT=Path(__file__).resolve().parents[1]
-EXACT_COMMANDS={"joint","scheduled","mixed","alphabet-plus","optimize-plus","general","columns","alphabet","optimize","recover","layers","grid","residues","layout","validate-holdout","validate-controls"}
+EXACT_COMMANDS={"joint","joint-ranked","scheduled","mixed","alphabet-plus","optimize-plus","general","columns","alphabet","optimize","recover","layers","grid","residues","layout","validate-holdout","validate-controls","validate-ablations"}
 MODELS=[{"id":name,"label":name.title()+" · two authors","path":f"research/runs/evaluation-J-001/artifacts/{name}-two-author-trigram.json"}
         for name in ("english","spanish","french","italian","latin")]
 MODELS.append({"id":"english-pilot","label":"English · pilot control","path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json"})
@@ -84,13 +84,14 @@ def validate_start(body):
           "top":100,"max_key_slots":256,"max_matrix_cells":2000000,"max_operations":20000000,
           "max_relation_checks":2000000,"max_distinct_plaintexts":10000,"max_constraints":4096,
           "max_frontier":20000,"max_cache_entries":100000,"local_exact_limit":4096,"factor_group_size":8,"group_exact_limit":100000,
-          "max_candidates_per_family":17576,"max_total_candidates":100000}
+          "max_candidates_per_family":17576,"max_total_candidates":100000,"max_orders":5000,"max_evaluations":100000,
+          "decomposition_max_entries":20000,"decomposition_max_operations":200000}
     for name,cap in caps.items():
         if name in request:
             integer(request[name],name,0,cap)
     if "time_limit_seconds" in request:
         value=request["time_limit_seconds"]
-        cap=30 if command in {"validate-holdout","validate-controls"} else 10
+        cap=30 if command in {"validate-holdout","validate-controls","validate-ablations"} else 10
         if type(value) not in (int,float) or not math.isfinite(value) or not 0<value<=cap:
             raise ValueError(f"Per-command time_limit_seconds must be in(0,{cap}]")
     if "stages" in request and (not isinstance(request["stages"],list) or not 1<=len(request["stages"])<=16):
@@ -217,7 +218,7 @@ class RunManager:
             if key not in self.records:
                 raise KeyError("Run not found")
             value=copy.deepcopy(self.records[key])
-            value["can_pause"]=value["state"]=="running" and value["kind"]=="accelerated"
+            value["can_pause"]=value["state"]=="running" and (value["kind"]=="accelerated" or value.get('exact_resume_supported',False))
             value["can_resume"]=value["state"] in {"paused","stopped","limited","interrupted","failed"}
             value["progress"]["completed_decimal"]=str(value["progress"]["completed"])
             total=value["progress"]["total"]
@@ -250,6 +251,9 @@ class RunManager:
                 "ranking_exact_over_committed_pages":None,"backends_used":[],"fallback_reasons":[],
                 "resource_events":[],"pending_resources":{},"initial_settings":copy.deepcopy(config["settings"]),
                 "source_identity":source_identity(config["request"]),"authenticated_solution":False}
+            if config['kind']=='exact' and config['command']=='optimize-plus':
+                record.update(exact_resume_supported=True,exact_checkpoint=None)
+                record['progress'].update(completed=0,total=None,unit='search nodes')
             self._save(record)
             self.records[key]=record
             self.current=key
@@ -326,7 +330,7 @@ class RunManager:
             else:
                 if key!=self.current or record["state"] not in ACTIVE:
                     raise ValueError("This run is not active")
-                if action=="pause" and record["kind"]!="accelerated":
+                if action=="pause" and record["kind"]!="accelerated" and not record.get('exact_resume_supported'):
                     raise ValueError("This exact command can be stopped and restarted; page pause applies to family scans")
                 staged=dict(record,state="pausing" if action=="pause" else "stopping")
                 self._save(staged)
@@ -393,6 +397,110 @@ class RunManager:
             if model and "model_file_sha256" in result and result["model_file_sha256"]!=record["source_identity"][model]:
                 raise ValueError("Worker scoring model differs from this run; no new page was committed")
 
+    def _saved_frontier(self,record):
+        checkpoint=record.get('exact_checkpoint')
+        if checkpoint is None:
+            return None
+        name=checkpoint.get('file')
+        if not isinstance(name,str) or len(name)!=37 or not name.endswith('.json') or any(c not in '0123456789abcdef' for c in name[:-5]):
+            raise ValueError('Invalid managed checkpoint filename')
+        folder=(self.directory/record['id']/'checkpoints').resolve()
+        path=(folder/name).resolve()
+        if path.parent!=folder or path.stat().st_size>64*1024*1024 or hashlib.sha256(path.read_bytes()).hexdigest()!=checkpoint.get('sha256'):
+            raise ValueError('Managed checkpoint integrity check failed')
+        return path
+
+    @staticmethod
+    def _public_optimizer_result(value):
+        # Execution paths belong to this service. Exported recipes never receive
+        # authority to read/write checkpoints when imported on another machine.
+        if isinstance(value,dict):
+            return {k:RunManager._public_optimizer_result(v) for k,v in value.items()
+                    if k not in {'checkpoint_path','resume_path','checkpoint_written'}}
+        if isinstance(value,list):
+            return [RunManager._public_optimizer_result(v) for v in value]
+        return value
+
+    def _run_optimizer(self,key,started,initial_batches):
+        record=self.records[key]
+        initial_nodes=record['progress']['completed']
+        node_budget=integer(record['request'].get('max_nodes',10000),'optimizer activation node budget',0,100000)
+        maximum_seconds=record['request'].get('time_limit_seconds',10)
+        if type(maximum_seconds) not in (int,float) or not math.isfinite(maximum_seconds) or not 0<maximum_seconds<=10:
+            raise ValueError('Invalid optimizer slice time cap')
+        while True:
+            with self.lock:
+                if self.desired:
+                    record['state']='paused' if self.desired=='pause' else 'stopped'
+                    return
+                spent=record['progress']['completed']-initial_nodes
+                slices=record['batches_committed']-initial_batches
+                settings=record['settings']
+                if slices and (spent>=node_budget or slices>=settings['max_batches'] or time.monotonic()-started>=settings['time_limit_seconds']):
+                    record['state']='limited'
+                    return
+                self._require_identity(record)
+                previous=self._saved_frontier(record)
+                folder=self.directory/key/'checkpoints'
+                folder.mkdir(exist_ok=True)
+                output=folder/(uuid.uuid4().hex+'.json')
+                request=copy.deepcopy(record['request'])
+                slice_seconds=record.get('optimizer_slice_seconds',min(2.0,maximum_seconds))
+                if type(slice_seconds) not in (int,float) or not math.isfinite(slice_seconds) or not 0<slice_seconds<=maximum_seconds:
+                    raise ValueError('Invalid saved optimizer slice duration')
+                request.update(max_nodes=min(256,max(0,node_budget-spent)),
+                    time_limit_seconds=slice_seconds,checkpoint_path=str(output))
+                if previous is not None:
+                    request['resume_path']=str(previous)
+            result=self._launch(key,{'kind':'exact','command':'optimize-plus','request':request})
+            with self.lock:
+                self._require_identity(record,[result])
+                if self.desired=='stop':
+                    raise InterruptedError('Stopped before this optimizer slice committed')
+                search=(result.get('optimization') or {}).get('search')
+                staged=copy.deepcopy(record)
+                staged['result']=self._public_optimizer_result(result)
+                candidate=(result.get('optimization') or {}).get('candidate')
+                staged['candidates']=[candidate] if candidate is not None else []
+                if search is not None:
+                    if not output.is_file() or output.stat().st_size>64*1024*1024:
+                        raise ValueError('Optimizer did not preserve a bounded frontier')
+                    nodes=integer(search['nodes_total'],'optimizer nodes',0,10**18)
+                    if nodes<record['progress']['completed'] or nodes-record['progress']['completed']!=search['nodes']:
+                        raise ValueError('Optimizer slice did not continue the committed node count')
+                    staged['exact_checkpoint']={'file':output.name,'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),
+                        'sequence':record['batches_committed']+1,'nodes_total':nodes}
+                    staged['progress'].update(completed=nodes,total=None,unit='search nodes')
+                    advanced=integer(search.get('frontier_progress_nodes',search['nodes']),
+                        'optimizer frontier progress',0,search['nodes'])
+                    staged['progress']['frontier_progress_nodes']=record['progress'].get('frontier_progress_nodes',0)+advanced
+                    # A timed-out decomposition restores its whole parent.
+                    # Count that work, but do not mistake it for proof progress.
+                    stalled=advanced==0 and search['stop_reason']=='time_limit'
+                    grow=stalled and slice_seconds<maximum_seconds and spent<node_budget
+                    staged['optimizer_slice_seconds']=min(maximum_seconds,slice_seconds*2) if grow else slice_seconds
+                    staged['optimizer_slice']={'seconds':slice_seconds,'next_seconds':staged['optimizer_slice_seconds'],
+                        'retry_after_rebuild':grow,'rebuild_limit_reached':stalled and not grow,
+                        'frontier_progress_nodes':advanced,'requeued_nodes':search.get('requeued_nodes',0)}
+                    if search['complete']:
+                        staged['state']='completed'
+                    elif search['stop_reason'] not in {'node_limit','time_limit'} or (advanced==0 and not grow):
+                        staged['state']='limited'
+                else:
+                    staged['state']='completed' if result.get('feasible') is False else 'limited'
+                backends=set(staged.get('backends_used',[]))|{'cpu'}
+                seed_backend=((search or {}).get('seed_scan') or {}).get('backend_used')
+                if seed_backend in {'cpu','cuda'}:
+                    backends.add(seed_backend)
+                staged.update(backend_actual='cpu',backends_used=sorted(backends))
+                staged['batches_committed']+=1
+                # The immutable checkpoint is written first. Publishing its
+                # digest/pointer is one atomic run commit; interrupted files are ignored.
+                self._save(staged)
+                record.update(staged)
+                if record['state'] in {'completed','limited'}:
+                    return
+
     def _run(self,key):
         record=self.records[key]
         started=time.monotonic()
@@ -400,7 +508,9 @@ class RunManager:
         initial_batches=record["batches_committed"]
         settings=record["settings"]
         try:
-            if record["kind"]=="exact":
+            if record.get('exact_resume_supported'):
+                self._run_optimizer(key,started,initial_batches)
+            elif record["kind"]=="exact":
                 self._require_identity(record)
                 result=self._launch(key,{"kind":"exact","command":record["command"],"request":record["request"]})
                 with self.lock:

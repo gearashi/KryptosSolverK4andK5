@@ -168,6 +168,18 @@ def factor_partition(factors, group_size=0):
     return tuple(groups)
 
 
+def evaluate_factor(f, values, domains, model):
+    """Evaluate one already-validated factor before applying its power."""
+    if f["kind"] == "table":
+        i = 0
+        for variable, value in zip(f["scope"], values):
+            i = i * domains[variable] + value
+        return f["values"][i]
+    text = "".join(model["alphabet"][(b + sum(col[j] * v for col, v in zip(f["columns"], values))) % 26]
+                   for j, b in enumerate(f["base"]))
+    return model["counts"].get(text, 0) * model["q"] + model["p"]
+
+
 class _Evaluator:
     def __init__(self,problem,cache_limit,local_limit,factor_group_size=0,group_exact_limit=4096):
         self.domains,self.factors = _validate(problem)
@@ -182,14 +194,7 @@ class _Evaluator:
         self.correlated = None if self.model is None else CorrelatedNgramBound(self.model["alphabet"],self.model["counts"],self.model["p"],self.model["q"])
 
     def _value(self,f,values):
-        if f["kind"]=="table":
-            i = 0
-            for variable,value in zip(f["scope"],values):
-                i = i*self.domains[variable]+value
-            return f["values"][i]
-        text = "".join(self.model["alphabet"][(b+sum(col[j]*v for col,v in zip(f["columns"],values)))%26]
-                       for j,b in enumerate(f["base"]))
-        return self.model["counts"].get(text,0)*self.model["q"]+self.model["p"]
+        return evaluate_factor(f, values, self.domains, self.model)
 
     def local_upper(self,number,assignment):
         f = self.factors[number]
@@ -282,18 +287,22 @@ def score_assignment(problem,assignment):
     return evaluator.upper(assignment)
 
 
-def _identity(problem,ordering,local_limit,groups=(),group_exact_limit=4096):
+def _identity(problem,ordering,local_limit,groups=(),group_exact_limit=4096,
+              decomposition="off", decomposition_max_entries=20000, decomposition_max_operations=200000):
     root = Path(__file__).resolve().parent
     return {"problem_sha256":_digest(problem),"ordering":ordering,"local_exact_limit":local_limit,
             "factor_groups":[list(g) for g in groups],"group_exact_limit":group_exact_limit,
-            "sources":{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ("search_runtime.py","language.py","correlated_bound.py")},
-            "version":"adaptive-search-v3; disjoint group bounds; verified assignment seeds; lexicographically smallest original assignment"}
+            "decomposition":decomposition,"decomposition_max_entries":decomposition_max_entries,
+            "decomposition_max_operations":decomposition_max_operations,
+            "sources":{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ("search_runtime.py","language.py","correlated_bound.py","factor_decomposition.py","guided_search.py")},
+            "version":"adaptive-search-v4; bounded exact residual elimination; verified assignment seeds; lexicographically smallest original assignment"}
 
 
 def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=10000,
                   max_cache_entries=100000,local_exact_limit=64,ordering="impact",
                   resume_path=None,checkpoint_path=None,factor_group_size=0,group_exact_limit=4096,
-                  initial_assignments=(),elapsed_before_seconds=0):
+                  initial_assignments=(),elapsed_before_seconds=0,decomposition="off",
+                  decomposition_max_entries=20000,decomposition_max_operations=200000):
     """Return exact incumbent/bound, optionally preserving the live frontier.
 
     Caps are cooperative (checked between node expansions). Changing a cap on
@@ -306,6 +315,10 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
     _integer(local_exact_limit,"local_exact_limit",1,100000)
     _integer(factor_group_size,"factor_group_size",0,8)
     _integer(group_exact_limit,"group_exact_limit",1,100000)
+    if decomposition not in ("off", "auto"):
+        raise ValueError("decomposition must be off or auto")
+    _integer(decomposition_max_entries,"decomposition_max_entries",1,1000000)
+    _integer(decomposition_max_operations,"decomposition_max_operations",1,10000000)
     if isinstance(elapsed_before_seconds,bool) or not isinstance(elapsed_before_seconds,(int,float)) or not math.isfinite(elapsed_before_seconds) or elapsed_before_seconds<0:
         raise ValueError("elapsed_before_seconds must be finite and nonnegative")
     if not isinstance(initial_assignments,(list,tuple)) or len(initial_assignments)>100:
@@ -323,7 +336,8 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
         return elapsed_before_seconds + (time.monotonic() - actual_started)
     evaluator = _Evaluator(problem,max_cache_entries,local_exact_limit,factor_group_size,group_exact_limit)
     domains = evaluator.domains
-    identity = _identity(problem,ordering,local_exact_limit,evaluator.groups,group_exact_limit)
+    identity = _identity(problem,ordering,local_exact_limit,evaluator.groups,group_exact_limit,
+                         decomposition,decomposition_max_entries,decomposition_max_operations)
     best = tuple(0 for _ in domains)
     best_score = evaluator.upper(best)
     root = tuple(-1 for _ in domains)
@@ -376,7 +390,10 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
             return (sum(sum(point[j]>=0 for j in f["scope"]) for f in involved),
                     sum(f.get("power",1) for f in involved),-domains[i],-i)
         return max(unknown,key=impact)
-    nodes=leaves=pruned=0
+    nodes=leaves=pruned=requeued=0
+    decomposition_report={"mode":decomposition,"attempts":0,"solved_residuals":0,"fallbacks":{},
+                          "operations":0,"factor_evaluations":0,"max_separator_variables":0,
+                          "max_components":0,"peak_planned_entries":0}
     stop="exhausted"
     while frontier:
         if nodes>=max_nodes:
@@ -396,6 +413,34 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
             if bound>best_score or (bound==best_score and point<best):
                 best_score,best=bound,point
             continue
+        if decomposition=="auto" and decomposition_report["operations"]<decomposition_max_operations and elapsed()<time_limit_seconds:
+            from .factor_decomposition import exact_decomposition
+            reduced=exact_decomposition(problem,point,max_entries=decomposition_max_entries,
+                max_operations=decomposition_max_operations-decomposition_report["operations"],
+                time_limit_seconds=max(1e-9,time_limit_seconds-elapsed()))
+            decomposition_report["attempts"]+=1
+            decomposition_report["operations"]+=reduced["work"]["operations"]
+            decomposition_report["factor_evaluations"]+=reduced["work"]["factor_evaluations"]
+            decomposition_report["max_separator_variables"]=max(decomposition_report["max_separator_variables"],reduced["work"]["max_separator_variables"])
+            decomposition_report["max_components"]=max(decomposition_report["max_components"],reduced["work"]["components"])
+            decomposition_report["peak_planned_entries"]=max(decomposition_report["peak_planned_entries"],reduced["work"]["planned_entries"])
+            if reduced["complete"]:
+                answer=tuple(reduced["assignment"])
+                # Verify the returned witness against the original factors.
+                value=evaluator.upper(answer)
+                if value!=reduced["score"] or any(v>=0 and answer[i]!=v for i,v in enumerate(point)):
+                    raise AssertionError("decomposition witness failed original factor verification")
+                if value>best_score or (value==best_score and answer<best):
+                    best_score,best=value,answer
+                decomposition_report["solved_residuals"]+=1
+                continue
+            reason=reduced["stop_reason"]
+            decomposition_report["fallbacks"][reason]=decomposition_report["fallbacks"].get(reason,0)+1
+            if elapsed()>=time_limit_seconds:
+                heapq.heappush(frontier,(neg,point))
+                requeued+=1
+                stop="time_limit"
+                break
         variable=choose(point)
         children=[]
         for value in range(domains[variable]):
@@ -409,6 +454,7 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                 children.append((-upper,child))
         if len(frontier)+len(children)>max_frontier:
             heapq.heappush(frontier,(neg,point))
+            requeued+=1
             stop="frontier_limit"
             break
         for child in children:
@@ -425,12 +471,16 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
     return {"assignment":list(best),"score":best_score,"lower_bound":best_score,"upper_bound":upper,
             "optimal":upper==best_score,"tie_break_proven":tie,"complete":not frontier,
             "stop_reason":stop,"nodes":nodes,"nodes_total":previous_nodes+nodes,"leaf_nodes":leaves,"pruned_nodes":pruned,
+            "requeued_nodes":requeued,"frontier_progress_nodes":nodes-requeued,
             "frontier_nodes":len(frontier),"cache_entries":len(evaluator.cache),"work":evaluator.stats,
+            "decomposition":decomposition_report,
             "assignment_space_size":math.prod(domains),"identity":identity,"resumed":resume_path is not None,
             "verified_seeds":seed_scores,"elapsed_before_seconds":elapsed_before_seconds,
             "checkpoint_written":str(checkpoint_path) if checkpoint_path is not None else None,
             "bounds":{"max_nodes":max_nodes,"max_frontier":max_frontier,"max_cache_entries":max_cache_entries,
                       "local_exact_limit":local_exact_limit,"time_limit_seconds":time_limit_seconds,
-                      "factor_group_size":factor_group_size,"group_exact_limit":group_exact_limit},
+                      "factor_group_size":factor_group_size,"group_exact_limit":group_exact_limit,
+                      "decomposition":decomposition,"decomposition_max_entries":decomposition_max_entries,
+                      "decomposition_max_operations":decomposition_max_operations},
             "ordering":ordering,"runtime_seconds":elapsed(),
             "interpretation":"Exact bounds for this product objective only. Lazy letter-domain bounds may ignore correlations; pruning remains admissible. No authentication."}

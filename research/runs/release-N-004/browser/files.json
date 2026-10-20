@@ -1,0 +1,122 @@
+{
+  "authored-ablations.json": {
+    "bytes": 31208,
+    "sha256": "e2eea4a7ad86ddd00470b23d14d0a1d87faaa4a356c81b107b7fc53746a21b0a"
+  },
+  "browser-report.json": {
+    "bytes": 271186,
+    "sha256": "c2a0681217ae0b051cafb2329adf953f25978f0cf024334e88ec66c6e4329534"
+  },
+  "cpu-certified.json": {
+    "bytes": 138428,
+    "sha256": "0eac26dd8e3d247670a9756e0543d0414c51853f2c1480656dc19e9c2c7cf4e9"
+  },
+  "cpu-resource-controls.json": {
+    "bytes": 144324,
+    "sha256": "a4cc4c1f0af5d881a3be5a93da7161381965c3600921834cb9cebfffe1f875c5"
+  },
+  "cross-campaign-inspection.json": {
+    "bytes": 4130,
+    "sha256": "3073dcf0d4fbabefec04243e66e1c21b373ec59fc58fefe12eebc5d61b8d46ea"
+  },
+  "cuda-certified.json": {
+    "bytes": 138826,
+    "sha256": "1c3f0eb994079286365dd69594167c7c205d51f986417ccbe4145c367b07509c"
+  },
+  "desktop-ablations.png": {
+    "bytes": 157812,
+    "sha256": "09768c929d3d0f5ab65caaddc7db201979c53fecb228cc1dbd11a710310e1570"
+  },
+  "desktop-cpu-candidate.png": {
+    "bytes": 484726,
+    "sha256": "387335b3b7bdb4ca32d554e04e8c04e3d3e0a561065f1a6cedf9ca13d54f610e"
+  },
+  "desktop-cross-campaign-reuse.png": {
+    "bytes": 233489,
+    "sha256": "fb935bf2aa4fa8d9ff3e91e9e8732eac64385c6820c55062950c7470d7049952"
+  },
+  "desktop-cuda-candidate.png": {
+    "bytes": 493579,
+    "sha256": "52d29067ca0fd87cf59e13583dc8bdadb9eb625ad9cb4047f1f0d5ddca8554ca"
+  },
+  "desktop-exact-paused.png": {
+    "bytes": 295181,
+    "sha256": "ca54d377c6fc64471603506c1d8610358a1b3163a60444f32fae627ea09ac845"
+  },
+  "desktop-export-replay.png": {
+    "bytes": 137334,
+    "sha256": "638337db06d9efc0c30d490e59e947f42186e6b8aa663c07ae3f5e3da5699072"
+  },
+  "desktop-generator-preview.png": {
+    "bytes": 178407,
+    "sha256": "f2d2dfab1c5fb877176a6f80f52d18f4778908c159423473f7eb82c2a437b160"
+  },
+  "desktop-guided-decomposition.png": {
+    "bytes": 313136,
+    "sha256": "7de2674dd9cc5631e9e83222977d44d57e73e5d79b69daa4b0422a1091f5e80a"
+  },
+  "desktop-ranked-joint.png": {
+    "bytes": 341378,
+    "sha256": "fc017f9763486f5fc42a8cf5265c5298f04fb59cfcc04509afa3ae9803bc03e2"
+  },
+  "desktop-ranked-trace.png": {
+    "bytes": 141845,
+    "sha256": "52125b96703dd401aa06f1873929c1bd4f81f0782ba739b91e826ed8e86aa580"
+  },
+  "desktop-resource-controls.png": {
+    "bytes": 402775,
+    "sha256": "dcb29f6237f0cd3b67e6724d44a4c9ebe98dcf1ab28be0463343525033adec50"
+  },
+  "download-inspection.json": {
+    "bytes": 4258,
+    "sha256": "9cc701166c240c0785bc5662affc66d8547f4ea7234150bd977938a8f0470d37"
+  },
+  "downloaded-run.json": {
+    "bytes": 138826,
+    "sha256": "1c3f0eb994079286365dd69594167c7c205d51f986417ccbe4145c367b07509c"
+  },
+  "exact-frontier.json": {
+    "bytes": 23998,
+    "sha256": "b3aba82786d6efcafbd16265ef1af4dffc837b9496cbfbafd0060927475b2e9d"
+  },
+  "generated-campaign.json": {
+    "bytes": 148550,
+    "sha256": "d9edadcdd2f2f4604a8cb5a8996432503663d5d4792fc02bc4dd8777ce934813"
+  },
+  "guided-decomposition.json": {
+    "bytes": 26837,
+    "sha256": "27a5b3570ab37bbc4cc801a2cb502c683323936fa91930524aa696e4676f276c"
+  },
+  "mobile-campaigns.png": {
+    "bytes": 182508,
+    "sha256": "48316fd4b72f4557530a195a662857f540f392166c536378e4d5d18e0e3ea91e"
+  },
+  "mobile-inspector.png": {
+    "bytes": 98675,
+    "sha256": "243ddb76b68dc4213f9ebe26ac68d52efdb67142313cb956fdff4ed70233bf8d"
+  },
+  "mobile-validation.png": {
+    "bytes": 129196,
+    "sha256": "17e54db108a371688d773f54ab04920e5740d002f6888078d42f0db9c0fb09f9"
+  },
+  "mobile-workbench.png": {
+    "bytes": 201210,
+    "sha256": "efe361ea5d0cca2894f1ca1273dd22c4dfcd365e3b7297100861e86f45ebddd4"
+  },
+  "ranked-inspection.json": {
+    "bytes": 3434,
+    "sha256": "05d733d28dbb50ad3bddc2a9f747a50a9447dd70b444752ddd31bca190654452"
+  },
+  "ranked-joint.json": {
+    "bytes": 45957,
+    "sha256": "5052eb13f18be593a45fb593d19cefebafc107a6fce03d1c4c7f3237b201ce8c"
+  },
+  "reused-campaign.json": {
+    "bytes": 395795,
+    "sha256": "884f87d3fb03219876c1b3abe7824e251de983562a3d15df70f83df17eb114f8"
+  },
+  "tampered-inspection.json": {
+    "bytes": 4719,
+    "sha256": "6ad544ecff45785dac918afa9574f03a6fc13ae40d5a42014865a737483e3ed4"
+  }
+}

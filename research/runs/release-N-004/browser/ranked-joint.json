@@ -1,0 +1,1672 @@
+{
+  "schema": "kryptos.local-run.v1",
+  "id": "e3a85346e247498dbd6e0646eb8f715a",
+  "state": "completed",
+  "kind": "exact",
+  "command": "joint-ranked",
+  "request": {
+    "target": "custom",
+    "ciphertext": "DKBIJHIFGN",
+    "cribs": [
+      {
+        "start": 1,
+        "text": "A"
+      }
+    ],
+    "width": 4,
+    "period": 2,
+    "order": "TS",
+    "alphabet": "standard",
+    "model_path": "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json",
+    "top": 10,
+    "max_orders": 100,
+    "max_evaluations": 10000,
+    "max_states": 200000,
+    "time_limit_seconds": 5
+  },
+  "settings": {
+    "backend": "cpu",
+    "workers": 1,
+    "batch_size": 512,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": false,
+    "idle_ms": 0,
+    "target_page_seconds": 1,
+    "ranking_mode": "certified"
+  },
+  "note": "",
+  "created_at": "2026-10-20T16:48:31.283948+00:00",
+  "updated_at": "2026-10-20T16:48:31.860461+00:00",
+  "progress": {
+    "completed": 1,
+    "total": 1,
+    "unit": "jobs",
+    "completed_decimal": "1",
+    "total_decimal": "1"
+  },
+  "elapsed_seconds": 0.515999999945052,
+  "rate": 1.937984496330404,
+  "candidates": [
+    {
+      "plaintext": "AIDCLFONIG",
+      "column_order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "key_pattern": "VF",
+      "permutation": [
+        1,
+        5,
+        9,
+        2,
+        6,
+        3,
+        7,
+        0,
+        4,
+        8
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              1,
+              5,
+              9,
+              2,
+              6,
+              3,
+              7,
+              0,
+              4,
+              8
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "VF"
+          }
+        ]
+      },
+      "score_exact": "0x69e2a53a06565d227af1f6a1b26d656436fff36ac657dc01ada76d97b3debb7c7820a30dbb911dca156267d432477ae8d46a5",
+      "score": -9.775027235398245,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "IFGDOCNALI",
+            "sha256": "3f922c9f525fc32bff2f2c6044d59b9064bcda8546b06b0b4f8bfa20548a6ed8"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "AXCFYHADIV",
+      "column_order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "key_pattern": "BK",
+      "permutation": [
+        2,
+        6,
+        0,
+        4,
+        8,
+        1,
+        5,
+        9,
+        3,
+        7
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              2,
+              6,
+              0,
+              4,
+              8,
+              1,
+              5,
+              9,
+              3,
+              7
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "BK"
+          }
+        ]
+      },
+      "score_exact": "0x1a7a5f709345c36185abf2353c23f5c58d7fe8ee6c459c7c4588a04d1eee5ca9ef5232d2e4eaf3288128898c32477ae8d46a5",
+      "score": -9.973033212727467,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "CAAYIXHVFD",
+            "sha256": "241de6cccfb689aef0dbd16dcccaa3409ee13007b8ba3b2274bc8721132a03db"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "AUMORCDFIT",
+      "column_order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "key_pattern": "PF",
+      "permutation": [
+        3,
+        7,
+        2,
+        6,
+        1,
+        5,
+        9,
+        0,
+        4,
+        8
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              3,
+              7,
+              2,
+              6,
+              1,
+              5,
+              9,
+              0,
+              4,
+              8
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "PF"
+          }
+        ]
+      },
+      "score_exact": "0x18354bdefcafea2bb483cc8655f190a842f672b8846e9317cbf6e3f78db336d117b5286b62a4ecb3f2e1338c32477ae8d46a5",
+      "score": -9.985836633734905,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "OFMDUCTARI",
+            "sha256": "710ba783077108e4e3953f1f3a67196060406feb6819628de557169569f256ac"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "AMCORDTFIU",
+      "column_order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "key_pattern": "PF",
+      "permutation": [
+        3,
+        7,
+        1,
+        5,
+        9,
+        2,
+        6,
+        0,
+        4,
+        8
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              3,
+              7,
+              1,
+              5,
+              9,
+              2,
+              6,
+              0,
+              4,
+              8
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "PF"
+          }
+        ]
+      },
+      "score_exact": "0x21d840bc5d1301a43187c29464a8ce2bab0fadf2ed7106262888b545d041655e28aa433549eed9670f02d2432477ae8d46a5",
+      "score": -10.334050370018932,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "OFMDUCTARI",
+            "sha256": "710ba783077108e4e3953f1f3a67196060406feb6819628de557169569f256ac"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "AODCRFUTIM",
+      "column_order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "key_pattern": "PF",
+      "permutation": [
+        1,
+        5,
+        9,
+        2,
+        6,
+        3,
+        7,
+        0,
+        4,
+        8
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              1,
+              5,
+              9,
+              2,
+              6,
+              3,
+              7,
+              0,
+              4,
+              8
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "PF"
+          }
+        ]
+      },
+      "score_exact": "0x18577fbd4c264a0a6c01b7ee1878b3eaf1982880524d2def1bac2df0e14ba17f4128bf3c639a4667c35db8432477ae8d46a5",
+      "score": -10.381134482175046,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "OFMDUCTARI",
+            "sha256": "710ba783077108e4e3953f1f3a67196060406feb6819628de557169569f256ac"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "AYCADDFFIG",
+      "column_order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "key_pattern": "DF",
+      "permutation": [
+        3,
+        7,
+        1,
+        5,
+        9,
+        2,
+        6,
+        0,
+        4,
+        8
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              3,
+              7,
+              1,
+              5,
+              9,
+              2,
+              6,
+              0,
+              4,
+              8
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "DF"
+          }
+        ]
+      },
+      "score_exact": "0x12d9ca2f4c1de65f8142164d4960418fd25785f8d331e99068986fcdf425df97aaac1094d41751555d29a6c32477ae8d46a5",
+      "score": -10.417654839848243,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "AFYDGCFADI",
+            "sha256": "ef6cc6632292b428e86fd190ca8ea3f5190bf22b1b451cdba17491675e7702b3"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "AFCHIFKHIN",
+      "column_order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "key_pattern": "BA",
+      "permutation": [
+        2,
+        6,
+        0,
+        4,
+        8,
+        3,
+        7,
+        1,
+        5,
+        9
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              2,
+              6,
+              0,
+              4,
+              8,
+              3,
+              7,
+              1,
+              5,
+              9
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "BA"
+          }
+        ]
+      },
+      "score_exact": "0x10f317bf21e95f6434a2abb956cf99bcf5a63f9a4a5885edcc20d562af31818c5c9a34cac1aceb85f577e6c32477ae8d46a5",
+      "score": -10.43284185733523,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "CKAIIHHFFN",
+            "sha256": "2eebf0f059f20f9e6844f8ee5bf689562b27cb4be027c4b1b1aa382c369bf171"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "ABCFCHEHIZ",
+      "column_order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "key_pattern": "BG",
+      "permutation": [
+        2,
+        6,
+        0,
+        4,
+        8,
+        1,
+        5,
+        9,
+        3,
+        7
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              2,
+              6,
+              0,
+              4,
+              8,
+              1,
+              5,
+              9,
+              3,
+              7
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "BG"
+          }
+        ]
+      },
+      "score_exact": "0xe92d9b672ee34d5ec2621c54ca89774631832fcb076fa324851a8699b658e53eb399f5f6d5bfba9592a3dc32477ae8d46a5",
+      "score": -10.454417439779553,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "CEACIBHZFH",
+            "sha256": "498477f2c9fefee6e3d8d9dcaf8c5a2b9a0047d2aa422c225ddcfa481fe481ae"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "ALMDOFGRYJ",
+      "column_order": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "key_pattern": "DW",
+      "permutation": [
+        0,
+        4,
+        8,
+        2,
+        6,
+        1,
+        5,
+        9,
+        3,
+        7
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              0,
+              4,
+              8,
+              2,
+              6,
+              1,
+              5,
+              9,
+              3,
+              7
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "DW"
+          }
+        ]
+      },
+      "score_exact": "0xa656af31e702dc337f8e43fb01963bf4b955f7835a9ed0e51d25aab4933d0aed99cbee824f44e1b1605fbc32477ae8d46a5",
+      "score": -10.502671329758481,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "AOYMGLFJDR",
+            "sha256": "1bfbcd23fe113004be37685f8bf4e2b896e2fdfb41b3b3d4263397ebf9041d81"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    },
+    {
+      "plaintext": "AGFDIGDLYF",
+      "column_order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "key_pattern": "DC",
+      "permutation": [
+        0,
+        4,
+        8,
+        1,
+        5,
+        9,
+        2,
+        6,
+        3,
+        7
+      ],
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "index_origin": 0,
+        "stages": [
+          {
+            "operation": "gather",
+            "permutation": [
+              0,
+              4,
+              8,
+              1,
+              5,
+              9,
+              2,
+              6,
+              3,
+              7
+            ]
+          },
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "DC"
+          }
+        ]
+      },
+      "score_exact": "0x53501dbcdf19025e8869cfa772a62e1b00474d9c6ca57dfdef8487b9c65e8c47a17f412a7419ad502fc33c32477ae8d46a5",
+      "score": -10.601445828354969,
+      "score_available": true,
+      "classification": "ranked_model_consistency_witness",
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "gather",
+            "output": "AIYGGFFDDL",
+            "sha256": "f232f2a3a8e4b952b06d48573830b3dbf8bb52d4c06d56e58a9a01ccddf587a1"
+          },
+          {
+            "stage": 2,
+            "operation": "repeat_substitution",
+            "output": "DKBIJHIFGN",
+            "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    }
+  ],
+  "result": {
+    "schema": "kryptos.joint-ranked.v1",
+    "complete": true,
+    "truncated": false,
+    "stop_reason": "exhausted_declared_family",
+    "feasible": true,
+    "top_k_exact": true,
+    "ranking_exact_over_evaluated": true,
+    "total_column_orders": 24,
+    "total_order_key_assignments": 624,
+    "column_orders_visited": 24,
+    "compatible_assignment_lower_bound": 624,
+    "evaluated": 624,
+    "candidates": [
+      {
+        "plaintext": "AIDCLFONIG",
+        "column_order": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "key_pattern": "VF",
+        "permutation": [
+          1,
+          5,
+          9,
+          2,
+          6,
+          3,
+          7,
+          0,
+          4,
+          8
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                1,
+                5,
+                9,
+                2,
+                6,
+                3,
+                7,
+                0,
+                4,
+                8
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "VF"
+            }
+          ]
+        },
+        "score_exact": "0x69e2a53a06565d227af1f6a1b26d656436fff36ac657dc01ada76d97b3debb7c7820a30dbb911dca156267d432477ae8d46a5",
+        "score": -9.775027235398245,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "IFGDOCNALI",
+              "sha256": "3f922c9f525fc32bff2f2c6044d59b9064bcda8546b06b0b4f8bfa20548a6ed8"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "AXCFYHADIV",
+        "column_order": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "key_pattern": "BK",
+        "permutation": [
+          2,
+          6,
+          0,
+          4,
+          8,
+          1,
+          5,
+          9,
+          3,
+          7
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                2,
+                6,
+                0,
+                4,
+                8,
+                1,
+                5,
+                9,
+                3,
+                7
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "BK"
+            }
+          ]
+        },
+        "score_exact": "0x1a7a5f709345c36185abf2353c23f5c58d7fe8ee6c459c7c4588a04d1eee5ca9ef5232d2e4eaf3288128898c32477ae8d46a5",
+        "score": -9.973033212727467,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "CAAYIXHVFD",
+              "sha256": "241de6cccfb689aef0dbd16dcccaa3409ee13007b8ba3b2274bc8721132a03db"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "AUMORCDFIT",
+        "column_order": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "key_pattern": "PF",
+        "permutation": [
+          3,
+          7,
+          2,
+          6,
+          1,
+          5,
+          9,
+          0,
+          4,
+          8
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                3,
+                7,
+                2,
+                6,
+                1,
+                5,
+                9,
+                0,
+                4,
+                8
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "PF"
+            }
+          ]
+        },
+        "score_exact": "0x18354bdefcafea2bb483cc8655f190a842f672b8846e9317cbf6e3f78db336d117b5286b62a4ecb3f2e1338c32477ae8d46a5",
+        "score": -9.985836633734905,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "OFMDUCTARI",
+              "sha256": "710ba783077108e4e3953f1f3a67196060406feb6819628de557169569f256ac"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "AMCORDTFIU",
+        "column_order": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "key_pattern": "PF",
+        "permutation": [
+          3,
+          7,
+          1,
+          5,
+          9,
+          2,
+          6,
+          0,
+          4,
+          8
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                3,
+                7,
+                1,
+                5,
+                9,
+                2,
+                6,
+                0,
+                4,
+                8
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "PF"
+            }
+          ]
+        },
+        "score_exact": "0x21d840bc5d1301a43187c29464a8ce2bab0fadf2ed7106262888b545d041655e28aa433549eed9670f02d2432477ae8d46a5",
+        "score": -10.334050370018932,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "OFMDUCTARI",
+              "sha256": "710ba783077108e4e3953f1f3a67196060406feb6819628de557169569f256ac"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "AODCRFUTIM",
+        "column_order": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "key_pattern": "PF",
+        "permutation": [
+          1,
+          5,
+          9,
+          2,
+          6,
+          3,
+          7,
+          0,
+          4,
+          8
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                1,
+                5,
+                9,
+                2,
+                6,
+                3,
+                7,
+                0,
+                4,
+                8
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "PF"
+            }
+          ]
+        },
+        "score_exact": "0x18577fbd4c264a0a6c01b7ee1878b3eaf1982880524d2def1bac2df0e14ba17f4128bf3c639a4667c35db8432477ae8d46a5",
+        "score": -10.381134482175046,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "OFMDUCTARI",
+              "sha256": "710ba783077108e4e3953f1f3a67196060406feb6819628de557169569f256ac"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "AYCADDFFIG",
+        "column_order": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "key_pattern": "DF",
+        "permutation": [
+          3,
+          7,
+          1,
+          5,
+          9,
+          2,
+          6,
+          0,
+          4,
+          8
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                3,
+                7,
+                1,
+                5,
+                9,
+                2,
+                6,
+                0,
+                4,
+                8
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "DF"
+            }
+          ]
+        },
+        "score_exact": "0x12d9ca2f4c1de65f8142164d4960418fd25785f8d331e99068986fcdf425df97aaac1094d41751555d29a6c32477ae8d46a5",
+        "score": -10.417654839848243,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "AFYDGCFADI",
+              "sha256": "ef6cc6632292b428e86fd190ca8ea3f5190bf22b1b451cdba17491675e7702b3"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "AFCHIFKHIN",
+        "column_order": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "key_pattern": "BA",
+        "permutation": [
+          2,
+          6,
+          0,
+          4,
+          8,
+          3,
+          7,
+          1,
+          5,
+          9
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                2,
+                6,
+                0,
+                4,
+                8,
+                3,
+                7,
+                1,
+                5,
+                9
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "BA"
+            }
+          ]
+        },
+        "score_exact": "0x10f317bf21e95f6434a2abb956cf99bcf5a63f9a4a5885edcc20d562af31818c5c9a34cac1aceb85f577e6c32477ae8d46a5",
+        "score": -10.43284185733523,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "CKAIIHHFFN",
+              "sha256": "2eebf0f059f20f9e6844f8ee5bf689562b27cb4be027c4b1b1aa382c369bf171"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "ABCFCHEHIZ",
+        "column_order": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "key_pattern": "BG",
+        "permutation": [
+          2,
+          6,
+          0,
+          4,
+          8,
+          1,
+          5,
+          9,
+          3,
+          7
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                2,
+                6,
+                0,
+                4,
+                8,
+                1,
+                5,
+                9,
+                3,
+                7
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "BG"
+            }
+          ]
+        },
+        "score_exact": "0xe92d9b672ee34d5ec2621c54ca89774631832fcb076fa324851a8699b658e53eb399f5f6d5bfba9592a3dc32477ae8d46a5",
+        "score": -10.454417439779553,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "CEACIBHZFH",
+              "sha256": "498477f2c9fefee6e3d8d9dcaf8c5a2b9a0047d2aa422c225ddcfa481fe481ae"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "ALMDOFGRYJ",
+        "column_order": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "key_pattern": "DW",
+        "permutation": [
+          0,
+          4,
+          8,
+          2,
+          6,
+          1,
+          5,
+          9,
+          3,
+          7
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                0,
+                4,
+                8,
+                2,
+                6,
+                1,
+                5,
+                9,
+                3,
+                7
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "DW"
+            }
+          ]
+        },
+        "score_exact": "0xa656af31e702dc337f8e43fb01963bf4b955f7835a9ed0e51d25aab4933d0aed99cbee824f44e1b1605fbc32477ae8d46a5",
+        "score": -10.502671329758481,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "AOYMGLFJDR",
+              "sha256": "1bfbcd23fe113004be37685f8bf4e2b896e2fdfb41b3b3d4263397ebf9041d81"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      {
+        "plaintext": "AGFDIGDLYF",
+        "column_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "key_pattern": "DC",
+        "permutation": [
+          0,
+          4,
+          8,
+          1,
+          5,
+          9,
+          2,
+          6,
+          3,
+          7
+        ],
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "index_origin": 0,
+          "stages": [
+            {
+              "operation": "gather",
+              "permutation": [
+                0,
+                4,
+                8,
+                1,
+                5,
+                9,
+                2,
+                6,
+                3,
+                7
+              ]
+            },
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "DC"
+            }
+          ]
+        },
+        "score_exact": "0x53501dbcdf19025e8869cfa772a62e1b00474d9c6ca57dfdef8487b9c65e8c47a17f412a7419ad502fc33c32477ae8d46a5",
+        "score": -10.601445828354969,
+        "score_available": true,
+        "classification": "ranked_model_consistency_witness",
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "gather",
+              "output": "AIYGGFFDDL",
+              "sha256": "f232f2a3a8e4b952b06d48573830b3dbf8bb52d4c06d56e58a9a01ccddf587a1"
+            },
+            {
+              "stage": 2,
+              "operation": "repeat_substitution",
+              "output": "DKBIJHIFGN",
+              "sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      }
+    ],
+    "segmentations_tested": 6,
+    "bounds": {
+      "top": 10,
+      "max_segmentations": 2048,
+      "max_states": 200000,
+      "max_orders": 100,
+      "max_evaluations": 10000,
+      "time_limit_seconds": 5
+    },
+    "work": {
+      "states": 5497,
+      "segmentation_nodes": 19,
+      "compatibility_pairs": 96,
+      "route_nodes": 86,
+      "matching_edge_visits": 304,
+      "key_completions": 624,
+      "scored_windows": 4368
+    },
+    "assumptions": {
+      "period": 2,
+      "order": "TS",
+      "cipher": "vigenere",
+      "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "cells": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "column_direction": "top_to_bottom"
+    },
+    "unused_key_slots": [],
+    "scoring": {
+      "model_id": "2e603495340da9808fa3cf7f79cde6c376146549357e92e70f769bc7616763b9",
+      "score_mask": [
+        0
+      ],
+      "windows": 7,
+      "score_available": true,
+      "alpha_numerator": "3602879701896397",
+      "alpha_denominator": "36028797018963968",
+      "comparison": "Exact product(count*q+p), then plaintext lexical order; duplicate plaintexts merged. Representative ties use labelled column order, then used-key lexical order."
+    },
+    "provenance": {
+      "normalized_input_sha256": "286b06c3f3268301c0827b0d1c1f0f3a7386381202bb33858889aee9b961df24"
+    },
+    "elapsed_seconds": 0,
+    "authenticated_solution": false,
+    "interpretation": "Only an exhausted declared family certifies its distinct-plaintext top-k. Truncated results rank evaluated completions only; no global score bound or solution authentication is inferred.",
+    "target": "custom",
+    "model_file_sha256": "970349f122f82589dc432103ffe7c5dde6bc8a9a39081dbd601dfda48a49e064",
+    "model_id": "2e603495340da9808fa3cf7f79cde6c376146549357e92e70f769bc7616763b9"
+  },
+  "error": null,
+  "backend_requested": "cpu",
+  "backend_actual": "cpu",
+  "batches_committed": 1,
+  "ranking_exact_over_committed_pages": null,
+  "backends_used": [
+    "cpu"
+  ],
+  "fallback_reasons": [],
+  "resource_events": [],
+  "pending_resources": {},
+  "initial_settings": {
+    "backend": "cpu",
+    "workers": 1,
+    "batch_size": 512,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": false,
+    "idle_ms": 0,
+    "target_page_seconds": 1,
+    "ranking_mode": "certified"
+  },
+  "source_identity": {
+    "kryptos/__main__.py": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
+    "kryptos/ablations.py": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
+    "kryptos/accelerated.py": "81eef8d7a551ef980c2d5584f77e0907f7df5e46172118ddb45f089406bf8a2d",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "bef219aba30fd2405235a7f9f73648d9e0203807c0d5b9d62630e85348856270",
+    "kryptos/app_jobs.py": "b51e5559d0bb5475b6a08c5547c7c5ea0bc6e4d6644a03b048828d25285bad2f",
+    "kryptos/app_worker.py": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
+    "kryptos/campaigns.py": "d7c9d59aca4bab02a71b034dae902d3d11bbc4c09058c171459be580ed421be7",
+    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_decomposition.py": "8219bbbd2b6ab56dbe1e36a92b48f262c21fe0aa9ce7326969ada501a3a2f1b4",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/guided_search.py": "3c529bd5492754c694172ba982fb4124d3cd6e8d905b936339c3dd53a86f4d34",
+    "kryptos/hypotheses.py": "f3275197f5ae2974a148c8c82445f263e56ac37b97e4a4b2479bd6e1be96287b",
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/joint_ranked.py": "9f2738688e824d14a353710e17fac12632a1b7f7a0c8a4ac0826dbc4aaed1037",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "84cd39be89747cbfc978d4ca3998484cc0cf65ed3f1dbf8e2c8db8060934b1dc",
+    "kryptos/parallel_search.py": "9ca29a8175407dc7a3573334f7aa49f82321f9013cd30db39377abaa5a6e0412",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/resource_governor.py": "855412deabad45aed582bdb147f1746eae61209390bef3ba066f4eb05ebd6399",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "58118ce9bc5f539266a77edb035818aebb039e943025604685894aec4d8457bd",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/validation_protocols.py": "10bb78edc6b84415d2bcdab978506f63876114a24036c024859b3133cc64e701",
+    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json": "970349f122f82589dc432103ffe7c5dde6bc8a9a39081dbd601dfda48a49e064"
+  },
+  "authenticated_solution": false,
+  "can_pause": false,
+  "can_resume": false
+}

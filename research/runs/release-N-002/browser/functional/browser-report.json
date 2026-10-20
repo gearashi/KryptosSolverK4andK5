@@ -1,0 +1,496 @@
+{
+  "checks": [
+    "New server opens idle without an automatic search",
+    "Version0.3 provides ranked preset and four validation protocols",
+    "Ranked route and completion bounds are editable",
+    "Ranked joint exhausts its declared small family",
+    "Ranked joint candidate independently replays through importer",
+    "Guided and decomposition controls reflect preset",
+    "Editing guided controls preserves custom remaining bounds",
+    "Guided decomposition control finishes with replayed candidate",
+    "Exact pause saves a checked frontier and node count",
+    "Exact resume advances the existing node frontier",
+    "Stop preserves committed exact progress",
+    "Generator preview records expansion and literal deduplication",
+    "Generator preview sends no axes and launches no run",
+    "Generated campaign completes all three declared jobs",
+    "Second campaign reuses completed families with provenance",
+    "Cross-campaign alias replays its own transported recipe",
+    "Reserved K4-shaped preset preserves its30-second declared budget",
+    "Ablation protocol exposes withheld positions",
+    "Authored ablation completes baseline and two refits",
+    "Ablation table displays completed family comparisons",
+    "validation mobile has no horizontal page overflow",
+    "campaigns mobile has no horizontal page overflow",
+    "workbench mobile has no horizontal page overflow",
+    "inspector mobile has no horizontal page overflow",
+    "No browser JavaScript errors"
+  ],
+  "errors": [],
+  "runIds": [
+    "c242e307cad348d8b89a7ca32a3e1fb5",
+    "14fd55d2fae346a995b2b983a6dac08c",
+    "65959d5a4ea74f0bb03287ec1a49dc27",
+    "584035d75b0949e6b13d48c34bf79b95"
+  ],
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8768/api/start",
+      "body": {
+        "kind": "exact",
+        "command": "joint-ranked",
+        "request": {
+          "target": "custom",
+          "ciphertext": "DKBIJHIFGN",
+          "cribs": [
+            {
+              "start": 1,
+              "text": "A"
+            }
+          ],
+          "width": 4,
+          "period": 2,
+          "order": "TS",
+          "alphabet": "standard",
+          "model_path": "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json",
+          "top": 10,
+          "max_orders": 100,
+          "max_evaluations": 10000,
+          "max_states": 200000,
+          "time_limit_seconds": 5
+        },
+        "backend": "cpu",
+        "workers": 1,
+        "batch_size": 512,
+        "max_batches": 100,
+        "time_limit_seconds": 60,
+        "ranking_mode": "certified",
+        "note": ""
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/import",
+      "body": {
+        "artifact": "{\n  \"schema\": \"kryptos.candidate-export.v1\",\n  \"run_id\": \"c242e307cad348d8b89a7ca32a3e1fb5\",\n  \"request\": {\n    \"target\": \"custom\",\n    \"ciphertext\": \"DKBIJHIFGN\",\n    \"cribs\": [\n      {\n        \"start\": 1,\n        \"text\": \"A\"\n      }\n    ],\n    \"width\": 4,\n    \"period\": 2,\n    \"order\": \"TS\",\n    \"alphabet\": \"standard\",\n    \"model_path\": \"research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json\",\n    \"top\": 10,\n    \"max_orders\": 100,\n    \"max_evaluations\": 10000,\n    \"max_states\": 200000,\n    \"time_limit_seconds\": 5\n  },\n  \"candidate\": {\n    \"plaintext\": \"AIDCLFONIG\",\n    \"column_order\": [\n      1,\n      2,\n      3,\n      0\n    ],\n    \"key_pattern\": \"VF\",\n    \"permutation\": [\n      1,\n      5,\n      9,\n      2,\n      6,\n      3,\n      7,\n      0,\n      4,\n      8\n    ],\n    \"encryption_recipe\": {\n      \"schema\": \"kryptos.encryption-recipe.v1\",\n      \"alphabet\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n      \"index_origin\": 0,\n      \"stages\": [\n        {\n          \"operation\": \"gather\",\n          \"permutation\": [\n            1,\n            5,\n            9,\n            2,\n            6,\n            3,\n            7,\n            0,\n            4,\n            8\n          ]\n        },\n        {\n          \"operation\": \"repeat_substitution\",\n          \"cipher\": \"vigenere\",\n          \"key_pattern\": \"VF\"\n        }\n      ]\n    },\n    \"score_exact\": \"0x69e2a53a06565d227af1f6a1b26d656436fff36ac657dc01ada76d97b3debb7c7820a30dbb911dca156267d432477ae8d46a5\",\n    \"score\": -9.775027235398245,\n    \"score_available\": true,\n    \"classification\": \"ranked_model_consistency_witness\",\n    \"evidence\": {\n      \"literal_reencryption_matches\": true,\n      \"crib_matches\": 1,\n      \"stage_outputs\": [\n        {\n          \"stage\": 1,\n          \"operation\": \"gather\",\n          \"output\": \"IFGDOCNALI\",\n          \"sha256\": \"3f922c9f525fc32bff2f2c6044d59b9064bcda8546b06b0b4f8bfa20548a6ed8\"\n        },\n        {\n          \"stage\": 2,\n          \"operation\": \"repeat_substitution\",\n          \"output\": \"DKBIJHIFGN\",\n          \"sha256\": \"4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd\"\n        }\n      ],\n      \"authenticated_solution\": false\n    }\n  },\n  \"authenticated_solution\": false\n}",
+        "candidate_index": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/start",
+      "body": {
+        "kind": "exact",
+        "command": "optimize-plus",
+        "request": {
+          "target": "custom",
+          "ciphertext": "TIITITATEDRFTUXU",
+          "cribs": [
+            {
+              "start": 1,
+              "text": "T"
+            }
+          ],
+          "alphabet": "standard",
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 2
+            }
+          ],
+          "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+          "max_nodes": 10000,
+          "max_frontier": 1000,
+          "max_cache_entries": 10000,
+          "ordering": "impact",
+          "time_limit_seconds": 5,
+          "decomposition": "auto",
+          "guided_seed": {
+            "restarts": 4,
+            "max_sweeps": 4,
+            "top": 3,
+            "max_factor_evaluations": 20000,
+            "seed": 17,
+            "max_evaluations": 128
+          },
+          "factor_group_size": 2,
+          "group_exact_limit": 676
+        },
+        "backend": "cpu",
+        "workers": 1,
+        "batch_size": 512,
+        "max_batches": 100,
+        "time_limit_seconds": 60,
+        "ranking_mode": "certified",
+        "note": ""
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/start",
+      "body": {
+        "kind": "exact",
+        "command": "optimize-plus",
+        "request": {
+          "target": "custom",
+          "ciphertext": "TIITITATEDRFTUXU",
+          "cribs": [
+            {
+              "start": 1,
+              "text": "T"
+            }
+          ],
+          "alphabet": "standard",
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 8
+            }
+          ],
+          "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+          "max_nodes": 100000,
+          "max_frontier": 10000,
+          "max_cache_entries": 10000,
+          "ordering": "impact",
+          "time_limit_seconds": 5,
+          "decomposition": "off"
+        },
+        "backend": "cpu",
+        "workers": 1,
+        "batch_size": 512,
+        "max_batches": 100,
+        "time_limit_seconds": 60,
+        "ranking_mode": "certified",
+        "note": ""
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/pause",
+      "body": {
+        "run_id": "65959d5a4ea74f0bb03287ec1a49dc27"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/resume",
+      "body": {
+        "run_id": "65959d5a4ea74f0bb03287ec1a49dc27"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/stop",
+      "body": {
+        "run_id": "65959d5a4ea74f0bb03287ec1a49dc27"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/campaigns/preview",
+      "body": {
+        "name": "Browser N declared grammar",
+        "base": {
+          "kind": "accelerated",
+          "command": "optimize-plus",
+          "request": {
+            "target": "custom",
+            "ciphertext": "TIITITATEDRFTUXU",
+            "cribs": [
+              {
+                "start": 1,
+                "text": "T"
+              }
+            ],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 2
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "max_nodes": 10000,
+            "max_frontier": 1000,
+            "max_cache_entries": 10000,
+            "ordering": "impact",
+            "time_limit_seconds": 5
+          },
+          "backend": "cpu",
+          "workers": 1,
+          "batch_size": 26,
+          "max_batches": 10,
+          "time_limit_seconds": 60,
+          "ranking_mode": "certified",
+          "note": ""
+        },
+        "generator": {
+          "patterns": [
+            "S",
+            "ST",
+            "TS"
+          ],
+          "periods": [
+            2
+          ],
+          "alphabets": [
+            "standard"
+          ],
+          "ciphers": [
+            "vigenere"
+          ],
+          "routes": [
+            "identity",
+            "reverse"
+          ],
+          "max_expansions": 32
+        }
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/campaigns/start",
+      "body": {
+        "name": "Browser N declared grammar",
+        "base": {
+          "kind": "accelerated",
+          "command": "optimize-plus",
+          "request": {
+            "target": "custom",
+            "ciphertext": "TIITITATEDRFTUXU",
+            "cribs": [
+              {
+                "start": 1,
+                "text": "T"
+              }
+            ],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 2
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "max_nodes": 10000,
+            "max_frontier": 1000,
+            "max_cache_entries": 10000,
+            "ordering": "impact",
+            "time_limit_seconds": 5
+          },
+          "backend": "cpu",
+          "workers": 1,
+          "batch_size": 26,
+          "max_batches": 10,
+          "time_limit_seconds": 60,
+          "ranking_mode": "certified",
+          "note": ""
+        },
+        "generator": {
+          "patterns": [
+            "S",
+            "ST",
+            "TS"
+          ],
+          "periods": [
+            2
+          ],
+          "alphabets": [
+            "standard"
+          ],
+          "ciphers": [
+            "vigenere"
+          ],
+          "routes": [
+            "identity",
+            "reverse"
+          ],
+          "max_expansions": 32
+        }
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/campaigns/preview",
+      "body": {
+        "name": "Browser N reuse the committed grammar",
+        "base": {
+          "kind": "accelerated",
+          "command": "optimize-plus",
+          "request": {
+            "target": "custom",
+            "ciphertext": "TIITITATEDRFTUXU",
+            "cribs": [
+              {
+                "start": 1,
+                "text": "T"
+              }
+            ],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 2
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "max_nodes": 10000,
+            "max_frontier": 1000,
+            "max_cache_entries": 10000,
+            "ordering": "impact",
+            "time_limit_seconds": 5
+          },
+          "backend": "cpu",
+          "workers": 1,
+          "batch_size": 26,
+          "max_batches": 10,
+          "time_limit_seconds": 60,
+          "ranking_mode": "certified",
+          "note": ""
+        },
+        "generator": {
+          "patterns": [
+            "S",
+            "ST",
+            "TS"
+          ],
+          "periods": [
+            2
+          ],
+          "alphabets": [
+            "standard"
+          ],
+          "ciphers": [
+            "vigenere"
+          ],
+          "routes": [
+            "identity",
+            "reverse"
+          ],
+          "max_expansions": 32
+        }
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/campaigns/start",
+      "body": {
+        "name": "Browser N reuse the committed grammar",
+        "base": {
+          "kind": "accelerated",
+          "command": "optimize-plus",
+          "request": {
+            "target": "custom",
+            "ciphertext": "TIITITATEDRFTUXU",
+            "cribs": [
+              {
+                "start": 1,
+                "text": "T"
+              }
+            ],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 2
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "max_nodes": 10000,
+            "max_frontier": 1000,
+            "max_cache_entries": 10000,
+            "ordering": "impact",
+            "time_limit_seconds": 5
+          },
+          "backend": "cpu",
+          "workers": 1,
+          "batch_size": 26,
+          "max_batches": 10,
+          "time_limit_seconds": 60,
+          "ranking_mode": "certified",
+          "note": ""
+        },
+        "generator": {
+          "patterns": [
+            "S",
+            "ST",
+            "TS"
+          ],
+          "periods": [
+            2
+          ],
+          "alphabets": [
+            "standard"
+          ],
+          "ciphers": [
+            "vigenere"
+          ],
+          "routes": [
+            "identity",
+            "reverse"
+          ],
+          "max_expansions": 32
+        }
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/import",
+      "body": {
+        "artifact": "{\n  \"schema\": \"kryptos.candidate-export.v1\",\n  \"run_id\": \"697f9c576c6c49318a541cabd28b79c8-job-002\",\n  \"request\": {\n    \"target\": \"custom\",\n    \"ciphertext\": \"TIITITATEDRFTUXU\",\n    \"cribs\": [\n      {\n        \"start\": 1,\n        \"text\": \"T\"\n      }\n    ],\n    \"alphabet\": \"standard\",\n    \"stages\": [\n      {\n        \"operation\": \"substitution\",\n        \"period\": 2,\n        \"cipher\": \"vigenere\"\n      },\n      {\n        \"operation\": \"gather\",\n        \"permutation\": [\n          15,\n          14,\n          13,\n          12,\n          11,\n          10,\n          9,\n          8,\n          7,\n          6,\n          5,\n          4,\n          3,\n          2,\n          1,\n          0\n        ]\n      }\n    ],\n    \"model_path\": \"research/models/multilingual-001/artifacts/pg1342-english-trigram.json\",\n    \"max_nodes\": 10000,\n    \"max_frontier\": 1000,\n    \"max_cache_entries\": 10000,\n    \"ordering\": \"impact\",\n    \"time_limit_seconds\": 5,\n    \"layer_model\": \"general\"\n  },\n  \"candidate\": {\n    \"plaintext\": \"TXTTERCESASISIHT\",\n    \"keys\": [\n      \"BA\"\n    ],\n    \"values_mod2\": [\n      0\n    ],\n    \"values_mod13\": [\n      0\n    ],\n    \"reencrypted_ciphertext\": \"TIITITATEDRFTUXU\",\n    \"reencryption_matches\": true,\n    \"authenticated_solution\": false,\n    \"classification\": \"model_consistency_witness\",\n    \"encryption_recipe\": {\n      \"schema\": \"kryptos.encryption-recipe.v1\",\n      \"alphabet\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n      \"stages\": [\n        {\n          \"operation\": \"repeat_substitution\",\n          \"cipher\": \"vigenere\",\n          \"key_pattern\": \"BA\"\n        },\n        {\n          \"operation\": \"gather\",\n          \"permutation\": [\n            15,\n            14,\n            13,\n            12,\n            11,\n            10,\n            9,\n            8,\n            7,\n            6,\n            5,\n            4,\n            3,\n            2,\n            1,\n            0\n          ]\n        }\n      ]\n    },\n    \"evidence\": {\n      \"literal_reencryption_matches\": true,\n      \"crib_matches\": 1,\n      \"stage_outputs\": [\n        {\n          \"stage\": 1,\n          \"operation\": \"repeat_substitution\",\n          \"output\": \"UXUTFRDETATITIIT\",\n          \"sha256\": \"914626f3d2f5e45c60810b61ab3f17e6ece2507985ba9e4e9828656afcfc8b77\"\n        },\n        {\n          \"stage\": 2,\n          \"operation\": \"gather\",\n          \"output\": \"TIITITATEDRFTUXU\",\n          \"sha256\": \"36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0\"\n        }\n      ],\n      \"authenticated_solution\": false\n    },\n    \"score\": -8.199673253543207,\n    \"score_exact\": \"0x1b9d7fdaf23c55960d5a5195417b5c2c135140aa3dc4e1712bba55802a494ba3dc5bb082dd750f01efcc472982d8d97e19333df68befc2234a8cb5ae81465ab7881bf15c130419261a7605722d57ad9b3da557c61a7e1d3f293a2cf9f6433fbd\",\n    \"exact_objective_hex\": \"0x1b9d7fdaf23c55960d5a5195417b5c2c135140aa3dc4e1712bba55802a494ba3dc5bb082dd750f01efcc472982d8d97e19333df68befc2234a8cb5ae81465ab7881bf15c130419261a7605722d57ad9b3da557c61a7e1d3f293a2cf9f6433fbd\",\n    \"score_sensitivity\": {\n      \"schema\": \"kryptos.model-fixed-score-sensitivity.v1\",\n      \"reporting_only\": true,\n      \"changes_candidate_ranking\": false,\n      \"model_id\": \"73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648\",\n      \"supplied_positions_zero_based\": [\n        0\n      ],\n      \"model_fixed_positions_zero_based\": [\n        0,\n        2,\n        4,\n        6,\n        8,\n        10,\n        12,\n        14\n      ],\n      \"additional_fixed_positions_zero_based\": [\n        2,\n        4,\n        6,\n        8,\n        10,\n        12,\n        14\n      ],\n      \"variable_positions_zero_based\": [\n        1,\n        3,\n        5,\n        7,\n        9,\n        11,\n        13,\n        15\n      ],\n      \"exact_marginal_letter_domains\": [\n        \"T\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"T\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"E\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"C\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"S\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"S\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"S\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"H\",\n        \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n      ],\n      \"supplied_mask_score\": {\n        \"model_id\": \"73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648\",\n        \"mean_log_probability\": -8.199673253543207,\n        \"log_probability_sum\": -106.59575229606169,\n        \"windows\": 13,\n        \"text_length\": 16,\n        \"excluded_positions\": [\n          0\n        ],\n        \"eligible_positions\": [\n          1,\n          2,\n          3,\n          4,\n          5,\n          6,\n          7,\n          8,\n          9,\n          10,\n          11,\n          12,\n          13,\n          14,\n          15\n        ],\n        \"scored_positions\": [\n          1,\n          2,\n          3,\n          4,\n          5,\n          6,\n          7,\n          8,\n          9,\n          10,\n          11,\n          12,\n          13,\n          14,\n          15\n        ],\n        \"unsupported_positions\": [],\n        \"available\": true,\n        \"eligible_characters\": 15,\n        \"scored_characters\": 15\n      },\n      \"model_fixed_mask_score\": {\n        \"model_id\": \"73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648\",\n        \"mean_log_probability\": null,\n        \"log_probability_sum\": 0,\n        \"windows\": 0,\n        \"text_length\": 16,\n        \"excluded_positions\": [\n          0,\n          2,\n          4,\n          6,\n          8,\n          10,\n          12,\n          14\n        ],\n        \"eligible_positions\": [\n          1,\n          3,\n          5,\n          7,\n          9,\n          11,\n          13,\n          15\n        ],\n        \"scored_positions\": [],\n        \"unsupported_positions\": [],\n        \"available\": false,\n        \"eligible_characters\": 8,\n        \"scored_characters\": 0\n      },\n      \"interpretation\": \"Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay.\"\n    },\n    \"technique\": \"Equivalent affine family: reused ranking and reconstructed this recipe's own keys; independent literal replay\",\n    \"ranking_reused_from_equivalent_family\": true\n  },\n  \"authenticated_solution\": false\n}",
+        "candidate_index": 0
+      }
+    },
+    {
+      "url": "http://127.0.0.1:8768/api/start",
+      "body": {
+        "kind": "exact",
+        "command": "validate-ablations",
+        "request": {
+          "target": "custom",
+          "ciphertext": "BDECFGHI",
+          "cribs": [
+            {
+              "start": 1,
+              "text": "AB"
+            },
+            {
+              "start": 7,
+              "text": "GH"
+            }
+          ],
+          "withheld_positions": [
+            1
+          ],
+          "model_paths": [
+            "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json"
+          ],
+          "model_bank": [
+            {
+              "id": "browser-authored-cycle",
+              "layer_model": "general",
+              "alphabet": "standard",
+              "stages": [
+                {
+                  "operation": "substitution",
+                  "period": 1
+                },
+                {
+                  "operation": "gather",
+                  "permutation": [
+                    0,
+                    2,
+                    3,
+                    1,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
+                }
+              ]
+            }
+          ],
+          "schedule_semantics": "recompute",
+          "max_candidates_per_family": 26,
+          "max_total_candidates": 100,
+          "time_limit_seconds": 10,
+          "top": 3
+        },
+        "backend": "cpu",
+        "workers": 1,
+        "note": "Declared validation protocol; empirical comparison only."
+      }
+    }
+  ],
+  "scope": "N functional controls on dedicated local preview; CPU only; no reserved validation bank rerun"
+}

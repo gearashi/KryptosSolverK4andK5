@@ -1,0 +1,1 @@
+{"controls_complete": true, "controls_summary": {"positive_inputs": 6, "paired_null_inputs": 6, "completed_comparisons": 6, "candidate_visits": 4316, "positive_truth_rank_one": 6, "nulls_with_surviving_wrong_candidates": 6}, "ablations_complete": true, "independent_generator_checks": 12}

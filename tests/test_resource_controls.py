@@ -105,7 +105,9 @@ class ResourceControlsTests(unittest.TestCase):
         for kind in ("accelerated","exact"):
             with self.subTest(kind=kind):
                 with patch.object(self.manager,"_begin"):
-                    run=self.manager.start(body(kind=kind))
+                    # This regression covers one-shot exact commands. Managed
+                    # optimize-plus commits are exercised in test_exact_resume.
+                    run=self.manager.start(body(kind=kind,command="general" if kind=="exact" else "optimize-plus"))
                 def fail_progress(path,value):
                     if value.get("progress",{}).get("completed",0)>0:
                         raise OSError("intentional commit failure")

@@ -19,15 +19,17 @@ from .data import K4_CIPHERTEXT,K4_CRIBS
 from .campaigns import CampaignManager,preview_campaign
 from .import_inspector import inspect_import
 
-VERSION="0.2.0"
+VERSION="0.3.0"
 
 
 def validation_presets():
-    return [{"id":command,"label":label,"kind":"exact","command":command,
-             "description":description,"request":json.loads((ROOT/"examples"/(command+".json")).read_text())}
-            for command,label,description in (
-                ("validate-holdout","Reduced-clue recovery", "Rerun model selection with withheld clue values removed, then assess recovery. All supplied clue positions are excluded from language scoring; public K4 clues remain retrospective evidence."),
-                ("validate-controls","Competing models · positive/null controls", "Two newly authored messages and paired shuffled controls run through the complete declared model bank. This fast fixture uses an artificial contiguous clue mask, not the K4 clue geometry."))]
+    return [{"id":name,"label":label,"kind":"exact","command":command,
+             "description":description,"request":json.loads((ROOT/"examples"/(name+".json")).read_text())}
+            for name,command,label,description in (
+                ("validate-holdout","validate-holdout","Reduced-clue recovery", "Rerun model selection without withheld values, then assess predictions. All supplied positions are masked; public K4 clues remain retrospective."),
+                ("validate-controls","validate-controls","Competing models · fast controls", "Two authored messages and paired shuffles through a complete declared bank, with an artificial contiguous clue mask."),
+                ("validate-k4-shaped","validate-controls","K4-shaped multilingual benchmark", "Reserved authored messages with the actual separated K4 clue positions and competing layered/grid recipes; completion and censoring are explicit."),
+                ("validate-ablations","validate-ablations","Refit after removing a technique", "Remove each substitution or neutralize a route, refit remaining keys without held answers, and compare withheld predictions."))]
 
 
 def presets():
@@ -41,10 +43,14 @@ def presets():
         {"id":"demo-optimize","label":"Control · exact optimization with optional scan seed","description":"Check exact pruning and verified CPU/GPU incumbent seeds on a small synthetic family.",
          "kind":"exact","command":"optimize-plus","request":json.loads((ROOT/"examples/optimize-lazy.json").read_text())}]
     for name,command,label in (("joint-ragged","joint","Control · joint column/key recovery"),
+                                ("joint-ranked","joint-ranked","Control · rank unknown routes and keys"),
                                 ("scheduled-shared","scheduled","Control · shared key and sculpture schedule"),
                                 ("mixed-shared","mixed","Control · different alphabets")):
         records.append({"id":name,"label":label,"description":"A reproducible small fixture with independent literal replay.","kind":"exact","command":command,
                         "request":json.loads((ROOT/"examples"/(name+".json")).read_text())})
+    optimizer=next(r for r in records if r['id']=='demo-optimize')
+    optimizer['request'].update(decomposition='auto',guided_seed={'seed':0,'restarts':4,'max_evaluations':256,'max_sweeps':4,'top':3,'max_factor_evaluations':20000})
+    optimizer['description']='Guided feasible seeds and exact decomposition on a small control, with managed pause/resume checkpoints.'
     return records
 
 

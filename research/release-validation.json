@@ -1,138 +1,113 @@
 {
   "schema": "kryptos.release-validation.v1",
-  "version": "0.2.0",
-  "date": "2026-10-13",
+  "version": "0.3.0",
+  "date": "2026-10-20",
   "publication": {
-    "repository": "https://github.com/gearashi/KryptosSolverK4AndK5",
-    "status": "published; source commit verified on remote main",
-    "verified_source_commit": "9fa53c468689b916c04eb4231c33924a0fc9e6e6",
-    "verified_at_utc": "2026-10-13T19:46:45.435671+00:00",
-    "verification": "git ls-remote origin refs/heads/main equals local git rev-parse HEAD after push; later metadata commit records this verification without changing tested source"
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "status": "validated; awaiting publication",
+    "verified_source_commit": null
   },
-  "historical_release": "research/runs/release-L-002/release-validation.json",
+  "historical_release": "research/runs/release-M-002/release-validation.json",
   "fresh_checkout": {
-    "method": "git checkout-index from curated staged content; project .venv used only as interpreter",
-    "tests": 310,
-    "passed": 309,
+    "schema": "kryptos.package-tests.v1",
+    "tests": 368,
+    "passed": 367,
     "skipped": 1,
-    "skip_reason": "Optional strict source audit requires excluded original third-party HTML",
-    "seconds": 72.94,
-    "gpu_test_opt_in": true,
-    "log": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
-    "log_sha256": "ff61645c05cc21d73e84cbf271fc182d572015210cd7c4868e35dce0bece81d2",
-    "canonical_manifests_verified_against_packaged_bytes": true,
-    "tested_code_files_unchanged": 87
+    "actual_cuda": true,
+    "cuda_path_removed": true,
+    "files_verified": 1574,
+    "tested_files_unchanged": true,
+    "log": "research/runs/release-N-004/fresh-checkout-tests.txt",
+    "log_sha256": "e2f6513a3bd5b43247607244006a55cceaa4615703010a53aa12d20170b9f229",
+    "method": "Curated tracked and nonignored source/evidence copied byte-for-byte; installed venv used only as interpreter; isolated cwd/runtime, no excluded caches or corpora.",
+    "skip_reason": "Optional strict source audit requires excluded third-party HTML.",
+    "wall_seconds": 71.594,
+    "test_runner_seconds": 59.609,
+    "timing_scope": "wall_seconds includes the isolated wrapper lifecycle; test_runner_seconds is unittest reported duration."
   },
   "browser": {
-    "summary": "research/runs/release-M-002/browser/browser-validation.json",
-    "summary_sha256": "b20f13eb35faa8144bb2617f7862e4696c509955b3f24746617e4b5893e42f9c",
-    "successful_assertions": 42,
-    "evidence_inventory": "research/runs/release-M-002/browser/files.json",
-    "source_stage_note": "Actual Windows campaign, CPU, CUDA, optimizer and validation flows ran before the later POSIX idempotent-close guard and elapsed-time rounding fix. No production source was edited during those jobs. Those unrelated later changes are covered by the root final full suite and canonical M002 audit. Final static UI hashes are recorded here; the mobile table fix was checked against saved results without rerunning searches."
-  },
-  "canonical_audits": [
-    "research/runs/release-M-002/persistent/manifest.json",
-    "research/runs/release-M-002/search-quality/manifest.json"
-  ],
-  "benchmark": {
-    "scope": "20 fixed synthetic pages of256 candidates per mode/backend; no K4/K5 search; end-to-end includes process startup and shutdown. OS/file caches are not cleared; modes run in declared order.",
-    "device": "NVIDIA GeForce RTX 2060",
-    "records": [
-      {
-        "backend": "cpu",
-        "mode": "one-shot",
-        "evaluated": 5120,
-        "wall_seconds": 18.53934340015985,
-        "exact_cpu_rescores": 5120,
-        "device_cache_hits": 0
-      },
-      {
-        "backend": "cpu",
-        "mode": "persistent",
-        "evaluated": 5120,
-        "wall_seconds": 5.414250300033018,
-        "exact_cpu_rescores": 5120,
-        "device_cache_hits": 0
-      },
-      {
-        "backend": "cuda",
-        "mode": "one-shot",
-        "evaluated": 5120,
-        "wall_seconds": 75.97411950002424,
-        "exact_cpu_rescores": 61,
-        "device_cache_hits": 0
-      },
-      {
-        "backend": "cuda",
-        "mode": "persistent",
-        "evaluated": 5120,
-        "wall_seconds": 5.285016400041059,
-        "exact_cpu_rescores": 61,
-        "device_cache_hits": 19
-      }
-    ],
-    "independent_retained_checks": 240,
-    "lifecycle": {
-      "active_cancel_killed_worker": true,
-      "crash_restarted": true,
-      "timeout_restarted": true,
-      "pids": [
-        97176,
-        143272,
-        297904,
-        176252
-      ]
+    "summary": "research/runs/release-N-004/browser/browser-report.json",
+    "summary_sha256": "c2a0681217ae0b051cafb2329adf953f25978f0cf024334e88ec66c6e4329534",
+    "successful_assertions": 43,
+    "javascript_errors": [],
+    "cuda_policy": "required",
+    "skipped": [],
+    "evidence_inventory": "research/runs/release-N-004/browser/files.json",
+    "scope": "Actual local server browser checks with synthetic CPU controls and required actual CUDA comparison; no reserved multilingual bank rerun. Scores and fits are not authentication.",
+    "visual_review": "research/runs/release-N-004/browser-review.json",
+    "visual_review_sha256": "95b4cf62fd48ee1beac45b34e85b83be68cb3709b70a70c760890365b2dbe793",
+    "runner_tests": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "log": "research/runs/release-N-004/browser-node-tests.txt",
+      "log_sha256": "33b7f545cd33fd582d022018862bf8cb9dc4aaf77355a5e34fe4402ac5792fac"
     }
   },
-  "search_quality": {
-    "partial_assignments_checked": 81,
-    "fixed_discriminator_nodes": [
-      15,
-      1
+  "canonical_audits": [
+    "research/runs/release-N-004/search/manifest.json",
+    "research/runs/release-N-004/validation/manifest.json",
+    "research/runs/release-N-004/persistent/manifest.json"
+  ],
+  "audit_summary": "research/runs/release-N-004/audit-summary.json",
+  "audit_summary_sha256": "9cd9797590e0786c0af9dff0077f0abfd9f12422f3a8684e525b183b9d51a1e0",
+  "review": {
+    "perspectives": [
+      "correctness",
+      "performance",
+      "model_coverage",
+      "usability",
+      "reliability"
     ],
-    "cuda_seed_page": 26,
-    "cpu_verified_seeds": 3,
-    "unchanged_exact_optimum": true,
-    "holdout_selected_predictions_correct": 2,
-    "holdout_selected_predictions_total": 2,
-    "control_candidate_visits": 2808,
-    "positive_cases": 2,
-    "positive_truth_rank": [
-      1,
-      1
+    "fixes": [
+      "Campaign continuation after interrupted child/outcome commit.",
+      "Adaptive slice growth for timed-out decomposition with restored parent.",
+      "Portable browser validation and explicit frontier-progress evidence."
     ],
-    "limits": "Fixed bounded authored controls; no false-positive probability or K4/K5 solution."
+    "no_further_concrete_gap_found_in_reviewed_scope": true
   },
-  "package_source_hashes": {
-    "kryptos/__main__.py": "014e7b7982f22ba2b3252599f3598a09e2f8183efc9f522c6cdb33932f0dfdbc",
-    "kryptos/accelerated.py": "6c9a292659bfd9a73b9e2536d3d4c70718e9ee877bb20a32487f0b7c3025275f",
+  "source_sha256": {
+    "OpenDashboard.cmd": "48f00633d010d53983305defb22842ee718e60484503a1d30b29004313685c48",
+    "OpenDashboard.ps1": "2ce4556eceeaa589f86dd24ea62305648de3f902717df88f870a56eea09c568d",
+    "OpenDashboard.sh": "7fed4524bea3356220a1b902e8d060bd0fdb3dc3925838718ecc7383dc2baf4b",
+    "Setup.cmd": "32ac7fe6a1b6990df2a186bf373fdfc98da0088d180426ab855b3940ac02fee0",
+    "Setup.ps1": "bf286a728eddcc58a66751a25cb093ee296e18c94f8e433ac5c5ea2f5846226d",
+    "Setup.sh": "e06180bd3c828b9ba232165f3fd245e405aeaabce95c0eb948a897584e256060",
+    "kryptos/__main__.py": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
+    "kryptos/ablations.py": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
+    "kryptos/accelerated.py": "81eef8d7a551ef980c2d5584f77e0907f7df5e46172118ddb45f089406bf8a2d",
     "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
     "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
-    "kryptos/app.py": "a1eb120ad5d539495cb68bfd7ed3d766cc9c26a79356e86cdefcb4b45282a7f1",
-    "kryptos/app_jobs.py": "e0798500d9bef421c5990dd55ef7cebe3fe55c229b6563327f386d251a371973",
-    "kryptos/app_worker.py": "8358075c66bbb12f4e0ce8c3a249c5c613dc3eb662cd195ff679ddfbd0f77b4f",
-    "kryptos/campaigns.py": "4c33fd550d6669ca904574707dee3958c144300a8844c035f522c0ebf839a5a3",
+    "kryptos/app.py": "bef219aba30fd2405235a7f9f73648d9e0203807c0d5b9d62630e85348856270",
+    "kryptos/app_jobs.py": "b51e5559d0bb5475b6a08c5547c7c5ea0bc6e4d6644a03b048828d25285bad2f",
+    "kryptos/app_worker.py": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
+    "kryptos/campaigns.py": "d7c9d59aca4bab02a71b034dae902d3d11bbc4c09058c171459be580ed421be7",
     "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
     "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
     "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
     "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
     "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
     "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
     "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
     "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_decomposition.py": "8219bbbd2b6ab56dbe1e36a92b48f262c21fe0aa9ce7326969ada501a3a2f1b4",
     "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
     "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
     "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
     "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
     "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/guided_search.py": "3c529bd5492754c694172ba982fb4124d3cd6e8d905b936339c3dd53a86f4d34",
+    "kryptos/hypotheses.py": "f3275197f5ae2974a148c8c82445f263e56ac37b97e4a4b2479bd6e1be96287b",
     "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
     "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/joint_ranked.py": "9f2738688e824d14a353710e17fac12632a1b7f7a0c8a4ac0826dbc4aaed1037",
     "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
     "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
     "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
     "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
-    "kryptos/next_cli.py": "07a74c1007fb9abf30031ea7d578782db0b9abfafc1ad7326d165694a306aab2",
-    "kryptos/parallel_search.py": "e4af6998e9277ae0afef15abcfbc86bdfd8e4bd9c6641b3596671eab814fa83f",
+    "kryptos/next_cli.py": "84cd39be89747cbfc978d4ca3998484cc0cf65ed3f1dbf8e2c8db8060934b1dc",
+    "kryptos/parallel_search.py": "9ca29a8175407dc7a3573334f7aa49f82321f9013cd30db39377abaa5a6e0412",
     "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
     "kryptos/process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
     "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
@@ -142,34 +117,44 @@
     "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
     "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
     "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
-    "kryptos/search_runtime.py": "6d918caee9dcbb94e757c8584478b6062a2957a3aa59ca83c439668441defa0d",
+    "kryptos/search_runtime.py": "58118ce9bc5f539266a77edb035818aebb039e943025604685894aec4d8457bd",
     "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
-    "kryptos/static/app.js": "397fb28869d6887b7e1ce63b89eb5e99608c6917af35b160f38f4de3da765684",
-    "kryptos/static/index.html": "c69badbbb8a36016d7c8585a4a5397df87eec759c3e7d03dd51c305ce2a04c21",
-    "kryptos/static/mark.svg": "772c2f271ca534956f2cc91181daabdd7290f1572cb7b5c705dabe0bea17b04e",
-    "kryptos/static/style.css": "b8d42b820e786d4ce09b02641877d10fdfe3e17b307663dad96b056298abdc7c",
-    "kryptos/validation_protocols.py": "8cd106e53e53f150427ff83bdf13d57e8ae42bbd8dc85b43097b93ae40f3a668",
+    "kryptos/static/app.js": "c08a9232a5041a9eb18e83e218c786b4a769a582e65d9fb25df426c4695536a8",
+    "kryptos/static/index.html": "34c81bf6ab6efae9eaddccbd32d5177e96f732beeff9071e131b8aad203d2c63",
+    "kryptos/static/style.css": "9586d34775d8350f6b241bb1fd87efd128157b3f61eefef755dd6155bbd6f46c",
+    "kryptos/validation_protocols.py": "10bb78edc6b84415d2bcdab978506f63876114a24036c024859b3133cc64e701",
     "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "requirements-gpu.txt": "ccf281b2be54262f23fe1fd59aeca703d7dcb1928294367754655fe86e1a4078",
+    "research/browser_validation.cjs": "e34e05f55b498f667975a6bd661d375ecf13f846cef88b760b59e02efd5ef81d",
+    "tests/browser_validation.test.cjs": "ad0efde659c4b98803bf3358d6c938c58d32e52a96a0c77f4c18d2ca65914225",
+    "tests/test_ablations.py": "a90f35d6b7e926e212c336365c6cb54dcde4875eecbca01604aa978f210c99b7",
     "tests/test_accelerated.py": "d4e4d0fe6bb0bc0a29812c2f4d87e7251a80e2267832a0c571e3858e6d78275d",
     "tests/test_advanced_cli.py": "a8b8f72e6007869605dddc4b98d5f4a049ebd34785117dccc19f85ef423d274c",
     "tests/test_alphabet_propagation.py": "a168c774b6712d6e7fb3585e081f9082a9d174fc3510c34a81469e9e849ab696",
-    "tests/test_app_http.py": "e71ced40364bb4e7956c91e8b7f0e654c89c8f0657b1b7b5933b39ee70945ddd",
+    "tests/test_app_http.py": "2c43ac3d429749d3d872ad3fcfb68e6f7c94dbffcff38f7926fb3ea47687f13d",
     "tests/test_app_jobs.py": "4d2d0de9d85e91eec285108de426b294fafbf2fe0d5a44e86f8d90243cc52623",
     "tests/test_calibration.py": "ff133045e8564d2e944663aaca4c282d7ecb89bb1d6d0ec413b377b32cd1f1b2",
-    "tests/test_campaigns.py": "edbded2302965bbfc761117c590900c2b825df522e62afdaecff199fc289928b",
+    "tests/test_campaign_cache.py": "2b8b94f321eb8b7b67c31a7235e14b6129840645ee0c4548e0ddbedb8a57d026",
+    "tests/test_campaigns.py": "31c9c805d86811aa45d9ce7345502074e2a80f1a56bdeedc482071c637301080",
     "tests/test_cli.py": "3474a447ada0313650d88e28a44245a33a73b217f2cb9727dc3cdbafb37e2301",
     "tests/test_columnar.py": "22782e2d52895138bd92cb1f34541d7483a8d9d2532c36f333c00bba648d49a4",
     "tests/test_correlated_bound.py": "9c21237a1e9c0e0ba673b70a5e91758a70517d9393fbfd6cf3f7c0a6a00d2973",
+    "tests/test_cuda_environment.py": "bca9770ca8581c4e6cd63957dd770c37ab75d0c30f7d632e452bd78766876f8a",
     "tests/test_engine.py": "12ae5ea94c84b6fd01653d7e4c1d5ad8272e3e2e3397cfbc1e7ed12e5a785c53",
+    "tests/test_exact_resume.py": "b6ea64d0490a783a7d1ecdc931b37f1f3b70072551005d36f0d268fb534b70f3",
     "tests/test_experiments.py": "0d13a750d9081696af9042c9d35914c4ffe599856080bbba6885f8530f59e040",
     "tests/test_explanations.py": "20eed5321a5ec021328204748bf7deb003927e1e9ebd68c7afacc8009f9be655",
+    "tests/test_factor_decomposition.py": "dac623f3756699a7f8a31108c9ffc69be80ff181c3a6a8848ef7b0eb50935d34",
     "tests/test_factor_search.py": "8438f240c1345bee949b269669fdf6c643a1d7f964e29930bf37eee692522887",
     "tests/test_family_identity.py": "a11588957660f9a32db4c7a8ea89a1826c962d6ffc7b203f67baa7072da92e42",
     "tests/test_fractionation.py": "477dd41c21a9e327e05d24af54f6910ac33d9a12eae90fbad5e544ca67138563",
     "tests/test_general_layers.py": "2494a0c954e2e34f83127ffb4fd0194a994cbd06013ddd1a7c4f87f31513034b",
     "tests/test_grid.py": "634029f0aae3d443da7ce738f6c0c3d591be65eef9b2c0db82b8bcfe7fb894bf",
+    "tests/test_guided_search.py": "ca8f1a91a8808d97b147b083e9987a2ca810cf13ddc8dbe9c0d92a7fed0e9b79",
+    "tests/test_hypotheses.py": "e1865af4254d477012bb66b61bc7a2f0308b85539c07317b73b7c71b9b2bd9a8",
     "tests/test_import_inspector.py": "5f96f5bfae663c2cd0b9d01d8ff7cf6a4ebcdb17ad7be9f099de6b8534179d24",
     "tests/test_joint_columnar.py": "2b45fbe81a7a556106e449fa9d01e61723d7a02ac9ed440ba422652ae76374bd",
+    "tests/test_joint_ranked.py": "adf0946a7586bac0f882f7c4d39bad0a1e737c700aeea1f53269da22a7189c6c",
     "tests/test_keyed_alphabet.py": "8d7a4ff08ac3ba0340286edb2b73f94e1f19e28ede2f250b14449841015b7d1e",
     "tests/test_keyed_alphabet_audit.py": "6b4a21c29eabb6c66300ea85087245f6a237ba68b410a1ef507e6da78580aa26",
     "tests/test_language.py": "d674e598fad90a0115306a586a75bb4204d46771b9fc71d31a7f2155de72d391",
@@ -181,63 +166,30 @@
     "tests/test_position_residues.py": "07c0f3b1085a9bafbd957b2b18c32690ceba2f339d231d0af5826ff02a5a8c27",
     "tests/test_process_lifetime.py": "2db35647b819cee1a971f9b5ae405c9943630ccd51992235193ee0ea38f882b2",
     "tests/test_recovery.py": "9ee57f494454023ecc4f7a1a30c6823f32d623fb7bb7153be80091ae73f46bc6",
-    "tests/test_resource_controls.py": "30c675d63555b228e0b6f5961220d9d9f3a3c1627e260b5a6479a7bee6aad3b3",
+    "tests/test_resource_controls.py": "652ba5ad61c934aeda09f22e276696133038896754bccf7b5429eb9e597f9671",
     "tests/test_scheduled_layers.py": "c6ee0989d8dceafb6bb0a9c6ce6d6456f8dca4cbe00e1d6232f58a22c071c612",
     "tests/test_score_sensitivity.py": "3592c92adca00aeee7f2109756a8fd90152b56bb75c3ffcce9bf4ce839abf488",
     "tests/test_scoring.py": "e469c9b205d2fa42619c59a075419ddb3297a98b669a301e2655db7e726404a5",
     "tests/test_sculpture.py": "390f6bc024582209c0490059de4b6c3b5fa5474a6e283a0281560f3483fcb6ac",
     "tests/test_search_enhancements.py": "578f98e689be1ad7cf5c6dce0197b78835a40986937e9f66fbfb76d7bd0b7ca0",
     "tests/test_search_runtime.py": "6dde7a804af09682eb32f008154079ef119a51af990cea2d51c1dc52fe5aab19",
+    "tests/test_search_strategies_audit_N.py": "083008654c2c69941d13ad53f1eca945a917b30b46d3d8ef4421035384f36f4f",
+    "tests/test_search_strategies_cli.py": "adc0da532871e872ab04d256a9ba6e35e04ca1868a7a6b46d3335ebb6fae19f8",
     "tests/test_semantic.py": "12fed4f3c8a440b5f7a42692ede64143c5890ea21deffa7ea3be0c55297e666b",
+    "tests/test_validation_N.py": "a761eb5702cf1bf2ee98bd6f37460294b9cad6293b66f84825afc1e2999412ae",
     "tests/test_validation_protocols.py": "33886a5251ab9b225b3b1ad2ab272da8667a1db22468202696682ba8d8dfda46",
     "tests/test_worker_pool.py": "bd319fc19c06fc2d6d37bdf9e9106ff86c32c005a346f8b6c0f34bb9538f597c"
   },
-  "publication_review": {
-    "status": "passed",
-    "raw_third_party_caches_excluded": true,
-    "environments_and_runtime_excluded": true,
-    "staged_file_count": 454,
-    "staged_bytes": 10923115,
-    "credential_pattern_matches": 0,
-    "excluded_path_matches": 0,
-    "browser_artifacts_verified": 44
-  },
-  "resolved_test_attempts": [
-    {
-      "log": "research/runs/release-M-002/unit-tests.txt",
-      "reason": "Elapsed-time cancellation error fixed with deterministic regression; Windows file cleanup now asserts no live owned descendants before bounded sharing retry."
-    },
-    {
-      "log": "research/runs/release-M-002/fresh-checkout-tests.txt",
-      "reason": "Cold-start real-worker correctness test deadline increased to 30 seconds; workload remains 26 candidates. Final clean run passes."
-    }
+  "source_files_unchanged_after_tests": true,
+  "limitations": [
+    "Frozen previously observed synthetic controls were reproduced, not newly reserved after outcomes.",
+    "Guided comparison budgets equal objective evaluations, not unique points or wall time.",
+    "Each reserved positive retains only one inequivalent plaintext family; overlapping records are aliases.",
+    "Twenty small fixed pages and retained top3 checks do not imply a general GPU speedup.",
+    "No K4/K5 search, authenticated decipherment, probability calibration or causal/historical stage necessity.",
+    "The optional raw-source audit is skipped; normalized packaged integrity tests pass.",
+    "Source changes intentionally prevent resuming saved results against mismatched implementations.",
+    "This closes the accepted implementation batch, not all possible future improvements."
   ],
-  "limits": [
-    "No authenticated K4/K5 decipherment",
-    "No authenticated public K5 ciphertext bundled",
-    "Certified ranking applies only to the declared family, model, mask and evaluated coverage; optional approximate mode is labeled",
-    "Positive/null and clue-holdout results are bounded diagnostics, not solution probabilities",
-    "Time budget checked between waves; separate 60-second worker deadline",
-    "No claim that no future improvement exists",
-    "Windows RTX2060/Python3.12.2 hardware tested; POSIX process cleanup tested through mocks, not actual Unix hardware"
-  ],
-  "launcher_smoke": {
-    "command": "OpenDashboard.ps1 -NoBrowser",
-    "status": "passed",
-    "version": "0.2.0",
-    "url": "http://127.0.0.1:8767/",
-    "api_status": {
-      "run": null,
-      "campaign": null
-    },
-    "actual_compiled_cuda_probe_ready": true,
-    "devices": [
-      "NVIDIA GeForce RTX 2060"
-    ],
-    "validation_preset_count": 2
-  },
-  "canonical_manifest_hashes": {
-    "research/runs/release-M-002/persistent/manifest.json": "082cb8800fb60c85b4275626a18657d5b4d5147207cd775fcbc72d66fe9afbe1",
-    "research/runs/release-M-002/search-quality/manifest.json": "2263c53db818be0fc897c39f13e06b03c044ba9a4e2643f8e493f4b1602aa0b2"
-  }
+  "recorded_at_utc": "2026-10-20T16:50:11.913092+00:00"
 }

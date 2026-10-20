@@ -31,11 +31,11 @@ See [the local application guide](docs/LOCAL_APP.md) for interpreter selection, 
 ## Controls and interpretation
 
 - CPU scans use exact integer scoring. CUDA defaults to certified ranking: rigorous score intervals retain every possible top candidate for exact CPU comparison and encryption replay. A separate approximate mode is explicitly labeled.
-- Persistent workers reuse prepared families and GPU buffers across pages. The exact optimizer can accept independently verified CPU/GPU scan seeds and jointly bound overlapping scoring factors.
-- **Campaigns** expand a recipe matrix into durable jobs. Completed jobs survive restart. Proved equal plaintext families with identical scoring reuse completed exact rankings, while each recipe gets its own reconstructed keys and replay.
-- **Validation** reruns selection with withheld clue values removed, or compares the declared model bank on newly authored positive messages and paired shuffled controls. These are bounded diagnostic experiments, not solution probabilities.
+- Persistent workers reuse prepared families and GPU buffers across pages. The exact optimizer accepts verified CPU/GPU scan seeds, guided feasible-family seeds, joint factor bounds and exact component/separator elimination. Unknown column routes and keys can also be ranked jointly by a frozen language model.
+- **Campaigns** expand an explicit recipe matrix or bounded S/T grammar into durable jobs. Completed exact rankings can be reused across campaigns when the plaintext family, model and mask agree; each recipe gets its own reconstructed keys and replay.
+- **Validation** reruns selection with withheld clue values removed, compares positive and shuffled controls, and refits recipes after removing a stage or route. The harder preset uses K4's separated clue positions with multilingual texts and competing layered/grid methods. These are bounded diagnostics, not solution probabilities.
 - **Inspect & trace** independently replays imported JSON and follows individual letters through substitutions, gathers, and coordinate shifts. Imported verification claims and file paths are treated as data.
-- **Pause** completes and commits the current scan wave. **Stop** discards its in-flight work and preserves earlier committed results. Resume uses the saved position and checks source/model identity.
+- **Pause** commits the current scan wave or exact optimizer frontier. **Stop** discards in-flight work and preserves earlier commits. Resume checks saved-data integrity and source/model identity. Exact slices can grow within the declared limit when rebuilding a large frontier consumes a slice.
 - The run time budget is checked between waves; every worker has a separate 60-second outer deadline. CPU family scans support up to four workers; CUDA uses one worker/context. Worker count, idle intervals and adaptive page duration can change at committed boundaries, with a saved event history.
 - Known clue letters and every n-gram touching them are masked from ordinary language scoring. A reporting-only sensitivity diagnostic can also mask letters fixed indirectly by the model.
 - Re-encryption, crib consistency and a high language score do not authenticate a solution. Results describe their assumptions and actual bounded coverage. Nothing is submitted to an external service.
@@ -51,12 +51,15 @@ python -m kryptos doctor
 python -m kryptos layout
 python -m kryptos layers --request examples/layers-small.json
 python -m kryptos joint --request examples/joint-ragged.json
+python -m kryptos joint-ranked --request examples/joint-ranked.json
 python -m kryptos scheduled --request examples/scheduled-shared.json
 python -m kryptos mixed --request examples/mixed-shared.json
 python -m kryptos optimize-plus --request examples/optimize-lazy.json
 python -m kryptos batch --request examples/batch-lazy.json
 python -m kryptos validate-holdout --request examples/validate-holdout.json
 python -m kryptos validate-controls --request examples/validate-controls.json
+python -m kryptos validate-controls --request examples/validate-k4-shaped.json
+python -m kryptos validate-ablations --request examples/validate-ablations.json
 ```
 
 See [checkpoint K commands](docs/CLI_CHECKPOINT_K.md), [earlier command examples](docs/CLI_EXAMPLES.md), [bounded results and limits](research/IMPROVEMENTS_K.md), and [the research history](research/STATUS.md). These document joint column/key recovery, shared keys and offsets, multiple known alphabets, coordinate-driven schedules, fractionation, arbitrary substitution feasibility, semantic hypotheses and exact constraint witnesses. The normalized sculpture dataset represents ordinal textual coordinates, not measured three-dimensional geometry.
@@ -65,9 +68,9 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 ## Validation and packaged data
 
-This release restores version 0.2.0 with the Windows CUDA component-path fix. See [the October 20 republication note](docs/REPUBLICATION.md) for its clean-history publication and verification. The measurements below describe the preceding release audits.
+Version **0.3.0** completes the [eight phase N improvements](research/IMPROVEMENTS_N.md), including the resumed review fixes. It retains the Windows CUDA component-path fix and continues the recreated repository’s gearashi history.
 
-The curated publication checkout ran **310 tests: 309 passed and one optional raw-source audit skipped** because the original third-party pages are not distributed. Actual NVIDIA GPU tests passed. **42 browser checks** exercised campaigns, resource changes, certified CUDA ranking, seeded optimization, validation, import, export and letter tracing at desktop and mobile sizes. Final reproducible audits are retained in `research/runs/release-M-002/`; the persistent-worker audit compares 20 pages per mode/backend, and the search-quality audit checks seeds, joint bounds and competing controls. See [all nine improvements](research/IMPROVEMENTS_M.md) and [release validation](research/release-validation.json) for measurements, source hashes and limitations.
+The clean publication package ran **368 tests: 367 passed and one optional raw-source audit skipped** because the original third-party pages are not distributed. Actual NVIDIA GPU tests passed. **43 browser checks** exercised the new workflows, CPU/CUDA ranking, pause/resume, campaign reuse, resource changes, export/import and desktop/mobile views without JavaScript errors. Three fresh [N004 audits](research/release-N-004-audit-notes.md) verify bounded search controls, the unchanged multilingual bank, and20,480 CPU/CUDA candidate evaluations with240 independent retained score/replay checks. See [release validation](research/release-validation.json) for hashes and limits. Historical M and N001–N003 evidence remains unchanged.
 
 Run the CPU suite with:
 

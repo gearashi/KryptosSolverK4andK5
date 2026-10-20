@@ -1,5 +1,6 @@
 """Durable bounded recipe campaigns with exact, conservative family reuse."""
 import copy
+import hashlib
 from itertools import product
 import json
 from pathlib import Path
@@ -18,12 +19,21 @@ def _flat(config):
     return {k:copy.deepcopy(config[k]) for k in ("kind","command","request","note")}|copy.deepcopy(config["settings"])
 
 def preview_campaign(body):
-    if not isinstance(body,dict) or set(body)-{"base","axes","name"}:
-        raise ValueError("Campaign requires base, axes and optional name only")
+    if not isinstance(body,dict) or set(body)-{"base","axes","name","generator"}:
+        raise ValueError("Campaign requires base, axes or generator, and optional name")
     name=body.get("name","Recipe campaign")
     if not isinstance(name,str) or not 1<=len(name)<=100:
         raise ValueError("Campaign name must contain1..100 characters")
     base=body.get("base")
+    if 'generator' in body:
+        if body.get('axes'):
+            raise ValueError('Use a grammar or explicit axes, not both')
+        from .hypotheses import generate_configs
+        generated,summary=generate_configs(_flat(validate_start(base)),body['generator'])
+        jobs=[{'id':f'job-{i+1:03d}','config':_flat(validate_start(row['config'])),
+               'changes':{},'generation_aliases':row['generation_aliases']} for i,row in enumerate(generated)]
+        return {'name':name,'jobs':jobs,'job_count':len(jobs),'generation':summary,'limits':{'max_jobs':128},
+                'interpretation':summary['interpretation']}
     axes=body.get("axes",[])
     if not isinstance(axes,list) or len(axes)>6:
         raise ValueError("Campaign allows at most6 axes")
@@ -56,7 +66,7 @@ def preview_campaign(body):
                 raise ValueError(f"Axis path is absent: {path}") from error
             changes[path]=value
         config=_flat(validate_start(config))
-        if config["command"] in {"validate-holdout","validate-controls"}:
+        if config["command"] in {"validate-holdout","validate-controls","validate-ablations"}:
             raise ValueError("Validation protocols already select a model bank; run them separately")
         fingerprint=json.dumps(config,sort_keys=True,separators=(",",":"),allow_nan=False)
         if fingerprint not in seen:
@@ -87,6 +97,15 @@ class CampaignManager:
         self.desired=None
         self.preflight_pool=None
         self.closed=False
+        self.cache_path=self.directory/'completed-families.json'
+        self.completed_cache={}
+        try:
+            if self.cache_path.stat().st_size<=4*1024*1024:
+                cached=json.loads(self.cache_path.read_text())
+                if cached.get('schema')=='kryptos.completed-family-cache.v1' and isinstance(cached.get('entries'),dict) and len(cached['entries'])<=1000:
+                    self.completed_cache=cached['entries']
+        except (OSError,ValueError,AttributeError):
+            pass  # Cache is expendable. Saved runs remain authoritative.
         for path in sorted(self.directory.glob("*/campaign.json")):
             try:
                 value=_decode(json.loads(path.read_text()))
@@ -132,6 +151,8 @@ class CampaignManager:
             record={"schema":"kryptos.campaign.v1","id":key,"name":plan["name"],"state":"running","created_at":now(),"updated_at":now(),"error":None,"plan":copy.deepcopy(body),
                     "jobs":[dict(j,state="queued",run_id=None,classification=None,alias_of=None,family_identity=None) for j in plan["jobs"]],
                     "source_identity":_identities(plan["jobs"]),"interpretation":plan["interpretation"],"authenticated_solution":False}
+            if 'generation' in plan:
+                record['generation']=plan['generation']
             self._save(record)
             self.records[key]=record
             self.current=key
@@ -174,6 +195,48 @@ class CampaignManager:
         if _identities(record["jobs"])!=record["source_identity"]:
             raise ValueError("Source/model files changed; campaign cannot commit new work")
 
+    def _remember_completed(self,record,job):
+        identity=job.get('family_identity') or {}
+        if job['state']!='completed' or not identity.get('eligible') or not job.get('run_id'):
+            return
+        run=self.manager.view(job['run_id'])
+        if run['kind']!='accelerated' or run['state']!='completed' or run.get('ranking_exact_over_committed_pages') is not True:
+            return
+        path=self.manager.directory/run['id']/'run.json'
+        entry={'campaign_id':record['id'],'job_id':job['id'],'run_id':run['id'],
+               'run_sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+        self.completed_cache[identity['scoring_family_sha256']]=entry
+        while len(self.completed_cache)>1000:
+            del self.completed_cache[next(iter(self.completed_cache))]
+        try:
+            atomic_json(self.cache_path,{'schema':'kryptos.completed-family-cache.v1','entries':self.completed_cache})
+        except OSError as error:
+            record['cache_diagnostic']='Completed run saved; optional cache write failed: '+str(error)
+
+    def _cached_completed(self,identity):
+        entry=self.completed_cache.get(identity.get('scoring_family_sha256')) if identity.get('eligible') else None
+        if not isinstance(entry,dict):
+            return None
+        try:
+            run_id=entry['run_id']
+            if not isinstance(run_id,str) or not re.fullmatch('[0-9a-f]{32}',run_id):
+                return None
+            path=self.manager.directory/run_id/'run.json'
+            if hashlib.sha256(path.read_bytes()).hexdigest()!=entry['run_sha256']:
+                return None
+            run=self.manager.view(run_id)
+            if (run['kind']!='accelerated' or run['state']!='completed' or run.get('ranking_exact_over_committed_pages') is not True
+                    or run['source_identity']!=source_identity(run['request'])
+                    or run['progress']['completed']!=run['progress']['total']):
+                return None
+            owner=self.records[entry['campaign_id']]
+            original=next(j for j in owner['jobs'] if j['id']==entry['job_id'] and j['run_id']==run_id)
+            if (original.get('family_identity') or {}).get('scoring_family_sha256')!=identity['scoring_family_sha256']:
+                return None
+            return entry,run
+        except (KeyError,ValueError,OSError,TypeError,StopIteration):
+            return None
+
     def _task(self,key,job):
         from .worker_pool import PersistentWorkerPool
         if self.preflight_pool is None:
@@ -198,7 +261,7 @@ class CampaignManager:
             if self.desired:
                 current=self.manager.view(job["run_id"])
                 if current["state"]=="running":
-                    action="pause" if self.desired=="pause" and current["kind"]=="accelerated" else "stop"
+                    action="pause" if self.desired=="pause" and current.get('can_pause') else "stop"
                     self.manager.control(action,job["run_id"])
                 elif self.desired=="stop" and current["state"]=="pausing":
                     self.manager.control("stop",job["run_id"])
@@ -219,7 +282,10 @@ class CampaignManager:
                     self._check_identity(record)
                 if job["run_id"] and job["run_id"] in self.manager.records:
                     run=self.manager.view(job["run_id"])
-                    if run["state"] in {"paused","stopped","interrupted","failed"}:
+                    # Explicit campaign resume can recover an interruption
+                    # after the child cutoff but before its outcome commit.
+                    # Terminal incomplete jobs were already skipped above.
+                    if run["state"] in {"paused","stopped","limited","interrupted","failed"}:
                         self.manager.control("resume",run["id"])
                     run=self._wait_run(record,job)
                 else:
@@ -230,6 +296,19 @@ class CampaignManager:
                             job["family_identity"]=identity
                             self._save(record)
                     identity=job.get("family_identity") or {}
+                    cached=self._cached_completed(identity)
+                    if cached and cached[0]['campaign_id']!=key:
+                        reference,original=cached
+                        replay=self._task(key,{"kind":"alias-candidates","request":job["config"]["request"],"candidates":original["candidates"]})
+                        with self.lock:
+                            if self.desired:
+                                raise InterruptedError('Campaign stopped before cached alias commit')
+                            self._check_identity(record)
+                            job.update(state='equivalent',classification='completed_cross_campaign_family; own_recipe_replayed',
+                                alias_of=reference['job_id'],alias_campaign_id=reference['campaign_id'],alias_run_id=reference['run_id'],
+                                candidates=replay['candidates'],cache_integrity_verified=True)
+                            self._save(record)
+                        continue
                     alias=next((prior for prior in record["jobs"][:index] if prior["state"]=="completed" and (prior.get("family_identity") or {}).get("eligible") and identity.get("eligible") and prior["family_identity"]["scoring_family_sha256"]==identity["scoring_family_sha256"] and prior.get("run_id")),None)
                     if alias:
                         original=self.manager.view(alias["run_id"])
@@ -266,6 +345,7 @@ class CampaignManager:
                     state,classification=self._outcome(run)
                     job.update(state=state,classification=classification,error=run.get("error"))
                     self._save(record)
+                    self._remember_completed(record,job)
             else:
                 with self.lock:
                     record["state"]="completed"
@@ -277,8 +357,12 @@ class CampaignManager:
                 record.update(state="failed",error=str(error))
         finally:
             if self.preflight_pool is not None:
-                self.preflight_pool.close()
-                self.preflight_pool=None
+                try:
+                    self.preflight_pool.close()
+                    self.preflight_pool=None
+                except Exception as error:
+                    with self.lock:
+                        record.update(state='failed',error='Campaign worker cleanup failed: '+str(error))
             with self.lock:
                 self._save(record)
 
@@ -289,3 +373,6 @@ class CampaignManager:
             self.thread.join(timeout=15)
             if self.thread.is_alive():
                 raise RuntimeError("Campaign shutdown is still pending")
+        if self.preflight_pool is not None:
+            self.preflight_pool.close()  # Failure keeps ownership/ref for a later retry.
+            self.preflight_pool=None

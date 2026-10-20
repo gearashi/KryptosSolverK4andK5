@@ -97,13 +97,22 @@ class HttpTests(unittest.TestCase):
     def test_campaign_endpoints_and_single_run_ownership(self):
         from unittest.mock import patch
         info=self.call("/api/info")[1]
-        self.assertEqual(len(info["validation_presets"]),2)
+        self.assertEqual({p["id"] for p in info["validation_presets"]},
+                         {"validate-holdout","validate-controls","validate-k4-shaped","validate-ablations"})
         auth={"Content-Type":"application/json","X-Kryptos-Token":info["control_token"]}
         base={k:v for k,v in next(p for p in info["presets"] if p["id"]=="demo-scan").items() if k in {"kind","command","request"}}
         plan={"base":base,"axes":[{"path":"request.stages.0.period","values":[1,2,3]}]}
         status,value,_=self.call("/api/campaigns/preview",json.dumps(plan).encode(),auth)
         self.assertEqual(status,200,value)
         self.assertEqual(value["preview"]["job_count"],3)
+        generated={"base":base,"generator":{"patterns":["S","ST","TS"],"periods":[1],"routes":["identity","reverse"]}}
+        status,value,_=self.call("/api/campaigns/preview",json.dumps(generated).encode(),auth)
+        self.assertEqual(status,200,value)
+        self.assertEqual(value["preview"]["job_count"],3)
+        self.assertIsNone(self.call("/api/status")[1]["run"])
+        for field in ("checkpoint_path","resume_path"):
+            malicious={"kind":"exact","command":"optimize-plus","request":{**base["request"],field:"runtime/foreign.json"}}
+            self.assertEqual(self.call("/api/start",json.dumps(malicious).encode(),auth)[0],400)
         self.assertEqual(self.call("/api/campaigns")[1],{"campaigns":[]})
         with patch.object(self.server.campaigns,"_begin"):
             status,value,_=self.call("/api/campaigns/start",json.dumps(plan).encode(),auth)

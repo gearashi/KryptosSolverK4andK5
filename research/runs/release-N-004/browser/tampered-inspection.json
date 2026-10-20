@@ -1,0 +1,244 @@
+{
+  "schema": "kryptos.import-inspection.v1",
+  "valid": false,
+  "classification": "verification_failed",
+  "artifact_sha256": "f40de14da550b6cdbb9b4683fc1b9ac39878d0b8fa0cdf81ff5724acdc96637d",
+  "raw_artifact_sha256": "83052f85eedf7a25fbb64ab15a09ad6e41b7cc9a0b7a5196405edd28249d8e06",
+  "artifact_schema": "kryptos.local-run.v1",
+  "legacy_wrapper": false,
+  "recipe_sha256": "32edac0c6bc957cebbae18c0285096fa5d954a9e5c3ff8053a78d878bd3ac3ec",
+  "ciphertext_sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+  "candidate_index": 0,
+  "candidate_count": 20,
+  "candidates": [
+    {
+      "index": 0,
+      "preview": "TSITSTADEDBFTEXU"
+    },
+    {
+      "index": 1,
+      "preview": "TCWTCHANSDLTTOLU"
+    },
+    {
+      "index": 2,
+      "preview": "TSETSPADADBBTETU"
+    },
+    {
+      "index": 3,
+      "preview": "TSWTSHADSDBTTELU"
+    },
+    {
+      "index": 4,
+      "preview": "TISTIDATODRPTUHU"
+    },
+    {
+      "index": 5,
+      "preview": "TICTINATYDRZTURU"
+    },
+    {
+      "index": 6,
+      "preview": "TCITCTANEDLFTOXU"
+    },
+    {
+      "index": 7,
+      "preview": "TACTANALYDJZTMRU"
+    },
+    {
+      "index": 8,
+      "preview": "TIITITATEDRFTUXU"
+    },
+    {
+      "index": 9,
+      "preview": "TASTADALODJPTMHU"
+    },
+    {
+      "index": 10,
+      "preview": "TSSTSDADODBPTEHU"
+    },
+    {
+      "index": 11,
+      "preview": "TIATILATWDRXTUPU"
+    },
+    {
+      "index": 12,
+      "preview": "TGETGPARADPBTSTU"
+    },
+    {
+      "index": 13,
+      "preview": "TEITETAPEDNFTQXU"
+    },
+    {
+      "index": 14,
+      "preview": "TGSTGDARODPPTSHU"
+    },
+    {
+      "index": 15,
+      "preview": "TCSTCDANODLPTOHU"
+    },
+    {
+      "index": 16,
+      "preview": "TCETCPANADLBTOTU"
+    },
+    {
+      "index": 17,
+      "preview": "TESTEDAPODNPTQHU"
+    },
+    {
+      "index": 18,
+      "preview": "TAITATALEDJFTMXU"
+    },
+    {
+      "index": 19,
+      "preview": "TIETIPATADRBTUTU"
+    }
+  ],
+  "declared_target": "custom",
+  "ciphertext": "TIITITATEDRFTUXU",
+  "plaintext": "TSITSTADEDBFTEXU",
+  "reencrypted_ciphertext": "UIIUITBTEERFUUXV",
+  "trace": [
+    {
+      "stage": 1,
+      "operation": "repeat_substitution",
+      "input": "TSITSTADEDBFTEXU",
+      "output": "UIIUITBTEERFUUXV",
+      "output_sha256": "a718570a608acff7aa019dde7d5dd96ba9e2cf3aeae96cbe2bf55e0921cd5160",
+      "output_to_input": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_to_output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "output_to_original": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "original_to_output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "cipher": "vigenere",
+      "key_symbols": "BQABQABQABQABQAB",
+      "key_positions": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ],
+      "formula": "C=P+K mod26"
+    }
+  ],
+  "position_convention": "zero-based",
+  "crib_matches": 1,
+  "crib_total": 1,
+  "crib_failures": [],
+  "ciphertext_differences": [
+    {
+      "position": 0,
+      "expected": "T",
+      "actual": "U"
+    },
+    {
+      "position": 3,
+      "expected": "T",
+      "actual": "U"
+    },
+    {
+      "position": 6,
+      "expected": "A",
+      "actual": "B"
+    },
+    {
+      "position": 9,
+      "expected": "D",
+      "actual": "E"
+    },
+    {
+      "position": 12,
+      "expected": "T",
+      "actual": "U"
+    },
+    {
+      "position": 15,
+      "expected": "U",
+      "actual": "V"
+    }
+  ],
+  "reencryption_matches": false,
+  "source_identity_match": null,
+  "provenance_note": "Artifact and recipe hashes identify supplied data. Saved verification, source/model hashes and path strings are untrusted metadata; no imported path was opened. Current source identity was not compared.",
+  "authenticated_solution": false,
+  "search_started": false,
+  "interpretation": "Literal replay checks the supplied recipe and clues only. It does not authenticate the ciphertext, plaintext, source identity or Kryptos solution."
+}

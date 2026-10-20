@@ -1,0 +1,282 @@
+{
+  "schema": "kryptos.source-snapshot.v1",
+  "created_utc": "2026-10-20T16:45:25.995274+00:00",
+  "audit_manifest": "research/runs/release-N-004/persistent/manifest.json",
+  "audit_manifest_sha256": "c3db00ef0faa35aa15e2749fea2326c5ce10b969c00e676b5e4441d8615d3b15",
+  "snapshot_root": "research/source_snapshots/release-N-004-persistent",
+  "all_current_inputs_verified_before_copy": true,
+  "all_snapshot_copies_verified": true,
+  "snapshot_method": "Persistent wrapper copied before run; verified against both recorded hashes and current bytes after run.",
+  "files": [
+    {
+      "path": "kryptos/__main__.py",
+      "sha256": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
+      "bytes": 13819
+    },
+    {
+      "path": "kryptos/ablations.py",
+      "sha256": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
+      "bytes": 8987
+    },
+    {
+      "path": "kryptos/accelerated.py",
+      "sha256": "81eef8d7a551ef980c2d5584f77e0907f7df5e46172118ddb45f089406bf8a2d",
+      "bytes": 21277
+    },
+    {
+      "path": "kryptos/advanced_cli.py",
+      "sha256": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+      "bytes": 11949
+    },
+    {
+      "path": "kryptos/alphabet_propagation.py",
+      "sha256": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+      "bytes": 16126
+    },
+    {
+      "path": "kryptos/app.py",
+      "sha256": "bef219aba30fd2405235a7f9f73648d9e0203807c0d5b9d62630e85348856270",
+      "bytes": 15022
+    },
+    {
+      "path": "kryptos/app_jobs.py",
+      "sha256": "b51e5559d0bb5475b6a08c5547c7c5ea0bc6e4d6644a03b048828d25285bad2f",
+      "bytes": 36907
+    },
+    {
+      "path": "kryptos/app_worker.py",
+      "sha256": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
+      "bytes": 4231
+    },
+    {
+      "path": "kryptos/campaigns.py",
+      "sha256": "d7c9d59aca4bab02a71b034dae902d3d11bbc4c09058c171459be580ed421be7",
+      "bytes": 20332
+    },
+    {
+      "path": "kryptos/certified_scores.py",
+      "sha256": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+      "bytes": 2736
+    },
+    {
+      "path": "kryptos/ciphers.py",
+      "sha256": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+      "bytes": 4775
+    },
+    {
+      "path": "kryptos/columnar.py",
+      "sha256": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+      "bytes": 18985
+    },
+    {
+      "path": "kryptos/correlated_bound.py",
+      "sha256": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+      "bytes": 6762
+    },
+    {
+      "path": "kryptos/cuda_environment.py",
+      "sha256": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
+      "bytes": 3565
+    },
+    {
+      "path": "kryptos/data.py",
+      "sha256": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+      "bytes": 7329
+    },
+    {
+      "path": "kryptos/engine.py",
+      "sha256": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+      "bytes": 14483
+    },
+    {
+      "path": "kryptos/experiments.py",
+      "sha256": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+      "bytes": 3701
+    },
+    {
+      "path": "kryptos/explanations.py",
+      "sha256": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+      "bytes": 17781
+    },
+    {
+      "path": "kryptos/factor_decomposition.py",
+      "sha256": "8219bbbd2b6ab56dbe1e36a92b48f262c21fe0aa9ce7326969ada501a3a2f1b4",
+      "bytes": 8846
+    },
+    {
+      "path": "kryptos/factor_search.py",
+      "sha256": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+      "bytes": 13359
+    },
+    {
+      "path": "kryptos/family_identity.py",
+      "sha256": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+      "bytes": 6168
+    },
+    {
+      "path": "kryptos/fractionation.py",
+      "sha256": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+      "bytes": 4327
+    },
+    {
+      "path": "kryptos/general_layers.py",
+      "sha256": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+      "bytes": 19968
+    },
+    {
+      "path": "kryptos/grid.py",
+      "sha256": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+      "bytes": 14334
+    },
+    {
+      "path": "kryptos/guided_search.py",
+      "sha256": "3c529bd5492754c694172ba982fb4124d3cd6e8d905b936339c3dd53a86f4d34",
+      "bytes": 7584
+    },
+    {
+      "path": "kryptos/hypotheses.py",
+      "sha256": "f3275197f5ae2974a148c8c82445f263e56ac37b97e4a4b2479bd6e1be96287b",
+      "bytes": 6318
+    },
+    {
+      "path": "kryptos/import_inspector.py",
+      "sha256": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+      "bytes": 15016
+    },
+    {
+      "path": "kryptos/joint_columnar.py",
+      "sha256": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+      "bytes": 20797
+    },
+    {
+      "path": "kryptos/joint_ranked.py",
+      "sha256": "9f2738688e824d14a353710e17fac12632a1b7f7a0c8a4ac0826dbc4aaed1037",
+      "bytes": 14453
+    },
+    {
+      "path": "kryptos/keyed_alphabet.py",
+      "sha256": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+      "bytes": 11848
+    },
+    {
+      "path": "kryptos/language.py",
+      "sha256": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+      "bytes": 22370
+    },
+    {
+      "path": "kryptos/layer_plan.py",
+      "sha256": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+      "bytes": 7564
+    },
+    {
+      "path": "kryptos/mixed_stages.py",
+      "sha256": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+      "bytes": 13642
+    },
+    {
+      "path": "kryptos/next_cli.py",
+      "sha256": "84cd39be89747cbfc978d4ca3998484cc0cf65ed3f1dbf8e2c8db8060934b1dc",
+      "bytes": 21667
+    },
+    {
+      "path": "kryptos/parallel_search.py",
+      "sha256": "9ca29a8175407dc7a3573334f7aa49f82321f9013cd30db39377abaa5a6e0412",
+      "bytes": 5833
+    },
+    {
+      "path": "kryptos/position_residues.py",
+      "sha256": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+      "bytes": 2755
+    },
+    {
+      "path": "kryptos/process_lifetime.py",
+      "sha256": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
+      "bytes": 10088
+    },
+    {
+      "path": "kryptos/recovery.py",
+      "sha256": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+      "bytes": 13283
+    },
+    {
+      "path": "kryptos/replay_expanded.py",
+      "sha256": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+      "bytes": 2361
+    },
+    {
+      "path": "kryptos/resource_governor.py",
+      "sha256": "855412deabad45aed582bdb147f1746eae61209390bef3ba066f4eb05ebd6399",
+      "bytes": 1442
+    },
+    {
+      "path": "kryptos/scheduled_layers.py",
+      "sha256": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+      "bytes": 18115
+    },
+    {
+      "path": "kryptos/score_sensitivity.py",
+      "sha256": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+      "bytes": 4818
+    },
+    {
+      "path": "kryptos/scoring.py",
+      "sha256": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+      "bytes": 4990
+    },
+    {
+      "path": "kryptos/sculpture.py",
+      "sha256": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+      "bytes": 10757
+    },
+    {
+      "path": "kryptos/search_runtime.py",
+      "sha256": "58118ce9bc5f539266a77edb035818aebb039e943025604685894aec4d8457bd",
+      "bytes": 26908
+    },
+    {
+      "path": "kryptos/semantic.py",
+      "sha256": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+      "bytes": 10094
+    },
+    {
+      "path": "kryptos/validation_protocols.py",
+      "sha256": "10bb78edc6b84415d2bcdab978506f63876114a24036c024859b3133cc64e701",
+      "bytes": 20518
+    },
+    {
+      "path": "kryptos/worker_pool.py",
+      "sha256": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+      "bytes": 8292
+    },
+    {
+      "path": "research/persistent_benchmarks.py",
+      "sha256": "544e3d8869a89db2b9b9339722954748b0aaa99e08e4b7f4c7ac941ab75ffaff",
+      "bytes": 7700
+    },
+    {
+      "path": "research/run_persistent_audit.py",
+      "sha256": "6d0bb898bfdf4c7427952c74f86fc173140ffb37928cc434014ac34180b97855",
+      "bytes": 4577
+    },
+    {
+      "path": "tests/test_accelerated.py",
+      "sha256": "d4e4d0fe6bb0bc0a29812c2f4d87e7251a80e2267832a0c571e3858e6d78275d",
+      "bytes": 12427
+    },
+    {
+      "path": "tests/test_worker_pool.py",
+      "sha256": "bd319fc19c06fc2d6d37bdf9e9106ff86c32c005a346f8b6c0f34bb9538f597c",
+      "bytes": 6717
+    },
+    {
+      "path": "tests/test_process_lifetime.py",
+      "sha256": "2db35647b819cee1a971f9b5ae405c9943630ccd51992235193ee0ea38f882b2",
+      "bytes": 1543
+    },
+    {
+      "path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+      "sha256": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+      "bytes": 35735
+    }
+  ]
+}

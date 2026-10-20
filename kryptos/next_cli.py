@@ -12,7 +12,7 @@ from .replay_expanded import replay_expanded
 ROOT=Path(__file__).resolve().parents[1]
 BASE={"target","ciphertext","cribs"}
 LINEAR_LIMITS={"max_key_slots","max_matrix_cells","max_operations"}
-SEARCH_LIMITS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries","local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit"}
+SEARCH_LIMITS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries","local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit","decomposition","decomposition_max_entries","decomposition_max_operations"}
 
 
 def _algebra_budget_result(error,request,stages,phase_provenance):
@@ -99,7 +99,7 @@ def _optimization_job(request,parse_target):
     from .scheduled_layers import solve_scheduled
     from .language import CharacterNgramModel
     from .search_runtime import lazy_ngram_problem
-    _check(request,BASE|LINEAR_LIMITS|SEARCH_LIMITS|{"stages","alphabet","cells","layer_model","model_path","score_mask","seed_scan"})
+    _check(request,BASE|LINEAR_LIMITS|SEARCH_LIMITS|{"stages","alphabet","cells","layer_model","model_path","score_mask","seed_scan","guided_seed"})
     target,text,cribs,known=parse_target(request)
     score_mask=request.get("score_mask",sorted(known))
     if not isinstance(score_mask,list) or any(type(i) is not int or not 0<=i<len(text) for i in score_mask) or len(set(score_mask))!=len(score_mask) or not set(known)<=set(score_mask):
@@ -154,6 +154,8 @@ def _scan_seeds(request,job,started):
     setting=request.get("seed_scan")
     if setting is None:
         return [],None
+    if request.get("resume_path") is not None:
+        return [],{"status":"skipped_resume","pages":0,"elapsed_seconds":0.0}
     _check(setting,{"backend","batch_size","offset","top"})
     backend=setting.get("backend","cpu")
     if backend not in ("cpu","cuda","auto"):
@@ -167,7 +169,7 @@ def _scan_seeds(request,job,started):
     if time.monotonic()-started>=seconds:
         return [],{"status":"skipped_budget","pages":0,"elapsed_seconds":0.0}
     from .accelerated import scan_batch
-    scan_request={k:v for k,v in request.items() if k!="seed_scan"}
+    scan_request={k:v for k,v in request.items() if k not in ("seed_scan","guided_seed")}
     seed_started=time.monotonic()
     page=scan_batch(scan_request,backend=backend,offset=offset,batch_size=batch,top=top)
     if page.get("model_file_sha256")!=job["model_sha256"]:
@@ -191,6 +193,40 @@ def _scan_seeds(request,job,started):
         "verified_seeds":len(points),"ranking_exact_within_page":page.get("ranking_exact_within_page"),
         "elapsed_seconds":time.monotonic()-seed_started,"model_file_sha256":job["model_sha256"],
         "interpretation":"Feasible incumbent hints only; exact search validates every objective and retains its proof obligations."}
+
+
+def _guided_seeds(request,job,started,initial_assignments=()):
+    from .guided_search import GUIDED_FIELDS,guided_seeds
+    from .search_runtime import score_assignment
+    setting=request.get("guided_seed")
+    if setting is None:
+        return [],None
+    _check(setting,GUIDED_FIELDS)
+    if request.get("resume_path") is not None:
+        return [],{"status":"skipped_resume","interpretation":"The saved incumbent is retained; no seed budget is spent again."}
+    seconds=request.get("time_limit_seconds",10)
+    if type(seconds) not in (int,float) or not math.isfinite(seconds) or not 0<seconds<=600:
+        raise ValueError("time limit must be in (0,600]")
+    remaining=seconds-(time.monotonic()-started)
+    if remaining<=0:
+        return [],{"status":"skipped_budget"}
+    report=guided_seeds(job["problem"],time_limit_seconds=remaining,
+                        initial_assignments=initial_assignments,**setting)
+    points=[]
+    for seed in report["candidates"]:
+        point=seed["assignment"]
+        objective=score_assignment(job["problem"],point)
+        if objective!=int(seed["score_hex"],16):
+            raise AssertionError("guided delta score failed independent full objective check")
+        split=job["solution"].dimensions_mod2
+        local=job["solution"].candidate(point[:split],point[split:])
+        if job["layer_model"]=="general":
+            local=_candidate(local,job["stages"],job["solution"].alphabet,job["text"],job["known"])
+        _verify(local,job["text"],job["known"])
+        points.append(point)
+    report.update(status="verified",verified_seeds=len(points),literal_replays_verified=len(points),
+                  model_file_sha256=job["model_sha256"])
+    return points,report
 
 
 def run_next(command,request,parse_target):
@@ -274,9 +310,15 @@ def run_next(command,request,parse_target):
         result={"target":job["target"],**job["solution"].summary(),"phase_provenance":job["phase_provenance"]}
         if job["solution"].feasible:
             points,seed_report=_scan_seeds(request,job,started)
+            guided,guided_report=_guided_seeds(request,job,started,points)
+            points=list(dict.fromkeys(tuple(point) for point in points+guided))
+            if len(points)>100:
+                from .search_runtime import score_assignment
+                points=sorted(points,key=lambda point:(-score_assignment(job["problem"],point),point))[:100]
             search=optimize_lazy(job["problem"],initial_assignments=points,elapsed_before_seconds=time.monotonic()-started,
                                  **{k:request[k] for k in SEARCH_LIMITS if k in request})
             search["seed_scan"]=seed_report
+            search["guided_seed"]=guided_report
             result["optimization"]=_optimization_result(job,search)
         return _explain(command,request,result,job["text"],job["cribs"])
     if command=="batch":
@@ -293,8 +335,8 @@ def run_next(command,request,parse_target):
             if not isinstance(name,str) or not 1<=len(name)<=128 or name in names:
                 raise ValueError("batch IDs must be unique nonempty strings up to128characters")
             names.add(name)
-            if isinstance(raw.get("request"),dict) and "seed_scan" in raw["request"]:
-                raise ValueError("seed_scan is currently supported by optimize-plus, not batch")
+            if isinstance(raw.get("request"),dict) and {"seed_scan","guided_seed"}&set(raw["request"]):
+                raise ValueError("seed_scan and guided_seed are supported by optimize-plus, not batch")
         pending=[]
         built={}
         records=[]

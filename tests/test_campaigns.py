@@ -129,6 +129,42 @@ class CampaignTests(unittest.TestCase):
                 self.assertEqual(complete["jobs"][0]["run_id"],reserved)
                 self.assertEqual(worker.call_count,0 if child_exists else 1)
 
+    def test_explicit_resume_continues_limited_child_before_outcome_commit(self):
+        from kryptos.app_worker import execute
+
+        config=body()
+        config.update(kind="exact")
+        config["request"].update(max_nodes=1,time_limit_seconds=2)
+        with patch.object(self.campaign,"_begin"):
+            started=self.campaign.start({"base":config,"axes":[]})
+        record=self.campaign.records[started["id"]]
+        reserved=uuid.uuid4().hex
+        record["jobs"][0].update(run_id=reserved,state="running")
+        self.campaign._save(record)
+        with patch.object(self.manager,"_launch",side_effect=lambda key,job:execute(job)) as worker:
+            self.manager.start(config,run_id=reserved)
+            self.manager.thread.join(timeout=10)
+            self.assertFalse(self.manager.thread.is_alive())
+        first=self.manager.view(reserved)
+        self.assertEqual(first["state"],"limited",first.get("error"))
+        self.assertEqual(first["progress"]["completed"],1)
+        self.assertEqual(worker.call_count,1)  # One activation never renews its node budget.
+
+        # Simulate a restart between the child's durable cutoff and the
+        # campaign's outcome commit. No work resumes without user action.
+        self.restart()
+        self.assertFalse(self.campaign.is_active())
+        self.assertEqual(self.manager.view(reserved)["progress"],first["progress"])
+        with patch.object(self.manager,"_launch",side_effect=lambda key,job:execute(job)) as worker:
+            self.campaign.control("resume",started["id"])
+            result=self.wait()
+        child=self.manager.view(reserved)
+        self.assertEqual(result["state"],"completed",result.get("error"))
+        self.assertEqual(result["jobs"][0]["run_id"],reserved)
+        self.assertEqual(worker.call_count,1)
+        self.assertEqual(child["progress"]["completed"],2)
+        self.assertGreater(child["exact_checkpoint"]["sequence"],first["exact_checkpoint"]["sequence"])
+
     def test_real_equivalent_family_scans_once_and_replays_other_recipe(self):
         result=self.campaign.start({"base":body(),"axes":[{"path":"request.stages.0.cipher","values":["vigenere","variant"]}]})
         complete=self.wait()

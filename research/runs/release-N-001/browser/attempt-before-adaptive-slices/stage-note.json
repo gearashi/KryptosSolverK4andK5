@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-13T20:14:03.803471+00:00",
+  "result": "9 assertions passed, then continuation timeout; no JavaScript errors",
+  "discovery": "period8 synthetic exact resume reached zero-node time_limit while rebuilding saved frontier under fixed2s slices",
+  "status": "root implementing adaptive bounded slice duration; this is preserved pre-fix evidence, not a successful final functional run",
+  "static_sha256": {
+    "kryptos/static/index.html": "34c81bf6ab6efae9eaddccbd32d5177e96f732beeff9071e131b8aad203d2c63",
+    "kryptos/static/app.js": "a6f49a0187a749495f68849c666836fab49e94f91546a951d01b3a76f2a20ecd",
+    "kryptos/static/style.css": "4d4f3fd25a937fca799fbcb209158aafe8cc386ce181086648dbd4c5ab1fec00"
+  }
+}

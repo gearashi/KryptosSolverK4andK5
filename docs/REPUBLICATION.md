@@ -1,5 +1,7 @@
 # Repository republication â€” 2026-10-20
 
+This records the earlier version0.2.0 restoration. The subsequent [version0.3.0 release](../research/IMPROVEMENTS_N.md) resumes the draft described below; the original publication history and license remain its base.
+
 The recreated repository retains its new initial commit and GPL version 3 license. The solver is restored from the last published version 0.2.0 source package, with the Windows CUDA component-path fix. The publication commit is authored and committed by gearashi. Only file contents were copied; no earlier repository commits, branches or tags were imported.
 
 The CUDA fix discovers the separate runtime and NVRTC wheel directories, verifies the libraries actually loaded, and handles the specific missing-Toolkit-root warning only after that layout is verified. Compilation and driver failures remain visible. Backend readiness still requires a successful compiled kernel. See [GPU setup and diagnostics](ACCELERATED_SCANS.md).
