@@ -1,0 +1,91 @@
+{
+  "claim_id": "K4-20261013-J-cli",
+  "mathematics": {
+    "assertion_tested": "Six saved command invocations produce the expected results and every saved complete candidate independently replays to its input ciphertext.",
+    "coefficient_domain": "Exact modular arithmetic and declared numerical score comparisons",
+    "conventions": "No external solution submission or persistent workload; outputs created exclusively.",
+    "inputs": [
+      "examples/alphabet-cycle.json",
+      "examples/columns-ragged.json",
+      "examples/general-five-stages.json",
+      "examples/optimize-small.json",
+      "kryptos/__main__.py",
+      "kryptos/advanced_cli.py",
+      "kryptos/ciphers.py",
+      "kryptos/columnar.py",
+      "kryptos/data.py",
+      "kryptos/engine.py",
+      "kryptos/experiments.py",
+      "kryptos/explanations.py",
+      "kryptos/factor_search.py",
+      "kryptos/fractionation.py",
+      "kryptos/general_layers.py",
+      "kryptos/grid.py",
+      "kryptos/keyed_alphabet.py",
+      "kryptos/language.py",
+      "kryptos/layer_plan.py",
+      "kryptos/position_residues.py",
+      "kryptos/recovery.py",
+      "kryptos/scoring.py",
+      "kryptos/sculpture.py",
+      "kryptos/semantic.py",
+      "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+      "research/sculpture_layout.json",
+      "research/source_snapshots/sculpture-J/cia_sculpture.html.txt",
+      "research/source_snapshots/sculpture-J/dunin_transcript.html.txt",
+      "research/verify_J_cli.py"
+    ],
+    "bounds": {
+      "workers": 1,
+      "commands": 6,
+      "per_command_timeout_seconds": 15,
+      "wall_seconds": 40
+    },
+    "non_claims": [
+      "No GPU or dashboard load test",
+      "No authenticated K4/K5 solution"
+    ]
+  },
+  "execution_artifacts": [
+    "examples/alphabet-cycle.json",
+    "examples/columns-ragged.json",
+    "examples/general-five-stages.json",
+    "examples/optimize-small.json",
+    "kryptos/__main__.py",
+    "kryptos/advanced_cli.py",
+    "kryptos/ciphers.py",
+    "kryptos/columnar.py",
+    "kryptos/data.py",
+    "kryptos/engine.py",
+    "kryptos/experiments.py",
+    "kryptos/explanations.py",
+    "kryptos/factor_search.py",
+    "kryptos/fractionation.py",
+    "kryptos/general_layers.py",
+    "kryptos/grid.py",
+    "kryptos/keyed_alphabet.py",
+    "kryptos/language.py",
+    "kryptos/layer_plan.py",
+    "kryptos/position_residues.py",
+    "kryptos/recovery.py",
+    "kryptos/scoring.py",
+    "kryptos/sculpture.py",
+    "kryptos/semantic.py",
+    "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+    "research/sculpture_layout.json",
+    "research/source_snapshots/sculpture-J/cia_sculpture.html.txt",
+    "research/source_snapshots/sculpture-J/dunin_transcript.html.txt",
+    "research/verify_J_cli.py"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

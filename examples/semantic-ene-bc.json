@@ -1,0 +1,9 @@
+{
+  "method": "codebook",
+  "text": "EASTNORTHEAST?BERLINCLOCK",
+  "segments": [[0, 13], [13, 14], [14, 25]],
+  "codebook": {"EASTNORTHEAST": "ENE", "BERLINCLOCK": "BC"},
+  "rule_source": "User-declared phrase abbreviation hypothesis example; no recovered K5 claim.",
+  "max_characters": 1000,
+  "max_segments": 10
+}

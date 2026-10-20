@@ -1,0 +1,52 @@
+{
+  "claim_id": "K4-20261012-I-published-PK-benchmarks",
+  "mathematics": {
+    "assertion_tested": "Reproduce independently published complete PK1/PK3 pairs and recover within supplied additive families using24artificial plaintext positions, with keys withheld from recovery.",
+    "coefficient_domain": "Z/26Z, exact graph constraints and literal encryption",
+    "conventions": "Full192/280lettermessages; standardK4positionmask withfixture-specific letters. SharedKRYPTOS alphabet; suppliedperiods(10,1)/(10,8),SSTwithidentityroute. Publishedkeys only validate fixtures and evaluate recovered results.",
+    "inputs": [
+      "research/pk_benchmarks.py",
+      "kryptos/data.py",
+      "kryptos/layer_plan.py",
+      "kryptos/scoring.py",
+      "research/source_snapshots/pk-benchmarks/sources.json",
+      "research/source_snapshots/pk-benchmarks/pk1_result.txt",
+      "research/source_snapshots/pk-benchmarks/pk3_result.txt",
+      "research/source_snapshots/pk-benchmarks/verify_all_source.txt",
+      "research/source_snapshots/pk-benchmarks/official_challenge_asset.txt",
+      "research/source_snapshots/pk-benchmarks/firsthand_methods.html.txt"
+    ],
+    "bounds": {
+      "models": 2,
+      "known_letters_each": 24,
+      "max_plaintext_completions_each": 676,
+      "workers": 1
+    },
+    "non_claims": [
+      "Not blind method selection or officialPKclues",
+      "No public verifier submission",
+      "Does not establish K4method"
+    ]
+  },
+  "execution_artifacts": [
+    "research/pk_benchmarks.py",
+    "kryptos/data.py",
+    "kryptos/layer_plan.py",
+    "kryptos/scoring.py",
+    "research/source_snapshots/pk-benchmarks/sources.json",
+    "research/source_snapshots/pk-benchmarks/pk1_result.txt",
+    "research/source_snapshots/pk-benchmarks/pk3_result.txt",
+    "research/source_snapshots/pk-benchmarks/verify_all_source.txt",
+    "research/source_snapshots/pk-benchmarks/official_challenge_asset.txt",
+    "research/source_snapshots/pk-benchmarks/firsthand_methods.html.txt"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false
+  }
+}

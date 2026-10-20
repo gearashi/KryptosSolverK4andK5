@@ -1,0 +1,41 @@
+{
+  "id": "pk2",
+  "length": 350,
+  "ciphertext": "HNETIOCOIOISNNENEELOWYTTLQUBDBTHTEOTRRASAHCDSEETONVRCESHRRETUPCITEWIGNIUNIGANLHJRAHMSRUINHERAEEAEAJEEEEKEEDATIIAONIXRNRHCNTLGLOIIUNSEESEGNBANTVTCSFREDIUROTNENHMRIIEROLTLSDAOOAEQIEOAPUHITHAIKHTIEUHGSLAFFSNVRSRHNNSMASTIPIAHAOEEUDESSOEONCDHAOTOOEOTSEECLADNHNTOUVSGAGTATSNEWHSATEUEETEURTRNEOGITREHMPPROBEOETOERICETGSMTEITENNSGSDRNOVTTFBTTATMLOSOPLSTARATE",
+  "plaintext": "IHAVEFOUNDREFERENCESTOTHEKNOTINSEVENOTHERRECORDSINOURARCHIVETHEMOSTINTRIGUINGISAPASSINGCOMMENTINATREATISEONTEXTILESWRITTENINPELLEGRINSOWNHANDWHICHSAYSUNAGOTANTOSOTTILEDALEGGEREQUALUNQUENODOIBELIEVEDTHISTOBEJUSTATURNOFPHRASEBUTTHEOTHERMENTIONSSCATTEREDTHROUGHMARGINALIAINBOOKSTHATSHARENOOTHERTOPICHAVELEDMETOSUSPECTTHEPASSAGEREFERSTOAREALOBJECTANEEDLE",
+  "width": 7,
+  "read_order": [
+    1,
+    3,
+    4,
+    0,
+    5,
+    2,
+    6
+  ],
+  "keyword": "MARGINS",
+  "permutation_convention": "T(P)[j]=P[permutation[j]]; row-major fill, then columns top-to-bottom in read_order",
+  "plaintext_provenance": "Reconstructed from official ciphertext and published fixed column order; independently matches published 64-bit SHA256 prefix and both unabbreviated prose portions. The result source abbreviates an internal plaintext passage.",
+  "plaintext_sha256": "4288fc09c000c915aead3f467159cf7ef6230afa5ac87502173ae0039436f0c4",
+  "ciphertext_sha256": "0375f7b9424af17807ef1e3b56fb3e7ce3036d97210b142413ae21d07d6ef5b2",
+  "published_plaintext_digest_prefix": "4288fc09c000c915",
+  "literal_roundtrip": true,
+  "source_excerpt_matches": true,
+  "sources": [
+    {
+      "path": "research/source_snapshots/pk-benchmarks/official_challenge_asset.txt",
+      "url": "https://www.paradigm.xyz/kryptos-ctf/_next/static/chunks/0h1ap~1.6ljs6.js",
+      "sha256": "e2dc3db8f5debbdff264a5b8bbbf544c1fcf25f25d9bbd737e97721578ef0f31"
+    },
+    {
+      "path": "research/source_snapshots/sculpture-J/pk2_result.txt",
+      "url": "https://raw.githubusercontent.com/benjacasas02/independent-cryptography-research/main/research/paradigm-kryptos/selected-results/02_pk2_columnar_solve/README.md",
+      "sha256": "9f6b513a1c115219c9d792d4cdaa3c168115ba5308541317562793a974cc07f7"
+    },
+    {
+      "path": "research/source_snapshots/pk-benchmarks/firsthand_methods.html.txt",
+      "url": "https://asynchronous.win/post/solving-pk1-pk7-at-paradigms-ctf/",
+      "sha256": "c8829400ace163ee65a1a2ec423f1d14ce82d34e6556a31186fc3dc62d6f5ed7"
+    }
+  ]
+}

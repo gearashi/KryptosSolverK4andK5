@@ -1,0 +1,14 @@
+{
+ "claim_id":"K4-20261012-I-affine-grid",
+ "mathematics":{
+  "assertion_tested":"Test all a*r+b*c+d coordinate shifts modulo26 within the fixed1416gridmodel family, using exact necessary graph filtering then exhaustive a,b withcrib-derivedd.",
+  "coefficient_domain":"Integers modulo26, including nonunit coefficients",
+  "conventions":"Same59routes,2alphabets,4source/destination frames,3sharedlookupoffsets asgrid-001; absolute origin absorbed byconstantd.",
+  "inputs":["research/grid_affine_probe.py","kryptos/grid.py","kryptos/data.py"],
+  "bounds":{"models":1416,"a_values":26,"b_values":26,"pairs_upper_bound":957216,"workers":1},
+  "non_claims":["Not all coordinate formulas","No full-sculpture interactions","Not a solution or proof grid hypothesis impossible"]
+ },
+ "execution_artifacts":["research/grid_affine_probe.py","kryptos/grid.py","kryptos/data.py"],
+ "software":[{"name":"Python","version":"3.14.5"}],
+ "randomness":{"used":false,"generator":"","seed":null}
+}

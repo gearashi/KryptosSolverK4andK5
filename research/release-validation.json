@@ -1,0 +1,243 @@
+{
+  "schema": "kryptos.release-validation.v1",
+  "version": "0.2.0",
+  "date": "2026-10-13",
+  "publication": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4AndK5",
+    "status": "published; source commit verified on remote main",
+    "verified_source_commit": "9fa53c468689b916c04eb4231c33924a0fc9e6e6",
+    "verified_at_utc": "2026-10-13T19:46:45.435671+00:00",
+    "verification": "git ls-remote origin refs/heads/main equals local git rev-parse HEAD after push; later metadata commit records this verification without changing tested source"
+  },
+  "historical_release": "research/runs/release-L-002/release-validation.json",
+  "fresh_checkout": {
+    "method": "git checkout-index from curated staged content; project .venv used only as interpreter",
+    "tests": 310,
+    "passed": 309,
+    "skipped": 1,
+    "skip_reason": "Optional strict source audit requires excluded original third-party HTML",
+    "seconds": 72.94,
+    "gpu_test_opt_in": true,
+    "log": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+    "log_sha256": "ff61645c05cc21d73e84cbf271fc182d572015210cd7c4868e35dce0bece81d2",
+    "canonical_manifests_verified_against_packaged_bytes": true,
+    "tested_code_files_unchanged": 87
+  },
+  "browser": {
+    "summary": "research/runs/release-M-002/browser/browser-validation.json",
+    "summary_sha256": "b20f13eb35faa8144bb2617f7862e4696c509955b3f24746617e4b5893e42f9c",
+    "successful_assertions": 42,
+    "evidence_inventory": "research/runs/release-M-002/browser/files.json",
+    "source_stage_note": "Actual Windows campaign, CPU, CUDA, optimizer and validation flows ran before the later POSIX idempotent-close guard and elapsed-time rounding fix. No production source was edited during those jobs. Those unrelated later changes are covered by the root final full suite and canonical M002 audit. Final static UI hashes are recorded here; the mobile table fix was checked against saved results without rerunning searches."
+  },
+  "canonical_audits": [
+    "research/runs/release-M-002/persistent/manifest.json",
+    "research/runs/release-M-002/search-quality/manifest.json"
+  ],
+  "benchmark": {
+    "scope": "20 fixed synthetic pages of256 candidates per mode/backend; no K4/K5 search; end-to-end includes process startup and shutdown. OS/file caches are not cleared; modes run in declared order.",
+    "device": "NVIDIA GeForce RTX 2060",
+    "records": [
+      {
+        "backend": "cpu",
+        "mode": "one-shot",
+        "evaluated": 5120,
+        "wall_seconds": 18.53934340015985,
+        "exact_cpu_rescores": 5120,
+        "device_cache_hits": 0
+      },
+      {
+        "backend": "cpu",
+        "mode": "persistent",
+        "evaluated": 5120,
+        "wall_seconds": 5.414250300033018,
+        "exact_cpu_rescores": 5120,
+        "device_cache_hits": 0
+      },
+      {
+        "backend": "cuda",
+        "mode": "one-shot",
+        "evaluated": 5120,
+        "wall_seconds": 75.97411950002424,
+        "exact_cpu_rescores": 61,
+        "device_cache_hits": 0
+      },
+      {
+        "backend": "cuda",
+        "mode": "persistent",
+        "evaluated": 5120,
+        "wall_seconds": 5.285016400041059,
+        "exact_cpu_rescores": 61,
+        "device_cache_hits": 19
+      }
+    ],
+    "independent_retained_checks": 240,
+    "lifecycle": {
+      "active_cancel_killed_worker": true,
+      "crash_restarted": true,
+      "timeout_restarted": true,
+      "pids": [
+        97176,
+        143272,
+        297904,
+        176252
+      ]
+    }
+  },
+  "search_quality": {
+    "partial_assignments_checked": 81,
+    "fixed_discriminator_nodes": [
+      15,
+      1
+    ],
+    "cuda_seed_page": 26,
+    "cpu_verified_seeds": 3,
+    "unchanged_exact_optimum": true,
+    "holdout_selected_predictions_correct": 2,
+    "holdout_selected_predictions_total": 2,
+    "control_candidate_visits": 2808,
+    "positive_cases": 2,
+    "positive_truth_rank": [
+      1,
+      1
+    ],
+    "limits": "Fixed bounded authored controls; no false-positive probability or K4/K5 solution."
+  },
+  "package_source_hashes": {
+    "kryptos/__main__.py": "014e7b7982f22ba2b3252599f3598a09e2f8183efc9f522c6cdb33932f0dfdbc",
+    "kryptos/accelerated.py": "6c9a292659bfd9a73b9e2536d3d4c70718e9ee877bb20a32487f0b7c3025275f",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "a1eb120ad5d539495cb68bfd7ed3d766cc9c26a79356e86cdefcb4b45282a7f1",
+    "kryptos/app_jobs.py": "e0798500d9bef421c5990dd55ef7cebe3fe55c229b6563327f386d251a371973",
+    "kryptos/app_worker.py": "8358075c66bbb12f4e0ce8c3a249c5c613dc3eb662cd195ff679ddfbd0f77b4f",
+    "kryptos/campaigns.py": "4c33fd550d6669ca904574707dee3958c144300a8844c035f522c0ebf839a5a3",
+    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "07a74c1007fb9abf30031ea7d578782db0b9abfafc1ad7326d165694a306aab2",
+    "kryptos/parallel_search.py": "e4af6998e9277ae0afef15abcfbc86bdfd8e4bd9c6641b3596671eab814fa83f",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/resource_governor.py": "855412deabad45aed582bdb147f1746eae61209390bef3ba066f4eb05ebd6399",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "6d918caee9dcbb94e757c8584478b6062a2957a3aa59ca83c439668441defa0d",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/static/app.js": "397fb28869d6887b7e1ce63b89eb5e99608c6917af35b160f38f4de3da765684",
+    "kryptos/static/index.html": "c69badbbb8a36016d7c8585a4a5397df87eec759c3e7d03dd51c305ce2a04c21",
+    "kryptos/static/mark.svg": "772c2f271ca534956f2cc91181daabdd7290f1572cb7b5c705dabe0bea17b04e",
+    "kryptos/static/style.css": "b8d42b820e786d4ce09b02641877d10fdfe3e17b307663dad96b056298abdc7c",
+    "kryptos/validation_protocols.py": "8cd106e53e53f150427ff83bdf13d57e8ae42bbd8dc85b43097b93ae40f3a668",
+    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "tests/test_accelerated.py": "d4e4d0fe6bb0bc0a29812c2f4d87e7251a80e2267832a0c571e3858e6d78275d",
+    "tests/test_advanced_cli.py": "a8b8f72e6007869605dddc4b98d5f4a049ebd34785117dccc19f85ef423d274c",
+    "tests/test_alphabet_propagation.py": "a168c774b6712d6e7fb3585e081f9082a9d174fc3510c34a81469e9e849ab696",
+    "tests/test_app_http.py": "e71ced40364bb4e7956c91e8b7f0e654c89c8f0657b1b7b5933b39ee70945ddd",
+    "tests/test_app_jobs.py": "4d2d0de9d85e91eec285108de426b294fafbf2fe0d5a44e86f8d90243cc52623",
+    "tests/test_calibration.py": "ff133045e8564d2e944663aaca4c282d7ecb89bb1d6d0ec413b377b32cd1f1b2",
+    "tests/test_campaigns.py": "edbded2302965bbfc761117c590900c2b825df522e62afdaecff199fc289928b",
+    "tests/test_cli.py": "3474a447ada0313650d88e28a44245a33a73b217f2cb9727dc3cdbafb37e2301",
+    "tests/test_columnar.py": "22782e2d52895138bd92cb1f34541d7483a8d9d2532c36f333c00bba648d49a4",
+    "tests/test_correlated_bound.py": "9c21237a1e9c0e0ba673b70a5e91758a70517d9393fbfd6cf3f7c0a6a00d2973",
+    "tests/test_engine.py": "12ae5ea94c84b6fd01653d7e4c1d5ad8272e3e2e3397cfbc1e7ed12e5a785c53",
+    "tests/test_experiments.py": "0d13a750d9081696af9042c9d35914c4ffe599856080bbba6885f8530f59e040",
+    "tests/test_explanations.py": "20eed5321a5ec021328204748bf7deb003927e1e9ebd68c7afacc8009f9be655",
+    "tests/test_factor_search.py": "8438f240c1345bee949b269669fdf6c643a1d7f964e29930bf37eee692522887",
+    "tests/test_family_identity.py": "a11588957660f9a32db4c7a8ea89a1826c962d6ffc7b203f67baa7072da92e42",
+    "tests/test_fractionation.py": "477dd41c21a9e327e05d24af54f6910ac33d9a12eae90fbad5e544ca67138563",
+    "tests/test_general_layers.py": "2494a0c954e2e34f83127ffb4fd0194a994cbd06013ddd1a7c4f87f31513034b",
+    "tests/test_grid.py": "634029f0aae3d443da7ce738f6c0c3d591be65eef9b2c0db82b8bcfe7fb894bf",
+    "tests/test_import_inspector.py": "5f96f5bfae663c2cd0b9d01d8ff7cf6a4ebcdb17ad7be9f099de6b8534179d24",
+    "tests/test_joint_columnar.py": "2b45fbe81a7a556106e449fa9d01e61723d7a02ac9ed440ba422652ae76374bd",
+    "tests/test_keyed_alphabet.py": "8d7a4ff08ac3ba0340286edb2b73f94e1f19e28ede2f250b14449841015b7d1e",
+    "tests/test_keyed_alphabet_audit.py": "6b4a21c29eabb6c66300ea85087245f6a237ba68b410a1ef507e6da78580aa26",
+    "tests/test_language.py": "d674e598fad90a0115306a586a75bb4204d46771b9fc71d31a7f2155de72d391",
+    "tests/test_layer_plan.py": "2869087e531add1d38c14cf8a3807419aef60f559d6cc2603639c9557e2027ef",
+    "tests/test_mixed_stages.py": "bc42971279f5655be94cd4d85ab0c4b3610bf7f00a96e75a57e38c02e39428c3",
+    "tests/test_next_cli.py": "350a407f3f4343ed49bd1c19b1092e6d37487d3b3e31d4c2225bb479ee39d1cc",
+    "tests/test_next_cli_budgets.py": "35074971b0fbf6419b52a763c6334d84ba0a15416ce46c098ed229fd5a19aec7",
+    "tests/test_parallel_search.py": "f172284f2ac15780303f859f79f9a060b3c975c75fde581d3d66c4a4b32ed98a",
+    "tests/test_position_residues.py": "07c0f3b1085a9bafbd957b2b18c32690ceba2f339d231d0af5826ff02a5a8c27",
+    "tests/test_process_lifetime.py": "2db35647b819cee1a971f9b5ae405c9943630ccd51992235193ee0ea38f882b2",
+    "tests/test_recovery.py": "9ee57f494454023ecc4f7a1a30c6823f32d623fb7bb7153be80091ae73f46bc6",
+    "tests/test_resource_controls.py": "30c675d63555b228e0b6f5961220d9d9f3a3c1627e260b5a6479a7bee6aad3b3",
+    "tests/test_scheduled_layers.py": "c6ee0989d8dceafb6bb0a9c6ce6d6456f8dca4cbe00e1d6232f58a22c071c612",
+    "tests/test_score_sensitivity.py": "3592c92adca00aeee7f2109756a8fd90152b56bb75c3ffcce9bf4ce839abf488",
+    "tests/test_scoring.py": "e469c9b205d2fa42619c59a075419ddb3297a98b669a301e2655db7e726404a5",
+    "tests/test_sculpture.py": "390f6bc024582209c0490059de4b6c3b5fa5474a6e283a0281560f3483fcb6ac",
+    "tests/test_search_enhancements.py": "578f98e689be1ad7cf5c6dce0197b78835a40986937e9f66fbfb76d7bd0b7ca0",
+    "tests/test_search_runtime.py": "6dde7a804af09682eb32f008154079ef119a51af990cea2d51c1dc52fe5aab19",
+    "tests/test_semantic.py": "12fed4f3c8a440b5f7a42692ede64143c5890ea21deffa7ea3be0c55297e666b",
+    "tests/test_validation_protocols.py": "33886a5251ab9b225b3b1ad2ab272da8667a1db22468202696682ba8d8dfda46",
+    "tests/test_worker_pool.py": "bd319fc19c06fc2d6d37bdf9e9106ff86c32c005a346f8b6c0f34bb9538f597c"
+  },
+  "publication_review": {
+    "status": "passed",
+    "raw_third_party_caches_excluded": true,
+    "environments_and_runtime_excluded": true,
+    "staged_file_count": 454,
+    "staged_bytes": 10923115,
+    "credential_pattern_matches": 0,
+    "excluded_path_matches": 0,
+    "browser_artifacts_verified": 44
+  },
+  "resolved_test_attempts": [
+    {
+      "log": "research/runs/release-M-002/unit-tests.txt",
+      "reason": "Elapsed-time cancellation error fixed with deterministic regression; Windows file cleanup now asserts no live owned descendants before bounded sharing retry."
+    },
+    {
+      "log": "research/runs/release-M-002/fresh-checkout-tests.txt",
+      "reason": "Cold-start real-worker correctness test deadline increased to 30 seconds; workload remains 26 candidates. Final clean run passes."
+    }
+  ],
+  "limits": [
+    "No authenticated K4/K5 decipherment",
+    "No authenticated public K5 ciphertext bundled",
+    "Certified ranking applies only to the declared family, model, mask and evaluated coverage; optional approximate mode is labeled",
+    "Positive/null and clue-holdout results are bounded diagnostics, not solution probabilities",
+    "Time budget checked between waves; separate 60-second worker deadline",
+    "No claim that no future improvement exists",
+    "Windows RTX2060/Python3.12.2 hardware tested; POSIX process cleanup tested through mocks, not actual Unix hardware"
+  ],
+  "launcher_smoke": {
+    "command": "OpenDashboard.ps1 -NoBrowser",
+    "status": "passed",
+    "version": "0.2.0",
+    "url": "http://127.0.0.1:8767/",
+    "api_status": {
+      "run": null,
+      "campaign": null
+    },
+    "actual_compiled_cuda_probe_ready": true,
+    "devices": [
+      "NVIDIA GeForce RTX 2060"
+    ],
+    "validation_preset_count": 2
+  },
+  "canonical_manifest_hashes": {
+    "research/runs/release-M-002/persistent/manifest.json": "082cb8800fb60c85b4275626a18657d5b4d5147207cd775fcbc72d66fe9afbe1",
+    "research/runs/release-M-002/search-quality/manifest.json": "2263c53db818be0fc897c39f13e06b03c044ba9a4e2643f8e493f4b1602aa0b2"
+  }
+}

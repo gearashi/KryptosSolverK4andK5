@@ -1,0 +1,14 @@
+{
+  "label": "Tiny original prose example; unsuitable for cryptanalytic conclusions",
+  "order": 3,
+  "alpha": 0.1,
+  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "normalization": "upper-single",
+  "documents": [
+    {
+      "text": "FRESH RAIN WATER FILLS A SHALLOW POND. THE GARDEN HOLDS THE WATER WHILE SMALL BIRDS REST ON THE FENCE. A QUIET PATH LEADS TOWARD THE TREES.",
+      "source": "examples/original-garden-prose",
+      "license": "Original synthetic documentation example; not a reference corpus."
+    }
+  ]
+}

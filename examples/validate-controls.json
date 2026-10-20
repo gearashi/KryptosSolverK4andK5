@@ -1,0 +1,80 @@
+{
+  "model_paths": [
+    "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json"
+  ],
+  "model_bank": [
+    {
+      "id": "period25",
+      "layer_model": "general",
+      "alphabet": "standard",
+      "stages": [
+        {
+          "operation": "substitution",
+          "period": 25
+        }
+      ]
+    },
+    {
+      "id": "period26",
+      "layer_model": "general",
+      "alphabet": "standard",
+      "stages": [
+        {
+          "operation": "substitution",
+          "period": 26
+        }
+      ]
+    }
+  ],
+  "max_candidates_per_family": 676,
+  "max_total_candidates": 1500,
+  "time_limit_seconds": 30,
+  "top": 5,
+  "seed": 2026101407,
+  "crib_positions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "cases": [
+    {
+      "id": "authored-1",
+      "plaintext": "THECAREFULOBSERVERRECORDEDEACHSHADOWBEFORETHECLOUDSRETURNEDANDCHECKEDTHEMEASUREMENTSAGAINBESIDETH",
+      "source": "Newly authored synthetic control; first97ASCII letters. Not a literary benchmark. Contiguous24position artificial mask differs from K4.",
+      "generating_model_id": "period25",
+      "keys": [
+        "ABCDEFGHIJKLMNOPQRSTUVWXY"
+      ]
+    },
+    {
+      "id": "authored-2",
+      "plaintext": "APATIENTREADERCOMPAREDTHEFADEDNOTESWITHTHEMAPANDFOUNDTHATEVERYCROSSINGHADBEENMARKEDBEFORETHEBRIDG",
+      "source": "Newly authored synthetic control; first97ASCII letters. Not a literary benchmark. Contiguous24position artificial mask differs from K4.",
+      "generating_model_id": "period26",
+      "keys": [
+        "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+      ]
+    }
+  ]
+}

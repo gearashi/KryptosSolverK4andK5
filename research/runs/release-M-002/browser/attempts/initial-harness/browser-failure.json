@@ -1,0 +1,13 @@
+{
+  "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#campaign-base')\u001b[22m\n\u001b[2m    - locator resolved to <textarea rows=\"12\" id=\"campaign-base\" spellcheck=\"false\" class=\"json-editor\" placeholder=\"Use “Copy current workbench setup” above.\"></textarea>\u001b[22m\n\u001b[2m    - fill(\"{\"kind\":\"accelerated\",\"command\":\"optimize-plus\",\"request\":{\"target\":\"custom\",\"ciphertext\":\"TIITITATEDRFTUXU\",\"cribs\":[{\"start\":1,\"text\":\"T\"}],\"alphabet\":\"standard\",\"stages\":[{\"operation\":\"substitution\",\"period\":2}],\"model_path\":\"research/models/multilingual-001/artifacts/pg1342-english-trigram.json\",\"max_nodes\":10000,\"max_frontier\":1000,\"max_cache_entries\":10000,\"ordering\":\"impact\",\"time_limit_seconds\":5},\"backend\":\"cpu\",\"workers\":1,\"batch_size\":4,\"max_batches\":20,\"time_limit_seconds\":60,\"ranking_mode\":\"certified\",\"note\":\"\",\"idle_ms\":100}\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "checks": [
+    "Actual CUDA detected"
+  ],
+  "errors": [],
+  "runIds": [],
+  "requests": [],
+  "status": {
+    "run": null,
+    "campaign": null
+  }
+}

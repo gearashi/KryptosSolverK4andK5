@@ -1,0 +1,49 @@
+{
+  "schema": "kryptos.read-only-csp-audit.v1",
+  "utc": "2026-10-13T16:53:51.347066+00:00",
+  "python": "3.14.5",
+  "scope": "Unknown cyclic alphabet and used numeric key phases, exact modulo26, uppercase A-Z; no K4 scan or full app test.",
+  "source_sha256_before": {
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "tests/test_keyed_alphabet_audit.py": "6b4a21c29eabb6c66300ea85087245f6a237ba68b410a1ef507e6da78580aa26"
+  },
+  "source_sha256_after": {
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "tests/test_keyed_alphabet_audit.py": "6b4a21c29eabb6c66300ea85087245f6a237ba68b410a1ef507e6da78580aa26"
+  },
+  "reproduction_command": "python -m unittest discover -s tests -p test_keyed_alphabet_audit.py -v",
+  "tests_run": 2,
+  "asserted_subcases": 5,
+  "passed": true,
+  "elapsed_seconds": 0.03730189986526966,
+  "results": [
+    {
+      "control": "26-letter cycle with rotational gauge A=0",
+      "ciphers": [
+        "vigenere",
+        "variant"
+      ],
+      "exact_assignments_each": 12,
+      "independent_argument": "index(letter_i)=i*k mod26; precisely12 unit steps yield bijections."
+    },
+    {
+      "control": "24 supplied absolute indices, two unknown letters, unconstrained one-phase key",
+      "ciphers": [
+        "vigenere",
+        "beaufort",
+        "variant"
+      ],
+      "exact_assignments_each": 52,
+      "independent_argument": "Enumerate2! alphabet tails and26 numeric keys; compare every plaintext/key/alphabet tuple."
+    }
+  ],
+  "read_only_findings": [
+    "No arithmetic, all-different, gauge, or count defect found in the inspected CSP.",
+    "Unused key phases are excluded from assignment counts; root clarified count_convention."
+  ],
+  "limits": "These exact small controls and source review do not establish correctness for all inputs or authenticate any plaintext. Parent final suite provides canonical execution provenance."
+}

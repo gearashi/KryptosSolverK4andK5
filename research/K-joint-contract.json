@@ -1,0 +1,116 @@
+{
+  "claim_id": "K4-20261013-K-joint",
+  "mathematics": {
+    "assertion_tested": "Joint unknown column order and repeating key agree with finite direct controls; fixed18-model K4 bank reports bounded outcomes.",
+    "coefficient_domain": "Exact matching and modular key equations over Z/26",
+    "conventions": "Encryption order ST or TS, ragged occupied cells, labeled column/key assignment counts.",
+    "inputs": [
+      "kryptos/__main__.py",
+      "kryptos/advanced_cli.py",
+      "kryptos/alphabet_propagation.py",
+      "kryptos/ciphers.py",
+      "kryptos/columnar.py",
+      "kryptos/data.py",
+      "kryptos/engine.py",
+      "kryptos/experiments.py",
+      "kryptos/explanations.py",
+      "kryptos/factor_search.py",
+      "kryptos/fractionation.py",
+      "kryptos/general_layers.py",
+      "kryptos/grid.py",
+      "kryptos/joint_columnar.py",
+      "kryptos/keyed_alphabet.py",
+      "kryptos/language.py",
+      "kryptos/layer_plan.py",
+      "kryptos/mixed_stages.py",
+      "kryptos/next_cli.py",
+      "kryptos/parallel_search.py",
+      "kryptos/position_residues.py",
+      "kryptos/recovery.py",
+      "kryptos/replay_expanded.py",
+      "kryptos/scheduled_layers.py",
+      "kryptos/scoring.py",
+      "kryptos/sculpture.py",
+      "kryptos/search_runtime.py",
+      "kryptos/semantic.py",
+      "research/joint_columnar_K.py",
+      "research/prepare_K_contracts.py",
+      "research/run_checkpoint_K.py",
+      "research/source_snapshots/sculpture-J/pk2_fixture.json"
+    ],
+    "bounds": {
+      "controls": 10,
+      "K4_models": 18,
+      "widths": [
+        7,
+        8,
+        10
+      ],
+      "periods": [
+        2,
+        3,
+        4
+      ],
+      "orders": [
+        "ST",
+        "TS"
+      ],
+      "per_K4_model": {
+        "max_states": 20000,
+        "max_segmentations": 128,
+        "seconds": 1,
+        "stored_candidates": 3
+      },
+      "outer_seconds": 45
+    },
+    "non_claims": [
+      "No authenticated K4/K5 decipherment",
+      "Finite specified models only; no global cryptanalytic exclusion"
+    ]
+  },
+  "execution_artifacts": [
+    "kryptos/__main__.py",
+    "kryptos/advanced_cli.py",
+    "kryptos/alphabet_propagation.py",
+    "kryptos/ciphers.py",
+    "kryptos/columnar.py",
+    "kryptos/data.py",
+    "kryptos/engine.py",
+    "kryptos/experiments.py",
+    "kryptos/explanations.py",
+    "kryptos/factor_search.py",
+    "kryptos/fractionation.py",
+    "kryptos/general_layers.py",
+    "kryptos/grid.py",
+    "kryptos/joint_columnar.py",
+    "kryptos/keyed_alphabet.py",
+    "kryptos/language.py",
+    "kryptos/layer_plan.py",
+    "kryptos/mixed_stages.py",
+    "kryptos/next_cli.py",
+    "kryptos/parallel_search.py",
+    "kryptos/position_residues.py",
+    "kryptos/recovery.py",
+    "kryptos/replay_expanded.py",
+    "kryptos/scheduled_layers.py",
+    "kryptos/scoring.py",
+    "kryptos/sculpture.py",
+    "kryptos/search_runtime.py",
+    "kryptos/semantic.py",
+    "research/joint_columnar_K.py",
+    "research/prepare_K_contracts.py",
+    "research/run_checkpoint_K.py",
+    "research/source_snapshots/sculpture-J/pk2_fixture.json"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

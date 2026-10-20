@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-I-known-method-recovery",
+  "mathematics": {
+    "assertion_tested": "Recover known K1/K2 keys and K3 plaintext using23crib letters and specified cipher/route families without giving answer keys or periods to recovery.",
+    "coefficient_domain": "Integers modulo26; exact permutations",
+    "conventions": "KRYPTOS alphabet forK1/K2; separate as-inscribed369letter and corrected370letterK2; K3specified two-column-route family only.",
+    "inputs": ["kryptos/recovery.py", "kryptos/ciphers.py", "research/recovery_benchmarks.py", "research/k3_reference.py"],
+    "bounds": {"benchmarks":4,"periods":[1,24],"raw_K3_width_pairs":144,"K3_distinct_routes":46,"crib_letters_each":23,"workers":1},
+    "non_claims": ["No unrestricted historical recovery", "No K4/K5 method identification", "K2ambiguity remains"]
+  },
+  "execution_artifacts": ["kryptos/recovery.py", "kryptos/ciphers.py", "research/recovery_benchmarks.py", "research/k3_reference.py"],
+  "software": [{"name":"Python","version":"3.14.5"}],
+  "randomness": {"used":false,"generator":"","seed":null}
+}

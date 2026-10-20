@@ -1,0 +1,13 @@
+{
+  "started": "2026-10-13T18:29:42.191Z",
+  "errors": [],
+  "checks": [
+    "fresh server remains idle",
+    "cipher-grid arrow-key navigation",
+    "CPU two-worker pages commit before pause",
+    "resume continues offset; stop preserves committed candidates",
+    "candidate technique, replay and score sensitivity visible",
+    "export preserves run recipe and source note"
+  ],
+  "finished": "2026-10-13T18:30:08.426Z"
+}

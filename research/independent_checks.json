@@ -1,0 +1,1088 @@
+{
+  "base_id": "K4-20261012-A",
+  "input_ciphertext": "OBKRUOXOGHULBSOLIFBBWFLRVQQPRNGKSSOTWTQSJQSSEKZZWATJKLUDIAWINFBNYPVTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR",
+  "ciphertext_sha256": "eea813570c7f1fd3b34674e47b5c3da8948026f5cefee612a0b38ffaa515ceab",
+  "cribs": [
+    {
+      "start": 22,
+      "text": "EAST"
+    },
+    {
+      "start": 26,
+      "text": "NORTHEAST"
+    },
+    {
+      "start": 64,
+      "text": "BERLIN"
+    },
+    {
+      "start": 70,
+      "text": "CLOCK"
+    }
+  ],
+  "observations": [
+    {
+      "position": 22,
+      "ciphertext": "F",
+      "plaintext": "E"
+    },
+    {
+      "position": 23,
+      "ciphertext": "L",
+      "plaintext": "A"
+    },
+    {
+      "position": 24,
+      "ciphertext": "R",
+      "plaintext": "S"
+    },
+    {
+      "position": 25,
+      "ciphertext": "V",
+      "plaintext": "T"
+    },
+    {
+      "position": 26,
+      "ciphertext": "Q",
+      "plaintext": "N"
+    },
+    {
+      "position": 27,
+      "ciphertext": "Q",
+      "plaintext": "O"
+    },
+    {
+      "position": 28,
+      "ciphertext": "P",
+      "plaintext": "R"
+    },
+    {
+      "position": 29,
+      "ciphertext": "R",
+      "plaintext": "T"
+    },
+    {
+      "position": 30,
+      "ciphertext": "N",
+      "plaintext": "H"
+    },
+    {
+      "position": 31,
+      "ciphertext": "G",
+      "plaintext": "E"
+    },
+    {
+      "position": 32,
+      "ciphertext": "K",
+      "plaintext": "A"
+    },
+    {
+      "position": 33,
+      "ciphertext": "S",
+      "plaintext": "S"
+    },
+    {
+      "position": 34,
+      "ciphertext": "S",
+      "plaintext": "T"
+    },
+    {
+      "position": 64,
+      "ciphertext": "N",
+      "plaintext": "B"
+    },
+    {
+      "position": 65,
+      "ciphertext": "Y",
+      "plaintext": "E"
+    },
+    {
+      "position": 66,
+      "ciphertext": "P",
+      "plaintext": "R"
+    },
+    {
+      "position": 67,
+      "ciphertext": "V",
+      "plaintext": "L"
+    },
+    {
+      "position": 68,
+      "ciphertext": "T",
+      "plaintext": "I"
+    },
+    {
+      "position": 69,
+      "ciphertext": "T",
+      "plaintext": "N"
+    },
+    {
+      "position": 70,
+      "ciphertext": "M",
+      "plaintext": "C"
+    },
+    {
+      "position": 71,
+      "ciphertext": "Z",
+      "plaintext": "L"
+    },
+    {
+      "position": 72,
+      "ciphertext": "F",
+      "plaintext": "O"
+    },
+    {
+      "position": 73,
+      "ciphertext": "P",
+      "plaintext": "C"
+    },
+    {
+      "position": 74,
+      "ciphertext": "K",
+      "plaintext": "K"
+    }
+  ],
+  "pure_transposition": {
+    "excluded": true,
+    "deficits": [
+      {
+        "letter": "E",
+        "ciphertext_count": 2,
+        "crib_count": 3,
+        "ciphertext_positions": [
+          45,
+          93
+        ],
+        "crib_positions": [
+          22,
+          31,
+          65
+        ]
+      }
+    ],
+    "minimality": "Three required E observations exceed the two available E symbols; every proper subset of those E observations fits the E inventory."
+  },
+  "direct_monoalphabetic": {
+    "excluded": true,
+    "minimal_witness": {
+      "first": {
+        "position": 26,
+        "ciphertext": "Q",
+        "plaintext": "N"
+      },
+      "second": {
+        "position": 27,
+        "ciphertext": "Q",
+        "plaintext": "O"
+      },
+      "gap": 1,
+      "kind": "same_ciphertext_different_plaintext"
+    },
+    "reason": "The identical cipher symbol Q at positions 26 and 27 would have to decrypt both to N and to O."
+  },
+  "periodic_bijective_substitution": {
+    "definition": "P_i=f_((i-1) mod p)(C_i), where each f is an arbitrary permutation of A-Z and indices align without transposition.",
+    "excluded_positive_periods": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      14,
+      15,
+      17,
+      21,
+      25,
+      34,
+      42,
+      43,
+      45,
+      50
+    ],
+    "all_others_compatible_with_cribs": true,
+    "forbidden_pair_gaps": [
+      1,
+      3,
+      4,
+      5,
+      7,
+      9,
+      34,
+      42,
+      43,
+      45,
+      50
+    ],
+    "uniform_reduction": "A phase map is a partial bijection exactly when equality of cipher symbols agrees with equality of plaintext symbols for every same-phase pair. Conflicting positions share a phase exactly when p divides their gap. Each nonconflicting finite partial bijection extends to an alphabet permutation. All forbidden gaps are at most 50, so no positive p greater than 50 is excluded by these cribs.",
+    "directly_tested_periods": [
+      1,
+      97
+    ],
+    "period_results": [
+      {
+        "period": 1,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 26,
+            "ciphertext": "Q",
+            "plaintext": "N"
+          },
+          "second": {
+            "position": 27,
+            "ciphertext": "Q",
+            "plaintext": "O"
+          },
+          "gap": 1,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 2,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 25,
+            "ciphertext": "V",
+            "plaintext": "T"
+          },
+          "second": {
+            "position": 29,
+            "ciphertext": "R",
+            "plaintext": "T"
+          },
+          "gap": 4,
+          "kind": "same_plaintext_different_ciphertext"
+        }
+      },
+      {
+        "period": 3,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 70,
+            "ciphertext": "M",
+            "plaintext": "C"
+          },
+          "second": {
+            "position": 73,
+            "ciphertext": "P",
+            "plaintext": "C"
+          },
+          "gap": 3,
+          "kind": "same_plaintext_different_ciphertext"
+        }
+      },
+      {
+        "period": 4,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 25,
+            "ciphertext": "V",
+            "plaintext": "T"
+          },
+          "second": {
+            "position": 29,
+            "ciphertext": "R",
+            "plaintext": "T"
+          },
+          "gap": 4,
+          "kind": "same_plaintext_different_ciphertext"
+        }
+      },
+      {
+        "period": 5,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 24,
+            "ciphertext": "R",
+            "plaintext": "S"
+          },
+          "second": {
+            "position": 29,
+            "ciphertext": "R",
+            "plaintext": "T"
+          },
+          "gap": 5,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 6,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 25,
+            "ciphertext": "V",
+            "plaintext": "T"
+          },
+          "second": {
+            "position": 67,
+            "ciphertext": "V",
+            "plaintext": "L"
+          },
+          "gap": 42,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 7,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 66,
+            "ciphertext": "P",
+            "plaintext": "R"
+          },
+          "second": {
+            "position": 73,
+            "ciphertext": "P",
+            "plaintext": "C"
+          },
+          "gap": 7,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 8,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 9,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 22,
+            "ciphertext": "F",
+            "plaintext": "E"
+          },
+          "second": {
+            "position": 31,
+            "ciphertext": "G",
+            "plaintext": "E"
+          },
+          "gap": 9,
+          "kind": "same_plaintext_different_ciphertext"
+        }
+      },
+      {
+        "period": 10,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 22,
+            "ciphertext": "F",
+            "plaintext": "E"
+          },
+          "second": {
+            "position": 72,
+            "ciphertext": "F",
+            "plaintext": "O"
+          },
+          "gap": 50,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 11,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 12,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 13,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 14,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 25,
+            "ciphertext": "V",
+            "plaintext": "T"
+          },
+          "second": {
+            "position": 67,
+            "ciphertext": "V",
+            "plaintext": "L"
+          },
+          "gap": 42,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 15,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 27,
+            "ciphertext": "Q",
+            "plaintext": "O"
+          },
+          "second": {
+            "position": 72,
+            "ciphertext": "F",
+            "plaintext": "O"
+          },
+          "gap": 45,
+          "kind": "same_plaintext_different_ciphertext"
+        }
+      },
+      {
+        "period": 16,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 17,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 30,
+            "ciphertext": "N",
+            "plaintext": "H"
+          },
+          "second": {
+            "position": 64,
+            "ciphertext": "N",
+            "plaintext": "B"
+          },
+          "gap": 34,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 18,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 19,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 20,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 21,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 25,
+            "ciphertext": "V",
+            "plaintext": "T"
+          },
+          "second": {
+            "position": 67,
+            "ciphertext": "V",
+            "plaintext": "L"
+          },
+          "gap": 42,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 22,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 23,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 24,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 25,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 22,
+            "ciphertext": "F",
+            "plaintext": "E"
+          },
+          "second": {
+            "position": 72,
+            "ciphertext": "F",
+            "plaintext": "O"
+          },
+          "gap": 50,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 26,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 27,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 28,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 29,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 30,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 31,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 32,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 33,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 34,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 30,
+            "ciphertext": "N",
+            "plaintext": "H"
+          },
+          "second": {
+            "position": 64,
+            "ciphertext": "N",
+            "plaintext": "B"
+          },
+          "gap": 34,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 35,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 36,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 37,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 38,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 39,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 40,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 41,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 42,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 25,
+            "ciphertext": "V",
+            "plaintext": "T"
+          },
+          "second": {
+            "position": 67,
+            "ciphertext": "V",
+            "plaintext": "L"
+          },
+          "gap": 42,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 43,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 22,
+            "ciphertext": "F",
+            "plaintext": "E"
+          },
+          "second": {
+            "position": 65,
+            "ciphertext": "Y",
+            "plaintext": "E"
+          },
+          "gap": 43,
+          "kind": "same_plaintext_different_ciphertext"
+        }
+      },
+      {
+        "period": 44,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 45,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 27,
+            "ciphertext": "Q",
+            "plaintext": "O"
+          },
+          "second": {
+            "position": 72,
+            "ciphertext": "F",
+            "plaintext": "O"
+          },
+          "gap": 45,
+          "kind": "same_plaintext_different_ciphertext"
+        }
+      },
+      {
+        "period": 46,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 47,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 48,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 49,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 50,
+        "bijective_compatible": false,
+        "deterministic_decryption_compatible": false,
+        "minimal_two_observation_witness": {
+          "first": {
+            "position": 22,
+            "ciphertext": "F",
+            "plaintext": "E"
+          },
+          "second": {
+            "position": 72,
+            "ciphertext": "F",
+            "plaintext": "O"
+          },
+          "gap": 50,
+          "kind": "same_ciphertext_different_plaintext"
+        }
+      },
+      {
+        "period": 51,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 52,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 53,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 54,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 55,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 56,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 57,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 58,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 59,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 60,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 61,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 62,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 63,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 64,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 65,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 66,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 67,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 68,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 69,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 70,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 71,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 72,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 73,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 74,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 75,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 76,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 77,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 78,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 79,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 80,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 81,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 82,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 83,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 84,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 85,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 86,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 87,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 88,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 89,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 90,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 91,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 92,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 93,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 94,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 95,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 96,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      },
+      {
+        "period": 97,
+        "bijective_compatible": true,
+        "deterministic_decryption_compatible": true,
+        "minimal_two_observation_witness": null
+      }
+    ]
+  },
+  "periodic_deterministic_decryption_not_required_injective": {
+    "excluded_positive_periods": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      9,
+      10,
+      14,
+      15,
+      17,
+      21,
+      25,
+      34,
+      42,
+      45,
+      50
+    ],
+    "note": "This weaker interpretation allows distinct ciphertext letters to map to the same plaintext letter. It still excludes a single deterministic monoalphabetic decoder."
+  },
+  "non_claims": [
+    "No decryption or discovery of K4 or K5 is claimed.",
+    "Not excluded means only compatibility with these 24 letters, not plausibility or authenticity.",
+    "Direct periodic substitution assumes the observed ciphertext and final-plaintext positions align; inserting a transposition invalidates that alignment assumption.",
+    "The E inventory argument covers only letter-preserving permutations without added/deleted letters or symbol substitutions.",
+    "No test excludes composed substitution/transposition, variable-state ciphers, fractionation, or other alphabets/encodings.",
+    "Source authenticity and crib accuracy are inherited from the pinned data; no external source authentication was performed in this check.",
+    "These elementary exclusions are not claimed to be novel."
+  ]
+}

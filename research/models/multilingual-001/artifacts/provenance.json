@@ -1,0 +1,31 @@
+{
+  "schema": "kryptos.multilingual-pilot-provenance.v1",
+  "input_hashes": {
+    "research/multilingual_pilot.py": "9c5d48e25dd75458a974d609e8abe67b87b82aa612be57d59f602c2518760a6b",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "research/runs/complete-predictions-001/results.json": "b754ee65cd5579a58019370f902c09ead46c70d27b9168cd0bb7bf913bbcf270",
+    "research/corpora/pg1342.txt": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+    "research/corpora/pg2000.txt": "534f41d59f7142163fa0964076ac6351845c006ea6433778be637fac6d5b04d7",
+    "research/corpora/pg17489.txt": "a5de514ba7b9f2e1790e7e259c4e8b7a35ae1d29e4bf9a5f8767039c58b80503",
+    "research/corpora/pg52484.txt": "b51a398da257709bfd2c0007e42980935751276cdca4178d738fa4c92f799ae6",
+    "research/corpora/pg218.txt": "84ac8411841a4d8f5f4a49b6a2cd1f466917c6a5af72916d5e0b2b1ecb2f659c"
+  },
+  "output_hashes": {
+    "pg1342-english-trigram.json": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+    "pg2000-spanish-trigram.json": "f5e6f034214fd9b4703bf6bae27d44d88a4119540c960f5322e6bfad02032aea",
+    "pg17489-french-trigram.json": "98e96c62a33629f83fd86363a13540960df7c4e14e2c46a2f4a7e9c4a14fecb2",
+    "pg52484-italian-trigram.json": "bb6dda50e357684bd6dad407380d06bf6840ad99e2abe18393cabab0bb25c600",
+    "pg218-latin-trigram.json": "310387d2d9fcb970d77961d12d401457ffa87a1bd6ca360ebe50c59bca74c7ff",
+    "results.json": "cea7f151c6307b48b4a189eec7dd7e59b285df070a5b8540ef9e5aef225d71d6"
+  },
+  "source_urls": [
+    "https://www.gutenberg.org/ebooks/1342",
+    "https://www.gutenberg.org/ebooks/2000",
+    "https://www.gutenberg.org/ebooks/17489",
+    "https://www.gutenberg.org/ebooks/52484",
+    "https://www.gutenberg.org/ebooks/218"
+  ],
+  "license_note": "Project Gutenberg license retained in source; USA public-domain status verified by parent task",
+  "inputs_unchanged": true
+}

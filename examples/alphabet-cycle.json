@@ -1,0 +1,1 @@
+{"target":"custom","ciphertext":"BCDEFGHIJKLMNOPQRSTUVWXYZA","cribs":[{"start":1,"text":"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}],"period":1,"max_states":2000,"max_candidates":12,"time_limit_seconds":5}

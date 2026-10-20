@@ -1,0 +1,25 @@
+{
+  "checks": [
+    "Idle K4 source has97 letters",
+    "No search starts on page load",
+    "Explicit campaign preview shows two jobs",
+    "Editing invalidates launch preview",
+    "Validation presets available",
+    "Literal independent replay succeeds",
+    "Non-involutive trace follows B into output4",
+    "Trace keyboard selection moves to original3",
+    "Inspector mobile has no document overflow",
+    "campaigns mobile has no document overflow",
+    "validation mobile has no document overflow",
+    "workbench mobile has no document overflow",
+    "Saved success does not override tampered recipe",
+    "No run started during preview/import checks",
+    "No JavaScript errors"
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:8768/api/campaigns/preview",
+    "http://127.0.0.1:8768/api/import",
+    "http://127.0.0.1:8768/api/import"
+  ]
+}

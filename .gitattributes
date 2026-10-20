@@ -1,0 +1,4 @@
+# Evidence hashes and pinned fixtures identify bytes, including line endings.
+# Preserve those bytes on every platform rather than applying core.autocrlf.
+* -text whitespace=cr-at-eol
+*.sh text eol=lf

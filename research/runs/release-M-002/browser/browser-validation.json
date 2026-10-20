@@ -1,0 +1,133 @@
+{
+  "schema": "kryptos.browser-validation.v1",
+  "created_utc": "2026-10-13T19:29:34.281362+00:00",
+  "outcome": "passed_after_mobile_table_fix",
+  "source_hashes": {
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "tests/test_import_inspector.py": "5f96f5bfae663c2cd0b9d01d8ff7cf6a4ebcdb17ad7be9f099de6b8534179d24",
+    "kryptos/static/index.html": "c69badbbb8a36016d7c8585a4a5397df87eec759c3e7d03dd51c305ce2a04c21",
+    "kryptos/static/app.js": "397fb28869d6887b7e1ce63b89eb5e99608c6917af35b160f38f4de3da765684",
+    "kryptos/static/style.css": "b8d42b820e786d4ce09b02641877d10fdfe3e17b307663dad96b056298abdc7c"
+  },
+  "execution": "Dedicated local server127.0.0.1:8768 and separate runtime/ui-next state. User server8767 untouched. Test server stopped after checks.",
+  "successful_checks": {
+    "idle": [
+      "Idle K4 source has97 letters",
+      "No search starts on page load",
+      "Explicit campaign preview shows two jobs",
+      "Editing invalidates launch preview",
+      "Validation presets available",
+      "Literal independent replay succeeds",
+      "Non-involutive trace follows B into output4",
+      "Trace keyboard selection moves to original3",
+      "Inspector mobile has no document overflow",
+      "campaigns mobile has no document overflow",
+      "validation mobile has no document overflow",
+      "workbench mobile has no document overflow",
+      "Saved success does not override tampered recipe",
+      "No run started during preview/import checks",
+      "No JavaScript errors"
+    ],
+    "campaign_resource": [
+      "Actual CUDA detected",
+      "Campaign pause preserves bounded queue",
+      "Campaign completes and deduplicates equivalent family",
+      "Alias retains its own replayed candidate",
+      "Campaign comparison shows both jobs",
+      "Equivalent alias independently replays",
+      "Resource settings apply at committed boundary",
+      "Paused frontier has committed work",
+      "Resume advances frontier without losing committed progress"
+    ],
+    "gpu_optimizer_validation": [
+      "CUDA used with certified aggregate ranking",
+      "CUDA page remains bounded",
+      "Actual completed-page export independently replays",
+      "Tampered actual export fails fresh replay",
+      "Seeded/grouped optimizer completes without failure",
+      "Seed and group requests preserved",
+      "validate-holdout completes within its declared bank",
+      "validate-controls completes within its declared bank"
+    ],
+    "final_readonly": [
+      "Saved validation result mobile overflow fixed",
+      "Campaign result/comparison mobile has no overflow",
+      "Saved history includes bounded test jobs",
+      "Export button downloads valid run JSON",
+      "File import independently verifies actual CUDA run",
+      "Imported run candidate selection independently replays",
+      "Actual result trace mobile has no overflow",
+      "Edited artifact cannot retain stale verification",
+      "Unknown artifact rejects visibly",
+      "No JavaScript errors"
+    ]
+  },
+  "javascript_errors": {
+    "idle": [],
+    "campaign_resource": [],
+    "gpu_optimizer_validation": [],
+    "final_readonly": []
+  },
+  "importer_unit_tests": {
+    "count": 9,
+    "result": "passed",
+    "independent_review": "Sources agent found no concrete replay/position-mapping defect; no I/O or execution of imported paths."
+  },
+  "limits": [
+    "Synthetic application workflows, not a Kryptos solution or broad cipher search.",
+    "CPU resource scan stopped after18/17576 candidates; certified CUDA scan limited after128/676.",
+    "A26-text equivalent-family campaign completed and replayed its alias with its own recipe.",
+    "Two supplied validation examples completed, including2808 paired-control candidate visits.",
+    "Browser job source identities are stored with each exported run. A later POSIX close guard was applied after all job execution; final checks read saved results only."
+  ],
+  "resolved_findings": [
+    {
+      "kind": "harness",
+      "description": "Initial harness did not open the advanced base details before filling it. No job had started."
+    },
+    {
+      "kind": "harness",
+      "description": "An unsupported request.top field was inserted into a GPU test fixture. Server job failed before evaluating or committing work; continuation removed the field."
+    },
+    {
+      "kind": "ui",
+      "description": "Paired-control table escaped the mobile viewport. Added an overflow container; final read-only mobile checks pass."
+    }
+  ],
+  "evidence_directories": [
+    "idle-screenshots",
+    "attempts/initial-harness",
+    "attempts/campaign-resource",
+    "attempts/gpu-validation",
+    "final-readonly"
+  ],
+  "reproduction_scripts": [
+    "test_idle_import.cjs",
+    "test_functional.cjs",
+    "test_finish.cjs",
+    "test_final_readonly.cjs"
+  ],
+  "reproduction_note": "test_functional.cjs now contains the corrected complete workflow; actual execution was split at the recorded harness errors and mobile fix rather than repeating completed searches.",
+  "source_stage_note": "Actual Windows campaign, CPU, CUDA, optimizer and validation flows ran before the later POSIX idempotent-close guard and elapsed-time rounding fix. No production source was edited during those jobs. Those unrelated later changes are covered by the root final full suite and canonical M002 audit. Final static UI hashes are recorded here; the mobile table fix was checked against saved results without rerunning searches.",
+  "execution_stage_counts": {
+    "idle": 15,
+    "campaign_resource": 9,
+    "gpu_optimizer_validation": 8,
+    "final_readonly": 10,
+    "successful_checks_total": 42
+  },
+  "failed_attempts": [
+    {
+      "path": "attempts/initial-harness/browser-failure.json",
+      "cause": "Harness advanced editor was closed; no jobs started."
+    },
+    {
+      "path": "attempts/campaign-resource/browser-failure.json",
+      "cause": "Unsupported test-fixture request.top; zero work committed in failed GPU attempt. Successful campaign/resource evidence retained."
+    },
+    {
+      "path": "attempts/gpu-validation/browser-failure.json",
+      "cause": "Mobile validation table overflow; all real job checks succeeded. Fixed and passed final read-only checks."
+    }
+  ]
+}

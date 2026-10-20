@@ -1,0 +1,378 @@
+{
+  "schema_version": 2,
+  "claim_id": "KRYPTOS-APP-L-correlated",
+  "repository": {
+    "commit": "37e88b80d3a9734e6b2eb94910bf88823db6433f",
+    "dirty": true
+  },
+  "command": [
+    "C:\\KryptosSolverK4andK5\\.venv\\Scripts\\python.exe",
+    "-B",
+    "research/correlated_bound_benchmark.py",
+    "--output",
+    "research/runs/release-L-001/correlated/result.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.12.2"
+      },
+      {
+        "name": "Python",
+        "version": "3.12.2"
+      }
+    ],
+    "hardware": "Windows-10-10.0.19044-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Integrated correlated bounds equal exact local maxima for every partial assignment of the fixed family, with unchanged optimum",
+    "coefficient_domain": "Z/26 letters via F2/F13; exact integer product scores; CUDA float64 shortlist only",
+    "conventions": "1-based external cribs; zero-based internal indices; fixed model; CPU exact ranking, approximate CUDA shortlist unless all candidates rescored",
+    "inputs": [
+      "kryptos/__main__.py",
+      "kryptos/accelerated.py",
+      "kryptos/advanced_cli.py",
+      "kryptos/alphabet_propagation.py",
+      "kryptos/app.py",
+      "kryptos/app_jobs.py",
+      "kryptos/app_worker.py",
+      "kryptos/ciphers.py",
+      "kryptos/columnar.py",
+      "kryptos/correlated_bound.py",
+      "kryptos/data.py",
+      "kryptos/engine.py",
+      "kryptos/experiments.py",
+      "kryptos/explanations.py",
+      "kryptos/factor_search.py",
+      "kryptos/fractionation.py",
+      "kryptos/general_layers.py",
+      "kryptos/grid.py",
+      "kryptos/joint_columnar.py",
+      "kryptos/keyed_alphabet.py",
+      "kryptos/language.py",
+      "kryptos/layer_plan.py",
+      "kryptos/mixed_stages.py",
+      "kryptos/next_cli.py",
+      "kryptos/parallel_search.py",
+      "kryptos/position_residues.py",
+      "kryptos/recovery.py",
+      "kryptos/replay_expanded.py",
+      "kryptos/scheduled_layers.py",
+      "kryptos/score_sensitivity.py",
+      "kryptos/scoring.py",
+      "kryptos/sculpture.py",
+      "kryptos/search_runtime.py",
+      "kryptos/semantic.py",
+      "research/correlated_bound_benchmark.py",
+      "research/run_release_audits.py",
+      "research/source_snapshots/checkpoint-K-original/kryptos/language.py",
+      "research/source_snapshots/checkpoint-K-original/kryptos/search_runtime.py"
+    ],
+    "bounds": {
+      "family_size": 52,
+      "all_partial_assignments": 81,
+      "integrated_implementations": 2,
+      "outer_seconds": 30
+    },
+    "non_claims": [
+      "No K4/K5 decipherment or global exclusion",
+      "No general performance guarantee",
+      "Replay authenticates a specified recipe, not the sculpture's unknown method"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-10-13T18:28:22.010923+00:00",
+    "runtime_seconds": 0.75,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 30.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": 1
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "kryptos/__main__.py",
+    "kryptos/accelerated.py",
+    "kryptos/advanced_cli.py",
+    "kryptos/alphabet_propagation.py",
+    "kryptos/app.py",
+    "kryptos/app_jobs.py",
+    "kryptos/app_worker.py",
+    "kryptos/ciphers.py",
+    "kryptos/columnar.py",
+    "kryptos/correlated_bound.py",
+    "kryptos/data.py",
+    "kryptos/engine.py",
+    "kryptos/experiments.py",
+    "kryptos/explanations.py",
+    "kryptos/factor_search.py",
+    "kryptos/fractionation.py",
+    "kryptos/general_layers.py",
+    "kryptos/grid.py",
+    "kryptos/joint_columnar.py",
+    "kryptos/keyed_alphabet.py",
+    "kryptos/language.py",
+    "kryptos/layer_plan.py",
+    "kryptos/mixed_stages.py",
+    "kryptos/next_cli.py",
+    "kryptos/parallel_search.py",
+    "kryptos/position_residues.py",
+    "kryptos/recovery.py",
+    "kryptos/replay_expanded.py",
+    "kryptos/scheduled_layers.py",
+    "kryptos/score_sensitivity.py",
+    "kryptos/scoring.py",
+    "kryptos/sculpture.py",
+    "kryptos/search_runtime.py",
+    "kryptos/semantic.py",
+    "research/correlated_bound_benchmark.py",
+    "research/run_release_audits.py",
+    "research/source_snapshots/checkpoint-K-original/kryptos/language.py",
+    "research/source_snapshots/checkpoint-K-original/kryptos/search_runtime.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "kryptos/__main__.py",
+      "sha256": "a572994f6b70030b37a53aaa31e1f09d387601536de9dde86ba8d9ded91b79c8",
+      "sha256_after": "a572994f6b70030b37a53aaa31e1f09d387601536de9dde86ba8d9ded91b79c8"
+    },
+    {
+      "path": "kryptos/accelerated.py",
+      "sha256": "ae0940d18559dbab3089968647f8c7bbde3de215e42adbf4406c740cb1510fcb",
+      "sha256_after": "ae0940d18559dbab3089968647f8c7bbde3de215e42adbf4406c740cb1510fcb"
+    },
+    {
+      "path": "kryptos/advanced_cli.py",
+      "sha256": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+      "sha256_after": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e"
+    },
+    {
+      "path": "kryptos/alphabet_propagation.py",
+      "sha256": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+      "sha256_after": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3"
+    },
+    {
+      "path": "kryptos/app.py",
+      "sha256": "7c980a651d3ac4bd5032c65ccf172f4345a8b1daec71f801c53d7bbadfe734ff",
+      "sha256_after": "7c980a651d3ac4bd5032c65ccf172f4345a8b1daec71f801c53d7bbadfe734ff"
+    },
+    {
+      "path": "kryptos/app_jobs.py",
+      "sha256": "98c39330b3f7a80e6a498252c028109593bb9d67c3e2e3260f6e3853c56d2b79",
+      "sha256_after": "98c39330b3f7a80e6a498252c028109593bb9d67c3e2e3260f6e3853c56d2b79"
+    },
+    {
+      "path": "kryptos/app_worker.py",
+      "sha256": "832af65d758b12991606bb29a33287ac8747f73ca9a1c22b9d55ef72f2e3e063",
+      "sha256_after": "832af65d758b12991606bb29a33287ac8747f73ca9a1c22b9d55ef72f2e3e063"
+    },
+    {
+      "path": "kryptos/ciphers.py",
+      "sha256": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+      "sha256_after": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35"
+    },
+    {
+      "path": "kryptos/columnar.py",
+      "sha256": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+      "sha256_after": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4"
+    },
+    {
+      "path": "kryptos/correlated_bound.py",
+      "sha256": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+      "sha256_after": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909"
+    },
+    {
+      "path": "kryptos/data.py",
+      "sha256": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+      "sha256_after": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2"
+    },
+    {
+      "path": "kryptos/engine.py",
+      "sha256": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+      "sha256_after": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50"
+    },
+    {
+      "path": "kryptos/experiments.py",
+      "sha256": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+      "sha256_after": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363"
+    },
+    {
+      "path": "kryptos/explanations.py",
+      "sha256": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+      "sha256_after": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35"
+    },
+    {
+      "path": "kryptos/factor_search.py",
+      "sha256": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+      "sha256_after": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758"
+    },
+    {
+      "path": "kryptos/fractionation.py",
+      "sha256": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+      "sha256_after": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2"
+    },
+    {
+      "path": "kryptos/general_layers.py",
+      "sha256": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+      "sha256_after": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464"
+    },
+    {
+      "path": "kryptos/grid.py",
+      "sha256": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+      "sha256_after": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405"
+    },
+    {
+      "path": "kryptos/joint_columnar.py",
+      "sha256": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+      "sha256_after": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d"
+    },
+    {
+      "path": "kryptos/keyed_alphabet.py",
+      "sha256": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+      "sha256_after": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7"
+    },
+    {
+      "path": "kryptos/language.py",
+      "sha256": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+      "sha256_after": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf"
+    },
+    {
+      "path": "kryptos/layer_plan.py",
+      "sha256": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+      "sha256_after": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261"
+    },
+    {
+      "path": "kryptos/mixed_stages.py",
+      "sha256": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+      "sha256_after": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203"
+    },
+    {
+      "path": "kryptos/next_cli.py",
+      "sha256": "5d86aeb54c5c5ccfab471d8ae633616816a536fa6ab69f92157005e7e9c2b53f",
+      "sha256_after": "5d86aeb54c5c5ccfab471d8ae633616816a536fa6ab69f92157005e7e9c2b53f"
+    },
+    {
+      "path": "kryptos/parallel_search.py",
+      "sha256": "1b3c0954c59164e419e5d260c263d47486f7c19f51159127fcc5558c364c2a57",
+      "sha256_after": "1b3c0954c59164e419e5d260c263d47486f7c19f51159127fcc5558c364c2a57"
+    },
+    {
+      "path": "kryptos/position_residues.py",
+      "sha256": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+      "sha256_after": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130"
+    },
+    {
+      "path": "kryptos/recovery.py",
+      "sha256": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+      "sha256_after": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d"
+    },
+    {
+      "path": "kryptos/replay_expanded.py",
+      "sha256": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+      "sha256_after": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd"
+    },
+    {
+      "path": "kryptos/scheduled_layers.py",
+      "sha256": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+      "sha256_after": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8"
+    },
+    {
+      "path": "kryptos/score_sensitivity.py",
+      "sha256": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+      "sha256_after": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa"
+    },
+    {
+      "path": "kryptos/scoring.py",
+      "sha256": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+      "sha256_after": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90"
+    },
+    {
+      "path": "kryptos/sculpture.py",
+      "sha256": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+      "sha256_after": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68"
+    },
+    {
+      "path": "kryptos/search_runtime.py",
+      "sha256": "729acd2d9bda6436fa55bf9d6fa90973c44da1854c244a17e210b8a60d3753ce",
+      "sha256_after": "729acd2d9bda6436fa55bf9d6fa90973c44da1854c244a17e210b8a60d3753ce"
+    },
+    {
+      "path": "kryptos/semantic.py",
+      "sha256": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+      "sha256_after": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa"
+    },
+    {
+      "path": "research/correlated_bound_benchmark.py",
+      "sha256": "aa51360399e1020a0db4537c3b7b29018f7e082dfa309b3c55b2292fc2149d5e",
+      "sha256_after": "aa51360399e1020a0db4537c3b7b29018f7e082dfa309b3c55b2292fc2149d5e"
+    },
+    {
+      "path": "research/run_release_audits.py",
+      "sha256": "8624c570c932ac2aa8fdbd02b698173296b56f6bc3626999b0e36537acda7448",
+      "sha256_after": "8624c570c932ac2aa8fdbd02b698173296b56f6bc3626999b0e36537acda7448"
+    },
+    {
+      "path": "research/source_snapshots/checkpoint-K-original/kryptos/language.py",
+      "sha256": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+      "sha256_after": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf"
+    },
+    {
+      "path": "research/source_snapshots/checkpoint-K-original/kryptos/search_runtime.py",
+      "sha256": "b1ecec12e41d79a5e4d275c613be2d07799320abd054f442412f00cd257ded3f",
+      "sha256_after": "b1ecec12e41d79a5e4d275c613be2d07799320abd054f442412f00cd257ded3f"
+    }
+  ],
+  "output_directory": "research/runs/release-L-001/correlated",
+  "declared_results": [
+    "research/runs/release-L-001/correlated/result.json"
+  ],
+  "outputs": [
+    {
+      "path": "research/runs/release-L-001/correlated/stdout.txt",
+      "sha256": "d3b1668103ca3910648f11c9b430c0f35f9d697c712bee177f6c241700b844c9",
+      "kind": "log"
+    },
+    {
+      "path": "research/runs/release-L-001/correlated/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "research/runs/release-L-001/correlated/result.json",
+      "sha256": "e05280de081288aaabb5e77ea1952c26cf357aaae21857999591b8004064df01",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions.",
+    "The thread cap uses conventional environment variables; a child program may ignore them."
+  ]
+}

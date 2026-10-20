@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-F-NATO-word-stream",
+  "mathematics": {
+    "assertion_tested": "Neither EASTNORTHEAST nor BERLINCLOCK can occur as a substring of a concatenation of the 26 standard NATO letter words.",
+    "coefficient_domain": "Finite sets of letter pairs",
+    "conventions": "Uppercase A-Z, strip the hyphen from X-ray, remove spaces. Every adjacent pair lies inside one word or crosses one word boundary. A missing pair is sufficient for impossibility.",
+    "inputs": ["research/nato_constraints.py"],
+    "bounds": {"letter_words": 26, "ordered_word_pairs": 676, "crib_fragments": 2, "positive_controls": 2, "workers": 1},
+    "non_claims": ["Does not exclude custom codebooks, mixed prose and codewords, another alphabet, acrostics, or a separate intermediate text", "No decipherment or key search"]
+  },
+  "execution_artifacts": ["research/nato_constraints.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

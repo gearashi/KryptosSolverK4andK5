@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-H-complete-candidate-inspection",
+  "mathematics": {
+    "assertion_tested": "Group identical full plaintexts among 84 fully forced stored model records and rank only their 73 unconfirmed characters.",
+    "coefficient_domain": "Exact string equality; heuristic floating point English scores",
+    "conventions": "Zero-based score masks exclude every feature touching a known letter, without joining across gaps. Scores use the identical mask in all candidates.",
+    "inputs": ["research/runs/prediction-001/results.json", "kryptos/scoring.py", "research/inspect_complete_predictions.py"],
+    "bounds": {"selected_complete_models": 84, "characters_per_candidate": 97, "scored_characters": 73, "workers": 1, "new_models_searched": 0},
+    "non_claims": ["No authentic decipherment", "No calibrated significance", "No rejection of other languages", "No cipher-family equivalence inferred from identical plaintext"]
+  },
+  "execution_artifacts": ["research/runs/prediction-001/results.json", "kryptos/scoring.py", "research/inspect_complete_predictions.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

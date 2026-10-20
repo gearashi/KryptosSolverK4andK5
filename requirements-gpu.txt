@@ -1,0 +1,5 @@
+# Optional GPU path only. CPU operation uses the Python standard library.
+# Tested on 64-bit Python 3.12.2 with an NVIDIA RTX 2060 and CUDA 12 packages.
+cupy-cuda12x==14.2.0
+nvidia-cuda-runtime-cu12==12.9.79
+nvidia-cuda-nvrtc-cu12==12.9.86

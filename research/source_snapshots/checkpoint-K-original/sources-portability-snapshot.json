@@ -1,0 +1,20 @@
+{
+  "reason": "Preserve checkpoint-K originals before explicit packaged layout loader integration.",
+  "files": [
+    {
+      "path": "kryptos/sculpture.py",
+      "snapshot": "research/source_snapshots/checkpoint-K-original/kryptos/sculpture.py",
+      "sha256": "246e0632d4024263e2fa6eeb4894993d5db78e2069fc66baeb89081f338bc4fc"
+    },
+    {
+      "path": "kryptos/advanced_cli.py",
+      "snapshot": "research/source_snapshots/checkpoint-K-original/kryptos/advanced_cli.py",
+      "sha256": "054a021ce6478db20a51951e335347c751aba0387ade00d72ffdb4f42b725a2f"
+    },
+    {
+      "path": "tests/test_sculpture.py",
+      "snapshot": "research/source_snapshots/checkpoint-K-original/tests/test_sculpture.py",
+      "sha256": "54724453082c16ec7ac2f0026b4ad732f781e4efdcd64d4ecdb3c7a170691a75"
+    }
+  ]
+}

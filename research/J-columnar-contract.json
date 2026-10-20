@@ -1,0 +1,14 @@
+{
+  "claim_id":"K4-20261013-J-unknown-column-order",
+  "mathematics":{
+    "assertion_tested":"Unknown-column recovery returns the independently published PK2 order and preserves exact ambiguity on bounded synthetic controls, including ragged and symmetric cases.",
+    "coefficient_domain":"Finite permutations and exact integer matching counts",
+    "conventions":"Pure whole-column transposition, row-filled supplied occupied cells, top-to-bottom columns, one-based plaintext cribs. PK2 order/key withheld from solver.",
+    "inputs":["kryptos/columnar.py","kryptos/data.py","research/columnar_benchmarks.py","research/source_snapshots/sculpture-J/pk2_fixture.json"],
+    "bounds":{"cases":7,"states_per_case":200000,"segmentations_per_case":2048,"seconds_per_case":5,"candidates_stored_per_case":20,"pk2_crib_letters":21,"workers":1},
+    "non_claims":["No unknown surrounding substitution included","K4 pure-transposition rejection is its existing letter-inventory contradiction","Column-order counts are not generally plaintext counts","No authenticated decipherment"]
+  },
+  "execution_artifacts":["kryptos/columnar.py","kryptos/data.py","research/columnar_benchmarks.py","research/source_snapshots/sculpture-J/pk2_fixture.json"],
+  "software":[{"name":"Python","version":"3.14.5"}],
+  "randomness":{"used":false,"generator":"","seed":null}
+}

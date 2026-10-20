@@ -1,0 +1,19 @@
+{
+  "started": "2026-10-13T18:30:57.230Z",
+  "errors": [],
+  "checks": [
+    "history and run detail dialog",
+    "actual RTX2060 CUDA one-page family, 26 candidates, CPU replay and sensitivity",
+    "mobile results remain within viewport"
+  ],
+  "cpu_run_id": "440a60c31e31402bbad5ef7699f902fc",
+  "cuda_run_id": "b68db5db851646e7b146fa66e94d67c1",
+  "cuda": {
+    "state": "completed",
+    "evaluated": "26",
+    "ranking_exact_over_committed_pages": true,
+    "backend": "cuda"
+  },
+  "passed": true,
+  "finished": "2026-10-13T18:31:03.171Z"
+}

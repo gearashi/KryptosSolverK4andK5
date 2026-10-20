@@ -1,0 +1,119 @@
+{
+  "schema_version": 2,
+  "claim_id": "K4-20261012-G-independent-certificate-audit",
+  "repository": {
+    "commit": "unavailable",
+    "dirty": true
+  },
+  "command": [
+    "C:\\Python314\\python.exe",
+    "research/audit_mixed_results.py"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "Python",
+        "version": "3.14.5"
+      }
+    ],
+    "hardware": "AMD64"
+  },
+  "mathematics": {
+    "assertion_tested": "All 1392 recorded models are infeasible under their stated alphabet/period/route/order assumptions; every rejected component root has a valid contradiction certificate.",
+    "coefficient_domain": "Exact symbol permutations and integers modulo 26",
+    "conventions": "1-based stored positions; literal stage tracking with zero-based gather permutation; independent A/B phase namespaces.",
+    "inputs": [
+      "kryptos/data.py",
+      "research/runs/mixed-001/results.json",
+      "research/runs/mixed-001/manifest.json",
+      "research/audit_mixed_results.py"
+    ],
+    "bounds": {
+      "models": 1392,
+      "cribs_per_model": 24,
+      "root_values_per_component": 26,
+      "workers": 1,
+      "cooperative_deadline_seconds": 20
+    },
+    "non_claims": [
+      "No general K4 or arbitrary-alphabet exclusion.",
+      "The stored permutations are validated as permutations; their historical construction is outside this audit.",
+      "No claim about full-plaintext uniqueness or solution confidence.",
+      "The original scan's separate benchmark and regression execution claims were not rerun."
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "none",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-10-12T22:56:44.773387+00:00",
+    "runtime_seconds": 2.339132099878043,
+    "exit_status": 0,
+    "status": "completed",
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": 1
+    },
+    "resource_note": "Single-threaded stdlib code; cooperative 20-second deadline, no OS memory or CPU limit."
+  },
+  "input_artifacts": [
+    {
+      "path": "kryptos/data.py",
+      "sha256": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+      "sha256_after": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2"
+    },
+    {
+      "path": "research/runs/mixed-001/results.json",
+      "sha256": "73cc165379458616f1d347f28ab4eaf46c3b334d05b6620b0f5aae388e65dae6",
+      "sha256_after": "73cc165379458616f1d347f28ab4eaf46c3b334d05b6620b0f5aae388e65dae6"
+    },
+    {
+      "path": "research/runs/mixed-001/manifest.json",
+      "sha256": "4961295b18dfbbe5a72ce33bc8e65849c7aaf88446106feadf42a85c8e7e3faa",
+      "sha256_after": "4961295b18dfbbe5a72ce33bc8e65849c7aaf88446106feadf42a85c8e7e3faa"
+    },
+    {
+      "path": "research/audit_mixed_results.py",
+      "sha256": "7b97c23037942c0498925346acd6a82e3fe0fc4b2268b1b11afc6c0706268fce",
+      "sha256_after": "7b97c23037942c0498925346acd6a82e3fe0fc4b2268b1b11afc6c0706268fce"
+    }
+  ],
+  "execution_artifacts": [
+    "kryptos/data.py",
+    "research/runs/mixed-001/results.json",
+    "research/runs/mixed-001/manifest.json",
+    "research/audit_mixed_results.py"
+  ],
+  "declared_results": [
+    "research/audit_mixed_results.json"
+  ],
+  "outputs": [
+    {
+      "path": "research/audit_mixed_results.json",
+      "kind": "result",
+      "sha256": "e61a5c1229cc491473e979e49bb15c20b0dcb3b40f775f9023687e4617350d8c"
+    }
+  ],
+  "checks": [
+    "Original-symbol and literal-position reconstruction",
+    "Complete component partition",
+    "Every accepted assignment satisfies every component edge",
+    "Every rejected root's endpoint paths and closing-edge contradiction replay",
+    "Complete 0..25 root partition",
+    "Component counts, products and all model summaries",
+    "No component has exactly 25 roots",
+    "Before/after hashes unchanged"
+  ],
+  "result": "All 1392 recorded models are infeasible under their stated alphabet/period/route/order assumptions; every rejected component root has a valid contradiction certificate.",
+  "residual_risks": [
+    "No general K4 or arbitrary-alphabet exclusion.",
+    "The stored permutations are validated as permutations; their historical construction is outside this audit.",
+    "No claim about full-plaintext uniqueness or solution confidence.",
+    "The original scan's separate benchmark and regression execution claims were not rerun.",
+    "Manifest is produced by the audit process, not an external supervisor."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "target": "custom",
+  "ciphertext": "LXFOPVEFRNHR",
+  "cribs": [{"start": 1, "text": "ATTACK"}],
+  "alphabet": "standard",
+  "cipher": "vigenere",
+  "min_period": 1,
+  "max_period": 5,
+  "max_models": 5,
+  "max_crib_checks": 100
+}

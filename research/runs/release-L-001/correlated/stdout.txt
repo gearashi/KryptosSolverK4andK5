@@ -1,0 +1,1 @@
+{"partial_assignments_checked": 81, "strictly_tighter_bounds": 3, "old_branch": {"best": [1, 3], "score": 91, "partial_nodes_expanded_including_root_setup": 4, "bound_calls": 55}, "correlated_branch": {"best": [1, 3], "score": 91, "partial_nodes_expanded_including_root_setup": 3, "bound_calls": 29}, "elapsed_seconds": 0.0497212999034673}

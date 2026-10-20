@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-G-mixed-alphabet-layers",
+  "mathematics": {
+    "assertion_tested": "Decide all key assignments in 1392 specified two-substitution/transposition models by exact propagation of bijective constraints for26 root values per graph component.",
+    "coefficient_domain": "Integers modulo26 and finite permutations of A-Z",
+    "conventions": "T(x)[j]=x[pi[j]]. Stages S use their own alphabet for input, output, and key indexing; symbol identities transfer between alphabets. Periods mean declared repeating key lengths with no word restriction. Includes isolated key slots.",
+    "inputs": ["kryptos/data.py", "research/runs/layers-001/results.json", "research/runs/layers-001/manifest.json", "research/mixed_alphabet_constraints.py", "research/check_mixed_alphabets.py"],
+    "bounds": {"routes": 29, "orders": 3, "alphabet_pairs": 4, "period_pairs": [[3, 2], [2, 3], [10, 8], [8, 10]], "models": 1392, "root_values_per_component": 26, "workers": 1},
+    "non_claims": ["No arbitrary-alphabet or arbitrary-transposition exclusion", "No language ranking or authenticated plaintext", "Not a historical reconstruction", "No full app tests or heavy key search"]
+  },
+  "execution_artifacts": ["research/check_mixed_alphabets.py", "research/mixed_alphabet_constraints.py", "kryptos/data.py", "research/runs/layers-001/results.json", "research/runs/layers-001/manifest.json"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

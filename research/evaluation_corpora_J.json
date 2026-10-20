@@ -1,0 +1,456 @@
+{
+  "schema": "kryptos.document-separated-corpora.v1",
+  "frozen_protocol_date": "2026-10-13",
+  "books": [
+    {
+      "gutenberg_id": 1342,
+      "language": "english",
+      "role": "training",
+      "title": "Pride and Prejudice",
+      "author": "Austen, Jane, 1775-1817",
+      "source_url": "https://www.gutenberg.org/ebooks/1342",
+      "text_url": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+      "path": "research/corpora/pg1342.txt",
+      "sha256": "3f6bb9d6f78e0293b56acd4714dd68cb7d6d1d293402031ce9d5a216bcaf9d75",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg1342-metadata.html.txt",
+      "metadata_sha256": "5ec17ed1b677ab6c0c09b36dcd2a5bf01a7a5f84f2b4e3dfb72f6b27d2291ed2",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 563939,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          1000,
+          744280
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK PRIDE AND PREJUDICE ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK PRIDE AND PREJUDICE ***",
+        "body_characters": 743280,
+        "body_sha256_utf8": "30eb91220015f4636b4a9295f1ae62456ae3ddbb879c23f2e1f472f01aefdf0e",
+        "normalized_letters": 563939,
+        "normalized_body_sha256": "47619b437e5e71f4b126ff803f4be493903e2aca6fe1b1440d14b99d89f8c03c",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {
+          "\u0152": 1
+        }
+      }
+    },
+    {
+      "gutenberg_id": 98,
+      "language": "english",
+      "role": "training",
+      "title": "A Tale of Two Cities",
+      "author": "Dickens, Charles, 1812-1870",
+      "source_url": "https://www.gutenberg.org/ebooks/98",
+      "text_url": "https://www.gutenberg.org/cache/epub/98/pg98.txt",
+      "path": "research/source_snapshots/evaluation-J/pg98.txt",
+      "sha256": "d54c2b80d40a40b982cd88852c6180bb944d95acdb028af3d0e01a1750681784",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg98-metadata.html.txt",
+      "metadata_sha256": "38002c7459b9369537bb629393c220f92cb27959fe47e36df3f9b0a3d2c273b5",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 584912,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          880,
+          774392
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK A TALE OF TWO CITIES ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK A TALE OF TWO CITIES ***",
+        "body_characters": 773512,
+        "body_sha256_utf8": "455307a897f7b2b9fca3330eb9a53a4adeda83be96603ff17ccb1150919e42df",
+        "normalized_letters": 584912,
+        "normalized_body_sha256": "4a97885eb286ce2d1d5de60c975fb8f6a7130101187ae7e267f6cdb553b35f98",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 1661,
+      "language": "english",
+      "role": "validation",
+      "title": "The Adventures of Sherlock Holmes",
+      "author": "Doyle, Arthur Conan, 1859-1930",
+      "source_url": "https://www.gutenberg.org/ebooks/1661",
+      "text_url": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",
+      "path": "research/source_snapshots/evaluation-J/pg1661.txt",
+      "sha256": "922e2a12ccb43a4c9544c260b2166c6ad2097aeb5957faeee113f173bb857cd0",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg1661-metadata.html.txt",
+      "metadata_sha256": "f68feb72254ec881827f2656101c36578c96bfa6d7d6cb945e27ee1ddcc57bf1",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 431477,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          957,
+          575095
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK THE ADVENTURES OF SHERLOCK HOLMES ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK THE ADVENTURES OF SHERLOCK HOLMES ***",
+        "body_characters": 574138,
+        "body_sha256_utf8": "b270f01370781d214e62e5dbde988755edb66226887825ca446b9c0870c80b74",
+        "normalized_letters": 431477,
+        "normalized_body_sha256": "2abcd5ac2c154a076bc19ddf80620e6194c2d298d1001df6bb9230371d4d096e",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {
+          "\u00c6": 6,
+          "\u0152": 2
+        }
+      }
+    },
+    {
+      "gutenberg_id": 2000,
+      "language": "spanish",
+      "role": "training",
+      "title": "Don Quijote",
+      "author": "Cervantes Saavedra, Miguel de, 1547-1616",
+      "source_url": "https://www.gutenberg.org/ebooks/2000",
+      "text_url": "https://www.gutenberg.org/cache/epub/2000/pg2000.txt",
+      "path": "research/corpora/pg2000.txt",
+      "sha256": "534f41d59f7142163fa0964076ac6351845c006ea6433778be637fac6d5b04d7",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg2000-metadata.html.txt",
+      "metadata_sha256": "c9524410b2676ff010de9c44c90a9a5fdda94fcbd2ce46e8109cc9248751269c",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 1651320,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          911,
+          2149322
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK DON QUIJOTE ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK DON QUIJOTE ***",
+        "body_characters": 2148411,
+        "body_sha256_utf8": "ba68f6c3783f88cd7f5ea769d56e04325914c8b891c8de6ab9f131ffad1ddeb4",
+        "normalized_letters": 1651320,
+        "normalized_body_sha256": "b24ecb7b4beef4b84d1c5959869d6a2bd8bc3e4bd27c5b02e741f68c5a6dabe5",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 17223,
+      "language": "spanish",
+      "role": "training",
+      "title": "Pepita Jim\u00e9nez",
+      "author": "Valera, Juan, 1824-1905",
+      "source_url": "https://www.gutenberg.org/ebooks/17223",
+      "text_url": "https://www.gutenberg.org/cache/epub/17223/pg17223.txt",
+      "path": "research/source_snapshots/evaluation-J/pg17223.txt",
+      "sha256": "5ac6722b1de675f7e7f9d64ed03dc5ed34565f46c86c769d6062cddf3c0ecdd4",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg17223-metadata.html.txt",
+      "metadata_sha256": "5d51e05f4624f9a3f3807eb45ccc02e3cc742c20370915d3451d98e12ded46bc",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 245568,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          864,
+          321757
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK PEPITA JIM\u00c9NEZ ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK PEPITA JIM\u00c9NEZ ***",
+        "body_characters": 320893,
+        "body_sha256_utf8": "5e942520a00afb7bce800b012e062903537ed2e0197858b620418a422bbdf010",
+        "normalized_letters": 245568,
+        "normalized_body_sha256": "02562ca345e0d8a68a10bdec7b3f0977b4500e84c68a08fbd7845412401a3ff6",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 17340,
+      "language": "spanish",
+      "role": "validation",
+      "title": "Marianela",
+      "author": "P\u00e9rez Gald\u00f3s, Benito, 1843-1920",
+      "source_url": "https://www.gutenberg.org/ebooks/17340",
+      "text_url": "https://www.gutenberg.org/cache/epub/17340/pg17340.txt",
+      "path": "research/source_snapshots/evaluation-J/pg17340.txt",
+      "sha256": "ec6e5dbd4260583360ab7bd29738505ad5f0dfdf58db3dcbbc401c5ce4fea03f",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg17340-metadata.html.txt",
+      "metadata_sha256": "24ab36d2de4d5ca58eb5e9d50a18ef05ec2d877d667f4eddd8864f350f16041e",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 227775,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          845,
+          301012
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK MARIANELA ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK MARIANELA ***",
+        "body_characters": 300167,
+        "body_sha256_utf8": "2b841e84e3612556d6bb994ed9328bf56a2d5970df802f9b5f5db6b023849887",
+        "normalized_letters": 227775,
+        "normalized_body_sha256": "383ffcde66542e746740c2be05683eb7a18b1ef04e8be8620a069d145422669f",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 17489,
+      "language": "french",
+      "role": "training",
+      "title": "Les mis\u00e9rables Tome I: Fantine",
+      "author": "Hugo, Victor, 1802-1885",
+      "source_url": "https://www.gutenberg.org/ebooks/17489",
+      "text_url": "https://www.gutenberg.org/cache/epub/17489/pg17489.txt",
+      "path": "research/corpora/pg17489.txt",
+      "sha256": "a5de514ba7b9f2e1790e7e259c4e8b7a35ae1d29e4bf9a5f8767039c58b80503",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg17489-metadata.html.txt",
+      "metadata_sha256": "cbe77611a61a4e75cc0d5d460fe9c02ab9313bd0a55729f24e36b17402e7f22a",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 512877,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          937,
+          673272
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK LES MIS\u00c9RABLES TOME I: FANTINE ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK LES MIS\u00c9RABLES TOME I: FANTINE ***",
+        "body_characters": 672335,
+        "body_sha256_utf8": "5b544fad68d3390beac71876d898978129e5b6cbfa158adf25811750e814ef87",
+        "normalized_letters": 512877,
+        "normalized_body_sha256": "9091787ff20aaee85a8962ca5bd46c36f6456c02e5ed41baf32e48568e3028f2",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 14155,
+      "language": "french",
+      "role": "training",
+      "title": "Madame Bovary",
+      "author": "Flaubert, Gustave, 1821-1880",
+      "source_url": "https://www.gutenberg.org/ebooks/14155",
+      "text_url": "https://www.gutenberg.org/cache/epub/14155/pg14155.txt",
+      "path": "research/source_snapshots/evaluation-J/pg14155.txt",
+      "sha256": "93f0a2259dbaf5fde6e7b96adc22346d52f80eb1e9319336c8381a045efe40cd",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg14155-metadata.html.txt",
+      "metadata_sha256": "a08840170913143316402c88c350c11ca3d712b1a79943efb4bb5b32347e9bb0",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 534073,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          908,
+          699172
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK MADAME BOVARY ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK MADAME BOVARY ***",
+        "body_characters": 698264,
+        "body_sha256_utf8": "05a2671fae47a1b5d8db2788cd014a112281fb6123822e9fe630c8688eb69800",
+        "normalized_letters": 534073,
+        "normalized_body_sha256": "976090a7930f4bcfeac8242a1e24db9b63f84ce34c3e87f723b2c263af21bb8f",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {
+          "\u0152": 144
+        }
+      }
+    },
+    {
+      "gutenberg_id": 2650,
+      "language": "french",
+      "role": "validation",
+      "title": "Du c\u00f4t\u00e9 de chez Swann",
+      "author": "Proust, Marcel, 1871-1922",
+      "source_url": "https://www.gutenberg.org/ebooks/2650",
+      "text_url": "https://www.gutenberg.org/cache/epub/2650/pg2650.txt",
+      "path": "research/source_snapshots/evaluation-J/pg2650.txt",
+      "sha256": "9ebdb837f733f41d6a822e010d1ccbf14b4ddafad0131482461edb72b55b0936",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg2650-metadata.html.txt",
+      "metadata_sha256": "dc253ab3b00039333821e7bbd2734d8b948bed87664c919d0a8733621e83bec7",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 786439,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          865,
+          1010035
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK DU C\u00d4T\u00c9 DE CHEZ SWANN ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK DU C\u00d4T\u00c9 DE CHEZ SWANN ***",
+        "body_characters": 1009170,
+        "body_sha256_utf8": "f711b43be96c4d79a47e3730f819285649091ae9304097c3415d99f53eae2ed9",
+        "normalized_letters": 786439,
+        "normalized_body_sha256": "e2cec7e68ecb09be77c1a635e7c6c93f8949691f0ce3a98bc843be9ec6ad38b5",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {
+          "\u0152": 263
+        }
+      }
+    },
+    {
+      "gutenberg_id": 52484,
+      "language": "italian",
+      "role": "training",
+      "title": "Le avventure di Pinocchio: Storia di un burattino",
+      "author": "Collodi, Carlo, 1826-1890",
+      "source_url": "https://www.gutenberg.org/ebooks/52484",
+      "text_url": "https://www.gutenberg.org/cache/epub/52484/pg52484.txt",
+      "path": "research/corpora/pg52484.txt",
+      "sha256": "b51a398da257709bfd2c0007e42980935751276cdca4178d738fa4c92f799ae6",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg52484-metadata.html.txt",
+      "metadata_sha256": "a5b167bc552770e37f52bd8957f586ab9dc4bf1587eb32376cb4b4fa3c923654",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 194755,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          1089,
+          263491
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK LE AVVENTURE DI PINOCCHIO: STORIA DI UN BURATTINO ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK LE AVVENTURE DI PINOCCHIO: STORIA DI UN BURATTINO ***",
+        "body_characters": 262402,
+        "body_sha256_utf8": "85b2735851c33041f379450b895decaf8570e56627d0c927a93ee0a2c656c53f",
+        "normalized_letters": 194755,
+        "normalized_body_sha256": "6392b3356462d3f0d2723c6ba5acacf65124bc550617663bc6045c12c83b3a57",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 45334,
+      "language": "italian",
+      "role": "training",
+      "title": "I promessi sposi. Opere di Alessando Manzoni, vol. 1",
+      "author": "Manzoni, Alessandro, 1785-1873",
+      "source_url": "https://www.gutenberg.org/ebooks/45334",
+      "text_url": "https://www.gutenberg.org/cache/epub/45334/pg45334.txt",
+      "path": "research/source_snapshots/evaluation-J/pg45334.txt",
+      "sha256": "4cdd962f1910a49091b945eff4233798b8c13f74b011cee75a8cccc7467d3612",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg45334-metadata.html.txt",
+      "metadata_sha256": "278035c250ce97ad94578b3065db610307eaaf4703f9e66298f30b1f89fc1604",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 1098036,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          1073,
+          1435868
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK I PROMESSI SPOSI. ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK I PROMESSI SPOSI. ***",
+        "body_characters": 1434795,
+        "body_sha256_utf8": "706d4993e7977b7fe9b1af05058d6742414cb99d8703c115ff14bd8df8a88cb2",
+        "normalized_letters": 1098036,
+        "normalized_body_sha256": "c7b5beef11956134d9c0205b6363241a0d0ac770b6e60fbdd7853fd3cfb1ea48",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {
+          "\u00c6": 14
+        }
+      }
+    },
+    {
+      "gutenberg_id": 61885,
+      "language": "italian",
+      "role": "validation",
+      "title": "Ricordi d'infanzia e di scuola segu\u00ecti da Bambole e marionette, Gente minima, Piccoli studenti, Adolescenti, Due di spade e due di cuori",
+      "author": "De Amicis, Edmondo, 1846-1908",
+      "source_url": "https://www.gutenberg.org/ebooks/61885",
+      "text_url": "https://www.gutenberg.org/cache/epub/61885/pg61885.txt",
+      "path": "research/source_snapshots/evaluation-J/pg61885.txt",
+      "sha256": "5f4ca693f86b641891ce4dfc89636f9428ffb7434056f17ed59c1ab0f98be446",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg61885-metadata.html.txt",
+      "metadata_sha256": "2dfc69467d3c441878072aa12ce1f302464c98c8813a188dee90f0c9c799e1ca",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 470037,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          1073,
+          610698
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK RICORDI D'INFANZIA E DI SCUOLA ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK RICORDI D'INFANZIA E DI SCUOLA ***",
+        "body_characters": 609625,
+        "body_sha256_utf8": "90596b34dc55c07ca29457aaf94cc4e92e4ef822f826a923d7e4aeb5afbb12a0",
+        "normalized_letters": 470037,
+        "normalized_body_sha256": "995f8637688416f92d9675a5f7263ca55d375f0e43b2e74733beb5818c599c76",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 218,
+      "language": "latin",
+      "role": "training",
+      "title": "C. Iuli Caesaris De Bello Gallico, I-IV",
+      "author": "Caesar, Julius, 100 BCE-44 BCE",
+      "source_url": "https://www.gutenberg.org/ebooks/218",
+      "text_url": "https://www.gutenberg.org/cache/epub/218/pg218.txt",
+      "path": "research/corpora/pg218.txt",
+      "sha256": "84ac8411841a4d8f5f4a49b6a2cd1f466917c6a5af72916d5e0b2b1ecb2f659c",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg218-metadata.html.txt",
+      "metadata_sha256": "cdd0519a6abf1d719ae79eabdacad4f6824537204ebc19f7139422fa0829bb13",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 123354,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          945,
+          150971
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK C. IULI CAESARIS DE BELLO GALLICO, I-IV ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK C. IULI CAESARIS DE BELLO GALLICO, I-IV ***",
+        "body_characters": 150026,
+        "body_sha256_utf8": "6c1789545153ed5a2c1c86966915c7213eab0ec6b305e81094f1b808b2433cb3",
+        "normalized_letters": 123354,
+        "normalized_body_sha256": "9dee734495ef02be5ce8532abe79d7b285a54074ac2d7aea5fa403ee1988df53",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {
+          "\u00c6": 2
+        }
+      }
+    },
+    {
+      "gutenberg_id": 227,
+      "language": "latin",
+      "role": "training",
+      "title": "Aeneidos",
+      "author": "Virgil, 71 BCE-20 BCE",
+      "source_url": "https://www.gutenberg.org/ebooks/227",
+      "text_url": "https://www.gutenberg.org/cache/epub/227/pg227.txt",
+      "path": "research/source_snapshots/evaluation-J/pg227.txt",
+      "sha256": "2620ba82c00964d1a1f0458c8cf171946f158a06de0d0e764594170602c4c7b8",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg227-metadata.html.txt",
+      "metadata_sha256": "65b3cda83d41c668d8dc4e5a0eec0d2b56ffdbdcd857ab7f7f1b374ce2e347ad",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 367582,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          812,
+          476981
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK AENEIDOS ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK AENEIDOS ***",
+        "body_characters": 476169,
+        "body_sha256_utf8": "b8e08aff2ffe08902039fe914cc1dd0d2e45af4d9a98dd2e40dc4bf2e527e5b8",
+        "normalized_letters": 367582,
+        "normalized_body_sha256": "ad189ce64d0d96de2361c5d41c8d679171d3644f17d5e53ed9e30ad6bd3d9414",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {}
+      }
+    },
+    {
+      "gutenberg_id": 33849,
+      "language": "latin",
+      "role": "validation",
+      "title": "Confessiones",
+      "author": "Augustine, of Hippo, Saint, 354-430",
+      "source_url": "https://www.gutenberg.org/ebooks/33849",
+      "text_url": "https://www.gutenberg.org/cache/epub/33849/pg33849.txt",
+      "path": "research/source_snapshots/evaluation-J/pg33849.txt",
+      "sha256": "30287aab673c861ae500f06fe55d4396f529a0c251b37178e7220b6c51317189",
+      "metadata_path": "research/source_snapshots/evaluation-J/pg33849-metadata.html.txt",
+      "metadata_sha256": "a714bdb4177f21b65b5a2d139b0b918534c3c80be290c5a1b7f911783c709a76",
+      "source_rights_statement": "Public domain in the USA.",
+      "retention_note": "Complete Project Gutenberg license retained in original file. Catalog states public domain in the USA; no broader jurisdictional claim.",
+      "normalized_letters": 711871,
+      "preprocessing": {
+        "decoded_body_span_zero_based_half_open": [
+          1151,
+          963193
+        ],
+        "start_marker": "*** START OF THE PROJECT GUTENBERG EBOOK CONFESSIONES ***",
+        "end_marker": "*** END OF THE PROJECT GUTENBERG EBOOK CONFESSIONES ***",
+        "body_characters": 962042,
+        "body_sha256_utf8": "0cd38e7206daa4290e31d89f162bb5e074bec35ea1b8e421ffb225877255a7ed",
+        "normalized_letters": 711871,
+        "normalized_body_sha256": "0f00d17a6897fc9098d5c32ebe5f1f6b251922750f3a3e4de25fcc6553bd99d1",
+        "non_ascii_letters_dropped_after_nfkd_uppercase": {
+          "\u00c6": 5441
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+ "claim_id":"K4-20261012-I-fixed-model-rescore",
+ "mathematics":{
+  "assertion_tested":"Compare saved complete candidate-set ranks on twelve synthetic recoveries and K4 plus sixteen controls using one predeclared English trigram model.",
+  "coefficient_domain":"Exact integer products of smoothed counts; floating log scores for display",
+  "conventions":"Exclude24canonical crib positions and all touching trigrams. Fixed67windows. Alpha is the stored IEEE rational. No search or tuning. Literal re-encryption checked for every retained candidate.",
+  "inputs":["research/rescore_recovery.py","kryptos/data.py","kryptos/language.py","kryptos/scoring.py","research/runs/recovery-matrix-001/results.json","research/runs/calibration-002/results.json","research/runs/calibration-002/journal.jsonl","research/models/multilingual-001/artifacts/pg1342-english-trigram.json","research/models/multilingual-001/artifacts/results.json","research/models/multilingual-001/artifacts/provenance.json"],
+  "bounds":{"recovery_cases":12,"pipeline_inputs":17,"free_plaintext_dimensions_max":1,"workers":1},
+  "non_claims":["Retrospective benchmark comparison, not independent validation","No authenticated solution","No general language classifier or universal cipher search"]
+ },
+ "execution_artifacts":["research/rescore_recovery.py","kryptos/data.py","kryptos/language.py","kryptos/scoring.py","research/runs/recovery-matrix-001/results.json","research/runs/calibration-002/results.json","research/runs/calibration-002/journal.jsonl","research/models/multilingual-001/artifacts/pg1342-english-trigram.json","research/models/multilingual-001/artifacts/results.json","research/models/multilingual-001/artifacts/provenance.json"],
+ "software":[{"name":"Python","version":"3.14.5"}],
+ "randomness":{"used":false,"note":"Uses exactly the previously recorded candidates and controls"}
+}

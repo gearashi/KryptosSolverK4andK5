@@ -1,0 +1,832 @@
+{
+  "checkpoint": "K4-20261012-D",
+  "audit_kind": "independent stored-certificate validation plus sampled prime-field elimination",
+  "started_at": "2026-10-12T22:31:57.749174+00:00",
+  "runtime_seconds": 4.03991759987548,
+  "python_version": "3.14.5",
+  "solver_imported_or_read": false,
+  "input_sha256": {
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "research/runs/layers-001/results.json": "3509d3d35eaff9440626e1871703188906a092497516a9963fb47cbed27731e9",
+    "research/runs/layers-001/manifest.json": "847208815624d27d97a6862999a1a1c2b8f5a60e339822a95142a28f1dc562e5"
+  },
+  "pinned_manifest_input_output_hashes_verified": true,
+  "counts": {
+    "models": 22272,
+    "rejected": 21254,
+    "fit": 1018
+  },
+  "by_order": {
+    "SST": {
+      "rejected": 6892,
+      "fit": 532
+    },
+    "STS": {
+      "rejected": 7124,
+      "fit": 300
+    },
+    "TSS": {
+      "rejected": 7238,
+      "fit": 186
+    }
+  },
+  "cycle_length_histogram": {
+    "2": 13621,
+    "4": 5742,
+    "6": 993,
+    "8": 414,
+    "10": 222,
+    "12": 43,
+    "14": 117,
+    "16": 21,
+    "18": 6,
+    "20": 3,
+    "22": 72
+  },
+  "certificate_checks": [
+    "24 crib observations independently loaded from data.py literals",
+    "gather permutations validated and independently inverted",
+    "all phases and key residues recomputed for declared stage order",
+    "every signed key-variable coefficient cancels over integers",
+    "every signed residue sum equals nonzero reported residue mod26",
+    "period pairs and all route/order combinations complete",
+    "original-length-pair summaries match full models"
+  ],
+  "success_samples": [
+    {
+      "record_index_zero_based": 0,
+      "aliases": [
+        "rows-major_reverse0-minor_reverse0-snake0/forward",
+        "rows-major_reverse0-minor_reverse0-snake0/inverse"
+      ],
+      "order": "SST",
+      "period_a": 9,
+      "period_b": 16,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 84,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/inverse",
+        "K3-inspired-ragged-widths8,24/inverse"
+      ],
+      "order": "SST",
+      "period_a": 16,
+      "period_b": 15,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 7,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 1,
+      "aliases": [
+        "rows-major_reverse0-minor_reverse0-snake0/forward",
+        "rows-major_reverse0-minor_reverse0-snake0/inverse"
+      ],
+      "order": "STS",
+      "period_a": 9,
+      "period_b": 16,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 85,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/inverse",
+        "K3-inspired-ragged-widths8,24/inverse"
+      ],
+      "order": "STS",
+      "period_a": 16,
+      "period_b": 15,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 7,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 2,
+      "aliases": [
+        "rows-major_reverse0-minor_reverse0-snake0/forward",
+        "rows-major_reverse0-minor_reverse0-snake0/inverse"
+      ],
+      "order": "TSS",
+      "period_a": 9,
+      "period_b": 16,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 86,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/inverse",
+        "K3-inspired-ragged-widths8,24/inverse"
+      ],
+      "order": "TSS",
+      "period_a": 16,
+      "period_b": 14,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 6,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 81,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/forward",
+        "K3-inspired-ragged-widths8,24/forward"
+      ],
+      "order": "SST",
+      "period_a": 9,
+      "period_b": 16,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 82,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/forward",
+        "K3-inspired-ragged-widths8,24/forward"
+      ],
+      "order": "STS",
+      "period_a": 12,
+      "period_b": 13,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 83,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/forward",
+        "K3-inspired-ragged-widths8,24/forward"
+      ],
+      "order": "TSS",
+      "period_a": 13,
+      "period_b": 14,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 3,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 84,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/inverse",
+        "K3-inspired-ragged-widths8,24/inverse"
+      ],
+      "order": "SST",
+      "period_a": 9,
+      "period_b": 16,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 85,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/inverse",
+        "K3-inspired-ragged-widths8,24/inverse"
+      ],
+      "order": "STS",
+      "period_a": 9,
+      "period_b": 16,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 86,
+      "aliases": [
+        "K3-inspired-ragged-widths24,8/inverse",
+        "K3-inspired-ragged-widths8,24/inverse"
+      ],
+      "order": "TSS",
+      "period_a": 13,
+      "period_b": 15,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 4,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 4,
+      "aliases": [
+        "rows-major_reverse0-minor_reverse0-snake1/forward",
+        "rows-major_reverse0-minor_reverse0-snake1/inverse"
+      ],
+      "order": "STS",
+      "period_a": 10,
+      "period_b": 15,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 1,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 4,
+      "aliases": [
+        "rows-major_reverse0-minor_reverse0-snake1/forward",
+        "rows-major_reverse0-minor_reverse0-snake1/inverse"
+      ],
+      "order": "STS",
+      "period_a": 12,
+      "period_b": 15,
+      "rank_mod2": 24,
+      "rank_mod13": 24,
+      "free_components": 3,
+      "crt_key_and_reencryption_verified": true
+    },
+    {
+      "record_index_zero_based": 4,
+      "aliases": [
+        "rows-major_reverse0-minor_reverse0-snake1/forward",
+        "rows-major_reverse0-minor_reverse0-snake1/inverse"
+      ],
+      "order": "STS",
+      "period_a": 12,
+      "period_b": 16,
+      "rank_mod2": 22,
+      "rank_mod13": 22,
+      "free_components": 6,
+      "crt_key_and_reencryption_verified": true
+    }
+  ],
+  "conclusion": "All 22272 stored model classifications independently verified: 21254 valid rejection certificates; 986 fits from independently verified forest structure, where arbitrary edge labels are solvable; all 32 cyclic fits verified by independent Gaussian elimination over F2 and F13 with CRT reconstruction and exact reencryption.",
+  "non_claims": [
+    "No authenticity or English-language inference follows from crib feasibility.",
+    "Other alphabets, routes, periods, substitution equations and historical procedures remain outside this result.",
+    "This audit verifies stored permutations, not provenance of proposed physical/K3 route construction.",
+    "Forest feasibility follows from the elementary tree propagation argument, not Gaussian elimination of each forest. A forest component has one arbitrary root variable, and every other vertex is fixed along its unique path; isolated vertices are free."
+  ],
+  "all_fit_cycle_classification": {
+    "formula": "independent_cycles=24-(period_a+period_b)+components",
+    "components_independently_recomputed_for_all_fits": true,
+    "counts": {
+      "forest_no_crib_consistency_test": 986,
+      "has_cycle_constraints": 32
+    },
+    "by_order": {
+      "SST": {
+        "forest_no_crib_consistency_test": 522,
+        "has_cycle_constraints": 10
+      },
+      "STS": {
+        "forest_no_crib_consistency_test": 286,
+        "has_cycle_constraints": 14
+      },
+      "TSS": {
+        "forest_no_crib_consistency_test": 178,
+        "has_cycle_constraints": 8
+      }
+    },
+    "cycle_rank_histogram": {
+      "0": 986,
+      "1": 31,
+      "2": 1
+    },
+    "connected_fit_counts": {
+      "forest_no_crib_consistency_test": 82,
+      "has_cycle_constraints": 2
+    },
+    "connected_k3_adapted_fits": [
+      {
+        "record_index_zero_based": 81,
+        "order": "SST",
+        "period_a": 9,
+        "period_b": 16,
+        "independent_cycles": 0,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/forward",
+          "K3-inspired-ragged-widths8,24/forward"
+        ]
+      },
+      {
+        "record_index_zero_based": 81,
+        "order": "SST",
+        "period_a": 16,
+        "period_b": 9,
+        "independent_cycles": 0,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/forward",
+          "K3-inspired-ragged-widths8,24/forward"
+        ]
+      },
+      {
+        "record_index_zero_based": 82,
+        "order": "STS",
+        "period_a": 12,
+        "period_b": 13,
+        "independent_cycles": 0,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/forward",
+          "K3-inspired-ragged-widths8,24/forward"
+        ]
+      },
+      {
+        "record_index_zero_based": 84,
+        "order": "SST",
+        "period_a": 9,
+        "period_b": 16,
+        "independent_cycles": 0,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/inverse",
+          "K3-inspired-ragged-widths8,24/inverse"
+        ]
+      },
+      {
+        "record_index_zero_based": 84,
+        "order": "SST",
+        "period_a": 16,
+        "period_b": 9,
+        "independent_cycles": 0,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/inverse",
+          "K3-inspired-ragged-widths8,24/inverse"
+        ]
+      },
+      {
+        "record_index_zero_based": 85,
+        "order": "STS",
+        "period_a": 9,
+        "period_b": 16,
+        "independent_cycles": 0,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/inverse",
+          "K3-inspired-ragged-widths8,24/inverse"
+        ]
+      },
+      {
+        "record_index_zero_based": 85,
+        "order": "STS",
+        "period_a": 13,
+        "period_b": 11,
+        "independent_cycles": 1,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/inverse",
+          "K3-inspired-ragged-widths8,24/inverse"
+        ]
+      },
+      {
+        "record_index_zero_based": 85,
+        "order": "STS",
+        "period_a": 16,
+        "period_b": 9,
+        "independent_cycles": 0,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/inverse",
+          "K3-inspired-ragged-widths8,24/inverse"
+        ]
+      }
+    ],
+    "interpretation": "A forest can fit any labels on these 24 edges, so surviving gives no crib-consistency evidence beyond the model degrees of freedom. Positive cycle rank means one or more nontrivial consistency relations were checked; it does not authenticate a cipher."
+  },
+  "all_cyclic_fits_gaussian_verification": {
+    "verified_count": 32,
+    "method": "Independent row reduction of the 24 key-sum equations over F2 and F13, CRT solution reconstruction, all crib checks and complete ciphertext reencryption.",
+    "records": [
+      {
+        "record_index_zero_based": 4,
+        "aliases": [
+          "rows-major_reverse0-minor_reverse0-snake1/forward",
+          "rows-major_reverse0-minor_reverse0-snake1/inverse"
+        ],
+        "order": "STS",
+        "period_a": 12,
+        "period_b": 16,
+        "independent_cycles": 2,
+        "rank_mod2": 22,
+        "rank_mod13": 22,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 4,
+        "aliases": [
+          "rows-major_reverse0-minor_reverse0-snake1/forward",
+          "rows-major_reverse0-minor_reverse0-snake1/inverse"
+        ],
+        "order": "STS",
+        "period_a": 15,
+        "period_b": 9,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 4,
+        "aliases": [
+          "rows-major_reverse0-minor_reverse0-snake1/forward",
+          "rows-major_reverse0-minor_reverse0-snake1/inverse"
+        ],
+        "order": "STS",
+        "period_a": 15,
+        "period_b": 13,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 10,
+        "aliases": [
+          "rows-major_reverse0-minor_reverse1-snake1/forward",
+          "rows-major_reverse0-minor_reverse1-snake1/inverse"
+        ],
+        "order": "STS",
+        "period_a": 16,
+        "period_b": 10,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 11,
+        "aliases": [
+          "rows-major_reverse0-minor_reverse1-snake1/forward",
+          "rows-major_reverse0-minor_reverse1-snake1/inverse"
+        ],
+        "order": "TSS",
+        "period_a": 11,
+        "period_b": 14,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 11,
+        "aliases": [
+          "rows-major_reverse0-minor_reverse1-snake1/forward",
+          "rows-major_reverse0-minor_reverse1-snake1/inverse"
+        ],
+        "order": "TSS",
+        "period_a": 14,
+        "period_b": 11,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 17,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse0-snake0/inverse"
+        ],
+        "order": "TSS",
+        "period_a": 11,
+        "period_b": 14,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 17,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse0-snake0/inverse"
+        ],
+        "order": "TSS",
+        "period_a": 14,
+        "period_b": 11,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 22,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse0-snake1/inverse"
+        ],
+        "order": "STS",
+        "period_a": 13,
+        "period_b": 13,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 24,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake0/forward",
+          "rows-major_reverse1-minor_reverse1-snake0/inverse"
+        ],
+        "order": "SST",
+        "period_a": 12,
+        "period_b": 15,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 24,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake0/forward",
+          "rows-major_reverse1-minor_reverse1-snake0/inverse"
+        ],
+        "order": "SST",
+        "period_a": 15,
+        "period_b": 12,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 25,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake0/forward",
+          "rows-major_reverse1-minor_reverse1-snake0/inverse"
+        ],
+        "order": "STS",
+        "period_a": 12,
+        "period_b": 15,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 25,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake0/forward",
+          "rows-major_reverse1-minor_reverse1-snake0/inverse"
+        ],
+        "order": "STS",
+        "period_a": 15,
+        "period_b": 12,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 26,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake0/forward",
+          "rows-major_reverse1-minor_reverse1-snake0/inverse"
+        ],
+        "order": "TSS",
+        "period_a": 12,
+        "period_b": 15,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 26,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake0/forward",
+          "rows-major_reverse1-minor_reverse1-snake0/inverse"
+        ],
+        "order": "TSS",
+        "period_a": 15,
+        "period_b": 12,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 28,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake1/forward"
+        ],
+        "order": "STS",
+        "period_a": 10,
+        "period_b": 16,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 30,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake1/inverse"
+        ],
+        "order": "SST",
+        "period_a": 12,
+        "period_b": 13,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 30,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake1/inverse"
+        ],
+        "order": "SST",
+        "period_a": 13,
+        "period_b": 12,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 31,
+        "aliases": [
+          "rows-major_reverse1-minor_reverse1-snake1/inverse"
+        ],
+        "order": "STS",
+        "period_a": 12,
+        "period_b": 13,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 33,
+        "aliases": [
+          "columns-major_reverse0-minor_reverse0-snake0/forward"
+        ],
+        "order": "SST",
+        "period_a": 12,
+        "period_b": 15,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 33,
+        "aliases": [
+          "columns-major_reverse0-minor_reverse0-snake0/forward"
+        ],
+        "order": "SST",
+        "period_a": 15,
+        "period_b": 12,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 49,
+        "aliases": [
+          "columns-major_reverse0-minor_reverse1-snake0/inverse"
+        ],
+        "order": "STS",
+        "period_a": 13,
+        "period_b": 14,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 52,
+        "aliases": [
+          "columns-major_reverse0-minor_reverse1-snake1/forward"
+        ],
+        "order": "STS",
+        "period_a": 11,
+        "period_b": 16,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 52,
+        "aliases": [
+          "columns-major_reverse0-minor_reverse1-snake1/forward"
+        ],
+        "order": "STS",
+        "period_a": 15,
+        "period_b": 13,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 57,
+        "aliases": [
+          "columns-major_reverse1-minor_reverse0-snake0/forward"
+        ],
+        "order": "SST",
+        "period_a": 12,
+        "period_b": 13,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 57,
+        "aliases": [
+          "columns-major_reverse1-minor_reverse0-snake0/forward"
+        ],
+        "order": "SST",
+        "period_a": 13,
+        "period_b": 12,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 59,
+        "aliases": [
+          "columns-major_reverse1-minor_reverse0-snake0/forward"
+        ],
+        "order": "TSS",
+        "period_a": 9,
+        "period_b": 16,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 59,
+        "aliases": [
+          "columns-major_reverse1-minor_reverse0-snake0/forward"
+        ],
+        "order": "TSS",
+        "period_a": 16,
+        "period_b": 9,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 75,
+        "aliases": [
+          "columns-major_reverse1-minor_reverse1-snake1/forward"
+        ],
+        "order": "SST",
+        "period_a": 11,
+        "period_b": 14,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 75,
+        "aliases": [
+          "columns-major_reverse1-minor_reverse1-snake1/forward"
+        ],
+        "order": "SST",
+        "period_a": 14,
+        "period_b": 11,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 82,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/forward",
+          "K3-inspired-ragged-widths8,24/forward"
+        ],
+        "order": "STS",
+        "period_a": 15,
+        "period_b": 15,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      },
+      {
+        "record_index_zero_based": 85,
+        "aliases": [
+          "K3-inspired-ragged-widths24,8/inverse",
+          "K3-inspired-ragged-widths8,24/inverse"
+        ],
+        "order": "STS",
+        "period_a": 13,
+        "period_b": 11,
+        "independent_cycles": 1,
+        "rank_mod2": 23,
+        "rank_mod13": 23,
+        "crt_solution_and_reencryption_verified": true
+      }
+    ]
+  }
+}

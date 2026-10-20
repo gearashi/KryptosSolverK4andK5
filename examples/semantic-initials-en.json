@@ -1,0 +1,8 @@
+{
+  "method": "initials",
+  "text": "EASTNORTHEAST",
+  "segments": [[0, 4], [4, 13]],
+  "rule_source": "Example with explicit EAST|NORTHEAST boundaries; not inferred segmentation.",
+  "max_characters": 1000,
+  "max_segments": 10
+}

@@ -1,0 +1,14 @@
+{
+  "target": "custom",
+  "ciphertext": "DKSHQQ",
+  "cribs": [{"start": 1, "text": "ABCD"}],
+  "alphabet": "standard",
+  "cipher": "vigenere",
+  "order": "STS",
+  "permutation": [0, 2, 3, 1, 5, 4],
+  "period_a": 2,
+  "period_b": 3,
+  "max_candidates": 26,
+  "top": 5,
+  "time_limit_seconds": 5
+}

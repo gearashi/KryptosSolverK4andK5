@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-C-physical-route-constraints",
+  "mathematics": {
+    "assertion_tested": "Exact necessary crib consistency after explicit physical-grid scan permutations, with repeating modular keys.",
+    "coefficient_domain": "Integers modulo 26 and finite permutations",
+    "conventions": "Physical K4 shape 4 rightmost cells plus three rows of width31; scan rows or columns in both directions, with or without alternate-line reversal; invert each permutation; 1-based reported positions; C=P+K, C=K-P, C=P-K.",
+    "inputs": ["kryptos/data.py", "research/check_classes.py", "research/check_physical_routes.py"],
+    "bounds": {"letters": 97, "crib_letters": 24, "raw_scans": 16, "directions_per_scan": 2, "alphabet_pairs": 4, "cipher_equations": 3, "period_min": 1, "period_max": 26, "workers": 1},
+    "non_claims": ["Not all transpositions or layered cipher families", "No claimed K4 or K5 solution", "No full app tests or CPU-heavy search"]
+  },
+  "execution_artifacts": ["research/check_physical_routes.py", "research/check_classes.py", "kryptos/data.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

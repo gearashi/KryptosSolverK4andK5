@@ -1,0 +1,62 @@
+# Local environments, runtime state, compiled caches and publication staging.
+/.venv/
+/.publication-origin/
+/runtime/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cupy/
+.cupy_cache/
+cupy_cache/
+*.egg-info/
+/build/
+/dist/
+.env
+.env.*
+!.env.example
+
+# Downloaded third-party pages, code and full books remain local research inputs.
+/research/corpora/
+/research/source_snapshots/*
+!/research/source_snapshots/checkpoint-K-original/
+!/research/source_snapshots/helpers-initial/
+!/research/source_snapshots/accelerated-initial/
+!/research/source_snapshots/release-M-*/
+!/research/source_snapshots/sculpture-J/
+/research/source_snapshots/sculpture-J/*
+!/research/source_snapshots/sculpture-J/pk2_fixture.json
+/docs/source_snapshots/
+
+# Local experiments and temporary worker/test artifacts.
+/research/manual-checks/*
+!/research/manual-checks/.gitkeep
+/research/tmp-*/
+/research/.app-test-*/
+/research/.http-test-*/
+/research/.campaign-test-*/
+/research/.resource-test-*/
+/research/.batch-*/
+/research/.paths-*/
+/research/.test-*/
+
+# Bulky historical output is local. Explicitly retain the five frozen app models.
+/research/runs/*
+!/research/runs/release-L-*/
+!/research/runs/release-M-*/
+!/research/runs/evaluation-J-001/
+/research/runs/evaluation-J-001/*
+!/research/runs/evaluation-J-001/artifacts/
+/research/runs/evaluation-J-001/artifacts/*
+!/research/runs/evaluation-J-001/artifacts/*-two-author-trigram.json
+
+# Retain small legacy models/provenance required by CLI examples and tests.
+/research/models/*
+!/research/models/multilingual-001/
+/research/models/multilingual-001/*
+!/research/models/multilingual-001/artifacts/
+/research/models/multilingual-001/artifacts/*
+!/research/models/multilingual-001/artifacts/*-trigram.json
+!/research/models/multilingual-001/artifacts/provenance.json
+
+# Local test logs are superseded by selected release audit evidence.
+/research/*-tests.log

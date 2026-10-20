@@ -1,0 +1,16 @@
+{
+  "errors": [],
+  "desktop": {
+    "letters": 97,
+    "known": 24,
+    "overflow": false,
+    "startDisabled": false,
+    "presets": 6
+  },
+  "mobile": {
+    "overflow": false,
+    "width": 390
+  },
+  "k5Empty": true,
+  "emptyK5Error": "Enter the ciphertext for your hypothesis before starting."
+}

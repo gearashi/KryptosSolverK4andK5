@@ -1,0 +1,6 @@
+{
+  "target": "k4",
+  "alphabet": "standard",
+  "modulus": 2,
+  "step": 1
+}

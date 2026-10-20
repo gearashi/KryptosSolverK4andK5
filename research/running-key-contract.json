@@ -1,0 +1,14 @@
+{
+ "claim_id":"K4-20261012-I-K3-running-key-inventory",
+ "mathematics":{
+  "assertion_tested":"Determine inventory feasibility for a fixed K3 running-key substitution followed by any permutation, using the24K4cribs.",
+  "coefficient_domain":"Z/26Z and exact letter counts",
+  "conventions":"C=T(S(P,K)); key consumed at original plaintext positions. All97letter nonwrapping windows of canonical336letter K3 plaintext, forward and reverse, standard/KRYPTOS alphabets, P+K/K-P/P-K. Passing permits arbitrary plaintext completion.",
+  "inputs":["research/running_key_probe.py","research/k3_reference.py","kryptos/data.py"],
+  "bounds":{"key_windows":240,"directions":2,"alphabets":2,"equations":3,"models":2880,"workers":1},
+  "non_claims":["No language or physical-route recovery","Not transposition followed by substitution","No extra layers, wrapping, alternative key texts or K5"]
+ },
+ "execution_artifacts":["research/running_key_probe.py","research/k3_reference.py","kryptos/data.py"],
+ "software":[{"name":"Python","version":"3.14.5"}],
+ "randomness":{"used":false}
+}

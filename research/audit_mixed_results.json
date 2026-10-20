@@ -1,0 +1,47 @@
+{
+  "checkpoint": "K4-20261012-G",
+  "started_at": "2026-10-12T22:56:44.773387+00:00",
+  "runtime_seconds": 2.339132099878043,
+  "input_hashes_before": {
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "research/runs/mixed-001/results.json": "73cc165379458616f1d347f28ab4eaf46c3b334d05b6620b0f5aae388e65dae6",
+    "research/runs/mixed-001/manifest.json": "4961295b18dfbbe5a72ce33bc8e65849c7aaf88446106feadf42a85c8e7e3faa",
+    "research/audit_mixed_results.py": "7b97c23037942c0498925346acd6a82e3fe0fc4b2268b1b11afc6c0706268fce"
+  },
+  "input_hashes_after": {
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "research/runs/mixed-001/results.json": "73cc165379458616f1d347f28ab4eaf46c3b334d05b6620b0f5aae388e65dae6",
+    "research/runs/mixed-001/manifest.json": "4961295b18dfbbe5a72ce33bc8e65849c7aaf88446106feadf42a85c8e7e3faa",
+    "research/audit_mixed_results.py": "7b97c23037942c0498925346acd6a82e3fe0fc4b2268b1b11afc6c0706268fce"
+  },
+  "counts": {
+    "models": 1392,
+    "fits": 0,
+    "contradictions": 1392,
+    "edges_reconstructed": 33408,
+    "rejected_root_certificates": 78086,
+    "path_edges_replayed": 104190,
+    "components": 3116,
+    "accepted_edge_checks": 2129,
+    "accepted_component_assignments": 2930
+  },
+  "component_root_count_histogram": {
+    "0": 2702,
+    "1": 194,
+    "2": 68,
+    "3": 18,
+    "4": 38,
+    "9": 6,
+    "26": 90
+  },
+  "all_model_classifications_verified": true,
+  "solver_imported_or_rerun": false,
+  "method": "Literal source-position tracking through A/B/T; original-symbol edge reconstruction; independently discovered connected components; direct symbol-index certificate path replay; full accepted-assignment edge checks.",
+  "conclusion": "All 1392 recorded models are infeasible under their stated alphabet/period/route/order assumptions; every rejected component root has a valid contradiction certificate.",
+  "non_claims": [
+    "No general K4 or arbitrary-alphabet exclusion.",
+    "The stored permutations are validated as permutations; their historical construction is outside this audit.",
+    "No claim about full-plaintext uniqueness or solution confidence.",
+    "The original scan's separate benchmark and regression execution claims were not rerun."
+  ]
+}

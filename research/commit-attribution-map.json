@@ -1,0 +1,39 @@
+{
+  "schema": "kryptos.commit-attribution-map.v1",
+  "date": "2026-10-15",
+  "account": "gearashi",
+  "reason": "User-requested correction of repository commit author and committer attribution.",
+  "scope": "Existing source trees, commit messages and original timestamps are unchanged. Historical audits keep their observed commit IDs and file hashes; use this map to locate their equivalent corrected commits. The initial GitHub-created commit remains unchanged.",
+  "commits": [
+    {
+      "original_commit": "37e88b80d3a9734e6b2eb94910bf88823db6433f",
+      "corrected_commit": "37e88b80d3a9734e6b2eb94910bf88823db6433f",
+      "tree": "cbff6198bf1e599808bc79dc588415eb482a3b57",
+      "identity_corrected": false
+    },
+    {
+      "original_commit": "9e78a343abb985c9c32aaafdeb3335b077623ade",
+      "corrected_commit": "b71c1f4b0a55b560d27c04621d107ebff936e351",
+      "tree": "f800f6c9c6a9037bff02905d8338f319e207d396",
+      "identity_corrected": true
+    },
+    {
+      "original_commit": "c6c995c4d432a4c43951578b5180c5b94d1f4e43",
+      "corrected_commit": "dc092df37adde8f52f783c1491d6fdfea28cfa79",
+      "tree": "6fc8804d1b4a2686aceb4f2f5660db70b240a9ab",
+      "identity_corrected": true
+    },
+    {
+      "original_commit": "9fa53c468689b916c04eb4231c33924a0fc9e6e6",
+      "corrected_commit": "8727abc781c553e1927913cb62689bf2869b22fe",
+      "tree": "e71f9831bd4e7d861806844af0216bca599cc13b",
+      "identity_corrected": true
+    },
+    {
+      "original_commit": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "corrected_commit": "35cd3514b6f4e1265f483dda63121984f99b6f71",
+      "tree": "b8bb7e6c24f44855e0566bdeb9fd7ee88556b53f",
+      "identity_corrected": true
+    }
+  ]
+}

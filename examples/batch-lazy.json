@@ -1,0 +1,13 @@
+{
+  "workers": 2,
+  "jobs": [
+    {"id":"natural","request":{
+      "target":"custom","ciphertext":"TIITITATEDRFTUXU","cribs":[{"start":1,"text":"T"}],
+      "alphabet":"standard","stages":[{"operation":"substitution","period":2}],
+      "model_path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json","ordering":"natural","time_limit_seconds":5}},
+    {"id":"impact","request":{
+      "target":"custom","ciphertext":"TIITITATEDRFTUXU","cribs":[{"start":1,"text":"T"}],
+      "alphabet":"standard","stages":[{"operation":"substitution","period":2}],
+      "model_path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json","ordering":"impact","time_limit_seconds":5}}
+  ]
+}

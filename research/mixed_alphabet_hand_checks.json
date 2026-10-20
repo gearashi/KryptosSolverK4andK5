@@ -1,0 +1,444 @@
+{
+  "base_checkpoint": "K4-20261012-F",
+  "started_at": "2026-10-12T22:53:12.256874+00:00",
+  "alphabet_a": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "alphabet_b": "BACDEFGHIJKLMNOPQRSTUVWXYZ",
+  "gather_permutation": [
+    0,
+    2,
+    3,
+    1,
+    5,
+    4
+  ],
+  "inverse_permutation": [
+    0,
+    3,
+    1,
+    2,
+    5,
+    4
+  ],
+  "input_plaintext": "ABCDEF",
+  "key_a": [
+    1,
+    4
+  ],
+  "key_b": [
+    2,
+    7,
+    11
+  ],
+  "ciphertexts_by_order": {
+    "SST": "COJMUM",
+    "STS": "CKSHQQ",
+    "TSS": "CNPHNT"
+  },
+  "bounds": {
+    "A_key_pairs_per_case": 676,
+    "cases": 3,
+    "message_letters": 6
+  },
+  "method": "Enumerate all 26^2 A-key pairs; derive B phases from cribs; compare duplicate phase requirements; decrypt and reencrypt every retained pair.",
+  "cases": [
+    {
+      "known_positions_zero_based": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "components": 1,
+      "cycle_rank": 0,
+      "key_assignment_count": 26,
+      "distinct_plaintext_count": 7,
+      "solutions": [
+        {
+          "a": [
+            0,
+            5
+          ],
+          "b": [
+            1,
+            6,
+            10
+          ],
+          "plaintext": "ABEDGF"
+        },
+        {
+          "a": [
+            1,
+            4
+          ],
+          "b": [
+            2,
+            7,
+            11
+          ],
+          "plaintext": "ABCDEF"
+        },
+        {
+          "a": [
+            2,
+            6
+          ],
+          "b": [
+            0,
+            5,
+            9
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            3,
+            7
+          ],
+          "b": [
+            25,
+            4,
+            8
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            4,
+            8
+          ],
+          "b": [
+            24,
+            3,
+            7
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            5,
+            9
+          ],
+          "b": [
+            23,
+            2,
+            6
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            6,
+            10
+          ],
+          "b": [
+            22,
+            1,
+            5
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            7,
+            11
+          ],
+          "b": [
+            21,
+            0,
+            4
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            8,
+            12
+          ],
+          "b": [
+            20,
+            25,
+            3
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            9,
+            13
+          ],
+          "b": [
+            19,
+            24,
+            2
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            10,
+            14
+          ],
+          "b": [
+            18,
+            23,
+            1
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            11,
+            15
+          ],
+          "b": [
+            17,
+            22,
+            0
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            12,
+            16
+          ],
+          "b": [
+            16,
+            21,
+            25
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            13,
+            17
+          ],
+          "b": [
+            15,
+            20,
+            24
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            14,
+            18
+          ],
+          "b": [
+            14,
+            19,
+            23
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            15,
+            19
+          ],
+          "b": [
+            13,
+            18,
+            22
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            16,
+            20
+          ],
+          "b": [
+            12,
+            17,
+            21
+          ],
+          "plaintext": "ABDDFF"
+        },
+        {
+          "a": [
+            17,
+            21
+          ],
+          "b": [
+            11,
+            15,
+            20
+          ],
+          "plaintext": "ABEDFF"
+        },
+        {
+          "a": [
+            18,
+            22
+          ],
+          "b": [
+            10,
+            16,
+            19
+          ],
+          "plaintext": "ABCDFF"
+        },
+        {
+          "a": [
+            19,
+            23
+          ],
+          "b": [
+            9,
+            14,
+            17
+          ],
+          "plaintext": "ABDDGF"
+        },
+        {
+          "a": [
+            20,
+            24
+          ],
+          "b": [
+            8,
+            13,
+            18
+          ],
+          "plaintext": "ABDDEF"
+        },
+        {
+          "a": [
+            21,
+            0
+          ],
+          "b": [
+            7,
+            11,
+            15
+          ],
+          "plaintext": "ABEDFF"
+        },
+        {
+          "a": [
+            22,
+            25
+          ],
+          "b": [
+            6,
+            12,
+            16
+          ],
+          "plaintext": "ABCDFF"
+        },
+        {
+          "a": [
+            23,
+            1
+          ],
+          "b": [
+            5,
+            10,
+            14
+          ],
+          "plaintext": "ABEDFF"
+        },
+        {
+          "a": [
+            24,
+            2
+          ],
+          "b": [
+            4,
+            9,
+            13
+          ],
+          "plaintext": "ABCDFF"
+        },
+        {
+          "a": [
+            25,
+            3
+          ],
+          "b": [
+            3,
+            8,
+            12
+          ],
+          "plaintext": "ABDDFF"
+        }
+      ]
+    },
+    {
+      "known_positions_zero_based": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "components": 1,
+      "cycle_rank": 1,
+      "key_assignment_count": 2,
+      "distinct_plaintext_count": 2,
+      "solutions": [
+        {
+          "a": [
+            1,
+            4
+          ],
+          "b": [
+            2,
+            7,
+            11
+          ],
+          "plaintext": "ABCDEF"
+        },
+        {
+          "a": [
+            20,
+            24
+          ],
+          "b": [
+            8,
+            13,
+            18
+          ],
+          "plaintext": "ABDDEF"
+        }
+      ]
+    },
+    {
+      "known_positions_zero_based": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "components": 1,
+      "cycle_rank": 2,
+      "key_assignment_count": 1,
+      "distinct_plaintext_count": 1,
+      "solutions": [
+        {
+          "a": [
+            1,
+            4
+          ],
+          "b": [
+            2,
+            7,
+            11
+          ],
+          "plaintext": "ABCDEF"
+        }
+      ]
+    }
+  ],
+  "non_claims": [
+    "No K4 candidate, search, or app test.",
+    "Toy vectors audit the stated mixed-alphabet equations; historical alphabet choices remain a separate assumption."
+  ],
+  "script_sha256": "fd2440e85fa27633c2de215cb3668d79d423f9fc09defb824856aded58a0037e",
+  "runtime_seconds": 0.00651589990593493
+}

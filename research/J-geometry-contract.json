@@ -1,0 +1,14 @@
+{
+  "claim_id":"K4-20261013-J-verified-ordinal-sculpture-geometry",
+  "mathematics":{
+    "assertion_tested":"The pinned ordinal transcription extracts canonical K1-K4, preserves punctuation and tableau anomaly, and generates invertible fixed coordinate routes and explicitly partial overlays.",
+    "coefficient_domain":"Finite exact strings, integer ordinal cells, bijective permutations",
+    "conventions":"All row/column coordinates are zero-based transcription ordinals. No inferred physical spacing, curvature or compass orientation.",
+    "inputs":["research/geometry_benchmarks.py","kryptos/sculpture.py","research/sculpture_layout.json","kryptos/data.py","research/k3_reference.py","research/recovery_benchmarks.py","research/source_snapshots/sculpture-J/dunin_transcript.html.txt","research/source_snapshots/sculpture-J/cia_sculpture.html.txt"],
+    "bounds":{"sections":["K1","K2","K3","K4","ALL"],"cipher_rows":28,"tableau_rows":28,"transform_scan_pairs_per_section":16,"k4_overlays":8,"workers":1},
+    "non_claims":["No physical 3D reconstruction","No K4 decryption inferred from an overlay","No authenticated K5 text"]
+  },
+  "execution_artifacts":["research/geometry_benchmarks.py","kryptos/sculpture.py","research/sculpture_layout.json","kryptos/data.py","research/k3_reference.py","research/recovery_benchmarks.py","research/source_snapshots/sculpture-J/dunin_transcript.html.txt","research/source_snapshots/sculpture-J/cia_sculpture.html.txt"],
+  "software":[{"name":"Python","version":"3.14.5"}],
+  "randomness":{"used":false,"generator":"","seed":null}
+}

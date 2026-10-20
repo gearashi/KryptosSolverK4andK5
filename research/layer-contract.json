@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-D-layered-user-hypothesis",
+  "mathematics": {
+    "assertion_tested": "Determine exact crib consistency for two arbitrary repeating additive keys with one explicit physical scan, in every placement of the scan.",
+    "coefficient_domain": "Bipartite linear equations x+y=s over integers modulo26",
+    "conventions": "KRYPTOS shared alphabet; T(x)[j]=x[permutation[j]]; orders SST,STS,TSS; each crib equation uses the transported position for every stage; keys may be any alphabet sequence of stated lengths.",
+    "inputs": ["kryptos/data.py", "research/check_classes.py", "research/check_physical_routes.py", "research/layer_constraints.py", "research/k3_reference.py", "research/check_layer_hypothesis.py"],
+    "bounds": {"letters": 97, "crib_letters": 24, "physical_routes": 27, "additional_ragged_k3_routes_max": 4, "layer_orders": 3, "key_a_period_min": 1, "key_a_period_max": 16, "key_b_period_min": 1, "key_b_period_max": 16, "workers": 1},
+    "non_claims": ["No verified K3-to-K4 transposition adaptation", "No general rejection of user's layered hypothesis", "No solution claim from crib fits or arbitrary graph completions", "No full app tests or CPU-heavy search"]
+  },
+  "execution_artifacts": ["research/check_layer_hypothesis.py", "research/layer_constraints.py", "research/k3_reference.py", "research/check_physical_routes.py", "research/check_classes.py", "kryptos/data.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

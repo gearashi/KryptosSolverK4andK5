@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-I-coordinate-layers",
+  "mathematics": {
+    "assertion_tested": "Exact feasibility and plaintext freedom of arbitrary row+column coordinate shifts combined with59declared occupied-cell reading routes.",
+    "coefficient_domain": "Integers modulo26; weighted bipartite graph",
+    "conventions": "97occupiedcells only, zero-basedgather; standard/KRYPTOSalphabets; source/destination row/columnframes; sharedlookupoffset -1,0,+1. No invented padding.",
+    "inputs": ["kryptos/grid.py", "kryptos/data.py", "research/grid_probe.py", "research/check_physical_routes.py", "research/check_classes.py"],
+    "bounds": {"routes":59,"alphabets":2,"frames":4,"offsets":3,"models":1416,"workers":1},
+    "non_claims": ["No actual gridkey found", "Arbitrary row/column keys can be underdetermined", "No full-sculpture cross-passage model", "No unique decipherment"]
+  },
+  "execution_artifacts": ["kryptos/grid.py", "kryptos/data.py", "research/grid_probe.py", "research/check_physical_routes.py", "research/check_classes.py"],
+  "software": [{"name":"Python","version":"3.14.5"}],
+  "randomness": {"used":false,"generator":"","seed":null}
+}

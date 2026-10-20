@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-I-fractionation-pilot",
+  "mathematics": {
+    "assertion_tested": "Evaluate776 fixed-alphabet mixed-radix coordinate fractionation models against all24 literalK4crib letters, with inverse and independent integer checks.",
+    "coefficient_domain": "Exact bounded integers and mixed-radix expansions",
+    "conventions": "Explicit hypothetical rectangular extension;2x13 and13x2 grids; standard/KRYPTOS alphabets; block periods1..97; both directions; no unknown keyed alphabet.",
+    "inputs": ["kryptos/data.py", "kryptos/fractionation.py", "research/fractionation_probe.py"],
+    "bounds": {"models": 776, "positions": 97, "cribs": 24, "workers": 1},
+    "non_claims": ["No claim actualK4 uses fractionation", "No general exclusion of fractionation", "No multilingual ranking or decipherment"]
+  },
+  "execution_artifacts": ["kryptos/data.py", "kryptos/fractionation.py", "research/fractionation_probe.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

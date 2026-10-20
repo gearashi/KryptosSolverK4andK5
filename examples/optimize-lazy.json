@@ -1,0 +1,13 @@
+{
+  "target": "custom",
+  "ciphertext": "TIITITATEDRFTUXU",
+  "cribs": [{"start":1,"text":"T"}],
+  "alphabet": "standard",
+  "stages": [{"operation":"substitution","period":2}],
+  "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+  "max_nodes": 10000,
+  "max_frontier": 1000,
+  "max_cache_entries": 10000,
+  "ordering": "impact",
+  "time_limit_seconds": 5
+}

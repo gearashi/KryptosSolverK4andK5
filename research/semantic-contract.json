@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-F-semantic-constraints",
+  "mathematics": {
+    "assertion_tested": "Compute masks under two explicit local abbreviation rules and independently recheck the recorded layered-cipher contradictions for period pairs (3,2) and (2,3).",
+    "coefficient_domain": "Exact integers and residues modulo 26",
+    "conventions": "The literal 97-position plaintext keeps all 24 original crib letters. Shortened masks are downstream illustrations only. Cipher models use two additive substitutions in the shared KRYPTOS alphabet and one stored gather permutation, with all three placements.",
+    "inputs": ["kryptos/data.py", "research/SEMANTIC_LAYER.md", "research/semantic_constraints.py", "research/runs/layers-001/results.json", "research/runs/layers-001/manifest.json"],
+    "bounds": {"stored_routes": 29, "layer_orders": 3, "period_pairs": [[3, 2], [2, 3]], "selected_records": 174, "workers": 1},
+    "non_claims": ["No K4 or K5 decipherment", "No exclusion of post-decryption interpretation", "No inferred length of K5", "No new key search or application testing"]
+  },
+  "execution_artifacts": ["research/semantic_constraints.py", "kryptos/data.py", "research/SEMANTIC_LAYER.md", "research/runs/layers-001/results.json", "research/runs/layers-001/manifest.json"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

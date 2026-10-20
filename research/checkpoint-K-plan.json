@@ -1,0 +1,56 @@
+{
+  "checkpoint": "K4-20261013-K",
+  "base": "research/checkpoint-J-validation.json",
+  "status": "completed implementation and bounded verification",
+  "target": "Implement all seven post-J improvements, execute meaningful discriminating tests, and implement further justified improvements discovered during integration.",
+  "scope": [
+    "Joint unknown column/key recovery",
+    "Shared keys and relative offsets",
+    "Composable known stage-specific alphabets",
+    "Coordinate-driven key phase schedules",
+    "Stronger supported-edge and equivalence pruning",
+    "Crib-compatible false-positive controls",
+    "Lazy scoring, adaptive branching, resumable search frontiers and deterministic CPU batches"
+  ],
+  "owners": {
+    "engine": "joint_columnar.py",
+    "interface": "scheduled_layers.py and mixed_stages.py",
+    "sources": "alphabet propagation and hard controls",
+    "root": "search runtime, parallel execution, CLI, integration and audit"
+  },
+  "additional_candidates": [
+    "Exact marginal letter domains",
+    "Key cancellation diagnostics",
+    "Memory-bounded search with valid remaining upper bounds",
+    "Tamper/stale-checkpoint rejection",
+    "Safe stage-specific replay"
+  ],
+  "resource_policy": "User confirms n5_runner inactive and will remain so during this work. Bounded CPU tests authorized; no repeated runner checks. Initial read-only WSL check also returned no running distributions. No GPU backend promised.",
+  "non_claims": [
+    "No exhaustive list of all possible improvements",
+    "No authenticated K4/K5 decipherment",
+    "No invented K5 ciphertext",
+    "No unrestricted global cryptanalysis"
+  ],
+  "validation": "research/checkpoint-K-validation.json",
+  "results": "research/IMPROVEMENTS_K.md",
+  "all_seven_implemented": true,
+  "tests": {
+    "unit": 216,
+    "CLI_executions": 8,
+    "candidate_replays": 19,
+    "validated_manifests": 8
+  },
+  "additional_implemented": [
+    "Exact marginal letter domains",
+    "Key cancellation and unused-slot diagnostics",
+    "Factorial/free-key shortcuts",
+    "Duplicate affine ngram factor merging",
+    "Memory-safe full-frontier stops",
+    "Checkpoint identity/integrity checks",
+    "Caller-relative worker path normalization",
+    "Per-job inconclusive algebra-budget results",
+    "Independent expanded-stage replay"
+  ],
+  "remaining_research": "K4/K5 decipherment unresolved; six new K4 model records remain censored by bounds; no authenticated K5 input."
+}

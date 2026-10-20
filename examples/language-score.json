@@ -1,0 +1,15 @@
+{
+  "text": "RAINWATERFILLSTHEPOND",
+  "excluded_positions": [0, 1, 2, 3],
+  "controls": [
+    {
+      "text": "QZXVJKWQZXVJKWQZXVJKW",
+      "source": "examples/synthetic-control-letters"
+    },
+    {
+      "text": "RAINWATERFILLSTHELAKE",
+      "source": "examples/synthetic-control-prose"
+    }
+  ],
+  "control_description": "Two explicit same-layout synthetic controls demonstrate mechanics only; not a validated language or solution-confidence calibration."
+}

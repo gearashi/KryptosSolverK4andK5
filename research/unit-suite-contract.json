@@ -1,0 +1,86 @@
+{
+  "claim_id": "K4-20261012-I-unit-suite",
+  "mathematics": {
+    "assertion_tested": "Available unit suite passes for the pinned source revision; this is software verification, not a decipherment.",
+    "coefficient_domain": "Exact cipher arithmetic and tolerance-bounded score checks",
+    "conventions": "Python unittest discovery under tests; all tests and local modules pinned.",
+    "inputs": [
+      "kryptos/__main__.py",
+      "kryptos/ciphers.py",
+      "kryptos/data.py",
+      "kryptos/engine.py",
+      "kryptos/experiments.py",
+      "kryptos/fractionation.py",
+      "kryptos/grid.py",
+      "kryptos/language.py",
+      "kryptos/layer_plan.py",
+      "kryptos/position_residues.py",
+      "kryptos/recovery.py",
+      "kryptos/scoring.py",
+      "kryptos/semantic.py",
+      "tests/test_calibration.py",
+      "tests/test_cli.py",
+      "tests/test_engine.py",
+      "tests/test_experiments.py",
+      "tests/test_fractionation.py",
+      "tests/test_grid.py",
+      "tests/test_language.py",
+      "tests/test_layer_plan.py",
+      "tests/test_position_residues.py",
+      "tests/test_recovery.py",
+      "tests/test_scoring.py",
+      "tests/test_semantic.py",
+      "research/verify_suite.py",
+      "research/calibrate_layers.py",
+      "research/check_layer_hypothesis.py"
+    ],
+    "bounds": {
+      "workers": 1,
+      "wall_seconds": 30
+    },
+    "non_claims": [
+      "No browser, BOINC, or GPU load test",
+      "No mathematical proof or authenticated solution"
+    ]
+  },
+  "execution_artifacts": [
+    "kryptos/__main__.py",
+    "kryptos/ciphers.py",
+    "kryptos/data.py",
+    "kryptos/engine.py",
+    "kryptos/experiments.py",
+    "kryptos/fractionation.py",
+    "kryptos/grid.py",
+    "kryptos/language.py",
+    "kryptos/layer_plan.py",
+    "kryptos/position_residues.py",
+    "kryptos/recovery.py",
+    "kryptos/scoring.py",
+    "kryptos/semantic.py",
+    "tests/test_calibration.py",
+    "tests/test_cli.py",
+    "tests/test_engine.py",
+    "tests/test_experiments.py",
+    "tests/test_fractionation.py",
+    "tests/test_grid.py",
+    "tests/test_language.py",
+    "tests/test_layer_plan.py",
+    "tests/test_position_residues.py",
+    "tests/test_recovery.py",
+    "tests/test_scoring.py",
+    "tests/test_semantic.py",
+    "research/verify_suite.py",
+    "research/calibrate_layers.py",
+    "research/check_layer_hypothesis.py"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "note": "Deterministic test data; UUIDs only name temporary output directories."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "checkpoint": "J",
+  "status": "complete within the declared six implementation scopes; decipherment remains unresolved",
+  "result_report": "research/IMPROVEMENTS_J.md",
+  "validation": "research/checkpoint-J-validation.json",
+  "target": "Implement the six remaining checkpoint-I improvements and justified additional improvements, with usable interfaces and bounded reproducible evidence.",
+  "base_evidence": "research/checkpoint-I-validation.json",
+  "canonical_data_sha256": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+  "routes": [
+    "Exact unknown column order recovery with ragged occupied cells and ambiguity accounting",
+    "General modular layered solver, separate fields mod2 and mod13, plaintext projection and key lifts",
+    "Cached integer factor search with admissible bounds and honest termination status",
+    "Unknown cyclic alphabet constraint search with all-different indices",
+    "Source-pinned whole sculpture ordinal grids and explicit overlay rules",
+    "Independent published benchmarks and document-separated multilingual evaluation"
+  ],
+  "additional_improvements": ["Contradiction certificates", "Independent encryption replay for new result types", "Strict resource limits and source provenance"],
+  "non_claims": ["No exhaustive search of all cipher designs", "No authenticated K4 or K5 solution", "Ordinal text columns are not physical sculpture distances", "No K5 ciphertext is invented"],
+  "resource_policy": "One-process bounded CPU experiments. No WSL distributions were running at the pre-test check; no n5_runner window was present. No GPU acceleration claimed."
+}

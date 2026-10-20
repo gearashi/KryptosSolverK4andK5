@@ -1,0 +1,101 @@
+{
+  "claim_id": "K4-20261013-K-scheduled",
+  "mathematics": {
+    "assertion_tested": "Shared and scheduled keys and mixed known alphabets agree with independent finite controls; fixed18+8 K4 models are classified within explicit caps.",
+    "coefficient_domain": "F2/F13 linear systems and finite cyclic substitution constraints",
+    "conventions": "Shared keys mean identical letters; gather output[j]=input[permutation[j]]; source/current coordinate frames explicit.",
+    "inputs": [
+      "kryptos/__main__.py",
+      "kryptos/advanced_cli.py",
+      "kryptos/alphabet_propagation.py",
+      "kryptos/ciphers.py",
+      "kryptos/columnar.py",
+      "kryptos/data.py",
+      "kryptos/engine.py",
+      "kryptos/experiments.py",
+      "kryptos/explanations.py",
+      "kryptos/factor_search.py",
+      "kryptos/fractionation.py",
+      "kryptos/general_layers.py",
+      "kryptos/grid.py",
+      "kryptos/joint_columnar.py",
+      "kryptos/keyed_alphabet.py",
+      "kryptos/language.py",
+      "kryptos/layer_plan.py",
+      "kryptos/mixed_stages.py",
+      "kryptos/next_cli.py",
+      "kryptos/parallel_search.py",
+      "kryptos/position_residues.py",
+      "kryptos/recovery.py",
+      "kryptos/replay_expanded.py",
+      "kryptos/scheduled_layers.py",
+      "kryptos/scoring.py",
+      "kryptos/sculpture.py",
+      "kryptos/search_runtime.py",
+      "kryptos/semantic.py",
+      "research/prepare_K_contracts.py",
+      "research/run_checkpoint_K.py",
+      "research/scheduled_layers_K.py"
+    ],
+    "bounds": {
+      "controls": 4,
+      "scheduled_K4_models": 18,
+      "mixed_K4_models": 8,
+      "mixed_per_model": {
+        "max_nodes": 2000,
+        "max_relation_checks": 750000,
+        "max_distinct_plaintexts": 1000,
+        "seconds": 3
+      },
+      "outer_seconds": 90
+    },
+    "non_claims": [
+      "No authenticated K4/K5 decipherment",
+      "Finite specified models only; no global cryptanalytic exclusion"
+    ]
+  },
+  "execution_artifacts": [
+    "kryptos/__main__.py",
+    "kryptos/advanced_cli.py",
+    "kryptos/alphabet_propagation.py",
+    "kryptos/ciphers.py",
+    "kryptos/columnar.py",
+    "kryptos/data.py",
+    "kryptos/engine.py",
+    "kryptos/experiments.py",
+    "kryptos/explanations.py",
+    "kryptos/factor_search.py",
+    "kryptos/fractionation.py",
+    "kryptos/general_layers.py",
+    "kryptos/grid.py",
+    "kryptos/joint_columnar.py",
+    "kryptos/keyed_alphabet.py",
+    "kryptos/language.py",
+    "kryptos/layer_plan.py",
+    "kryptos/mixed_stages.py",
+    "kryptos/next_cli.py",
+    "kryptos/parallel_search.py",
+    "kryptos/position_residues.py",
+    "kryptos/recovery.py",
+    "kryptos/replay_expanded.py",
+    "kryptos/scheduled_layers.py",
+    "kryptos/scoring.py",
+    "kryptos/sculpture.py",
+    "kryptos/search_runtime.py",
+    "kryptos/semantic.py",
+    "research/prepare_K_contracts.py",
+    "research/run_checkpoint_K.py",
+    "research/scheduled_layers_K.py"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

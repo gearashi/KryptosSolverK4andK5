@@ -1,0 +1,14 @@
+{
+ "claim_id":"K4-20261012-I-multilingual-pilot",
+ "mathematics":{
+  "assertion_tested":"Train five fixed single-book trigram models and measure masked heldout-vs-shuffle performance; separately rank46existingK4strings within eachmodel.",
+  "coefficient_domain":"Exact ngram counts; floating smoothed log scores",
+  "conventions":"Body markers, NFKD accents removal, upperASCII letters only withoutspaces. Skip5000, train50000, gap1000, then20disjoint97letter windows; mask24knownK4positions. Modelorder3,alpha0.1.",
+  "inputs":["research/multilingual_pilot.py","kryptos/language.py","kryptos/data.py","research/runs/complete-predictions-001/results.json","research/corpora/pg1342.txt","research/corpora/pg2000.txt","research/corpora/pg17489.txt","research/corpora/pg52484.txt","research/corpora/pg218.txt"],
+  "bounds":{"languages":5,"training_letters_per_language":50000,"heldout_windows_each":20,"shuffles_per_window":8,"candidate_strings":46,"workers":1},
+  "non_claims":["Not a general language classifier","No cross-language rawscorewinner","Not whole-pipeline search controls","No authenticK4orK5language identification"]
+ },
+ "execution_artifacts":["research/multilingual_pilot.py","kryptos/language.py","kryptos/data.py","research/runs/complete-predictions-001/results.json","research/corpora/pg1342.txt","research/corpora/pg2000.txt","research/corpora/pg17489.txt","research/corpora/pg52484.txt","research/corpora/pg218.txt"],
+ "software":[{"name":"Python","version":"3.14.5"}],
+ "randomness":{"used":true,"generator":"Python random.Random seeded per heldoutwindow/shuffle, savedinputs","seed":20261012}
+}

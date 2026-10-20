@@ -1,0 +1,45 @@
+{
+  "target": "custom",
+  "ciphertext": "WVKFOXHTAOCHVSXYSXUSIRFJHRKDQNVVGGCCESLRFKWVKFZUXRYUSZXFTHRGQRIKSINSJWVKPSGVIXHAKQHYDUGLBHHGOGSZK",
+  "cribs": [
+    {
+      "start": 1,
+      "text": "THECAR"
+    }
+  ],
+  "withheld_positions": [
+    4,
+    5
+  ],
+  "model_paths": [
+    "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json"
+  ],
+  "model_bank": [
+    {
+      "id": "period3",
+      "layer_model": "general",
+      "alphabet": "standard",
+      "stages": [
+        {
+          "operation": "substitution",
+          "period": 3
+        }
+      ]
+    },
+    {
+      "id": "period4",
+      "layer_model": "general",
+      "alphabet": "standard",
+      "stages": [
+        {
+          "operation": "substitution",
+          "period": 4
+        }
+      ]
+    }
+  ],
+  "max_candidates_per_family": 676,
+  "max_total_candidates": 1500,
+  "time_limit_seconds": 10,
+  "top": 5
+}

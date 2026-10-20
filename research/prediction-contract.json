@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-H-predictive-coverage",
+  "mathematics": {
+    "assertion_tested": "Compute exact per-position marginal plaintext domains for1018 previously selected shared-alphabet additive models, and retrospectively measure phrase-withholding coverage.",
+    "coefficient_domain": "Integers modulo26 and connected-component gauge freedoms",
+    "conventions": "A position is forced exactly when its two key-phase vertices share a crib-graph component; otherwise all26 letters are marginally possible, possibly correlated with other positions. Held phrases were already used to select models, so their agreement is not independent validation.",
+    "inputs": ["research/predictive_diagnostics.py", "kryptos/data.py", "research/runs/layers-001/results.json", "research/runs/layers-001/manifest.json"],
+    "bounds": {"selected_models": 1018, "positions_per_model": 97, "known_positions": 24, "unknown_positions": 73, "retrospective_phrase_holds_per_model": 2, "workers": 1, "new_models_searched": 0},
+    "non_claims": ["No authentic plaintext prediction", "No independent validation or accuracy estimate", "No probability from model counts", "No language scoring or new key search"]
+  },
+  "execution_artifacts": ["research/predictive_diagnostics.py", "kryptos/data.py", "research/runs/layers-001/results.json", "research/runs/layers-001/manifest.json"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

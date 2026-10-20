@@ -1,0 +1,1611 @@
+{
+  "schema": "kryptos.local-run.v1",
+  "id": "3cb5338c27d74d02bd920aa89a4727f6",
+  "state": "completed",
+  "kind": "exact",
+  "command": "validate-controls",
+  "request": {
+    "model_paths": [
+      "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json"
+    ],
+    "model_bank": [
+      {
+        "id": "period25",
+        "layer_model": "general",
+        "alphabet": "standard",
+        "stages": [
+          {
+            "operation": "substitution",
+            "period": 25
+          }
+        ]
+      },
+      {
+        "id": "period26",
+        "layer_model": "general",
+        "alphabet": "standard",
+        "stages": [
+          {
+            "operation": "substitution",
+            "period": 26
+          }
+        ]
+      }
+    ],
+    "max_candidates_per_family": 676,
+    "max_total_candidates": 1500,
+    "time_limit_seconds": 30,
+    "top": 5,
+    "seed": 2026101407,
+    "crib_positions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "cases": [
+      {
+        "id": "authored-1",
+        "plaintext": "THECAREFULOBSERVERRECORDEDEACHSHADOWBEFORETHECLOUDSRETURNEDANDCHECKEDTHEMEASUREMENTSAGAINBESIDETH",
+        "source": "Newly authored synthetic control; first97ASCII letters. Not a literary benchmark. Contiguous24position artificial mask differs from K4.",
+        "generating_model_id": "period25",
+        "keys": [
+          "ABCDEFGHIJKLMNOPQRSTUVWXY"
+        ]
+      },
+      {
+        "id": "authored-2",
+        "plaintext": "APATIENTREADERCOMPAREDTHEFADEDNOTESWITHTHEMAPANDFOUNDTHATEVERYCROSSINGHADBEENMARKEDBEFORETHEBRIDG",
+        "source": "Newly authored synthetic control; first97ASCII letters. Not a literary benchmark. Contiguous24position artificial mask differs from K4.",
+        "generating_model_id": "period26",
+        "keys": [
+          "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "backend": "cpu",
+    "workers": 1,
+    "batch_size": 512,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": false,
+    "idle_ms": 0,
+    "target_page_seconds": 1,
+    "ranking_mode": "certified"
+  },
+  "note": "Declared validation protocol; empirical comparison only.",
+  "created_at": "2026-10-13T19:24:51.403101+00:00",
+  "updated_at": "2026-10-13T19:24:57.604898+00:00",
+  "progress": {
+    "completed": 1,
+    "total": 1,
+    "unit": "jobs",
+    "completed_decimal": "1",
+    "total_decimal": "1"
+  },
+  "elapsed_seconds": 6.172000000020489,
+  "rate": 0.1620220349962217,
+  "candidates": [],
+  "result": {
+    "schema": "kryptos.validation-protocol.v1",
+    "command": "validate-controls",
+    "bounds": {
+      "max_candidates_per_family": 676,
+      "max_total_candidates": 1500,
+      "top": 5,
+      "time_limit_seconds": 30,
+      "max_key_slots": 128,
+      "max_matrix_cells": 2000000,
+      "max_operations": 20000000
+    },
+    "model_bank": [
+      {
+        "id": "period25",
+        "layer_model": "general",
+        "alphabet": "standard",
+        "stages": [
+          {
+            "operation": "substitution",
+            "period": 25
+          }
+        ]
+      },
+      {
+        "id": "period26",
+        "layer_model": "general",
+        "alphabet": "standard",
+        "stages": [
+          {
+            "operation": "substitution",
+            "period": 26
+          }
+        ]
+      }
+    ],
+    "scoring_models": [
+      {
+        "path": "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json",
+        "sha256": "970349f122f82589dc432103ffe7c5dde6bc8a9a39081dbd601dfda48a49e064",
+        "id": "2e603495340da9808fa3cf7f79cde6c376146549357e92e70f769bc7616763b9"
+      }
+    ],
+    "request_sha256": "7f983ade40e36e6271b1622615e879705797e412e022214097a1dc0fcca25071",
+    "authenticated_solution": false,
+    "interpretation": "Descriptive bounded selection controls, not solution confidence or a false-positive probability.",
+    "cases": [
+      {
+        "id": "authored-1",
+        "source": "Newly authored synthetic control; first97ASCII letters. Not a literary benchmark. Contiguous24position artificial mask differs from K4.",
+        "seed": 2026101407,
+        "generating_model_id": "period25",
+        "generating_keys": [
+          "ABCDEFGHIJKLMNOPQRSTUVWXY"
+        ],
+        "positive": {
+          "ciphertext": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+          "generating_plaintext": "THECAREFULOBSERVERRECORDEDEACHSHADOWBEFORETHECLOUDSRETURNEDANDCHECKEDTHEMEASUREMENTSAGAINBESIDETH",
+          "selection": {
+            "complete": true,
+            "truncated": false,
+            "stop_reason": "exhausted_bank",
+            "model_records": [
+              {
+                "id": "period25",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 26,
+                "distinct_plaintext_count": 26,
+                "dimensions_mod2": 1,
+                "dimensions_mod13": 1,
+                "stop_reason": "exhausted_declared_family"
+              },
+              {
+                "id": "period26",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 676,
+                "distinct_plaintext_count": 676,
+                "dimensions_mod2": 2,
+                "dimensions_mod13": 2,
+                "stop_reason": "exhausted_declared_family"
+              }
+            ],
+            "evaluated": 702,
+            "literal_reencryptions": 702,
+            "distinct_completed_plaintexts": 702,
+            "candidates": [
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDEDEACHSHADOWBEFORETHECLOUDSRETURNEDANDCHECKEDTHEMEASUREMENTSAGAINBESIDETH",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXY"
+                ],
+                "values_mod2": [
+                  0
+                ],
+                "values_mod13": [
+                  11
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXY"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                      "sha256": "8efa1523a64decb5474acabbe2d2e7a3b220f96878854c78064f82eb2381326a"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.573359571921849
+                ],
+                "selected_score": -7.573359571921849,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDSDEACHSHADOWBEFORETHECLOURSRETURNEDANDCHECKEDTHEMEOSUREMENTSAGAINBESIDETH",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXK"
+                ],
+                "values_mod2": [
+                  0
+                ],
+                "values_mod13": [
+                  10
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXK"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                      "sha256": "8efa1523a64decb5474acabbe2d2e7a3b220f96878854c78064f82eb2381326a"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.601682781705916
+                ],
+                "selected_score": -7.601682781705916,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDMDEACHSHADOWBEFORETHECLOULSRETURNEDANDCHECKEDTHEMEISUREMENTSAGAINBESIDETH",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXQ"
+                ],
+                "values_mod2": [
+                  0
+                ],
+                "values_mod13": [
+                  3
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXQ"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                      "sha256": "8efa1523a64decb5474acabbe2d2e7a3b220f96878854c78064f82eb2381326a"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.6407618782778135
+                ],
+                "selected_score": -7.6407618782778135,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDHDEACHSHADOWBEFORETHECLOUGSRETURNEDANDCHECKEDTHEMEDSUREMENTSAGAINBESIDETH",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXV"
+                ],
+                "values_mod2": [
+                  1
+                ],
+                "values_mod13": [
+                  8
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXV"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                      "sha256": "8efa1523a64decb5474acabbe2d2e7a3b220f96878854c78064f82eb2381326a"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.650584783657867
+                ],
+                "selected_score": -7.650584783657867,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDVDEACHSHADOWBEFORETHECLOUUSRETURNEDANDCHECKEDTHEMERSUREMENTSAGAINBESIDETH",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXH"
+                ],
+                "values_mod2": [
+                  1
+                ],
+                "values_mod13": [
+                  7
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXH"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNACDFCFLXNHLXGMQSCGUKZXWGKRBSSGWYWTLLJXOOUSRAVVMBZIBYSVTHQJTAAJQLUAPTIZVXNC",
+                      "sha256": "8efa1523a64decb5474acabbe2d2e7a3b220f96878854c78064f82eb2381326a"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.683850723589324
+                ],
+                "selected_score": -7.683850723589324,
+                "model_ids": [
+                  "period25"
+                ]
+              }
+            ],
+            "best_selected_score": -7.573359571921849,
+            "score_mask": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "scored_windows": 71,
+            "ordered_family_stream_sha256": "ba9afad911ce2399a74d90f6f61a4f7414f2f080054224580cba9d5dbb97df59",
+            "selection_sha256": "0daeead33435651d76515b7142683657972aec7fdb8b96a13a9edaa825b2769f",
+            "training_input_sha256": "d908a46f873e97f4b098f1742ab2c6bc7528dc35287d092d809b02d10fd498aa",
+            "ranking": "maximum frozen-model mean log score, then plaintext lexical order; duplicate plaintexts merged"
+          },
+          "assessment": {
+            "truth_present_in_evaluated_candidates": true,
+            "truth_competition_rank": 1,
+            "truth_score_ties": 1,
+            "truth_selected_score": -7.573359571921849,
+            "rank_scope": "complete declared bank",
+            "wrong_alternatives": 701
+          }
+        },
+        "null": {
+          "ciphertext": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+          "generating_plaintext": "THECAREFULOBSERVERRECORDRBHERETAADBNNSCOTSSTEAHFUEEEEECITLARHESEHHUNCOEDAGERODDEWUCSNKHADDDMTMEIE",
+          "selection": {
+            "complete": true,
+            "truncated": false,
+            "stop_reason": "exhausted_bank",
+            "model_records": [
+              {
+                "id": "period25",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 26,
+                "distinct_plaintext_count": 26,
+                "dimensions_mod2": 1,
+                "dimensions_mod13": 1,
+                "stop_reason": "exhausted_declared_family"
+              },
+              {
+                "id": "period26",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 676,
+                "distinct_plaintext_count": 676,
+                "dimensions_mod2": 2,
+                "dimensions_mod13": 2,
+                "stop_reason": "exhausted_declared_family"
+              }
+            ],
+            "evaluated": 702,
+            "literal_reencryptions": 702,
+            "distinct_completed_plaintexts": 702,
+            "candidates": [
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDEBHERETAADBNNSCOTSSTEAHFUREEEECITLARHESEHHUNCOEDAGRRODDEWUCSNKHADDDMTMEIE",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXL"
+                ],
+                "values_mod2": [
+                  1
+                ],
+                "values_mod13": [
+                  11
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXL"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                      "sha256": "f54b41fc65ee3d28ff40ff67fb2905fcd404044825999dbdc51bb2f9d223046e"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -9.937864227138482
+                ],
+                "selected_score": -9.937864227138482,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDRBHERETAADBNNSCOTSSTEAHFUEEEEECITLARHESEHHUNCOEDAGERODDEWUCSNKHADDDMTMEIE",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXY"
+                ],
+                "values_mod2": [
+                  0
+                ],
+                "values_mod13": [
+                  11
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXY"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                      "sha256": "f54b41fc65ee3d28ff40ff67fb2905fcd404044825999dbdc51bb2f9d223046e"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -9.98717876414683
+                ],
+                "selected_score": -9.98717876414683,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDFBHERETAADBNNSCOTSSTEAHFUSEEEECITLARHESEHHUNCOEDAGSRODDEWUCSNKHADDDMTMEIE",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXK"
+                ],
+                "values_mod2": [
+                  0
+                ],
+                "values_mod13": [
+                  10
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXK"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                      "sha256": "f54b41fc65ee3d28ff40ff67fb2905fcd404044825999dbdc51bb2f9d223046e"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.015747963635688
+                ],
+                "selected_score": -10.015747963635688,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDYBHERETAADBNNSCOTSSTEAHFULEEEECITLARHESEHHUNCOEDAGLRODDEWUCSNKHADDDMTMEIE",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXR"
+                ],
+                "values_mod2": [
+                  1
+                ],
+                "values_mod13": [
+                  4
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXR"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                      "sha256": "f54b41fc65ee3d28ff40ff67fb2905fcd404044825999dbdc51bb2f9d223046e"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.054647178332615
+                ],
+                "selected_score": -10.054647178332615,
+                "model_ids": [
+                  "period25"
+                ]
+              },
+              {
+                "plaintext": "THECAREFULOBSERVERRECORDCBHERETAADBNNSCOTSSTEAHFUPEEEECITLARHESEHHUNCOEDAGPRODDEWUCSNKHADDDMTMEIE",
+                "keys": [
+                  "ABCDEFGHIJKLMNOPQRSTUVWXN"
+                ],
+                "values_mod2": [
+                  1
+                ],
+                "values_mod13": [
+                  0
+                ],
+                "reencrypted_ciphertext": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ABCDEFGHIJKLMNOPQRSTUVWXN"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "TIGFEWKMCUYMERFKUIJXWJNAPBIGUIYGHLKXYEPCIIJLXUCBRCEFGHGNZSIARPERVWKEUHYYWDCRPFGIBAJAWUSMQRSCKEXCZ",
+                      "sha256": "f54b41fc65ee3d28ff40ff67fb2905fcd404044825999dbdc51bb2f9d223046e"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.061581613974592
+                ],
+                "selected_score": -10.061581613974592,
+                "model_ids": [
+                  "period25"
+                ]
+              }
+            ],
+            "best_selected_score": -9.937864227138482,
+            "score_mask": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "scored_windows": 71,
+            "ordered_family_stream_sha256": "97cf444e317be8bce5cf9d7c3931c74ecf7c60c3b94408439ef4644a226b6b40",
+            "selection_sha256": "9c3e0fe2618cfd652be1d70bc5051aa022372640046ca0a1111a20bc9ffc5455",
+            "training_input_sha256": "00c59903f2ddc45ab62f77c2451338cdbcb94d44840e81c16e6a8a9c2bae23f1",
+            "ranking": "maximum frozen-model mean log score, then plaintext lexical order; duplicate plaintexts merged"
+          },
+          "assessment": {
+            "truth_present_in_evaluated_candidates": true,
+            "truth_competition_rank": 2,
+            "truth_score_ties": 1,
+            "truth_selected_score": -9.98717876414683,
+            "rank_scope": "complete declared bank",
+            "wrong_alternatives": 701
+          }
+        },
+        "comparison": {
+          "complete_comparison": true,
+          "null_best_minus_positive_best": -2.3645046552166322,
+          "null_best_at_least_positive_best": false
+        }
+      },
+      {
+        "id": "authored-2",
+        "source": "Newly authored synthetic control; first97ASCII letters. Not a literary benchmark. Contiguous24position artificial mask differs from K4.",
+        "seed": 2026101408,
+        "generating_model_id": "period26",
+        "generating_keys": [
+          "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+        ],
+        "positive": {
+          "ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+          "generating_plaintext": "APATIENTREADERCOMPAREDTHEFADEDNOTESWITHTHEMAPANDFOUNDTHATEVERYCROSSINGHADBEENMARKEDBEFORETHEBRIDG",
+          "selection": {
+            "complete": true,
+            "truncated": false,
+            "stop_reason": "exhausted_bank",
+            "model_records": [
+              {
+                "id": "period25",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 26,
+                "distinct_plaintext_count": 26,
+                "dimensions_mod2": 1,
+                "dimensions_mod13": 1,
+                "stop_reason": "exhausted_declared_family"
+              },
+              {
+                "id": "period26",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 676,
+                "distinct_plaintext_count": 676,
+                "dimensions_mod2": 2,
+                "dimensions_mod13": 2,
+                "stop_reason": "exhausted_declared_family"
+              }
+            ],
+            "evaluated": 702,
+            "literal_reencryptions": 702,
+            "distinct_completed_plaintexts": 702,
+            "candidates": [
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHEFADEDNOTESWITHTHEMAPANDFOUNDTHATEVERYCROSSINGHADBEENMARKEDBEFORETHEBRIDG",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+                ],
+                "values_mod2": [
+                  1,
+                  0
+                ],
+                "values_mod13": [
+                  1,
+                  0
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCBA"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                      "sha256": "ce4cd95df4782372f6214e7b23e779dfb852225398d3d5c3ce04b7b2e50f84d4"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.385699094439444
+                ],
+                "selected_score": -7.385699094439444,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHEWADEDNOTESWITHTHEMAPANDFOUEDTHATEVERYCROSSINGHADBEENDARKEDBEFORETHEBRIDG",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCBJ"
+                ],
+                "values_mod2": [
+                  1,
+                  1
+                ],
+                "values_mod13": [
+                  1,
+                  9
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCBJ"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                      "sha256": "ce4cd95df4782372f6214e7b23e779dfb852225398d3d5c3ce04b7b2e50f84d4"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.460829244500314
+                ],
+                "selected_score": -7.460829244500314,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHELADEDNOTESWITHTHEMAPANDFOUTDTHATEVERYCROSSINGHADBEENSARKEDBEFORETHEBRIDG",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCBU"
+                ],
+                "values_mod2": [
+                  1,
+                  0
+                ],
+                "values_mod13": [
+                  1,
+                  7
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCBU"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                      "sha256": "ce4cd95df4782372f6214e7b23e779dfb852225398d3d5c3ce04b7b2e50f84d4"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.464710518510048
+                ],
+                "selected_score": -7.464710518510048,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHEMADEDNOTESWITHTHEMAPANDFOUUDTHATEVERYCROSSINGHADBEENTARKEDBEFORETHEBRIDG",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCBT"
+                ],
+                "values_mod2": [
+                  1,
+                  1
+                ],
+                "values_mod13": [
+                  1,
+                  6
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCBT"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                      "sha256": "ce4cd95df4782372f6214e7b23e779dfb852225398d3d5c3ce04b7b2e50f84d4"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.492938550398113
+                ],
+                "selected_score": -7.492938550398113,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHRWADEDNOTESWITHTHEMAPANDFOHEDTHATEVERYCROSSINGHADBEEADARKEDBEFORETHEBRIDG",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCOJ"
+                ],
+                "values_mod2": [
+                  0,
+                  1
+                ],
+                "values_mod13": [
+                  1,
+                  9
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCOJ"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJFFZBBZIIMWJMXHUFSOVIWGSHIQVNCREWOYOWIORFBEDSWOOGIFHGOMZPHAYVXXFHTHUQMBRLN",
+                      "sha256": "ce4cd95df4782372f6214e7b23e779dfb852225398d3d5c3ce04b7b2e50f84d4"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -7.4933870375337115
+                ],
+                "selected_score": -7.4933870375337115,
+                "model_ids": [
+                  "period26"
+                ]
+              }
+            ],
+            "best_selected_score": -7.385699094439444,
+            "score_mask": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "scored_windows": 71,
+            "ordered_family_stream_sha256": "1cbdca8c6c739864a3af96fcc3e5f3cee4d8506c6b31c4de13563e9f95a62dd3",
+            "selection_sha256": "98e63ae771e7f7a616d5766caafffa7125d205b601aeea2f9842439ab117ad0b",
+            "training_input_sha256": "9443cc3a0da5ec6da72ea21283b4d230c36113a80e8bbc90b2e18dee9f62e2d3",
+            "ranking": "maximum frozen-model mean log score, then plaintext lexical order; duplicate plaintexts merged"
+          },
+          "assessment": {
+            "truth_present_in_evaluated_candidates": true,
+            "truth_competition_rank": 1,
+            "truth_score_ties": 1,
+            "truth_selected_score": -7.385699094439444,
+            "rank_scope": "complete declared bank",
+            "wrong_alternatives": 701
+          }
+        },
+        "null": {
+          "ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+          "generating_plaintext": "APATIENTREADERCOMPAREDTHDRWSENRFEDEHHEDDTTHCOAENDTBBDTFEEEOTAVMAEKMSNGFHDIBRRTERAEGNAISPYUOEOHIAN",
+          "selection": {
+            "complete": true,
+            "truncated": false,
+            "stop_reason": "exhausted_bank",
+            "model_records": [
+              {
+                "id": "period25",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 26,
+                "distinct_plaintext_count": 26,
+                "dimensions_mod2": 1,
+                "dimensions_mod13": 1,
+                "stop_reason": "exhausted_declared_family"
+              },
+              {
+                "id": "period26",
+                "feasible": true,
+                "complete": true,
+                "evaluated": 676,
+                "distinct_plaintext_count": 676,
+                "dimensions_mod2": 2,
+                "dimensions_mod13": 2,
+                "stop_reason": "exhausted_declared_family"
+              }
+            ],
+            "evaluated": 702,
+            "literal_reencryptions": 702,
+            "distinct_completed_plaintexts": 702,
+            "candidates": [
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHQEWSENRFEDEHHEDDTTHCOAENDTOODTFEEEOTAVMAEKMSNGFHDIBREGERAEGNAISPYUOEOHIAN",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCON"
+                ],
+                "values_mod2": [
+                  0,
+                  1
+                ],
+                "values_mod13": [
+                  1,
+                  0
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCON"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                      "sha256": "297edbc31c47f9e75a69f8d47fe42659f5e45dd802a329c6996ebab862a6d169"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.645908275328916
+                ],
+                "selected_score": -10.645908275328916,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHQBWSENRFEDEHHEDDTTHCOAENDTOLDTFEEEOTAVMAEKMSNGFHDIBREDERAEGNAISPYUOEOHIAN",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCOQ"
+                ],
+                "values_mod2": [
+                  0,
+                  0
+                ],
+                "values_mod13": [
+                  1,
+                  3
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCOQ"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                      "sha256": "297edbc31c47f9e75a69f8d47fe42659f5e45dd802a329c6996ebab862a6d169"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.65816935431363
+                ],
+                "selected_score": -10.65816935431363,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHQDWSENRFEDEHHEDDTTHCOAENDTONDTFEEEOTAVMAEKMSNGFHDIBREFERAEGNAISPYUOEOHIAN",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCOO"
+                ],
+                "values_mod2": [
+                  0,
+                  0
+                ],
+                "values_mod13": [
+                  1,
+                  1
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCOO"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                      "sha256": "297edbc31c47f9e75a69f8d47fe42659f5e45dd802a329c6996ebab862a6d169"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.667724114884233
+                ],
+                "selected_score": -10.667724114884233,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHQQWSENRFEDEHHEDDTTHCOAENDTOADTFEEEOTAVMAEKMSNGFHDIBRESERAEGNAISPYUOEOHIAN",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCOB"
+                ],
+                "values_mod2": [
+                  0,
+                  1
+                ],
+                "values_mod13": [
+                  1,
+                  1
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCOB"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                      "sha256": "297edbc31c47f9e75a69f8d47fe42659f5e45dd802a329c6996ebab862a6d169"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.66787950342261
+                ],
+                "selected_score": -10.66787950342261,
+                "model_ids": [
+                  "period26"
+                ]
+              },
+              {
+                "plaintext": "APATIENTREADERCOMPAREDTHQKWSENRFEDEHHEDDTTHCOAENDTOUDTFEEEOTAVMAEKMSNGFHDIBREMERAEGNAISPYUOEOHIAN",
+                "keys": [
+                  "ZYXWVUTSRQPONMLKJIHGFEDCOH"
+                ],
+                "values_mod2": [
+                  0,
+                  1
+                ],
+                "values_mod13": [
+                  1,
+                  7
+                ],
+                "reencrypted_ciphertext": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                "reencryption_matches": true,
+                "authenticated_solution": false,
+                "classification": "model_consistency_witness",
+                "encryption_recipe": {
+                  "schema": "kryptos.encryption-recipe.v1",
+                  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                  "stages": [
+                    {
+                      "operation": "repeat_substitution",
+                      "cipher": "vigenere",
+                      "key_pattern": "ZYXWVUTSRQPONMLKJIHGFEDCOH"
+                    }
+                  ]
+                },
+                "evidence": {
+                  "literal_reencryption_matches": true,
+                  "crib_matches": 24,
+                  "stage_outputs": [
+                    {
+                      "stage": 1,
+                      "operation": "repeat_substitution",
+                      "output": "ZNXPDYGLIUPRRDNYVXHXJHWJERVQBJMZXVVXWSQPEDQKVGJRGVCBCRCAZYHLRLBORWXCWOMNIMETSTDPXABHTAJFNIBQZRRIU",
+                      "sha256": "297edbc31c47f9e75a69f8d47fe42659f5e45dd802a329c6996ebab862a6d169"
+                    }
+                  ],
+                  "authenticated_solution": false
+                },
+                "scores": [
+                  -10.714558653161077
+                ],
+                "selected_score": -10.714558653161077,
+                "model_ids": [
+                  "period26"
+                ]
+              }
+            ],
+            "best_selected_score": -10.645908275328916,
+            "score_mask": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "scored_windows": 71,
+            "ordered_family_stream_sha256": "e3984ccdeed58a61d6b64972daeaba811bc5749392b423264cf20d5eff304f4d",
+            "selection_sha256": "a26ac78b5d781b05b6b46ecb80cdd8b9d32dadf541930be02d461736d4c18cc1",
+            "training_input_sha256": "ba0475a6da2047cf0007ae3b545ed184e6189a168f8d7ad280e144c5eb363281",
+            "ranking": "maximum frozen-model mean log score, then plaintext lexical order; duplicate plaintexts merged"
+          },
+          "assessment": {
+            "truth_present_in_evaluated_candidates": true,
+            "truth_competition_rank": 452,
+            "truth_score_ties": 1,
+            "truth_selected_score": -11.190224851232008,
+            "rank_scope": "complete declared bank",
+            "wrong_alternatives": 701
+          }
+        },
+        "comparison": {
+          "complete_comparison": true,
+          "null_best_minus_positive_best": -3.260209180889472,
+          "null_best_at_least_positive_best": false
+        }
+      }
+    ],
+    "crib_positions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "seed": 2026101407,
+    "complete": true,
+    "truncated": false,
+    "stop_reason": "exhausted_protocol",
+    "summary": {
+      "positive_inputs": 2,
+      "paired_null_inputs": 2,
+      "completed_comparisons": 2,
+      "candidate_visits": 2808,
+      "positive_truth_rank_one": 2,
+      "nulls_with_surviving_wrong_candidates": 2
+    },
+    "elapsed_seconds": 4.875,
+    "source_sha256": {
+      "__main__.py": "014e7b7982f22ba2b3252599f3598a09e2f8183efc9f522c6cdb33932f0dfdbc",
+      "accelerated.py": "6c9a292659bfd9a73b9e2536d3d4c70718e9ee877bb20a32487f0b7c3025275f",
+      "advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+      "alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+      "app.py": "a1eb120ad5d539495cb68bfd7ed3d766cc9c26a79356e86cdefcb4b45282a7f1",
+      "app_jobs.py": "e0798500d9bef421c5990dd55ef7cebe3fe55c229b6563327f386d251a371973",
+      "app_worker.py": "8358075c66bbb12f4e0ce8c3a249c5c613dc3eb662cd195ff679ddfbd0f77b4f",
+      "campaigns.py": "4c33fd550d6669ca904574707dee3958c144300a8844c035f522c0ebf839a5a3",
+      "certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+      "ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+      "columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+      "correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+      "data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+      "engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+      "experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+      "explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+      "factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+      "family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+      "fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+      "general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+      "grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+      "import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+      "joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+      "keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+      "language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+      "layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+      "mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+      "next_cli.py": "07a74c1007fb9abf30031ea7d578782db0b9abfafc1ad7326d165694a306aab2",
+      "parallel_search.py": "e4af6998e9277ae0afef15abcfbc86bdfd8e4bd9c6641b3596671eab814fa83f",
+      "position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+      "process_lifetime.py": "b306c32ddde2d77942f8dc70b32b5e59e73c48f6aee18ec0e56edaa1cbc0c8e1",
+      "recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+      "replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+      "resource_governor.py": "855412deabad45aed582bdb147f1746eae61209390bef3ba066f4eb05ebd6399",
+      "scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+      "score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+      "scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+      "sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+      "search_runtime.py": "13645339c16ae9bcd1f66717e95fd25bc35ae2b86ef399a0cf66f84e5dea3173",
+      "semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+      "validation_protocols.py": "8cd106e53e53f150427ff83bdf13d57e8ae42bbd8dc85b43097b93ae40f3a668",
+      "worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30"
+    },
+    "nonclaims": [
+      "No authenticated Kryptos decipherment or external submission.",
+      "Frozen authored controls are not a representative language population or a false-positive probability.",
+      "Wall time is cooperative between algebra/candidate steps; use the app's hard worker deadline.",
+      "Different model parameterizations may overlap; candidate texts are merged, model aliases retained."
+    ]
+  },
+  "error": null,
+  "backend_requested": "cpu",
+  "backend_actual": "cpu",
+  "batches_committed": 1,
+  "ranking_exact_over_committed_pages": null,
+  "backends_used": [
+    "cpu"
+  ],
+  "fallback_reasons": [],
+  "resource_events": [],
+  "pending_resources": {},
+  "initial_settings": {
+    "backend": "cpu",
+    "workers": 1,
+    "batch_size": 512,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": false,
+    "idle_ms": 0,
+    "target_page_seconds": 1,
+    "ranking_mode": "certified"
+  },
+  "source_identity": {
+    "kryptos/__main__.py": "014e7b7982f22ba2b3252599f3598a09e2f8183efc9f522c6cdb33932f0dfdbc",
+    "kryptos/accelerated.py": "6c9a292659bfd9a73b9e2536d3d4c70718e9ee877bb20a32487f0b7c3025275f",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "a1eb120ad5d539495cb68bfd7ed3d766cc9c26a79356e86cdefcb4b45282a7f1",
+    "kryptos/app_jobs.py": "e0798500d9bef421c5990dd55ef7cebe3fe55c229b6563327f386d251a371973",
+    "kryptos/app_worker.py": "8358075c66bbb12f4e0ce8c3a249c5c613dc3eb662cd195ff679ddfbd0f77b4f",
+    "kryptos/campaigns.py": "4c33fd550d6669ca904574707dee3958c144300a8844c035f522c0ebf839a5a3",
+    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "07a74c1007fb9abf30031ea7d578782db0b9abfafc1ad7326d165694a306aab2",
+    "kryptos/parallel_search.py": "e4af6998e9277ae0afef15abcfbc86bdfd8e4bd9c6641b3596671eab814fa83f",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/process_lifetime.py": "b306c32ddde2d77942f8dc70b32b5e59e73c48f6aee18ec0e56edaa1cbc0c8e1",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/resource_governor.py": "855412deabad45aed582bdb147f1746eae61209390bef3ba066f4eb05ebd6399",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "13645339c16ae9bcd1f66717e95fd25bc35ae2b86ef399a0cf66f84e5dea3173",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/validation_protocols.py": "8cd106e53e53f150427ff83bdf13d57e8ae42bbd8dc85b43097b93ae40f3a668",
+    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json": "970349f122f82589dc432103ffe7c5dde6bc8a9a39081dbd601dfda48a49e064"
+  },
+  "authenticated_solution": false,
+  "can_pause": false,
+  "can_resume": false
+}

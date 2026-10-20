@@ -1,0 +1,13 @@
+{
+  "target": "custom",
+  "ciphertext": "CAEBD",
+  "cribs": [],
+  "alphabet": "standard",
+  "cells": [[0,0],[0,1],[0,2],[0,3],[0,4]],
+  "stages": [
+    {"operation":"substitution","key_id":"shared","key_length":2},
+    {"operation":"gather","permutation":[2,0,4,1,3]},
+    {"operation":"substitution","key_id":"shared","key_length":2,"cipher":"variant",
+     "schedule":{"kind":"row_reset","frame":"source"}}
+  ]
+}

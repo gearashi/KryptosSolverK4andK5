@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-B-exact-constraints",
+  "mathematics": {
+    "assertion_tested": "Determine exact necessary crib consistency for specified K4 cipher families and preserve contradiction witnesses.",
+    "coefficient_domain": "Integers modulo 26 and exact character counts",
+    "conventions": "97 K4 letters; 24 crib positions reported 1-based; recurrence uses zero-based i; A-Z or KRYPTOS keyed alphabets; C=P+K, C=K-P, C=P-K.",
+    "inputs": ["kryptos/data.py", "research/check_classes.py"],
+    "bounds": {"letters": 97, "crib_letters": 24, "alphabet_pairs": 4, "cipher_equations": 3, "period_min": 1, "period_max": 97, "progressive_period_max": 26, "progressive_drift_min": 0, "progressive_drift_max": 25, "feedback_lag_min": 1, "feedback_lag_max": 96, "workers": 1},
+    "non_claims": ["No claimed K4 or K5 solution", "No exhaustive search over all cipher families", "No evidence that a surviving model is correct", "No full application tests or CPU-heavy search"]
+  },
+  "execution_artifacts": ["research/check_classes.py", "kryptos/data.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

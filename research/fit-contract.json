@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-E-fit-flexibility",
+  "mathematics": {
+    "assertion_tested": "Count cycle constraints among recorded feasible graph models and reconstruct plaintext for connected K3-adaptation graphs.",
+    "coefficient_domain": "Exact modular constraints and integer graph cycle rank",
+    "conventions": "Connected components include isolated key slots; edge_count=24; cycle_rank=edges-vertices+components; connected-gauge changes cancel from A+B for all positions.",
+    "inputs": ["research/runs/layers-001/results.json", "kryptos/data.py", "research/layer_constraints.py", "research/inspect_layer_fits.py"],
+    "bounds": {"recorded_models": 22272, "recorded_fits": 1018, "key_period_max": 16, "workers": 1},
+    "non_claims": ["No decryption claim", "No probability inferred from model count", "No candidate authenticated", "No keyword enumeration or CPU-heavy search"]
+  },
+  "execution_artifacts": ["research/inspect_layer_fits.py", "research/runs/layers-001/results.json", "research/layer_constraints.py", "kryptos/data.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": false, "generator": "", "seed": null}
+}

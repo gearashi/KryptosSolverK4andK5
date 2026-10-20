@@ -1,0 +1,924 @@
+{
+  "schema": "kryptos.correlated-bound-discriminator.v1",
+  "problem": {
+    "schema": "kryptos.lazy-product.v1",
+    "domains": [
+      2,
+      26
+    ],
+    "factors": [
+      {
+        "kind": "ngram",
+        "scope": [
+          0,
+          1
+        ],
+        "base": [
+          0,
+          0
+        ],
+        "columns": [
+          [
+            0,
+            13
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ],
+    "model": {
+      "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "counts": {
+        "AB": 1000,
+        "CC": 5,
+        "DQ": 9
+      },
+      "p": 1,
+      "q": 10,
+      "order": 2,
+      "id": "fixed-correlated-window"
+    }
+  },
+  "partials": [
+    {
+      "partial_assignment": [
+        -1,
+        -1
+      ],
+      "exact": 91,
+      "independent_letter_upper": 10001,
+      "correlated_upper": 91
+    },
+    {
+      "partial_assignment": [
+        -1,
+        0
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        1
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        2
+      ],
+      "exact": 51,
+      "independent_letter_upper": 51,
+      "correlated_upper": 51
+    },
+    {
+      "partial_assignment": [
+        -1,
+        3
+      ],
+      "exact": 91,
+      "independent_letter_upper": 91,
+      "correlated_upper": 91
+    },
+    {
+      "partial_assignment": [
+        -1,
+        4
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        5
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        6
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        7
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        8
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        9
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        10
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        11
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        12
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        13
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        14
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        15
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        16
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        17
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        18
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        19
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        20
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        21
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        22
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        23
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        24
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        -1,
+        25
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        -1
+      ],
+      "exact": 51,
+      "independent_letter_upper": 10001,
+      "correlated_upper": 51
+    },
+    {
+      "partial_assignment": [
+        0,
+        0
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        1
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        2
+      ],
+      "exact": 51,
+      "independent_letter_upper": 51,
+      "correlated_upper": 51
+    },
+    {
+      "partial_assignment": [
+        0,
+        3
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        4
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        5
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        6
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        7
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        8
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        9
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        10
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        11
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        12
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        13
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        14
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        15
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        16
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        17
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        18
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        19
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        20
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        21
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        22
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        23
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        24
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        0,
+        25
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        -1
+      ],
+      "exact": 91,
+      "independent_letter_upper": 10001,
+      "correlated_upper": 91
+    },
+    {
+      "partial_assignment": [
+        1,
+        0
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        1
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        2
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        3
+      ],
+      "exact": 91,
+      "independent_letter_upper": 91,
+      "correlated_upper": 91
+    },
+    {
+      "partial_assignment": [
+        1,
+        4
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        5
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        6
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        7
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        8
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        9
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        10
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        11
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        12
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        13
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        14
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        15
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        16
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        17
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        18
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        19
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        20
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        21
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        22
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        23
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        24
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    },
+    {
+      "partial_assignment": [
+        1,
+        25
+      ],
+      "exact": 1,
+      "independent_letter_upper": 1,
+      "correlated_upper": 1
+    }
+  ],
+  "partial_assignments_checked": 81,
+  "strictly_tighter_bounds": 3,
+  "old_branch": {
+    "best": [
+      1,
+      3
+    ],
+    "score": 91,
+    "partial_nodes_expanded_including_root_setup": 4,
+    "bound_calls": 55
+  },
+  "correlated_branch": {
+    "best": [
+      1,
+      3
+    ],
+    "score": 91,
+    "partial_nodes_expanded_including_root_setup": 3,
+    "bound_calls": 29
+  },
+  "correlated_work": {
+    "observed_grams_checked": 323,
+    "basis_row_reductions": 2
+  },
+  "integrated_baseline_and_current": [
+    {
+      "elapsed_seconds": 0.002643600106239319,
+      "result": {
+        "assignment": [
+          1,
+          3
+        ],
+        "score": 91,
+        "lower_bound": 91,
+        "upper_bound": 91,
+        "optimal": true,
+        "tie_break_proven": true,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "nodes": 5,
+        "nodes_total": 5,
+        "leaf_nodes": 1,
+        "pruned_nodes": 51,
+        "frontier_nodes": 0,
+        "cache_entries": 55,
+        "work": {
+          "cache_hits": 1,
+          "bound_evaluations": 55,
+          "exact_local_completions": 0,
+          "relaxed_bounds": 3,
+          "observed_grams_checked": 3
+        },
+        "assignment_space_size": 52,
+        "identity": {
+          "problem_sha256": "75ac0878a37f21605c9d716e3b8d9ab8edbaddb2a5ceda3212408cf591dccc36",
+          "ordering": "natural",
+          "local_exact_limit": 1,
+          "sources": {
+            "search_runtime.py": "b1ecec12e41d79a5e4d275c613be2d07799320abd054f442412f00cd257ded3f",
+            "language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf"
+          },
+          "version": "adaptive-search-v1; lexicographically smallest original assignment"
+        },
+        "resumed": false,
+        "checkpoint_written": null,
+        "bounds": {
+          "max_nodes": 10000,
+          "max_frontier": 10000,
+          "max_cache_entries": 100000,
+          "local_exact_limit": 1,
+          "time_limit_seconds": 10
+        },
+        "ordering": "natural",
+        "runtime_seconds": 0.0,
+        "interpretation": "Exact bounds for this product objective only. Lazy letter-domain bounds may ignore correlations; pruning remains admissible. No authentication."
+      }
+    },
+    {
+      "elapsed_seconds": 0.0026453000027686357,
+      "result": {
+        "assignment": [
+          1,
+          3
+        ],
+        "score": 91,
+        "lower_bound": 91,
+        "upper_bound": 91,
+        "optimal": true,
+        "tie_break_proven": true,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "nodes": 4,
+        "nodes_total": 4,
+        "leaf_nodes": 1,
+        "pruned_nodes": 26,
+        "frontier_nodes": 0,
+        "cache_entries": 30,
+        "work": {
+          "cache_hits": 0,
+          "bound_evaluations": 30,
+          "exact_local_completions": 0,
+          "relaxed_bounds": 0,
+          "correlated_bounds": 3,
+          "observed_grams_checked": 7
+        },
+        "assignment_space_size": 52,
+        "identity": {
+          "problem_sha256": "75ac0878a37f21605c9d716e3b8d9ab8edbaddb2a5ceda3212408cf591dccc36",
+          "ordering": "natural",
+          "local_exact_limit": 1,
+          "sources": {
+            "search_runtime.py": "729acd2d9bda6436fa55bf9d6fa90973c44da1854c244a17e210b8a60d3753ce",
+            "language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+            "correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909"
+          },
+          "version": "adaptive-search-v2; exact subgroup window bounds; lexicographically smallest original assignment"
+        },
+        "resumed": false,
+        "checkpoint_written": null,
+        "bounds": {
+          "max_nodes": 10000,
+          "max_frontier": 10000,
+          "max_cache_entries": 100000,
+          "local_exact_limit": 1,
+          "time_limit_seconds": 10
+        },
+        "ordering": "natural",
+        "runtime_seconds": 0.0,
+        "interpretation": "Exact bounds for this product objective only. Lazy letter-domain bounds may ignore correlations; pruning remains admissible. No authentication."
+      }
+    }
+  ],
+  "input_sha256_before": {
+    "research/correlated_bound_benchmark.py": "aa51360399e1020a0db4537c3b7b29018f7e082dfa309b3c55b2292fc2149d5e",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/search_runtime.py": "729acd2d9bda6436fa55bf9d6fa90973c44da1854c244a17e210b8a60d3753ce",
+    "research/source_snapshots/checkpoint-K-original/kryptos/search_runtime.py": "b1ecec12e41d79a5e4d275c613be2d07799320abd054f442412f00cd257ded3f",
+    "research/source_snapshots/checkpoint-K-original/kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf"
+  },
+  "input_sha256_after": {
+    "research/correlated_bound_benchmark.py": "aa51360399e1020a0db4537c3b7b29018f7e082dfa309b3c55b2292fc2149d5e",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/search_runtime.py": "729acd2d9bda6436fa55bf9d6fa90973c44da1854c244a17e210b8a60d3753ce",
+    "research/source_snapshots/checkpoint-K-original/kryptos/search_runtime.py": "b1ecec12e41d79a5e4d275c613be2d07799320abd054f442412f00cd257ded3f",
+    "research/source_snapshots/checkpoint-K-original/kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf"
+  },
+  "elapsed_seconds": 0.017032000003382564,
+  "limits": "One fixed 52-point family and all81partial assignments; integrated baseline/current optimum and bounds agree with literal enumeration. Timings are a single tiny case, not a general speed claim. No K4 claim."
+}

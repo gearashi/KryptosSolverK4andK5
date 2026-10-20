@@ -1,0 +1,14 @@
+{
+  "claim_id":"K4-20261013-J-unknown-cyclic-alphabet",
+  "mathematics":{
+    "assertion_tested":"A constrained unknown alphabet solver agrees with independent permutation enumeration in supplied-index controls and evaluates a fixed bounded K4 bank.",
+    "coefficient_domain":"Z/26Z, all-different alphabet indices; finite exact domains",
+    "conventions":"One shared cyclic alphabet, separate numeric repeating key phases. A=0 gauge when no absolute indices supplied. One-based cribs. Candidate storage cap does not cap assignment counting.",
+    "inputs":["kryptos/data.py","kryptos/keyed_alphabet.py","kryptos/explanations.py","research/alphabet_benchmarks.py"],
+    "bounds":{"controls":3,"control_alphabets_each":24,"control_supplied_indices":22,"k4_periods":[1,8],"ciphers":["vigenere","beaufort","variant"],"k4_models":24,"states_per_model":4000,"seconds_per_model":1,"candidates_stored_per_model":2,"workers":1},
+    "non_claims":["No arbitrary unknown alphabet recovery guarantee","No transposition in this bank","No meaning assigned to arbitrary witnesses","Censored searches are inconclusive","Counts distinguish alphabet/key assignments, not plaintexts"]
+  },
+  "execution_artifacts":["kryptos/data.py","kryptos/keyed_alphabet.py","kryptos/explanations.py","kryptos/ciphers.py","research/alphabet_benchmarks.py"],
+  "software":[{"name":"Python","version":"3.14.5"}],
+  "randomness":{"used":false,"generator":"","seed":null}
+}

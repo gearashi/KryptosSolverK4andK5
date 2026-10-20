@@ -1,0 +1,8 @@
+{
+  "target": "k4",
+  "alphabet": "kryptos",
+  "row_frame": "source",
+  "column_frame": "source",
+  "row_shift": 0,
+  "column_shift": 0
+}

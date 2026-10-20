@@ -1,0 +1,86 @@
+{
+  "checkpoint": "K4-20261013-K",
+  "successful_manifests": [
+    {
+      "manifest": "research/runs/joint-K-001/manifest.json",
+      "sha256": "900608b5c72c487ac5ecc58bade865c312264dfa3bd0d86e577568281a2ce655",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/scheduled-K-001/manifest.json",
+      "sha256": "9c588769254cb0ff84b3061c58a9e8b104b4d35ef52a5d54fffb3292cd53019c",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/alphabet-K-001/manifest.json",
+      "sha256": "e829dd20db4b538e7975ab48be95003468662135fc107654df1d44d780b3a456",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/hard-controls-K-001/manifest.json",
+      "sha256": "1b820b31b431bce758ec5fbbdfeea7ca9e964c43d261343633aa3d189974eff2",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/runtime-K-001/manifest.json",
+      "sha256": "d8f12ee72a28887e4a4efc0a4dbc5103c3ae8abe0109168bf65386e922d8d0f6",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/runtime-audit-K-001/manifest.json",
+      "sha256": "8bee19ae2051f18c458aa30041cd78999ec0ebe13d690a87bd3a81857d4d2dec",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/unit-K-001/manifest.json",
+      "sha256": "d57e86319ededbeee29a1cd59c63faeb67f379af9409b8d6f730e6f946f92e19",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/cli-K-001/manifest.json",
+      "sha256": "0b4be41f5b52bc7c611563dd5eb69265847651bffd725fb3398eb77a5064c543",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    }
+  ],
+  "all_current_records_valid": true,
+  "canonical_data_sha256": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+  "historical_J_modified_inputs_preserved": [
+    {
+      "original": "kryptos/__main__.py",
+      "snapshot": "research/source_snapshots/checkpoint-J/__main__.py",
+      "sha256": "f368a05c3fbc1b165fa659cc17d95d6e0a80d83f31f2b52268e20f0decf4e067"
+    }
+  ],
+  "supplementary_peer_audits": [
+    {
+      "path": "research/manual-checks/alphabet-independent-K/audit.py",
+      "sha256": "dab9bdc0135328c2d9497fa58c3a43cef23109224d3bd55dda02a4f8faad36ff"
+    },
+    {
+      "path": "research/manual-checks/alphabet-independent-K/result.json",
+      "sha256": "1dda163c1c800b0ffc29070f1f436b0e7013496b63b49d90e4504bc5089569c3"
+    },
+    {
+      "path": "research/manual-checks/joint-independent-K/recorded_result.json",
+      "sha256": "8c96b7b31e7f0f591877b3484634de5e1dcbeb089317e23beeab972f0612793b"
+    }
+  ],
+  "supplementary_limit": "Joint peer audit retains the earlier inline execution report; its literal script was not retained. Reproducible joint canonical and unit controls remain available.",
+  "non_claim": "Execution, hashes and finite checks are verified. No authenticated decipherment follows."
+}

@@ -1,0 +1,12 @@
+{
+  "target":"custom","ciphertext":"JOLQMROT","alphabet":"standard",
+  "cribs":[{"start":1,"text":"A"},{"start":4,"text":"D"},{"start":6,"text":"F"},{"start":7,"text":"G"}],
+  "stages":[
+    {"operation":"substitution","period":2,"cipher":"vigenere"},
+    {"operation":"gather","permutation":[0,2,1,3,4,6,5,7]},
+    {"operation":"substitution","period":2,"cipher":"vigenere"},
+    {"operation":"gather","permutation":[0,4,2,6,1,5,3,7]},
+    {"operation":"substitution","period":2,"cipher":"vigenere"}
+  ],
+  "max_candidates":2,"top":2,"time_limit_seconds":5
+}

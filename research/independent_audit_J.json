@@ -1,0 +1,158 @@
+{
+  "schema": "kryptos.independent-audit.v1",
+  "checkpoint": "K4-20261013-J",
+  "created_utc": "2026-10-13T16:59:29.318260+00:00",
+  "python_version": "3.14.5",
+  "python_implementation": "CPython",
+  "command": "python -B research/independent_audit_J.py --output research/independent_audit_J.json",
+  "columnar": {
+    "status": "passed",
+    "complete_cases_checked": 48,
+    "budget_limited_checks": 192,
+    "truncated_cases_checked": 168,
+    "seconds": 0.15450179995968938,
+    "contract": {
+      "random_seed": 13102026,
+      "geometry_cases": 24,
+      "columns": [
+        3,
+        4
+      ],
+      "directions": [
+        "top_to_bottom",
+        "bottom_to_top"
+      ],
+      "plaintext_symbols": "ABCD",
+      "source_order": "deterministically shuffled occupied cells",
+      "column_labels": [
+        -7,
+        2,
+        9,
+        20
+      ],
+      "state_budgets": [
+        1,
+        12,
+        75,
+        250
+      ]
+    },
+    "verified": [
+      "Exact column-order counts versus all column permutations",
+      "Exact distinct plaintext counts with all small orders retained",
+      "All supported output-slot column domains and plaintext character domains",
+      "Forced masks and complete saved candidate sets",
+      "Truncated order-count lower bounds and withholding of global exact domains"
+    ]
+  },
+  "advanced_general_optimize": {
+    "status": "passed",
+    "cases_checked": 10,
+    "seconds": 0.10382649977691472,
+    "verified": [
+      "Two-plaintext unequal-prime-rank case with all five stages replayed",
+      "Candidate cap performs no arbitrary partial enumeration",
+      "Algebra budget failure has no infeasibility verdict",
+      "Exact contradictory model classification",
+      "Sixteen-stage replay support",
+      "Node budgets 0/1/1000 bound an independent 26-key exact-score brute force",
+      "Crib-touching windows are excluded without concatenating gaps",
+      "Model-file byte hash provenance",
+      "Factor-table budget has no optimum verdict",
+      "15001-bit integer hex serialization roundtrip"
+    ]
+  },
+  "status": "passed_in_stated_finite_scope",
+  "inputs_unchanged": true,
+  "inputs": [
+    {
+      "path": "research/independent_audit_J.py",
+      "sha256_before": "0f5783950a0b8d84f4d335f63afb69df05eb42f020b1d9af4552c15cc5079af2",
+      "sha256_after": "0f5783950a0b8d84f4d335f63afb69df05eb42f020b1d9af4552c15cc5079af2"
+    },
+    {
+      "path": "kryptos/__main__.py",
+      "sha256_before": "f368a05c3fbc1b165fa659cc17d95d6e0a80d83f31f2b52268e20f0decf4e067",
+      "sha256_after": "f368a05c3fbc1b165fa659cc17d95d6e0a80d83f31f2b52268e20f0decf4e067"
+    },
+    {
+      "path": "kryptos/advanced_cli.py",
+      "sha256_before": "054a021ce6478db20a51951e335347c751aba0387ade00d72ffdb4f42b725a2f",
+      "sha256_after": "054a021ce6478db20a51951e335347c751aba0387ade00d72ffdb4f42b725a2f"
+    },
+    {
+      "path": "kryptos/columnar.py",
+      "sha256_before": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+      "sha256_after": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4"
+    },
+    {
+      "path": "kryptos/explanations.py",
+      "sha256_before": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+      "sha256_after": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35"
+    },
+    {
+      "path": "kryptos/general_layers.py",
+      "sha256_before": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+      "sha256_after": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464"
+    },
+    {
+      "path": "kryptos/factor_search.py",
+      "sha256_before": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+      "sha256_after": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758"
+    },
+    {
+      "path": "kryptos/language.py",
+      "sha256_before": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+      "sha256_after": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf"
+    },
+    {
+      "path": "kryptos/ciphers.py",
+      "sha256_before": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+      "sha256_after": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35"
+    },
+    {
+      "path": "kryptos/data.py",
+      "sha256_before": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+      "sha256_after": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2"
+    },
+    {
+      "path": "kryptos/layer_plan.py",
+      "sha256_before": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+      "sha256_after": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261"
+    },
+    {
+      "path": "kryptos/grid.py",
+      "sha256_before": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+      "sha256_after": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405"
+    },
+    {
+      "path": "kryptos/recovery.py",
+      "sha256_before": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+      "sha256_after": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d"
+    },
+    {
+      "path": "kryptos/scoring.py",
+      "sha256_before": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+      "sha256_after": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90"
+    },
+    {
+      "path": "kryptos/position_residues.py",
+      "sha256_before": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+      "sha256_after": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130"
+    },
+    {
+      "path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+      "sha256_before": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+      "sha256_after": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39"
+    }
+  ],
+  "runtime_seconds": 0.30693379999138415,
+  "limitations": [
+    "Independent means expected values use separate literal arithmetic/permutation enumeration, not a separate author or formal verification.",
+    "Columnar coverage is 48 small constructed occupied-cell cases, not every geometry or width; time-limit interruption is not independently forced here.",
+    "State-budget checks cover 192 bounded runs; this does not prove a hard runtime or memory bound.",
+    "The CLI audit covers ten fixed cases; it is not an exhaustive API, malformed-input, or security audit.",
+    "This script does not repeat K4/PK3 research scans or the full application/unit suite.",
+    "Exact objective agreement concerns one fixed corpus model and mask, not English authenticity, cross-language calibration, or a Kryptos solution."
+  ]
+}

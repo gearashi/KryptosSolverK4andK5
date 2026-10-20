@@ -1,0 +1,12 @@
+{
+  "target": "custom",
+  "ciphertext": "DOJJUP",
+  "cribs": [{"start": 1, "text": "AB"}, {"start": 4, "text": "D"}],
+  "alphabet": "standard",
+  "cells": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]],
+  "permutation": [0, 2, 3, 1, 5, 4],
+  "row_frame": "source",
+  "column_frame": "source",
+  "row_shift": 0,
+  "column_shift": 0
+}

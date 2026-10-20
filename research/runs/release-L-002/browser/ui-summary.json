@@ -1,0 +1,25 @@
+{
+  "recorded_utc": "2026-10-13T18:33:38.632461+00:00",
+  "files": {
+    "kryptos/static/index.html": "c76e72481673b224b9921b74463792d1a7320eebbf7c8218ab1b777b323075c0",
+    "kryptos/static/app.js": "076165207a4a26e14b0c377a2f3243a8f396cb88122d4bd6ec35bd1b148628c8",
+    "kryptos/static/style.css": "de5480b079cc071f62ac254ef84cf7d113c058625873468483735e8192028648",
+    "kryptos/static/mark.svg": "772c2f271ca534956f2cc91181daabdd7290f1572cb7b5c705dabe0bea17b04e"
+  },
+  "evidence": [
+    "runtime/ui-preview/idle-report.json",
+    "runtime/ui-preview/functional-report.json",
+    "runtime/ui-preview/functional-completion-report.json"
+  ],
+  "screenshots": [
+    "runtime/ui-preview/screenshots/desktop-idle.png",
+    "runtime/ui-preview/screenshots/desktop-sculpture.png",
+    "runtime/ui-preview/screenshots/mobile-idle.png",
+    "runtime/ui-preview/screenshots/desktop-final.png",
+    "runtime/ui-preview/screenshots/mobile-final.png"
+  ],
+  "scope": "Local headless Chromium at1440x1100 and390x844, actual loopback API. Two-worker CPU26-candidate synthetic family paused/resumed/stopped after committed pages; one actual CUDA26-candidate page completed onRTX2060. No new K4 scan.",
+  "harness_note": "The first lifecycle harness stopped after its sixth successful check because it asserted saved-run dialog visibility without awaiting its asynchronous fetch. A continuation waited for the dialog and passed history, CUDA and mobile checks without rerunning CPU work.",
+  "page_errors": [],
+  "source_files_modified": "Static UI only; no solver or server source modifications."
+}

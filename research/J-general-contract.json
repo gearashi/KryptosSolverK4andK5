@@ -1,0 +1,117 @@
+{
+  "claim_id": "K4-20261013-J-general",
+  "mathematics": {
+    "assertion_tested": "Separate-prime generalized solver agrees with independent finite controls and existing complete PK3 family; exact ngram optimizer agrees with brute force; bounded8-model K4 bank reports feasibility/counts.",
+    "coefficient_domain": "F2 and F13 linear systems combined by CRT; exact integer factor products",
+    "conventions": "Encryption-order stages; gather output[j]=input[permutation[j]]. Keys withheld, supplied cribs and model families. Score excludes every ngram touching a known letter.",
+    "inputs": [
+      "kryptos/__main__.py",
+      "kryptos/advanced_cli.py",
+      "kryptos/ciphers.py",
+      "kryptos/columnar.py",
+      "kryptos/data.py",
+      "kryptos/engine.py",
+      "kryptos/experiments.py",
+      "kryptos/explanations.py",
+      "kryptos/factor_search.py",
+      "kryptos/fractionation.py",
+      "kryptos/general_layers.py",
+      "kryptos/grid.py",
+      "kryptos/keyed_alphabet.py",
+      "kryptos/language.py",
+      "kryptos/layer_plan.py",
+      "kryptos/position_residues.py",
+      "kryptos/recovery.py",
+      "kryptos/scoring.py",
+      "kryptos/sculpture.py",
+      "kryptos/semantic.py",
+      "research/general_layer_benchmarks.py",
+      "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+      "research/pk_benchmarks.py",
+      "research/source_snapshots/pk-benchmarks/firsthand_methods.html.txt",
+      "research/source_snapshots/pk-benchmarks/official_challenge_asset.txt",
+      "research/source_snapshots/pk-benchmarks/pk1_result.txt",
+      "research/source_snapshots/pk-benchmarks/pk3_result.txt",
+      "research/source_snapshots/pk-benchmarks/sources.json",
+      "research/source_snapshots/pk-benchmarks/verify_all_source.txt"
+    ],
+    "bounds": {
+      "pk3_candidates": 17576,
+      "legacy_comparisons": 6,
+      "optimizer_brute_candidates": 676,
+      "k4_period_triples": [
+        [
+          2,
+          3,
+          5
+        ],
+        [
+          3,
+          5,
+          7
+        ],
+        [
+          5,
+          7,
+          11
+        ],
+        [
+          7,
+          8,
+          9
+        ]
+      ],
+      "k4_route_pairs": 2,
+      "k4_models": 8,
+      "cooperative_seconds": 90,
+      "workers": 1
+    },
+    "non_claims": [
+      "No mixed or unknown alphabets in this linear solver",
+      "No arbitrary K4 witnesses ranked",
+      "No global cipher exclusion or authentication"
+    ]
+  },
+  "execution_artifacts": [
+    "kryptos/__main__.py",
+    "kryptos/advanced_cli.py",
+    "kryptos/ciphers.py",
+    "kryptos/columnar.py",
+    "kryptos/data.py",
+    "kryptos/engine.py",
+    "kryptos/experiments.py",
+    "kryptos/explanations.py",
+    "kryptos/factor_search.py",
+    "kryptos/fractionation.py",
+    "kryptos/general_layers.py",
+    "kryptos/grid.py",
+    "kryptos/keyed_alphabet.py",
+    "kryptos/language.py",
+    "kryptos/layer_plan.py",
+    "kryptos/position_residues.py",
+    "kryptos/recovery.py",
+    "kryptos/scoring.py",
+    "kryptos/sculpture.py",
+    "kryptos/semantic.py",
+    "research/general_layer_benchmarks.py",
+    "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+    "research/pk_benchmarks.py",
+    "research/source_snapshots/pk-benchmarks/firsthand_methods.html.txt",
+    "research/source_snapshots/pk-benchmarks/official_challenge_asset.txt",
+    "research/source_snapshots/pk-benchmarks/pk1_result.txt",
+    "research/source_snapshots/pk-benchmarks/pk3_result.txt",
+    "research/source_snapshots/pk-benchmarks/sources.json",
+    "research/source_snapshots/pk-benchmarks/verify_all_source.txt"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

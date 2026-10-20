@@ -1,0 +1,97 @@
+{
+  "schema": "kryptos.release-validation.v1",
+  "version": "0.1.0",
+  "date": "2026-10-13",
+  "publication": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4AndK5",
+    "status": "published;remote main verified",
+    "verified_source_commit": "9e78a343abb985c9c32aaafdeb3335b077623ade",
+    "verification": "git ls-remote origin refs/heads/main equals local git rev-parse HEAD"
+  },
+  "fresh_checkout": {
+    "method": "git checkout-index from curated staged content; project .venv used only as interpreter",
+    "tests": 256,
+    "passed": 255,
+    "skipped": 1,
+    "skip_reason": "Optional strict source audit requires excluded original third-party HTML",
+    "seconds": 35.461,
+    "gpu_test_opt_in": true,
+    "log": "research/runs/release-L-002/fresh-checkout-tests.txt",
+    "log_sha256": "96e5368918fad6120a758728a45a753a1e09a17b41d41d862e0b9f443ac0b7e0",
+    "canonical_manifests_verified_against_packaged_bytes": true
+  },
+  "browser": {
+    "summary": "research/runs/release-L-002/browser/ui-summary.json",
+    "summary_sha256": "11336bc5c92f76b5bbcb63da07b86199bb29b46a1d27ffa5ed89bcd88cdcb6fa",
+    "source_stage_note": "Browser flows checked before the later transactional-control save failure fix; that fix adds failure-path tests without changing the successful API flow."
+  },
+  "canonical_audits": [
+    "research/runs/release-L-002/accelerated/manifest.json",
+    "research/runs/release-L-002/correlated/manifest.json"
+  ],
+  "package_source_hashes": {
+    "kryptos/__main__.py": "a572994f6b70030b37a53aaa31e1f09d387601536de9dde86ba8d9ded91b79c8",
+    "kryptos/accelerated.py": "ae0940d18559dbab3089968647f8c7bbde3de215e42adbf4406c740cb1510fcb",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "7c980a651d3ac4bd5032c65ccf172f4345a8b1daec71f801c53d7bbadfe734ff",
+    "kryptos/app_jobs.py": "d9cee930b116732505b4e899da47f05ec693ed3d93c735182d402e362caab09b",
+    "kryptos/app_worker.py": "832af65d758b12991606bb29a33287ac8747f73ca9a1c22b9d55ef72f2e3e063",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "5d86aeb54c5c5ccfab471d8ae633616816a536fa6ab69f92157005e7e9c2b53f",
+    "kryptos/parallel_search.py": "1b3c0954c59164e419e5d260c263d47486f7c19f51159127fcc5558c364c2a57",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "729acd2d9bda6436fa55bf9d6fa90973c44da1854c244a17e210b8a60d3753ce",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/static/app.js": "076165207a4a26e14b0c377a2f3243a8f396cb88122d4bd6ec35bd1b148628c8",
+    "kryptos/static/index.html": "c76e72481673b224b9921b74463792d1a7320eebbf7c8218ab1b777b323075c0",
+    "kryptos/static/mark.svg": "772c2f271ca534956f2cc91181daabdd7290f1572cb7b5c705dabe0bea17b04e",
+    "kryptos/static/style.css": "de5480b079cc071f62ac254ef84cf7d113c058625873468483735e8192028648"
+  },
+  "publication_review": {
+    "credential_pattern_matches": 0,
+    "raw_third_party_caches_excluded": true,
+    "environments_and_runtime_excluded": true,
+    "initial_reviewed_file_count": 303
+  },
+  "limits": [
+    "No authenticated K4/K5 decipherment",
+    "No authenticated public K5 ciphertext bundled",
+    "LargeGPU shortlists approximate despite exact retained rescoring/replay",
+    "Finite supported models and explicit bounds only",
+    "Time budget checked between waves;60second per-worker execution deadline",
+    "No claim that no future improvement exists",
+    "WindowsRTX2060/Python3.12.2hardwaretested; Unix launchers syntax/helpcheckedonly"
+  ],
+  "launcher_smoke": {
+    "command": "OpenDashboard.ps1 -NoBrowser",
+    "version": "0.1.0",
+    "url": "http://127.0.0.1:8767/",
+    "api_status": {
+      "run": null
+    },
+    "actual_compiled_cuda_probe_ready": true,
+    "browser_panel": "open_in_codex queued local URL"
+  }
+}

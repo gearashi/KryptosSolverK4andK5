@@ -1,0 +1,14 @@
+{
+ "claim_id":"K4-20261012-I-position-parity",
+ "mathematics":{
+  "assertion_tested":"Verify the suggested parity equality, check balanced alphabet capacity, test52constant-step substitutions, and tag46previously saved complete candidates against the parity hypothesis.",
+  "coefficient_domain":"Z/2Z and Z/26Z; exact integer counts",
+  "conventions":"A=0, positions one-based. C[i]-step*i residue must be a function of plaintext letter; a bijection supplies26/modulus symbols per class. Modulo2step1 is weaker than fullconstantstep.",
+  "inputs":["research/parity_probe.py","kryptos/position_residues.py","kryptos/ciphers.py","kryptos/data.py","research/runs/complete-predictions-001/results.json"],
+  "bounds":{"constant_steps":26,"alphabets":2,"known_positions":24,"saved_candidates":46,"workers":1},
+  "non_claims":["Not a statistical significance estimate for a post-selected pattern","Does not refute the general alternating-parity keystream proposal","Not a decryption or global candidate filter"]
+ },
+ "execution_artifacts":["research/parity_probe.py","kryptos/position_residues.py","kryptos/ciphers.py","kryptos/data.py","research/runs/complete-predictions-001/results.json"],
+ "software":[{"name":"Python","version":"3.14.5"}],
+ "randomness":{"used":false}
+}

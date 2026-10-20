@@ -1,0 +1,73 @@
+{
+  "checkpoint": "K4-20261013-J",
+  "successful_manifests": [
+    {
+      "manifest": "research/runs/geometry-J-001/manifest.json",
+      "sha256": "43730f6e7cdd66f6cfcd44647e9cd7a8cd4d1fc5e8e06da1c945cfe574f1bad7",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/columnar-J-001/manifest.json",
+      "sha256": "7e6b8ae981214b1b1ee993a5b2150bc259420b2ea4f6cccbe458a74e74572e16",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/alphabet-J-001/manifest.json",
+      "sha256": "77e9f50f95b5193874412dcde7925e67ea13a893a950bec94dcf69ec48cda3ac",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/general-J-002/manifest.json",
+      "sha256": "97a68643fee03b952fce8b10f80db684f871778cbd244bfcc060a5ad85f1b75b",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/evaluation-J-001/manifest.json",
+      "sha256": "70d7cf54cb1ba89f80c67e3940197381065393c5297c2e4f418f3a83c9ce2b6d",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/unit-J-001/manifest.json",
+      "sha256": "5376a65446f3d15f743dc6f24b6bc936b43e9ff0e214521a88b50cbd1098cad5",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    },
+    {
+      "manifest": "research/runs/cli-J-001/manifest.json",
+      "sha256": "5d25d5103fa97dd364f8908bd127a3710b14ae4d13621e5c1e9d25ada1ab4d8a",
+      "valid_current_evidence": true,
+      "validator_output": "valid evidence record; mathematical interpretation requires review",
+      "stderr": ""
+    }
+  ],
+  "all_current_records_valid": true,
+  "canonical_data_sha256": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+  "historical_failed_attempt": {
+    "manifest": "research/runs/general-J-001/manifest.json",
+    "reason": "Benchmark called nonexistent CharacterNgramModel.from_dict before the mathematical experiment. Fixed to the validated from_json loader and reran in general-J-002.",
+    "modified_inputs_preserved": [
+      {
+        "original": "kryptos/advanced_cli.py",
+        "snapshot": "research/source_snapshots/general-J-001/kryptos/advanced_cli.py",
+        "sha256": "0657127af171e104c84428e0420cfd5845ff8a0796635f4f5d490775f9ad2226"
+      },
+      {
+        "original": "research/general_layer_benchmarks.py",
+        "snapshot": "research/source_snapshots/general-J-001/research/general_layer_benchmarks.py",
+        "sha256": "b3b47c8f01838896dd2eed58662411f9a217afe45c9acea306ec5a0004cd2ddd"
+      }
+    ]
+  },
+  "non_claim": "Execution, hashes and checks are verified; no authentication of a decipherment follows."
+}

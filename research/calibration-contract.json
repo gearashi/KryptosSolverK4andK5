@@ -1,0 +1,14 @@
+{
+  "claim_id": "K4-20261012-I-control-pilot",
+  "mathematics": {
+    "assertion_tested": "Apply the same entire finite additive-layer family, exact crib filter and masked English selection rule to K4, one synthetic hidden-key example and eight null-control ciphertexts.",
+    "coefficient_domain": "Integers modulo26; floating heuristic language scores",
+    "conventions": "Two stored K3-inspired gather routes; sharedKRYPTOS alphabet; SST,STS,TSS; adjacent layer period exchange deduplicated. Only zero-dimensional plaintext families are scored in this pilot.",
+    "inputs": ["kryptos/data.py", "kryptos/layer_plan.py", "kryptos/scoring.py", "kryptos/experiments.py", "research/calibrate_layers.py", "research/check_layer_hypothesis.py", "research/check_physical_routes.py", "research/k3_reference.py", "research/layer_constraints.py"],
+    "bounds": {"routes": 2, "periods": [1,16], "controls_per_kind": 4, "synthetic_examples": 1, "max_plaintext_dimension": 0, "candidate_budget_per_input": 10000, "workers": 1},
+    "non_claims": ["Not calibrated significance", "Not independent validation", "Not authentic decipherment", "Not every cipher family or language"]
+  },
+  "execution_artifacts": ["kryptos/data.py", "kryptos/layer_plan.py", "kryptos/scoring.py", "kryptos/experiments.py", "research/calibrate_layers.py", "research/check_layer_hypothesis.py", "research/check_physical_routes.py", "research/k3_reference.py", "research/layer_constraints.py"],
+  "software": [{"name": "Python", "version": "3.14.5"}],
+  "randomness": {"used": true, "generator": "Python random.Random, independently seeded per control kind and index", "seed": 20261012}
+}

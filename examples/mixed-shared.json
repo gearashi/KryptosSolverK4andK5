@@ -1,0 +1,9 @@
+{
+  "target": "custom",
+  "ciphertext": "CADE",
+  "cribs": [{"start":1,"text":"ABCD"}],
+  "stages": [
+    {"operation":"substitution","key_id":"shared","key_length":1,"alphabet":"ABCDEFGHIJKLMNOPQRSTUVWXYZ"},
+    {"operation":"substitution","key_id":"shared","key_length":1,"alphabet":"BACDEFGHIJKLMNOPQRSTUVWXYZ"}
+  ]
+}

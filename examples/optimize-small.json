@@ -1,0 +1,7 @@
+{
+  "target":"custom","ciphertext":"TIITITATEDRFTUXU","alphabet":"standard",
+  "cribs":[{"start":1,"text":"T"}],
+  "stages":[{"operation":"substitution","period":2,"cipher":"vigenere"}],
+  "model_path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+  "max_nodes":1000,"max_factor_entries":10000,"time_limit_seconds":5
+}

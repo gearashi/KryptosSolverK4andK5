@@ -1,0 +1,4740 @@
+{
+  "schema": "kryptos.local-run.v1",
+  "id": "9db2b4aa90ab4f60bce164518ed58e58",
+  "state": "stopped",
+  "kind": "accelerated",
+  "command": "optimize-plus",
+  "request": {
+    "target": "custom",
+    "ciphertext": "TIITITATEDRFTUXU",
+    "cribs": [
+      {
+        "start": 1,
+        "text": "T"
+      }
+    ],
+    "alphabet": "standard",
+    "stages": [
+      {
+        "operation": "substitution",
+        "period": 4
+      }
+    ],
+    "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+    "max_nodes": 10000,
+    "max_frontier": 1000,
+    "max_cache_entries": 10000,
+    "ordering": "impact",
+    "time_limit_seconds": 5
+  },
+  "settings": {
+    "backend": "cpu",
+    "workers": 2,
+    "batch_size": 2,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": true,
+    "idle_ms": 100,
+    "target_page_seconds": 0.2,
+    "ranking_mode": "certified"
+  },
+  "note": "",
+  "created_at": "2026-10-13T19:23:48.223082+00:00",
+  "updated_at": "2026-10-13T19:23:52.720196+00:00",
+  "progress": {
+    "completed": 18,
+    "total": 17576,
+    "unit": "candidates",
+    "completed_decimal": "18",
+    "total_decimal": "17576"
+  },
+  "elapsed_seconds": 3.7819999996572733,
+  "rate": 4.759386568384762,
+  "candidates": [
+    {
+      "plaintext": "TIITITATEDRFTUXU",
+      "keys": [
+        "AAAA"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        0
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAA"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -9.988623668822232,
+          "log_probability_sum": -129.852107694689,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.176035957844952,
+          "log_probability_sum": -44.70414383137981,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 0,
+      "index_decimal": "0",
+      "assignment_index_decimal": "0",
+      "exact_objective_hex": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd",
+      "score_exact": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd",
+      "score": -9.988623668822232,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -9.988623668822232,
+        "log_probability_sum": -129.852107694689,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIRITAREDRDTUXS",
+      "keys": [
+        "AAAC"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        2
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAC"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.025803026094158,
+          "log_probability_sum": -130.33543933922405,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.298376209706204,
+          "log_probability_sum": -49.193504838824815,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 2,
+      "index_decimal": "2",
+      "assignment_index_decimal": "2",
+      "exact_objective_hex": "0x5cf13b2a00982260e7009680d85f9c2d88f98e30f80f031f1012661a018979f084a7ef52ab16e2a6332fff69e6689f95393af93a4ce89d4d1c9b3b09cec1f35828d86f4be564976a043f7823761b2d8ba133ee16d3a2cf9f6433fbd",
+      "score_exact": "0x5cf13b2a00982260e7009680d85f9c2d88f98e30f80f031f1012661a018979f084a7ef52ab16e2a6332fff69e6689f95393af93a4ce89d4d1c9b3b09cec1f35828d86f4be564976a043f7823761b2d8ba133ee16d3a2cf9f6433fbd",
+      "score": -10.025803026094158,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.025803026094158,
+        "log_probability_sum": -130.33543933922405,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIILITALEDRXTUXM",
+      "keys": [
+        "AAAI"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        8
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAI"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.074858898915382,
+          "log_probability_sum": -130.97316568589997,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.81267636592453,
+          "log_probability_sum": -43.25070546369812,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 8,
+      "index_decimal": "8",
+      "assignment_index_decimal": "8",
+      "exact_objective_hex": "0x311e8c56687ced98062e95af92f06ed6ba4b81c1b9690f59c1ab0760ee09917ca961f98edf0493725c16779e081c48ac75f7c03608620fe772eb0edcd62da5ea621813ed131ded644717b626dfb1c7e43c7d788af3a2cf9f6433fbd",
+      "score_exact": "0x311e8c56687ced98062e95af92f06ed6ba4b81c1b9690f59c1ab0760ee09917ca961f98edf0493725c16779e081c48ac75f7c03608620fe772eb0edcd62da5ea621813ed131ded644717b626dfb1c7e43c7d788af3a2cf9f6433fbd",
+      "score": -10.074858898915382,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.074858898915382,
+        "log_probability_sum": -130.97316568589997,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIBITABEDRNTUXC",
+      "keys": [
+        "AAAS"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        5
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAS"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.187809500046123,
+          "log_probability_sum": -132.4415235005996,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.957925374428305,
+          "log_probability_sum": -47.83170149771322,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 5,
+      "index_decimal": "5",
+      "assignment_index_decimal": "5",
+      "exact_objective_hex": "0xb4ff5fd48dfdd4853c9cc54a7c3e19c08ba442b9b2ef3455e49ec46e3e6be241f08bf3b05ebc116ee9a3fa5ff1beb22cdc81d6fcf771a8ced6f0255b43ae1e5bac5c2201db59699ca09d812a3d7d560202b8ccabba2cf9f6433fbd",
+      "score_exact": "0xb4ff5fd48dfdd4853c9cc54a7c3e19c08ba442b9b2ef3455e49ec46e3e6be241f08bf3b05ebc116ee9a3fa5ff1beb22cdc81d6fcf771a8ced6f0255b43ae1e5bac5c2201db59699ca09d812a3d7d560202b8ccabba2cf9f6433fbd",
+      "score": -10.187809500046123,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.187809500046123,
+        "log_probability_sum": -132.4415235005996,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIINITANEDRZTUXO",
+      "keys": [
+        "AAAG"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        6
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAG"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.283972738128856,
+          "log_probability_sum": -133.69164559567514,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.49172922336757,
+          "log_probability_sum": -45.96691689347028,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 6,
+      "index_decimal": "6",
+      "assignment_index_decimal": "6",
+      "exact_objective_hex": "0x33d9afaed0aea4afd766bf2266f0c4712f087f472649c7feaa350639f94904411ae6cbf2ac30be3c912bbd1d1604696d5c1596ba8f30b997661c9467508ed09bd975a7905865d8ca5518228fc8c41e04ef2059933a2cf9f6433fbd",
+      "score_exact": "0x33d9afaed0aea4afd766bf2266f0c4712f087f472649c7feaa350639f94904411ae6cbf2ac30be3c912bbd1d1604696d5c1596ba8f30b997661c9467508ed09bd975a7905865d8ca5518228fc8c41e04ef2059933a2cf9f6433fbd",
+      "score": -10.283972738128856,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.283972738128856,
+        "log_probability_sum": -133.69164559567514,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIURITMREDDDTUJS",
+      "keys": [
+        "AAOC"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        1,
+        2
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAOC"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.39883811394645,
+          "log_probability_sum": -135.18489548130384,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.003092881617176,
+          "log_probability_sum": -48.012371526468705,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 15,
+      "index_decimal": "15",
+      "assignment_index_decimal": "15",
+      "exact_objective_hex": "0xba5d1d0557756de1ec05a79b48b113f8b0337704713bcd990814610faa3ff417d159daefa94e0bfd58ee17850f80a069fac646ced3afd9e4e03773f088677768b1b2378c2b03f621ef8c52d8088833d286c790aba2cf9f6433fbd",
+      "score_exact": "0xba5d1d0557756de1ec05a79b48b113f8b0337704713bcd990814610faa3ff417d159daefa94e0bfd58ee17850f80a069fac646ced3afd9e4e03773f088677768b1b2378c2b03f621ef8c52d8088833d286c790aba2cf9f6433fbd",
+      "score": -10.39883811394645,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.39883811394645,
+        "log_probability_sum": -135.18489548130384,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIDITADEDRPTUXE",
+      "keys": [
+        "AAAQ"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        3
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAQ"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.416973288449778,
+          "log_probability_sum": -135.4206527498471,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.129154544784162,
+          "log_probability_sum": -48.51661817913665,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 3,
+      "index_decimal": "3",
+      "assignment_index_decimal": "3",
+      "exact_objective_hex": "0x9338e203dfd748c0dc4187d4c56dc518df1685d400246d24864bee839bea64e0e20fd22b34aa165a7622b27450d576229e71f2b8510c7bff0bce6d5d208a26557376dc7a082d0bd948f7d19db5a1ed41bdb3f95ba2cf9f6433fbd",
+      "score_exact": "0x9338e203dfd748c0dc4187d4c56dc518df1685d400246d24864bee839bea64e0e20fd22b34aa165a7622b27450d576229e71f2b8510c7bff0bce6d5d208a26557376dc7a082d0bd948f7d19db5a1ed41bdb3f95ba2cf9f6433fbd",
+      "score": -10.416973288449778,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.416973288449778,
+        "log_probability_sum": -135.4206527498471,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIVITAVEDRHTUXW",
+      "keys": [
+        "AAAY"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        11
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAY"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.702685011877403,
+          "log_probability_sum": -139.13490515440623,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -13.156873010827491,
+          "log_probability_sum": -52.627492043309964,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 11,
+      "index_decimal": "11",
+      "assignment_index_decimal": "11",
+      "exact_objective_hex": "0x3969da941004ec56817bcf26ec448410dfac5bf91206829a8e82730b0120a0b6766726a965bafb21c00e77ac31162a6f3121365b895cf7f90da1392aea862d678be5cd4d615cd832c255ab818deeb4af7fa807ba2cf9f6433fbd",
+      "score_exact": "0x3969da941004ec56817bcf26ec448410dfac5bf91206829a8e82730b0120a0b6766726a965bafb21c00e77ac31162a6f3121365b895cf7f90da1392aea862d678be5cd4d615cd832c255ab818deeb4af7fa807ba2cf9f6433fbd",
+      "score": -10.702685011877403,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.702685011877403,
+        "log_probability_sum": -139.13490515440623,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIFITAFEDRRTUXG",
+      "keys": [
+        "AAAO"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        1
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAO"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.752059780633772,
+          "log_probability_sum": -139.77677714823903,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.17391660264641,
+          "log_probability_sum": -48.69566641058564,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 1,
+      "index_decimal": "1",
+      "assignment_index_decimal": "1",
+      "exact_objective_hex": "0x1e37928cf5c169ffb97e61283a1f83715543e47518793f6b60ebaa96a9ce241397e450c77cccd24721b9e0fce65d18163905131a7eb52fb320d25ee0de52cd1504fafa14c6899f2fa1d2e9c6c92fd5578715d4ba2cf9f6433fbd",
+      "score_exact": "0x1e37928cf5c169ffb97e61283a1f83715543e47518793f6b60ebaa96a9ce241397e450c77cccd24721b9e0fce65d18163905131a7eb52fb320d25ee0de52cd1504fafa14c6899f2fa1d2e9c6c92fd5578715d4ba2cf9f6433fbd",
+      "score": -10.752059780633772,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.752059780633772,
+        "log_probability_sum": -139.77677714823903,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIUDITMDEDDPTUJE",
+      "keys": [
+        "AAOQ"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        1,
+        3
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAOQ"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -10.868960987273187,
+          "log_probability_sum": -141.29649283455143,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -13.156873010827491,
+          "log_probability_sum": -52.627492043309964,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 16,
+      "index_decimal": "16",
+      "assignment_index_decimal": "16",
+      "exact_objective_hex": "0x69c57bdac53286086fbd39abcdcc50d399b41f492e5d28559d23869109cb2e738bd626d3c16dbb2bbc9ad701bb40a3322398dee54ea96b4358f977d684fcf13bde91ad6cc6ab1fdc88c2a98fdac4e1a461b10ba2cf9f6433fbd",
+      "score_exact": "0x69c57bdac53286086fbd39abcdcc50d399b41f492e5d28559d23869109cb2e738bd626d3c16dbb2bbc9ad701bb40a3322398dee54ea96b4358f977d684fcf13bde91ad6cc6ab1fdc88c2a98fdac4e1a461b10ba2cf9f6433fbd",
+      "score": -10.868960987273187,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -10.868960987273187,
+        "log_probability_sum": -141.29649283455143,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIUTITMTEDDFTUJU",
+      "keys": [
+        "AAOA"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        1,
+        0
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAOA"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.054580858032988,
+          "log_probability_sum": -143.70955115442885,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -13.156873010827491,
+          "log_probability_sum": -52.627492043309964,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 13,
+      "index_decimal": "13",
+      "assignment_index_decimal": "13",
+      "exact_objective_hex": "0x9788bb96196eb7de2a3e5e4a76160b30a32e7985254a583c473ea8d897f0ea0b7cc42fe5e85a79c41c58d536cf445055e43036165ee645bb505606ebeae2123a89bef687e4c39d62dac7cd6801cb051883733a2cf9f6433fbd",
+      "score_exact": "0x9788bb96196eb7de2a3e5e4a76160b30a32e7985254a583c473ea8d897f0ea0b7cc42fe5e85a79c41c58d536cf445055e43036165ee645bb505606ebeae2123a89bef687e4c39d62dac7cd6801cb051883733a2cf9f6433fbd",
+      "score": -11.054580858032988,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -11.054580858032988,
+        "log_probability_sum": -143.70955115442885,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIHITAHEDRTTUXI",
+      "keys": [
+        "AAAM"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        12
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAM"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.066260529577686,
+          "log_probability_sum": -143.86138688450993,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.62900617595182,
+          "log_probability_sum": -46.51602470380728,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 12,
+      "index_decimal": "12",
+      "assignment_index_decimal": "12",
+      "exact_objective_hex": "0x822ffa26a9708642b5cb2fd7ae1005cc493e786378cb58e7b1c8bd9495f3fa3641cd6bb093f4fcd2bd20158a4cfff1b2cb866b082c687c3684b186ae12b3cf002264f534a7dec986fab59d1a752033688dfaba2cf9f6433fbd",
+      "score_exact": "0x822ffa26a9708642b5cb2fd7ae1005cc493e786378cb58e7b1c8bd9495f3fa3641cd6bb093f4fcd2bd20158a4cfff1b2cb866b082c687c3684b186ae12b3cf002264f534a7dec986fab59d1a752033688dfaba2cf9f6433fbd",
+      "score": -11.066260529577686,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -11.066260529577686,
+        "log_probability_sum": -143.86138688450993,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIPITAPEDRBTUXQ",
+      "keys": [
+        "AAAE"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        4
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAE"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.156732645793038,
+          "log_probability_sum": -145.0375243953095,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.298376209706204,
+          "log_probability_sum": -49.193504838824815,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 4,
+      "index_decimal": "4",
+      "assignment_index_decimal": "4",
+      "exact_objective_hex": "0x28289c66896d666646e7dc42587154cc18100803862e79dc4f911c6e0f7be7894d9ec0d572344a1886ca5b9d67e465d22503ba334bc7ab6f23f7c41269cffc3b89b92b388e13a839dcf0947840d69332ec13ba2cf9f6433fbd",
+      "score_exact": "0x28289c66896d666646e7dc42587154cc18100803862e79dc4f911c6e0f7be7894d9ec0d572344a1886ca5b9d67e465d22503ba334bc7ab6f23f7c41269cffc3b89b92b388e13a839dcf0947840d69332ec13ba2cf9f6433fbd",
+      "score": -11.156732645793038,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -11.156732645793038,
+        "log_probability_sum": -145.0375243953095,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIUPITMPEDDBTUJQ",
+      "keys": [
+        "AAOE"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        1,
+        4
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAOE"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.220085336044328,
+          "log_probability_sum": -145.86110936857625,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -13.156873010827491,
+          "log_probability_sum": -52.627492043309964,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 17,
+      "index_decimal": "17",
+      "assignment_index_decimal": "17",
+      "exact_objective_hex": "0x119fb3ffe565234946b5f373f8745a1d84918005d89dec7bac75bcba2d9b68253adfec518a2936355964d9f3888ba068e5810076a6613d13381e56a038ecaaf8de2f5a82e92d0f1df9d6c58f9e3125423000ba2cf9f6433fbd",
+      "score_exact": "0x119fb3ffe565234946b5f373f8745a1d84918005d89dec7bac75bcba2d9b68253adfec518a2936355964d9f3888ba068e5810076a6613d13381e56a038ecaaf8de2f5a82e92d0f1df9d6c58f9e3125423000ba2cf9f6433fbd",
+      "score": -11.220085336044328,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -11.220085336044328,
+        "log_probability_sum": -145.86110936857625,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIUFITMFEDDRTUJG",
+      "keys": [
+        "AAOO"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        1,
+        1
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAOO"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.420083833514106,
+          "log_probability_sum": -148.46108983568337,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.228479994151414,
+          "log_probability_sum": -48.913919976605655,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 14,
+      "index_decimal": "14",
+      "assignment_index_decimal": "14",
+      "exact_objective_hex": "0x14f1b5c82e130e93ab98f4dbef7839ed242da7910437232ed3f8638e9a183116358c6a06ef562eb78ff4f4f9ab4c438c43901096b70e1016796304cf04bdbb6a8143f6e40a3467c4e97623840d69332ec13ba2cf9f6433fbd",
+      "score_exact": "0x14f1b5c82e130e93ab98f4dbef7839ed242da7910437232ed3f8638e9a183116358c6a06ef562eb78ff4f4f9ab4c438c43901096b70e1016796304cf04bdbb6a8143f6e40a3467c4e97623840d69332ec13ba2cf9f6433fbd",
+      "score": -11.420083833514106,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -11.420083833514106,
+        "log_probability_sum": -148.46108983568337,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIXITAXEDRJTUXY",
+      "keys": [
+        "AAAW"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        9
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAW"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -11.823283855183863,
+          "log_probability_sum": -153.70269011739023,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -13.156873010827491,
+          "log_probability_sum": -52.627492043309964,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 9,
+      "index_decimal": "9",
+      "assignment_index_decimal": "9",
+      "exact_objective_hex": "0x1c5f7ce3600c0c2d0932c0b1261746468dedae7182e3d003026d553eca9c51b1949027a5bb225a75fc82de1523b980b6ae54f541d00426c5ddf306fa2a4b55f13f068f4d7862b0277e392aa39005915e43a2cf9f6433fbd",
+      "score_exact": "0x1c5f7ce3600c0c2d0932c0b1261746468dedae7182e3d003026d553eca9c51b1949027a5bb225a75fc82de1523b980b6ae54f541d00426c5ddf306fa2a4b55f13f068f4d7862b0277e392aa39005915e43a2cf9f6433fbd",
+      "score": -11.823283855183863,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -11.823283855183863,
+        "log_probability_sum": -153.70269011739023,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIZITAZEDRLTUXA",
+      "keys": [
+        "AAAU"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        7
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAU"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.175472531926122,
+          "log_probability_sum": -158.2811429150396,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -13.156873010827491,
+          "log_probability_sum": -52.627492043309964,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 7,
+      "index_decimal": "7",
+      "assignment_index_decimal": "7",
+      "exact_objective_hex": "0x4a9a05ae85807cfea7a2e73578e2fb5b5b882c86448248581894696ecd877e3be7fbda92486edd89e85981e07a7b91b3d6b7ccc10d58009ab2c272daed8cf8ca38afa2a20e5d02a30ea0793926859d13a2cf9f6433fbd",
+      "score_exact": "0x4a9a05ae85807cfea7a2e73578e2fb5b5b882c86448248581894696ecd877e3be7fbda92486edd89e85981e07a7b91b3d6b7ccc10d58009ab2c272daed8cf8ca38afa2a20e5d02a30ea0793926859d13a2cf9f6433fbd",
+      "score": -12.175472531926122,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -12.175472531926122,
+        "log_probability_sum": -158.2811429150396,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    },
+    {
+      "plaintext": "TIIJITAJEDRVTUXK",
+      "keys": [
+        "AAAK"
+      ],
+      "values_mod2": [
+        0,
+        0,
+        0
+      ],
+      "values_mod13": [
+        0,
+        0,
+        10
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "ranked_model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AAAK"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      },
+      "score_sensitivity": {
+        "schema": "kryptos.model-fixed-score-sensitivity.v1",
+        "reporting_only": true,
+        "changes_candidate_ranking": false,
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "supplied_positions_zero_based": [
+          0
+        ],
+        "model_fixed_positions_zero_based": [
+          0,
+          4,
+          8,
+          12
+        ],
+        "additional_fixed_positions_zero_based": [
+          4,
+          8,
+          12
+        ],
+        "variable_positions_zero_based": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15
+        ],
+        "exact_marginal_letter_domains": [
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "I",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "E",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "T",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        ],
+        "supplied_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -12.544379496972027,
+          "log_probability_sum": -163.07693346063635,
+          "windows": 13,
+          "text_length": 16,
+          "excluded_positions": [
+            0
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 15,
+          "scored_characters": 15
+        },
+        "model_fixed_mask_score": {
+          "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+          "mean_log_probability": -13.156873010827491,
+          "log_probability_sum": -52.627492043309964,
+          "windows": 4,
+          "text_length": 16,
+          "excluded_positions": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "eligible_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "scored_positions": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "unsupported_positions": [],
+          "available": true,
+          "eligible_characters": 12,
+          "scored_characters": 12
+        },
+        "interpretation": "Conditional sensitivity only. Scores with different masks are not like-for-like likelihood evidence. Zero surviving windows means unavailable, not a score of zero. Marginal compatibility does not replace joint candidate replay."
+      },
+      "index": 10,
+      "index_decimal": "10",
+      "assignment_index_decimal": "10",
+      "exact_objective_hex": "0x9dd5bb9fc7f01ffa1a1d537a3357f41e9c42a8e596508a02a7864726f699a07158c4512259cf3eb09477bf3bffbffcbc4744abf31450e22fc3fa3e4ffa18c4bd38387c6470763dec726b1c3181b203a2cf9f6433fbd",
+      "score_exact": "0x9dd5bb9fc7f01ffa1a1d537a3357f41e9c42a8e596508a02a7864726f699a07158c4512259cf3eb09477bf3bffbffcbc4744abf31450e22fc3fa3e4ffa18c4bd38387c6470763dec726b1c3181b203a2cf9f6433fbd",
+      "score": -12.544379496972027,
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -12.544379496972027,
+        "log_probability_sum": -163.07693346063635,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      },
+      "technique": "Exact crib-constrained affine family; deterministic mixed-radix page; frozen crib-masked ngram ranking; CPU literal recipe replay."
+    }
+  ],
+  "result": {
+    "schema": "kryptos.accelerated-scan.v1",
+    "target": "custom",
+    "offset": 16,
+    "offset_decimal": "16",
+    "evaluated": 2,
+    "backend_requested": "cpu",
+    "backend_used": "cpu",
+    "ranking_mode": "certified",
+    "authenticated_solution": false,
+    "model_file_sha256": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+    "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+    "phase_provenance": [],
+    "source_sha256": {
+      "__main__.py": "014e7b7982f22ba2b3252599f3598a09e2f8183efc9f522c6cdb33932f0dfdbc",
+      "accelerated.py": "6c9a292659bfd9a73b9e2536d3d4c70718e9ee877bb20a32487f0b7c3025275f",
+      "advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+      "alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+      "app.py": "a1eb120ad5d539495cb68bfd7ed3d766cc9c26a79356e86cdefcb4b45282a7f1",
+      "app_jobs.py": "e0798500d9bef421c5990dd55ef7cebe3fe55c229b6563327f386d251a371973",
+      "app_worker.py": "8358075c66bbb12f4e0ce8c3a249c5c613dc3eb662cd195ff679ddfbd0f77b4f",
+      "campaigns.py": "4c33fd550d6669ca904574707dee3958c144300a8844c035f522c0ebf839a5a3",
+      "certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+      "ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+      "columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+      "correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+      "data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+      "engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+      "experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+      "explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+      "factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+      "family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+      "fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+      "general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+      "grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+      "import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+      "joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+      "keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+      "language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+      "layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+      "mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+      "next_cli.py": "07a74c1007fb9abf30031ea7d578782db0b9abfafc1ad7326d165694a306aab2",
+      "parallel_search.py": "e4af6998e9277ae0afef15abcfbc86bdfd8e4bd9c6641b3596671eab814fa83f",
+      "position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+      "process_lifetime.py": "b306c32ddde2d77942f8dc70b32b5e59e73c48f6aee18ec0e56edaa1cbc0c8e1",
+      "recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+      "replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+      "resource_governor.py": "855412deabad45aed582bdb147f1746eae61209390bef3ba066f4eb05ebd6399",
+      "scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+      "score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+      "scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+      "sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+      "search_runtime.py": "13645339c16ae9bcd1f66717e95fd25bc35ae2b86ef399a0cf66f84e5dea3173",
+      "semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+      "validation_protocols.py": "8cd106e53e53f150427ff83bdf13d57e8ae42bbd8dc85b43097b93ae40f3a668",
+      "worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30"
+    },
+    "request_sha256": "2b1b8bd51700effac946a152297d04cd9546ca580c87d298867d824b383a8fd4",
+    "supplied_request": {
+      "target": "custom",
+      "ciphertext": "TIITITATEDRFTUXU",
+      "cribs": [
+        {
+          "start": 1,
+          "text": "T"
+        }
+      ],
+      "alphabet": "standard",
+      "stages": [
+        {
+          "operation": "substitution",
+          "period": 4
+        }
+      ],
+      "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+      "max_nodes": 10000,
+      "max_frontier": 1000,
+      "max_cache_entries": 10000,
+      "ordering": "impact",
+      "time_limit_seconds": 5
+    },
+    "bounds": {
+      "batch_size": 2,
+      "top": 20,
+      "max_letter_operations": 50000000,
+      "max_window_evaluations": 5000000,
+      "max_score_bits": 4000000
+    },
+    "paging_convention": "F2 coordinates then F13; rightmost coordinate fastest. complete means page reaches family end; no earlier coverage is implied.",
+    "score_interpretation": "Frozen joint ngram ranking excludes every window touching the explicit score mask, which includes all supplied crib positions. Scores and re-encryption never authenticate plaintext.",
+    "feasible": true,
+    "total": 17576,
+    "total_decimal": "17576",
+    "next_offset": 18,
+    "next_offset_decimal": "18",
+    "complete": false,
+    "family": {
+      "feasible": true,
+      "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "stages": [
+        {
+          "operation": "substitution",
+          "period": 4,
+          "cipher": "vigenere"
+        }
+      ],
+      "key_slots": 4,
+      "rank_mod2": 1,
+      "rank_mod13": 1,
+      "dimensions_mod2": 3,
+      "dimensions_mod13": 3,
+      "distinct_plaintext_count": 17576,
+      "key_assignment_count": 17576,
+      "constraints": [
+        {
+          "plaintext_position_zero_based": 0,
+          "ciphertext_position_zero_based": 0,
+          "key_coefficients_mod26": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "rhs_mod26": 0
+        }
+      ],
+      "conflicts": [],
+      "scalar_work_units": 700,
+      "bounds": {
+        "max_key_slots": 256,
+        "max_matrix_cells": 2000000,
+        "max_operations": 20000000,
+        "estimated_matrix_cells": 396
+      },
+      "authenticated_solution": false,
+      "prediction_mask": "T???I???E???T???",
+      "key_nullity_mod2": 3,
+      "key_nullity_mod13": 3,
+      "gauge_dimension_mod2": 0,
+      "gauge_dimension_mod13": 0
+    },
+    "ignored_optimizer_fields": [
+      "max_cache_entries",
+      "max_frontier",
+      "max_nodes",
+      "ordering",
+      "time_limit_seconds"
+    ],
+    "scoring": {
+      "windows": 13,
+      "excluded_positions": [
+        0
+      ],
+      "window_starts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "score_available": true,
+      "exact_objective": "product(count*q+p)",
+      "p_hex": "0xccccccccccccd",
+      "q_hex": "0x80000000000000",
+      "denominator_common_within_model_mask_family": true
+    },
+    "work": {
+      "incremental_letter_updates": 4
+    },
+    "stop_reason": "page_complete",
+    "cpu_exact_scored": 2,
+    "ranking_exact_within_page": true,
+    "ranking_method": "exact integer product",
+    "ranking_scope": "this page only; merge separately across pages with the same request/model/source hashes",
+    "elapsed_seconds": 0.01753739989362657
+  },
+  "error": null,
+  "backend_requested": "cpu",
+  "backend_actual": "cpu",
+  "batches_committed": 9,
+  "ranking_exact_over_committed_pages": true,
+  "backends_used": [
+    "cpu"
+  ],
+  "fallback_reasons": [],
+  "resource_events": [
+    {
+      "offset_decimal": "2",
+      "reason": "user",
+      "settings": {
+        "workers": 2,
+        "idle_ms": 100,
+        "target_page_seconds": 0.2,
+        "adaptive": false
+      }
+    },
+    {
+      "offset_decimal": "14",
+      "reason": "user",
+      "settings": {
+        "workers": 2,
+        "idle_ms": 100,
+        "target_page_seconds": 0.2,
+        "adaptive": true
+      }
+    }
+  ],
+  "pending_resources": {},
+  "initial_settings": {
+    "backend": "cpu",
+    "workers": 1,
+    "batch_size": 2,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": false,
+    "idle_ms": 0,
+    "target_page_seconds": 1,
+    "ranking_mode": "certified"
+  },
+  "source_identity": {
+    "kryptos/__main__.py": "014e7b7982f22ba2b3252599f3598a09e2f8183efc9f522c6cdb33932f0dfdbc",
+    "kryptos/accelerated.py": "6c9a292659bfd9a73b9e2536d3d4c70718e9ee877bb20a32487f0b7c3025275f",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "a1eb120ad5d539495cb68bfd7ed3d766cc9c26a79356e86cdefcb4b45282a7f1",
+    "kryptos/app_jobs.py": "e0798500d9bef421c5990dd55ef7cebe3fe55c229b6563327f386d251a371973",
+    "kryptos/app_worker.py": "8358075c66bbb12f4e0ce8c3a249c5c613dc3eb662cd195ff679ddfbd0f77b4f",
+    "kryptos/campaigns.py": "4c33fd550d6669ca904574707dee3958c144300a8844c035f522c0ebf839a5a3",
+    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "07a74c1007fb9abf30031ea7d578782db0b9abfafc1ad7326d165694a306aab2",
+    "kryptos/parallel_search.py": "e4af6998e9277ae0afef15abcfbc86bdfd8e4bd9c6641b3596671eab814fa83f",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/process_lifetime.py": "b306c32ddde2d77942f8dc70b32b5e59e73c48f6aee18ec0e56edaa1cbc0c8e1",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/resource_governor.py": "855412deabad45aed582bdb147f1746eae61209390bef3ba066f4eb05ebd6399",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "13645339c16ae9bcd1f66717e95fd25bc35ae2b86ef399a0cf66f84e5dea3173",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/validation_protocols.py": "8cd106e53e53f150427ff83bdf13d57e8ae42bbd8dc85b43097b93ae40f3a668",
+    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "research/models/multilingual-001/artifacts/pg1342-english-trigram.json": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39"
+  },
+  "authenticated_solution": false,
+  "can_pause": false,
+  "can_resume": true
+}

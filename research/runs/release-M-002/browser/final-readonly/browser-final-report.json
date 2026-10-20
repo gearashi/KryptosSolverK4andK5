@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Saved validation result mobile overflow fixed",
+    "Campaign result/comparison mobile has no overflow",
+    "Saved history includes bounded test jobs",
+    "Export button downloads valid run JSON",
+    "File import independently verifies actual CUDA run",
+    "Imported run candidate selection independently replays",
+    "Actual result trace mobile has no overflow",
+    "Edited artifact cannot retain stale verification",
+    "Unknown artifact rejects visibly",
+    "No JavaScript errors"
+  ],
+  "errors": []
+}

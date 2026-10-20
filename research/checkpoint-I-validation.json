@@ -1,0 +1,92 @@
+{
+  "checked_utc": "2026-10-13T01:59:34.189060+00:00",
+  "successful_records_checked": 14,
+  "all_valid": true,
+  "records": [
+    {
+      "manifest": "research/runs/recovery-001/manifest.json",
+      "manifest_sha256": "1a45db440d4c6cd72ff9508e4f2ad4f664d376aa94f03e42542a94aeeb8ccc75",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/fractionation-001/manifest.json",
+      "manifest_sha256": "824e8f394021455e9787bc44e32901c639b25a99885bace3be0984c56971510e",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/grid-001/manifest.json",
+      "manifest_sha256": "b0bfdb9e9573311ef0fea1b6b539a558eef56569bc71041b9f2c54b84a76c867",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/grid-affine-001/manifest.json",
+      "manifest_sha256": "8f0efa14e3b07ad1d17c2cbc1259721f7c273fc432e215530a97cb17d4c3e641",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/recovery-matrix-001/manifest.json",
+      "manifest_sha256": "842a14924f8ddd2374c4f36abde00744611e9d9ed4646e051384efcb5f32fb4a",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/calibration-002/manifest.json",
+      "manifest_sha256": "e9bc7b717f31bd60a6673919fd2db308e8137eca5ed00d081ee04b342c66e404",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/rescore-recovery-002/manifest.json",
+      "manifest_sha256": "8614f6c07b9278e64f64f412dfcf27849a9c4057bcf1ccda8bd6fcc958388c52",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/parity-001/manifest.json",
+      "manifest_sha256": "cd4da5c517091aea897132e99612e60755f7c366907f50359ee777a595d2b2ce",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/running-key-001/manifest.json",
+      "manifest_sha256": "bb567779a6043307046139043b98fa0d90ffde0f584c4f62e646e05559cdca97",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/running-key-after-route-001/manifest.json",
+      "manifest_sha256": "a1e5b01bc47111db1b29d84e0dc3f6d9ad2f5f43a0322c89f3594ee8f5507f13",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/unit-suite-002/manifest.json",
+      "manifest_sha256": "636f241d8c953b7f230df76ef13b99824583c1357bc089f1439c5bbc992363b1",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/pk-benchmarks-001/manifest.json",
+      "manifest_sha256": "7299353ba16e3a99c5f08afd853dddc82a6f7e2e8cd19b867578ede7c6b5ad45",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/runs/pk3-extended-001/manifest.json",
+      "manifest_sha256": "113df4dc823be3c1419e61680acd94b5a51c985d965992e9d3138a92fd0cc611",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    },
+    {
+      "manifest": "research/models/multilingual-001/manifest.json",
+      "manifest_sha256": "2a4ec98a7f2e5ce821ccc528be2a32e8008a15882408ccb12399258c7a3403c9",
+      "returncode": 0,
+      "message": "valid evidence record; mathematical interpretation requires review"
+    }
+  ],
+  "scope": "Current successful checkpoint-I records only; historical source snapshots and failed attempts are retained separately. Manifest validation does not prove cryptanalytic interpretation."
+}

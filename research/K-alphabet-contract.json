@@ -1,0 +1,100 @@
+{
+  "claim_id": "K4-20261013-K-alphabet",
+  "mathematics": {
+    "assertion_tested": "Supported matching edges agree with exhaustive small graphs and old-solver/direct-alphabet finite counts.",
+    "coefficient_domain": "Finite bipartite matching and modular alphabet equations",
+    "conventions": "No unit-scaling quotient; preserve checkpoint-J counting and gauge conventions.",
+    "inputs": [
+      "kryptos/__main__.py",
+      "kryptos/advanced_cli.py",
+      "kryptos/alphabet_propagation.py",
+      "kryptos/ciphers.py",
+      "kryptos/columnar.py",
+      "kryptos/data.py",
+      "kryptos/engine.py",
+      "kryptos/experiments.py",
+      "kryptos/explanations.py",
+      "kryptos/factor_search.py",
+      "kryptos/fractionation.py",
+      "kryptos/general_layers.py",
+      "kryptos/grid.py",
+      "kryptos/joint_columnar.py",
+      "kryptos/keyed_alphabet.py",
+      "kryptos/language.py",
+      "kryptos/layer_plan.py",
+      "kryptos/mixed_stages.py",
+      "kryptos/next_cli.py",
+      "kryptos/parallel_search.py",
+      "kryptos/position_residues.py",
+      "kryptos/recovery.py",
+      "kryptos/replay_expanded.py",
+      "kryptos/scheduled_layers.py",
+      "kryptos/scoring.py",
+      "kryptos/sculpture.py",
+      "kryptos/search_runtime.py",
+      "kryptos/semantic.py",
+      "research/alphabet_propagation_K.py",
+      "research/prepare_K_contracts.py",
+      "research/run_checkpoint_K.py"
+    ],
+    "bounds": {
+      "all_square_graph_sizes": [
+        1,
+        4
+      ],
+      "graphs": 66066,
+      "finite_positive_or_ambiguous_cipher_cases": 12,
+      "impossible_cipher_cases": 3,
+      "outer_seconds": 30
+    },
+    "non_claims": [
+      "No authenticated K4/K5 decipherment",
+      "Finite specified models only; no global cryptanalytic exclusion",
+      "No K4 target scan"
+    ]
+  },
+  "execution_artifacts": [
+    "kryptos/__main__.py",
+    "kryptos/advanced_cli.py",
+    "kryptos/alphabet_propagation.py",
+    "kryptos/ciphers.py",
+    "kryptos/columnar.py",
+    "kryptos/data.py",
+    "kryptos/engine.py",
+    "kryptos/experiments.py",
+    "kryptos/explanations.py",
+    "kryptos/factor_search.py",
+    "kryptos/fractionation.py",
+    "kryptos/general_layers.py",
+    "kryptos/grid.py",
+    "kryptos/joint_columnar.py",
+    "kryptos/keyed_alphabet.py",
+    "kryptos/language.py",
+    "kryptos/layer_plan.py",
+    "kryptos/mixed_stages.py",
+    "kryptos/next_cli.py",
+    "kryptos/parallel_search.py",
+    "kryptos/position_residues.py",
+    "kryptos/recovery.py",
+    "kryptos/replay_expanded.py",
+    "kryptos/scheduled_layers.py",
+    "kryptos/scoring.py",
+    "kryptos/sculpture.py",
+    "kryptos/search_runtime.py",
+    "kryptos/semantic.py",
+    "research/alphabet_propagation_K.py",
+    "research/prepare_K_contracts.py",
+    "research/run_checkpoint_K.py"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  }
+}

@@ -1,0 +1,1 @@
+{"backend": "cuda", "control_summary": {"positive_inputs": 2, "paired_null_inputs": 2, "completed_comparisons": 2, "candidate_visits": 2808, "positive_truth_rank_one": 2, "nulls_with_surviving_wrong_candidates": 2}, "baseline_nodes": 15, "grouped_nodes": 1}

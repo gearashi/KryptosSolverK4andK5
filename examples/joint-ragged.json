@@ -1,0 +1,9 @@
+{
+  "target": "custom",
+  "ciphertext": "DKBIJHIFGN",
+  "cribs": [{"start": 1, "text": "ABCDEFGHIJ"}],
+  "width": 4,
+  "period": 2,
+  "order": "TS",
+  "alphabet": "standard"
+}

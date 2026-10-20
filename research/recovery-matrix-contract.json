@@ -1,0 +1,14 @@
+{
+  "claim_id":"K4-20261012-I-layer-recovery-matrix",
+  "mathematics":{
+    "assertion_tested":"Measure exact hidden-plaintext recovery, rank and ambiguity for12synthetic 97-letter layer fixtures across both routes,threeorders andcoprime/noncoprime generating periods.",
+    "coefficient_domain":"Integers modulo26; floating language ranks",
+    "conventions":"Search receives ciphertext,24cribs andfixed384model family; truth joined only afterward. At most one plaintext freedom enumerated. Wholecase preflight prevents partial ranking whenbudget exceeded.",
+    "inputs":["research/recovery_matrix.py","kryptos/data.py","kryptos/layer_plan.py","kryptos/scoring.py","research/layer_constraints.py","research/check_layer_hypothesis.py","research/check_physical_routes.py","research/check_classes.py","research/k3_reference.py"],
+    "bounds":{"cases":12,"models_per_case":384,"period_range":[1,8],"generating_period_pairs":[[2,3],[4,2]],"max_dimension":1,"candidate_budget_per_case":5000,"workers":1},
+    "non_claims":["Authored fixtures are not language identification benchmark","Not actualK4method","Budget skips are not recovery failures","Ranks can expose heuristic errors"]
+  },
+  "execution_artifacts":["research/recovery_matrix.py","kryptos/data.py","kryptos/layer_plan.py","kryptos/scoring.py","research/layer_constraints.py","research/check_layer_hypothesis.py","research/check_physical_routes.py","research/check_classes.py","research/k3_reference.py"],
+  "software":[{"name":"Python","version":"3.14.5"}],
+  "randomness":{"used":false,"generator":"","seed":null}
+}

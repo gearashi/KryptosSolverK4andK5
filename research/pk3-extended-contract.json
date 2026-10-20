@@ -1,0 +1,55 @@
+{
+  "claim_id": "K4-20261012-I-PK3-complete-enumeration",
+  "mathematics": {
+    "assertion_tested": "Recover and rank the published PK3 plaintext in the exact17576-completion family remaining under the supplied model and24artificial crib positions.",
+    "coefficient_domain": "Z/26Z and floating masked English scores",
+    "conventions": "Same full280letterfixture, KRYPTOS alphabet, periods10and8, SSTidentityroute, andmask aspk-benchmarks-001. Onlycandidatebudgetincreased. Publishedanswer usedforfixturevalidationandevaluation, notcandidategeneration.",
+    "inputs": [
+      "research/pk3_extended.py",
+      "research/pk_benchmarks.py",
+      "kryptos/data.py",
+      "kryptos/layer_plan.py",
+      "kryptos/scoring.py",
+      "research/source_snapshots/pk-benchmarks/sources.json",
+      "research/source_snapshots/pk-benchmarks/pk1_result.txt",
+      "research/source_snapshots/pk-benchmarks/pk3_result.txt",
+      "research/source_snapshots/pk-benchmarks/verify_all_source.txt",
+      "research/source_snapshots/pk-benchmarks/official_challenge_asset.txt",
+      "research/source_snapshots/pk-benchmarks/firsthand_methods.html.txt"
+    ],
+    "bounds": {
+      "models": 1,
+      "known_letters": 24,
+      "plaintext_completions": 17576,
+      "internal_enumeration_seconds": 45,
+      "workers": 1
+    },
+    "non_claims": [
+      "Not blind method selection or officialPKclues",
+      "No score retuning or extra cribs",
+      "No authenticatedK4solution"
+    ]
+  },
+  "execution_artifacts": [
+    "research/pk3_extended.py",
+    "research/pk_benchmarks.py",
+    "kryptos/data.py",
+    "kryptos/layer_plan.py",
+    "kryptos/scoring.py",
+    "research/source_snapshots/pk-benchmarks/sources.json",
+    "research/source_snapshots/pk-benchmarks/pk1_result.txt",
+    "research/source_snapshots/pk-benchmarks/pk3_result.txt",
+    "research/source_snapshots/pk-benchmarks/verify_all_source.txt",
+    "research/source_snapshots/pk-benchmarks/official_challenge_asset.txt",
+    "research/source_snapshots/pk-benchmarks/firsthand_methods.html.txt"
+  ],
+  "software": [
+    {
+      "name": "Python",
+      "version": "3.14.5"
+    }
+  ],
+  "randomness": {
+    "used": false
+  }
+}
