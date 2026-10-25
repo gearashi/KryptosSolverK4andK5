@@ -14,12 +14,13 @@ from urllib.parse import parse_qs,urlsplit
 import webbrowser
 
 from .advanced_cli import json_safe_integers
-from .app_jobs import RunManager,ROOT,MODELS
+from .app_jobs import RunManager,ROOT,MODELS,validate_start
 from .data import K4_CIPHERTEXT,K4_CRIBS
 from .campaigns import CampaignManager,preview_campaign
 from .import_inspector import inspect_import
+from .workspace_store import WorkspaceStore,MAX_BUNDLE
 
-VERSION="0.3.0"
+VERSION="0.4.0"
 
 
 def validation_presets():
@@ -29,6 +30,7 @@ def validation_presets():
                 ("validate-holdout","validate-holdout","Reduced-clue recovery", "Rerun model selection without withheld values, then assess predictions. All supplied positions are masked; public K4 clues remain retrospective."),
                 ("validate-controls","validate-controls","Competing models · fast controls", "Two authored messages and paired shuffles through a complete declared bank, with an artificial contiguous clue mask."),
                 ("validate-k4-shaped","validate-controls","K4-shaped multilingual benchmark", "Reserved authored messages with the actual separated K4 clue positions and competing layered/grid recipes; completion and censoring are explicit."),
+                ("validate-campaign-null","validate-controls","Repeated campaign-level null controls", "Compare a fixed competing model bank against repeated clue-preserving shuffles; report censoring and empirical threshold frequency, never authentication probability."),
                 ("validate-ablations","validate-ablations","Refit after removing a technique", "Remove each substitution or neutralize a route, refit remaining keys without held answers, and compare withheld predictions."))]
 
 
@@ -91,6 +93,24 @@ def make_server(state_dir,port=8767,*,probe=True):
         manager.close()
         raise
     token=secrets.token_urlsafe(32)
+    try:
+        workspace=WorkspaceStore(state_dir)
+    except BaseException:
+        campaigns.close()
+        manager.close()
+        raise
+
+    def run_view(key=None):
+        if key in workspace.recovered_runs:
+            return workspace.recovered(key)
+        return manager.view(key)
+
+    def workspace_health():
+        with workspace.lock:
+            return {"diagnostics":list(getattr(manager,"load_diagnostics",[]))+list(getattr(campaigns,"load_diagnostics",[]))+workspace.diagnostics,
+                    "recovered_runs":len(workspace.recovered_runs),"recovered_campaigns":len(workspace.recovered_campaigns),
+                    "recoveries":[{k:v for k,v in r.items() if k!="editing"} for r in workspace.recoveries.values()],
+                    "backup_max_bytes":MAX_BUNDLE,"restore_policy":"Separate read-only recovery; no jobs or frontiers are activated."}
     capabilities={"cpu":True,"workers_max":4,"cuda":{"ready":False,"available":False,"error":"GPU probe has not run"}}
     if probe:
         for name in ("TEMP","TMP","CUPY_CACHE_DIR"):
@@ -149,22 +169,32 @@ def make_server(state_dir,port=8767,*,probe=True):
                 elif parsed.path=="/api/status":
                     self._send(200,{"run":manager.view(),"campaign":campaigns.view()})
                 elif parsed.path=="/api/campaigns":
-                    self._send(200,{"campaigns":campaigns.list_campaigns()})
+                    live=campaigns.list_campaigns()
+                    with workspace.lock:
+                        recovered=[WorkspaceStore.summary(c) for c in workspace.recovered_campaigns.values()]
+                    self._send(200,{"campaigns":live+recovered})
                 elif re.fullmatch(r"/api/campaigns/[a-f0-9]{32}",parsed.path):
-                    self._send(200,{"campaign":campaigns.view(parsed.path.rsplit("/",1)[1])})
+                    key=parsed.path.rsplit("/",1)[1]
+                    self._send(200,{"campaign":workspace.recovered_campaigns[key] if key in workspace.recovered_campaigns else campaigns.view(key)})
                 elif parsed.path=="/api/runs":
-                    self._send(200,{"runs":manager.list_runs()})
+                    self._send(200,workspace.history(manager.list_run_summaries(),parse_qs(parsed.query)))
                 elif re.fullmatch(r"/api/runs/[a-f0-9]{32}",parsed.path):
-                    self._send(200,{"run":manager.view(parsed.path.rsplit("/",1)[1])})
+                    self._send(200,{"run":run_view(parsed.path.rsplit("/",1)[1])})
                 elif parsed.path=="/api/export":
-                    run=manager.view(parse_qs(parsed.query).get("run_id",[None])[0])
+                    run=run_view(parse_qs(parsed.query).get("run_id",[None])[0])
                     if run is None:
                         raise KeyError("No run to export")
                     self._send(200,run,download=True)
-                elif parsed.path in {"/","/static/index.html","/static/app.js","/static/style.css","/static/mark.svg"}:
+                elif parsed.path=="/api/workspace":
+                    self._send(200,{"workspace":workspace.view(),"health":workspace_health()})
+                elif parsed.path=="/api/workspace/health":
+                    self._send(200,workspace_health())
+                elif re.fullmatch(r"/api/workspace/recovery/[a-f0-9]{32}",parsed.path):
+                    self._send(200,{"recovery":workspace.recoveries[parsed.path.rsplit("/",1)[1]]})
+                elif parsed.path in {"/","/static/index.html","/static/app.js","/static/workspace.js","/static/style.css","/static/mark.svg"}:
                     filename="index.html" if parsed.path=="/" else parsed.path.rsplit("/",1)[1]
                     path=ROOT/"kryptos/static"/filename
-                    mime={"index.html":"text/html; charset=utf-8","app.js":"application/javascript; charset=utf-8","style.css":"text/css; charset=utf-8","mark.svg":"image/svg+xml"}[filename]
+                    mime={"index.html":"text/html; charset=utf-8","app.js":"application/javascript; charset=utf-8","workspace.js":"application/javascript; charset=utf-8","style.css":"text/css; charset=utf-8","mark.svg":"image/svg+xml"}[filename]
                     self._send(200,path.read_bytes(),mime)
                 elif parsed.path=="/favicon.ico":
                     self._send(204,b"","image/x-icon")
@@ -172,7 +202,9 @@ def make_server(state_dir,port=8767,*,probe=True):
                     self._send(404,{"error":"Not found"})
             except KeyError as error:
                 self._send(404,{"error":str(error)})
-            except (ValueError,OSError) as error:
+            except ValueError as error:
+                self._send(400,{"error":str(error)})
+            except OSError as error:
                 self._send(500,{"error":str(error)})
 
         def do_POST(self):
@@ -186,7 +218,7 @@ def make_server(state_dir,port=8767,*,probe=True):
                 if self.headers.get("Content-Type","").split(";",1)[0]!="application/json":
                     raise ValueError("Send application/json")
                 length=int(self.headers.get("Content-Length","0"))
-                limit=2*1024*1024 if self.path=="/api/import" else 1024*1024
+                limit=MAX_BUNDLE if self.path in {"/api/workspace/restore","/api/workspace/restore-preview"} else 2*1024*1024 if self.path=="/api/import" else 1024*1024
                 if not 0<length<=limit:
                     raise ValueError(f"Request body must be 1 byte through {limit//1024} KiB")
                 body=strict_json(self.rfile.read(length).decode("utf-8"))
@@ -208,6 +240,22 @@ def make_server(state_dir,port=8767,*,probe=True):
                     response={"run":manager.update_resources(body["run_id"],{k:v for k,v in body.items() if k!="run_id"})}
                 elif self.path=="/api/import":
                     response={"inspection":inspect_import(body)}
+                elif self.path=="/api/workspace":
+                    if isinstance(body,dict) and body.get("operation")=="metadata":
+                        run_view(body.get("run_id"))
+                    response={"workspace":workspace.update(body,validate_start)}
+                elif self.path in {"/api/workspace/backup","/api/workspace/restore","/api/workspace/restore-preview"}:
+                    with campaigns.lock:
+                        with manager.lock:
+                            if campaigns.is_active():
+                                raise ValueError("Pause or stop the campaign before backing up or restoring workspace data")
+                            manager._idle()
+                            if self.path.endswith("backup"):
+                                if body!={}:raise ValueError("Backup requires an empty object")
+                                response={"backup":workspace.backup(manager,campaigns)}
+                            else:
+                                if not isinstance(body,dict) or set(body)!={"backup"}:raise ValueError("Restore requires a backup object only")
+                                response={"recovery":workspace.restore(body["backup"],preview=self.path.endswith("restore-preview"))}
                 elif self.path=="/api/campaigns/preview":
                     response={"preview":preview_campaign(body)}
                 elif self.path=="/api/campaigns/start":
@@ -233,6 +281,7 @@ def make_server(state_dir,port=8767,*,probe=True):
         raise
     server.manager=manager
     server.campaigns=campaigns
+    server.workspace=workspace
     return server
 
 

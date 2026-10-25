@@ -60,7 +60,7 @@ def validate_start(body):
     kind=body.get("kind","exact")
     command=body.get("command","joint")
     backend=body.get("backend","cpu")
-    if kind not in ("exact","accelerated") or command not in EXACT_COMMANDS or backend not in ("cpu","cuda","auto"):
+    if kind not in ("exact","accelerated") or command not in EXACT_COMMANDS or backend not in ("cpu","cuda","auto","auto-measured"):
         raise ValueError("Unsupported run kind, command or backend")
     if kind=="exact" and backend=="cuda":
         raise ValueError("This constraint command runs on CPU; choose a family scan for CUDA")
@@ -85,7 +85,9 @@ def validate_start(body):
           "max_relation_checks":2000000,"max_distinct_plaintexts":10000,"max_constraints":4096,
           "max_frontier":20000,"max_cache_entries":100000,"local_exact_limit":4096,"factor_group_size":8,"group_exact_limit":100000,
           "max_candidates_per_family":17576,"max_total_candidates":100000,"max_orders":5000,"max_evaluations":100000,
-          "decomposition_max_entries":20000,"decomposition_max_operations":200000}
+          "decomposition_max_entries":20000,"decomposition_max_operations":200000,
+          "elimination_bucket_entries":10000,"elimination_max_entries":20000,"elimination_max_operations":200000,
+          "null_replicates":16,"minimum_distinct_surviving_families":16,"max_protocol_candidates":100000}
     for name,cap in caps.items():
         if name in request:
             integer(request[name],name,0,cap)
@@ -109,7 +111,7 @@ def validate_start(body):
             raise ValueError("Family scans use an optimize-plus general/scheduled recipe")
         if "model_path" not in request:
             raise ValueError("Select a frozen model for a family scan")
-        if backend in ("cuda","auto"):
+        if backend in ("cuda","auto","auto-measured"):
             settings["workers"]=1  # One CUDA context; do not multiply GPU memory by worker count.
     note=body.get("note","")
     if not isinstance(note,str) or len(note)>1000:
@@ -168,6 +170,7 @@ class RunManager:
             self.worker_env[name]=str(destination)
         self.lock=threading.RLock()
         self.records={}
+        self.load_diagnostics=[]
         self.current=None
         self.thread=None
         self.desired=None
@@ -183,15 +186,33 @@ class RunManager:
             raise
 
     def _load_records(self):
+        self.load_diagnostics=[]
         for path in sorted(self.directory.glob("*/run.json")):
             try:
+                if path.stat().st_size>64*1024*1024:
+                    raise ValueError('Saved record exceeds the64MiB limit')
                 value=_decode(json.loads(path.read_text(encoding="utf-8")))
-                if value.get("schema")!="kryptos.local-run.v1" or path.parent.name!=value["id"]:
-                    continue
+                if not isinstance(value,dict) or value.get("schema")!="kryptos.local-run.v1":
+                    raise ValueError('Unsupported saved run schema')
+                if (path.parent.name!=value.get('id') or len(path.parent.name)!=32
+                        or any(c not in '0123456789abcdef' for c in path.parent.name)):
+                    raise ValueError('Saved run identifier does not match its directory')
+                for field in ('settings','request','progress'):
+                    if not isinstance(value.get(field),dict):
+                        raise ValueError('Missing or invalid saved '+field)
+                if (value.get('kind') not in {'exact','accelerated'} or value.get('command') not in EXACT_COMMANDS
+                        or value.get('state') not in ACTIVE|{'paused','stopped','limited','interrupted','failed','completed'}):
+                    raise ValueError('Invalid saved command or state')
+                if any(not isinstance(value.get(k),str) for k in ('created_at','updated_at')):
+                    raise ValueError('Invalid saved timestamps')
+                progress=value['progress']
+                if type(progress.get('completed')) is not int or progress['completed']<0:
+                    raise ValueError('Invalid saved progress')
+                if progress.get('total') is not None and (type(progress['total']) is not int or progress['total']<progress['completed']):
+                    raise ValueError('Invalid saved total')
                 if value["state"] in ACTIVE:
                     value.update(state="interrupted",error="The local server ended before this run finished. Resume repeats only uncommitted work.",updated_at=now())
                     atomic_json(path,value)
-                self.records[value["id"]]=value
                 value.setdefault("ranking_exact_over_committed_pages",False if value.get("kind")=="accelerated" and value.get("progress",{}).get("completed",0) else None)
                 value.setdefault("backends_used",[])
                 value.setdefault("fallback_reasons",[])
@@ -201,8 +222,10 @@ class RunManager:
                 value["settings"].setdefault("adaptive",False)
                 value["settings"].setdefault("idle_ms",0)
                 value["settings"].setdefault("target_page_seconds",1.0)
-            except (ValueError,KeyError,OSError):
-                continue
+                self.records[value["id"]]=value
+            except (ValueError,KeyError,OSError,TypeError,AttributeError) as error:
+                self.load_diagnostics.append({'path':path.relative_to(self.directory).as_posix(),
+                    'reason':str(error),'action':'Preserve this file; inspect or recover a verified backup. No job was started.'})
         if self.records:
             self.current=max(self.records,key=lambda key:self.records[key]["updated_at"])
 
@@ -230,6 +253,23 @@ class RunManager:
             return [{k:v for k,v in self.view(key).items() if k not in {"candidates","result","source_identity"}}
                     for key in sorted(self.records,key=lambda k:self.records[k]["created_at"],reverse=True)]
 
+    def list_run_summaries(self):
+        """History summaries never copy potentially large candidates or results."""
+        fields={'id','kind','command','state','created_at','updated_at','note','progress',
+                'backend_requested','backend_actual','elapsed_seconds','batches_committed','error',
+                'exact_resume_supported','exact_checkpoint'}
+        with self.lock:
+            result=[]
+            for record in self.records.values():
+                row={k:copy.deepcopy(record[k]) for k in fields if k in record}
+                row['request']={k:record.get('request',{}).get(k) for k in ('target','ciphertext')}
+                row['can_resume']=record['state'] in {'paused','stopped','limited','interrupted','failed'}
+                row['can_pause']=record['state']=='running' and (record['kind']=='accelerated' or record.get('exact_resume_supported',False))
+                row['progress']['completed_decimal']=str(row['progress']['completed'])
+                row['progress']['total_decimal']=str(row['progress']['total']) if row['progress'].get('total') is not None else None
+                result.append(row)
+            return sorted(result,key=lambda r:(r['created_at'],r['id']),reverse=True)
+
     def _idle(self):
         if self._closed:
             raise ValueError("This app manager is closed")
@@ -251,9 +291,9 @@ class RunManager:
                 "ranking_exact_over_committed_pages":None,"backends_used":[],"fallback_reasons":[],
                 "resource_events":[],"pending_resources":{},"initial_settings":copy.deepcopy(config["settings"]),
                 "source_identity":source_identity(config["request"]),"authenticated_solution":False}
-            if config['kind']=='exact' and config['command']=='optimize-plus':
+            if config['kind']=='exact' and config['command'] in {'optimize-plus','joint-ranked'}:
                 record.update(exact_resume_supported=True,exact_checkpoint=None)
-                record['progress'].update(completed=0,total=None,unit='search nodes')
+                record['progress'].update(completed=0,total=None,unit='search nodes' if config['command']=='optimize-plus' else 'search work steps')
             self._save(record)
             self.records[key]=record
             self.current=key
@@ -501,6 +541,81 @@ class RunManager:
                 if record['state'] in {'completed','limited'}:
                     return
 
+    def _run_joint_ranked(self,key,started,initial_batches):
+        """Commit immutable route/key frontiers, with per-activation work limits."""
+        record=self.records[key]
+        initial=record.get('result') or {}
+        counters={'max_states':('states_total',200000),'max_evaluations':('evaluated',100000),
+                  'max_orders':('column_orders_visited',5000),'max_segmentations':('segmentations_tested',2048)}
+        start_counts={field:initial.get(field,0) for field,_ in counters.values()}
+        budgets={limit:integer(record['request'].get(limit,default),limit,1,200000)
+                 for limit,(field,default) in counters.items()}
+        maximum=record['request'].get('time_limit_seconds',5)
+        if type(maximum) not in (int,float) or not math.isfinite(maximum) or not 0<maximum<=10:
+            raise ValueError('Invalid ranked-search slice time cap')
+        while True:
+            with self.lock:
+                if self.desired:
+                    record['state']='paused' if self.desired=='pause' else 'stopped'
+                    return
+                previous_result=record.get('result') or {}
+                remaining={limit:budgets[limit]-(previous_result.get(field,0)-start_counts[field])
+                           for limit,(field,_) in counters.items()}
+                slices=record['batches_committed']-initial_batches
+                settings=record['settings']
+                if (any(value<=0 for value in remaining.values()) or slices>=settings['max_batches']
+                        or time.monotonic()-started>=settings['time_limit_seconds']):
+                    record['state']='limited'
+                    return
+                self._require_identity(record)
+                previous=self._saved_frontier(record)
+                folder=self.directory/key/'checkpoints'
+                folder.mkdir(exist_ok=True)
+                output=folder/(uuid.uuid4().hex+'.json')
+                seconds=record.get('joint_slice_seconds',min(2.0,maximum))
+                if type(seconds) not in (int,float) or not math.isfinite(seconds) or not 0<seconds<=maximum:
+                    raise ValueError('Invalid saved ranked-search slice duration')
+                request=copy.deepcopy(record['request'])
+                request.update(remaining,time_limit_seconds=seconds,checkpoint_path=str(output))
+                if previous is not None:
+                    request['resume_path']=str(previous)
+            result=self._launch(key,{'kind':'exact','command':'joint-ranked','request':request})
+            with self.lock:
+                self._require_identity(record,[result])
+                if self.desired=='stop':
+                    raise InterruptedError('Stopped before the ranked-search frontier committed')
+                if not output.is_file() or output.stat().st_size>64*1024*1024:
+                    raise ValueError('Ranked search did not preserve a bounded frontier')
+                steps=integer(result['states_total'],'ranked work total',0,10**18)
+                if steps-record['progress']['completed']!=result['states_this_run'] or steps<record['progress']['completed']:
+                    raise ValueError('Ranked search did not continue committed work counts')
+                for limit,(field,_) in counters.items():
+                    if result[field]<previous_result.get(field,0) or result[field]-previous_result.get(field,0)>remaining[limit]:
+                        raise ValueError('Ranked search exceeded the declared activation budget')
+                staged=copy.deepcopy(record)
+                staged['result']=self._public_optimizer_result(result)
+                staged['candidates']=copy.deepcopy(result.get('candidates',[]))
+                staged['exact_checkpoint']={'file':output.name,'sha256':hashlib.sha256(output.read_bytes()).hexdigest(),
+                    'sequence':record['batches_committed']+1,'states_total':steps}
+                staged['progress'].update(completed=steps,total=None,unit='search work steps',
+                    candidate_evaluations=result['evaluated'],frontier_nodes=result['frontier_nodes'])
+                advanced=integer(result['frontier_progress_nodes'],'ranked frontier progress',0,10**18)
+                stalled=advanced==0 and result['stop_reason']=='time_limit_seconds'
+                grow=stalled and seconds<maximum
+                staged['joint_slice_seconds']=min(maximum,seconds*2) if grow else seconds
+                staged['joint_slice']={'seconds':seconds,'next_seconds':staged['joint_slice_seconds'],
+                    'frontier_progress_nodes':advanced,'candidate_evaluations':result['evaluated_this_run']}
+                staged.update(backend_actual='cpu',backends_used=['cpu'])
+                staged['batches_committed']+=1
+                if result['complete']:
+                    staged['state']='completed'
+                elif result['stop_reason']!='time_limit_seconds' or (advanced==0 and not grow):
+                    staged['state']='limited'
+                self._save(staged)
+                record.update(staged)
+                if record['state'] in {'completed','limited'}:
+                    return
+
     def _run(self,key):
         record=self.records[key]
         started=time.monotonic()
@@ -509,7 +624,10 @@ class RunManager:
         settings=record["settings"]
         try:
             if record.get('exact_resume_supported'):
-                self._run_optimizer(key,started,initial_batches)
+                if record['command']=='joint-ranked':
+                    self._run_joint_ranked(key,started,initial_batches)
+                else:
+                    self._run_optimizer(key,started,initial_batches)
             elif record["kind"]=="exact":
                 self._require_identity(record)
                 result=self._launch(key,{"kind":"exact","command":record["command"],"request":record["request"]})

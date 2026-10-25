@@ -23,6 +23,7 @@ cupy_cache/
 !/research/source_snapshots/accelerated-initial/
 !/research/source_snapshots/release-M-*/
 !/research/source_snapshots/release-N-*/
+!/research/source_snapshots/release-O-*/
 !/research/source_snapshots/sculpture-J/
 /research/source_snapshots/sculpture-J/*
 !/research/source_snapshots/sculpture-J/pk2_fixture.json
@@ -45,6 +46,7 @@ cupy_cache/
 !/research/runs/release-L-*/
 !/research/runs/release-M-*/
 !/research/runs/release-N-*/
+!/research/runs/release-O-*/
 !/research/runs/evaluation-J-001/
 /research/runs/evaluation-J-001/*
 !/research/runs/evaluation-J-001/artifacts/
@@ -62,3 +64,6 @@ cupy_cache/
 
 # Local test logs are superseded by selected release audit evidence.
 /research/*-tests.log
+
+# Owned browser-test services keep live state/caches local; publish reports only.
+/research/runs/release-O-*/**/*isolated-state/

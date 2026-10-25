@@ -92,6 +92,7 @@ class CampaignManager:
         self.directory.mkdir(parents=True,exist_ok=True)
         self.lock=threading.RLock()
         self.records={}
+        self.load_diagnostics=[]
         self.current=None
         self.thread=None
         self.desired=None
@@ -108,15 +109,22 @@ class CampaignManager:
             pass  # Cache is expendable. Saved runs remain authoritative.
         for path in sorted(self.directory.glob("*/campaign.json")):
             try:
+                if path.stat().st_size>16*1024*1024:
+                    raise ValueError("Campaign record exceeds 16 MiB")
                 value=_decode(json.loads(path.read_text()))
-                if value.get("schema")!="kryptos.campaign.v1" or value["id"]!=path.parent.name:
-                    continue
+                if not isinstance(value,dict) or value.get("schema")!="kryptos.campaign.v1" or value.get("id")!=path.parent.name:
+                    raise ValueError("Unsupported campaign schema or mismatched identifier")
+                if not re.fullmatch(r"[a-f0-9]{32}",value["id"]) or not isinstance(value.get("jobs"),list) or len(value["jobs"])>128:
+                    raise ValueError("Malformed campaign identifier or job list")
+                if any(not isinstance(j,dict) or not isinstance(j.get("state"),str) for j in value["jobs"]) or not isinstance(value.get("updated_at"),str) or not isinstance(value.get("created_at"),str) or not isinstance(value.get("state"),str):
+                    raise ValueError("Malformed campaign state or timestamps")
                 if value["state"] in ACTIVE:
                     value.update(state="interrupted",error="Server ended; resume continues unfinished jobs only")
                     atomic_json(path,value)
                 self.records[value["id"]]=value
-            except (ValueError,KeyError,OSError):
-                continue
+            except (ValueError,KeyError,OSError,TypeError,AttributeError,RecursionError) as error:
+                self.load_diagnostics.append({"path":"campaigns/"+path.parent.name+"/campaign.json","reason":str(error),
+                    "action":"Original file preserved. Back up the workspace before repairing this record or recovering another copy."})
         if self.records:
             self.current=max(self.records,key=lambda k:self.records[k]["updated_at"])
 

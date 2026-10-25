@@ -9,10 +9,11 @@ import random
 import time
 
 from .search_runtime import _integer, _validate, evaluate_factor
+from itertools import combinations, product
 
 
 GUIDED_FIELDS = {"seed", "restarts", "max_evaluations", "max_sweeps", "top",
-                 "max_factor_evaluations"}
+                 "max_factor_evaluations", "block_size", "max_blocks", "max_block_completions"}
 
 
 class _Stop(Exception):
@@ -21,7 +22,8 @@ class _Stop(Exception):
 
 def guided_seeds(problem, *, seed=0, restarts=8, max_evaluations=2048,
                  max_sweeps=8, top=4, max_factor_evaluations=200000,
-                 time_limit_seconds=5, initial_assignments=()):
+                 time_limit_seconds=5, initial_assignments=(), block_size=1,
+                 max_blocks=32, max_block_completions=676):
     """Return bounded feasible hints, with exact adjacent-factor delta scores.
 
     Initial scores and every trial coordinate count as objective evaluations.
@@ -37,6 +39,9 @@ def guided_seeds(problem, *, seed=0, restarts=8, max_evaluations=2048,
     _integer(max_sweeps, "max_sweeps", 1, 1000)
     _integer(top, "top", 1, 100)
     _integer(max_factor_evaluations, "max_factor_evaluations", 1, 2000000)
+    _integer(block_size, "block_size", 1, 2)
+    _integer(max_blocks, "max_blocks", 1, 64)
+    _integer(max_block_completions, "max_block_completions", 1, 676)
     if type(time_limit_seconds) not in (int, float) or not math.isfinite(time_limit_seconds) or not 0 < time_limit_seconds <= 600:
         raise ValueError("time_limit_seconds must be in (0,600]")
     if not isinstance(initial_assignments, (list, tuple)) or len(initial_assignments) > 100:
@@ -54,7 +59,27 @@ def guided_seeds(problem, *, seed=0, restarts=8, max_evaluations=2048,
             adjacency[variable].append(number)
     work = {"objective_evaluations": 0, "factor_evaluations": 0,
             "accepted_moves": 0, "restarts_started": 0, "sweeps_completed": 0,
-            "full_factor_evaluations_avoided": 0}
+            "full_factor_evaluations_avoided": 0, "block_trials": 0,
+            "accepted_block_moves": 0, "blocks_over_completion_cap": 0}
+    pairs = set()
+    pair_memberships = 0
+    if block_size == 2:
+        for factor in factors:
+            for pair in combinations((i for i in factor["scope"] if domains[i] > 1), 2):
+                pairs.add(pair)
+                pair_memberships += 1
+                if pair_memberships >= 4096:
+                    break
+            if pair_memberships >= 4096:
+                break
+    work["block_pair_memberships"] = pair_memberships
+    work["block_discovery_capped"] = int(pair_memberships >= 4096)
+    blocks = []
+    for pair in sorted(pairs):
+        if math.prod(domains[i] for i in pair) > max_block_completions:
+            work["blocks_over_completion_cap"] += 1
+        elif len(blocks) < max_blocks:
+            blocks.append(pair)
     retained = {}
 
     def check(number):
@@ -137,6 +162,48 @@ def guided_seeds(problem, *, seed=0, restarts=8, max_evaluations=2048,
                         work["accepted_moves"] += 1
                         changed = True
                 work["sweeps_completed"] += 1
+                # At a coordinate-wise plateau, test coupled variables that
+                # actually share a factor. The union of their incident factors
+                # gives an exact delta, including zero-product annihilation.
+                if not changed and block_size == 2:
+                    for block in blocks:
+                        neighbors = sorted(set().union(*(adjacency[v] for v in block)))
+                        outside_product, outside_zeros = positive_product, zeros
+                        for number in neighbors:
+                            old = current_values[number]
+                            if old:
+                                outside_product //= old
+                            else:
+                                outside_zeros -= 1
+                        original = tuple(point[v] for v in block)
+                        best_values, best_score, best_local = original, current_score, None
+                        for values in product(*(range(domains[v]) for v in block)):
+                            if values == original:
+                                continue
+                            check(len(neighbors))
+                            trial = list(point)
+                            for variable, value in zip(block, values):
+                                trial[variable] = value
+                            local = values_at(trial, neighbors)
+                            trial_zeros = outside_zeros + local.count(0)
+                            trial_product = outside_product * math.prod(v for v in local if v)
+                            score = 0 if trial_zeros else trial_product
+                            work["objective_evaluations"] += 1
+                            work["block_trials"] += 1
+                            work["full_factor_evaluations_avoided"] += len(factors) - len(neighbors)
+                            retain(trial, score)
+                            if score > best_score or (score == best_score and values < best_values):
+                                best_values, best_score, best_local = values, score, (local, trial_product, trial_zeros)
+                        if best_values != original:
+                            for variable, value in zip(block, best_values):
+                                point[variable] = value
+                            local, positive_product, zeros = best_local
+                            for number, value in zip(neighbors, local):
+                                current_values[number] = value
+                            current_score = best_score
+                            work["accepted_moves"] += 1
+                            work["accepted_block_moves"] += 1
+                            changed = True
                 if not changed:
                     break
     except _Stop as exc:
@@ -149,6 +216,9 @@ def guided_seeds(problem, *, seed=0, restarts=8, max_evaluations=2048,
             "bounds": {"restarts": restarts, "max_evaluations": max_evaluations,
                        "max_sweeps": max_sweeps, "top": top,
                        "max_factor_evaluations": max_factor_evaluations,
+                       "block_size": block_size, "max_blocks": max_blocks,
+                       "max_block_completions": max_block_completions,
                        "time_limit_seconds": time_limit_seconds},
+            "coordinated_blocks": [list(block) for block in blocks],
             "optimality_claimed": False,
             "interpretation": "Feasible coordinates and exact scores only. Local optima and unvisited regions remain possible; no authentication."}

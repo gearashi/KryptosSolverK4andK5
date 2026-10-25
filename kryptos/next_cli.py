@@ -12,7 +12,7 @@ from .replay_expanded import replay_expanded
 ROOT=Path(__file__).resolve().parents[1]
 BASE={"target","ciphertext","cribs"}
 LINEAR_LIMITS={"max_key_slots","max_matrix_cells","max_operations"}
-SEARCH_LIMITS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries","local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit","decomposition","decomposition_max_entries","decomposition_max_operations"}
+SEARCH_LIMITS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries","local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit","decomposition","decomposition_max_entries","decomposition_max_operations","elimination_bound","elimination_bucket_entries","elimination_max_entries","elimination_max_operations"}
 
 
 def _algebra_budget_result(error,request,stages,phase_provenance):
@@ -158,8 +158,8 @@ def _scan_seeds(request,job,started):
         return [],{"status":"skipped_resume","pages":0,"elapsed_seconds":0.0}
     _check(setting,{"backend","batch_size","offset","top"})
     backend=setting.get("backend","cpu")
-    if backend not in ("cpu","cuda","auto"):
-        raise ValueError("seed_scan backend must be cpu, cuda or auto")
+    if backend not in ("cpu","cuda","auto","auto-measured"):
+        raise ValueError("seed_scan backend must be cpu, cuda, auto or auto-measured")
     batch=_integer(setting.get("batch_size",256),"seed batch_size",1,8192)
     offset=_integer(setting.get("offset",0),"seed offset",0,10**1000)
     top=_integer(setting.get("top",1),"seed top",1,10)
@@ -189,6 +189,7 @@ def _scan_seeds(request,job,started):
         _verify(local,job["text"],job["known"])
         points.append(point)
     return points,{"status":"verified","pages":1,"backend_requested":backend,"backend_used":page.get("backend_used"),
+        "backend_selection":page.get("backend_selection"),
         "evaluated":page["evaluated"],"offset":offset,"next_offset":page.get("next_offset"),
         "verified_seeds":len(points),"ranking_exact_within_page":page.get("ranking_exact_within_page"),
         "elapsed_seconds":time.monotonic()-seed_started,"model_file_sha256":job["model_sha256"],

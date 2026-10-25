@@ -108,6 +108,7 @@ def select_family_bank(ciphertext,training,score_mask,bank,models,bounds,deadlin
     if not starts:
         raise ValueError("score mask leaves no ngram windows for comparison")
     rows,candidates=[],{}
+    family_groups={}
     evaluated=0
     stream=hashlib.sha256()
     for bank_row in bank:
@@ -141,6 +142,7 @@ def select_family_bank(ciphertext,training,score_mask,bank,models,bounds,deadlin
         if solution.distinct_plaintext_count>bounds["max_total_candidates"]-evaluated:
             record["stop_reason"]="per_input_candidate_limit"
             continue
+        family_texts=set()
         for a,b,text in solution.enumerate_plaintexts(bounds["max_candidates_per_family"]):
             if time.monotonic()>=deadline:
                 record["stop_reason"]="protocol_time_limit"
@@ -151,6 +153,7 @@ def select_family_bank(ciphertext,training,score_mask,bank,models,bounds,deadlin
                 raise AssertionError("validation candidate literal replay failed")
             record["evaluated"]+=1
             evaluated+=1
+            family_texts.add(text)
             stream.update((bank_row["id"]+":"+text+"\n").encode())
             if text in candidates:
                 candidates[text]["model_ids"].append(bank_row["id"])
@@ -161,6 +164,14 @@ def select_family_bank(ciphertext,training,score_mask,bank,models,bounds,deadlin
                               "_stages":stages,"_model_type":model_type,"_alphabet":solution.alphabet}
         else:
             record.update(complete=True,stop_reason="exhausted_declared_family")
+            # Exact set equality drives grouping; hashes only identify the
+            # recorded sets. A partial or over-cap family gets no such claim.
+            identity=frozenset(family_texts)
+            digest=_hash(sorted(identity))
+            record["completed_family_sha256"]=digest
+            group=family_groups.setdefault(identity,{"completed_family_sha256":digest,
+                "distinct_plaintext_count":len(identity),"model_ids":[]})
+            group["model_ids"].append(bank_row["id"])
     ranked=sorted(candidates.values(),key=lambda r:(-r["selected_score"],r["plaintext"]))
     retained=[]
     for row in ranked[:bounds["top"]]:
@@ -175,7 +186,10 @@ def select_family_bank(ciphertext,training,score_mask,bank,models,bounds,deadlin
     complete=all(r["complete"] for r in rows)
     public={"complete":complete,"truncated":not complete,"stop_reason":"exhausted_bank" if complete else "censored_model_bank",
             "model_records":rows,"evaluated":evaluated,"literal_reencryptions":evaluated,
-            "distinct_completed_plaintexts":len(ranked),"candidates":retained,
+            "distinct_evaluated_plaintexts":len(ranked),"candidates":retained,
+            "distinct_completed_plaintexts":len(set().union(*family_groups)),
+            "distinct_completed_families":len(family_groups),"family_count_complete":complete,
+            "completed_family_groups":list(family_groups.values()),
             "best_selected_score":ranked[0]["selected_score"] if ranked else None,
             "score_mask":list(score_mask),"scored_windows":len(starts),
             "ordered_family_stream_sha256":stream.hexdigest(),
@@ -202,7 +216,8 @@ def run_validation(command,request):
     if command not in ("validate-holdout","validate-controls"):
         raise ValueError("unknown validation command")
     extra=({"target","ciphertext","cribs","withheld_positions"} if command=="validate-holdout"
-           else {"seed","crib_positions","cases"})
+           else {"seed","crib_positions","cases","null_replicates","decision_score_threshold",
+                 "minimum_distinct_surviving_families","max_protocol_candidates"})
     _check(request,COMMON|extra)
     started=time.monotonic()
     models,bank,bounds=_configuration(request)
@@ -236,6 +251,13 @@ def run_validation(command,request):
         if not isinstance(cases,list) or not 2<=len(cases)<=8 or len(bank)<2:
             raise ValueError("controls require2..8 independent cases and at least2 declared model records")
         seed=_integer(request.get("seed",20261014),"seed",0,2**63-1)
+        replicas=_integer(request.get("null_replicates",1),"null_replicates",1,16)
+        minimum_families=_integer(request.get("minimum_distinct_surviving_families",1),
+                                  "minimum_distinct_surviving_families",1,16)
+        protocol_cap=_integer(request.get("max_protocol_candidates",100000),"max_protocol_candidates",1,100000)
+        threshold=request.get("decision_score_threshold")
+        if threshold is not None and (type(threshold) not in (int,float) or not math.isfinite(threshold)):
+            raise ValueError("decision_score_threshold must be a finite frozen number")
         ids,texts=set(),set()
         bank_by_id={r["id"]:r for r in bank}
         length=None
@@ -272,41 +294,77 @@ def run_validation(command,request):
         if not mask or len(mask)>=length-1:
             raise ValueError("control mask must leave at least two unsupplied letters")
         records=[]
+        visits=0
+        def select(text,known,generator,row):
+            nonlocal visits
+            cipher=literal_encrypt(text,row["keys"],generator["stages"],_alphabet(generator.get("alphabet","kryptos")))
+            selected_bounds=dict(bounds,max_total_candidates=min(bounds["max_total_candidates"],protocol_cap-visits))
+            selection,ranked=select_family_bank(cipher,known,mask,bank,models,selected_bounds,deadline)
+            visits+=selection["evaluated"]
+            return {"ciphertext":cipher,"generating_plaintext":text,"selection":selection,
+                    "assessment":_truth_assessment(ranked,text,selection["complete"])}
+        def compare(positive,null):
+            p,q=positive["selection"],null["selection"]
+            comparable=p["complete"] and q["complete"] and p["best_selected_score"] is not None and q["best_selected_score"] is not None
+            return {"complete_comparison":comparable,
+                    "null_best_minus_positive_best":q["best_selected_score"]-p["best_selected_score"] if comparable else None,
+                    "null_best_at_least_positive_best":q["best_selected_score"]>=p["best_selected_score"] if comparable else None}
         for index,(row,generator) in enumerate(prepared):
             truth=row["plaintext"]
             positions=[i for i in range(length) if i not in mask]
-            letters=[truth[i] for i in positions]
-            random.Random(seed+index).shuffle(letters)
-            null=list(truth)
-            for i,c in zip(positions,letters): null[i]=c
-            null="".join(null)
-            if null==truth:
-                raise ValueError("frozen shuffle did not change this plaintext; choose a varied control passage")
-            assert Counter(null)==Counter(truth) and all(null[i]==truth[i] for i in mask)
             known={i:truth[i] for i in mask}
             pair={"id":row["id"],"source":row["source"],"seed":seed+index,
                   "generating_model_id":generator["id"],"generating_keys":row["keys"]}
             if "language" in row:
                 pair["language"]=row["language"]
-            for label,text in (("positive",truth),("null",null)):
-                cipher=literal_encrypt(text,row["keys"],generator["stages"],_alphabet(generator.get("alphabet","kryptos")))
-                selection,ranked=select_family_bank(cipher,known,mask,bank,models,bounds,deadline)
-                pair[label]={"ciphertext":cipher,"generating_plaintext":text,"selection":selection,
-                             "assessment":_truth_assessment(ranked,text,selection["complete"])}
-            p,q=pair["positive"]["selection"],pair["null"]["selection"]
-            comparable=p["complete"] and q["complete"] and p["best_selected_score"] is not None and q["best_selected_score"] is not None
-            pair["comparison"]={"complete_comparison":comparable,
-                                "null_best_minus_positive_best":q["best_selected_score"]-p["best_selected_score"] if comparable else None,
-                                "null_best_at_least_positive_best":q["best_selected_score"]>=p["best_selected_score"] if comparable else None}
+            pair["positive"]=select(truth,known,generator,row)
+            pair["null_replicates"]=[]
+            for replicate in range(replicas):
+                # Replicate zero retains the historical seed convention. Keep
+                # repeated/identity shuffles: discarding them would change the
+                # declared randomization distribution after seeing the draw.
+                trial_seed=seed+index+replicate*len(prepared)
+                letters=[truth[i] for i in positions]
+                random.Random(trial_seed).shuffle(letters)
+                null=list(truth)
+                for i,c in zip(positions,letters): null[i]=c
+                null="".join(null)
+                assert Counter(null)==Counter(truth) and all(null[i]==truth[i] for i in mask)
+                value=select(null,known,generator,row)
+                value.update(replicate=replicate,seed=trial_seed,shuffle_changed=null!=truth)
+                value["comparison"]=compare(pair["positive"],value)
+                pair["null_replicates"].append(value)
+            pair["null"]=pair["null_replicates"][0]
+            pair["comparison"]=pair["null"]["comparison"]
             records.append(pair)
-        complete=all(r[label]["selection"]["complete"] for r in records for label in ("positive","null"))
-        result.update(cases=records,crib_positions=mask,seed=seed,complete=complete,truncated=not complete,
+        positives=[r["positive"] for r in records]
+        nulls=[v for r in records for v in r["null_replicates"]]
+        complete=all(r["selection"]["complete"] for r in positives+nulls)
+        completed_nulls=[r for r in nulls if r["selection"]["complete"]]
+        def exceeds(row):
+            score=row["selection"]["best_selected_score"]
+            return score is not None and score>=threshold
+        exceeded=None if threshold is None else sum(exceeds(r) for r in completed_nulls)
+        rate_ready=threshold is not None and complete
+        result.update(cases=records,crib_positions=mask,seed=seed,null_replicates=replicas,
+                      max_protocol_candidates=protocol_cap,complete=complete,truncated=not complete,
+                      family_coverage={"minimum_distinct_surviving_families":minimum_families,
+                        "positive_counts":[r["selection"]["distinct_completed_families"] for r in positives],
+                        "criterion_satisfied":all(r["selection"]["complete"] and r["selection"]["distinct_completed_families"]>=minimum_families for r in positives)},
+                      calibration={"decision_score_threshold":threshold,"null_trials":len(nulls),
+                        "completed_null_trials":len(completed_nulls),"censored_null_trials":len(nulls)-len(completed_nulls),
+                        "completed_null_exceedances":exceeded,
+                        "empirical_exceedance_rate":exceeded/len(nulls) if rate_ready else None,
+                        "rate_available":rate_ready,
+                        "positive_threshold_hits":None if threshold is None else sum(r["selection"]["complete"] and exceeds(r) for r in positives),
+                        "selection_scope":"Every trial reruns every bank family and frozen scoring model with the same limits; maximum score across the full bank is assessed.",
+                        "interpretation":"Descriptive frequency under these fixed conditional shuffles and procedure; not an authenticity probability, p-value, or population false-positive rate. Incomplete trials suppress the full-protocol rate."},
                       stop_reason="exhausted_protocol" if complete else "censored_protocol",
-                      summary={"positive_inputs":len(records),"paired_null_inputs":len(records),
-                               "completed_comparisons":sum(r["comparison"]["complete_comparison"] for r in records),
-                               "candidate_visits":sum(r[label]["selection"]["evaluated"] for r in records for label in ("positive","null")),
+                      summary={"positive_inputs":len(records),"paired_null_inputs":len(nulls),
+                               "completed_comparisons":sum(r["comparison"]["complete_comparison"] for r in nulls),
+                               "candidate_visits":visits,
                                "positive_truth_rank_one":sum(r["positive"]["selection"]["complete"] and r["positive"]["assessment"]["truth_competition_rank"]==1 for r in records),
-                               "nulls_with_surviving_wrong_candidates":sum(r["null"]["assessment"]["wrong_alternatives"]>0 for r in records)})
+                               "nulls_with_surviving_wrong_candidates":sum(r["assessment"]["wrong_alternatives"]>0 for r in nulls)})
     for row in models:
         if hashlib.sha256(Path(row["path"]).read_bytes()).hexdigest()!=row["sha256"]:
             raise RuntimeError("frozen scoring model changed during validation")

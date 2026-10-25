@@ -1,0 +1,295 @@
+{
+  "schema": "kryptos.sculpture-text-layout.v1",
+  "verified_on": "2026-10-13",
+  "coordinate_convention": "Zero-based row and ordinal character position within each source transcription row; not measured physical x/y/z. Upper and lower blocks concatenated without asserting their physical gap.",
+  "scope": "Complete main copper-screen cipher and tableau transcription, not all courtyard objects or 3D geometry.",
+  "physical_measurements": {
+    "units": null,
+    "letter_centers": null,
+    "panel_curvature": null,
+    "orientation_and_alignment_between_panels": null,
+    "row_spacing": null,
+    "column_spacing": null
+  },
+  "limitations": [
+    "Dunin reports hand verification in October2002 and notes that font alignment with the sculpture failed.",
+    "Variable row lengths are preserved; no rectangular padding is claimed to be an inscribed cell.",
+    "Two leading tableau header blanks preserve transcription formatting, not measured holes.",
+    "The as-inscribed K2 input is retained; no missing S correction is inserted.",
+    "Ordinal overlay rules below are modeling assumptions, not measured registration or Sanborn instructions."
+  ],
+  "sources": [
+    {
+      "path": "research/source_snapshots/sculpture-J/dunin_transcript.html.txt",
+      "url": "https://www.elonka.com/kryptos/transcript.html",
+      "sha256": "4ce3ce302046b85612c5fcd119ab57cbe4bc9ddf291d234d90aee3a6bbdf0aae"
+    },
+    {
+      "path": "research/source_snapshots/sculpture-J/cia_sculpture.html.txt",
+      "url": "https://www.cia.gov/legacy/headquarters/kryptos-sculpture/",
+      "sha256": "3067b304e1fbb9bd04a634a39203216bb6e587a2f2fe9cdea83cb83423100b60"
+    }
+  ],
+  "panels": {
+    "cipher": {
+      "rows": [
+        "EMUFPHZLRFAXYUSDJKZLDKRNSHGNFIVJ",
+        "YQTQUXQBQVYUVLLTREVJYQTMKYRDMFD",
+        "VFPJUDEEHZWETZYVGWHKKQETGFQJNCE",
+        "GGWHKK?DQMCPFQZDQMMIAGPFXHQRLG",
+        "TIMVMZJANQLVKQEDAGDVFRPJUNGEUNA",
+        "QZGZLECGYUXUEENJTBJLBQCRTBJDFHRR",
+        "YIZETKZEMVDUFKSJHKFWHKUWQLSZFTI",
+        "HHDDDUVH?DWKBFUFPWNTDFIYCUQZERE",
+        "EVLDKFEZMOQQJLTTUGSYQPFEUNLAVIDX",
+        "FLGGTEZ?FKZBSFDQVGOGIPUFXHHDRKF",
+        "FHQNTGPUAECNUVPDJMQCLQUMUNEDFQ",
+        "ELZZVRRGKFFVOEEXBDMVPNFQXEZLGRE",
+        "DNQFMPNZGLFLPMRJQYALMGNUVPDXVKP",
+        "DQUMEBEDMHDAFMJGZNUPLGEWJLLAETG",
+        "ENDYAHROHNLSRHEOCPTEOIBIDYSHNAIA",
+        "CHTNREYULDSLLSLLNOHSNOSMRWXMNE",
+        "TPRNGATIHNRARPESLNNELEBLPIIACAE",
+        "WMTWNDITEENRAHCTENEUDRETNHAEOE",
+        "TFOLSEDTIWENHAEIOYTEYQHEENCTAYCR",
+        "EIFTBRSPAMHHEWENATAMATEGYEERLB",
+        "TEEFOASFIOTUETUAEOTOARMAEERTNRTI",
+        "BSEDDNIAAHTTMSTEWPIEROAGRIEWFEB",
+        "AECTDDHILCEIHSITEGOEAOSDDRYDLORIT",
+        "RKLMLEHAGTDHARDPNEOHMGFMFEUHE",
+        "ECDMRIPFEIMEHNLSSTTRTVDOHW?OBKR",
+        "UOXOGHULBSOLIFBBWFLRVQQPRNGKSSO",
+        "TWTQSJQSSEKZZWATJKLUDIAWINFBNYP",
+        "VTTMZFPKWGDKZXTJCDIGKUHUAUEKCAR"
+      ],
+      "row_count": 28,
+      "maximum_ordinal_width": 33,
+      "row_lengths": [
+        32,
+        31,
+        31,
+        30,
+        31,
+        32,
+        31,
+        31,
+        32,
+        31,
+        30,
+        31,
+        31,
+        31,
+        32,
+        30,
+        31,
+        30,
+        32,
+        30,
+        32,
+        31,
+        33,
+        29,
+        31,
+        31,
+        31,
+        31
+      ],
+      "cia_rows_contained": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "tableau": {
+      "rows": [
+        " ABCDEFGHIJKLMNOPQRSTUVWXYZABCD",
+        "AKRYPTOSABCDEFGHIJLMNQUVWXZKRYP",
+        "BRYPTOSABCDEFGHIJLMNQUVWXZKRYPT",
+        "CYPTOSABCDEFGHIJLMNQUVWXZKRYPTO",
+        "DPTOSABCDEFGHIJLMNQUVWXZKRYPTOS",
+        "ETOSABCDEFGHIJLMNQUVWXZKRYPTOSA",
+        "FOSABCDEFGHIJLMNQUVWXZKRYPTOSAB",
+        "GSABCDEFGHIJLMNQUVWXZKRYPTOSABC",
+        "HABCDEFGHIJLMNQUVWXZKRYPTOSABCD",
+        "IBCDEFGHIJLMNQUVWXZKRYPTOSABCDE",
+        "JCDEFGHIJLMNQUVWXZKRYPTOSABCDEF",
+        "KDEFGHIJLMNQUVWXZKRYPTOSABCDEFG",
+        "LEFGHIJLMNQUVWXZKRYPTOSABCDEFGH",
+        "MFGHIJLMNQUVWXZKRYPTOSABCDEFGHI",
+        "NGHIJLMNQUVWXZKRYPTOSABCDEFGHIJL",
+        "OHIJLMNQUVWXZKRYPTOSABCDEFGHIJL",
+        "PIJLMNQUVWXZKRYPTOSABCDEFGHIJLM",
+        "QJLMNQUVWXZKRYPTOSABCDEFGHIJLMN",
+        "RLMNQUVWXZKRYPTOSABCDEFGHIJLMNQ",
+        "SMNQUVWXZKRYPTOSABCDEFGHIJLMNQU",
+        "TNQUVWXZKRYPTOSABCDEFGHIJLMNQUV",
+        "UQUVWXZKRYPTOSABCDEFGHIJLMNQUVW",
+        "VUVWXZKRYPTOSABCDEFGHIJLMNQUVWX",
+        "WVWXZKRYPTOSABCDEFGHIJLMNQUVWXZ",
+        "XWXZKRYPTOSABCDEFGHIJLMNQUVWXZK",
+        "YXZKRYPTOSABCDEFGHIJLMNQUVWXZKR",
+        "ZZKRYPTOSABCDEFGHIJLMNQUVWXZKRY",
+        " ABCDEFGHIJKLMNOPQRSTUVWXYZABCD"
+      ],
+      "row_count": 28,
+      "maximum_ordinal_width": 32,
+      "row_lengths": [
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        32,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31
+      ],
+      "cia_rows_contained": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "sections": {
+    "K1": {
+      "letter_span_zero_based_half_open": [
+        0,
+        63
+      ],
+      "letters": 63,
+      "ciphertext_sha256": "0da44afce6ff53845dee12a15f164036b598fcf40b6c0b3edc83996053c4e2fc"
+    },
+    "K2": {
+      "letter_span_zero_based_half_open": [
+        63,
+        432
+      ],
+      "letters": 369,
+      "ciphertext_sha256": "4118a78c60a6335c30c7fc2946f6c71fd6c2828fd550ea647c3b713313c0f9ff"
+    },
+    "K3": {
+      "letter_span_zero_based_half_open": [
+        432,
+        768
+      ],
+      "letters": 336,
+      "ciphertext_sha256": "db8807dfc8354a42dc2f52aed3f0b54ac938873372c6b504b4c8d69fdfc85c35"
+    },
+    "K4": {
+      "letter_span_zero_based_half_open": [
+        768,
+        865
+      ],
+      "letters": 97,
+      "ciphertext_sha256": "eea813570c7f1fd3b34674e47b5c3da8948026f5cefee612a0b38ffaa515ceab"
+    }
+  },
+  "anomalies": [
+    {
+      "kind": "question_mark",
+      "panel": "cipher",
+      "row": 3,
+      "column": 6,
+      "symbol": "?"
+    },
+    {
+      "kind": "question_mark",
+      "panel": "cipher",
+      "row": 7,
+      "column": 8,
+      "symbol": "?"
+    },
+    {
+      "kind": "question_mark",
+      "panel": "cipher",
+      "row": 9,
+      "column": 7,
+      "symbol": "?"
+    },
+    {
+      "kind": "question_mark",
+      "panel": "cipher",
+      "row": 24,
+      "column": 26,
+      "symbol": "?"
+    },
+    {
+      "kind": "extra_L",
+      "panel": "tableau",
+      "row": 14,
+      "column": 31,
+      "symbol": "L",
+      "source_basis": "Dunin HTML comment dated2003-10-08 explicitly records adding the extra L; CIA row agrees"
+    }
+  ]
+}

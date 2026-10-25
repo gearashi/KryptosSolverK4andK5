@@ -1,0 +1,1 @@
+{"cpu_oracle_cases": 72, "cuda_executed": true}

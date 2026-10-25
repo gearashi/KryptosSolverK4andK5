@@ -1,0 +1,83 @@
+{
+  "schema": "kryptos.competing-O-fixtures.v1",
+  "reservation": "Written before scoring; do not tune passages, thresholds, routes, keys, seeds or budgets after observing outcomes.",
+  "normalization": "NFKD, uppercase, retain A-Z, take first97 letters",
+  "design": "The first gather puts24 known positions in24 distinct key slots. Period25 leaves1 free key coordinate, period26 leaves2. An unknown-position swap moves the free direction support. This intentionally prevents early algebraic rejection, not a claim about Kryptos.",
+  "mask_zero_based": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73
+  ],
+  "expected_family_counts": [
+    26,
+    676,
+    26
+  ],
+  "cases": [
+    {
+      "id": "english-1",
+      "language": "English",
+      "source_prose": "A quiet observer followed the stream until the stone bridge appeared beyond the willow trees and then copied every mark into a small notebook before returning home.",
+      "plaintext": "AQUIETOBSERVERFOLLOWEDTHESTREAMUNTILTHESTONEBRIDGEAPPEAREDBEYONDTHEWILLOWTREESANDTHENCOPIEDEVERYM",
+      "source": "Authored for phase O before scoring; ASCII uppercase first97 letters; not a representative corpus. Synthetic clue-aware routes deliberately ensure distinct surviving families.",
+      "generating_model_id": "mask-first-p25",
+      "keys": [
+        "AHOVCJQXELSZGNUBIPWDKRYFM"
+      ]
+    },
+    {
+      "id": "english-2",
+      "language": "English",
+      "source_prose": "The old workshop contained a wooden compass and three unfinished maps whose margins described the changing shadows along the eastern wall during the summer mornings.",
+      "plaintext": "THEOLDWORKSHOPCONTAINEDAWOODENCOMPASSANDTHREEUNFINISHEDMAPSWHOSEMARGINSDESCRIBEDTHECHANGINGSHADOW",
+      "source": "Authored for phase O before scoring; ASCII uppercase first97 letters; not a representative corpus. Synthetic clue-aware routes deliberately ensure distinct surviving families.",
+      "generating_model_id": "mask-first-p26",
+      "keys": [
+        "FMTAHOVCJQXELSZGNUBIPWDKRY"
+      ]
+    },
+    {
+      "id": "french-1",
+      "language": "French",
+      "source_prose": "Le gardien ouvre la petite porte et regarde les arbres du jardin avant de noter la direction des ombres sur une feuille conservee dans son carnet de voyage.",
+      "plaintext": "LEGARDIENOUVRELAPETITEPORTEETREGARDELESARBRESDUJARDINAVANTDENOTERLADIRECTIONDESOMBRESSURUNEFEUILL",
+      "source": "Authored for phase O before scoring; ASCII uppercase first97 letters; not a representative corpus. Synthetic clue-aware routes deliberately ensure distinct surviving families.",
+      "generating_model_id": "mask-first-swap-p25",
+      "keys": [
+        "KRYFMTAHOVCJQXELSZGNUBIPW"
+      ]
+    },
+    {
+      "id": "spanish-1",
+      "language": "Spanish",
+      "source_prose": "La viajera observa las piedras del camino y dibuja sus sombras en una hoja antes de cruzar el puente para comparar las marcas con las notas guardadas en su cuaderno.",
+      "plaintext": "LAVIAJERAOBSERVALASPIEDRASDELCAMINOYDIBUJASUSSOMBRASENUNAHOJAANTESDECRUZARELPUENTEPARACOMPARARLAS",
+      "source": "Authored for phase O before scoring; ASCII uppercase first97 letters; not a representative corpus. Synthetic clue-aware routes deliberately ensure distinct surviving families.",
+      "generating_model_id": "mask-first-p26",
+      "keys": [
+        "PWDKRYFMTAHOVCJQXELSZGNUBI"
+      ]
+    }
+  ]
+}

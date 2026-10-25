@@ -1,0 +1,16 @@
+{
+  "schema": "kryptos.post-review-ui-integrity.v1",
+  "source": "kryptos/static/app.js",
+  "sha256_before": "d4083bdae12646ef8ecd9b2f67d4ce4c25ad7bbc5006f09aa964e08fb5045f5e",
+  "sha256_after": "d4083bdae12646ef8ecd9b2f67d4ce4c25ad7bbc5006f09aa964e08fb5045f5e",
+  "checks_passed": 4,
+  "cleanup": "Owned browser and isolated random-port server process trees closed.",
+  "files": {
+    "browser-console.txt": "9dcf1071584aaa6157590e6386bf02423ec53720c6202cf5dd0c130b4122ba3f",
+    "browser-result.json": "eeb547f2e4f46d17dbc555d78de964d46f4a2268d6b9332b3d161042cb61536c",
+    "check_joint_label.cjs": "f35aba0f4593ecb8a86c1af8904515d35819797a11ca60b0517ae719838b2473",
+    "joint-checkpoint-label.png": "c2c2d5025434bc89c8086b52d098c93096647338d9e5570f3882fe9fb3aee232",
+    "run_check.py": "744f5622b46984f5ec2ed75afac75f210e8f2f4b60cb2fc2be85ccb4f647532f",
+    "server.txt": "15fdfd40d143c38e0765604dff3f9b2feaef844c3153c065bdbac62c5c73ee31"
+  }
+}

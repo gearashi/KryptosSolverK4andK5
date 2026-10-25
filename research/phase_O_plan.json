@@ -1,0 +1,113 @@
+{
+  "schema": "kryptos.improvement-plan.v1",
+  "phase": "O",
+  "created_date": "2026-10-25",
+  "baseline": "d7c3bef3edeab631a2a965b1a96ced86b1215fda",
+  "user_priority": "Fewer search decisions or candidate evaluations to reach the same result. Wall-clock speed is not a solving-efficiency claim. Count factor evaluations separately; UI, calibration, transfer and delivery features are supporting work.",
+  "entries": [
+    {
+      "id": "O01",
+      "title": "Competing inequivalent plaintext-family controls",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Positive control has multiple distinct feasible families before scoring; full bank outcomes reported."
+    },
+    {
+      "id": "O02",
+      "title": "Full-bank repeated-null calibration",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Each null reruns identical frozen selection; complete/censored counts and empirical exceedances explicit."
+    },
+    {
+      "id": "O03",
+      "title": "Incremental exact CPU window scoring",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Same exact page ranking and candidate count, fewer ngram factor evaluations on sparse controls."
+    },
+    {
+      "id": "O04",
+      "title": "Coordinated feasible-family guidance",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Known interaction trap solved under fewer candidate evaluations than single-coordinate baseline; fixed held controls compare both work and failures."
+    },
+    {
+      "id": "O05",
+      "title": "Admissible joint route/key pruning",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Same exhaustive distinct-plaintext top-k; fewer candidate leaves on declared controls; ties and pruning-vs-count distinctions retained."
+    },
+    {
+      "id": "O06",
+      "title": "Capped elimination upper bounds",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Upper bound >= exhaustive residual optimum for every tested partial assignment; fewer proof nodes where stronger; caps preserve fallback."
+    },
+    {
+      "id": "O07",
+      "title": "Certified device-side survivor filtering",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Same integer-certified survivors/ties and exact ranking; reduced explicit interval payload transfer, not fewer search candidates."
+    },
+    {
+      "id": "O08",
+      "title": "Optional measured backend selection",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Bounded comparative sample, exact agreement, cache and overhead visible; hardware convenience, not fewer solving steps."
+    },
+    {
+      "id": "O09",
+      "title": "Bounded sculpture-grid path parameters",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Parameter aliases deduplicated before fitting; bounded bijections and independent encryption replay; explicit unknown method assumptions."
+    },
+    {
+      "id": "O10",
+      "title": "Checkpoint more exact commands",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Interrupted/restarted frontier matches uninterrupted ranking, counts and completeness; checkpoints atomic and compatible."
+    },
+    {
+      "id": "O11",
+      "title": "Durable drafts and personal presets",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Refresh restores drafts without starting computation; invalid payloads rejected."
+    },
+    {
+      "id": "O12",
+      "title": "Paginated tagged archived run history",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Thousands of summaries paginate without copying large candidate/results; archived records remain reversible."
+    },
+    {
+      "id": "O13",
+      "title": "Diagnosed records and verified read-only recovery",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Malformed/unsupported records reported; bounded hashed backups restore separate inert evidence; no imported frontier executes."
+    },
+    {
+      "id": "O14",
+      "title": "Clean-package CI and verified release publication",
+      "status": "proposed",
+      "decision": "accepted-for-bounded-implementation-and-evaluation",
+      "acceptance": "Clean source package tested on Windows/Linux; actual CUDA evidence separately required whenclaimed; published release/tag/hash/gearashi attribution verified."
+    }
+  ],
+  "non_claims": [
+    "No authenticated K4/K5 solution",
+    "No universal search improvement",
+    "No probability of authenticity inferred from null controls",
+    "No change to historical evidence"
+  ]
+}

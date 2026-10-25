@@ -14,6 +14,106 @@ class _Stop(Exception):
     pass
 
 
+def mini_bucket_upper(problem, assignment=None, *, bucket_entries=256,
+                      max_entries=20000, max_operations=200000):
+    """Deterministic bounded relaxation of nonnegative max-product elimination.
+
+    Split an overlarge elimination bucket into smaller groups. For each fixed
+    separator assignment, max_x(prod_g F_g(x)) <= prod_g(max_x F_g(x)).
+    Repeating this inequality gives an admissible upper bound, including zeros
+    and powered factors. No witness or lexical optimum follows from the bound.
+    A resource cutoff returns None, so callers retain their previous bound.
+    Caps are deterministic (no wall clock), allowing checkpoint reconstruction.
+    """
+    from .search_runtime import _integer, _validate, evaluate_factor
+    domains, factors = _validate(problem)
+    _integer(bucket_entries, "elimination_bucket_entries", 1, 100000)
+    _integer(max_entries, "elimination_max_entries", 1, 1000000)
+    _integer(max_operations, "elimination_max_operations", 1, 10000000)
+    point = tuple(-1 for _ in domains) if assignment is None else assignment
+    if not isinstance(point, (tuple, list)) or len(point) != len(domains) or any(type(v) is not int or not -1 <= v < d for v, d in zip(point, domains)):
+        raise ValueError("invalid residual assignment")
+    work = dict(operations=0, factor_evaluations=0, product_multiplications=0,
+                planning_operations=0, allocated_entries=0, split_buckets=0,
+                eliminated_variables=0, max_bucket_entries=0)
+
+    def tick(kind, count=1):
+        if work["operations"] + count > max_operations:
+            raise _Stop("operation_limit")
+        work["operations"] += count
+        work[kind] += count
+
+    def size(scope):
+        return math.prod(domains[v] for v in scope)
+
+    def reserve(count):
+        if count > bucket_entries:
+            raise _Stop("bucket_entry_limit")
+        if work["allocated_entries"] + count > max_entries:
+            raise _Stop("entry_limit")
+        work["allocated_entries"] += count
+
+    try:
+        tables = []
+        for f in factors:
+            scope = tuple(v for v in f["scope"] if point[v] < 0)
+            reserve(size(scope))
+            values = {}
+            for row in product(*(range(domains[v]) for v in scope)):
+                tick("factor_evaluations")
+                filled = dict(zip(scope, row))
+                value = evaluate_factor(f, tuple(filled[v] if point[v] < 0 else point[v] for v in f["scope"]), domains, problem.get("model"))
+                values[row] = value ** f.get("power", 1)
+            tables.append((scope, values))
+        for variable in sorted({v for scope, _ in tables for v in scope}):
+            bucket, rest = [], []
+            for table in tables:
+                tick("planning_operations")
+                (bucket if variable in table[0] else rest).append(table)
+            groups = []
+            for table in bucket:
+                placed = False
+                for joined, items in groups:
+                    tick("planning_operations")
+                    union = joined | set(table[0])
+                    if size(union) <= bucket_entries:
+                        joined.update(table[0])
+                        items.append(table)
+                        placed = True
+                        break
+                if not placed:
+                    groups.append((set(table[0]), [table]))
+            if len(groups) > 1:
+                work["split_buckets"] += 1
+            for joined, items in groups:
+                work["max_bucket_entries"] = max(work["max_bucket_entries"], size(joined))
+                separator = tuple(sorted(joined - {variable}))
+                reserve(size(separator))
+                output = {}
+                for row in product(*(range(domains[v]) for v in separator)):
+                    filled = dict(zip(separator, row))
+                    best = 0
+                    for value in range(domains[variable]):
+                        filled[variable] = value
+                        score = 1
+                        for scope, table in items:
+                            tick("product_multiplications")
+                            score *= table[tuple(filled[v] for v in scope)]
+                        best = max(best, score)
+                    output[row] = best
+                rest.append((separator, output))
+            tables = rest
+            work["eliminated_variables"] += 1
+        upper = 1
+        for scope, table in tables:
+            assert not scope
+            tick("product_multiplications")
+            upper *= table[()]
+        return dict(bound_available=True, upper_bound=upper, stop_reason="bounded_elimination", work=work)
+    except _Stop as exc:
+        return dict(bound_available=False, upper_bound=None, stop_reason=str(exc), work=work)
+
+
 def exact_decomposition(problem, assignment=None, *, max_entries=20000,
                         max_operations=200000, time_limit_seconds=5):
     """Solve one residual domain, or return inconclusive without exclusions.

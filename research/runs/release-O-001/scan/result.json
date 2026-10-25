@@ -1,0 +1,242 @@
+{
+  "schema": "kryptos.scan-work-O.v1",
+  "cpu_oracle_cases": 72,
+  "oracle_candidate_visits": 990,
+  "comparisons": [
+    {
+      "case": "sparse",
+      "baseline": {
+        "incremental_letter_updates": 26,
+        "window_factor_evaluations": 988,
+        "full_rescore_window_evaluations": 988,
+        "window_factor_evaluations_avoided": 0,
+        "full_rescores": 26,
+        "incremental_rescores": 0,
+        "window_plan_memberships": 114,
+        "candidate_evaluations": 26,
+        "interpretation": "Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates."
+      },
+      "incremental": {
+        "incremental_letter_updates": 26,
+        "window_factor_evaluations": 63,
+        "full_rescore_window_evaluations": 988,
+        "window_factor_evaluations_avoided": 925,
+        "full_rescores": 1,
+        "incremental_rescores": 25,
+        "window_plan_memberships": 114,
+        "candidate_evaluations": 26,
+        "interpretation": "Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates."
+      },
+      "exact_ranking_equal": true
+    },
+    {
+      "case": "dense",
+      "baseline": {
+        "incremental_letter_updates": 1040,
+        "window_factor_evaluations": 988,
+        "full_rescore_window_evaluations": 988,
+        "window_factor_evaluations_avoided": 0,
+        "full_rescores": 26,
+        "incremental_rescores": 0,
+        "window_plan_memberships": 114,
+        "candidate_evaluations": 26,
+        "interpretation": "Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates."
+      },
+      "incremental": {
+        "incremental_letter_updates": 1040,
+        "window_factor_evaluations": 988,
+        "full_rescore_window_evaluations": 988,
+        "window_factor_evaluations_avoided": 0,
+        "full_rescores": 26,
+        "incremental_rescores": 0,
+        "window_plan_memberships": 114,
+        "candidate_evaluations": 26,
+        "interpretation": "Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates."
+      },
+      "exact_ranking_equal": true
+    }
+  ],
+  "cuda": {
+    "executed": true,
+    "hardware": {
+      "cpu": {
+        "ready": true,
+        "python": "3.12.2"
+      },
+      "cuda": {
+        "ready": true,
+        "devices": [
+          {
+            "id": 0,
+            "name": "NVIDIA GeForce RTX 2060",
+            "compute_capability": [
+              7,
+              5
+            ],
+            "total_memory_bytes": 6442123264
+          }
+        ],
+        "environment": {
+          "mode": "cuda12_component_wheels",
+          "configured_cuda_path": null,
+          "dll_directories": [
+            "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin",
+            "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin"
+          ],
+          "libraries": {
+            "cudart": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin\\cudart64_12.dll",
+            "nvrtc": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin\\nvrtc64_120_0.dll"
+          },
+          "toolkit_root": null,
+          "package_versions": {
+            "cupy": "14.2.0",
+            "runtime": "12.9.79",
+            "nvrtc": "12.9.86"
+          }
+        },
+        "cupy_version": "14.2.0",
+        "driver_version": 13050,
+        "runtime_version": 12090,
+        "compiled_kernel_verified": true,
+        "current_device": 0
+      }
+    },
+    "interval_oracle_cases": 13,
+    "pages": [
+      {
+        "offset": 0,
+        "evaluated_per_backend": 128,
+        "certification": {
+          "mode": "certified",
+          "immutable_device_cache_hit": false,
+          "method": "integer outward-rounded log2 intervals plus exact CPU overlap comparison",
+          "fractional_bits": 32,
+          "threshold_lower_hex": "0x22d0c69bd6e",
+          "interval_candidates": 5,
+          "eliminated_candidates": 123,
+          "max_interval_width_hex": "0xa",
+          "filtering_location": "cuda",
+          "filter_download_bytes": 37,
+          "previous_interval_download_bytes": 2048,
+          "filter_transfer_bytes_avoided": 2011,
+          "transfer_accounting": "Explicit filter payload only; excludes library control traffic and candidate-letter transfers. May increase for tiny pages.",
+          "exact_scored_candidates": 5
+        },
+        "retained_exact_ranking_equal": true,
+        "cpu_work": {
+          "incremental_letter_updates": 816,
+          "window_factor_evaluations": 1280,
+          "full_rescore_window_evaluations": 1280,
+          "window_factor_evaluations_avoided": 0,
+          "full_rescores": 128,
+          "incremental_rescores": 0,
+          "window_plan_memberships": 30,
+          "candidate_evaluations": 128,
+          "interpretation": "Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates."
+        }
+      },
+      {
+        "offset": 256,
+        "evaluated_per_backend": 128,
+        "certification": {
+          "mode": "certified",
+          "immutable_device_cache_hit": true,
+          "method": "integer outward-rounded log2 intervals plus exact CPU overlap comparison",
+          "fractional_bits": 32,
+          "threshold_lower_hex": "0x21abb624a56",
+          "interval_candidates": 5,
+          "eliminated_candidates": 123,
+          "max_interval_width_hex": "0xa",
+          "filtering_location": "cuda",
+          "filter_download_bytes": 37,
+          "previous_interval_download_bytes": 2048,
+          "filter_transfer_bytes_avoided": 2011,
+          "transfer_accounting": "Explicit filter payload only; excludes library control traffic and candidate-letter transfers. May increase for tiny pages.",
+          "exact_scored_candidates": 5
+        },
+        "retained_exact_ranking_equal": true,
+        "cpu_work": {
+          "incremental_letter_updates": 834,
+          "window_factor_evaluations": 1280,
+          "full_rescore_window_evaluations": 1280,
+          "window_factor_evaluations_avoided": 0,
+          "full_rescores": 128,
+          "incremental_rescores": 0,
+          "window_plan_memberships": 30,
+          "candidate_evaluations": 128,
+          "interpretation": "Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates."
+        }
+      },
+      {
+        "offset": 512,
+        "evaluated_per_backend": 128,
+        "certification": {
+          "mode": "certified",
+          "immutable_device_cache_hit": true,
+          "method": "integer outward-rounded log2 intervals plus exact CPU overlap comparison",
+          "fractional_bits": 32,
+          "threshold_lower_hex": "0x22efb350c08",
+          "interval_candidates": 5,
+          "eliminated_candidates": 123,
+          "max_interval_width_hex": "0xa",
+          "filtering_location": "cuda",
+          "filter_download_bytes": 37,
+          "previous_interval_download_bytes": 2048,
+          "filter_transfer_bytes_avoided": 2011,
+          "transfer_accounting": "Explicit filter payload only; excludes library control traffic and candidate-letter transfers. May increase for tiny pages.",
+          "exact_scored_candidates": 5
+        },
+        "retained_exact_ranking_equal": true,
+        "cpu_work": {
+          "incremental_letter_updates": 822,
+          "window_factor_evaluations": 1280,
+          "full_rescore_window_evaluations": 1280,
+          "window_factor_evaluations_avoided": 0,
+          "full_rescores": 128,
+          "incremental_rescores": 0,
+          "window_plan_memberships": 30,
+          "candidate_evaluations": 128,
+          "interpretation": "Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates."
+        }
+      }
+    ],
+    "calibration": {
+      "policy": "bounded measured CPU/CUDA page",
+      "cache_hit": false,
+      "sample_offset_decimal": "0",
+      "sample_count": 32,
+      "calibration_candidate_evaluations_this_call": 64,
+      "interpretation": "Hardware convenience based on sample elapsed time; no fewer search steps claimed. Calibration adds uncommitted evaluations.",
+      "cpu_seconds": 0.0013569999719038606,
+      "cpu_window_factor_evaluations": 320,
+      "calibration_cpu_candidate_evaluations": 32,
+      "calibration_cuda_requested_candidates": 32,
+      "cuda_seconds": 0.002368799992837012,
+      "cuda_exact_rescored": 5,
+      "exact_sample_agreement": true,
+      "selected_backend": "cpu"
+    },
+    "cached_calibration": {
+      "policy": "bounded measured CPU/CUDA page",
+      "cache_hit": true,
+      "sample_offset_decimal": "0",
+      "sample_count": 32,
+      "calibration_candidate_evaluations_this_call": 0,
+      "interpretation": "Hardware convenience based on sample elapsed time; no fewer search steps claimed. Calibration adds uncommitted evaluations.",
+      "cpu_seconds": 0.0013569999719038606,
+      "cpu_window_factor_evaluations": 320,
+      "calibration_cpu_candidate_evaluations": 32,
+      "calibration_cuda_requested_candidates": 32,
+      "cuda_seconds": 0.002368799992837012,
+      "cuda_exact_rescored": 5,
+      "exact_sample_agreement": true,
+      "selected_backend": "cpu"
+    }
+  },
+  "limits": [
+    "Fixed mechanistic controls, previously observed during tests; no reserved recovery-rate claim.",
+    "Candidate counts are unchanged; fewer factor evaluations are a separate metric.",
+    "GPU compaction changes host transfer, not the set of mathematical candidates.",
+    "Optional measured backend calibration adds work; it is not a search-efficiency improvement."
+  ]
+}

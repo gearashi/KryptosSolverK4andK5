@@ -181,15 +181,23 @@ def evaluate_factor(f, values, domains, model):
 
 
 class _Evaluator:
-    def __init__(self,problem,cache_limit,local_limit,factor_group_size=0,group_exact_limit=4096):
+    def __init__(self,problem,cache_limit,local_limit,factor_group_size=0,group_exact_limit=4096,
+                 elimination_bound="off", elimination_bucket_entries=256,
+                 elimination_max_entries=20000, elimination_max_operations=200000):
         self.domains,self.factors = _validate(problem)
+        self.problem = problem
+        self.elimination_bound = elimination_bound
+        self.elimination_options = dict(bucket_entries=elimination_bucket_entries,
+            max_entries=elimination_max_entries, max_operations=elimination_max_operations)
         self.model = problem.get("model")
         self.cache_limit,self.local_limit = cache_limit,local_limit
         self.cache = {}
         self.groups=factor_partition(self.factors,factor_group_size)
         self.group_exact_limit=_integer(group_exact_limit,"group_exact_limit",1,100000)
         self.stats = {"cache_hits":0,"bound_evaluations":0,"exact_local_completions":0,"relaxed_bounds":0,"correlated_bounds":0,"observed_grams_checked":0,
-                      "group_bounds":0,"group_exact_completions":0,"group_fallbacks":0}
+                      "group_bounds":0,"group_exact_completions":0,"group_fallbacks":0,
+                      "elimination_attempts":0,"elimination_tightenings":0,"elimination_fallbacks":0,
+                      "elimination_operations":0,"elimination_factor_evaluations":0}
         self.grams = [] if self.model is None else sorted(self.model["counts"].items(),key=lambda kv:(-kv[1],kv[0]))
         self.correlated = None if self.model is None else CorrelatedNgramBound(self.model["alphabet"],self.model["counts"],self.model["p"],self.model["q"])
 
@@ -277,7 +285,26 @@ class _Evaluator:
             if len(self.cache)<self.cache_limit:
                 self.cache[key]=upper
             bounds.append(upper)
-        return math.prod(bounds)
+        upper = math.prod(bounds)
+        if self.elimination_bound == "mini_bucket" and upper and any(v < 0 for v in assignment):
+            key = ("mini_bucket", tuple(assignment))
+            if key in self.cache:
+                self.stats["cache_hits"] += 1
+                return min(upper, self.cache[key])
+            from .factor_decomposition import mini_bucket_upper
+            report = mini_bucket_upper(self.problem, assignment, **self.elimination_options)
+            self.stats["elimination_attempts"] += 1
+            self.stats["elimination_operations"] += report["work"]["operations"]
+            self.stats["elimination_factor_evaluations"] += report["work"]["factor_evaluations"]
+            if report["bound_available"]:
+                if report["upper_bound"] < upper:
+                    self.stats["elimination_tightenings"] += 1
+                upper = min(upper, report["upper_bound"])
+            else:
+                self.stats["elimination_fallbacks"] += 1
+            if len(self.cache) < self.cache_limit:
+                self.cache[key] = upper
+        return upper
 
 
 def score_assignment(problem,assignment):
@@ -288,12 +315,16 @@ def score_assignment(problem,assignment):
 
 
 def _identity(problem,ordering,local_limit,groups=(),group_exact_limit=4096,
-              decomposition="off", decomposition_max_entries=20000, decomposition_max_operations=200000):
+              decomposition="off", decomposition_max_entries=20000, decomposition_max_operations=200000,
+              elimination_bound="off", elimination_bucket_entries=256,
+              elimination_max_entries=20000, elimination_max_operations=200000):
     root = Path(__file__).resolve().parent
     return {"problem_sha256":_digest(problem),"ordering":ordering,"local_exact_limit":local_limit,
             "factor_groups":[list(g) for g in groups],"group_exact_limit":group_exact_limit,
             "decomposition":decomposition,"decomposition_max_entries":decomposition_max_entries,
             "decomposition_max_operations":decomposition_max_operations,
+            "elimination_bound":elimination_bound,"elimination_bucket_entries":elimination_bucket_entries,
+            "elimination_max_entries":elimination_max_entries,"elimination_max_operations":elimination_max_operations,
             "sources":{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ("search_runtime.py","language.py","correlated_bound.py","factor_decomposition.py","guided_search.py")},
             "version":"adaptive-search-v4; bounded exact residual elimination; verified assignment seeds; lexicographically smallest original assignment"}
 
@@ -302,7 +333,9 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                   max_cache_entries=100000,local_exact_limit=64,ordering="impact",
                   resume_path=None,checkpoint_path=None,factor_group_size=0,group_exact_limit=4096,
                   initial_assignments=(),elapsed_before_seconds=0,decomposition="off",
-                  decomposition_max_entries=20000,decomposition_max_operations=200000):
+                  decomposition_max_entries=20000,decomposition_max_operations=200000,
+                  elimination_bound="off",elimination_bucket_entries=256,
+                  elimination_max_entries=20000,elimination_max_operations=200000):
     """Return exact incumbent/bound, optionally preserving the live frontier.
 
     Caps are cooperative (checked between node expansions). Changing a cap on
@@ -319,6 +352,11 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
         raise ValueError("decomposition must be off or auto")
     _integer(decomposition_max_entries,"decomposition_max_entries",1,1000000)
     _integer(decomposition_max_operations,"decomposition_max_operations",1,10000000)
+    if elimination_bound not in ("off", "mini_bucket"):
+        raise ValueError("elimination_bound must be off or mini_bucket")
+    _integer(elimination_bucket_entries,"elimination_bucket_entries",1,100000)
+    _integer(elimination_max_entries,"elimination_max_entries",1,1000000)
+    _integer(elimination_max_operations,"elimination_max_operations",1,10000000)
     if isinstance(elapsed_before_seconds,bool) or not isinstance(elapsed_before_seconds,(int,float)) or not math.isfinite(elapsed_before_seconds) or elapsed_before_seconds<0:
         raise ValueError("elapsed_before_seconds must be finite and nonnegative")
     if not isinstance(initial_assignments,(list,tuple)) or len(initial_assignments)>100:
@@ -334,10 +372,12 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
         # Keep earlier work separate: backdating a large clock value can round
         # away a small prior duration and silently restore spent budget.
         return elapsed_before_seconds + (time.monotonic() - actual_started)
-    evaluator = _Evaluator(problem,max_cache_entries,local_exact_limit,factor_group_size,group_exact_limit)
+    evaluator = _Evaluator(problem,max_cache_entries,local_exact_limit,factor_group_size,group_exact_limit,
+        elimination_bound,elimination_bucket_entries,elimination_max_entries,elimination_max_operations)
     domains = evaluator.domains
     identity = _identity(problem,ordering,local_exact_limit,evaluator.groups,group_exact_limit,
-                         decomposition,decomposition_max_entries,decomposition_max_operations)
+                         decomposition,decomposition_max_entries,decomposition_max_operations,
+                         elimination_bound,elimination_bucket_entries,elimination_max_entries,elimination_max_operations)
     best = tuple(0 for _ in domains)
     best_score = evaluator.upper(best)
     root = tuple(-1 for _ in domains)
@@ -481,6 +521,8 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                       "local_exact_limit":local_exact_limit,"time_limit_seconds":time_limit_seconds,
                       "factor_group_size":factor_group_size,"group_exact_limit":group_exact_limit,
                       "decomposition":decomposition,"decomposition_max_entries":decomposition_max_entries,
-                      "decomposition_max_operations":decomposition_max_operations},
+                      "decomposition_max_operations":decomposition_max_operations,
+                      "elimination_bound":elimination_bound,"elimination_bucket_entries":elimination_bucket_entries,
+                      "elimination_max_entries":elimination_max_entries,"elimination_max_operations":elimination_max_operations},
             "ordering":ordering,"runtime_seconds":elapsed(),
             "interpretation":"Exact bounds for this product objective only. Lazy letter-domain bounds may ignore correlations; pruning remains admissible. No authentication."}

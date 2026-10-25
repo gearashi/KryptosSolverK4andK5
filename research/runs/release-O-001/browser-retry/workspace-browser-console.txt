@@ -1,0 +1,23 @@
+PASS Dedicated workspace opens without computation
+PASS Incomplete recipes, K5 source and notes survive reload
+PASS Restoring a draft never starts a job
+PASS New optimizer strategies default off
+PASS Optional block and mini-bucket controls write bounded request fields
+PASS Joint admissible pruning is explicit
+PASS Measured device choice discloses extra work and uses one worker
+PASS Personal preset survives reload and loads without execution
+PASS Loaded personal preset can explicitly start a bounded control
+PASS Tagged archive is searchable and original evidence remains intact
+PASS Unarchive reverses visibility without deleting the record
+PASS Workspace backup includes editing state and saved run
+PASS Recovered draft and presets remain available for explicit loading
+PASS Recovery creates a new read-only identity with resume disabled
+PASS Recovery leaves original job and current editing state unchanged
+PASS Recovered records cannot be executed through resume
+PASS Tampered backup is rejected before restore
+PASS Stale-tab draft conflict is visible and preserves newer state
+PASS workspace mobile has no horizontal page overflow
+PASS history mobile has no horizontal page overflow
+PASS No browser JavaScript errors
+PASS No active computation remains
+{"passed":22,"errors":[]}

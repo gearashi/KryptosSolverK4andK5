@@ -1,0 +1,52 @@
+{
+  "schema": "kryptos.post-review-ui.v1",
+  "passed": 4,
+  "checks": [
+    "Isolated source dashboard opens idle",
+    "Tiny CPU joint job commits a states_total checkpoint",
+    "Saved frontier displays the exact joint search-work count with its correct unit",
+    "No browser JavaScript errors"
+  ],
+  "errors": [],
+  "request": {
+    "target": "custom",
+    "ciphertext": "DKBIJHIFGN",
+    "cribs": [
+      {
+        "start": 1,
+        "text": "A"
+      }
+    ],
+    "width": 4,
+    "period": 2,
+    "order": "TS",
+    "alphabet": "standard",
+    "model_path": "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json",
+    "top": 3,
+    "max_orders": 10,
+    "max_evaluations": 10,
+    "max_states": 32,
+    "time_limit_seconds": 1
+  },
+  "state": "limited",
+  "run_id": "d803156148a141869a75ea8aa8214868",
+  "exact_checkpoint": {
+    "file": "1025d6aafab2485eb66ae7e2f5a1049b.json",
+    "sha256": "a7b994a4fe3da10123f6b5764b82366da13492824e6b24a730cd6fb3c86d1ac0",
+    "sequence": 1,
+    "states_total": 32
+  },
+  "progress": {
+    "completed": 32,
+    "total": null,
+    "unit": "search work steps",
+    "candidate_evaluations": 0,
+    "frontier_nodes": 4,
+    "completed_decimal": "32",
+    "total_decimal": null
+  },
+  "expected": "slice 1 · 32 search work steps",
+  "label": "Saved target: CUSTOM · 10 lettersSearch: incomplete / boundedDistinct-text top-k: exact over evaluated completions onlySaved frontier: slice 1 · 32 search work stepsStopped at: max statesBackends used: cpu",
+  "served_app_js_sha256": "d4083bdae12646ef8ecd9b2f67d4ce4c25ad7bbc5006f09aa964e08fb5045f5e",
+  "scope": "One bounded CPU joint job, maximum32 search work steps and10 scored completions. No full browser suite or GPU rerun."
+}

@@ -16,7 +16,7 @@ def validate_resources(values, backend="cpu"):
         value=out["target_page_seconds"]
         if type(value) not in (float,int) or not math.isfinite(value) or not .1<=value<=10:
             raise ValueError("target_page_seconds must be in0.1..10")
-    if backend in ("cuda","auto") and out.get("workers",1)!=1:
+    if backend in ("cuda","auto","auto-measured") and out.get("workers",1)!=1:
         raise ValueError("CUDA/auto uses one worker context")
     return out
 

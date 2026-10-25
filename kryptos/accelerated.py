@@ -95,18 +95,64 @@ def _objective(letters, starts, order, codes, p, q):
     return result
 
 
-def _cpu_rank(affine, offset, count, keep, scoring, order):
-    """Odometer updates touch only nonzero entries of changed coordinates."""
+def _window_value(letters,start,order,codes,p,q):
+    code=0
+    for pos in range(start,start+order):
+        code=code*26+letters[pos]
+    return codes.get(code,0)*q+p
+
+
+def _cpu_rank(affine, offset, count, keep, scoring, order, *, incremental=True, work=None):
+    """Exact odometer ranking with dependency-local score updates.
+
+    Candidate order and coverage do not change. The product of nonzero window
+    factors and a zero count permit exact replacement, including zero scores.
+    Dense changes use a full product; carries union their affected windows.
+    """
     domains, columns = affine["domains"], affine["columns"]
     values = _digits(offset, domains)
     letters = [(base + sum(col[i]*v for col, v in zip(columns, values))) % 26
                for i, base in enumerate(affine["base"])]
     sparse = [[(i, x) for i, x in enumerate(col) if x] for col in columns]
     starts, codes, p, q = scoring
+    by_position=[[] for _ in letters]
+    for window,start in enumerate(starts):
+        for pos in range(start,start+order):
+            by_position[pos].append(window)
+    factors=[_window_value(letters,start,order,codes,p,q) for start in starts]
+    product=math.prod(value for value in factors if value)
+    zeros=sum(value==0 for value in factors)
+    factor_evaluations=len(starts) if count else 0
+    full_rescores=1 if count else 0
+    incremental_rescores=0
+    touched=set()
     heap = []
     changed_entries = 0
     for local in range(count):
-        score = _objective(letters, starts, order, codes, p, q)
+        if local:
+            dirty={window for pos in touched for window in by_position[pos]}
+            if not incremental or len(dirty)==len(starts):
+                factors=[_window_value(letters,start,order,codes,p,q) for start in starts]
+                product=math.prod(value for value in factors if value)
+                zeros=sum(value==0 for value in factors)
+                factor_evaluations+=len(starts)
+                full_rescores+=1
+            else:
+                for window in sorted(dirty):
+                    old=factors[window]
+                    if old:
+                        product//=old
+                    else:
+                        zeros-=1
+                    value=_window_value(letters,starts[window],order,codes,p,q)
+                    factors[window]=value
+                    if value:
+                        product*=value
+                    else:
+                        zeros+=1
+                factor_evaluations+=len(dirty)
+                incremental_rescores+=1
+        score = 0 if zeros else product
         word = _ReverseLex("".join(affine["alphabet"][x] for x in letters))
         entry = (score, word, -(offset+local))
         if len(heap) < keep:
@@ -115,15 +161,27 @@ def _cpu_rank(affine, offset, count, keep, scoring, order):
             heapq.heapreplace(heap, entry)
         if local+1 == count:
             break
+        touched=set()
         for slot in range(len(values)-1, -1, -1):
             old = values[slot]
             values[slot] = (old+1) % domains[slot]
             delta = values[slot]-old
             for pos, coefficient in sparse[slot]:
-                letters[pos] = (letters[pos]+coefficient*delta) % 26
+                old_letter=letters[pos]
+                letters[pos] = (old_letter+coefficient*delta) % 26
+                if letters[pos]!=old_letter:
+                    touched.add(pos)
                 changed_entries += 1
             if values[slot]:
                 break
+    if work is not None:
+        work.update(incremental_letter_updates=changed_entries,window_factor_evaluations=factor_evaluations,
+            full_rescore_window_evaluations=count*len(starts),
+            window_factor_evaluations_avoided=count*len(starts)-factor_evaluations,
+            full_rescores=full_rescores,incremental_rescores=incremental_rescores,
+            window_plan_memberships=len(starts)*order,
+            candidate_evaluations=count,
+            interpretation='Same candidates and exact ranking; savings count window factor evaluations, not fewer search candidates.')
     return [(score, -negative) for score, word, negative in sorted(heap, key=lambda x: (-x[0], str(x[1]), -x[2]))], changed_entries
 
 
@@ -259,10 +317,26 @@ def _cuda_tables(affine,job,scoring,ranking_mode):
     return tables,False
 
 
+def _cuda_certified_filter(lower,upper,keep):
+    """Integer kth lower bound and survivor compaction stay on the device."""
+    cp=load_cupy()
+    count=int(lower.size)
+    if lower.dtype!=cp.uint64 or upper.dtype!=cp.uint64 or lower.ndim!=1 or upper.shape!=lower.shape or not 1<=keep<=count:
+        raise ValueError('Expected equal uint64 vectors and a valid retained count')
+    if bool(cp.any(lower>upper).item()):
+        raise ValueError('Invalid device score intervals')
+    # At least keep products are >= this lower bound. Strictly smaller upper
+    # bounds cannot enter the top keep; equality must survive for lexical ties.
+    threshold=cp.partition(lower,count-keep)[count-keep]
+    selected=cp.nonzero(upper>=threshold)[0].astype(cp.int32)
+    maximum=(upper-lower).max()
+    return selected,int(threshold.item()),int(maximum.item())
+
+
 def _cuda_rank(affine, job, offset, count, keep, scoring,ranking_mode="certified"):
     cp = load_cupy()
     import numpy as np
-    from .certified_scores import FRACTIONAL_BITS,overlapping_indices
+    from .certified_scores import FRACTIONAL_BITS
     n,d=len(affine["base"]),len(affine["domains"])
     starts,codes,_,_=scoring
     model=job["model"]
@@ -282,12 +356,16 @@ def _cuda_rank(affine, job, offset, count, keep, scoring,ranking_mode="certified
         kernels["interval_score"](((count+127)//128,),(128,),(text,windows,gram_codes,tables["low"],tables["high"],
             np.uint64(tables["unseen"][0]),np.uint64(tables["unseen"][1]),lower,upper,
             *args(n,count,len(starts),model.order,tables["observed"])))
-        lower_values,upper_values=lower.get().tolist(),upper.get().tolist()
-        selected,threshold=overlapping_indices(lower_values,upper_values,keep)
+        selected_device,threshold,maximum_width=_cuda_certified_filter(lower,upper,keep)
+        selected=selected_device.get().tolist()
         pool=len(selected)
         certification.update(method="integer outward-rounded log2 intervals plus exact CPU overlap comparison",
             fractional_bits=FRACTIONAL_BITS,threshold_lower_hex=hex(threshold),interval_candidates=pool,
-            eliminated_candidates=count-pool,max_interval_width_hex=hex(max(b-a for a,b in zip(lower_values,upper_values))))
+            eliminated_candidates=count-pool,max_interval_width_hex=hex(maximum_width),
+            filtering_location='cuda',filter_download_bytes=4*pool+17,
+            previous_interval_download_bytes=16*count,
+            filter_transfer_bytes_avoided=16*count-(4*pool+17),
+            transfer_accounting='Explicit filter payload only; excludes library control traffic and candidate-letter transfers. May increase for tiny pages.')
     else:
         scores=cp.empty(count,dtype=cp.float64)
         kernels["score"](((count+127)//128,), (128,), (text, windows, gram_codes, logs,
@@ -312,16 +390,66 @@ def _cuda_rank(affine, job, offset, count, keep, scoring,ranking_mode="certified
     return [(score, index) for score, index, word in exact[:keep]], pool,certification
 
 
+def _measured_backend(affine,job,offset,count,keep,scoring,ranking_mode):
+    """Optional hardware policy, explicitly not a reduction of solving steps.
+
+    Compare the same bounded page on both backends, require exact agreement,
+    and cache the choice for this prepared family/page-size bucket. Calibration
+    is additional work and does not advance the caller's committed frontier.
+    """
+    key=(ranking_mode,keep,count.bit_length())
+    cache=job.setdefault('backend_calibrations',{})
+    if key in cache:
+        report=deepcopy(cache[key])
+        report.update(cache_hit=True,calibration_candidate_evaluations_this_call=0)
+        return report['selected_backend'],report
+    report={'policy':'bounded measured CPU/CUDA page','cache_hit':False,'sample_offset_decimal':str(offset),
+        'sample_count':0,'calibration_candidate_evaluations_this_call':0,
+        'interpretation':'Hardware convenience based on sample elapsed time; no fewer search steps claimed. Calibration adds uncommitted evaluations.'}
+    readiness=probe_backend()
+    if not readiness['cuda']['ready']:
+        report.update(selected_backend='cpu',fallback_reason=readiness['cuda'].get('error','CUDA unavailable'))
+    else:
+        sample=min(32,count)
+        retained=min(keep,sample)
+        cpu_work={}
+        begin=time.perf_counter()
+        cpu,_=_cpu_rank(affine,offset,sample,retained,scoring,job['model'].order,work=cpu_work)
+        cpu_seconds=time.perf_counter()-begin
+        report.update(sample_count=sample,cpu_seconds=cpu_seconds,
+            cpu_window_factor_evaluations=cpu_work['window_factor_evaluations'],
+            calibration_candidate_evaluations_this_call=sample,
+            calibration_cpu_candidate_evaluations=sample,
+            calibration_cuda_requested_candidates=sample)
+        try:
+            begin=time.perf_counter()
+            gpu,rescored,certificate=_cuda_rank(affine,job,offset,sample,retained,scoring,ranking_mode)
+            gpu_seconds=time.perf_counter()-begin
+            if gpu!=cpu:
+                raise RuntimeError('Calibration CPU/CUDA exact retained rankings disagree')
+            report.update(cuda_seconds=gpu_seconds,cuda_exact_rescored=rescored,exact_sample_agreement=True,
+                calibration_candidate_evaluations_this_call=2*sample,
+                selected_backend='cpu' if cpu_seconds<=gpu_seconds else 'cuda')
+        except Exception as error:
+            report.update(selected_backend='cpu',fallback_reason=str(error),cuda_attempt_may_be_partial=True,
+                calibration_candidate_evaluations_this_call=None,
+                calibration_candidate_evaluations_upper_bound=2*sample)
+    if len(cache)>=8:
+        cache.pop(next(iter(cache)))
+    cache[key]=deepcopy(report)
+    return report['selected_backend'],report
+
+
 def scan_batch(request, backend="cpu", offset=0, batch_size=1024, top=10,ranking_mode="certified"):
     """Scan [offset,next_offset), not the entire family; resume using next_offset.
 
-    Explicit CUDA failure raises RuntimeError; ``auto`` alone permits CPU fallback.
+    Explicit CUDA failure raises RuntimeError; auto modes permit CPU fallback.
     Every result carries decimal-string offsets/counts for lossless browser use.
     ``complete`` means this page reaches the family end, not earlier-page coverage.
     """
     started = time.perf_counter()
-    if backend not in ("cpu", "cuda", "auto"):
-        raise ValueError("backend must be cpu, cuda or auto")
+    if backend not in ("cpu", "cuda", "auto", "auto-measured"):
+        raise ValueError("backend must be cpu, cuda, auto or auto-measured")
     if ranking_mode not in ("certified","approximate"):
         raise ValueError("ranking_mode must be certified or approximate")
     _integer(offset, "offset", 0)
@@ -378,6 +506,11 @@ def scan_batch(request, backend="cpu", offset=0, batch_size=1024, top=10,ranking
         "window_starts": starts, "score_available": bool(starts), "exact_objective": "product(count*q+p)",
         "p_hex": hex(p), "q_hex": hex(q), "denominator_common_within_model_mask_family": True}
     used = backend
+    if backend=='auto-measured':
+        used,report=_measured_backend(affine,job,offset,count,min(top,count),scoring,ranking_mode)
+        result['backend_selection']=report
+        if report.get('fallback_reason'):
+            result['fallback_reason']=report['fallback_reason']
     if backend == "auto":
         readiness = probe_backend()
         used = "cuda" if readiness["cuda"]["ready"] else "cpu"
@@ -388,14 +521,23 @@ def scan_batch(request, backend="cpu", offset=0, batch_size=1024, top=10,ranking
             ranked, rescored,certification = _cuda_rank(affine, job, offset, count, min(top, count), scoring,ranking_mode)
             result["certification"]=certification
         except Exception as exc:
-            if backend != "auto":
+            if backend not in {"auto","auto-measured"}:
                 raise RuntimeError(f"CUDA scan failed: {exc}") from exc
             used = "cpu"
             result["fallback_reason"] = f"CUDA scan failed: {exc}"
+            if backend=='auto-measured':
+                # A failed device choice is not retried on every following
+                # page in this prepared worker. An explicit CUDA request or
+                # a new worker can probe the device again.
+                for choice in job.get('backend_calibrations',{}).values():
+                    if choice.get('selected_backend')=='cuda':
+                        choice.update(selected_backend='cpu',fallback_reason=result['fallback_reason'])
+                result['backend_selection']['actual_fallback']='cpu'
     if used == "cpu":
-        ranked, changed = _cpu_rank(affine, offset, count, min(top, count), scoring, job["model"].order)
+        work={}
+        ranked, changed = _cpu_rank(affine, offset, count, min(top, count), scoring, job["model"].order,work=work)
         rescored = count
-        result["work"] = {"incremental_letter_updates": changed}
+        result["work"] = work
     result.update(backend_used=used, evaluated=count, stop_reason="page_complete", cpu_exact_scored=rescored,
         ranking_exact_within_page=used=="cpu" or ranking_mode=="certified" or rescored==count,
         ranking_method="exact integer product" if used=="cpu" else ("CUDA certified interval filtering followed by CPU exact comparison" if ranking_mode=="certified" else "CUDA float64 shortlist followed by CPU exact rescoring"),

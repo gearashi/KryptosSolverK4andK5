@@ -1,0 +1,536 @@
+{
+  "schema": "kryptos.search-O-work.v1",
+  "guided": [
+    {
+      "dimensions": 2,
+      "oracle_optimum": 9,
+      "contiguous_evaluations_to_first_optimum": 4,
+      "single_coordinate_best": 2,
+      "single_coordinate_work": {
+        "objective_evaluations": 3,
+        "factor_evaluations": 3,
+        "accepted_moves": 0,
+        "restarts_started": 1,
+        "sweeps_completed": 1,
+        "full_factor_evaluations_avoided": 0,
+        "block_trials": 0,
+        "accepted_block_moves": 0,
+        "blocks_over_completion_cap": 0,
+        "block_pair_memberships": 0,
+        "block_discovery_capped": 0
+      },
+      "coordinated_best": 9,
+      "coordinated_work": {
+        "objective_evaluations": 11,
+        "factor_evaluations": 11,
+        "accepted_moves": 1,
+        "restarts_started": 1,
+        "sweeps_completed": 2,
+        "full_factor_evaluations_avoided": 0,
+        "block_trials": 6,
+        "accepted_block_moves": 1,
+        "blocks_over_completion_cap": 0,
+        "block_pair_memberships": 1,
+        "block_discovery_capped": 0
+      },
+      "oracle_match": true,
+      "fewer_evaluations_than_contiguous": false
+    },
+    {
+      "dimensions": 6,
+      "oracle_optimum": 9,
+      "contiguous_evaluations_to_first_optimum": 49,
+      "single_coordinate_best": 2,
+      "single_coordinate_work": {
+        "objective_evaluations": 3,
+        "factor_evaluations": 3,
+        "accepted_moves": 0,
+        "restarts_started": 1,
+        "sweeps_completed": 1,
+        "full_factor_evaluations_avoided": 0,
+        "block_trials": 0,
+        "accepted_block_moves": 0,
+        "blocks_over_completion_cap": 0,
+        "block_pair_memberships": 0,
+        "block_discovery_capped": 0
+      },
+      "coordinated_best": 9,
+      "coordinated_work": {
+        "objective_evaluations": 11,
+        "factor_evaluations": 11,
+        "accepted_moves": 1,
+        "restarts_started": 1,
+        "sweeps_completed": 2,
+        "full_factor_evaluations_avoided": 0,
+        "block_trials": 6,
+        "accepted_block_moves": 1,
+        "blocks_over_completion_cap": 0,
+        "block_pair_memberships": 1,
+        "block_discovery_capped": 0
+      },
+      "oracle_match": true,
+      "fewer_evaluations_than_contiguous": true
+    }
+  ],
+  "elimination": {
+    "baseline_nodes": 5,
+    "baseline_work": {
+      "cache_hits": 15,
+      "bound_evaluations": 21,
+      "exact_local_completions": 24,
+      "relaxed_bounds": 0,
+      "correlated_bounds": 0,
+      "observed_grams_checked": 0,
+      "group_bounds": 0,
+      "group_exact_completions": 0,
+      "group_fallbacks": 0,
+      "elimination_attempts": 0,
+      "elimination_tightenings": 0,
+      "elimination_fallbacks": 0,
+      "elimination_operations": 0,
+      "elimination_factor_evaluations": 0
+    },
+    "variants": [
+      {
+        "bucket_entries": 1,
+        "oracle_match": true,
+        "nodes": 5,
+        "work": {
+          "cache_hits": 15,
+          "bound_evaluations": 21,
+          "exact_local_completions": 24,
+          "relaxed_bounds": 0,
+          "correlated_bounds": 0,
+          "observed_grams_checked": 0,
+          "group_bounds": 0,
+          "group_exact_completions": 0,
+          "group_fallbacks": 0,
+          "elimination_attempts": 7,
+          "elimination_tightenings": 0,
+          "elimination_fallbacks": 7,
+          "elimination_operations": 4,
+          "elimination_factor_evaluations": 4
+        },
+        "fewer_nodes": false
+      },
+      {
+        "bucket_entries": 4,
+        "oracle_match": true,
+        "nodes": 1,
+        "work": {
+          "cache_hits": 2,
+          "bound_evaluations": 10,
+          "exact_local_completions": 20,
+          "relaxed_bounds": 0,
+          "correlated_bounds": 0,
+          "observed_grams_checked": 0,
+          "group_bounds": 0,
+          "group_exact_completions": 0,
+          "group_fallbacks": 0,
+          "elimination_attempts": 3,
+          "elimination_tightenings": 2,
+          "elimination_fallbacks": 0,
+          "elimination_operations": 100,
+          "elimination_factor_evaluations": 28
+        },
+        "fewer_nodes": true
+      },
+      {
+        "bucket_entries": 8,
+        "oracle_match": true,
+        "nodes": 1,
+        "work": {
+          "cache_hits": 0,
+          "bound_evaluations": 6,
+          "exact_local_completions": 12,
+          "relaxed_bounds": 0,
+          "correlated_bounds": 0,
+          "observed_grams_checked": 0,
+          "group_bounds": 0,
+          "group_exact_completions": 0,
+          "group_fallbacks": 0,
+          "elimination_attempts": 1,
+          "elimination_tightenings": 1,
+          "elimination_fallbacks": 0,
+          "elimination_operations": 47,
+          "elimination_factor_evaluations": 12
+        },
+        "fewer_nodes": true
+      }
+    ],
+    "oracle_bound_checks": 576
+  },
+  "joint": [
+    {
+      "period": 1,
+      "top": 3,
+      "oracle_assignments": 156,
+      "oracle_match": true,
+      "baseline_evaluated": 156,
+      "pruned_evaluated": 156,
+      "baseline_work": {
+        "checkpoint_candidate_verifications": 0,
+        "checkpoint_score_window_evaluations": 0,
+        "states": 1222,
+        "segmentation_nodes": 9,
+        "route_nodes": 20,
+        "compatibility_pairs": 27,
+        "matching_edge_visits": 68,
+        "key_nodes": 162,
+        "key_completions": 156,
+        "scored_windows": 780
+      },
+      "pruned_work": {
+        "checkpoint_candidate_verifications": 0,
+        "checkpoint_score_window_evaluations": 0,
+        "states": 1566,
+        "segmentation_nodes": 9,
+        "route_nodes": 20,
+        "compatibility_pairs": 27,
+        "matching_edge_visits": 68,
+        "key_nodes": 162,
+        "key_completions": 156,
+        "scored_windows": 780,
+        "score_bound_nodes": 21,
+        "bound_letter_domains": 113,
+        "bound_windows": 105,
+        "bound_grams_checked": 105
+      },
+      "pruned_branches": 0,
+      "enumeration_complete": true
+    },
+    {
+      "period": 2,
+      "top": 1,
+      "oracle_assignments": 4056,
+      "oracle_match": true,
+      "baseline_evaluated": 4056,
+      "pruned_evaluated": 156,
+      "baseline_work": {
+        "checkpoint_candidate_verifications": 0,
+        "checkpoint_score_window_evaluations": 0,
+        "states": 28678,
+        "segmentation_nodes": 9,
+        "route_nodes": 20,
+        "compatibility_pairs": 27,
+        "matching_edge_visits": 68,
+        "key_nodes": 4218,
+        "key_completions": 4056,
+        "scored_windows": 20280
+      },
+      "pruned_work": {
+        "checkpoint_candidate_verifications": 0,
+        "checkpoint_score_window_evaluations": 0,
+        "states": 4202,
+        "segmentation_nodes": 9,
+        "route_nodes": 20,
+        "compatibility_pairs": 27,
+        "matching_edge_visits": 68,
+        "key_nodes": 318,
+        "key_completions": 156,
+        "scored_windows": 780,
+        "score_bound_nodes": 176,
+        "bound_letter_domains": 888,
+        "bound_windows": 880,
+        "bound_grams_checked": 880
+      },
+      "pruned_branches": 150,
+      "enumeration_complete": false
+    }
+  ],
+  "continuation": {
+    "oracle_match": true,
+    "complete": true,
+    "slices": [
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 70,
+        "frontier_progress_nodes": 14,
+        "frontier_nodes": 23,
+        "checkpoint_candidate_verifications": 0,
+        "checkpoint_score_window_evaluations": 0
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 18,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 13,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 8,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 3,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 102,
+        "frontier_progress_nodes": 8,
+        "frontier_nodes": 23,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 18,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 13,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 8,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 3,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 151,
+        "frontier_progress_nodes": 13,
+        "frontier_nodes": 25,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 20,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 15,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 10,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 5,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 122,
+        "frontier_progress_nodes": 9,
+        "frontier_nodes": 25,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 20,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 15,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 10,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 5,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 150,
+        "frontier_progress_nodes": 12,
+        "frontier_nodes": 26,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 21,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 16,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 11,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 6,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 122,
+        "frontier_progress_nodes": 9,
+        "frontier_nodes": 26,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 21,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 16,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 11,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 6,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 5,
+        "states_this_run": 36,
+        "frontier_progress_nodes": 5,
+        "frontier_nodes": 1,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      },
+      {
+        "evaluated_this_run": 1,
+        "states_this_run": 7,
+        "frontier_progress_nodes": 1,
+        "frontier_nodes": 0,
+        "checkpoint_candidate_verifications": 3,
+        "checkpoint_score_window_evaluations": 15
+      }
+    ],
+    "evaluated": 156,
+    "uninterrupted_evaluated": 156,
+    "states_total": 1624,
+    "uninterrupted_states": 1566,
+    "checkpoint_candidate_verifications": 93,
+    "checkpoint_score_window_evaluations": 465,
+    "search_plus_checkpoint_objective_evaluations": 249
+  },
+  "sources": {
+    "kryptos/guided_search.py": "6139c56d5d4a67a178a5320802deea4eb17aa31ff62052f830be83523ca98948",
+    "kryptos/factor_decomposition.py": "9bed97de6e0a5261d6f13ddfc6992f891c8ea02a8c258c9a5957d0cdb4161266",
+    "kryptos/search_runtime.py": "479c33ed5fdb2cc046b49c058778d04f0c4dfbf1798812845be6ca10f730edba",
+    "kryptos/joint_ranked.py": "79877e3b4bf4eafe6b979e39f0c1ecd05e6ce92808703374f25368a10cafc6a7",
+    "kryptos/next_cli.py": "cef556a195637c2457df2d0cf9def9bf65c2b9884fccf48aa37f25d4f5b13ee2",
+    "research/search_O.py": "5d7e80ff6f2af9f787b50d65c3ea4702a73333be25ce5e22a428b96afccdae07",
+    "research/search_O_acceptance.md": "9b3ca9fd7db2ec5b44c179ed09e2ee8f4c957c75bac76324b963088da806a912",
+    "tests/test_search_O.py": "3c30c0065ef2a4c6f42d0f9301ba4312b2c41947d59c050aa68252310f7fb7fd"
+  },
+  "limits": {
+    "random_seed": 60132,
+    "small_graphs": 36,
+    "residuals_per_graph": 8,
+    "bucket_caps": [
+      9,
+      27
+    ],
+    "maximum_checkpoint_slices": 100
+  },
+  "nonclaims": [
+    "No universal improvement: small coupled domains and weak bucket caps may add work.",
+    "A guided optimum found in a synthetic control is not an optimality certificate for general use.",
+    "Pruning work and repeated checkpoint preparation remain in the state/operation counts.",
+    "No K4 search, cryptographic authenticity, hardware speedup or CPU/GPU comparison is claimed."
+  ]
+}

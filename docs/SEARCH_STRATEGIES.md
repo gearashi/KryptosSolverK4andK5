@@ -178,3 +178,53 @@ retain their own source/test snapshots and timings, with the same discrete
 scientific outcomes and no benchmark tuning. This algorithm audit does not
 itself exercise browser lifecycle behavior. These small synthetic results do
 not establish a recovery rate for Kryptos.
+
+## Phase O: reducing counted search work
+
+All optional strategies remain off unless selected. Compare complete candidate
+evaluations, frontier nodes and factor operations separately; elapsed time is not
+the acceptance criterion. A stronger bound can reduce search nodes while costing
+more arithmetic. A negative comparison is retained rather than called a win.
+
+- `guided_seed.block_size=2` tries coordinated changes for connected parameter
+  pairs. `max_blocks` and `max_block_completions` bound the extra work. Every
+  completed trial receives its exact incident-factor score. Single-coordinate
+  behavior remains available with `block_size=1`.
+- `elimination_bound="mini_bucket"` partitions oversized factor groups and uses
+  their exact separate maxima as an admissible upper bound. Bucket, storage and
+  operation caps fall back to the existing bound. This relaxation never supplies
+  a purported feasible witness.
+- `joint-ranked` accepts `pruning="admissible"`. Reachable-letter/window bounds
+  prune only when strictly below the current distinct-text cutoff, preserving
+  tied plaintexts and deterministic recipes. A full key always counts as a
+  complete objective evaluation. `top_k_exact` can be true after pruning, while
+  exhaustive assignment counts are unavailable unless enumeration completed.
+- `joint-ranked` also accepts `checkpoint_path` and `resume_path` in the CLI.
+  The browser manages these paths itself. A pure JSON frontier pins the request,
+  sources and language model; committed counters are cumulative and invocation
+  counters expose slice work. Resume rechecks saved candidates and reports that
+  verification separately. Pause saves the current slice; Stop discards it.
+- CPU batch scoring updates only ngram windows touched by changed letters, with
+  exact integer arithmetic and a full-score fallback for dense changes. The
+  candidate population is unchanged. Work reports show the factor evaluations
+  performed and avoided.
+
+CUDA certified mode selects interval survivors on the device and still checks
+them with exact CPU scores and replay. Its transfer counter covers explicit
+filter payload, excluding library control traffic and candidate-letter transfers.
+An optional `auto-measured` backend evaluates the same sample of at most32 points
+on CPU and CUDA, requires agreement and caches its device choice. This adds
+calibration work; it is hardware convenience, not fewer solving steps.
+
+Sculpture path hypotheses use `routes:["paths"]` and bounded `path_parameters`.
+Starting cells, cardinal directions, turn handedness and wrap policy produce
+explicit bijections. Trapped paths are rejected and duplicate permutations share
+one fitting call while retaining all parameter aliases. These coordinates are
+ordinal text positions, not measured sculpture geometry.
+
+`validate-controls` can run repeated complete-bank shuffled controls with
+`null_replicates`, a frozen `decision_score_threshold` and a total
+`max_protocol_candidates` cap. It reports completed/evaluated family counts
+separately. Any censored selection suppresses the empirical exceedance rate.
+That rate is a finite control statistic, never a probability of authenticity.
+See [phase O evidence](../research/IMPROVEMENTS_O.md) and the frozen protocols.

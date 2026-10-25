@@ -98,7 +98,7 @@ class HttpTests(unittest.TestCase):
         from unittest.mock import patch
         info=self.call("/api/info")[1]
         self.assertEqual({p["id"] for p in info["validation_presets"]},
-                         {"validate-holdout","validate-controls","validate-k4-shaped","validate-ablations"})
+                         {"validate-holdout","validate-controls","validate-k4-shaped","validate-ablations","validate-campaign-null"})
         auth={"Content-Type":"application/json","X-Kryptos-Token":info["control_token"]}
         base={k:v for k,v in next(p for p in info["presets"] if p["id"]=="demo-scan").items() if k in {"kind","command","request"}}
         plan={"base":base,"axes":[{"path":"request.stages.0.period","values":[1,2,3]}]}

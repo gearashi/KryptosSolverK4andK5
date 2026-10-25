@@ -113,3 +113,15 @@ python -B -m unittest discover -s tests -v
 ```
 
 GPU tests are opt-in with `KRYPTOS_TEST_CUDA=1` in the configured GPU environment. An optional raw-source audit skips when its excluded snapshots are absent; the packaged-data integrity checks still run. Test output, source versions and actual device evidence are more useful than treating a historical test count as a guarantee for another machine.
+
+## Version 0.4 controls
+
+See [search strategies](SEARCH_STRATEGIES.md) for optional coordinated moves,
+mini-bucket upper bounds, joint route/key pruning and joint checkpoints. Search
+work, factor evaluations and repeated checkpoint verification are separate
+metrics. Hardware calibration is optional and adds work.
+
+See [workspace and release operations](WORKSPACE_AND_RELEASE.md) for persistent
+drafts/presets, filtered archived history, damaged-record diagnostics, bounded
+hashed backups and separate read-only recovery. Opening or restoring a draft
+never starts a computation. Recovered checkpoint data is not executable.

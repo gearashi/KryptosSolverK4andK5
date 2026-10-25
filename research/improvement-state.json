@@ -1,8 +1,8 @@
 {
   "schema": "kryptos.improvement-ledger.v1",
   "created_date": "2026-10-13",
-  "phase": "N-eight-improvements-and-recursive-review",
-  "goal_controller": "parent persistent goal; no scheduled automation",
+  "phase": "O-fourteen-improvements-counted-search-work",
+  "goal_controller": "User-authorized finite continuation; no scheduled automation",
   "allowed_statuses": [
     "proposed",
     "validated",
@@ -20,7 +20,7 @@
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
     "final_review_complete": true,
-    "publication_complete": true,
+    "publication_complete": false,
     "reviewed_actionable_backlog_complete": true
   },
   "entries": [
@@ -969,6 +969,258 @@
           "result": "Browser verifies managed continuation and frontier progress."
         }
       ]
+    },
+    {
+      "id": "O01",
+      "title": "Competing inequivalent plaintext-family controls",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Positive control has multiple distinct feasible families before scoring; full bank outcomes reported.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O02",
+      "title": "Full-bank repeated-null calibration",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Each null reruns identical frozen selection; complete/censored counts and empirical exceedances explicit.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O03",
+      "title": "Incremental exact CPU window scoring",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Same exact page ranking and candidate count, fewer ngram factor evaluations on sparse controls.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O04",
+      "title": "Coordinated feasible-family guidance",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Known interaction trap solved under fewer candidate evaluations than single-coordinate baseline; fixed held controls compare both work and failures.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O05",
+      "title": "Admissible joint route/key pruning",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Same exhaustive distinct-plaintext top-k; fewer candidate leaves on declared controls; ties and pruning-vs-count distinctions retained.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O06",
+      "title": "Capped elimination upper bounds",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Upper bound >= exhaustive residual optimum for every tested partial assignment; fewer proof nodes where stronger; caps preserve fallback.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O07",
+      "title": "Certified device-side survivor filtering",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Same integer-certified survivors/ties and exact ranking; reduced explicit interval payload transfer, not fewer search candidates.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O08",
+      "title": "Optional measured backend selection",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Bounded comparative sample, exact agreement, cache and overhead visible; hardware convenience, not fewer solving steps.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O09",
+      "title": "Bounded sculpture-grid path parameters",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Parameter aliases deduplicated before fitting; bounded bijections and independent encryption replay; explicit unknown method assumptions.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O10",
+      "title": "Checkpoint more exact commands",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Interrupted/restarted frontier matches uninterrupted ranking, counts and completeness; checkpoints atomic and compatible.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O11",
+      "title": "Durable drafts and personal presets",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Refresh restores drafts without starting computation; invalid payloads rejected.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O12",
+      "title": "Paginated tagged archived run history",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Thousands of summaries paginate without copying large candidate/results; archived records remain reversible.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O13",
+      "title": "Diagnosed records and verified read-only recovery",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Malformed/unsupported records reported; bounded hashed backups restore separate inert evidence; no imported frontier executes.",
+      "stage": "local-package-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O14",
+      "title": "Clean-package CI and verified release publication",
+      "status": "proposed",
+      "decision": "accepted",
+      "acceptance": "Clean source package tested on Windows/Linux; actual CUDA evidence separately required whenclaimed; published release/tag/hash/gearashi attribution verified.",
+      "stage": "local-gate-verified-remote-CI-pending",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
     }
   ],
   "reviews": [
@@ -1103,5 +1355,6 @@
     "final_review_complete": true,
     "publication_complete": true,
     "reviewed_actionable_backlog_complete": true
-  }
+  },
+  "user_efficiency_criterion": "Fewer search decisions or complete candidate evaluations; speed alone does not qualify. Count factor and verification work separately."
 }

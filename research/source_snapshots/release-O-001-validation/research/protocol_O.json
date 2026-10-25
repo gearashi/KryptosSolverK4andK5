@@ -1,0 +1,20 @@
+{
+  "schema": "kryptos.competing-O-frozen.v1",
+  "fixture_sha256": "e2891e3a435904e8ec172e14569e21ad9db42e8fce725d33130bc7bf053fb5d7",
+  "request_sha256": "dd67673cc0721cc9b274260c3f4cb958c4e00faade63de624b7c2dc16af06bb9",
+  "selection": "Rerun all three families and maximum-over-three frozen trigram models for each positive and each null; identical mask, limits and fixed score threshold.",
+  "fixed_decision_score_threshold": -9.0,
+  "threshold_scope": "Researcher-chosen before these outcomes; an illustrative empirical exceedance rate under specified shuffles, not a calibrated authenticity threshold.",
+  "raw_models": 3,
+  "positive_inputs": 4,
+  "nulls_per_positive": 4,
+  "maximum_inputs": 20,
+  "expected_candidates_per_complete_input": 728,
+  "maximum_visits": 14560,
+  "protocol_seconds": 30,
+  "nonclaims": [
+    "Not a real-world false-positive probability or authenticity estimate.",
+    "Families were engineered using clue positions to guarantee competition, before scoring.",
+    "Not a representative multilingual corpus; all outcomes and censoring must be retained."
+  ]
+}

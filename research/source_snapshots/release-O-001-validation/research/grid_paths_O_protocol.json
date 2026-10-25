@@ -1,0 +1,45 @@
+{
+  "schema": "kryptos.grid-path-O-frozen.v1",
+  "scope": "Finite ordinal K4-cell path hypotheses; mechanical known-plaintext control, not a K4 search. Shape-only development preflight already checked counts; no language scores are used.",
+  "section": "K4",
+  "settings": {
+    "start_indices": [
+      0,
+      3,
+      4,
+      34,
+      65,
+      96
+    ],
+    "directions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "turns": [
+      "right",
+      "left"
+    ],
+    "wraps": [
+      "none",
+      "toroidal"
+    ]
+  },
+  "expected_counts": {
+    "raw_hypotheses": 96,
+    "bijective_hypotheses": 15,
+    "nonbijective_hypotheses": 81,
+    "distinct_routes": 11
+  },
+  "generator": {
+    "start_index": 0,
+    "direction": "east",
+    "turn": "right",
+    "wrap": "none"
+  },
+  "control_plaintext": "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRS",
+  "control_key": "DOG",
+  "known_positions": "all97 original positions, artificial supplied plaintext for route/constraint/replay control",
+  "comparison": "Solve every bijective raw tuple and then every unique route. Compare classifications/candidate sets and algebra operation counts; reject invalid paths and merge aliases before cipher search."
+}

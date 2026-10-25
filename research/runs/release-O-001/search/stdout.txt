@@ -1,0 +1,1 @@
+{"output": "research\\runs\\release-O-001\\search\\result.json", "guided_controls": 2, "bound_oracles": 576, "joint_controls": 2}

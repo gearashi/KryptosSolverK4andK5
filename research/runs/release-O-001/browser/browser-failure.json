@@ -1,0 +1,19 @@
+{
+  "schema": "kryptos.browser-validation.v2",
+  "started_at": "2026-10-25T18:03:32.522Z",
+  "origin": "http://127.0.0.1:55736/",
+  "suite": "all",
+  "cuda_policy": "required",
+  "node_version": "v24.19.0",
+  "script_sha256": "e34e05f55b498f667975a6bd661d375ecf13f846cef88b760b59e02efd5ef81d",
+  "message": "browserType.launch: spawn EPERM\nCall log:\n\u001b[2m  - <launching> C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=C:\\KryptosSolverK4andK5\\runtime\\publication-O-001\\runtime\\cache\\tmp\\playwright_chromiumdev_profile-Ky2oZc --remote-debugging-pipe --no-startup-window\u001b[22m\n",
+  "checks": [],
+  "errors": [],
+  "runIds": [],
+  "requests": [],
+  "skips": [],
+  "cleanup": {
+    "stopped": []
+  },
+  "status": null
+}

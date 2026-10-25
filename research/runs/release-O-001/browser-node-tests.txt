@@ -1,0 +1,14 @@
+✔ fresh local validation options are portable and explicit (7.1706ms)
+✔ runner refuses remote origins, credentials, user-app port and hidden paths (1.3949ms)
+✔ invalid, incomplete and misleading options fail before browser launch (4.4495ms)
+✔ evidence redaction preserves model and recipe data while removing credentials (2.0083ms)
+✔ export audit finds executable managed controls at every nested depth (3.3577ms)
+✔ explicit browser path is checked without launching a process (1.4298ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 43.3142

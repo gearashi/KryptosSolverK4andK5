@@ -1,0 +1,52 @@
+name: Verify clean package
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.10', '3.12']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install browser test dependencies only
+        run: npm install --no-save playwright@1.62.1
+      - name: Install Chromium for browser verification
+        run: npx playwright install --with-deps chromium
+      - name: Validate the Git archive with CPU-only checks
+        run: python scripts/verify_package.py --out release-check --cuda off
+      - name: Retain validated package and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validated-package-${{ runner.os }}-${{ matrix.python }}
+          retention-days: 30
+          path: |
+            release-check/KryptosSolverK4AndK5.zip
+            release-check/SHA256SUMS
+            release-check/validation.json
+            release-check/*-tests.txt
+            release-check/browser-console.txt
+            release-check/browser/
+            release-check/workspace-browser/
+            release-check/*-server.txt
+            release-check/workspace-browser-console.txt
+            release-check/archive-log.txt
+# No publication token, write permission or bot-authored release is used here.
+# A gearashi-authenticated operator runs scripts/publish_release.py after the
+# exact remote tag and this entire matrix pass. That script verifies live links.

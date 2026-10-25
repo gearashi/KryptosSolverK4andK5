@@ -1,6 +1,6 @@
 # Kryptos K4 and K5 research workbench
 
-A local browser application for bounded CPU and optional NVIDIA GPU experiments on Kryptos. It includes exact cipher constraints, explicit sculpture-grid hypotheses, language comparisons, candidate explanations, replay checks and resumable family scans.
+A local browser application for bounded CPU and optional NVIDIA GPU experiments on Kryptos. It includes exact cipher constraints, explicit sculpture-grid hypotheses, language comparisons, candidate explanations, replay checks and resumable family scans and joint route/key searches.
 
 **This project has not deciphered K4 or K5.** Public K4 ciphertext and 24 known plaintext letters are included. There is no authenticated public K5 ciphertext in the reviewed sources; K5 experiments require your own explicit input.
 
@@ -35,7 +35,7 @@ See [the local application guide](docs/LOCAL_APP.md) for interpreter selection, 
 - **Campaigns** expand an explicit recipe matrix or bounded S/T grammar into durable jobs. Completed exact rankings can be reused across campaigns when the plaintext family, model and mask agree; each recipe gets its own reconstructed keys and replay.
 - **Validation** reruns selection with withheld clue values removed, compares positive and shuffled controls, and refits recipes after removing a stage or route. The harder preset uses K4's separated clue positions with multilingual texts and competing layered/grid methods. These are bounded diagnostics, not solution probabilities.
 - **Inspect & trace** independently replays imported JSON and follows individual letters through substitutions, gathers, and coordinate shifts. Imported verification claims and file paths are treated as data.
-- **Pause** commits the current scan wave or exact optimizer frontier. **Stop** discards in-flight work and preserves earlier commits. Resume checks saved-data integrity and source/model identity. Exact slices can grow within the declared limit when rebuilding a large frontier consumes a slice.
+- **Pause** commits the current scan wave, exact optimizer frontier or ranked joint route/key frontier. **Stop** discards in-flight work and preserves earlier commits. Resume checks saved-data integrity and source/model identity. Exact slices can grow within the declared limit when rebuilding a large frontier consumes a slice.
 - The run time budget is checked between waves; every worker has a separate 60-second outer deadline. CPU family scans support up to four workers; CUDA uses one worker/context. Worker count, idle intervals and adaptive page duration can change at committed boundaries, with a saved event history.
 - Known clue letters and every n-gram touching them are masked from ordinary language scoring. A reporting-only sensitivity diagnostic can also mask letters fixed indirectly by the model.
 - Re-encryption, crib consistency and a high language score do not authenticate a solution. Results describe their assumptions and actual bounded coverage. Nothing is submitted to an external service.
@@ -68,9 +68,13 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 ## Validation and packaged data
 
-Version **0.3.0** completes the [eight phase N improvements](research/IMPROVEMENTS_N.md), including the resumed review fixes. It retains the Windows CUDA component-path fix and continues the recreated repository’s gearashi history.
+Version **0.4.0** implements the [fourteen phase O improvements](research/IMPROVEMENTS_O.md). Efficiency means fewer search decisions or complete candidate evaluations for the same result. On fixed controls, admissible route/key pruning reduces candidate evaluations from 4,056 to 156; coordinated moves reach a known optimum in 11 evaluations versus 49; grid-path deduplication reduces 15 solver calls to 11. Sparse exact CPU scoring reduces 988 factor evaluations to 63 without changing the 26 candidates. Unfavorable controls remain documented, and stronger search options default off.
 
-The clean publication package ran **368 tests: 367 passed and one optional raw-source audit skipped** because the original third-party pages are not distributed. Actual NVIDIA GPU tests passed. **43 browser checks** exercised the new workflows, CPU/CUDA ranking, pause/resume, campaign reuse, resource changes, export/import and desktop/mobile views without JavaScript errors. Three fresh [N004 audits](research/release-N-004-audit-notes.md) verify bounded search controls, the unchanged multilingual bank, and20,480 CPU/CUDA candidate evaluations with240 independent retained score/replay checks. See [release validation](research/release-validation.json) for hashes and limits. Historical M and N001–N003 evidence remains unchanged.
+The clean package ran **413 tests: 412 passed and one optional raw-source audit skipped** because original third-party pages are not distributed. Actual NVIDIA GPU tests passed. **43 core browser checks and 22 workspace checks** cover CPU/CUDA ranking, checkpoint continuation, drafts, presets, history, recovery and desktop/mobile views. The first sandboxed browser launch was blocked by Windows; browser-only checks passed with the required process permission against unchanged packaged sources. Six Node runner checks also passed. A final four-assertion browser check verifies the joint checkpoint work-count display.
+
+Three fresh [O001 computation audits](research/O_audit_commands.md) pin immutable inputs and exact work counters. The harder synthetic language benchmark retained three competing families per positive, but ranked the generating texts 1st, 1st, 2nd and 4th. A score is not a solution certificate. See [release validation](research/release-validation.json) for hashes, hardware, scope and publication status; earlier evidence remains unchanged.
+
+Saved editing, searchable/archived history, separate read-only recovery, and verified gearashi release publication are described in [workspace and release operations](docs/WORKSPACE_AND_RELEASE.md). These supporting features do not establish fewer cipher-solving steps.
 
 Run the CPU suite with:
 
