@@ -4,7 +4,29 @@
   "date": "2026-10-25",
   "publication": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "status": "Local acceptance complete; awaiting remote clean-package CI and gearashi publication."
+    "status": "published; exact source/tag, CI matrix, public asset hashes and gearashi attribution verified",
+    "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
+    "tag": "v0.4.0",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0",
+    "verified_assets": {
+      "KryptosSolverK4AndK5.zip": "c518ab28556e309b08d678526867cbfec0180c457caf475d6a3bbbf122033ee8",
+      "SHA256SUMS": "13fc95f05056275ba061a3b83382227961525fb6ad325927884739efe0689c3d",
+      "validation.json": "69fd4afda4d82d4655c606e741e5bcb08e3eebec8bd7edd4332b5cc5bc0e3e55"
+    },
+    "ci_run": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40219972977",
+    "ci_jobs_passed": 4,
+    "attribution": {
+      "author": "gearashi",
+      "committer": "gearashi",
+      "contributors": [
+        "gearashi"
+      ]
+    },
+    "evidence": [
+      "research/runs/release-O-001/github-ci.json",
+      "research/runs/release-O-001/github-release.json",
+      "research/runs/release-O-001/github-attribution.json"
+    ]
   },
   "historical_release": "research/runs/release-N-004/release-validation.json",
   "fresh_checkout": {
@@ -36,7 +58,7 @@
     "post_review_ui": {
       "directory": "research/runs/release-O-001/post-review-ui",
       "checks": 4,
-      "scope": "Tiny CPU joint search confirms actual states_total is shown as search work steps; optimizer node label retained. Source-only app.js label fix after full packaged browser checks. Final exact archive will be checked by CI."
+      "scope": "Tiny CPU joint search confirms actual states_total is shown as search work steps; optimizer node label retained. The final tagged source, including this label fix, passed all four clean-package CI jobs."
     }
   },
   "canonical_audits": [
@@ -195,5 +217,6 @@
     "independent_bound_proof": "research/O-bound-proof-review.md",
     "engine_integration": "research/O-engine-independent-review.md",
     "unresolved_concrete_defects_in_reviewed_scope": []
-  }
+  },
+  "local_launch": "research/runs/release-O-001/local-launch.json"
 }

@@ -20,7 +20,7 @@
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
     "final_review_complete": true,
-    "publication_complete": false,
+    "publication_complete": true,
     "reviewed_actionable_backlog_complete": true
   },
   "entries": [
@@ -976,7 +976,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Positive control has multiple distinct feasible families before scoring; full bank outcomes reported.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -994,7 +994,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Each null reruns identical frozen selection; complete/censored counts and empirical exceedances explicit.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1012,7 +1012,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Same exact page ranking and candidate count, fewer ngram factor evaluations on sparse controls.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1030,7 +1030,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Known interaction trap solved under fewer candidate evaluations than single-coordinate baseline; fixed held controls compare both work and failures.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1048,7 +1048,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Same exhaustive distinct-plaintext top-k; fewer candidate leaves on declared controls; ties and pruning-vs-count distinctions retained.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1066,7 +1066,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Upper bound >= exhaustive residual optimum for every tested partial assignment; fewer proof nodes where stronger; caps preserve fallback.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1084,7 +1084,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Same integer-certified survivors/ties and exact ranking; reduced explicit interval payload transfer, not fewer search candidates.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1102,7 +1102,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Bounded comparative sample, exact agreement, cache and overhead visible; hardware convenience, not fewer solving steps.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1120,7 +1120,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Parameter aliases deduplicated before fitting; bounded bijections and independent encryption replay; explicit unknown method assumptions.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1138,7 +1138,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Interrupted/restarted frontier matches uninterrupted ranking, counts and completeness; checkpoints atomic and compatible.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1156,7 +1156,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Refresh restores drafts without starting computation; invalid payloads rejected.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1174,7 +1174,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Thousands of summaries paginate without copying large candidate/results; archived records remain reversible.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1192,7 +1192,7 @@
       "status": "validated",
       "decision": "accepted",
       "acceptance": "Malformed/unsupported records reported; bounded hashed backups restore separate inert evidence; no imported frontier executes.",
-      "stage": "local-package-verified",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1207,10 +1207,10 @@
     {
       "id": "O14",
       "title": "Clean-package CI and verified release publication",
-      "status": "proposed",
+      "status": "validated",
       "decision": "accepted",
       "acceptance": "Clean source package tested on Windows/Linux; actual CUDA evidence separately required whenclaimed; published release/tag/hash/gearashi attribution verified.",
-      "stage": "local-gate-verified-remote-CI-pending",
+      "stage": "integrated-release-verified",
       "evidence": [
         {
           "path": "research/IMPROVEMENTS_O.md",
@@ -1331,16 +1331,33 @@
         "CPU outperformed CUDA on the fixed small pages; no general GPU speedup claimed."
       ],
       "complete_post_integration_review": true
+    },
+    {
+      "id": "review-O-final-20261025",
+      "reviewer": "root,engine,interface,sources",
+      "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
+      "complete_post_integration_review": true,
+      "findings": [
+        "All14 bounded improvements implemented; counted search work is the efficiency criterion, supporting features reported separately.",
+        "Independent exact oracles and proof review support admissible bounds and deterministic ties within declared finite families.",
+        "Incremental scoring, coordinated guidance, joint pruning, mini-bucket bounds and route deduplication retain unfavorable controls and extra work counters.",
+        "Checkpoint verification accounting and joint saved-work display corrected during review.",
+        "413 local tests with412 passed and one optional raw-source skip; real CUDA;43 core,22 workspace and4 focused browser assertions;6 Node checks.",
+        "Four exact-commit Windows/Linux CI jobs passed. Tagged assets and gearashi-only contributor attribution verified.",
+        "No authenticated K4/K5 result, universal efficiency claim or exhaustive list of all future improvements."
+      ],
+      "remaining_delivery": null
     }
   ],
   "delivery": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "verified_source_commit": "5286188576226a55c18887f4e01bc344764796ae",
+    "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0",
     "local_url": "http://127.0.0.1:8767/",
     "startup": "OpenDashboard.cmd",
-    "state_at_delivery": "Version 0.3.0 is published and running locally, idle; actual compiled CUDA probe succeeded without CUDA_PATH.",
+    "state_at_delivery": "Version0.4.0 published and running locally, idle; actual compiled RTX2060 CUDA probe succeeded without CUDA_PATH.",
     "remaining": null,
-    "verified_at_utc": "2026-10-20T16:56:23.166017+00:00"
+    "verified_at_utc": "2026-10-25T18:20:02.200721+00:00"
   },
   "historical_phase_L_termination": {
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
@@ -1356,5 +1373,21 @@
     "publication_complete": true,
     "reviewed_actionable_backlog_complete": true
   },
-  "user_efficiency_criterion": "Fewer search decisions or complete candidate evaluations; speed alone does not qualify. Count factor and verification work separately."
+  "user_efficiency_criterion": "Fewer search decisions or complete candidate evaluations; speed alone does not qualify. Count factor and verification work separately.",
+  "historical_phase_N_termination": {
+    "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
+    "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
+    "final_review_complete": true,
+    "publication_complete": true,
+    "reviewed_actionable_backlog_complete": true
+  },
+  "historical_phase_N_delivery": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "verified_source_commit": "5286188576226a55c18887f4e01bc344764796ae",
+    "local_url": "http://127.0.0.1:8767/",
+    "startup": "OpenDashboard.cmd",
+    "state_at_delivery": "Version 0.3.0 is published and running locally, idle; actual compiled CUDA probe succeeded without CUDA_PATH.",
+    "remaining": null,
+    "verified_at_utc": "2026-10-20T16:56:23.166017+00:00"
+  }
 }

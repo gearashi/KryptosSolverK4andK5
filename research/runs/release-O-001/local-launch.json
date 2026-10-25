@@ -1,0 +1,20 @@
+{
+  "checked_at_utc": "2026-10-25T18:11:54.525546+00:00",
+  "url": "http://127.0.0.1:8767/",
+  "version": "0.4.0",
+  "no_active_run": true,
+  "cuda_ready": true,
+  "compiled_kernel_verified": true,
+  "devices": [
+    {
+      "id": 0,
+      "name": "NVIDIA GeForce RTX 2060",
+      "compute_capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 6442123264
+    }
+  ],
+  "cuda_path_warning": false
+}

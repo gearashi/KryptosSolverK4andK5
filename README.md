@@ -68,6 +68,8 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 ## Validation and packaged data
 
+[Download v0.4.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0). The exact tagged package passed Windows/Linux CI on Python 3.10 and 3.12, and its public downloads were hash-verified.
+
 Version **0.4.0** implements the [fourteen phase O improvements](research/IMPROVEMENTS_O.md). Efficiency means fewer search decisions or complete candidate evaluations for the same result. On fixed controls, admissible route/key pruning reduces candidate evaluations from 4,056 to 156; coordinated moves reach a known optimum in 11 evaluations versus 49; grid-path deduplication reduces 15 solver calls to 11. Sparse exact CPU scoring reduces 988 factor evaluations to 63 without changing the 26 candidates. Unfavorable controls remain documented, and stronger search options default off.
 
 The clean package ran **413 tests: 412 passed and one optional raw-source audit skipped** because original third-party pages are not distributed. Actual NVIDIA GPU tests passed. **43 core browser checks and 22 workspace checks** cover CPU/CUDA ranking, checkpoint continuation, drafts, presets, history, recovery and desktop/mobile views. The first sandboxed browser launch was blocked by Windows; browser-only checks passed with the required process permission against unchanged packaged sources. Six Node runner checks also passed. A final four-assertion browser check verifies the joint checkpoint work-count display.
