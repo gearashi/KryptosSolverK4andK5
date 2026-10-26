@@ -4,9 +4,31 @@
   "date": "2026-10-26",
   "publication": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "status": "Local validation passed; GitHub exact-source CI, tag, release and asset checks pending",
+    "status": "Published; exact source/tag, all four CI jobs, public asset hashes and gearashi attribution verified",
     "tag": "v0.5.0",
-    "required_account": "gearashi"
+    "required_account": "gearashi",
+    "verified_source_commit": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+    "ci_run": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0",
+    "verified_assets": {
+      "KryptosSolverK4AndK5.zip": "7d04cc3ed5855f616e29401983ec995aa9a9a678c3470b225234f4b1a59e1271",
+      "SHA256SUMS": "153947bac75726da767db601766b44953d0a2644c462795798edbb246021a203",
+      "validation.json": "113e17695462d04e52ece04febc76fd64e6597a6c52c7d9ca44252f40014c9d7"
+    },
+    "ci_jobs_passed": 4,
+    "attribution": {
+      "author": "gearashi",
+      "committer": "gearashi",
+      "release_author": "gearashi",
+      "contributors": [
+        "gearashi"
+      ]
+    },
+    "evidence": [
+      "research/runs/release-P-001/github-ci.json",
+      "research/runs/release-P-001/github-release.json",
+      "research/runs/release-P-001/github-attribution.json"
+    ]
   },
   "historical_release": "research/runs/release-O-001/release-validation.json",
   "fresh_checkout": {
@@ -153,8 +175,13 @@
     "general_nogood_learning": false,
     "reserved_O_bank_retuned": false
   },
-  "remaining": [
-    "Publish exact source under gearashi after the complete GitHub matrix passes.",
-    "Verify tag, assets and contributor attribution; start local dashboard idle."
-  ]
+  "remaining": [],
+  "local_launch": {
+    "path": "research/runs/release-P-001/local-launch.json",
+    "sha256": "e0f63c6474a0b19d3030fc1a5f5bc5de593095b16a22844012727a1599a807ac",
+    "version": "0.5.0",
+    "state": "idle",
+    "compiled_cuda_ready": true
+  },
+  "delivery_metadata_policy": "Post-publication documentation/evidence-only commit on main; immutable tag and assets remain at verified_source_commit."
 }

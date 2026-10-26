@@ -84,3 +84,14 @@ The dashboard exposes all options and lists techniques from the saved run on
 candidate cards. See [search controls](../docs/SEARCH_STRATEGIES.md) and
 [campaign snapshot semantics](../docs/WORKSPACE_AND_RELEASE.md). No result in
 this phase authenticates a K4/K5 plaintext or identifies Kryptos's actual cipher.
+
+## Delivered validation
+
+[Version0.5.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0)
+is published through gearashi at source commit
+`944aea9bc6d4d07702a902945fddbe46ac173d02`. The clean local package passed
+447 of448 tests, with one optional raw-source audit skipped, actual RTX2060
+CUDA checks with `CUDA_PATH` unset,88 browser assertions and6 Node checks.
+All four Windows/Linux Python3.10/3.12 exact-source CI jobs passed. Public asset
+hashes, tag, release author and sole gearashi contributor were verified.
+The local dashboard runs idle with a successful compiled CUDA probe.

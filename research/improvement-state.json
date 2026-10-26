@@ -20,7 +20,7 @@
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
     "final_review_complete": true,
-    "publication_complete": false,
+    "publication_complete": true,
     "reviewed_actionable_backlog_complete": true
   },
   "entries": [
@@ -1228,7 +1228,7 @@
       "status": "validated",
       "decision": "accept bounded optional implementation",
       "acceptance": "Same exhaustive distinct-text top-k, canonical recipes and ties; fewer branch decisions on coupled-clue controls, with propagation work included.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-001/joint/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1243,7 +1243,7 @@
       "status": "validated",
       "decision": "retain opt-in experiment; no overall efficiency recommendation",
       "acceptance": "Reject only partial length patterns that have no feasible completion; independent enumeration confirms coverage and fewer completed segmentations on discriminating controls.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-001/joint/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1258,7 +1258,7 @@
       "status": "validated",
       "decision": "accept bounded optional implementation",
       "acceptance": "Choose route or key unknowns by remaining constraint impact; exact completed outcomes and checkpoint continuation preserved, unique route/assignment counts truthful.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-001/joint/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1273,7 +1273,7 @@
       "status": "validated",
       "decision": "accept bounded optional implementation",
       "acceptance": "Every bound dominates the exhaustive residual maximum; same exact top-k with fewer completed key candidates on declared controls; strict ties and capped fallback.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-001/joint/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1288,7 +1288,7 @@
       "status": "validated",
       "decision": "accept bounded optional implementation",
       "acceptance": "Deduplicate only proven invariant route choices before scoring; exact distinct-text ranking and canonical labelled representative retained; evaluation counts separate from multiplicities.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-001/joint/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1303,7 +1303,7 @@
       "status": "validated",
       "decision": "accept bounded optional implementation",
       "acceptance": "Compatible certified scans continue one owned committed coordinate sequence; different recipe aliases independently replay; no duplicate committed candidate work, false complete ranking or cross-model/mask reuse.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-002/campaign/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1318,7 +1318,7 @@
       "status": "validated",
       "decision": "accept bounded optional implementation",
       "acceptance": "Bounded component contexts reuse exact optima and witnesses within an immutable objective; original-factor verification and lexical ties preserved; zero score is never a proof of infeasibility.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-001/factor/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1333,7 +1333,7 @@
       "status": "validated",
       "decision": "accept bounded optional implementation",
       "acceptance": "An inexpensive valid bound may reject before group/mini-bucket calculations; preserve full bounds for retained checkpoints; count factor operations and extra checks separately.",
-      "stage": "locally-integrated-reviewed-and-validated",
+      "stage": "integrated-reviewed-and-published-v0.5.0",
       "evidence": [
         "research/runs/release-P-001/factor/manifest.json",
         "research/IMPROVEMENTS_P.md"
@@ -1485,15 +1485,22 @@
         "Joint133comparisons, factor864partial/96whole, campaign6controls/295replays and independent irregular12case oracle passed.",
         "448tests447pass1optionalrawsourceskip; actualCUDA;88browserchecks;6Nodechecks.",
         "Independent joint/factor/campaign/browser reviews recorded; no unresolved implementation defect in reviewed scope.",
-        "Original campaign audit-helper failure and corrected P002 evidence both retained."
+        "Original campaign audit-helper failure and corrected P002 evidence both retained.",
+        "All four exact-source Windows/Linux CI jobs passed; public tag/assets, release author and sole gearashi contributor verified. Local app idle and CUDA-ready."
       ],
-      "remaining_delivery": "Exact-source GitHub publication verification"
+      "remaining_delivery": null,
+      "verified_source_commit": "944aea9bc6d4d07702a902945fddbe46ac173d02"
     }
   ],
   "delivery": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "remaining": "Commit and publish through gearashi after exact-source GitHub CI; verify public assets and launch idle local dashboard.",
-    "last_published_release": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0"
+    "verified_source_commit": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0",
+    "local_url": "http://127.0.0.1:8767/",
+    "startup": "OpenDashboard.cmd",
+    "state_at_delivery": "Version0.5.0 published and running locally, idle; actual compiled RTX2060 CUDA probe succeeded without CUDA_PATH.",
+    "remaining": null,
+    "verified_at_utc": "2026-10-26T15:29:08.668531+00:00"
   },
   "historical_phase_L_termination": {
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
@@ -1536,7 +1543,7 @@
     "remaining": null,
     "verified_at_utc": "2026-10-25T18:20:02.200721+00:00"
   },
-  "execution_status": "active",
+  "execution_status": "complete",
   "pause": {
     "date": "2026-10-25",
     "instruction": "Pause for now. Finish the rest of the improvements when I tell you to.",

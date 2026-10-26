@@ -1,0 +1,478 @@
+{
+  "schema": "kryptos.public-github-ci-evidence.v1",
+  "observed_at": "2026-10-26T15:26:58.989758+00:00",
+  "repository": "gearashi/KryptosSolverK4andK5",
+  "api_paths": [
+    "repos/gearashi/KryptosSolverK4andK5/actions/runs/40347346638",
+    "repos/gearashi/KryptosSolverK4andK5/actions/runs/40347346638/jobs?per_page=100"
+  ],
+  "run": {
+    "id": 40347346638,
+    "name": "Verify clean package",
+    "head_sha": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+    "head_branch": "main",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-26T15:14:22Z",
+    "updated_at": "2026-10-26T15:25:30Z",
+    "run_started_at": "2026-10-26T15:14:22Z",
+    "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638",
+    "run_attempt": 1
+  },
+  "required_job_count": 4,
+  "required_jobs": [
+    "package (ubuntu-latest, 3.10)",
+    "package (ubuntu-latest, 3.12)",
+    "package (windows-latest, 3.10)",
+    "package (windows-latest, 3.12)"
+  ],
+  "all_required_jobs_successful": true,
+  "jobs": [
+    {
+      "id": 121657707666,
+      "name": "package (ubuntu-latest, 3.10)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-26T15:14:28Z",
+      "completed_at": "2026-10-26T15:25:29Z",
+      "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638/job/121657707666",
+      "head_sha": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+      "run_id": 40347346638,
+      "run_attempt": 1,
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:28Z",
+          "completed_at": "2026-10-26T15:14:30Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:30Z",
+          "completed_at": "2026-10-26T15:14:32Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:32Z",
+          "completed_at": "2026-10-26T15:14:32Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:32Z",
+          "completed_at": "2026-10-26T15:14:33Z"
+        },
+        {
+          "name": "Install browser test dependencies only",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:33Z",
+          "completed_at": "2026-10-26T15:14:36Z"
+        },
+        {
+          "name": "Install Chromium for browser verification",
+          "number": 6,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:36Z",
+          "completed_at": "2026-10-26T15:23:33Z"
+        },
+        {
+          "name": "Validate the Git archive with CPU-only checks",
+          "number": 7,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:23:33Z",
+          "completed_at": "2026-10-26T15:25:22Z"
+        },
+        {
+          "name": "Retain validated package and evidence",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:25:22Z",
+          "completed_at": "2026-10-26T15:25:25Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "number": 14,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:25:25Z",
+          "completed_at": "2026-10-26T15:25:26Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "number": 15,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:25:26Z",
+          "completed_at": "2026-10-26T15:25:26Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:25:26Z",
+          "completed_at": "2026-10-26T15:25:26Z"
+        },
+        {
+          "name": "Complete job",
+          "number": 17,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:25:26Z",
+          "completed_at": "2026-10-26T15:25:26Z"
+        }
+      ]
+    },
+    {
+      "id": 121657707697,
+      "name": "package (ubuntu-latest, 3.12)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-26T15:14:27Z",
+      "completed_at": "2026-10-26T15:16:31Z",
+      "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638/job/121657707697",
+      "head_sha": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+      "run_id": 40347346638,
+      "run_attempt": 1,
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:28Z",
+          "completed_at": "2026-10-26T15:14:29Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:29Z",
+          "completed_at": "2026-10-26T15:14:32Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:32Z",
+          "completed_at": "2026-10-26T15:14:32Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:32Z",
+          "completed_at": "2026-10-26T15:14:35Z"
+        },
+        {
+          "name": "Install browser test dependencies only",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:35Z",
+          "completed_at": "2026-10-26T15:14:37Z"
+        },
+        {
+          "name": "Install Chromium for browser verification",
+          "number": 6,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:37Z",
+          "completed_at": "2026-10-26T15:15:08Z"
+        },
+        {
+          "name": "Validate the Git archive with CPU-only checks",
+          "number": 7,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:15:08Z",
+          "completed_at": "2026-10-26T15:16:26Z"
+        },
+        {
+          "name": "Retain validated package and evidence",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:16:26Z",
+          "completed_at": "2026-10-26T15:16:28Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "number": 14,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:16:28Z",
+          "completed_at": "2026-10-26T15:16:29Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "number": 15,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:16:29Z",
+          "completed_at": "2026-10-26T15:16:29Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:16:29Z",
+          "completed_at": "2026-10-26T15:16:29Z"
+        },
+        {
+          "name": "Complete job",
+          "number": 17,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:16:29Z",
+          "completed_at": "2026-10-26T15:16:29Z"
+        }
+      ]
+    },
+    {
+      "id": 121657707028,
+      "name": "package (windows-latest, 3.10)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-26T15:14:27Z",
+      "completed_at": "2026-10-26T15:18:36Z",
+      "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638/job/121657707028",
+      "head_sha": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+      "run_id": 40347346638,
+      "run_attempt": 1,
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:27Z",
+          "completed_at": "2026-10-26T15:14:28Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:28Z",
+          "completed_at": "2026-10-26T15:14:35Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:35Z",
+          "completed_at": "2026-10-26T15:15:08Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:15:08Z",
+          "completed_at": "2026-10-26T15:15:13Z"
+        },
+        {
+          "name": "Install browser test dependencies only",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:15:13Z",
+          "completed_at": "2026-10-26T15:15:17Z"
+        },
+        {
+          "name": "Install Chromium for browser verification",
+          "number": 6,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:15:17Z",
+          "completed_at": "2026-10-26T15:17:32Z"
+        },
+        {
+          "name": "Validate the Git archive with CPU-only checks",
+          "number": 7,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:17:32Z",
+          "completed_at": "2026-10-26T15:18:30Z"
+        },
+        {
+          "name": "Retain validated package and evidence",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:18:30Z",
+          "completed_at": "2026-10-26T15:18:32Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "number": 14,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:18:32Z",
+          "completed_at": "2026-10-26T15:18:33Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "number": 15,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:18:33Z",
+          "completed_at": "2026-10-26T15:18:33Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:18:33Z",
+          "completed_at": "2026-10-26T15:18:34Z"
+        },
+        {
+          "name": "Complete job",
+          "number": 17,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:18:34Z",
+          "completed_at": "2026-10-26T15:18:34Z"
+        }
+      ]
+    },
+    {
+      "id": 121657707949,
+      "name": "package (windows-latest, 3.12)",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-26T15:14:27Z",
+      "completed_at": "2026-10-26T15:19:41Z",
+      "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638/job/121657707949",
+      "head_sha": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+      "run_id": 40347346638,
+      "run_attempt": 1,
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:28Z",
+          "completed_at": "2026-10-26T15:14:29Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:29Z",
+          "completed_at": "2026-10-26T15:14:37Z"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:37Z",
+          "completed_at": "2026-10-26T15:14:37Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:37Z",
+          "completed_at": "2026-10-26T15:14:43Z"
+        },
+        {
+          "name": "Install browser test dependencies only",
+          "number": 5,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:43Z",
+          "completed_at": "2026-10-26T15:14:49Z"
+        },
+        {
+          "name": "Install Chromium for browser verification",
+          "number": 6,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:14:49Z",
+          "completed_at": "2026-10-26T15:18:12Z"
+        },
+        {
+          "name": "Validate the Git archive with CPU-only checks",
+          "number": 7,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:18:12Z",
+          "completed_at": "2026-10-26T15:19:33Z"
+        },
+        {
+          "name": "Retain validated package and evidence",
+          "number": 8,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:19:33Z",
+          "completed_at": "2026-10-26T15:19:36Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "number": 14,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:19:36Z",
+          "completed_at": "2026-10-26T15:19:36Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "number": 15,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:19:36Z",
+          "completed_at": "2026-10-26T15:19:36Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 16,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:19:36Z",
+          "completed_at": "2026-10-26T15:19:38Z"
+        },
+        {
+          "name": "Complete job",
+          "number": 17,
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-26T15:19:38Z",
+          "completed_at": "2026-10-26T15:19:38Z"
+        }
+      ]
+    }
+  ],
+  "monitoring_notes": [
+    "Read-only monitoring; no job rerun, retry, cancellation, tag or release action.",
+    "Ubuntu Python3.10 browser-install step completed successfully after537seconds; the live log endpoint returned404 while active.",
+    "This is the four-platform-version CPU/archive/browser workflow result; it does not establish GPU validation or authenticate a Kryptos plaintext."
+  ]
+}

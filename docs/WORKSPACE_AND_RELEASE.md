@@ -108,3 +108,10 @@ authorized release. The published author must be gearashi; the script checks
 the public page, tag and every downloadable asset's SHA-256 afterward. It never
 commits changes or silently creates a tag. CUDA claims require separate actual
 hardware evidence and are not inferred from successful CPU CI.
+
+The tag and downloadable source archive stay pinned to the tested source commit.
+Publication results are recorded afterward in a documentation/evidence-only
+commit on `main`. Consequently the archive's research publication record can
+still say pending; use the release's verified `validation.json` asset and the
+current `main` publication record for delivery confirmation. This avoids changing
+tested source bytes to include evidence that exists only after publication.
