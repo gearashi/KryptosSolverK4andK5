@@ -183,7 +183,8 @@ def evaluate_factor(f, values, domains, model):
 class _Evaluator:
     def __init__(self,problem,cache_limit,local_limit,factor_group_size=0,group_exact_limit=4096,
                  elimination_bound="off", elimination_bucket_entries=256,
-                 elimination_max_entries=20000, elimination_max_operations=200000):
+                 elimination_max_entries=20000, elimination_max_operations=200000,
+                 cheap_bound_first=False):
         self.domains,self.factors = _validate(problem)
         self.problem = problem
         self.elimination_bound = elimination_bound
@@ -197,12 +198,70 @@ class _Evaluator:
         self.stats = {"cache_hits":0,"bound_evaluations":0,"exact_local_completions":0,"relaxed_bounds":0,"correlated_bounds":0,"observed_grams_checked":0,
                       "group_bounds":0,"group_exact_completions":0,"group_fallbacks":0,
                       "elimination_attempts":0,"elimination_tightenings":0,"elimination_fallbacks":0,
-                      "elimination_operations":0,"elimination_factor_evaluations":0}
+                      "elimination_operations":0,"elimination_factor_evaluations":0,
+                      "factor_evaluations":0,"cheap_preparation_entries":0,
+                      "cheap_bound_calls":0,"cheap_bound_rejections":0,
+                      "cheap_factor_checks":0,"cheap_cached_factor_hits":0,
+                      "residual_witness_factor_evaluations":0}
         self.grams = [] if self.model is None else sorted(self.model["counts"].items(),key=lambda kv:(-kv[1],kv[0]))
         self.correlated = None if self.model is None else CorrelatedNgramBound(self.model["alphabet"],self.model["counts"],self.model["p"],self.model["q"])
+        self.global_factor_bounds = None
+        if cheap_bound_first:
+            model_max = 0
+            if self.model is not None:
+                self.stats["cheap_preparation_entries"] += len(self.model["counts"])
+                model_max = max(self.model["counts"].values(), default=0)*self.model["q"]+self.model["p"]
+            self.global_factor_bounds = []
+            for factor in self.factors:
+                if factor["kind"] == "table":
+                    self.stats["cheap_preparation_entries"] += len(factor["values"])
+                    bound = max(factor["values"])
+                else:
+                    bound = model_max
+                self.global_factor_bounds.append(bound ** factor.get("power", 1))
+            self.global_upper = math.prod(self.global_factor_bounds)
 
     def _value(self,f,values):
+        self.stats["factor_evaluations"] += 1
         return evaluate_factor(f, values, self.domains, self.model)
+
+    def cheap_reject(self, assignment, incumbent_score, incumbent):
+        """Threshold-only gate; never supplies a persisted frontier bound.
+
+        Replace universal maxima by already cached or fully fixed factor values.
+        Every intermediate product is admissible. Equality is safe only when
+        the branch's lexical minimum cannot improve the incumbent.
+        """
+        if self.global_factor_bounds is None:
+            return False
+        self.stats["cheap_bound_calls"] += 1
+        lexical_cannot_improve = tuple(max(0, v) for v in assignment) >= incumbent
+        def rejects(bound):
+            return bound < incumbent_score or (bound == incumbent_score and lexical_cannot_improve)
+        upper = self.global_upper
+        if rejects(upper):
+            self.stats["cheap_bound_rejections"] += 1
+            return True
+        for number, factor in enumerate(self.factors):
+            self.stats["cheap_factor_checks"] += 1
+            values = tuple(assignment[v] for v in factor["scope"])
+            key = (number, values)
+            if key in self.cache:
+                bound = self.cache[key]
+                self.stats["cheap_cached_factor_hits"] += 1
+            elif -1 not in values:
+                bound = self._value(factor, values)
+            else:
+                continue
+            global_bound = self.global_factor_bounds[number]
+            # A zero universal factor already makes upper=0. No division by
+            # zero is needed, and a zero score is not an infeasible branch.
+            if global_bound:
+                upper = (upper // global_bound) * bound ** factor.get("power", 1)
+            if rejects(upper):
+                self.stats["cheap_bound_rejections"] += 1
+                return True
+        return False
 
     def local_upper(self,number,assignment):
         f = self.factors[number]
@@ -317,7 +376,10 @@ def score_assignment(problem,assignment):
 def _identity(problem,ordering,local_limit,groups=(),group_exact_limit=4096,
               decomposition="off", decomposition_max_entries=20000, decomposition_max_operations=200000,
               elimination_bound="off", elimination_bucket_entries=256,
-              elimination_max_entries=20000, elimination_max_operations=200000):
+              elimination_max_entries=20000, elimination_max_operations=200000,
+              residual_cache="off", residual_cache_max_entries=256,
+              residual_cache_max_assignments=256, residual_cache_max_operations=200000,
+              cheap_bound_first=False):
     root = Path(__file__).resolve().parent
     return {"problem_sha256":_digest(problem),"ordering":ordering,"local_exact_limit":local_limit,
             "factor_groups":[list(g) for g in groups],"group_exact_limit":group_exact_limit,
@@ -325,8 +387,11 @@ def _identity(problem,ordering,local_limit,groups=(),group_exact_limit=4096,
             "decomposition_max_operations":decomposition_max_operations,
             "elimination_bound":elimination_bound,"elimination_bucket_entries":elimination_bucket_entries,
             "elimination_max_entries":elimination_max_entries,"elimination_max_operations":elimination_max_operations,
+            "residual_cache":residual_cache,"residual_cache_max_entries":residual_cache_max_entries,
+            "residual_cache_max_assignments":residual_cache_max_assignments,
+            "residual_cache_max_operations":residual_cache_max_operations,"cheap_bound_first":cheap_bound_first,
             "sources":{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ("search_runtime.py","language.py","correlated_bound.py","factor_decomposition.py","guided_search.py")},
-            "version":"adaptive-search-v4; bounded exact residual elimination; verified assignment seeds; lexicographically smallest original assignment"}
+            "version":"adaptive-search-v5; invocation-local verified component reuse; threshold-only cheap gates; full persisted bounds; original-coordinate lexical ties"}
 
 
 def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=10000,
@@ -335,7 +400,10 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                   initial_assignments=(),elapsed_before_seconds=0,decomposition="off",
                   decomposition_max_entries=20000,decomposition_max_operations=200000,
                   elimination_bound="off",elimination_bucket_entries=256,
-                  elimination_max_entries=20000,elimination_max_operations=200000):
+                  elimination_max_entries=20000,elimination_max_operations=200000,
+                  residual_cache="off",residual_cache_max_entries=256,
+                  residual_cache_max_assignments=256,residual_cache_max_operations=200000,
+                  cheap_bound_first=False):
     """Return exact incumbent/bound, optionally preserving the live frontier.
 
     Caps are cooperative (checked between node expansions). Changing a cap on
@@ -357,6 +425,13 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
     _integer(elimination_bucket_entries,"elimination_bucket_entries",1,100000)
     _integer(elimination_max_entries,"elimination_max_entries",1,1000000)
     _integer(elimination_max_operations,"elimination_max_operations",1,10000000)
+    if residual_cache not in ("off", "components"):
+        raise ValueError("residual_cache must be off or components")
+    _integer(residual_cache_max_entries,"residual_cache_max_entries",0,10000)
+    _integer(residual_cache_max_assignments,"residual_cache_max_assignments",1,100000)
+    _integer(residual_cache_max_operations,"residual_cache_max_operations",1,10000000)
+    if type(cheap_bound_first) is not bool:
+        raise ValueError("cheap_bound_first must be boolean")
     if isinstance(elapsed_before_seconds,bool) or not isinstance(elapsed_before_seconds,(int,float)) or not math.isfinite(elapsed_before_seconds) or elapsed_before_seconds<0:
         raise ValueError("elapsed_before_seconds must be finite and nonnegative")
     if not isinstance(initial_assignments,(list,tuple)) or len(initial_assignments)>100:
@@ -373,11 +448,18 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
         # away a small prior duration and silently restore spent budget.
         return elapsed_before_seconds + (time.monotonic() - actual_started)
     evaluator = _Evaluator(problem,max_cache_entries,local_exact_limit,factor_group_size,group_exact_limit,
-        elimination_bound,elimination_bucket_entries,elimination_max_entries,elimination_max_operations)
+        elimination_bound,elimination_bucket_entries,elimination_max_entries,elimination_max_operations,cheap_bound_first)
+    residual_solver = None
+    if residual_cache == "components":
+        from .factor_decomposition import ResidualComponentCache
+        residual_solver = ResidualComponentCache(problem,max_entries=residual_cache_max_entries,
+            max_assignments=residual_cache_max_assignments,max_operations=residual_cache_max_operations)
     domains = evaluator.domains
     identity = _identity(problem,ordering,local_exact_limit,evaluator.groups,group_exact_limit,
                          decomposition,decomposition_max_entries,decomposition_max_operations,
-                         elimination_bound,elimination_bucket_entries,elimination_max_entries,elimination_max_operations)
+                         elimination_bound,elimination_bucket_entries,elimination_max_entries,elimination_max_operations,
+                         residual_cache,residual_cache_max_entries,residual_cache_max_assignments,
+                         residual_cache_max_operations,cheap_bound_first)
     best = tuple(0 for _ in domains)
     best_score = evaluator.upper(best)
     root = tuple(-1 for _ in domains)
@@ -453,6 +535,27 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
             if bound>best_score or (bound==best_score and point<best):
                 best_score,best=bound,point
             continue
+        if residual_solver is not None and elapsed()<time_limit_seconds:
+            reduced=residual_solver.solve(point,time_limit_seconds=max(1e-9,time_limit_seconds-elapsed()))
+            if reduced["complete"]:
+                answer=tuple(reduced["assignment"])
+                if (len(answer)!=len(domains) or any(type(v) is not int or not 0<=v<d for v,d in zip(answer,domains))
+                        or any(v>=0 and answer[i]!=v for i,v in enumerate(point))):
+                    raise AssertionError("residual witness violates its original domain")
+                value=1
+                for factor in evaluator.factors:
+                    evaluator.stats["residual_witness_factor_evaluations"]+=1
+                    value*=evaluator._value(factor,tuple(answer[v] for v in factor["scope"]))**factor.get("power",1)
+                if value!=reduced["score"]:
+                    raise AssertionError("residual witness failed original factor verification")
+                if value>best_score or (value==best_score and answer<best):
+                    best_score,best=value,answer
+                continue
+            if elapsed()>=time_limit_seconds:
+                heapq.heappush(frontier,(neg,point))
+                requeued+=1
+                stop="time_limit"
+                break
         if decomposition=="auto" and decomposition_report["operations"]<decomposition_max_operations and elapsed()<time_limit_seconds:
             from .factor_decomposition import exact_decomposition
             reduced=exact_decomposition(problem,point,max_entries=decomposition_max_entries,
@@ -487,6 +590,9 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
             child=list(point)
             child[variable]=value
             child=tuple(child)
+            if cheap_bound_first and evaluator.cheap_reject(child,best_score,best):
+                pruned+=1
+                continue
             upper=evaluator.upper(child)
             if upper<best_score or (upper==best_score and lex_min(child)>=best):
                 pruned+=1
@@ -514,6 +620,10 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
             "requeued_nodes":requeued,"frontier_progress_nodes":nodes-requeued,
             "frontier_nodes":len(frontier),"cache_entries":len(evaluator.cache),"work":evaluator.stats,
             "decomposition":decomposition_report,
+            "residual_cache":{"mode":residual_cache,"entries":len(residual_solver.cache) if residual_solver else 0,
+                              "work":dict(residual_solver.stats) if residual_solver else {},
+                              "scope":"frozen original objective and this invocation only; never restored from checkpoints",
+                              "zero_score_interpretation":"all completions score zero, not infeasible"},
             "assignment_space_size":math.prod(domains),"identity":identity,"resumed":resume_path is not None,
             "verified_seeds":seed_scores,"elapsed_before_seconds":elapsed_before_seconds,
             "checkpoint_written":str(checkpoint_path) if checkpoint_path is not None else None,
@@ -523,6 +633,9 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                       "decomposition":decomposition,"decomposition_max_entries":decomposition_max_entries,
                       "decomposition_max_operations":decomposition_max_operations,
                       "elimination_bound":elimination_bound,"elimination_bucket_entries":elimination_bucket_entries,
-                      "elimination_max_entries":elimination_max_entries,"elimination_max_operations":elimination_max_operations},
+                      "elimination_max_entries":elimination_max_entries,"elimination_max_operations":elimination_max_operations,
+                      "residual_cache":residual_cache,"residual_cache_max_entries":residual_cache_max_entries,
+                      "residual_cache_max_assignments":residual_cache_max_assignments,
+                      "residual_cache_max_operations":residual_cache_max_operations,"cheap_bound_first":cheap_bound_first},
             "ordering":ordering,"runtime_seconds":elapsed(),
             "interpretation":"Exact bounds for this product objective only. Lazy letter-domain bounds may ignore correlations; pruning remains admissible. No authentication."}

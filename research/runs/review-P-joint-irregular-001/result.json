@@ -1,0 +1,128 @@
+{
+  "schema": "kryptos.review-P-joint-irregular.v1",
+  "passed": true,
+  "cases": [
+    {
+      "direction": "top_to_bottom",
+      "order": "ST",
+      "cipher": "vigenere",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "top_to_bottom",
+      "order": "ST",
+      "cipher": "beaufort",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "top_to_bottom",
+      "order": "ST",
+      "cipher": "variant",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "top_to_bottom",
+      "order": "TS",
+      "cipher": "vigenere",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "top_to_bottom",
+      "order": "TS",
+      "cipher": "beaufort",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "top_to_bottom",
+      "order": "TS",
+      "cipher": "variant",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "bottom_to_top",
+      "order": "ST",
+      "cipher": "vigenere",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "bottom_to_top",
+      "order": "ST",
+      "cipher": "beaufort",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "bottom_to_top",
+      "order": "ST",
+      "cipher": "variant",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "bottom_to_top",
+      "order": "TS",
+      "cipher": "vigenere",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "bottom_to_top",
+      "order": "TS",
+      "cipher": "beaufort",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    },
+    {
+      "direction": "bottom_to_top",
+      "order": "TS",
+      "cipher": "variant",
+      "complete": true,
+      "canonical_top5_matches": true,
+      "oracle_assignments": 1352
+    }
+  ],
+  "oracle_assignments": 16224,
+  "inputs_before": {
+    "research/review_P_joint_oracle.py": "3b287baa1d216765351de74bd72c86c1c3d505abd71166c349b743c1944226ce",
+    "kryptos/joint_ranked.py": "26d550f71c12e12aa9198640c00faf8b82113943ef761967b07af21299897c1d",
+    "kryptos/joint_ranked_helpers.py": "c53419908f9ba753439c31361ad705b55111eb63528bc29c8aaacc0763936346",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/search_runtime.py": "90686a2e47f59528fd6567d2ff6ba483a4b92c7c7f2376b3113574607a98a25a",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2"
+  },
+  "inputs_after": {
+    "research/review_P_joint_oracle.py": "3b287baa1d216765351de74bd72c86c1c3d505abd71166c349b743c1944226ce",
+    "kryptos/joint_ranked.py": "26d550f71c12e12aa9198640c00faf8b82113943ef761967b07af21299897c1d",
+    "kryptos/joint_ranked_helpers.py": "c53419908f9ba753439c31361ad705b55111eb63528bc29c8aaacc0763936346",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/search_runtime.py": "90686a2e47f59528fd6567d2ff6ba483a4b92c7c7f2376b3113574607a98a25a",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2"
+  },
+  "scope": "Only twelve fixed irregular-cell cases. No efficacy, general proof or K4/K5 claim."
+}

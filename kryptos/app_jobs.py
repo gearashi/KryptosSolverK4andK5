@@ -87,10 +87,28 @@ def validate_start(body):
           "max_candidates_per_family":17576,"max_total_candidates":100000,"max_orders":5000,"max_evaluations":100000,
           "decomposition_max_entries":20000,"decomposition_max_operations":200000,
           "elimination_bucket_entries":10000,"elimination_max_entries":20000,"elimination_max_operations":200000,
-          "null_replicates":16,"minimum_distinct_surviving_families":16,"max_protocol_candidates":100000}
+          "null_replicates":16,"minimum_distinct_surviving_families":16,"max_protocol_candidates":100000,
+          "max_bound_cache_entries":10000,"residual_cache_max_entries":1024,
+          "residual_cache_max_assignments":4096,"residual_cache_max_operations":200000}
     for name,cap in caps.items():
         if name in request:
-            integer(request[name],name,0,cap)
+            minimum=1 if name in {"residual_cache_max_assignments","residual_cache_max_operations"} else 0
+            integer(request[name],name,minimum,cap)
+    choices={}
+    booleans=[]
+    if command=="joint-ranked":
+        choices={"propagation":{"off","fixed_point"},"branching":{"prefix","constrained"},
+                 "score_bound":{"independent","shared_key"},"symmetry":{"off","identical_chunks"}}
+        booleans=["early_segmentation"]
+    elif command=="optimize-plus":
+        choices={"residual_cache":{"off","components"}}
+        booleans=["cheap_bound_first"]
+    for name,options in choices.items():
+        if name in request and (not isinstance(request[name],str) or request[name] not in options):
+            raise ValueError("Invalid search strategy: "+name)
+    for name in booleans:
+        if name in request and type(request[name]) is not bool:
+            raise ValueError(name+" must be boolean")
     if "time_limit_seconds" in request:
         value=request["time_limit_seconds"]
         cap=30 if command in {"validate-holdout","validate-controls","validate-ablations"} else 10
@@ -547,6 +565,8 @@ class RunManager:
         initial=record.get('result') or {}
         counters={'max_states':('states_total',200000),'max_evaluations':('evaluated',100000),
                   'max_orders':('column_orders_visited',5000),'max_segmentations':('segmentations_tested',2048)}
+        if record['request'].get('branching')=='constrained':
+            counters['max_orders']=('route_completion_blocks',5000)
         start_counts={field:initial.get(field,0) for field,_ in counters.values()}
         budgets={limit:integer(record['request'].get(limit,default),limit,1,200000)
                  for limit,(field,default) in counters.items()}

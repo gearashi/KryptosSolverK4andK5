@@ -1,0 +1,759 @@
+{
+  "schema": "kryptos.local-run.v1",
+  "id": "770d5455b5ed4f7dad302eecc2dfe43e",
+  "state": "completed",
+  "kind": "exact",
+  "command": "optimize-plus",
+  "request": {
+    "target": "custom",
+    "ciphertext": "TIITITATEDRFTUXU",
+    "cribs": [
+      {
+        "start": 1,
+        "text": "T"
+      }
+    ],
+    "alphabet": "standard",
+    "stages": [
+      {
+        "operation": "substitution",
+        "period": 2
+      }
+    ],
+    "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+    "max_nodes": 10000,
+    "max_frontier": 1000,
+    "max_cache_entries": 10000,
+    "ordering": "impact",
+    "time_limit_seconds": 5,
+    "decomposition": "auto",
+    "guided_seed": {
+      "restarts": 4,
+      "max_sweeps": 4,
+      "top": 3,
+      "max_factor_evaluations": 20000,
+      "seed": 17,
+      "max_evaluations": 128
+    },
+    "factor_group_size": 2,
+    "group_exact_limit": 676
+  },
+  "settings": {
+    "backend": "cpu",
+    "workers": 1,
+    "batch_size": 512,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": false,
+    "idle_ms": 0,
+    "target_page_seconds": 1,
+    "ranking_mode": "certified"
+  },
+  "note": "",
+  "created_at": "2026-10-26T15:08:35.538701+00:00",
+  "updated_at": "2026-10-26T15:08:36.394939+00:00",
+  "progress": {
+    "completed": 1,
+    "total": null,
+    "unit": "search nodes",
+    "frontier_progress_nodes": 1,
+    "completed_decimal": "1",
+    "total_decimal": null
+  },
+  "elapsed_seconds": 0.8279999999795109,
+  "rate": 1.2077294686289195,
+  "candidates": [
+    {
+      "plaintext": "THISISASECRETTXT",
+      "keys": [
+        "AB"
+      ],
+      "values_mod2": [
+        1
+      ],
+      "values_mod13": [
+        1
+      ],
+      "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+      "reencryption_matches": true,
+      "authenticated_solution": false,
+      "classification": "model_consistency_witness",
+      "encryption_recipe": {
+        "schema": "kryptos.encryption-recipe.v1",
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "stages": [
+          {
+            "operation": "repeat_substitution",
+            "cipher": "vigenere",
+            "key_pattern": "AB"
+          }
+        ]
+      },
+      "evidence": {
+        "literal_reencryption_matches": true,
+        "crib_matches": 1,
+        "stage_outputs": [
+          {
+            "stage": 1,
+            "operation": "repeat_substitution",
+            "output": "TIITITATEDRFTUXU",
+            "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+          }
+        ],
+        "authenticated_solution": false
+      }
+    }
+  ],
+  "result": {
+    "target": "custom",
+    "feasible": true,
+    "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "stages": [
+      {
+        "operation": "substitution",
+        "period": 2,
+        "cipher": "vigenere"
+      }
+    ],
+    "key_slots": 2,
+    "rank_mod2": 1,
+    "rank_mod13": 1,
+    "dimensions_mod2": 1,
+    "dimensions_mod13": 1,
+    "distinct_plaintext_count": 26,
+    "key_assignment_count": 26,
+    "constraints": [
+      {
+        "plaintext_position_zero_based": 0,
+        "ciphertext_position_zero_based": 0,
+        "key_coefficients_mod26": [
+          1,
+          0
+        ],
+        "rhs_mod26": 0
+      }
+    ],
+    "conflicts": [],
+    "scalar_work_units": 216,
+    "bounds": {
+      "max_key_slots": 256,
+      "max_matrix_cells": 2000000,
+      "max_operations": 20000000,
+      "estimated_matrix_cells": 216
+    },
+    "authenticated_solution": false,
+    "prediction_mask": "T?I?I?A?E?R?T?X?",
+    "key_nullity_mod2": 1,
+    "key_nullity_mod13": 1,
+    "gauge_dimension_mod2": 0,
+    "gauge_dimension_mod13": 0,
+    "phase_provenance": [],
+    "optimization": {
+      "search": {
+        "assignment": [
+          1,
+          1
+        ],
+        "score": {
+          "encoding": "exact_integer_hex",
+          "value": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd"
+        },
+        "lower_bound": {
+          "encoding": "exact_integer_hex",
+          "value": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd"
+        },
+        "upper_bound": {
+          "encoding": "exact_integer_hex",
+          "value": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd"
+        },
+        "optimal": true,
+        "tie_break_proven": true,
+        "complete": true,
+        "stop_reason": "exhausted",
+        "nodes": 1,
+        "nodes_total": 1,
+        "leaf_nodes": 0,
+        "pruned_nodes": 0,
+        "requeued_nodes": 0,
+        "frontier_progress_nodes": 1,
+        "frontier_nodes": 0,
+        "cache_entries": 21,
+        "work": {
+          "cache_hits": 0,
+          "bound_evaluations": 3,
+          "exact_local_completions": 26,
+          "relaxed_bounds": 0,
+          "correlated_bounds": 0,
+          "observed_grams_checked": 0,
+          "group_bounds": 18,
+          "group_exact_completions": 168,
+          "group_fallbacks": 0,
+          "elimination_attempts": 0,
+          "elimination_tightenings": 0,
+          "elimination_fallbacks": 0,
+          "elimination_operations": 0,
+          "elimination_factor_evaluations": 0,
+          "factor_evaluations": 364,
+          "cheap_preparation_entries": 0,
+          "cheap_bound_calls": 0,
+          "cheap_bound_rejections": 0,
+          "cheap_factor_checks": 0,
+          "cheap_cached_factor_hits": 0,
+          "residual_witness_factor_evaluations": 0
+        },
+        "decomposition": {
+          "mode": "auto",
+          "attempts": 1,
+          "solved_residuals": 1,
+          "fallbacks": {},
+          "operations": 796,
+          "factor_evaluations": 338,
+          "max_separator_variables": 1,
+          "max_components": 1,
+          "peak_planned_entries": 352
+        },
+        "residual_cache": {
+          "mode": "off",
+          "entries": 0,
+          "work": {},
+          "scope": "frozen original objective and this invocation only; never restored from checkpoints",
+          "zero_score_interpretation": "all completions score zero, not infeasible"
+        },
+        "assignment_space_size": 26,
+        "identity": {
+          "problem_sha256": "f826784832d1ab478a68c6e06c7b0ddcb3dbf0c0fb6b8f61d6de963f545b3c78",
+          "ordering": "impact",
+          "local_exact_limit": 64,
+          "factor_groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              10,
+              11
+            ],
+            [
+              12
+            ]
+          ],
+          "group_exact_limit": 676,
+          "decomposition": "auto",
+          "decomposition_max_entries": 20000,
+          "decomposition_max_operations": 200000,
+          "elimination_bound": "off",
+          "elimination_bucket_entries": 256,
+          "elimination_max_entries": 20000,
+          "elimination_max_operations": 200000,
+          "residual_cache": "off",
+          "residual_cache_max_entries": 256,
+          "residual_cache_max_assignments": 256,
+          "residual_cache_max_operations": 200000,
+          "cheap_bound_first": false,
+          "sources": {
+            "search_runtime.py": "90686a2e47f59528fd6567d2ff6ba483a4b92c7c7f2376b3113574607a98a25a",
+            "language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+            "correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+            "factor_decomposition.py": "8add3c1830d719bc2ff2fd81a7fca9493bb25f2f74ab196f21cb0fae8797396e",
+            "guided_search.py": "6139c56d5d4a67a178a5320802deea4eb17aa31ff62052f830be83523ca98948"
+          },
+          "version": "adaptive-search-v5; invocation-local verified component reuse; threshold-only cheap gates; full persisted bounds; original-coordinate lexical ties"
+        },
+        "resumed": false,
+        "verified_seeds": [
+          {
+            "assignment": [
+              1,
+              1
+            ],
+            "score_hex": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd"
+          },
+          {
+            "assignment": [
+              0,
+              3
+            ],
+            "score_hex": "0xa444fbfc3cfdde13f31a539454e73454048eada0c74f96977ee1b8993bc746d84727ef35ab457f447e509e443da8d698dd2a30d6db94baeb55ca066b6807d0915e979098ab674db8a7511e4f298843933855242597e373a2cf9f6433fbd"
+          },
+          {
+            "assignment": [
+              0,
+              0
+            ],
+            "score_hex": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd"
+          }
+        ],
+        "elapsed_before_seconds": 0.1869999999180436,
+        "bounds": {
+          "max_nodes": 256,
+          "max_frontier": 1000,
+          "max_cache_entries": 10000,
+          "local_exact_limit": 64,
+          "time_limit_seconds": 2,
+          "factor_group_size": 2,
+          "group_exact_limit": 676,
+          "decomposition": "auto",
+          "decomposition_max_entries": 20000,
+          "decomposition_max_operations": 200000,
+          "elimination_bound": "off",
+          "elimination_bucket_entries": 256,
+          "elimination_max_entries": 20000,
+          "elimination_max_operations": 200000,
+          "residual_cache": "off",
+          "residual_cache_max_entries": 256,
+          "residual_cache_max_assignments": 256,
+          "residual_cache_max_operations": 200000,
+          "cheap_bound_first": false
+        },
+        "ordering": "impact",
+        "runtime_seconds": 0.375,
+        "interpretation": "Exact bounds for this product objective only. Lazy letter-domain bounds may ignore correlations; pruning remains admissible. No authentication.",
+        "seed_scan": null,
+        "guided_seed": {
+          "method": "seeded_affine_coordinate_ascent_exact_factor_deltas",
+          "seed": 17,
+          "candidates": [
+            {
+              "assignment": [
+                1,
+                1
+              ],
+              "score_hex": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd"
+            },
+            {
+              "assignment": [
+                0,
+                3
+              ],
+              "score_hex": "0xa444fbfc3cfdde13f31a539454e73454048eada0c74f96977ee1b8993bc746d84727ef35ab457f447e509e443da8d698dd2a30d6db94baeb55ca066b6807d0915e979098ab674db8a7511e4f298843933855242597e373a2cf9f6433fbd"
+            },
+            {
+              "assignment": [
+                0,
+                0
+              ],
+              "score_hex": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd"
+            }
+          ],
+          "work": {
+            "objective_evaluations": 108,
+            "factor_evaluations": 1404,
+            "accepted_moves": 4,
+            "restarts_started": 4,
+            "sweeps_completed": 8,
+            "full_factor_evaluations_avoided": 0,
+            "block_trials": 0,
+            "accepted_block_moves": 0,
+            "blocks_over_completion_cap": 0,
+            "block_pair_memberships": 0,
+            "block_discovery_capped": 0
+          },
+          "stop_reason": "restarts_complete",
+          "runtime_seconds": 0.01500000013038516,
+          "bounds": {
+            "restarts": 4,
+            "max_evaluations": 128,
+            "max_sweeps": 4,
+            "top": 3,
+            "max_factor_evaluations": 20000,
+            "block_size": 1,
+            "max_blocks": 32,
+            "max_block_completions": 676,
+            "time_limit_seconds": 1.922000000020489
+          },
+          "coordinated_blocks": [],
+          "optimality_claimed": false,
+          "interpretation": "Feasible coordinates and exact scores only. Local optima and unvisited regions remain possible; no authentication.",
+          "status": "verified",
+          "verified_seeds": 3,
+          "literal_replays_verified": 3,
+          "model_file_sha256": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39"
+        }
+      },
+      "candidate": {
+        "plaintext": "THISISASECRETTXT",
+        "keys": [
+          "AB"
+        ],
+        "values_mod2": [
+          1
+        ],
+        "values_mod13": [
+          1
+        ],
+        "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+        "reencryption_matches": true,
+        "authenticated_solution": false,
+        "classification": "model_consistency_witness",
+        "encryption_recipe": {
+          "schema": "kryptos.encryption-recipe.v1",
+          "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          "stages": [
+            {
+              "operation": "repeat_substitution",
+              "cipher": "vigenere",
+              "key_pattern": "AB"
+            }
+          ]
+        },
+        "evidence": {
+          "literal_reencryption_matches": true,
+          "crib_matches": 1,
+          "stage_outputs": [
+            {
+              "stage": 1,
+              "operation": "repeat_substitution",
+              "output": "TIITITATEDRFTUXU",
+              "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0"
+            }
+          ],
+          "authenticated_solution": false
+        }
+      },
+      "scoring": {
+        "windows": 13,
+        "window_positions": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            5,
+            6,
+            7
+          ],
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            7,
+            8,
+            9
+          ],
+          [
+            8,
+            9,
+            10
+          ],
+          [
+            9,
+            10,
+            11
+          ],
+          [
+            10,
+            11,
+            12
+          ],
+          [
+            11,
+            12,
+            13
+          ],
+          [
+            12,
+            13,
+            14
+          ],
+          [
+            13,
+            14,
+            15
+          ]
+        ],
+        "excluded_positions": [
+          0
+        ],
+        "score_available": true,
+        "dense_entries_avoided": 338,
+        "distinct_factors": 13,
+        "merged_duplicate_windows": 0,
+        "objective": "exact product(count*q+p); denominator common within this family/model/mask"
+      },
+      "model_file_sha256": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+      "display_model_score": {
+        "model_id": "73d63e8e7a8a8ffbea2bc2b014da1fd2bd3fc22775be2af9ce8afcfb33371648",
+        "mean_log_probability": -8.342263712266433,
+        "log_probability_sum": -108.44942825946363,
+        "windows": 13,
+        "text_length": 16,
+        "excluded_positions": [
+          0
+        ],
+        "eligible_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "scored_positions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "unsupported_positions": [],
+        "available": true,
+        "eligible_characters": 15,
+        "scored_characters": 15
+      }
+    },
+    "explanation": {
+      "command": "optimize-plus",
+      "supplied_request": {
+        "target": "custom",
+        "ciphertext": "TIITITATEDRFTUXU",
+        "cribs": [
+          {
+            "start": 1,
+            "text": "T"
+          }
+        ],
+        "alphabet": "standard",
+        "stages": [
+          {
+            "operation": "substitution",
+            "period": 2
+          }
+        ],
+        "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+        "max_nodes": 256,
+        "max_frontier": 1000,
+        "max_cache_entries": 10000,
+        "ordering": "impact",
+        "time_limit_seconds": 2,
+        "decomposition": "auto",
+        "guided_seed": {
+          "restarts": 4,
+          "max_sweeps": 4,
+          "top": 3,
+          "max_factor_evaluations": 20000,
+          "seed": 17,
+          "max_evaluations": 128
+        },
+        "factor_group_size": 2,
+        "group_exact_limit": 676
+      },
+      "request_sha256": "3596d5b330bb6695c322a09842d77248dda6d66dba1594f5558e37426dd4b2d0",
+      "source_sha256": {
+        "__main__.py": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
+        "ablations.py": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
+        "accelerated.py": "027f4cfea0e5d94cae9947dc3c668c893422ea9900e6c5c71cbdc15a138d4987",
+        "advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+        "alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+        "app.py": "dc3c55f8e1a7df811f6a80a12cdfa15463703892eb18712bc0ff2ea9c61187ca",
+        "app_jobs.py": "ff94d3d9fb742a89dc2f0fa6af86e7141c9cd6cdc2d89228f261a0cfacf4ce16",
+        "app_worker.py": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
+        "campaign_sharing.py": "1c8111b3a0a203dce40831db31d29df2418ed1cb087c18dd806f974454f249c6",
+        "campaigns.py": "7a3f4d329acfd0dc07f9c81393f79616a7ba941ec6342551e020aec5d796742d",
+        "certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+        "ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+        "columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+        "correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+        "cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
+        "data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+        "engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+        "experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+        "explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+        "factor_decomposition.py": "8add3c1830d719bc2ff2fd81a7fca9493bb25f2f74ab196f21cb0fae8797396e",
+        "factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+        "family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+        "fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+        "general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+        "grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+        "grid_paths.py": "bd678fd7b9b660022b9eb26a0653eb26ae804cefc4809147041ac7142aea1ab3",
+        "guided_search.py": "6139c56d5d4a67a178a5320802deea4eb17aa31ff62052f830be83523ca98948",
+        "hypotheses.py": "fbce43586eb0ce41b4ef6add80a9e1746bdc16b4feb0a633b55d52b01961c398",
+        "import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+        "joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+        "joint_ranked.py": "26d550f71c12e12aa9198640c00faf8b82113943ef761967b07af21299897c1d",
+        "joint_ranked_helpers.py": "c53419908f9ba753439c31361ad705b55111eb63528bc29c8aaacc0763936346",
+        "keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+        "language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+        "layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+        "mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+        "next_cli.py": "7ac9e87c97a6b85c6dc6e48cfa39e703e55711647a8a554601ee5f5a076b1369",
+        "parallel_search.py": "976ee35415399acc20982fb38aa307295fc5e8d3306e9d888e3db276c3a623cb",
+        "position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+        "process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
+        "recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+        "replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+        "resource_governor.py": "aaf5c0b96134e17b1949f54fdc4757ae512c875f6c0855dced6f41ae8ab46772",
+        "scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+        "score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+        "scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+        "sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+        "search_runtime.py": "90686a2e47f59528fd6567d2ff6ba483a4b92c7c7f2376b3113574607a98a25a",
+        "semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+        "validation_protocols.py": "e8d6853c9e4615c377cc4872294fa046e58f69e542eecd200d295c7e355aaf74",
+        "worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+        "workspace_store.py": "822843fa35b2ba177aaa7eba422db7b9f795923e699f10f6ea340ae2c29c768f"
+      },
+      "interpretation": "Exact results concern supplied model assumptions and bounds. Re-encryption and language scores do not authenticate a solution.",
+      "external_verification_performed": false,
+      "input": {
+        "ciphertext": "TIITITATEDRFTUXU",
+        "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+        "cribs": [
+          {
+            "start": 1,
+            "text": "T"
+          }
+        ],
+        "crib_convention": "one-based original plaintext positions"
+      }
+    }
+  },
+  "error": null,
+  "backend_requested": "cpu",
+  "backend_actual": "cpu",
+  "batches_committed": 1,
+  "ranking_exact_over_committed_pages": null,
+  "backends_used": [
+    "cpu"
+  ],
+  "fallback_reasons": [],
+  "resource_events": [],
+  "pending_resources": {},
+  "initial_settings": {
+    "backend": "cpu",
+    "workers": 1,
+    "batch_size": 512,
+    "max_batches": 100,
+    "time_limit_seconds": 60,
+    "adaptive": false,
+    "idle_ms": 0,
+    "target_page_seconds": 1,
+    "ranking_mode": "certified"
+  },
+  "source_identity": {
+    "kryptos/__main__.py": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
+    "kryptos/ablations.py": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
+    "kryptos/accelerated.py": "027f4cfea0e5d94cae9947dc3c668c893422ea9900e6c5c71cbdc15a138d4987",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "dc3c55f8e1a7df811f6a80a12cdfa15463703892eb18712bc0ff2ea9c61187ca",
+    "kryptos/app_jobs.py": "ff94d3d9fb742a89dc2f0fa6af86e7141c9cd6cdc2d89228f261a0cfacf4ce16",
+    "kryptos/app_worker.py": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
+    "kryptos/campaign_sharing.py": "1c8111b3a0a203dce40831db31d29df2418ed1cb087c18dd806f974454f249c6",
+    "kryptos/campaigns.py": "7a3f4d329acfd0dc07f9c81393f79616a7ba941ec6342551e020aec5d796742d",
+    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_decomposition.py": "8add3c1830d719bc2ff2fd81a7fca9493bb25f2f74ab196f21cb0fae8797396e",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/grid_paths.py": "bd678fd7b9b660022b9eb26a0653eb26ae804cefc4809147041ac7142aea1ab3",
+    "kryptos/guided_search.py": "6139c56d5d4a67a178a5320802deea4eb17aa31ff62052f830be83523ca98948",
+    "kryptos/hypotheses.py": "fbce43586eb0ce41b4ef6add80a9e1746bdc16b4feb0a633b55d52b01961c398",
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/joint_ranked.py": "26d550f71c12e12aa9198640c00faf8b82113943ef761967b07af21299897c1d",
+    "kryptos/joint_ranked_helpers.py": "c53419908f9ba753439c31361ad705b55111eb63528bc29c8aaacc0763936346",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "7ac9e87c97a6b85c6dc6e48cfa39e703e55711647a8a554601ee5f5a076b1369",
+    "kryptos/parallel_search.py": "976ee35415399acc20982fb38aa307295fc5e8d3306e9d888e3db276c3a623cb",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/resource_governor.py": "aaf5c0b96134e17b1949f54fdc4757ae512c875f6c0855dced6f41ae8ab46772",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "90686a2e47f59528fd6567d2ff6ba483a4b92c7c7f2376b3113574607a98a25a",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/validation_protocols.py": "e8d6853c9e4615c377cc4872294fa046e58f69e542eecd200d295c7e355aaf74",
+    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "kryptos/workspace_store.py": "822843fa35b2ba177aaa7eba422db7b9f795923e699f10f6ea340ae2c29c768f",
+    "research/models/multilingual-001/artifacts/pg1342-english-trigram.json": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39"
+  },
+  "authenticated_solution": false,
+  "exact_resume_supported": true,
+  "exact_checkpoint": {
+    "file": "06fb8e76dc4d4f7e9058e012ee4f471a.json",
+    "sha256": "7f6d9ec4bf4761a6dddf95a9d02e1f6bf933414237d67ae3793479b77822203f",
+    "sequence": 1,
+    "nodes_total": 1
+  },
+  "optimizer_slice_seconds": 2,
+  "optimizer_slice": {
+    "seconds": 2,
+    "next_seconds": 2,
+    "retry_after_rebuild": false,
+    "rebuild_limit_reached": false,
+    "frontier_progress_nodes": 1,
+    "requeued_nodes": 0
+  },
+  "can_pause": false,
+  "can_resume": false
+}

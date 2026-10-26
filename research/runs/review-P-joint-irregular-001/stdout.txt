@@ -1,0 +1,1 @@
+{"passed": true, "cases": 12, "oracle_assignments": 16224}

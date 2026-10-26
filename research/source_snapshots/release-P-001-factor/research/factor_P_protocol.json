@@ -1,0 +1,15 @@
+{
+  "schema": "kryptos.factor-P-frozen.v1",
+  "frozen_before_experiments": true,
+  "seed": 71082026,
+  "claim": "Exact residual reuse and threshold-aware cheap bounds preserve optimum and lexical ties; report decisions, factor work, overhead and unfavorable controls separately.",
+  "random_oracle": {"cases": 24, "domains": [2, 3, 2], "factor_scopes": [[], [0, 1], [1, 2], [0, 2]], "values": [0, 1, 2, 3, 4], "powers": [1, 2, 3]},
+  "partial_domain": "Every variable takes -1 (free) or each valid fixed value; direct component controls cover all partials.",
+  "named_controls": ["repeated_disconnected_component", "changing_boundary_no_reuse", "zero_component_global_lexical_tie", "component_assignment_cap_fallback", "component_operation_cap_fallback", "cheap_fixed_factor_rejection", "cheap_unfavorable_no_rejection", "checkpoint_whole_vs_slices"],
+  "cache_comparison": "Same bounded component-solving procedure with max_entries=0 versus max_entries=256, plus ordinary default-off optimizer baseline; no cross-problem or cross-invocation cache.",
+  "cheap_comparison": "Identical grouped/mini-bucket settings with cheap_bound_first false versus true; retained frontier bounds remain full deterministic bounds.",
+  "named_control_settings": {"repeated_component_domains": [2, 2, 2, 2, 2], "repeated_component_scopes": [[0, 1, 2], [3, 4]], "repeated_component_values": [[2, 3, 1, 8, 4, 9, 2, 7], [2, 1, 1, 9]], "repeated_component_assignment_cap": 4, "cheap_control": "unary[100,1] times contradictory binary triangle on variables1,2,3; natural ordering; group_size2; localcache0; mini_bucket_entries1", "unfavorable_cheap_control": "one unary factor[5,5], so root bound equals the lexical-minimum incumbent"},
+  "limits": {"cache_entries": 256, "component_assignments": 256, "component_operations": 200000, "search_nodes": 10000, "seconds_per_search": 10, "maximum_resume_slices": 50, "canonical_outer_seconds": 60},
+  "success_criterion": "All exact answers and ties match independent enumeration; at least one named control saves search decisions or original-factor evaluations while all extra work and unfavorable cases are retained.",
+  "nonclaims": ["No K4 or K5 plaintext/authenticity result.", "No representative cipher performance or universal improvement.", "A zero objective is a feasible zero-score result, never proof of infeasibility.", "No reserved O fixture, GPU execution or model tuning."]
+}

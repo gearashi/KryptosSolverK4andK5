@@ -1,0 +1,12 @@
+{
+  "schema": "kryptos.P-audit-closure.v1",
+  "manifest_status": "failed",
+  "source_snapshot": "research/source_snapshots/release-P-001-campaign",
+  "input_count": 121,
+  "current_and_snapshot_hashes_match": true,
+  "execution_files": {
+    "research/runs/release-P-001/campaign/manifest.json": "524a244dfa1ca904a8056efb3db4e7214364da2934788f829acbf50f1e2a2941",
+    "research/runs/release-P-001/campaign/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/runs/release-P-001/campaign/stderr.txt": "9a39cd31e03797faf8d936974fd140cf3deacd32c7f9d4e971d257a236f737fc"
+  }
+}

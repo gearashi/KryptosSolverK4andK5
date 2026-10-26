@@ -44,8 +44,10 @@ jobs:
             release-check/browser-console.txt
             release-check/browser/
             release-check/workspace-browser/
+            release-check/search-P-browser/
             release-check/*-server.txt
             release-check/workspace-browser-console.txt
+            release-check/search-P-browser-console.txt
             release-check/archive-log.txt
 # No publication token, write permission or bot-authored release is used here.
 # A gearashi-authenticated operator runs scripts/publish_release.py after the

@@ -1,0 +1,1 @@
+{"output": "research\\runs\\release-P-001\\joint\\result.json", "cases": 19, "variants": 7}

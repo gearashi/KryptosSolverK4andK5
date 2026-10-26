@@ -1,7 +1,7 @@
 {
   "schema": "kryptos.improvement-ledger.v1",
   "created_date": "2026-10-13",
-  "phase": "O-fourteen-improvements-counted-search-work",
+  "phase": "P-eight-counted-work-improvements",
   "goal_controller": "User-authorized finite continuation; no scheduled automation",
   "allowed_statuses": [
     "proposed",
@@ -20,7 +20,7 @@
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
     "final_review_complete": true,
-    "publication_complete": true,
+    "publication_complete": false,
     "reviewed_actionable_backlog_complete": true
   },
   "entries": [
@@ -1221,6 +1221,126 @@
           "result": "Current test, browser and audit records."
         }
       ]
+    },
+    {
+      "id": "P01",
+      "title": "Ranked route/key fixed-point propagation",
+      "status": "validated",
+      "decision": "accept bounded optional implementation",
+      "acceptance": "Same exhaustive distinct-text top-k, canonical recipes and ties; fewer branch decisions on coupled-clue controls, with propagation work included.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-001/joint/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Fewer branch decisions10/19, same9; no candidate reductions and more state work19/19.",
+      "primary_search_reduction_observed": true,
+      "default_enabled": false
+    },
+    {
+      "id": "P02",
+      "title": "Early partial ragged-segmentation rejection",
+      "status": "validated",
+      "decision": "retain opt-in experiment; no overall efficiency recommendation",
+      "acceptance": "Reject only partial length patterns that have no feasible completion; independent enumeration confirms coverage and fewer completed segmentations on discriminating controls.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-001/joint/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Completed segmentations3 to2 on two controls, but no branch-decision or candidate improvement; extra state work. Retained as explicit experiment, no overall-efficiency recommendation.",
+      "primary_search_reduction_observed": false,
+      "default_enabled": false
+    },
+    {
+      "id": "P03",
+      "title": "Constrained interleaved variable choice",
+      "status": "validated",
+      "decision": "accept bounded optional implementation",
+      "acceptance": "Choose route or key unknowns by remaining constraint impact; exact completed outcomes and checkpoint continuation preserved, unique route/assignment counts truthful.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-001/joint/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Fewer decisions8/19, same3, more8; candidate counts unchanged and state overhead retained.",
+      "primary_search_reduction_observed": true,
+      "default_enabled": false
+    },
+    {
+      "id": "P04",
+      "title": "Shared-key correlated joint bounds",
+      "status": "validated",
+      "decision": "accept bounded optional implementation",
+      "acceptance": "Every bound dominates the exhaustive residual maximum; same exact top-k with fewer completed key candidates on declared controls; strict ties and capped fallback.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-001/joint/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Sixgram candidates52 to26, decisions5 to3; states4737 to7959. Strict score ties retained.",
+      "primary_search_reduction_observed": true,
+      "default_enabled": false
+    },
+    {
+      "id": "P05",
+      "title": "Proven equivalent-route suppression",
+      "status": "validated",
+      "decision": "accept bounded optional implementation",
+      "acceptance": "Deduplicate only proven invariant route choices before scoring; exact distinct-text ranking and canonical labelled representative retained; evaluation counts separate from multiplicities.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-001/joint/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Identical-chunk TS candidates4056 to676, decisions166 to27, states33736 to5726. Nonidentical controls remain unfavorable.",
+      "primary_search_reduction_observed": true,
+      "default_enabled": false
+    },
+    {
+      "id": "P06",
+      "title": "Shared unfinished equivalent-family scans",
+      "status": "validated",
+      "decision": "accept bounded optional implementation",
+      "acceptance": "Compatible certified scans continue one owned committed coordinate sequence; different recipe aliases independently replay; no duplicate committed candidate work, false complete ranking or cross-model/mask reuse.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-002/campaign/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Same26 candidate evaluations cover26 distinct texts with sharing versus13 without.52-vs26 complete-ranking comparison is separately scoped; historical partial snapshots stay partial.",
+      "primary_search_reduction_observed": true,
+      "default_enabled": false
+    },
+    {
+      "id": "P07",
+      "title": "Reusable exact residual subproblems",
+      "status": "validated",
+      "decision": "accept bounded optional implementation",
+      "acceptance": "Bounded component contexts reuse exact optima and witnesses within an immutable objective; original-factor verification and lexical ties preserved; zero score is never a proof of infeasibility.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-001/factor/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Integrated proof nodes11 to3; original-factor evaluations34 to35. Cache saves39 to35 relative to uncached component solving. No hard-cipher nogood claim.",
+      "primary_search_reduction_observed": true,
+      "default_enabled": false
+    },
+    {
+      "id": "P08",
+      "title": "Cheap certified rejection before stronger bounds",
+      "status": "validated",
+      "decision": "accept bounded optional implementation",
+      "acceptance": "An inexpensive valid bound may reject before group/mini-bucket calculations; preserve full bounds for retained checkpoints; count factor operations and extra checks separately.",
+      "stage": "locally-integrated-reviewed-and-validated",
+      "evidence": [
+        "research/runs/release-P-001/factor/manifest.json",
+        "research/IMPROVEMENTS_P.md"
+      ],
+      "result": "Original-factor evaluations146 to116 with proof nodes6 unchanged; preparation and39factor checks counted separately. No primary decision/candidate improvement claimed.",
+      "primary_search_reduction_observed": false,
+      "default_enabled": false
     }
   ],
   "reviews": [
@@ -1347,17 +1467,33 @@
         "No authenticated K4/K5 result, universal efficiency claim or exhaustive list of all future improvements."
       ],
       "remaining_delivery": null
+    },
+    {
+      "id": "review-P-open-20261025",
+      "base": "7136eecaa1c0ddae8e19435413eaf1fa9f6b33dc",
+      "complete_post_integration_review": false,
+      "findings": [
+        "User explicitly requested all eight if they reduce solving work while retaining exact outcomes. New strategies opt in; negative comparisons remain evidence."
+      ]
+    },
+    {
+      "id": "review-P-final-20261026",
+      "complete_post_integration_review": true,
+      "findings": [
+        "Eight bounded options implemented with exact-result and work accounting; defaults off.",
+        "P02 saves completed segmentation work but not decisions/candidates; P08 saves factor work with no node saving.",
+        "Joint133comparisons, factor864partial/96whole, campaign6controls/295replays and independent irregular12case oracle passed.",
+        "448tests447pass1optionalrawsourceskip; actualCUDA;88browserchecks;6Nodechecks.",
+        "Independent joint/factor/campaign/browser reviews recorded; no unresolved implementation defect in reviewed scope.",
+        "Original campaign audit-helper failure and corrected P002 evidence both retained."
+      ],
+      "remaining_delivery": "Exact-source GitHub publication verification"
     }
   ],
   "delivery": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
-    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0",
-    "local_url": "http://127.0.0.1:8767/",
-    "startup": "OpenDashboard.cmd",
-    "state_at_delivery": "Version0.4.0 published and running locally, idle; actual compiled RTX2060 CUDA probe succeeded without CUDA_PATH.",
-    "remaining": null,
-    "verified_at_utc": "2026-10-25T18:20:02.200721+00:00"
+    "remaining": "Commit and publish through gearashi after exact-source GitHub CI; verify public assets and launch idle local dashboard.",
+    "last_published_release": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0"
   },
   "historical_phase_L_termination": {
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
@@ -1389,5 +1525,26 @@
     "state_at_delivery": "Version 0.3.0 is published and running locally, idle; actual compiled CUDA probe succeeded without CUDA_PATH.",
     "remaining": null,
     "verified_at_utc": "2026-10-20T16:56:23.166017+00:00"
-  }
+  },
+  "historical_phase_O_delivery": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0",
+    "local_url": "http://127.0.0.1:8767/",
+    "startup": "OpenDashboard.cmd",
+    "state_at_delivery": "Version0.4.0 published and running locally, idle; actual compiled RTX2060 CUDA probe succeeded without CUDA_PATH.",
+    "remaining": null,
+    "verified_at_utc": "2026-10-25T18:20:02.200721+00:00"
+  },
+  "execution_status": "active",
+  "pause": {
+    "date": "2026-10-25",
+    "instruction": "Pause for now. Finish the rest of the improvements when I tell you to.",
+    "resume_requires_explicit_user_instruction": false,
+    "handoff": "runtime/PAUSED-P.md",
+    "published_version": "0.4.0",
+    "phase_P_committed_or_published": false,
+    "resumed_by_user": "continue on2026-10-26"
+  },
+  "resumed_date": "2026-10-26"
 }

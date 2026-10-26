@@ -1,0 +1,73 @@
+{
+  "schema": "kryptos.improvement-plan.v1",
+  "phase": "P",
+  "version": "0.5.0",
+  "created_date": "2026-10-25",
+  "baseline": "7136eecaa1c0ddae8e19435413eaf1fa9f6b33dc",
+  "user_priority": "Fewer search decisions or complete candidate evaluations to the same exact result; factor operations, verification, learning/preprocessing and memory costs counted separately. Speed alone is not acceptance.",
+  "defaults": "New strategies opt in; current default solver behavior retained.",
+  "entries": [
+    {
+      "id": "P01",
+      "title": "Ranked route/key fixed-point propagation",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "Same exhaustive distinct-text top-k, canonical recipes and ties; fewer branch decisions on coupled-clue controls, with propagation work included."
+    },
+    {
+      "id": "P02",
+      "title": "Early partial ragged-segmentation rejection",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "Reject only partial length patterns that have no feasible completion; independent enumeration confirms coverage and fewer completed segmentations on discriminating controls."
+    },
+    {
+      "id": "P03",
+      "title": "Constrained interleaved variable choice",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "Choose route or key unknowns by remaining constraint impact; exact completed outcomes and checkpoint continuation preserved, unique route/assignment counts truthful."
+    },
+    {
+      "id": "P04",
+      "title": "Shared-key correlated joint bounds",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "Every bound dominates the exhaustive residual maximum; same exact top-k with fewer completed key candidates on declared controls; strict ties and capped fallback."
+    },
+    {
+      "id": "P05",
+      "title": "Proven equivalent-route suppression",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "Deduplicate only proven invariant route choices before scoring; exact distinct-text ranking and canonical labelled representative retained; evaluation counts separate from multiplicities."
+    },
+    {
+      "id": "P06",
+      "title": "Shared unfinished equivalent-family scans",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "Compatible certified scans continue one owned committed coordinate sequence; different recipe aliases independently replay; no duplicate committed candidate work, false complete ranking or cross-model/mask reuse."
+    },
+    {
+      "id": "P07",
+      "title": "Reusable exact residual subproblems",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "Bounded component contexts reuse exact optima and witnesses within an immutable objective; original-factor verification and lexical ties preserved; zero score is never a proof of infeasibility."
+    },
+    {
+      "id": "P08",
+      "title": "Cheap certified rejection before stronger bounds",
+      "status": "proposed",
+      "decision": "evaluate bounded implementation",
+      "acceptance": "An inexpensive valid bound may reject before group/mini-bucket calculations; preserve full bounds for retained checkpoints; count factor operations and extra checks separately."
+    }
+  ],
+  "protocol_policy": "Freeze authored controls and finite oracle domains before comparing outcomes. Preserve unfavorable cases, cutoff evidence and failed variants. No re-scoring the reserved O language benchmark for tuning. Canonical manifests and immutable source snapshots after implementation freeze.",
+  "non_claims": [
+    "No authenticated K4/K5 solution",
+    "No universally better search strategy",
+    "No deletion of earlier evidence or return of removed contributor history"
+  ]
+}

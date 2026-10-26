@@ -1,5 +1,72 @@
 # Guided incumbents and exact factor decomposition
 
+## Additional search reductions in version0.5
+
+All eight phase P features are optional. Use **Additional search reductions**
+in a ranked joint recipe, the optimizer controls, or the campaign sharing
+selector. Candidate cards identify the techniques saved with that run.
+The [phase P evidence](../research/IMPROVEMENTS_P.md) compares decisions,
+complete candidates and additional work separately; no option is universally
+better and the small authored controls do not establish K4 performance.
+
+Ranked joint requests accept:
+
+```json
+{
+  "propagation": "fixed_point",
+  "early_segmentation": true,
+  "branching": "constrained",
+  "pruning": "admissible",
+  "score_bound": "shared_key",
+  "max_bound_cache_entries": 2048,
+  "symmetry": "identical_chunks"
+}
+```
+
+These fields extend an existing `joint-ranked` request. Defaults are respectively
+`off`, `false`, `prefix`, `off`, `independent`, 2048 and `off`. Fixed-point
+propagation combines matching supports and shared-key clue constraints. Partial
+ragged-grid checks leave unknown suffix positions unconstrained. Constrained
+branching chooses the smallest remaining route/key domain. Shared-key bounds
+require admissible pruning and enforce repeated key phases within each ngram;
+different ngram maxima remain an upper bound rather than a complete witness.
+
+Equivalent-route suppression requires identical ciphertext chunks of the same
+length; TS also requires equal offsets modulo the key period. It preserves the
+canonical labelled recipe and records how equivalent routes can be reconstructed.
+Symmetry representatives and score exclusions do not count as full enumeration.
+With interleaved branching, `route_completion_blocks` can revisit one route under
+disjoint key domains; distinct order counts are withheld. The `max_orders` limit
+then caps those blocks per activation. Search identity includes the five strategy
+choices; changing those requires a new run. The disposable bound-cache capacity
+can change in standalone continuation; caches are rebuilt on resume. Dashboard
+resume preserves the saved request and resource caps.
+
+Exact optimizer requests also accept:
+
+```json
+{
+  "residual_cache": "components",
+  "residual_cache_max_entries": 256,
+  "residual_cache_max_assignments": 256,
+  "residual_cache_max_operations": 200000,
+  "cheap_bound_first": true
+}
+```
+
+Both strategies default off. Component reuse solves sufficiently small connected
+residual factor problems and reuses only identical immutable contexts. Every
+witness is checked against original factors. Zero score remains feasible and
+uses the global lexical tie rule. This is solved-subproblem reuse, not general
+cipher contradiction learning. Oversized or interrupted solves fall back to the
+ordinary search; no external or cross-invocation cache is trusted.
+
+The cheap gate attempts a valid rejection before stronger grouped or mini-bucket
+bounds. Retained frontier entries always use the full deterministic bound so
+checkpoint reconstruction remains valid. The dashboard caps cache entries at1024,
+component assignments at4096 and operations at200000. Exact component solving,
+cache verification, preparation and bound work are separately reported.
+
 These optional `optimize-plus` strategies operate on the same finite affine
 plaintext family and frozen ngram objective as the ordinary exact optimizer.
 They do not change the supplied cipher assumptions, score mask, or recipe.

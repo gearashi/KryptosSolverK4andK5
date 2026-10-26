@@ -1,0 +1,1 @@
+{"passed": true, "oracle": {"partial_checks": 864, "whole_search_checks": 96, "all_exact_scores_and_ties": true}, "component_saved": 8, "cheap_saved": 30}

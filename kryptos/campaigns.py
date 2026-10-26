@@ -11,6 +11,7 @@ import uuid
 
 from .app_jobs import atomic_json,now,validate_start,source_identity,ROOT,ACTIVE
 from .parallel_search import _decode
+from .campaign_sharing import compatible_prefix, digest, snapshot, validate_option
 
 TERMINAL={"completed","equivalent","incomplete","failed"}
 AXIS=re.compile(r"request\.(?:period|width|order|alphabet|cipher|model_path)|request\.stages\.(?:[0-9]|1[0-5])\.(?:period|key_length|offset|cipher|alphabet|permutation)")
@@ -19,7 +20,7 @@ def _flat(config):
     return {k:copy.deepcopy(config[k]) for k in ("kind","command","request","note")}|copy.deepcopy(config["settings"])
 
 def preview_campaign(body):
-    if not isinstance(body,dict) or set(body)-{"base","axes","name","generator"}:
+    if not isinstance(body,dict) or set(body)-{"base","axes","name","generator","share_incomplete_scans"}:
         raise ValueError("Campaign requires base, axes or generator, and optional name")
     name=body.get("name","Recipe campaign")
     if not isinstance(name,str) or not 1<=len(name)<=100:
@@ -33,6 +34,7 @@ def preview_campaign(body):
         jobs=[{'id':f'job-{i+1:03d}','config':_flat(validate_start(row['config'])),
                'changes':{},'generation_aliases':row['generation_aliases']} for i,row in enumerate(generated)]
         return {'name':name,'jobs':jobs,'job_count':len(jobs),'generation':summary,'limits':{'max_jobs':128},
+                'share_incomplete_scans':validate_option(body,jobs),
                 'interpretation':summary['interpretation']}
     axes=body.get("axes",[])
     if not isinstance(axes,list) or len(axes)>6:
@@ -73,6 +75,7 @@ def preview_campaign(body):
             seen.add(fingerprint)
             jobs.append({"id":f"job-{len(jobs)+1:03d}","config":config,"changes":changes})
     return {"name":name,"job_count":len(jobs),"jobs":jobs,"limits":{"max_jobs":128},
+            "share_incomplete_scans":validate_option(body,jobs),
             "interpretation":"Each unique request has its own budget/outcome. Incomplete jobs remain inconclusive. Raw scores from different models/masks are not pooled; equal plaintext families do not identify equal encryption methods."}
 
 def _identities(jobs):
@@ -158,7 +161,8 @@ class CampaignManager:
             key=uuid.uuid4().hex
             record={"schema":"kryptos.campaign.v1","id":key,"name":plan["name"],"state":"running","created_at":now(),"updated_at":now(),"error":None,"plan":copy.deepcopy(body),
                     "jobs":[dict(j,state="queued",run_id=None,classification=None,alias_of=None,family_identity=None) for j in plan["jobs"]],
-                    "source_identity":_identities(plan["jobs"]),"interpretation":plan["interpretation"],"authenticated_solution":False}
+                    "source_identity":_identities(plan["jobs"]),"interpretation":plan["interpretation"],"authenticated_solution":False,
+                    "share_incomplete_scans":plan["share_incomplete_scans"]}
             if 'generation' in plan:
                 record['generation']=plan['generation']
             self._save(record)
@@ -251,6 +255,90 @@ class CampaignManager:
             self.preflight_pool=PersistentWorkerPool(1,python=self.manager.python,env=self.manager.worker_env,cwd=ROOT,folder=self.directory/key/"preflight")
         return self.preflight_pool.execute(job,cancel=lambda:self.desired is not None,timeout=60)
 
+    def _preflight(self,key,job,task):
+        """Count validation work separately from committed candidate evaluations."""
+        started=time.monotonic()
+        result=None
+        try:
+            result=self._task(key,task)
+            return result
+        finally:
+            if self.records[key].get('share_incomplete_scans'):
+                with self.lock:
+                    work=job.setdefault('sharing_validation',{})
+                    kind=task['kind']
+                    work[kind+'_calls']=work.get(kind+'_calls',0)+1
+                    work['elapsed_seconds']=work.get('elapsed_seconds',0)+time.monotonic()-started
+                    if kind=='alias-candidates' and result is not None:
+                        count=len(result['candidates'])
+                        work['candidate_replays']=work.get('candidate_replays',0)+count
+                        work['literal_reencrypted_letters']=work.get('literal_reencrypted_letters',0)+sum(len(c['plaintext']) for c in result['candidates'])
+
+    def _owner(self,record,job):
+        key=(job.get('shared_scan') or {}).get('owner_job_id',job['id'])
+        return next(j for j in record['jobs'] if j['id']==key)
+
+    def _shared_source(self,record,index,job):
+        """Search only this campaign's own historical, hash-pinned snapshots."""
+        if not record.get('share_incomplete_scans'):
+            return None
+        reason='no_compatible_committed_prefix'
+        identity=job.get('family_identity') or {}
+        settings=validate_start(job['config'])['settings']
+        for prior in reversed(record['jobs'][:index]):
+            if (prior['state'] not in TERMINAL or not prior.get('run_id')
+                    or (prior.get('family_identity') or {}).get('scoring_family_sha256')!=identity.get('scoring_family_sha256')):
+                continue
+            try:
+                owner=self._owner(record,prior)
+                run=self.manager.view(prior['run_id'])
+                run_hash=hashlib.sha256((self.manager.directory/run['id']/'run.json').read_bytes()).hexdigest()
+                reason=compatible_prefix(job,prior,owner,run,run_hash,source_identity(run['request']),settings)
+                if reason is None:
+                    return prior,owner,run,run_hash
+            except (KeyError,ValueError,OSError,StopIteration):
+                reason='owned_prefix_unavailable'
+        job['sharing_status']={'shared':False,'reason':reason}
+        return None
+
+    def _validate_shared_owner(self,record,job,run):
+        owner=self._owner(record,job)
+        shared=job['shared_scan']
+        if (shared['owner_run_id']!=run['id'] or owner['run_id']!=run['id']
+                or owner.get('shared_scan') or run['request']!=owner['config']['request']
+                or run['state']=='failed'
+                or digest(run['request'])!=shared['coordinate_request_sha256']
+                or digest(job['config']['request'])!=shared['recipe_request_sha256']
+                or (job.get('family_identity') or {}).get('scoring_family_sha256')!=shared['scoring_family_sha256']
+                or digest(run['source_identity'])!=shared['source_identity_sha256']
+                or run['source_identity']!=source_identity(run['request'])
+                or run['settings']!=validate_start(job['config'])['settings']
+                or run.get('pending_resources') or run.get('resource_events')
+                or run['progress']['completed']<int(shared['started_offset_decimal'])
+                or run.get('ranking_exact_over_committed_pages') is not True):
+            raise ValueError('Shared scan owner, source, resources or certified frontier changed; no restart was attempted')
+
+    def _freeze_scan(self,key,record,job,run):
+        if not record.get('share_incomplete_scans'):
+            return None
+        owner=self._owner(record,job)
+        path=self.manager.directory/run['id']/'run.json'
+        before=hashlib.sha256(path.read_bytes()).hexdigest()
+        candidates=copy.deepcopy(run['candidates'])
+        if job.get('shared_scan'):
+            self._validate_shared_owner(record,job,run)
+            replay=self._preflight(key,job,{'kind':'alias-candidates','request':job['config']['request'],'candidates':candidates})
+            candidates=replay['candidates']
+            for candidate in candidates:
+                # An assignment index would belong to the owner's basis only.
+                candidate.pop('assignment_index',None)
+                candidate.pop('assignment_index_decimal',None)
+                candidate['shared_owner_run_id']=run['id']
+                candidate['ranking_scope']='whole_family' if run['state']=='completed' else 'committed_owner_prefix'
+        if hashlib.sha256(path.read_bytes()).hexdigest()!=before:
+            raise ValueError('Owned run changed during alias validation; no snapshot committed')
+        return snapshot(job,owner,run,before,candidates)
+
     @staticmethod
     def _outcome(run):
         result=run.get("result") or {}
@@ -288,8 +376,12 @@ class CampaignManager:
                     if job["state"] in TERMINAL:
                         continue
                     self._check_identity(record)
+                    if job.get('shared_scan') and job.get('run_id') not in self.manager.records:
+                        raise ValueError('Shared scan owner is unavailable; no new sequence or imported frontier was started')
                 if job["run_id"] and job["run_id"] in self.manager.records:
                     run=self.manager.view(job["run_id"])
+                    if job.get('shared_scan'):
+                        self._validate_shared_owner(record,job,run)
                     # Explicit campaign resume can recover an interruption
                     # after the child cutoff but before its outcome commit.
                     # Terminal incomplete jobs were already skipped above.
@@ -298,7 +390,7 @@ class CampaignManager:
                     run=self._wait_run(record,job)
                 else:
                     if job["config"]["kind"]=="accelerated" and job.get("family_identity") is None:
-                        identity=self._task(key,{"kind":"family-identity","request":job["config"]["request"]})
+                        identity=self._preflight(key,job,{"kind":"family-identity","request":job["config"]["request"]})
                         with self.lock:
                             self._check_identity(record)
                             job["family_identity"]=identity
@@ -307,7 +399,7 @@ class CampaignManager:
                     cached=self._cached_completed(identity)
                     if cached and cached[0]['campaign_id']!=key:
                         reference,original=cached
-                        replay=self._task(key,{"kind":"alias-candidates","request":job["config"]["request"],"candidates":original["candidates"]})
+                        replay=self._preflight(key,job,{"kind":"alias-candidates","request":job["config"]["request"],"candidates":original["candidates"]})
                         with self.lock:
                             if self.desired:
                                 raise InterruptedError('Campaign stopped before cached alias commit')
@@ -322,7 +414,7 @@ class CampaignManager:
                         original=self.manager.view(alias["run_id"])
                         # Partial or approximate ranking is not reused as an exact alias.
                         if original["state"]=="completed" and original["ranking_exact_over_committed_pages"] is True:
-                            replay=self._task(key,{"kind":"alias-candidates","request":job["config"]["request"],"candidates":original["candidates"]})
+                            replay=self._preflight(key,job,{"kind":"alias-candidates","request":job["config"]["request"],"candidates":original["candidates"]})
                             with self.lock:
                                 if self.desired:
                                     raise InterruptedError("Campaign stopped before alias commit")
@@ -330,16 +422,36 @@ class CampaignManager:
                                 job.update(state="equivalent",classification="same_plaintext_family_and_scoring; own_recipe_replayed",alias_of=alias["id"],candidates=replay["candidates"])
                                 self._save(record)
                             continue
-                    with self.lock:
+                    with self.lock, self.manager.lock:
                         if self.desired:
                             record["state"]="paused" if self.desired=="pause" else "stopped"
                             break
                         self._check_identity(record)
-                        # Persist a reserved identity BEFORE dispatch. A crash on
-                        # either side cannot orphan an untracked completed run.
-                        job["run_id"]=job["run_id"] or uuid.uuid4().hex
-                        self._save(record)
-                        run=self.manager.start(job["config"],run_id=job["run_id"])
+                        shared=self._shared_source(record,index,job)
+                        if shared:
+                            prior,owner,run,run_hash=shared
+                            staged=copy.deepcopy(record)
+                            staged_job=staged['jobs'][index]
+                            staged_job.update(run_id=run['id'],alias_of=owner['id'],alias_run_id=run['id'],
+                                shared_scan={'owner_job_id':owner['id'],'owner_run_id':run['id'],
+                                    'reference_job_id':prior['id'],'reference_run_sha256':run_hash,
+                                    'started_offset_decimal':str(run['progress']['completed']),
+                                    'coordinate_request_sha256':digest(run['request']),
+                                    'recipe_request_sha256':digest(job['config']['request']),
+                                    'scoring_family_sha256':identity['scoring_family_sha256'],
+                                    'source_identity_sha256':digest(run['source_identity'])},
+                                sharing_status={'shared':True,'reason':'continued_original_managed_sequence'})
+                            # Reservation precedes dispatch, so restarts keep the
+                            # same owner; an alias never starts a fresh basis.
+                            self._save(staged)
+                            job.update(staged_job)
+                            self.manager.control('resume',run['id'])
+                        else:
+                            # Persist a reserved identity BEFORE dispatch. A crash on
+                            # either side cannot orphan an untracked completed run.
+                            job["run_id"]=job["run_id"] or uuid.uuid4().hex
+                            self._save(record)
+                            run=self.manager.start(job["config"],run_id=job["run_id"])
                         job.update(state="running")
                         self._save(record)
                     run=self._wait_run(record,job)
@@ -350,8 +462,16 @@ class CampaignManager:
                         record["state"]="paused" if self.desired=="pause" else "stopped"
                         self._save(record)
                         break
+                scan_snapshot=self._freeze_scan(key,record,job,run)
+                with self.lock:
+                    self._check_identity(record)
                     state,classification=self._outcome(run)
+                    if job.get('shared_scan'):
+                        classification=('shared_complete_family; own_recipe_replayed' if state=='completed'
+                                        else 'shared_partial_prefix; own_recipe_replayed; whole_family_inconclusive')
                     job.update(state=state,classification=classification,error=run.get("error"))
+                    if scan_snapshot is not None:
+                        job.update(scan_snapshot=scan_snapshot,candidates=copy.deepcopy(scan_snapshot['candidates']))
                     self._save(record)
                     self._remember_completed(record,job)
             else:

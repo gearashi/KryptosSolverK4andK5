@@ -1,0 +1,1160 @@
+{
+  "schema": "kryptos.campaign-P-audit.v1",
+  "status": "passed",
+  "assertion_tested": "Within the declared authored CPU cases, compatible jobs extend one original committed coordinate sequence, aliases replay and exact rankings match independent literal enumeration/scoring.",
+  "completed_utc": "2026-10-26T15:04:25.063698+00:00",
+  "elapsed_seconds": 12.827999999979511,
+  "software": {
+    "python": "3.12.2",
+    "platform": "Windows-10-10.0.19044-SP0"
+  },
+  "inputs_before": {
+    "kryptos/__main__.py": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
+    "kryptos/ablations.py": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
+    "kryptos/accelerated.py": "027f4cfea0e5d94cae9947dc3c668c893422ea9900e6c5c71cbdc15a138d4987",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "dc3c55f8e1a7df811f6a80a12cdfa15463703892eb18712bc0ff2ea9c61187ca",
+    "kryptos/app_jobs.py": "ff94d3d9fb742a89dc2f0fa6af86e7141c9cd6cdc2d89228f261a0cfacf4ce16",
+    "kryptos/app_worker.py": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
+    "kryptos/campaign_sharing.py": "1c8111b3a0a203dce40831db31d29df2418ed1cb087c18dd806f974454f249c6",
+    "kryptos/campaigns.py": "7a3f4d329acfd0dc07f9c81393f79616a7ba941ec6342551e020aec5d796742d",
+    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_decomposition.py": "8add3c1830d719bc2ff2fd81a7fca9493bb25f2f74ab196f21cb0fae8797396e",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/grid_paths.py": "bd678fd7b9b660022b9eb26a0653eb26ae804cefc4809147041ac7142aea1ab3",
+    "kryptos/guided_search.py": "6139c56d5d4a67a178a5320802deea4eb17aa31ff62052f830be83523ca98948",
+    "kryptos/hypotheses.py": "fbce43586eb0ce41b4ef6add80a9e1746bdc16b4feb0a633b55d52b01961c398",
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/joint_ranked.py": "26d550f71c12e12aa9198640c00faf8b82113943ef761967b07af21299897c1d",
+    "kryptos/joint_ranked_helpers.py": "c53419908f9ba753439c31361ad705b55111eb63528bc29c8aaacc0763936346",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "7ac9e87c97a6b85c6dc6e48cfa39e703e55711647a8a554601ee5f5a076b1369",
+    "kryptos/parallel_search.py": "976ee35415399acc20982fb38aa307295fc5e8d3306e9d888e3db276c3a623cb",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/resource_governor.py": "aaf5c0b96134e17b1949f54fdc4757ae512c875f6c0855dced6f41ae8ab46772",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "90686a2e47f59528fd6567d2ff6ba483a4b92c7c7f2376b3113574607a98a25a",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/validation_protocols.py": "e8d6853c9e4615c377cc4872294fa046e58f69e542eecd200d295c7e355aaf74",
+    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "kryptos/workspace_store.py": "822843fa35b2ba177aaa7eba422db7b9f795923e699f10f6ea340ae2c29c768f",
+    "research/campaign_P.py": "2e78470adde4293248769b620568eb1c42fc731061e1e9ae617e58bead8f23b7",
+    "research/campaign_P_notes.md": "12374a0e61ef8865b9dbf1baba4e570476f476e16110596b9a62a83c7b26faa8",
+    "research/campaign_P_protocol.json": "22d94c56bc0ebc764372875e0ecf9646db3af9f91931cfd7f42204fa1b878691",
+    "research/models/multilingual-001/artifacts/pg1342-english-trigram.json": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+    "tests/test_campaign_P.py": "df4436e62e30c8a32ef2831ea71cf5564fea494e6dacab85f3511ec7c18ad3dc"
+  },
+  "inputs_after": {
+    "kryptos/__main__.py": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
+    "kryptos/ablations.py": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
+    "kryptos/accelerated.py": "027f4cfea0e5d94cae9947dc3c668c893422ea9900e6c5c71cbdc15a138d4987",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
+    "kryptos/app.py": "dc3c55f8e1a7df811f6a80a12cdfa15463703892eb18712bc0ff2ea9c61187ca",
+    "kryptos/app_jobs.py": "ff94d3d9fb742a89dc2f0fa6af86e7141c9cd6cdc2d89228f261a0cfacf4ce16",
+    "kryptos/app_worker.py": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
+    "kryptos/campaign_sharing.py": "1c8111b3a0a203dce40831db31d29df2418ed1cb087c18dd806f974454f249c6",
+    "kryptos/campaigns.py": "7a3f4d329acfd0dc07f9c81393f79616a7ba941ec6342551e020aec5d796742d",
+    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
+    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/factor_decomposition.py": "8add3c1830d719bc2ff2fd81a7fca9493bb25f2f74ab196f21cb0fae8797396e",
+    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/grid_paths.py": "bd678fd7b9b660022b9eb26a0653eb26ae804cefc4809147041ac7142aea1ab3",
+    "kryptos/guided_search.py": "6139c56d5d4a67a178a5320802deea4eb17aa31ff62052f830be83523ca98948",
+    "kryptos/hypotheses.py": "fbce43586eb0ce41b4ef6add80a9e1746bdc16b4feb0a633b55d52b01961c398",
+    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
+    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
+    "kryptos/joint_ranked.py": "26d550f71c12e12aa9198640c00faf8b82113943ef761967b07af21299897c1d",
+    "kryptos/joint_ranked_helpers.py": "c53419908f9ba753439c31361ad705b55111eb63528bc29c8aaacc0763936346",
+    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
+    "kryptos/next_cli.py": "7ac9e87c97a6b85c6dc6e48cfa39e703e55711647a8a554601ee5f5a076b1369",
+    "kryptos/parallel_search.py": "976ee35415399acc20982fb38aa307295fc5e8d3306e9d888e3db276c3a623cb",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/resource_governor.py": "aaf5c0b96134e17b1949f54fdc4757ae512c875f6c0855dced6f41ae8ab46772",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
+    "kryptos/search_runtime.py": "90686a2e47f59528fd6567d2ff6ba483a4b92c7c7f2376b3113574607a98a25a",
+    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
+    "kryptos/validation_protocols.py": "e8d6853c9e4615c377cc4872294fa046e58f69e542eecd200d295c7e355aaf74",
+    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
+    "kryptos/workspace_store.py": "822843fa35b2ba177aaa7eba422db7b9f795923e699f10f6ea340ae2c29c768f",
+    "research/campaign_P.py": "2e78470adde4293248769b620568eb1c42fc731061e1e9ae617e58bead8f23b7",
+    "research/campaign_P_notes.md": "12374a0e61ef8865b9dbf1baba4e570476f476e16110596b9a62a83c7b26faa8",
+    "research/campaign_P_protocol.json": "22d94c56bc0ebc764372875e0ecf9646db3af9f91931cfd7f42204fa1b878691",
+    "research/models/multilingual-001/artifacts/pg1342-english-trigram.json": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+    "tests/test_campaign_P.py": "df4436e62e30c8a32ef2831ea71cf5564fea494e6dacab85f3511ec7c18ad3dc"
+  },
+  "comparison": {
+    "independently_completed_recipe_evaluations": 52,
+    "independently_completed_unique_plaintexts": 26,
+    "shared_candidate_evaluations": 26,
+    "shared_unique_plaintexts": 26,
+    "duplicate_complete_candidate_evaluations_avoided": 26,
+    "comparison_scope": "Two independently completed equivalent recipe rankings versus one completed owner ranking and a separately replayed equivalent recipe; the earlier job snapshot itself stays incomplete."
+  },
+  "records": {
+    "shared_two": {
+      "production_worker": false,
+      "calls": [
+        {
+          "run_id": "fe169879d458464fae9a31e8031ae333",
+          "offset": 0,
+          "next_offset": 13,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "PQRSTU",
+            "RSTUVW",
+            "DEFGHI",
+            "XYZABC",
+            "ZABCDE",
+            "FGHIJK",
+            "JKLMNO",
+            "LMNOPQ",
+            "BCDEFG",
+            "HIJKLM",
+            "NOPQRS",
+            "TUVWXY",
+            "VWXYZA"
+          ]
+        },
+        {
+          "run_id": "fe169879d458464fae9a31e8031ae333",
+          "offset": 13,
+          "next_offset": 26,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "QRSTUV",
+            "OPQRST",
+            "WXYZAB",
+            "YZABCD",
+            "EFGHIJ",
+            "GHIJKL",
+            "KLMNOP",
+            "MNOPQR",
+            "STUVWX",
+            "ABCDEF",
+            "CDEFGH",
+            "IJKLMN",
+            "UVWXYZ"
+          ]
+        }
+      ],
+      "run_count": 1,
+      "job_states": [
+        "incomplete",
+        "completed"
+      ],
+      "snapshots": [
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "fe169879d458464fae9a31e8031ae333",
+          "coordinate_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "recipe_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "0",
+          "completed_offset_decimal": "13",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "10c4dc851306dbed5878aab9292d08073194f90acef1e74d988a2ae0921b160f",
+          "work": {
+            "new_candidate_evaluations_decimal": "13",
+            "reused_prefix_candidate_count_decimal": "0",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.0779999999795109
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        },
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "fe169879d458464fae9a31e8031ae333",
+          "coordinate_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "recipe_request_sha256": "d3a15b9df4e9346d95882cfa02cb540c1e13ffecbb5f9c82d4e7a435ee5cf058",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "13",
+          "completed_offset_decimal": "26",
+          "total_decimal": "26",
+          "state_at_commit": "completed",
+          "ranking_scope": "whole_family",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": true,
+          "top_k_exact": true,
+          "run_sha256": "ee13dd499914c802fd77e0080d5ee6ebcb8269d9b92eec9a51a3e6bbb5d698fe",
+          "work": {
+            "new_candidate_evaluations_decimal": "13",
+            "reused_prefix_candidate_count_decimal": "13",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.14000000013038516,
+              "alias-candidates_calls": 1,
+              "candidate_replays": 20,
+              "literal_reencrypted_letters": 120
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        }
+      ],
+      "committed_candidate_evaluations": 26,
+      "unique_evaluated_plaintexts": 26,
+      "independent_literal_replays": 53,
+      "sharing_validation": [
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.0779999999795109
+        },
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.14000000013038516,
+          "alias-candidates_calls": 1,
+          "candidate_replays": 20,
+          "literal_reencrypted_letters": 120
+        }
+      ],
+      "all_owner_requests_unchanged": true
+    },
+    "default_off_two": {
+      "production_worker": false,
+      "calls": [
+        {
+          "run_id": "8a8b0eeb388049329eb809b3eef63cc3",
+          "offset": 0,
+          "next_offset": 13,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "PQRSTU",
+            "RSTUVW",
+            "DEFGHI",
+            "XYZABC",
+            "ZABCDE",
+            "FGHIJK",
+            "JKLMNO",
+            "LMNOPQ",
+            "BCDEFG",
+            "HIJKLM",
+            "NOPQRS",
+            "TUVWXY",
+            "VWXYZA"
+          ]
+        },
+        {
+          "run_id": "ce5c32813de04e5587e07a3ccd86725d",
+          "offset": 0,
+          "next_offset": 13,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "variant"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "PQRSTU",
+            "RSTUVW",
+            "DEFGHI",
+            "XYZABC",
+            "ZABCDE",
+            "FGHIJK",
+            "JKLMNO",
+            "LMNOPQ",
+            "BCDEFG",
+            "HIJKLM",
+            "NOPQRS",
+            "TUVWXY",
+            "VWXYZA"
+          ]
+        }
+      ],
+      "run_count": 2,
+      "job_states": [
+        "incomplete",
+        "incomplete"
+      ],
+      "snapshots": [],
+      "committed_candidate_evaluations": 26,
+      "unique_evaluated_plaintexts": 13,
+      "independent_literal_replays": 26,
+      "sharing_validation": [
+        {},
+        {}
+      ],
+      "all_owner_requests_unchanged": false
+    },
+    "supplemental_three": {
+      "production_worker": false,
+      "calls": [
+        {
+          "run_id": "e818e46f68e24b57946b3cfa4e27a86e",
+          "offset": 0,
+          "next_offset": 10,
+          "evaluated": 10,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "key_id": "k",
+                "key_length": 1,
+                "cipher": "vigenere",
+                "offset": 0
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "layer_model": "scheduled"
+          },
+          "plaintexts": [
+            "XYZABC",
+            "ZABCDE",
+            "FGHIJK",
+            "JKLMNO",
+            "LMNOPQ",
+            "BCDEFG",
+            "HIJKLM",
+            "NOPQRS",
+            "TUVWXY",
+            "VWXYZA"
+          ]
+        },
+        {
+          "run_id": "e818e46f68e24b57946b3cfa4e27a86e",
+          "offset": 10,
+          "next_offset": 20,
+          "evaluated": 10,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "key_id": "k",
+                "key_length": 1,
+                "cipher": "vigenere",
+                "offset": 0
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "layer_model": "scheduled"
+          },
+          "plaintexts": [
+            "PQRSTU",
+            "RSTUVW",
+            "DEFGHI",
+            "OPQRST",
+            "WXYZAB",
+            "YZABCD",
+            "KLMNOP",
+            "MNOPQR",
+            "ABCDEF",
+            "IJKLMN"
+          ]
+        },
+        {
+          "run_id": "e818e46f68e24b57946b3cfa4e27a86e",
+          "offset": 20,
+          "next_offset": 26,
+          "evaluated": 6,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "key_id": "k",
+                "key_length": 1,
+                "cipher": "vigenere",
+                "offset": 0
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "layer_model": "scheduled"
+          },
+          "plaintexts": [
+            "QRSTUV",
+            "EFGHIJ",
+            "GHIJKL",
+            "STUVWX",
+            "CDEFGH",
+            "UVWXYZ"
+          ]
+        }
+      ],
+      "run_count": 1,
+      "job_states": [
+        "incomplete",
+        "incomplete",
+        "completed"
+      ],
+      "snapshots": [
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "e818e46f68e24b57946b3cfa4e27a86e",
+          "coordinate_request_sha256": "3950debfa473a8c4d76f448b4f6082d522cf643069ab2c7716f2757f25610be5",
+          "recipe_request_sha256": "3950debfa473a8c4d76f448b4f6082d522cf643069ab2c7716f2757f25610be5",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "0",
+          "completed_offset_decimal": "10",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "e53c0a5460641c3f2f8d65109c451f14a73ebc402409e94969d409d891a29e61",
+          "work": {
+            "new_candidate_evaluations_decimal": "10",
+            "reused_prefix_candidate_count_decimal": "0",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.030999999959021807
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        },
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "e818e46f68e24b57946b3cfa4e27a86e",
+          "coordinate_request_sha256": "3950debfa473a8c4d76f448b4f6082d522cf643069ab2c7716f2757f25610be5",
+          "recipe_request_sha256": "9c8ffc659d4cb5ee34f67bf06f0df37369f188d5c3088d10a511be485cf64bdd",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "10",
+          "completed_offset_decimal": "20",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "1ad9330df0ac99e1aac00ccc6530770f28705bae082ef16d42553fc2dbbf2b6d",
+          "work": {
+            "new_candidate_evaluations_decimal": "10",
+            "reused_prefix_candidate_count_decimal": "10",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.10999999986961484,
+              "alias-candidates_calls": 1,
+              "candidate_replays": 20,
+              "literal_reencrypted_letters": 120
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        },
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "e818e46f68e24b57946b3cfa4e27a86e",
+          "coordinate_request_sha256": "3950debfa473a8c4d76f448b4f6082d522cf643069ab2c7716f2757f25610be5",
+          "recipe_request_sha256": "51fa33db2504ccf4d17f1ff6f29f50d139be25fb5aad4e509816b19b8ecebfe8",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "20",
+          "completed_offset_decimal": "26",
+          "total_decimal": "26",
+          "state_at_commit": "completed",
+          "ranking_scope": "whole_family",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": true,
+          "top_k_exact": true,
+          "run_sha256": "e76c426d0dca60543a4c948534b88177f52c3ea5a92b58f19a742df857a9cbef",
+          "work": {
+            "new_candidate_evaluations_decimal": "6",
+            "reused_prefix_candidate_count_decimal": "20",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.07800000021234155,
+              "alias-candidates_calls": 1,
+              "candidate_replays": 20,
+              "literal_reencrypted_letters": 120
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        }
+      ],
+      "committed_candidate_evaluations": 26,
+      "unique_evaluated_plaintexts": 26,
+      "independent_literal_replays": 70,
+      "sharing_validation": [
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.030999999959021807
+        },
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.10999999986961484,
+          "alias-candidates_calls": 1,
+          "candidate_replays": 20,
+          "literal_reencrypted_letters": 120
+        },
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.07800000021234155,
+          "alias-candidates_calls": 1,
+          "candidate_replays": 20,
+          "literal_reencrypted_letters": 120
+        }
+      ],
+      "all_owner_requests_unchanged": true
+    },
+    "beaufort_negative": {
+      "production_worker": false,
+      "calls": [
+        {
+          "run_id": "2707f1127017452596a7119d9ac85c6f",
+          "offset": 0,
+          "next_offset": 10,
+          "evaluated": 10,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "XYZABC",
+            "ZABCDE",
+            "FGHIJK",
+            "JKLMNO",
+            "LMNOPQ",
+            "BCDEFG",
+            "HIJKLM",
+            "NOPQRS",
+            "TUVWXY",
+            "VWXYZA"
+          ]
+        },
+        {
+          "run_id": "2707f1127017452596a7119d9ac85c6f",
+          "offset": 10,
+          "next_offset": 20,
+          "evaluated": 10,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "PQRSTU",
+            "RSTUVW",
+            "DEFGHI",
+            "OPQRST",
+            "WXYZAB",
+            "YZABCD",
+            "KLMNOP",
+            "MNOPQR",
+            "ABCDEF",
+            "IJKLMN"
+          ]
+        },
+        {
+          "run_id": "9abdb80c456c4108b3bb4c70d66eabcb",
+          "offset": 0,
+          "next_offset": 10,
+          "evaluated": 10,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "beaufort"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "PONMLK",
+            "RQPONM",
+            "VUTSRQ",
+            "FEDCBA",
+            "HGFEDC",
+            "TSRQPO",
+            "BAZYXW",
+            "DCBAZY",
+            "NMLKJI",
+            "ZYXWVU"
+          ]
+        }
+      ],
+      "run_count": 2,
+      "job_states": [
+        "incomplete",
+        "incomplete",
+        "incomplete"
+      ],
+      "snapshots": [
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "2707f1127017452596a7119d9ac85c6f",
+          "coordinate_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "recipe_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "0",
+          "completed_offset_decimal": "10",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "ed5ed36ee141d553cb6d1954487e641d2b09483a28378938975063c02697b0c5",
+          "work": {
+            "new_candidate_evaluations_decimal": "10",
+            "reused_prefix_candidate_count_decimal": "0",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.031999999890103936
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        },
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "2707f1127017452596a7119d9ac85c6f",
+          "coordinate_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "recipe_request_sha256": "d3a15b9df4e9346d95882cfa02cb540c1e13ffecbb5f9c82d4e7a435ee5cf058",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "10",
+          "completed_offset_decimal": "20",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "fbb292cec232e1b76d02ddfc3df0798fab952c2db4491d51f2b386c57303822d",
+          "work": {
+            "new_candidate_evaluations_decimal": "10",
+            "reused_prefix_candidate_count_decimal": "10",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.0940000000409782,
+              "alias-candidates_calls": 1,
+              "candidate_replays": 20,
+              "literal_reencrypted_letters": 120
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        },
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-003",
+          "owner_run_id": "9abdb80c456c4108b3bb4c70d66eabcb",
+          "coordinate_request_sha256": "ef9520b84f7e359238d4861a4b0b6804ff88fedabb8d09717dea75876dbf3ea5",
+          "recipe_request_sha256": "ef9520b84f7e359238d4861a4b0b6804ff88fedabb8d09717dea75876dbf3ea5",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "e8fb072d57434264c48ca69ca4b750317063702f2286419c4e09ae48d760f2ef",
+          "started_offset_decimal": "0",
+          "completed_offset_decimal": "10",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "93784223f42da040bb00a924cee8e98253b8747620b06a011e6403b371b8b24a",
+          "work": {
+            "new_candidate_evaluations_decimal": "10",
+            "reused_prefix_candidate_count_decimal": "0",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.030999999959021807
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        }
+      ],
+      "committed_candidate_evaluations": 30,
+      "unique_evaluated_plaintexts": 30,
+      "independent_literal_replays": 40,
+      "sharing_validation": [
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.031999999890103936
+        },
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.0940000000409782,
+          "alias-candidates_calls": 1,
+          "candidate_replays": 20,
+          "literal_reencrypted_letters": 120
+        },
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.030999999959021807
+        }
+      ],
+      "all_owner_requests_unchanged": false
+    },
+    "masked": {
+      "production_worker": false,
+      "calls": [
+        {
+          "run_id": "df766e9b505b4b12a9c784833ce00d2d",
+          "offset": 0,
+          "next_offset": 13,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "score_mask": [
+              0,
+              2
+            ]
+          },
+          "plaintexts": [
+            "DEFGHI",
+            "JKLMNO",
+            "PQRSTU",
+            "BCDEFG",
+            "FGHIJK",
+            "HIJKLM",
+            "LMNOPQ",
+            "NOPQRS",
+            "RSTUVW",
+            "TUVWXY",
+            "VWXYZA",
+            "XYZABC",
+            "ZABCDE"
+          ]
+        },
+        {
+          "run_id": "df766e9b505b4b12a9c784833ce00d2d",
+          "offset": 13,
+          "next_offset": 26,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+            "score_mask": [
+              0,
+              2
+            ]
+          },
+          "plaintexts": [
+            "OPQRST",
+            "WXYZAB",
+            "ABCDEF",
+            "CDEFGH",
+            "EFGHIJ",
+            "GHIJKL",
+            "IJKLMN",
+            "KLMNOP",
+            "MNOPQR",
+            "QRSTUV",
+            "STUVWX",
+            "UVWXYZ",
+            "YZABCD"
+          ]
+        }
+      ],
+      "run_count": 1,
+      "job_states": [
+        "incomplete",
+        "completed"
+      ],
+      "snapshots": [
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "df766e9b505b4b12a9c784833ce00d2d",
+          "coordinate_request_sha256": "cb2799ac010ed10d115af0403e890fe370b74e3e5d5d80f1f66ea814685201ef",
+          "recipe_request_sha256": "cb2799ac010ed10d115af0403e890fe370b74e3e5d5d80f1f66ea814685201ef",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "5acfffdb916b7917c2a3ba3c99a1f731c6fa0f1e0613383c873e6ab1f52f432e",
+          "started_offset_decimal": "0",
+          "completed_offset_decimal": "13",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "1190dc36a04946612c0f5d734c46d92e68c26223f912980b946e51cbbd7377dc",
+          "work": {
+            "new_candidate_evaluations_decimal": "13",
+            "reused_prefix_candidate_count_decimal": "0",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.030999999959021807
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        },
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "df766e9b505b4b12a9c784833ce00d2d",
+          "coordinate_request_sha256": "cb2799ac010ed10d115af0403e890fe370b74e3e5d5d80f1f66ea814685201ef",
+          "recipe_request_sha256": "61c96f7e8efe9ddf2a9f36ebf87ca522e82fd1e2c24b6767644904569e5a74c4",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "5acfffdb916b7917c2a3ba3c99a1f731c6fa0f1e0613383c873e6ab1f52f432e",
+          "started_offset_decimal": "13",
+          "completed_offset_decimal": "26",
+          "total_decimal": "26",
+          "state_at_commit": "completed",
+          "ranking_scope": "whole_family",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": true,
+          "top_k_exact": true,
+          "run_sha256": "1b273d504455ac68252cc9d6b5660aada9acdc2c4e7e7ace089d62fb9713ef06",
+          "work": {
+            "new_candidate_evaluations_decimal": "13",
+            "reused_prefix_candidate_count_decimal": "13",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.0940000000409782,
+              "alias-candidates_calls": 1,
+              "candidate_replays": 20,
+              "literal_reencrypted_letters": 120
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        }
+      ],
+      "committed_candidate_evaluations": 26,
+      "unique_evaluated_plaintexts": 26,
+      "independent_literal_replays": 53,
+      "sharing_validation": [
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.030999999959021807
+        },
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.0940000000409782,
+          "alias-candidates_calls": 1,
+          "candidate_replays": 20,
+          "literal_reencrypted_letters": 120
+        }
+      ],
+      "all_owner_requests_unchanged": true
+    },
+    "production_worker_two": {
+      "production_worker": true,
+      "calls": [
+        {
+          "run_id": "71412ea8ffb24838ac5265ebb1a48ca3",
+          "offset": 0,
+          "next_offset": 13,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "PQRSTU",
+            "RSTUVW",
+            "DEFGHI",
+            "XYZABC",
+            "ZABCDE",
+            "FGHIJK",
+            "JKLMNO",
+            "LMNOPQ",
+            "BCDEFG",
+            "HIJKLM",
+            "NOPQRS",
+            "TUVWXY",
+            "VWXYZA"
+          ]
+        },
+        {
+          "run_id": "71412ea8ffb24838ac5265ebb1a48ca3",
+          "offset": 13,
+          "next_offset": 26,
+          "evaluated": 13,
+          "request": {
+            "target": "custom",
+            "ciphertext": "BCDEFG",
+            "cribs": [],
+            "alphabet": "standard",
+            "stages": [
+              {
+                "operation": "substitution",
+                "period": 1,
+                "cipher": "vigenere"
+              }
+            ],
+            "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+          },
+          "plaintexts": [
+            "QRSTUV",
+            "OPQRST",
+            "WXYZAB",
+            "YZABCD",
+            "EFGHIJ",
+            "GHIJKL",
+            "KLMNOP",
+            "MNOPQR",
+            "STUVWX",
+            "ABCDEF",
+            "CDEFGH",
+            "IJKLMN",
+            "UVWXYZ"
+          ]
+        }
+      ],
+      "run_count": 1,
+      "job_states": [
+        "incomplete",
+        "completed"
+      ],
+      "snapshots": [
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "71412ea8ffb24838ac5265ebb1a48ca3",
+          "coordinate_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "recipe_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "0",
+          "completed_offset_decimal": "13",
+          "total_decimal": "26",
+          "state_at_commit": "limited",
+          "ranking_scope": "committed_owner_prefix",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": false,
+          "top_k_exact": false,
+          "run_sha256": "523f6dba5a5628a78d3303df5c756a6750e0b34e6cc99b8095fc4ed3037d6d79",
+          "work": {
+            "new_candidate_evaluations_decimal": "13",
+            "reused_prefix_candidate_count_decimal": "0",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.9839999999385327
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        },
+        {
+          "schema": "kryptos.shared-scan-snapshot.v1",
+          "owner_job_id": "job-001",
+          "owner_run_id": "71412ea8ffb24838ac5265ebb1a48ca3",
+          "coordinate_request_sha256": "bcf78ad7d82e7b08da5feaae014d894a39c67c09947be310e3087822ec832861",
+          "recipe_request_sha256": "d3a15b9df4e9346d95882cfa02cb540c1e13ffecbb5f9c82d4e7a435ee5cf058",
+          "source_identity_sha256": "3a9b98ab02165040caec98eb770bc9a09b888449b9ed67b4d35708a08d3c6bc3",
+          "scoring_family_sha256": "4cd46069668f85e1ba3a0012f16b295dc8ea68d3ffa1c487ab815bf41e483325",
+          "started_offset_decimal": "13",
+          "completed_offset_decimal": "26",
+          "total_decimal": "26",
+          "state_at_commit": "completed",
+          "ranking_scope": "whole_family",
+          "ranking_exact_over_committed_prefix": true,
+          "whole_family_complete": true,
+          "top_k_exact": true,
+          "run_sha256": "3b15a9dc9f78c21bd22eb7f9220d89b8085cf52e588ebb7232415a230097dd36",
+          "work": {
+            "new_candidate_evaluations_decimal": "13",
+            "reused_prefix_candidate_count_decimal": "13",
+            "validation": {
+              "family-identity_calls": 1,
+              "elapsed_seconds": 0.40699999989010394,
+              "alias-candidates_calls": 1,
+              "candidate_replays": 20,
+              "literal_reencrypted_letters": 120
+            }
+          },
+          "interpretation": "Offsets belong only to the original managed run. This job's immutable snapshot does not change when a later job continues that run. Partial ranking is not an exact whole-family top-k.",
+          "authenticated_solution": false
+        }
+      ],
+      "committed_candidate_evaluations": 26,
+      "unique_evaluated_plaintexts": 26,
+      "independent_literal_replays": 53,
+      "sharing_validation": [
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.9839999999385327
+        },
+        {
+          "family-identity_calls": 1,
+          "elapsed_seconds": 0.40699999989010394,
+          "alias-candidates_calls": 1,
+          "candidate_replays": 20,
+          "literal_reencrypted_letters": 120
+        }
+      ],
+      "all_owner_requests_unchanged": true
+    }
+  },
+  "non_claims": [
+    "No universal performance improvement",
+    "No whole-family proof from a partial ranking",
+    "No K4/K5 search or authentication"
+  ]
+}

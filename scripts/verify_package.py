@@ -36,7 +36,8 @@ def browser_check(args,package,output,env,script,name):
     server_log = output / (name+"-server.txt")
     with server_log.open("x", encoding="utf-8") as stream:
         command = [sys.executable, "-B", "-m", "kryptos.app", "--port", "0", "--no-browser", "--state-dir", str(output / (name+"-isolated-state"))]
-        if args.cuda == "off" or name=="workspace-browser": command.append("--skip-gpu-probe")
+        cpu_only=name in {"workspace-browser","search-P-browser"}
+        if args.cuda == "off" or cpu_only: command.append("--skip-gpu-probe")
         server = launch_owned(command, cwd=package, env=env, stdout=stream, stderr=stream)
         try:
             url = None
@@ -46,7 +47,7 @@ def browser_check(args,package,output,env,script,name):
                 if found: url = found.group(); break
                 time.sleep(.1)
             if url is None: raise RuntimeError("Isolated packaged server did not become ready")
-            command = [args.node, script, "--url", url, "--out", str(output / name), "--suite", "all", "--cuda", "off" if name=="workspace-browser" else args.cuda]
+            command = [args.node, script, "--url", url, "--out", str(output / name), "--suite", "all", "--cuda", "off" if cpu_only else args.cuda]
             if args.playwright_module: command += ["--playwright-module", args.playwright_module]
             if args.browser_executable: command += ["--browser-executable", args.browser_executable]
             run(command, package, output / (name+"-console.txt"), env, timeout=420)
@@ -89,6 +90,9 @@ def validate(args):
         browser_check(args,package,output,env,"research/browser_workspace.cjs","workspace-browser")
         record["checks"].append("packaged workspace recovery workflows")
         record["workspace_browser_passed"]=json.loads((output/"workspace-browser/report.json").read_text())["passed"]
+        browser_check(args,package,output,env,"research/browser_search_P.cjs","search-P-browser")
+        record["checks"].append("packaged optional search and shared scan workflows")
+        record["search_P_browser_passed"]=json.loads((output/"search-P-browser/report.json").read_text())["passed"]
         record["passed"] = True
     finally:
         (output / "validation.json").write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")

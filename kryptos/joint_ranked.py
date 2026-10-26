@@ -17,6 +17,8 @@ import time
 from . import columnar
 from .explanations import replay_recipe
 from .language import CharacterNgramModel
+from .joint_ranked_helpers import (FULL, values, singleton_values, equivalent_chunks,
+                                    reduce_joint, SharedKeyBound, symmetry_record)
 
 ALPHABETS = {"standard": string.ascii_uppercase, "kryptos": "KRYPTOSABCDEFGHIJLMNQUVWXZ"}
 
@@ -50,7 +52,9 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                         max_segmentations=2048, max_states=200000,
                         max_orders=5000, max_evaluations=100000,
                         time_limit_seconds=5, score_mask=None, pruning="off",
-                        resume_path=None, checkpoint_path=None, max_frontier=20000):
+                        resume_path=None, checkpoint_path=None, max_frontier=20000,
+                        propagation="off", early_segmentation=False, branching="prefix",
+                        score_bound="independent", symmetry="off", max_bound_cache_entries=2048):
     """Return distinct-plaintext top-k and conservative coverage metadata.
 
     Counted keys include only phases used by this finite message. Unvisited
@@ -70,6 +74,16 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
         columnar._integer(value, name, low, high)
     if pruning not in ("off", "admissible"):
         raise ValueError("pruning must be off or admissible")
+    if propagation not in ("off","fixed_point") or branching not in ("prefix","constrained") or symmetry not in ("off","identical_chunks"):
+        raise ValueError("invalid joint propagation, branching or symmetry option")
+    if type(early_segmentation) is not bool:
+        raise ValueError("early_segmentation must be boolean")
+    if score_bound not in ("independent","shared_key") or score_bound=="shared_key" and pruning!="admissible":
+        raise ValueError("shared_key bounds require pruning=admissible")
+    columnar._integer(max_bound_cache_entries,"max_bound_cache_entries",0,10000)
+    joint_mode=propagation!="off" or branching!="prefix" or symmetry!="off"
+    options=dict(propagation=propagation,early_segmentation=early_segmentation,
+        branching=branching,score_bound=score_bound,symmetry=symmetry)
     if checkpoint_path is not None and Path(checkpoint_path).exists():
         raise ValueError("checkpoint output exists; choose a fresh path")
     if order not in ("ST", "TS") or cipher not in ("vigenere", "beaufort", "variant"):
@@ -104,7 +118,8 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
     budget.work["checkpoint_score_window_evaluations"] = 0
     bounds = dict(top=top, max_segmentations=max_segmentations, max_states=max_states,
                   max_orders=max_orders, max_evaluations=max_evaluations, time_limit_seconds=time_limit_seconds,
-                  max_frontier=max_frontier, pruning=pruning)
+                  max_frontier=max_frontier, pruning=pruning,**options,
+                  max_bound_cache_entries=max_bound_cache_entries)
     assumptions = dict(period=period, order=order, cipher=cipher, alphabet=alphabet,
                        cells=[list(c) for c in occupied], column_direction=column_direction)
     retained, evaluated, orders, segmentations = {}, 0, 0, 0
@@ -115,12 +130,30 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
     root = Path(__file__).resolve().parent
     identity = dict(schema="kryptos.joint-ranked-frontier.v1", ciphertext=ciphertext,
         cribs=[[i,c] for i,c in known.items()], assumptions=assumptions, top=top,
-        score_mask=score_mask, pruning=pruning, model_sha256=_digest(dict(
+        score_mask=score_mask, pruning=pruning, joint_options=options, model_sha256=_digest(dict(
             alphabet=model.alphabet, order=model.order, counts=dict(model.counts), p=str(p), q=str(q))),
         sources={name:hashlib.sha256((root/name).read_bytes()).hexdigest()
-                 for name in ("joint_ranked.py","columnar.py","explanations.py","language.py")})
+                 for name in ("joint_ranked.py","joint_ranked_helpers.py","joint_columnar.py","columnar.py","explanations.py","language.py")})
     pattern_cache = {}
     grams = sorted(model.counts.items(), key=lambda item: (-item[1], item[0])) if pruning == "admissible" else []
+    shared_bound=SharedKeyBound(alphabet,cipher,model.counts,p,q,max_bound_cache_entries) if score_bound=="shared_key" else None
+    if shared_bound is not None:budget.work["shared_bound_setup_grams"]=len(model.counts)
+    symmetry_cache={}
+    symmetry_examples={}
+
+    def groups_for(pattern):
+        if symmetry=="off":return []
+        key=tuple(pattern)
+        budget.tick("symmetry_cache_lookups")
+        if key in symmetry_cache:
+            budget.work["symmetry_cache_hits"]+=1
+            return symmetry_cache[key]
+        groups=equivalent_chunks(ciphertext,pattern,period,order,budget)
+        if groups:budget.work["symmetry_nontrivial_plans"]+=1
+        if len(symmetry_cache)<64:
+            symmetry_cache[key]=groups
+            symmetry_examples[key]=symmetry_record(pattern,groups)
+        return groups
 
     def decode(column_ids, keys):
         route = [i for col in column_ids for i in columns[col]]
@@ -155,7 +188,11 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
     def compatibility(pattern):
         cache_key = tuple(pattern)
         if cache_key in pattern_cache:
+            if joint_mode or early_segmentation or shared_bound is not None:
+                budget.work["compatibility_cache_hits"]+=1
             return pattern_cache[cache_key]
+        if joint_mode or early_segmentation or shared_bound is not None:
+            budget.work["compatibility_cache_misses"]+=1
         offset, domains, requirements, offsets = 0, [], {}, []
         for slot, length in enumerate(pattern):
             offsets.append(offset)
@@ -186,11 +223,40 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
             pattern_cache[cache_key] = (domains, requirements, offsets)
         return domains, requirements, offsets
 
-    def cannot_reach_top(current, keys, requirements, offsets):
+    def prefix_feasible(pattern):
+        """Unknown suffix lengths have no assumed ciphertext positions."""
+        before=budget.work["states"]
+        try:
+            budget.tick("early_segmentation_checks")
+            domains,requirements,_=compatibility(pattern)
+            domains=list(domains)
+            requirements=dict(requirements)
+            remaining=multiplicities-Counter(pattern)
+            for length in sorted(remaining.elements()):
+                slot=len(domains)
+                domain=tuple(col for col,positions in enumerate(columns) if len(positions)==length)
+                domains.append(domain)
+                for col in domain:
+                    budget.tick("early_suffix_edges")
+                    requirements[slot,col]={}
+            if propagation=="fixed_point":
+                reduced,_=reduce_joint(domains,[FULL]*used,requirements,budget,fixed_point=True)
+                feasible=reduced is not None
+            else:
+                feasible=columnar._matching(domains,budget) is not None
+            if not feasible:budget.work["early_segmentation_rejections"]+=1
+            return feasible
+        finally:
+            budget.work["early_segmentation_states"]+=budget.work["states"]-before
+
+    def cannot_reach_top(current, keys, requirements, offsets, key_domains=None):
         if pruning == "off" or len(retained) < top:
             return False
         budget.tick("score_bound_nodes")
+        if key_domains is None:
+            key_domains=[FULL if key is None else 1<<key for key in keys]
         reachable = [set() for _ in range(n)]
+        bindings=[None]*n if shared_bound is not None else None
         for slot, domain in enumerate(current):
             for col in domain:
                 forced = requirements.get((slot,col), {})
@@ -200,10 +266,17 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                     phase = (i if order == "ST" else j) % period
                     fixed = keys[phase] if keys[phase] is not None else forced.get(phase)
                     if fixed is None:
-                        reachable[i].update(alphabet)
+                        if key_domains[phase]==FULL:
+                            reachable[i].update(alphabet)
+                        else:
+                            c=cvalues[j]
+                            reachable[i].update(alphabet[(k-c if cipher=="beaufort" else c+k if cipher=="variant" else c-k)%26]
+                                                for k in values(key_domains[phase]))
                     else:
                         c = cvalues[j]
                         reachable[i].add(alphabet[(fixed-c if cipher == "beaufort" else c+fixed if cipher == "variant" else c-fixed) % 26])
+                    if bindings is not None and len(domain)==1:
+                        bindings[i]=(cvalues[j],phase)
         upper = 1
         for start in starts:
             budget.tick("bound_windows")
@@ -220,7 +293,12 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                     if all(c in domains_here[k] for k,c in enumerate(gram)):
                         maximum = count
                         break
-            upper *= maximum*q+p
+            local_upper=maximum*q+p
+            if shared_bound is not None:
+                correlated=shared_bound.upper(bindings[start:start+model.order],key_domains,budget)
+                if correlated<local_upper:budget.work["shared_bound_tightenings"]+=1
+                local_upper=min(local_upper,correlated)
+            upper *= local_upper
         threshold = min(row["exact"] for row in retained.values())
         # Equality must remain searchable: plaintext and recipe lexical ties
         # cannot be resolved from a score bound alone.
@@ -235,15 +313,33 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
             raise ValueError("malformed frontier task")
         kind = task.get("kind")
         fields = {"segment":{"kind","pattern"}, "route":{"kind","pattern","chosen","keys"},
-                  "key":{"kind","columns","keys"}}
+                  "key":{"kind","columns","keys"},
+                  "joint":{"kind","pattern","domains","key_domains","route_counted"}}
         if not isinstance(kind,str) or kind not in fields or set(task)!=fields[kind]:
             raise ValueError("malformed frontier task fields")
-        if kind in ("segment","route"):
+        if kind in ("segment","route","joint"):
             pattern = task["pattern"]
             if not isinstance(pattern,list) or len(pattern)>w or any(type(v) is not int or v not in multiplicities for v in pattern) or Counter(pattern)-multiplicities:
                 raise ValueError("invalid segmentation frontier")
-            if kind=="route" and len(pattern)!=w:
+            if kind in ("route","joint") and len(pattern)!=w:
                 raise ValueError("incomplete route segmentation")
+        if kind=="joint":
+            if not joint_mode or type(task["route_counted"]) is not bool:
+                raise ValueError("joint frontier does not match declared mode")
+            masks=task["key_domains"]
+            if not isinstance(masks,list) or len(masks)!=used or any(type(mask) is not int or not 1<=mask<=FULL for mask in masks):
+                raise ValueError("invalid key domain masks")
+            domains=task["domains"]
+            if domains is None:
+                if task["route_counted"]:raise ValueError("counted route needs explicit domains")
+            elif not isinstance(domains,list) or len(domains)!=w:
+                raise ValueError("invalid slot domains")
+            else:
+                for slot,domain in enumerate(domains):
+                    if not isinstance(domain,list) or not domain or any(type(col) is not int or not 0<=col<w or lengths[col]!=pattern[slot] for col in domain) or domain!=sorted(set(domain)):
+                        raise ValueError("invalid column domain")
+                if task["route_counted"] and (any(len(domain)!=1 for domain in domains) or len({d[0] for d in domains})!=w):
+                    raise ValueError("counted route must be one full permutation")
         if kind in ("route","key"):
             cols = task["chosen"] if kind=="route" else task["columns"]
             if not isinstance(cols,list) or len(cols)>w or any(type(v) is not int or not 0<=v<w for v in cols) or len(set(cols))!=len(cols) or not valid_keys(task["keys"]):
@@ -300,11 +396,14 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
             if kind == "segment":
                 budget.tick("segmentation_nodes")
                 pattern = task["pattern"]
-                if len(pattern)==w:
+                if early_segmentation and 0<len(pattern)<w and not prefix_feasible(pattern):
+                    pass
+                elif len(pattern)==w:
                     if segmentations-old_segmentations >= max_segmentations:
                         raise _Limit("max_segmentations")
                     delta_segments = 1
-                    children = [dict(kind="route",pattern=pattern,chosen=[],keys=[None]*used)]
+                    children = ([dict(kind="joint",pattern=pattern,domains=None,key_domains=[FULL]*used,route_counted=False)]
+                                if joint_mode else [dict(kind="route",pattern=pattern,chosen=[],keys=[None]*used)])
                 else:
                     remaining = multiplicities-Counter(pattern)
                     children = [dict(kind="segment",pattern=pattern+[length]) for length in sorted(remaining)]
@@ -333,6 +432,64 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                         for phase,value in requirements[slot,col].items():
                             child_keys[phase] = value
                         children.append(dict(kind="route",pattern=pattern,chosen=chosen+[col],keys=child_keys))
+            elif kind=="joint":
+                budget.tick("joint_nodes")
+                pattern=task["pattern"]
+                base,requirements,offsets=compatibility(pattern)
+                current=base if task["domains"] is None else task["domains"]
+                masks=list(task["key_domains"])
+                counted=task["route_counted"]
+                if counted:
+                    reduced=(current,masks)
+                else:
+                    reduced,_=reduce_joint(current,masks,requirements,budget,
+                        fixed_point=propagation=="fixed_point",groups=groups_for(pattern))
+                if reduced is not None:
+                    current,masks=reduced
+                    keys=singleton_values(masks)
+                    full_route=all(len(domain)==1 for domain in current)
+                    full_key=all(value is not None for value in keys)
+                    if not(full_route and full_key) and cannot_reach_top(current,keys,requirements,offsets,masks):
+                        delta_pruned=1
+                    else:
+                        if full_route and not counted:
+                            if orders-old_orders>=max_orders:raise _Limit("max_orders")
+                            delta_orders=1
+                            delta_assignments=math.prod(mask.bit_count() for mask in masks)
+                            counted=True
+                        if full_route and full_key:
+                            if evaluated-old_evaluated>=max_evaluations:raise _Limit("max_evaluations")
+                            budget.tick("key_completions")
+                            column_ids=[domain[0] for domain in current]
+                            plaintext,route=decode(column_ids,keys)
+                            if any(plaintext[i]!=c for i,c in known.items()):raise ValueError("joint frontier contradicts a supplied crib")
+                            exact=objective(plaintext)
+                            retain(column_ids,keys,plaintext,exact,route)
+                            evaluated+=1
+                        else:
+                            choices=[]
+                            for slot,domain in enumerate(current):
+                                budget.tick("branch_domain_checks")
+                                if len(domain)>1:choices.append((len(domain),1,slot,"slot"))
+                            if full_route or branching=="constrained":
+                                for phase,mask in enumerate(masks):
+                                    budget.tick("branch_domain_checks")
+                                    if mask.bit_count()>1:choices.append((mask.bit_count(),0,phase,"key"))
+                            if branching=="prefix":
+                                selected=min(choices,key=lambda row:(row[3]!="slot",row[2]))
+                            else:
+                                selected=min(choices)
+                            _,_,variable,decision=selected
+                            budget.work["joint_decisions"]+=1
+                            budget.work["joint_"+decision+"_decisions"]+=1
+                            alternatives=current[variable] if decision=="slot" else list(values(masks[variable]))
+                            for value in alternatives:
+                                child_domains=[list(domain) for domain in current]
+                                child_masks=list(masks)
+                                if decision=="slot":child_domains[variable]=[value]
+                                else:child_masks[variable]=1<<value
+                                children.append(dict(kind="joint",pattern=pattern,domains=child_domains,
+                                    key_domains=child_masks,route_counted=counted))
             else:
                 budget.tick("key_nodes")
                 column_ids, keys = task["columns"],task["keys"]
@@ -358,6 +515,15 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                     exact = objective(plaintext)
                     retain(column_ids,keys,plaintext,exact,route)
                     evaluated += 1
+            # Comparable decision instrumentation across both frontier formats:
+            # materializing two or more alternatives is one branch decision.
+            # Deterministic forced transitions are not decisions. Repeated
+            # interrupted attempts remain counted work, not proof progress.
+            if len(children)>1:
+                category=decision if kind=="joint" else "segmentation" if kind=="segment" else "slot" if kind=="route" else "key"
+                budget.work["branch_decisions"]+=1
+                budget.work[category+"_branch_decisions"]+=1
+                budget.work["branch_alternatives_materialized"]+=len(children)
             if len(frontier)+len(children)>max_frontier:
                 raise _Limit("max_frontier")
             frontier.extend(reversed(children))
@@ -371,10 +537,11 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
             reason = str(exc)
             break
     complete = not frontier
-    enumeration_complete = complete and not pruned_branches
     total_work = dict(previous_work)
     for key,value in budget.work.items():
         total_work[key] = total_work.get(key,0)+value
+    symmetry_reduced=bool(total_work.get("symmetry_edges_removed",0) or total_work.get("symmetry_rejections",0))
+    enumeration_complete=complete and not pruned_branches and not symmetry_reduced
     if checkpoint_path is not None:
         payload = dict(identity=identity,frontier=frontier,
             retained=[dict(columns=row["columns"],keys=row["values"],plaintext=text,score_hex=hex(row["exact"])) for text,row in sorted(retained.items())],
@@ -406,9 +573,10 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
     return dict(schema="kryptos.joint-ranked.v1", complete=complete, truncated=not complete,
         stop_reason=reason, feasible=True if evaluated else False if complete else None,
         top_k_exact=complete, ranking_exact_over_evaluated=True, enumeration_complete=enumeration_complete,
-        total_column_orders=orders if enumeration_complete else None,
+        total_column_orders=orders if enumeration_complete and branching!="constrained" else None,
         total_order_key_assignments=evaluated if enumeration_complete else None,
-        column_orders_visited=orders, compatible_assignment_lower_bound=visited_order_assignments,
+        column_orders_visited=orders if branching!="constrained" else None,
+        route_completion_blocks=orders,compatible_assignment_lower_bound=visited_order_assignments,
         evaluated=evaluated, candidates=candidates, segmentations_tested=segmentations,
         bounds=bounds, work=total_work, work_this_run=dict(budget.work), assumptions=assumptions,
         evaluated_this_run=evaluated-old_evaluated, states_total=previous_states+budget.work["states"],
@@ -416,6 +584,14 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
         frontier_nodes=len(frontier), pruned_score_branches=pruned_branches,
         resumed=resume_path is not None, checkpoint_written=str(checkpoint_path) if checkpoint_path is not None else None,
         checkpoint_identity_sha256=_digest(identity),
+        count_convention=("Route completion blocks can revisit a labelled order after disjoint key-domain branches; distinct route counts are withheld. "
+                          if branching=="constrained" else "Each visited route is one labelled column order. ")+
+                         "Evaluated counts complete searched route/key assignments; symmetry representatives and score exclusions are not full labelled enumeration.",
+        route_symmetry=dict(mode=symmetry,reduced=symmetry_reduced,
+            rule="Equal length and identical ciphertext chunks; TS additionally requires equal offset modulo period.",
+            groups_by_segmentation=list(symmetry_examples.values()),examples_limit=64,
+            examples_scope="At most64 segmentation examples from this invocation's disposable cache; not an exhaustive history. The rule and declared ciphertext reconstruct all groups.",
+            reconstruction="Permute source column labels within each displayed equivalent-slot group with the same key; sorted labels give the retained canonical recipe. Other groups are reconstructible from the declared rule, ciphertext and segmentation."),
         unused_key_slots=list(range(used, period)),
         scoring=dict(model_id=model.model_id, score_mask=score_mask, windows=len(starts),
                      score_available=bool(starts), alpha_numerator=str(p), alpha_denominator=str(q),
@@ -430,7 +606,8 @@ def run_joint_ranked(request, target_fn):
     """Strict CLI adapter; the app separately allowlists model paths."""
     options = {"period", "order", "cipher", "alphabet", "width", "cells", "column_direction", "top",
                "max_segmentations", "max_states", "max_orders", "max_evaluations", "time_limit_seconds", "score_mask",
-               "pruning", "resume_path", "checkpoint_path", "max_frontier"}
+               "pruning", "resume_path", "checkpoint_path", "max_frontier",
+               "propagation","early_segmentation","branching","score_bound","symmetry","max_bound_cache_entries"}
     if not isinstance(request, dict) or set(request) - options - {"target", "ciphertext", "cribs", "model_path"}:
         raise ValueError("unknown ranked-joint request field")
     if "period" not in request or not isinstance(request.get("model_path"), str):

@@ -3,6 +3,24 @@
 Version 0.4 adds supporting research workflow features. They preserve work and
 make results easier to inspect; they do not reduce cipher search decisions.
 
+## Continuing equivalent unfinished scans
+
+Version0.5 adds the optional campaign setting `share_incomplete_scans: true`,
+shown as **Continue one compatible scan**. It defaults off. Within that campaign,
+compatible certified family scans can continue one owned committed scan. They
+must use the same plaintext family, model, mask and fixed resource settings;
+adaptive or approximate scans are refused. Source identity is checked before
+reuse. Incompatible evidence starts a fresh job with an explanation.
+
+The owner retains its original enumeration coordinates. Offsets are never copied
+into a different basis. Every job saves its own immutable ranking snapshot and
+replayed recipe. A snapshot at offset10 remains partial even if a later job
+extends its owner to26 and finishes the family. Inspect and comparison use those
+historical snapshots. New candidate evaluations, previously committed prefix
+counts and replay/identity validation costs are separate. A missing or failed
+reserved owner is an explicit error, not permission to silently restart a scan.
+Completed-family reuse across campaigns remains a separate existing feature.
+
 ## Editing and personal presets
 
 The dashboard saves unfinished editor text after a short idle interval, including
@@ -54,7 +72,8 @@ remain preserved as opaque bytes in the recovery's original backup.
 
 `.github/workflows/verify-package.yml` validates a Git archive on Windows and
 Linux with Python 3.10 and 3.12. It runs the packaged Python suite, Node runner
-checks, CPU browser workflows and separate workspace/recovery browser checks.
+checks, CPU browser workflows, workspace/recovery checks, and optional search/
+shared-scan browser checks.
 Each browser suite uses a fresh state directory and an owned server process tree.
 External commands have deadlines; failure logs and screenshots are retained.
 CUDA is explicitly disabled on ordinary CI. Such runs provide no GPU evidence.
@@ -77,7 +96,7 @@ exact source is committed, tagged remotely and its entire CI matrix succeeds,
 an operator authenticated as **gearashi** can inspect the gate:
 
 ```text
-python scripts/publish_release.py --tag v0.4.0 --run-id VERIFIED_RUN_ID
+python scripts/publish_release.py --tag v0.5.0 --run-id VERIFIED_RUN_ID
 ```
 
 The script uses an existing GitHub CLI (`--gh` can identify a compatible local

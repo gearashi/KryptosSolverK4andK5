@@ -8,10 +8,172 @@ lexical minimum, not arbitrary back-pointers from positive subproblems.
 from itertools import product
 import math
 import time
+from types import MappingProxyType
 
 
 class _Stop(Exception):
     pass
+
+
+class ResidualComponentCache:
+    """Invocation-local exact component optima, with a frozen objective.
+
+    A key names original factors, remaining variables and every fixed boundary
+    coordinate. It deliberately does not identify isomorphic or merely similar
+    components. Completed zero maxima are score facts, never infeasibility.
+    Caches are disposable and never imported from a checkpoint.
+    """
+    def __init__(self, problem, *, max_entries=256, max_assignments=256,
+                 max_operations=200000):
+        from .search_runtime import _integer, _validate
+        self.domains, factors = _validate(problem)
+        self.max_entries = _integer(max_entries, "residual_cache_max_entries", 0, 10000)
+        self.max_assignments = _integer(max_assignments, "residual_cache_max_assignments", 1, 100000)
+        self.max_operations = _integer(max_operations, "residual_cache_max_operations", 1, 10000000)
+        # No mutable caller-owned factor/model data remains reachable here.
+        snapshot_items = 0
+        def freeze(value):
+            nonlocal snapshot_items
+            snapshot_items += 1
+            if isinstance(value, dict):
+                return MappingProxyType({k: freeze(v) for k, v in value.items()})
+            if isinstance(value, list):
+                return tuple(freeze(v) for v in value)
+            return value
+        self.factors = tuple(freeze(f) for f in factors)
+        self.model = freeze(problem.get("model"))
+        self.cache = {}
+        self.stats = dict(calls=0, operations=0, planning_operations=0,
+                          objective_snapshot_items=snapshot_items,
+                          factor_evaluations=0, witness_factor_evaluations=0,
+                          enumerated_assignments=0, cache_lookups=0, cache_hits=0,
+                          cache_stores=0, cache_capacity_skips=0, cache_invalidations=0,
+                          components_over_cap=0, complete_residuals=0,
+                          zero_score_residuals=0, budget_fallbacks=0)
+
+    def solve(self, assignment, *, time_limit_seconds=5):
+        from .search_runtime import evaluate_factor
+        if (not isinstance(assignment, (tuple, list)) or len(assignment) != len(self.domains)
+                or any(type(v) is not int or not -1 <= v < d for v, d in zip(assignment, self.domains))):
+            raise ValueError("invalid residual assignment")
+        if type(time_limit_seconds) not in (int, float) or not math.isfinite(time_limit_seconds) or not 0 < time_limit_seconds <= 600:
+            raise ValueError("residual time limit must be in (0,600]")
+        point = tuple(assignment)
+        minimum = tuple(max(0, v) for v in point)
+        started = time.monotonic()
+        self.stats["calls"] += 1
+
+        def tick(field, count=1):
+            if time.monotonic() - started >= time_limit_seconds:
+                raise _Stop("time_limit")
+            if self.stats["operations"] + count > self.max_operations:
+                raise _Stop("operation_limit")
+            self.stats["operations"] += count
+            self.stats[field] += count
+
+        def score(ids, values, verification=False):
+            result = 1
+            for number in ids:
+                tick("witness_factor_evaluations" if verification else "factor_evaluations")
+                factor = self.factors[number]
+                result *= evaluate_factor(factor, tuple(values[v] for v in factor["scope"]),
+                                          self.domains, self.model) ** factor.get("power", 1)
+            return result
+
+        def finish(complete, reason, answer=None, value=None):
+            if complete:
+                self.stats["complete_residuals"] += 1
+                self.stats["zero_score_residuals"] += int(value == 0)
+            return dict(complete=complete, stop_reason=reason,
+                        assignment=list(answer) if answer is not None else None, score=value)
+
+        try:
+            active, constants, parent = [], [], {}
+            def find(v):
+                while parent[v] != v:
+                    parent[v] = parent[parent[v]]
+                    v = parent[v]
+                return v
+            for number, factor in enumerate(self.factors):
+                tick("planning_operations", 1 + len(factor["scope"]))
+                free = tuple(v for v in factor["scope"] if point[v] < 0)
+                if not free:
+                    constants.append(number)
+                    continue
+                active.append((number, free))
+                for v in free:
+                    parent.setdefault(v, v)
+                    parent[find(v)] = find(free[0])
+            constant = score(constants, point)
+            if constant == 0:
+                return finish(True, "constant_zero_score", minimum, 0)
+            components = {}
+            for number, free in active:
+                tick("planning_operations")
+                components.setdefault(find(free[0]), []).append(number)
+            answer, value, skipped = list(minimum), constant, False
+            for ids in sorted(components.values(), key=lambda group: tuple(group)):
+                scope = tuple(sorted({v for number in ids for v in self.factors[number]["scope"]}))
+                variables = tuple(v for v in scope if point[v] < 0)
+                tick("planning_operations", len(scope) + len(ids))
+                size = math.prod(self.domains[v] for v in variables)
+                if size > self.max_assignments:
+                    self.stats["components_over_cap"] += 1
+                    skipped = True
+                    continue
+                key = (tuple(ids), tuple((v, self.domains[v]) for v in variables),
+                       tuple((v, point[v]) for v in scope if point[v] >= 0))
+                tick("cache_lookups")
+                cached = self.cache.get(key)
+                if cached is not None:
+                    self.stats["cache_hits"] += 1
+                    best, witness = cached
+                else:
+                    best, witness = -1, None
+                    completed = list(point)
+                    for values in product(*(range(self.domains[v]) for v in variables)):
+                        for v, a in zip(variables, values):
+                            completed[v] = a
+                        tick("enumerated_assignments")
+                        current = score(ids, completed)
+                        # product() visits original-variable lexical order.
+                        if current > best:
+                            best, witness = current, values
+                if (type(best) is not int or best < 0 or not isinstance(witness, tuple)
+                        or len(witness) != len(variables)
+                        or any(type(a) is not int or not 0 <= a < self.domains[v] for v, a in zip(variables, witness))):
+                    self.cache.pop(key, None)
+                    self.stats["cache_invalidations"] += 1
+                    raise AssertionError("invalid cached component witness")
+                completed = list(point)
+                for v, a in zip(variables, witness):
+                    completed[v] = a
+                # Always verify, including hits, against the frozen original
+                # factors. Never use another cached score for this check.
+                if score(ids, completed, verification=True) != best:
+                    self.cache.pop(key, None)
+                    self.stats["cache_invalidations"] += 1
+                    raise AssertionError("component witness failed original-factor verification")
+                if cached is None:
+                    if len(self.cache) < self.max_entries:
+                        self.cache[key] = (best, witness)
+                        self.stats["cache_stores"] += 1
+                    else:
+                        self.stats["cache_capacity_skips"] += 1
+                if best == 0:
+                    # One independently zero component makes every full
+                    # completion zero, including lexically smaller nonoptima
+                    # of the other components.
+                    return finish(True, "component_zero_score", minimum, 0)
+                value *= best
+                for v, a in zip(variables, witness):
+                    answer[v] = a
+            if skipped:
+                return finish(False, "component_assignment_limit")
+            return finish(True, "exact_components", answer, value)
+        except _Stop as error:
+            self.stats["budget_fallbacks"] += 1
+            return finish(False, str(error))
 
 
 def mini_bucket_upper(problem, assignment=None, *, bucket_entries=256,

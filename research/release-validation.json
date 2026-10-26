@@ -1,222 +1,160 @@
 {
   "schema": "kryptos.release-validation.v1",
-  "version": "0.4.0",
-  "date": "2026-10-25",
+  "version": "0.5.0",
+  "date": "2026-10-26",
   "publication": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "status": "published; exact source/tag, CI matrix, public asset hashes and gearashi attribution verified",
-    "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
-    "tag": "v0.4.0",
-    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0",
-    "verified_assets": {
-      "KryptosSolverK4AndK5.zip": "c518ab28556e309b08d678526867cbfec0180c457caf475d6a3bbbf122033ee8",
-      "SHA256SUMS": "13fc95f05056275ba061a3b83382227961525fb6ad325927884739efe0689c3d",
-      "validation.json": "69fd4afda4d82d4655c606e741e5bcb08e3eebec8bd7edd4332b5cc5bc0e3e55"
-    },
-    "ci_run": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40219972977",
-    "ci_jobs_passed": 4,
-    "attribution": {
-      "author": "gearashi",
-      "committer": "gearashi",
-      "contributors": [
-        "gearashi"
-      ]
-    },
-    "evidence": [
-      "research/runs/release-O-001/github-ci.json",
-      "research/runs/release-O-001/github-release.json",
-      "research/runs/release-O-001/github-attribution.json"
-    ]
+    "status": "Local validation passed; GitHub exact-source CI, tag, release and asset checks pending",
+    "tag": "v0.5.0",
+    "required_account": "gearashi"
   },
-  "historical_release": "research/runs/release-N-004/release-validation.json",
+  "historical_release": "research/runs/release-O-001/release-validation.json",
   "fresh_checkout": {
     "schema": "kryptos.package-tests.v1",
-    "tests": 413,
-    "passed": 412,
+    "tests": 448,
+    "passed": 447,
     "skipped": 1,
-    "seconds": 122.672,
+    "seconds": 151.875,
     "actual_cuda": true,
     "cuda_path_removed": true,
-    "files_verified": 1853,
+    "files_verified": 2495,
     "tested_files_unchanged": true,
-    "log": "research/runs/release-O-001/fresh-checkout-tests.txt",
-    "log_sha256": "146e9ab64d766aef0e2d29845a72e50e01017e103d861e599c07e3a04728655a",
+    "log": "research/runs/release-P-001/fresh-checkout-tests.txt",
+    "log_sha256": "bfa61dca847eac849f03198df5bda9a6d1b60b0742e80380092224dd18c1cad3",
     "method": "Curated tracked and nonignored source/evidence copied byte-for-byte; installed venv used only as interpreter; isolated cwd/runtime, no excluded caches or corpora."
   },
   "browser": {
-    "summary": "research/runs/release-O-001/browser-retry/browser/browser-report.json",
-    "summary_sha256": "86b21ad3c6e26b42fdde3c42c10a982d13579a0dab846e559a9a68de75f019e3",
-    "passed": 43,
-    "checks": 43,
-    "cuda_policy": "required",
-    "javascript_errors": [],
-    "workspace_summary": "research/runs/release-O-001/browser-retry/workspace-browser/report.json",
-    "workspace_summary_sha256": "227902f0579490b595525e118fd27ec05e6fea98038e01326de6fb4ae5d748cb",
-    "workspace_checks": 22,
+    "core": {
+      "path": "research/runs/release-P-001/browser/browser-report.json",
+      "sha256": "39cf3ac7ed3a59989305cfd26faddb1d283352610fd7ff51637a21efdd08b339",
+      "passed": 43,
+      "errors": []
+    },
+    "workspace": {
+      "path": "research/runs/release-P-001/workspace-browser/report.json",
+      "sha256": "abf649709812d323e0c22f3fc65e2d9d511fdc79c23ed658dd0dde198e76a5b4",
+      "passed": 22,
+      "errors": []
+    },
+    "phase_P": {
+      "path": "research/runs/release-P-001/search-P-browser/report.json",
+      "sha256": "4d5fe1a25f171e02aff93080b2b82b5d53d324af8b7554a8d5d0d3da66838c02",
+      "passed": 23,
+      "errors": []
+    },
+    "total_checks": 88,
     "node_checks": 6,
-    "environment_retry": "First Chrome launch failed with sandbox spawn EPERM; original evidence retained. Only browser suites rerun with process permission against identical packaged source.",
-    "post_review_ui": {
-      "directory": "research/runs/release-O-001/post-review-ui",
-      "checks": 4,
-      "scope": "Tiny CPU joint search confirms actual states_total is shown as search work steps; optimizer node label retained. The final tagged source, including this label fix, passed all four clean-package CI jobs."
-    }
+    "cuda_policy": "required",
+    "hardware": {
+      "cpu": true,
+      "workers_max": 4,
+      "cuda": {
+        "ready": true,
+        "devices": [
+          {
+            "id": 0,
+            "name": "NVIDIA GeForce RTX 2060",
+            "compute_capability": [
+              7,
+              5
+            ],
+            "total_memory_bytes": 6442123264
+          }
+        ],
+        "environment": {
+          "mode": "cuda12_component_wheels",
+          "configured_cuda_path": null,
+          "dll_directories": [
+            "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin",
+            "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin"
+          ],
+          "libraries": {
+            "cudart": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin\\cudart64_12.dll",
+            "nvrtc": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin\\nvrtc64_120_0.dll"
+          },
+          "toolkit_root": null,
+          "package_versions": {
+            "cupy": "14.2.0",
+            "runtime": "12.9.79",
+            "nvrtc": "12.9.86"
+          }
+        },
+        "cupy_version": "14.2.0",
+        "driver_version": 13050,
+        "runtime_version": 12090,
+        "compiled_kernel_verified": true,
+        "current_device": 0,
+        "available": true
+      }
+    },
+    "app_version": "0.5.0"
   },
-  "canonical_audits": [
+  "computations": [
     {
-      "kind": "search",
-      "manifest": "research/runs/release-O-001/search/manifest.json",
-      "sha256": "95b71123e404e33ff4e66cdc844fdfd11e32ce7748056ed0788737f00b121f7d",
-      "result_sha256": "6feaca6ab0c8ffb74bd32801f76874ce17a70e4fb3d0851668f2635b8ed996da",
-      "snapshot_verified": true
+      "kind": "joint",
+      "manifest": "research/runs/release-P-001/joint/manifest.json",
+      "sha256": "04fcb2bc0ffdd4b090f5d3aadb31a9eda7e6fc3d83be0044e95ea9b1968220b4",
+      "status": "completed",
+      "input_count": 121
     },
     {
-      "kind": "validation",
-      "manifest": "research/runs/release-O-001/validation/manifest.json",
-      "sha256": "3fddc64d078602507129ddda84b92df739a647589d6e2013c5253c233be8ba00",
-      "result_sha256": "a3854291502e7899ff525fb6f250e2a10078a48bd38be341ae83fe73cc240a5e",
-      "snapshot_verified": true
+      "kind": "factor",
+      "manifest": "research/runs/release-P-001/factor/manifest.json",
+      "sha256": "8b203430f117d5471ed54dbd4ea1148849a0f39c23b1f59f054f9c4a3eee9709",
+      "status": "completed",
+      "input_count": 121
     },
     {
-      "kind": "scan",
-      "manifest": "research/runs/release-O-001/scan/manifest.json",
-      "sha256": "94a02741c4c946b16ba3bca76123542010c93e7b63e9b382f5bde8ecf6412e45",
-      "result_sha256": "3d553658cf2f71cf605b666baa3b4f110f7719180c97d1970e6c7a5b4737c882",
-      "snapshot_verified": true
+      "kind": "campaign",
+      "manifest": "research/runs/release-P-002/campaign/manifest.json",
+      "sha256": "4d98d9cfbd978764ecb422bbaf007f0d02045bf5e6a0bf022fa6d6d467be793c",
+      "status": "completed",
+      "input_count": 121
+    },
+    {
+      "kind": "independent-irregular-grid",
+      "manifest": "research/runs/review-P-joint-irregular-001/manifest.json",
+      "sha256": "fa81b37076965fe51e1d8ac6337e3fce77ecd9eaec7963e925c50c209e0e29c2",
+      "status": "completed",
+      "input_count": 55
     }
   ],
-  "interpretation": "Fewer search decisions/candidate evaluations on bounded controls, factor operations separately counted. Supporting GPU/workspace/delivery features do not establish fewer cipher-solving steps. Unfavorable controls and language-ranking misses retained. No authenticated K4/K5 solution.",
-  "source_sha256": {
-    ".github/workflows/verify-package.yml": "a51dc98e12df0267897ee759a3be356ea7a3321edb1c2dee964bb71cb085e546",
-    "kryptos/__main__.py": "643f9b72ab1a6ee93eefd0a795a60b7bd27afd02d144fe0b70de25702f30f78c",
-    "kryptos/ablations.py": "0bd7a888432063614ce3a2c925bba3f4da0ab089ad4dc41dbf32d9d2c3a55414",
-    "kryptos/accelerated.py": "027f4cfea0e5d94cae9947dc3c668c893422ea9900e6c5c71cbdc15a138d4987",
-    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
-    "kryptos/alphabet_propagation.py": "3c700c63669aa83504df666fd32f618da4dcf7b5fbdf179065e743dbdccd06a3",
-    "kryptos/app.py": "dc004f663abcef96e30fa2510ec705996628827c357e338f77cea5bee5a02d51",
-    "kryptos/app_jobs.py": "1dce6df05848d1002f77adb03c71e617ca75a5c99b226609dcdba7e0bf4eacfe",
-    "kryptos/app_worker.py": "4ad760b9b39a310ac809d670d089ad4243ff51e139ecff8795544faad3329e3d",
-    "kryptos/campaigns.py": "1da74bdf62578e8addf4c405604b3d863671bc08931cd38b45a3374a858296a0",
-    "kryptos/certified_scores.py": "112a0f0374a721a6e0864555f6d1924e802468c0cc895a526a13105471141285",
-    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
-    "kryptos/columnar.py": "3a109741ebd05291a31ed04c6dbfdbbf21180ba2e53bb5309ba782c0b16c3aa4",
-    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
-    "kryptos/cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
-    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
-    "kryptos/engine.py": "1721aa474bc5194064423ef80f8a32d2fa1d03daeebbad7f46bcb8738af77f50",
-    "kryptos/experiments.py": "619f1acbfdf740dce9fb465101b33efe536af945c2596601c143540377d42363",
-    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
-    "kryptos/factor_decomposition.py": "9bed97de6e0a5261d6f13ddfc6992f891c8ea02a8c258c9a5957d0cdb4161266",
-    "kryptos/factor_search.py": "86be7639c072f27096880fd18e96393ee24617b073cb6e25a87f417ead87d758",
-    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
-    "kryptos/fractionation.py": "816b11712421d1a69cddad1417db14034966507bfcae7248e79acaecbd50ccb2",
-    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
-    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
-    "kryptos/grid_paths.py": "bd678fd7b9b660022b9eb26a0653eb26ae804cefc4809147041ac7142aea1ab3",
-    "kryptos/guided_search.py": "6139c56d5d4a67a178a5320802deea4eb17aa31ff62052f830be83523ca98948",
-    "kryptos/hypotheses.py": "fbce43586eb0ce41b4ef6add80a9e1746bdc16b4feb0a633b55d52b01961c398",
-    "kryptos/import_inspector.py": "6757a9454ee252f569fa4e13eb14a096bbd1471d45fa062a5ea3e41db6c8e041",
-    "kryptos/joint_columnar.py": "1796375d58fc26970c2e727c5f0137cb1e86c97dc2acdc0e9a4e9162939d5a9d",
-    "kryptos/joint_ranked.py": "79877e3b4bf4eafe6b979e39f0c1ecd05e6ce92808703374f25368a10cafc6a7",
-    "kryptos/keyed_alphabet.py": "e91c05e920ff0fd40c0a70bc908589f2cce064b76b203d92230a7d94302297e7",
-    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
-    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
-    "kryptos/mixed_stages.py": "e31b09fe3d6299ca0b780c5a9a52b99a9a8b4d975cbe9e606a32e743a102e203",
-    "kryptos/next_cli.py": "cef556a195637c2457df2d0cf9def9bf65c2b9884fccf48aa37f25d4f5b13ee2",
-    "kryptos/parallel_search.py": "036aa25f8217779ba7b3448128fe44d5a9a094b6e1a17aff2c8e6a65569e5a16",
-    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
-    "kryptos/process_lifetime.py": "759bc0a4508328a55732343a8fb3de2e197906cf0a7a2d39b249acc04f36bf78",
-    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
-    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
-    "kryptos/resource_governor.py": "aaf5c0b96134e17b1949f54fdc4757ae512c875f6c0855dced6f41ae8ab46772",
-    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
-    "kryptos/score_sensitivity.py": "cc6989ac27d3203c4b782e4db83c0c82e4ebabc130d17ffeab6d30b6942780aa",
-    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
-    "kryptos/sculpture.py": "7e4ddd3724a0dc41efc7c9d2a8bad068c62ec2dfad2f4767cc9976290258ee68",
-    "kryptos/search_runtime.py": "479c33ed5fdb2cc046b49c058778d04f0c4dfbf1798812845be6ca10f730edba",
-    "kryptos/semantic.py": "8b81713e81970ae34f963271848663cc3e0b7fbe3ebcfdb09b40977c225e7baa",
-    "kryptos/static/app.js": "d4083bdae12646ef8ecd9b2f67d4ce4c25ad7bbc5006f09aa964e08fb5045f5e",
-    "kryptos/static/index.html": "ada5c00afde3b2477214df375ca0e51749a1036f89caa100c35d6a6b85266c15",
-    "kryptos/static/mark.svg": "772c2f271ca534956f2cc91181daabdd7290f1572cb7b5c705dabe0bea17b04e",
-    "kryptos/static/style.css": "72244fd90b13171d675aac80c245f9924fdaec9fedfa247a7dfbdab3b6c0e6d3",
-    "kryptos/static/workspace.js": "554b3e334c2a0ee2b7a1b3260c3b482884fa9f65693e84abc0090e95caa203a1",
-    "kryptos/validation_protocols.py": "e8d6853c9e4615c377cc4872294fa046e58f69e542eecd200d295c7e355aaf74",
-    "kryptos/worker_pool.py": "b12182d6924584a55d3fd7e0b9a4edcc55089b3d10a00347b9ba98a272b3bf30",
-    "kryptos/workspace_store.py": "822843fa35b2ba177aaa7eba422db7b9f795923e699f10f6ea340ae2c29c768f",
-    "OpenDashboard.cmd": "48f00633d010d53983305defb22842ee718e60484503a1d30b29004313685c48",
-    "OpenDashboard.ps1": "2ce4556eceeaa589f86dd24ea62305648de3f902717df88f870a56eea09c568d",
-    "OpenDashboard.sh": "7fed4524bea3356220a1b902e8d060bd0fdb3dc3925838718ecc7383dc2baf4b",
-    "research/browser_validation.cjs": "e34e05f55b498f667975a6bd661d375ecf13f846cef88b760b59e02efd5ef81d",
-    "research/browser_workspace.cjs": "3b808cd99992116206e4e1b3da516a57f7dec40fcaf827c926cd70411a17234d",
-    "research/run_O_audit.py": "017f216692585dab29ab3191ea9e033b4b6c6bb59e26f9819aee15a20c89c507",
-    "scripts/publish_release.py": "91167f7705221f5e85f6584a7d368218eadad5caeda8ac182e5afba41d3683d0",
-    "scripts/verify_package.py": "0a0aa86a394c6a5d563fba037da2d0bd219cee819b8c82897af54bb5eb12f546",
-    "Setup.cmd": "32ac7fe6a1b6990df2a186bf373fdfc98da0088d180426ab855b3940ac02fee0",
-    "Setup.ps1": "bf286a728eddcc58a66751a25cb093ee296e18c94f8e433ac5c5ea2f5846226d",
-    "Setup.sh": "e06180bd3c828b9ba232165f3fd245e405aeaabce95c0eb948a897584e256060",
-    "tests/test_ablations.py": "a90f35d6b7e926e212c336365c6cb54dcde4875eecbca01604aa978f210c99b7",
-    "tests/test_accelerated.py": "d4e4d0fe6bb0bc0a29812c2f4d87e7251a80e2267832a0c571e3858e6d78275d",
-    "tests/test_advanced_cli.py": "a8b8f72e6007869605dddc4b98d5f4a049ebd34785117dccc19f85ef423d274c",
-    "tests/test_alphabet_propagation.py": "a168c774b6712d6e7fb3585e081f9082a9d174fc3510c34a81469e9e849ab696",
-    "tests/test_app_http.py": "73a2817022e2da0a91fb4b8a16e48a33d3c23d6a604dc65e69bbfca4a11324b4",
-    "tests/test_app_jobs.py": "4d2d0de9d85e91eec285108de426b294fafbf2fe0d5a44e86f8d90243cc52623",
-    "tests/test_calibration.py": "ff133045e8564d2e944663aaca4c282d7ecb89bb1d6d0ec413b377b32cd1f1b2",
-    "tests/test_campaign_cache.py": "2b8b94f321eb8b7b67c31a7235e14b6129840645ee0c4548e0ddbedb8a57d026",
-    "tests/test_campaigns.py": "31c9c805d86811aa45d9ce7345502074e2a80f1a56bdeedc482071c637301080",
-    "tests/test_cli.py": "3474a447ada0313650d88e28a44245a33a73b217f2cb9727dc3cdbafb37e2301",
-    "tests/test_columnar.py": "22782e2d52895138bd92cb1f34541d7483a8d9d2532c36f333c00bba648d49a4",
-    "tests/test_correlated_bound.py": "9c21237a1e9c0e0ba673b70a5e91758a70517d9393fbfd6cf3f7c0a6a00d2973",
-    "tests/test_cuda_environment.py": "bca9770ca8581c4e6cd63957dd770c37ab75d0c30f7d632e452bd78766876f8a",
-    "tests/test_engine.py": "12ae5ea94c84b6fd01653d7e4c1d5ad8272e3e2e3397cfbc1e7ed12e5a785c53",
-    "tests/test_exact_resume.py": "b6ea64d0490a783a7d1ecdc931b37f1f3b70072551005d36f0d268fb534b70f3",
-    "tests/test_experiments.py": "0d13a750d9081696af9042c9d35914c4ffe599856080bbba6885f8530f59e040",
-    "tests/test_explanations.py": "20eed5321a5ec021328204748bf7deb003927e1e9ebd68c7afacc8009f9be655",
-    "tests/test_factor_decomposition.py": "dac623f3756699a7f8a31108c9ffc69be80ff181c3a6a8848ef7b0eb50935d34",
-    "tests/test_factor_search.py": "8438f240c1345bee949b269669fdf6c643a1d7f964e29930bf37eee692522887",
-    "tests/test_family_identity.py": "a11588957660f9a32db4c7a8ea89a1826c962d6ffc7b203f67baa7072da92e42",
-    "tests/test_fractionation.py": "477dd41c21a9e327e05d24af54f6910ac33d9a12eae90fbad5e544ca67138563",
-    "tests/test_general_layers.py": "2494a0c954e2e34f83127ffb4fd0194a994cbd06013ddd1a7c4f87f31513034b",
-    "tests/test_grid.py": "634029f0aae3d443da7ce738f6c0c3d591be65eef9b2c0db82b8bcfe7fb894bf",
-    "tests/test_grid_paths.py": "1356b8a298e0458959aa533d8580f05b67c2d9dc811a01b28da2802e4cf2673e",
-    "tests/test_guided_search.py": "ca8f1a91a8808d97b147b083e9987a2ca810cf13ddc8dbe9c0d92a7fed0e9b79",
-    "tests/test_hypotheses.py": "e1865af4254d477012bb66b61bc7a2f0308b85539c07317b73b7c71b9b2bd9a8",
-    "tests/test_import_inspector.py": "5f96f5bfae663c2cd0b9d01d8ff7cf6a4ebcdb17ad7be9f099de6b8534179d24",
-    "tests/test_joint_app_resume.py": "c9926481a6e3dd9e12feac30950d8e85ab0fd852285de679e12d4b75de459331",
-    "tests/test_joint_columnar.py": "2b45fbe81a7a556106e449fa9d01e61723d7a02ac9ed440ba422652ae76374bd",
-    "tests/test_joint_ranked.py": "adf0946a7586bac0f882f7c4d39bad0a1e737c700aeea1f53269da22a7189c6c",
-    "tests/test_keyed_alphabet.py": "8d7a4ff08ac3ba0340286edb2b73f94e1f19e28ede2f250b14449841015b7d1e",
-    "tests/test_keyed_alphabet_audit.py": "6b4a21c29eabb6c66300ea85087245f6a237ba68b410a1ef507e6da78580aa26",
-    "tests/test_language.py": "d674e598fad90a0115306a586a75bb4204d46771b9fc71d31a7f2155de72d391",
-    "tests/test_layer_plan.py": "2869087e531add1d38c14cf8a3807419aef60f559d6cc2603639c9557e2027ef",
-    "tests/test_mixed_stages.py": "bc42971279f5655be94cd4d85ab0c4b3610bf7f00a96e75a57e38c02e39428c3",
-    "tests/test_next_cli.py": "350a407f3f4343ed49bd1c19b1092e6d37487d3b3e31d4c2225bb479ee39d1cc",
-    "tests/test_next_cli_budgets.py": "35074971b0fbf6419b52a763c6334d84ba0a15416ce46c098ed229fd5a19aec7",
-    "tests/test_parallel_search.py": "f172284f2ac15780303f859f79f9a060b3c975c75fde581d3d66c4a4b32ed98a",
-    "tests/test_position_residues.py": "07c0f3b1085a9bafbd957b2b18c32690ceba2f339d231d0af5826ff02a5a8c27",
-    "tests/test_process_lifetime.py": "2db35647b819cee1a971f9b5ae405c9943630ccd51992235193ee0ea38f882b2",
-    "tests/test_recovery.py": "9ee57f494454023ecc4f7a1a30c6823f32d623fb7bb7153be80091ae73f46bc6",
-    "tests/test_release_gate.py": "1a6c1baa04ee9e72c158c88f5d1622d2878c96039eedf01b6adc0706bae5c56a",
-    "tests/test_resource_controls.py": "652ba5ad61c934aeda09f22e276696133038896754bccf7b5429eb9e597f9671",
-    "tests/test_scan_work.py": "c5ab79324c91fda8265ba9dd04bb491dd55d8bc55b13110a4cde5425dcabdd1c",
-    "tests/test_scheduled_layers.py": "c6ee0989d8dceafb6bb0a9c6ce6d6456f8dca4cbe00e1d6232f58a22c071c612",
-    "tests/test_score_sensitivity.py": "3592c92adca00aeee7f2109756a8fd90152b56bb75c3ffcce9bf4ce839abf488",
-    "tests/test_scoring.py": "e469c9b205d2fa42619c59a075419ddb3297a98b669a301e2655db7e726404a5",
-    "tests/test_sculpture.py": "390f6bc024582209c0490059de4b6c3b5fa5474a6e283a0281560f3483fcb6ac",
-    "tests/test_search_enhancements.py": "578f98e689be1ad7cf5c6dce0197b78835a40986937e9f66fbfb76d7bd0b7ca0",
-    "tests/test_search_O.py": "3c30c0065ef2a4c6f42d0f9301ba4312b2c41947d59c050aa68252310f7fb7fd",
-    "tests/test_search_runtime.py": "6dde7a804af09682eb32f008154079ef119a51af990cea2d51c1dc52fe5aab19",
-    "tests/test_search_strategies_audit_N.py": "083008654c2c69941d13ad53f1eca945a917b30b46d3d8ef4421035384f36f4f",
-    "tests/test_search_strategies_cli.py": "adc0da532871e872ab04d256a9ba6e35e04ca1868a7a6b46d3335ebb6fae19f8",
-    "tests/test_semantic.py": "12fed4f3c8a440b5f7a42692ede64143c5890ea21deffa7ea3be0c55297e666b",
-    "tests/test_validation_N.py": "a761eb5702cf1bf2ee98bd6f37460294b9cad6293b66f84825afc1e2999412ae",
-    "tests/test_validation_O.py": "ff26d7203d8a3d431272207bf37c7c072b3029c88e1413f24f63fd593a55837f",
-    "tests/test_validation_protocols.py": "33886a5251ab9b225b3b1ad2ab272da8667a1db22468202696682ba8d8dfda46",
-    "tests/test_worker_pool.py": "bd319fc19c06fc2d6d37bdf9e9106ff86c32c005a346f8b6c0f34bb9538f597c",
-    "tests/test_workspace_store.py": "504a73589e5822de6bd63c7f29067679dbc2cd5b615b3ec18fb135fe51ca6857"
+  "preserved_failure": {
+    "manifest": "research/runs/release-P-001/campaign/manifest.json",
+    "status": "failed",
+    "cause": "Independent audit replay helper incorrectly required a top-level alphabet on an expanded scheduled recipe. Production unchanged; corrected helper passed identical controls under P002.",
+    "repair": "research/campaign_P_audit_repair.md"
   },
-  "review": {
-    "independent_bound_proof": "research/O-bound-proof-review.md",
-    "engine_integration": "research/O-engine-independent-review.md",
-    "unresolved_concrete_defects_in_reviewed_scope": []
+  "reviews": [
+    "research/review_P_joint.md",
+    "research/review_P_factor.md",
+    "research/review_P_campaign.md",
+    "research/review_P_browser.md"
+  ],
+  "integration_review": {
+    "source": "root integration review",
+    "production_hashes": "research/runs/release-P-001/tested-production.json",
+    "production_hashes_sha256": "497f1f6989a2c31365f95a6f459c62c4c8467b2aeda9d11c9c4aa17bd7290fa0",
+    "all_tested_production_matches_current": true,
+    "findings": [
+      "Positive minima enforced for component assignment/operation caps before dispatch.",
+      "Constrained route completion blocks, rather than null distinct route counts, enforce per-activation budgets.",
+      "Campaign inspection uses immutable historical snapshots before the live owner result.",
+      "Campaign heading now explicitly counts completed-family aliases;23 final P browser assertions pass.",
+      "All new strategies default off. P02 has no demonstrated decision/candidate saving; P08 saves factor work only.",
+      "No source or test changes after the successful packaged suite."
+    ]
   },
-  "local_launch": "research/runs/release-O-001/local-launch.json"
+  "scope": {
+    "primary_criterion": "Fewer decisions or complete candidate evaluations for identical exact results; intermediate factor/bound work reported separately.",
+    "new_strategies_default_off": true,
+    "gpu": "Actual installed RTX2060 checks with CUDA_PATH unset, separate from CPU-only CI.",
+    "kryptos_solution": false,
+    "general_nogood_learning": false,
+    "reserved_O_bank_retuned": false
+  },
+  "remaining": [
+    "Publish exact source under gearashi after the complete GitHub matrix passes.",
+    "Verify tag, assets and contributor attribution; start local dashboard idle."
+  ]
 }

@@ -12,7 +12,7 @@ from .replay_expanded import replay_expanded
 ROOT=Path(__file__).resolve().parents[1]
 BASE={"target","ciphertext","cribs"}
 LINEAR_LIMITS={"max_key_slots","max_matrix_cells","max_operations"}
-SEARCH_LIMITS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries","local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit","decomposition","decomposition_max_entries","decomposition_max_operations","elimination_bound","elimination_bucket_entries","elimination_max_entries","elimination_max_operations"}
+SEARCH_LIMITS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries","local_exact_limit","ordering","resume_path","checkpoint_path","factor_group_size","group_exact_limit","decomposition","decomposition_max_entries","decomposition_max_operations","elimination_bound","elimination_bucket_entries","elimination_max_entries","elimination_max_operations","residual_cache","residual_cache_max_entries","residual_cache_max_assignments","residual_cache_max_operations","cheap_bound_first"}
 
 
 def _algebra_budget_result(error,request,stages,phase_provenance):

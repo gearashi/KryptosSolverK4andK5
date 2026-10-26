@@ -1,0 +1,13 @@
+{
+  "schema": "kryptos.P-audit-closure.v1",
+  "manifest_status": "completed",
+  "source_snapshot": "research/source_snapshots/release-P-001-joint",
+  "input_count": 121,
+  "current_and_snapshot_hashes_match": true,
+  "execution_files": {
+    "research/runs/release-P-001/joint/manifest.json": "04fcb2bc0ffdd4b090f5d3aadb31a9eda7e6fc3d83be0044e95ea9b1968220b4",
+    "research/runs/release-P-001/joint/stdout.txt": "66026b3b086343db83821c2038ebfeafdf8ca8328fcdfade4a647443b32277cf",
+    "research/runs/release-P-001/joint/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/runs/release-P-001/joint/result.json": "d7820f78bbcf3782ec03dabd75a9d63bf0bd7cc23e864654edea4ef398d87ab6"
+  }
+}

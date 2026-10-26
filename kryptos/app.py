@@ -20,7 +20,7 @@ from .campaigns import CampaignManager,preview_campaign
 from .import_inspector import inspect_import
 from .workspace_store import WorkspaceStore,MAX_BUNDLE
 
-VERSION="0.4.0"
+VERSION="0.5.0"
 
 
 def validation_presets():

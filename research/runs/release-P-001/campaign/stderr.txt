@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "C:\KryptosSolverK4andK5\research\campaign_P.py", line 221, in <module>
+    main()
+  File "C:\KryptosSolverK4andK5\research\campaign_P.py", line 180, in main
+    records['supplemental_three']=run_campaign(output,'supplemental-three',three_job_plan(),model)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KryptosSolverK4andK5\research\campaign_P.py", line 129, in run_campaign
+    assert replay(candidate['plaintext'],candidate['encryption_recipe'])==request['ciphertext']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\KryptosSolverK4andK5\research\campaign_P.py", line 80, in replay
+    alphabet=recipe['alphabet']
+             ~~~~~~^^^^^^^^^^^^
+KeyError: 'alphabet'

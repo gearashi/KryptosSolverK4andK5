@@ -1,0 +1,44 @@
+PASS Dedicated server opens idle without an automatic search
+PASS Server provides ranked preset and all validation protocols
+PASS Ranked route and completion bounds are editable
+PASS Ranked joint exhausts its declared small family
+PASS Ranked joint candidate independently replays through importer
+PASS Guided and decomposition controls reflect preset
+PASS Editing guided controls preserves custom remaining bounds
+PASS Guided decomposition control finishes with replayed candidate
+PASS Exact candidate displays its matching score and frozen model provenance
+PASS Exact pause saves a checked frontier and node count
+PASS Exact resume advances the frontier, not only reprocessed-node work
+PASS Stop preserves committed exact progress
+PASS Generator preview records expansion and literal deduplication
+PASS Generator preview sends no axes and launches no run
+PASS Campaign pauses its declared queue
+PASS Generated campaign completes all three declared jobs
+PASS Second campaign reuses completed families with provenance
+PASS Cross-campaign alias replays its own transported recipe
+PASS Reserved K4-shaped preset preserves its30-second declared budget
+PASS Ablation protocol exposes withheld positions
+PASS Authored ablation completes baseline and two refits
+PASS Ablation table displays completed family comparisons
+PASS Complete contradictory ablation has no fabricated winner
+PASS Ablation row labels retain readable width
+PASS validation mobile has no horizontal page overflow
+PASS campaigns mobile has no horizontal page overflow
+PASS workbench mobile has no horizontal page overflow
+PASS inspector mobile has no horizontal page overflow
+PASS Saved managed search offers frontier resume
+PASS Resource controls apply at a committed boundary
+PASS CPU scan pause saves committed page progress
+PASS CPU scan resume advances pages and adaptive settings are recorded
+PASS cpu commits exactly one128-candidate page
+PASS cpu retains a certified ranking
+PASS CUDA is available for the required hardware comparison
+PASS cuda commits exactly one128-candidate page
+PASS cuda retains a certified ranking
+PASS CPU and certified CUDA return the identical page ranking
+PASS UI download exports the displayed run with no managed path controls
+PASS Downloaded run freshly replays after file import
+PASS A tampered exported key fails independent literal replay
+PASS No browser JavaScript errors
+PASS Validation leaves no active test computation
+{"passed":43,"errors":[],"skipped":[]}

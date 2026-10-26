@@ -1,0 +1,13 @@
+{
+  "schema": "kryptos.P-audit-closure.v1",
+  "manifest_status": "completed",
+  "source_snapshot": "research/source_snapshots/release-P-001-factor",
+  "input_count": 121,
+  "current_and_snapshot_hashes_match": true,
+  "execution_files": {
+    "research/runs/release-P-001/factor/manifest.json": "8b203430f117d5471ed54dbd4ea1148849a0f39c23b1f59f054f9c4a3eee9709",
+    "research/runs/release-P-001/factor/stdout.txt": "b7aaa7351d4b63c38a992e171a40d13d755f6e9f20a644578b82dc2704294e8c",
+    "research/runs/release-P-001/factor/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/runs/release-P-001/factor/result.json": "0507369d0e483ba95ce4a8a0b11feb631989b7f71e176f5a899fdfb601ad5d16"
+  }
+}

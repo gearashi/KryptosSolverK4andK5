@@ -24,6 +24,7 @@ cupy_cache/
 !/research/source_snapshots/release-M-*/
 !/research/source_snapshots/release-N-*/
 !/research/source_snapshots/release-O-*/
+!/research/source_snapshots/release-P-*/
 !/research/source_snapshots/sculpture-J/
 /research/source_snapshots/sculpture-J/*
 !/research/source_snapshots/sculpture-J/pk2_fixture.json
@@ -47,6 +48,8 @@ cupy_cache/
 !/research/runs/release-M-*/
 !/research/runs/release-N-*/
 !/research/runs/release-O-*/
+!/research/runs/release-P-*/
+!/research/runs/review-P-joint-irregular-001/
 !/research/runs/evaluation-J-001/
 /research/runs/evaluation-J-001/*
 !/research/runs/evaluation-J-001/artifacts/
@@ -67,3 +70,5 @@ cupy_cache/
 
 # Owned browser-test services keep live state/caches local; publish reports only.
 /research/runs/release-O-*/**/*isolated-state/
+
+/research/runs/release-P-*/**/*isolated-state/

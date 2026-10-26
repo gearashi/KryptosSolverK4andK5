@@ -1,0 +1,33 @@
+{
+  "schema": "kryptos.browser-search-P.v1",
+  "passed": 23,
+  "checks": [
+    "Opening the dashboard starts no search",
+    "All five ranked-joint reductions default off",
+    "Joint controls write explicit bounded options",
+    "Disabling pruning clears the dependent shared-key bound",
+    "A bounded joint run saves an exact resumable frontier",
+    "Interleaved order counts disclose completion blocks",
+    "Resume preserves options and advances one bounded candidate",
+    "Candidate evidence names the saved search techniques",
+    "Residual reuse and cheap bounds default off",
+    "Optimizer controls retain explicit work caps",
+    "Optional optimizer controls execute a bounded exact job",
+    "Shared incomplete scans default off",
+    "Sharing preference survives reload without launching a campaign",
+    "Campaign preview creates no computation",
+    "Three jobs continue one certified family",
+    "Committed work covers disjoint pages and exactly26 candidates",
+    "Earlier job snapshots stay partial after owner completion",
+    "Campaign headline counts completed-family aliases separately from shared prefixes",
+    "Inspecting the first job uses its historical partial result",
+    "workbench mobile has no horizontal overflow",
+    "campaigns mobile has no horizontal overflow",
+    "No browser JavaScript errors",
+    "No active computation remains"
+  ],
+  "errors": [],
+  "app_version": "0.5.0",
+  "script_sha256": "e0c27b9aae9aec081a6e282d41200332bf362e45310a6d8b3234ae064a562b51",
+  "scope": "Default-off options, exact frontier continuation, saved-technique labels and immutable shared-scan snapshots; bounded CPU controls only."
+}

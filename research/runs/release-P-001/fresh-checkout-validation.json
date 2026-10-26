@@ -1,0 +1,14 @@
+{
+  "schema": "kryptos.package-tests.v1",
+  "tests": 448,
+  "passed": 447,
+  "skipped": 1,
+  "seconds": 151.875,
+  "actual_cuda": true,
+  "cuda_path_removed": true,
+  "files_verified": 2495,
+  "tested_files_unchanged": true,
+  "log": "research/runs/release-P-001/fresh-checkout-tests.txt",
+  "log_sha256": "bfa61dca847eac849f03198df5bda9a6d1b60b0742e80380092224dd18c1cad3",
+  "method": "Curated tracked and nonignored source/evidence copied byte-for-byte; installed venv used only as interpreter; isolated cwd/runtime, no excluded caches or corpora."
+}

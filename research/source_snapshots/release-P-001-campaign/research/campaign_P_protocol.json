@@ -1,0 +1,38 @@
+{
+  "schema": "kryptos.campaign-P-protocol.v1",
+  "phase": "P6",
+  "assertion_tested": "Compatible certified campaign jobs continue one original-coordinate owned scan with disjoint committed pages; original snapshots stay historical; aliases reconstruct and literally replay their own recipes; complete rankings match direct finite enumeration and masked count products.",
+  "original_control": {
+    "declared_before_first_unit_run_in": "research/campaign_P_notes.md",
+    "ciphertext": "BCDEFG",
+    "alphabet": "standard",
+    "cribs": [],
+    "period": 1,
+    "equations": ["vigenere", "variant", "beaufort"],
+    "two_equation_page_size": 13,
+    "three_equation_page_size": 10,
+    "initial_incorrect_expectation": "All three equations would share one family and visit 0,10,20.",
+    "preserved_observation": "Beaufort gives a different family for BCDEFG. Correct behavior is shared offsets0,10 then independent0. The original ciphertext/equations remain unchanged as a negative control."
+  },
+  "supplemental_control": {
+    "definition_saved_before_its_first_unit_run_in": "research/campaign_P_notes.md and tests/test_campaign_P.py:three_job_plan",
+    "ciphertext": "BCDEFG",
+    "layer_model": "scheduled",
+    "key_id": "k",
+    "key_length": 1,
+    "cipher": "vigenere",
+    "offsets": [0, 1, 2],
+    "page_size": 10,
+    "max_batches_per_activation": 1,
+    "interpretation": "Identical phase modulo1, not a different enumeration basis. Expected shared offsets0,10,20 and26 unique plaintext evaluations."
+  },
+  "masked_score_control": {"excluded_positions": [0, 2], "eligible_trigram_starts": [3]},
+  "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+  "comparison": "Two independently completed26-text rankings require52 candidate evaluations with26unique texts. The shared owner completes26 and a second recipe receives its own replayed exact ranking. Default-off partial-job results are separately recorded, not conflated with that completed comparison.",
+  "validation_costs": ["family identity calls", "own-recipe candidate replays", "literal letters checked", "validation elapsed seconds", "independent audit enumeration and replay"],
+  "source_policy": "No canonical execution until the complete package closure is frozen. Hashes before/after must match. Earlier unit assertion mistakes are retained here; no corpus tuning or reserved language benchmark is involved.",
+  "command": "python -B research/campaign_P.py --output <fresh-project-output-child>",
+  "input_listing_command": "python -B research/campaign_P.py --inputs",
+  "bounds": {"cases": 6, "maximum_complete_family_size": 26, "max_campaign_jobs": 3, "worker": "CPU only", "randomness": false},
+  "non_claims": ["No arbitrary imported frontier", "No cross-campaign partial reuse", "No mixed-alphabet or approximate reuse", "No partial whole-family top-k claim", "No universal time improvement", "No K4/K5 solution"]
+}

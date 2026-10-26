@@ -1,0 +1,1393 @@
+{
+  "schema": "kryptos.improvement-ledger.v1",
+  "created_date": "2026-10-13",
+  "phase": "O-fourteen-improvements-counted-search-work",
+  "goal_controller": "User-authorized finite continuation; no scheduled automation",
+  "allowed_statuses": [
+    "proposed",
+    "validated",
+    "rejected",
+    "deferred"
+  ],
+  "review_perspectives": [
+    "correctness",
+    "performance",
+    "model_coverage",
+    "usability",
+    "reliability"
+  ],
+  "termination": {
+    "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
+    "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
+    "final_review_complete": true,
+    "publication_complete": true,
+    "reviewed_actionable_backlog_complete": true
+  },
+  "entries": [
+    {
+      "id": "I001",
+      "title": "Actual CPU/GPU batch execution",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "engine",
+      "perspectives": [
+        "performance",
+        "correctness"
+      ],
+      "gap": "Checkpoint K has CPU searches but no real GPU backend.",
+      "acceptance": "A declared bounded workload executes on the available backend and agrees with an independent CPU reference; device, bounds, completeness and fallback/unavailability are explicit.",
+      "evidence": [
+        {
+          "path": "research/runs/release-L-002/accelerated/manifest.json",
+          "result": "6201 synthetic candidates per backend, actual RTX2060 CUDA,60 independent retained score/replay checks; large-page GPU ranking approximate"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "I002",
+      "title": "Recoverable local job service",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "root",
+      "perspectives": [
+        "reliability",
+        "usability",
+        "correctness"
+      ],
+      "gap": "CLI search checkpoints do not provide a durable browser job lifecycle.",
+      "acceptance": "Validated bounded requests survive service restart with clear queued/running/completed/failed/cancelled state; pause/cancel/recovery do not fabricate progress or lose saved results.",
+      "evidence": [
+        {
+          "path": "tests/test_app_jobs.py",
+          "result": "15 tests pass: transactional controls, paging, process ownership, source/model identity, restart, atomic saves and real worker replay"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "I003",
+      "title": "Usable local browser dashboard",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "interface",
+      "perspectives": [
+        "usability",
+        "correctness"
+      ],
+      "gap": "Checkpoint K preserves only a dashboard prototype without an application server.",
+      "acceptance": "Browser-tested creation, monitoring, control and inspection of bounded jobs; finite-model limitations and candidate replay visible; K5 requires supplied input.",
+      "evidence": [
+        {
+          "path": "research/runs/release-L-002/browser/ui-summary.json",
+          "result": "Desktop/mobile browser,CPU two-worker pause/resume/stop,CUDA26-point control,history,export,technique/replay/sensitivity; no page errors"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I004",
+      "title": "Exact correlated affine n-gram bound helper",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "isolated-helper-validated",
+      "owner": "sources",
+      "perspectives": [
+        "performance",
+        "correctness"
+      ],
+      "gap": "Independent-letter bounds can assign high counts to jointly unreachable n-grams.",
+      "acceptance": "Prove subgroup closure applicability, exact local maxima via mod2/mod13 membership, explicit safe fallback, and independent finite comparison.",
+      "evidence": [
+        {
+          "path": "tests/test_correlated_bound.py",
+          "command": "python -B -m unittest discover -s tests -p test_correlated_bound.py -v",
+          "result": "6 tests passed; exhaustive binary-generator/partial-assignment controls plus mixed-prime and fallback controls"
+        },
+        {
+          "path": "research/manual-checks/correlated-bound-001/result.json",
+          "command": "python -B research/correlated_bound_benchmark.py --output <fresh>/result.json",
+          "result": "All81 partial assignments match exact maxima;3 bounds stricter; same optimum; separate branch harness bound calls55 to29"
+        }
+      ],
+      "dependencies": [],
+      "limits": "Isolated helper and one fixed discriminator only; no integrated runtime or general speedup claim. Integration is I007."
+    },
+    {
+      "id": "I005",
+      "title": "Canonical affine completion-family deduplication",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "resolved-by-M05",
+      "owner": "root",
+      "perspectives": [
+        "performance",
+        "model_coverage",
+        "correctness"
+      ],
+      "gap": "Different keys/stage parameterizations can yield the same plaintext coset and repeat scoring work.",
+      "acceptance": "Canonical mod2/mod13 coset signatures agree iff independently enumerated tiny plaintext sets agree, including redundant/scaled/permuted generators; unsupported domains fall back; keep every model alias and its separate assignment counts.",
+      "evidence": [
+        {
+          "path": "tests/test_family_identity.py",
+          "result": "Exhaustive tiny affine sets, basis and translation variants, and recipe-specific aliases."
+        },
+        {
+          "path": "research/runs/release-M-002/browser/browser-validation.json",
+          "result": "Actual equivalent recipes scanned once and both aliases independently replayed."
+        }
+      ],
+      "dependencies": [],
+      "limits": "Set equivalence must not be presented as proof that different physical encryption methods are identical.",
+      "reason": "User reopened scope; durable multi-recipe campaigns now provide a concrete proved-equivalent family reuse flow.",
+      "reopen_trigger": "A real multi-family search repeats candidate-family scoring and a measured duplication case is available.",
+      "historical_decision": {
+        "status": "deferred",
+        "decision": "parent-deferred",
+        "stage": "waiting-for-real-bank-flow",
+        "reason": "The current app does not run a set-of-family scoring bank, so no demonstrated duplicate-scoring user flow exists.",
+        "reopen_trigger": "A real multi-family search repeats candidate-family scoring and a measured duplication case is available."
+      }
+    },
+    {
+      "id": "I006",
+      "title": "Sensitivity to letters fixed indirectly by the model",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "isolated-helper-validated",
+      "owner": "sources",
+      "perspectives": [
+        "correctness",
+        "model_coverage"
+      ],
+      "gap": "The hard-control score masks supplied letters, but additional unsupplied letters can be fixed by cipher constraints.",
+      "acceptance": "A separate reporting-only comparison also masks singleton marginal positions using frozen models; declares remaining windows and unavailable scores; no tuning or replacement of historical rankings.",
+      "evidence": [
+        {
+          "path": "tests/test_score_sensitivity.py",
+          "command": "python -B -m unittest discover -s tests -p test_score_sensitivity.py -v",
+          "result": "4 focused tests passed; exact marginal images versus Cartesian enumeration; extra-mask reference score agreement; zero-window unavailable; original ranking unchanged."
+        }
+      ],
+      "dependencies": [],
+      "limits": "Reporting-only helper validated; parent attachment to retained candidates is I010. Marginal compatibility does not replace joint replay."
+    },
+    {
+      "id": "I007",
+      "title": "Integrate and audit correlated bounds in runtime",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "root",
+      "perspectives": [
+        "performance",
+        "correctness",
+        "reliability"
+      ],
+      "gap": "Validated helper is not yet connected to the frozen K runtime.",
+      "acceptance": "Preserve K source snapshot, use helper only when applicability verified, retain fallback, verify full/existing/resumed optimum and tie agreement and new source identity, measure representative work/time.",
+      "evidence": [
+        {
+          "path": "research/runs/release-L-002/correlated/manifest.json",
+          "result": "All81 partial assignments; integrated bound evaluations55 to30; same optimum91 at[1,3]; existing runtime resume/tie controls pass"
+        }
+      ],
+      "dependencies": [
+        "I004"
+      ]
+    },
+    {
+      "id": "I008",
+      "title": "Curated reproducible publication package",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "owner": "root; sources inventory",
+      "perspectives": [
+        "reliability",
+        "usability"
+      ],
+      "gap": "Workspace contains raw third-party pages/code/books, local logs and source-verification dependencies that need explicit publication handling.",
+      "acceptance": "Include/exclude inventory and attribution applied; no blanket relicensing of third-party material; fresh clone launches without excluded caches; preserve original private evidence and do not claim omitted-cache manifests fully reproduce unaided.",
+      "evidence": [
+        {
+          "path": "docs/SOURCE_DISTRIBUTION.md",
+          "result": "Primary-source policy review and proposed distribution inventory; not legal clearance or final package validation"
+        },
+        {
+          "path": "research/runs/release-L-002/fresh-checkout-tests.txt",
+          "result": "Fresh index checkout:256 tests,255pass,one intentional optional raw-source skip; actualCUDA test executed; canonical manifests also validate against packaged bytes"
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Published tested source commit9e78a343abb985c9c32aaafdeb3335b077623ade;git ls-remote matches local HEAD exactly"
+        }
+      ],
+      "dependencies": [
+        "I001",
+        "I002",
+        "I003"
+      ]
+    },
+    {
+      "id": "I009",
+      "title": "Declare all possible Kryptos methods exhausted",
+      "status": "rejected",
+      "decision": "not-a-valid-completion-criterion",
+      "stage": "closed",
+      "owner": "root",
+      "perspectives": [
+        "correctness",
+        "model_coverage"
+      ],
+      "gap": "A bounded implementation cannot establish exhaustive coverage of an unspecified cipher family.",
+      "acceptance": "Not implementable as a justified claim under current evidence.",
+      "evidence": [],
+      "dependencies": [],
+      "reason": "Close the reviewed actionable backlog, not all future mathematical possibilities."
+    },
+    {
+      "id": "I010",
+      "title": "Attach fixed-letter sensitivity to retained candidates",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "root",
+      "perspectives": [
+        "correctness",
+        "usability"
+      ],
+      "gap": "The validated diagnostic is not yet attached to application candidate reports.",
+      "acceptance": "Pass the already replayed candidate, its affine solution, frozen model and exact supplied position mapping; display unavailable windows honestly; preserve ranking and original score.",
+      "evidence": [
+        {
+          "path": "research/runs/release-L-002/browser/functional-completion-report.json",
+          "result": "Retained CPU/GPU candidates show extra fixed-letter sensitivity; zero surviving windows displayed unavailable; ranking unchanged"
+        }
+      ],
+      "dependencies": [
+        "I006"
+      ]
+    },
+    {
+      "id": "I011",
+      "title": "Source-independent packaged geometry with strict audit retained",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-focused-tests-passed",
+      "owner": "sources",
+      "perspectives": [
+        "reliability",
+        "usability",
+        "correctness"
+      ],
+      "gap": "Excluding raw third-party source pages would break default geometry and layout commands.",
+      "acceptance": "Explicit packaged loader validates pinned dataset bytes and structure; ordinary paths work without HTML; strict source audit remains unchanged; modified K sources snapshotted first.",
+      "evidence": [
+        {
+          "path": "research/source_snapshots/checkpoint-K-original/sources-portability-snapshot.json",
+          "result": "Three original files preserved exclusively with hashes before edits."
+        },
+        {
+          "path": "tests/test_sculpture.py",
+          "command": "python -B -m unittest discover -s tests -p test_sculpture.py -v",
+          "result": "10 tests passed including unavailable-source ordinary geometry/CLI, strict audit failure, changed-byte rejection and all previous regressions."
+        }
+      ],
+      "dependencies": [],
+      "limits": "Focused integration only; full curated fresh-checkout smoke test remains I008."
+    },
+    {
+      "id": "I012",
+      "title": "Transactional start/resume/pause/stop under save failure",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "reliability"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "Failure leaves prior memory/disk/control state unchanged; no phantom running record",
+      "evidence": [
+        {
+          "path": "tests/test_app_jobs.py",
+          "result": "Failure leaves prior memory/disk/control state unchanged; no phantom running record"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I013",
+      "title": "Reject source/model changes before launch and page commit",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "correctness",
+        "reliability"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "Changed code/models and mismatching worker hashes cannot advance the frontier",
+      "evidence": [
+        {
+          "path": "tests/test_app_jobs.py",
+          "result": "Changed code/models and mismatching worker hashes cannot advance the frontier"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I014",
+      "title": "Aggregate ranking exactness across every committed page",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "correctness",
+        "usability"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "An exact last page cannot hide an earlier approximateGPU page; backend history retained",
+      "evidence": [
+        {
+          "path": "tests/test_app_jobs.py",
+          "result": "An exact last page cannot hide an earlier approximateGPU page; backend history retained"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I015",
+      "title": "Lossless browser counts and strict finite JSON input",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "correctness",
+        "reliability"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "Large integers encoded exactly; exponent overflow/duplicates/nonfinite values rejected; session controls remain loopback scoped",
+      "evidence": [
+        {
+          "path": "tests/test_app_http.py",
+          "result": "Large integers encoded exactly; exponent overflow/duplicates/nonfinite values rejected; session controls remain loopback scoped"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I016",
+      "title": "Preserve audited bytes in Git across platforms",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "reliability"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "Pinned sculpture hash and both final manifests verify in a fresh checkout with raw caches absent",
+      "evidence": [
+        {
+          "path": ".gitattributes",
+          "result": "Pinned sculpture hash and both final manifests verify in a fresh checkout with raw caches absent"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I017",
+      "title": "OS-backed exclusive saved-state ownership",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "reliability"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "Actual second process rejected; explicit close and abrupt process exit release ownership without stale PID hazard",
+      "evidence": [
+        {
+          "path": "tests/test_app_jobs.py",
+          "result": "Actual second process rejected; explicit close and abrupt process exit release ownership without stale PID hazard"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I018",
+      "title": "Handle inconclusive algebra preparation without false progress",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "correctness"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "Null family size is a saved limited/inconclusive result, not int(None) failure or an exclusion",
+      "evidence": [
+        {
+          "path": "tests/test_app_jobs.py",
+          "result": "Null family size is a saved limited/inconclusive result, not int(None) failure or an exclusion"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "I019",
+      "title": "Identify saved result target separately from edited form",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "post-integration-review-fix-verified",
+      "owner": "team",
+      "perspectives": [
+        "usability",
+        "correctness"
+      ],
+      "gap": "Concrete issue found during iterative application review",
+      "acceptance": "Saved target/ciphertext length and new-experiment-only edits are explicitly labeled",
+      "evidence": [
+        {
+          "path": "kryptos/static/app.js",
+          "result": "Saved target/ciphertext length and new-experiment-only edits are explicitly labeled"
+        }
+      ],
+      "dependencies": [
+        "I002"
+      ]
+    },
+    {
+      "id": "M01",
+      "title": "Persistent CPU/CUDA workers and caches",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "engine",
+      "acceptance": "Twenty-page workload preserves candidates while reducing process and CUDA setup; cancel/crash/timeout cleanup and source identity guards remain tested.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/persistent/manifest.json",
+          "result": "20 pages per mode/backend, identical exact rankings; 240 independent checks; CPU 18.539 to 5.414s, CUDA 75.974 to 5.285s; owned cancel/crash/timeout recovery passes."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M02",
+      "title": "Verified scan seeds for exact search",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "sources",
+      "acceptance": "CPU/CUDA seed assignments are reconstructed and scored by the exact objective; bad text/coordinates/scores rejected; unchanged optimum.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/search-quality/manifest.json",
+          "result": "Actual CUDA page supplies 3 CPU-verified seeds; exact optimum and tie assignment unchanged; invalid seeds rejected in suite."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M03",
+      "title": "Joint bounds for overlapping factors",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "sources",
+      "acceptance": "Exhaustive tiny-family partial assignments prove every tested bound admissible; grouped optimization returns same exact optimum.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/search-quality/manifest.json",
+          "result": "All 81 partial assignments agree with exhaustive bound oracle; fixed discriminator nodes 15 to 1, same optimum."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M04",
+      "title": "Certified GPU ranking",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "engine",
+      "acceptance": "Integer-only log intervals retain every possible top-k including ties; CPU exact rescore and replay; actual device agrees with exhaustive CPU.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/persistent/manifest.json",
+          "result": "Actual GPU interval ranking matches all exact CPU pages; 61 overlap rescoring candidates per 5120 evaluated; ties and large offsets covered by suite."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M05",
+      "title": "Durable automatic recipe campaigns and exact family reuse",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "root",
+      "acceptance": "Bounded matrix preview, persisted child identities, pause/restart without repeating completed jobs; mathematically equal scored families reuse ranking and reconstruct each recipe independently.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/browser/browser-validation.json",
+          "result": "Real equivalent-family campaign scans once, independently replays each alias; durable dispatch-gap and restart cases pass in full suite."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M06",
+      "title": "Leakage-controlled clue holdout recovery",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "sources",
+      "acceptance": "Full selection reruns with held-out values absent and clue positions masked; mutated hidden answers cannot alter selection; incomplete searches remain explicit.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/search-quality/manifest.json",
+          "result": "Selection reruns without withheld values; mutation independence verified; winner predicts both withheld letters in fixed control."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M07",
+      "title": "Competing-model positive and null controls",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "sources",
+      "acceptance": "Frozen model bank and scoring on newly authored positive messages and paired shuffled controls with equal declared budgets; no invented p-values.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/search-quality/manifest.json",
+          "result": "Two positives and two paired nulls complete 2808 candidate visits; both positives rank first, wrong alternatives survive nulls; descriptive only."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M08",
+      "title": "Adaptive resource controls",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "root",
+      "acceptance": "Worker count and bounded batch adaptation apply only after committed pages; contiguous coverage, retained ranking, event provenance, and responsive cancellation.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/browser/browser-validation.json",
+          "result": "Boundary-applied live settings and resume verified; full suite covers contiguous coverage, queue history, cap and cancellation."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M09",
+      "title": "Safe import and interactive letter tracing",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "integrated-release-verified",
+      "owner": "interface",
+      "acceptance": "Independent replay on bounded inert exports; forged claims ignored; known vectors for mixed alphabets and non-involutive routes; browser traces follow original letters.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/browser/browser-validation.json",
+          "result": "Independent import replay, tampering rejection, original-letter tracing, file export/import and mobile flows pass; 9 importer tests pass."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "310 tests: 309 passed, 1 intentional optional raw-source skip; actual CUDA enabled."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M10",
+      "title": "Own complete worker process lifetimes",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "recursive-integration-fix-verified",
+      "owner": "team",
+      "acceptance": "Atomic Windows Job Object creation owns virtual-environment descendants; cancel, crash, timeout, zero-active-process cleanup and idempotent POSIX close tested.",
+      "evidence": [
+        {
+          "path": "tests/test_process_lifetime.py",
+          "result": "Atomic Windows Job Object creation owns virtual-environment descendants; cancel, crash, timeout, zero-active-process cleanup and idempotent POSIX close tested."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "Final clean publication suite passed; wrapper additionally exercised by canonical persistent audit."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M11",
+      "title": "Transactional results and campaign dispatch recovery",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "recursive-integration-fix-verified",
+      "owner": "team",
+      "acceptance": "Only committed complete waves publish results; save failures preserve prior frontier; campaign child IDs persist before dispatch.",
+      "evidence": [
+        {
+          "path": "tests/test_app_jobs.py",
+          "result": "Only committed complete waves publish results; save failures preserve prior frontier; campaign child IDs persist before dispatch."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "Final clean publication suite passed; wrapper additionally exercised by canonical persistent audit."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M12",
+      "title": "Resource update and alias diagnostic integrity",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "recursive-integration-fix-verified",
+      "owner": "team",
+      "acceptance": "Queued changes reserve history capacity and apply at committed boundaries; closed managers reject writes; alias sensitivity recomputed from its own clues.",
+      "evidence": [
+        {
+          "path": "tests/test_resource_controls.py",
+          "result": "Queued changes reserve history capacity and apply at committed boundaries; closed managers reject writes; alias sensitivity recomputed from its own clues."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "Final clean publication suite passed; wrapper additionally exercised by canonical persistent audit."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M13",
+      "title": "Stable elapsed-time accounting on resume",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "recursive-integration-fix-verified",
+      "owner": "team",
+      "acceptance": "Deterministic high-clock regression verifies adding elapsed differences without cancellation error.",
+      "evidence": [
+        {
+          "path": "tests/test_search_enhancements.py",
+          "result": "Deterministic high-clock regression verifies adding elapsed differences without cancellation error."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "Final clean publication suite passed; wrapper additionally exercised by canonical persistent audit."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M14",
+      "title": "Mobile validation table containment",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "recursive-integration-fix-verified",
+      "owner": "team",
+      "acceptance": "Saved positive/null table, campaign comparison and inspector have no document overflow on mobile; 42 successful browser assertions.",
+      "evidence": [
+        {
+          "path": "research/runs/release-M-002/browser/browser-validation.json",
+          "result": "Saved positive/null table, campaign comparison and inspector have no document overflow on mobile; 42 successful browser assertions."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "Final clean publication suite passed; wrapper additionally exercised by canonical persistent audit."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "M15",
+      "title": "Own benchmark auditor descendants on timeout",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "recursive-integration-fix-verified",
+      "owner": "team",
+      "acceptance": "Canonical M002 pins the wrapper owning the complete auditor tree; scientific timeout stays 180 seconds, outer cleanup watchdog 195 seconds.",
+      "evidence": [
+        {
+          "path": "research/run_persistent_audit.py",
+          "result": "Canonical M002 pins the wrapper owning the complete auditor tree; scientific timeout stays 180 seconds, outer cleanup watchdog 195 seconds."
+        },
+        {
+          "path": "research/runs/release-M-002/fresh-checkout-final-tests.txt",
+          "result": "Final clean publication suite passed; wrapper additionally exercised by canonical persistent audit."
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "N01",
+      "title": "Language-ranked joint unknown routes and keys",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N02",
+      "title": "Bounded automatic layered hypotheses",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N03",
+      "title": "Guided crib-compatible affine-family seeds",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N04",
+      "title": "Exact component and separator decomposition",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N05",
+      "title": "Verified completed-family reuse across campaigns",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N06",
+      "title": "Managed exact optimizer pause/resume",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N07",
+      "title": "Reserved K4-shaped competing-bank benchmarks",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N08",
+      "title": "Refitted stage and route ablations",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "evidence": [
+        {
+          "path": "research/release-validation.json",
+          "result": "368 package tests, actual CUDA, complete browser suite and current-source N004 audits."
+        },
+        {
+          "path": "research/IMPROVEMENTS_N.md",
+          "result": "Acceptance mapping, measured finite ranges and limitations."
+        }
+      ],
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900"
+    },
+    {
+      "id": "N09",
+      "title": "Distinguish restored-parent work from frontier advancement",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "acceptance": "A timed-out decomposition consumes work but advances zero frontier nodes; managed duration grows2s to4s and reaches the same exact result within user bounds.",
+      "evidence": [
+        {
+          "path": "research/runs/release-N-004/fresh-checkout-tests.txt",
+          "result": "New regression and full actual-CUDA suite passed."
+        },
+        {
+          "path": "research/runs/release-N-004/browser/browser-report.json",
+          "result": "Browser verifies managed continuation and frontier progress."
+        }
+      ]
+    },
+    {
+      "id": "N10",
+      "title": "Resume a child saved before the campaign outcome commit",
+      "status": "validated",
+      "decision": "accepted",
+      "stage": "published-and-remote-verified",
+      "acceptance": "A persisted nonterminal campaign job continues its existing limited child only after explicit resume; ordinary completed incomplete jobs retain their budgets.",
+      "evidence": [
+        {
+          "path": "research/runs/release-N-004/fresh-checkout-tests.txt",
+          "result": "New regression and full actual-CUDA suite passed."
+        },
+        {
+          "path": "research/runs/release-N-004/browser/browser-report.json",
+          "result": "Browser verifies managed continuation and frontier progress."
+        }
+      ]
+    },
+    {
+      "id": "O01",
+      "title": "Competing inequivalent plaintext-family controls",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Positive control has multiple distinct feasible families before scoring; full bank outcomes reported.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O02",
+      "title": "Full-bank repeated-null calibration",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Each null reruns identical frozen selection; complete/censored counts and empirical exceedances explicit.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O03",
+      "title": "Incremental exact CPU window scoring",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Same exact page ranking and candidate count, fewer ngram factor evaluations on sparse controls.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O04",
+      "title": "Coordinated feasible-family guidance",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Known interaction trap solved under fewer candidate evaluations than single-coordinate baseline; fixed held controls compare both work and failures.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O05",
+      "title": "Admissible joint route/key pruning",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Same exhaustive distinct-plaintext top-k; fewer candidate leaves on declared controls; ties and pruning-vs-count distinctions retained.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O06",
+      "title": "Capped elimination upper bounds",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Upper bound >= exhaustive residual optimum for every tested partial assignment; fewer proof nodes where stronger; caps preserve fallback.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O07",
+      "title": "Certified device-side survivor filtering",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Same integer-certified survivors/ties and exact ranking; reduced explicit interval payload transfer, not fewer search candidates.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O08",
+      "title": "Optional measured backend selection",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Bounded comparative sample, exact agreement, cache and overhead visible; hardware convenience, not fewer solving steps.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O09",
+      "title": "Bounded sculpture-grid path parameters",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Parameter aliases deduplicated before fitting; bounded bijections and independent encryption replay; explicit unknown method assumptions.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O10",
+      "title": "Checkpoint more exact commands",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Interrupted/restarted frontier matches uninterrupted ranking, counts and completeness; checkpoints atomic and compatible.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O11",
+      "title": "Durable drafts and personal presets",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Refresh restores drafts without starting computation; invalid payloads rejected.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O12",
+      "title": "Paginated tagged archived run history",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Thousands of summaries paginate without copying large candidate/results; archived records remain reversible.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O13",
+      "title": "Diagnosed records and verified read-only recovery",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Malformed/unsupported records reported; bounded hashed backups restore separate inert evidence; no imported frontier executes.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    },
+    {
+      "id": "O14",
+      "title": "Clean-package CI and verified release publication",
+      "status": "validated",
+      "decision": "accepted",
+      "acceptance": "Clean source package tested on Windows/Linux; actual CUDA evidence separately required whenclaimed; published release/tag/hash/gearashi attribution verified.",
+      "stage": "integrated-release-verified",
+      "evidence": [
+        {
+          "path": "research/IMPROVEMENTS_O.md",
+          "result": "Bounded favorable and unfavorable outcomes, supporting-feature limits and canonical evidence."
+        },
+        {
+          "path": "research/release-validation.json",
+          "result": "Current test, browser and audit records."
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-001",
+      "reviewer": "sources",
+      "base": "checkpoint K",
+      "perspectives": [
+        "correctness",
+        "performance",
+        "model_coverage",
+        "reliability"
+      ],
+      "findings": [
+        "I004",
+        "I005",
+        "I006",
+        "I008"
+      ],
+      "usability_review_pending": true,
+      "complete_post_integration_review": false
+    },
+    {
+      "id": "review-002",
+      "reviewer": "sources",
+      "base": "new accelerated.py source (pre-final-integration)",
+      "perspectives": [
+        "correctness",
+        "performance",
+        "reliability"
+      ],
+      "findings": [
+        "Integer mixed-radix paging and CUDA letter arithmetic reviewed against current caps; no concrete correctness defect found.",
+        "CPU exact tie heap and GPU approximate shortlist labeling/replay reviewed.",
+        "Very large exact-score bit counts can still make CPU pages slow; service process timeout/cancellation is required."
+      ],
+      "evidence": "Read-only code audit reported to engine; no new device test or broad search.",
+      "complete_post_integration_review": false
+    },
+    {
+      "id": "review-final-L",
+      "reviewer": "engine,interface,sources,root",
+      "base": "FinalPython source hashes in release-L-002 plus browser UI hashes",
+      "perspectives": [
+        "correctness",
+        "performance",
+        "model_coverage",
+        "usability",
+        "reliability"
+      ],
+      "complete_post_integration_review": true,
+      "findings": [
+        "Transactional controls fixed and15focusedtests pass",
+        "No further concrete release-blocking defect found in reviewed scoring,paging,provenance,masking,bounds,replay",
+        "Browserdesktop/mobile lifecycle and realCUDA validated",
+        "Curatedpackage passes255tests withone intentional raw-source skip; exact bytes/manifests preserved",
+        "I005 remainsdeferred until real bank duplication is demonstrated; no global exhaustion claim"
+      ],
+      "remaining_delivery": "GitHub push and remote verification"
+    },
+    {
+      "id": "review-M-open",
+      "base": "c6c995c4d432a4c43951578b5180c5b94d1f4e43",
+      "complete_post_integration_review": false,
+      "findings": [
+        "User explicitly reopened scope and requested all nine proposals. Prior phase completion is historical, not completion of this new goal.",
+        "Recursive review admitted exact-result atomic commit, campaign reserved run IDs before dispatch, and recomputed alias sensitivity diagnostics."
+      ],
+      "remaining_delivery": "Integrate, verify all nine, fix concrete follow-ups, publish and verify GitHub, restart local app."
+    },
+    {
+      "id": "review-final-M",
+      "reviewer": "root,engine,interface,sources",
+      "base": "Final package hashes in research/release-validation.json and canonical M002 manifests",
+      "perspectives": [
+        "correctness",
+        "performance",
+        "model_coverage",
+        "usability",
+        "reliability"
+      ],
+      "complete_post_integration_review": true,
+      "findings": [
+        "All nine requested improvements implemented and accepted against recorded bounded controls.",
+        "Recursive integration findings M10 through M15 fixed; no remaining concrete release-blocking defect found in the reviewed code.",
+        "309 tests passed with one optional source audit skipped; 42 browser assertions passed.",
+        "Both canonical M002 audits pass with unchanged execution input hashes.",
+        "This closes the reviewed implementation backlog, not the open mathematical problem or all possible future improvements."
+      ],
+      "remaining_delivery": null
+    },
+    {
+      "id": "review-N-open",
+      "base": "768289f12802c05a744504e5cc3751c1a1f8be30",
+      "findings": [
+        "User explicitly authorized all eight newly reviewed improvements and further useful follow-ups."
+      ],
+      "complete_post_integration_review": false
+    },
+    {
+      "id": "review-N-final-20261020",
+      "source_base": "80b817564479aace3189217b353dad6c38ea1900",
+      "findings": [
+        "All eight accepted features have integrated finite evidence.",
+        "Two additional resume gaps were found, fixed and covered by regressions.",
+        "The suspected varying-top cache issue is inapplicable: current app scans uniformly retain20 candidates.",
+        "The reserved positive bank has only one inequivalent surviving family per positive; broader family-discrimination claims remain unsupported.",
+        "CPU outperformed CUDA on the fixed small pages; no general GPU speedup claimed."
+      ],
+      "complete_post_integration_review": true
+    },
+    {
+      "id": "review-O-final-20261025",
+      "reviewer": "root,engine,interface,sources",
+      "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
+      "complete_post_integration_review": true,
+      "findings": [
+        "All14 bounded improvements implemented; counted search work is the efficiency criterion, supporting features reported separately.",
+        "Independent exact oracles and proof review support admissible bounds and deterministic ties within declared finite families.",
+        "Incremental scoring, coordinated guidance, joint pruning, mini-bucket bounds and route deduplication retain unfavorable controls and extra work counters.",
+        "Checkpoint verification accounting and joint saved-work display corrected during review.",
+        "413 local tests with412 passed and one optional raw-source skip; real CUDA;43 core,22 workspace and4 focused browser assertions;6 Node checks.",
+        "Four exact-commit Windows/Linux CI jobs passed. Tagged assets and gearashi-only contributor attribution verified.",
+        "No authenticated K4/K5 result, universal efficiency claim or exhaustive list of all future improvements."
+      ],
+      "remaining_delivery": null
+    }
+  ],
+  "delivery": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "verified_source_commit": "4518efae3cae360246f5d5b478527a428686e867",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.4.0",
+    "local_url": "http://127.0.0.1:8767/",
+    "startup": "OpenDashboard.cmd",
+    "state_at_delivery": "Version0.4.0 published and running locally, idle; actual compiled RTX2060 CUDA probe succeeded without CUDA_PATH.",
+    "remaining": null,
+    "verified_at_utc": "2026-10-25T18:20:02.200721+00:00"
+  },
+  "historical_phase_L_termination": {
+    "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
+    "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
+    "final_review_complete": true,
+    "publication_complete": true,
+    "reviewed_actionable_backlog_complete": true
+  },
+  "historical_phase_M_termination": {
+    "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
+    "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
+    "final_review_complete": true,
+    "publication_complete": true,
+    "reviewed_actionable_backlog_complete": true
+  },
+  "user_efficiency_criterion": "Fewer search decisions or complete candidate evaluations; speed alone does not qualify. Count factor and verification work separately.",
+  "historical_phase_N_termination": {
+    "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
+    "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
+    "final_review_complete": true,
+    "publication_complete": true,
+    "reviewed_actionable_backlog_complete": true
+  },
+  "historical_phase_N_delivery": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "verified_source_commit": "5286188576226a55c18887f4e01bc344764796ae",
+    "local_url": "http://127.0.0.1:8767/",
+    "startup": "OpenDashboard.cmd",
+    "state_at_delivery": "Version 0.3.0 is published and running locally, idle; actual compiled CUDA probe succeeded without CUDA_PATH.",
+    "remaining": null,
+    "verified_at_utc": "2026-10-20T16:56:23.166017+00:00"
+  }
+}
