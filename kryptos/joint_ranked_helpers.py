@@ -73,7 +73,7 @@ def ordered_groups(domains, groups, budget):
     return current,removed
 
 
-def reduce_joint(domains,key_domains,requirements,budget,*,fixed_point=False,groups=()):
+def reduce_joint(domains,key_domains,requirements,budget,*,fixed_point=False,groups=(),pair_consistency=False):
     """Sound fixed-point matching/key propagation, optionally symmetry reduced.
 
     With fixed_point off only assigned-edge key implications and a necessary
@@ -97,7 +97,7 @@ def reduce_joint(domains,key_domains,requirements,budget,*,fixed_point=False,gro
                 result=_propagate(current,masks,tuples,budget)
                 if result is None:return None,removed_total
                 current,masks,_=result
-                if not groups:return (current,masks),removed_total
+                if not groups and not pair_consistency:return (current,masks),removed_total
             else:
                 filtered=[]
                 for slot,domain in enumerate(current):
@@ -121,6 +121,34 @@ def reduce_joint(domains,key_domains,requirements,budget,*,fixed_point=False,gro
                             budget.tick("assigned_key_implications")
                             masks[phase]&=1<<value
                             if not masks[phase]:return None,removed_total
+            if pair_consistency:
+                # A slot edge must have support at every other slot, with both
+                # distinct columns AND jointly consistent shared-key residues.
+                # Marginal per-phase supports alone lose this correlation.
+                for left in range(len(current)):
+                    kept=[]
+                    for col in current[left]:
+                        left_req=requirements[left,col]
+                        supported=True
+                        for right in range(len(current)):
+                            if left==right:continue
+                            pair_supported=False
+                            for other in current[right]:
+                                budget.tick('relational_pair_checks')
+                                if col==other:continue
+                                right_req=requirements[right,other]
+                                if all(phase not in right_req or right_req[phase]==value for phase,value in left_req.items()):
+                                    pair_supported=True
+                                    break
+                            if not pair_supported:
+                                supported=False
+                                break
+                        if supported:kept.append(col)
+                    budget.work['relational_edges_removed']+=len(current[left])-len(kept)
+                    current[left]=tuple(kept)
+                    if not kept:
+                        budget.work['relational_rejections']+=1
+                        return None,removed_total
             if old==(tuple(current),tuple(masks)):
                 return (current,masks),removed_total
     finally:

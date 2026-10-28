@@ -1,0 +1,13 @@
+{
+  "method":"symmetry",
+  "parameters":{
+    "problem":{
+      "domains":{"key0":[0,1,2],"key1":[0,1,2]},
+      "relations":[{"scope":["key0","key1"],"rows":[[0,1],[1,0],[0,2],[2,0],[1,2],[2,1]]}],
+      "factors":[{"scope":["key0"],"rows":[[0,2],[1,3],[2,4]]},{"scope":["key1"],"rows":[[0,2],[1,3],[2,4]]}],
+      "top":6
+    },
+    "generators":[{"variables":{"key0":"key1","key1":"key0"}}],
+    "max_assignments":1000
+  }
+}

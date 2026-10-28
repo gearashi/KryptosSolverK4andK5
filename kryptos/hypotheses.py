@@ -29,7 +29,7 @@ def simplify_routes(stages,length):
 def generate_configs(base,settings):
     from .__main__ import _target
     from .grid import coordinate_routes
-    allowed={'patterns','periods','alphabets','ciphers','routes','width','max_expansions','path_parameters'}
+    allowed={'patterns','periods','alphabets','ciphers','routes','width','max_expansions','path_parameters','normalize_affine_families'}
     if not isinstance(settings,dict) or set(settings)-allowed:
         raise ValueError('Unknown hypothesis generator field')
     if base.get('command')!='optimize-plus':
@@ -39,6 +39,9 @@ def generate_configs(base,settings):
         raise ValueError('Grammar requires a general-layer base; scheduled families stay explicit')
     target,text,_,_=_target(request)
     n=len(text)
+    normalize_affine=settings.get('normalize_affine_families',False)
+    if type(normalize_affine) is not bool:
+        raise ValueError('normalize_affine_families must be boolean')
     patterns=_options(settings.get('patterns',['S','ST','TS','STS']), 'patterns',8)
     if any(not isinstance(p,str) or not 1<=len(p)<=6 or set(p)-{'S','T'} or not 1<=p.count('S')<=3 or p.count('T')>2 for p in patterns):
         raise ValueError('Patterns use S substitutions and T routes, with 1..3 S and at most2 T')
@@ -105,6 +108,8 @@ def generate_configs(base,settings):
     gathered=[({'operation':'gather','permutation':r['permutation']},r) for r in routes]
     configs=[]
     seen={}
+    algebra_work=0
+    literal_identities=set()
     for pattern,alphabet in product(patterns,alphabets):
         pools=[substitutions if symbol=='S' else gathered for symbol in pattern]
         for choices in product(*pools):
@@ -121,6 +126,15 @@ def generate_configs(base,settings):
                     if route is not None:multiplicity*=len(route.get('parameter_aliases',[None]))
                 alias['parameter_multiplicity']=multiplicity
             identity=json.dumps(config,sort_keys=True,separators=(',',':'),allow_nan=False)
+            literal_identities.add(identity)
+            if normalize_affine:
+                from .recipe_algebra import compile_recipe,family_from_compiled
+                compiled=compile_recipe(n,normalized,alphabet=alphabet)
+                family=family_from_compiled(text,compiled)
+                algebra_work+=compiled['scalar_operations']
+                identity=family['identity']
+                alias['exact_plaintext_family_sha256']=identity
+                alias['replay_convention']='Original recipe retained; equivalent plaintext sets do not identify physical encryption techniques.'
             if identity in seen:
                 configs[seen[identity]]['generation_aliases'].append(alias)
             else:
@@ -131,5 +145,7 @@ def generate_configs(base,settings):
     return configs,{'schema':'kryptos.hypothesis-grammar.v1','expanded_recipes':count,'distinct_recipes':len(configs),
         'expanded_recipes_before_path_dedup':before_route_dedup,'path_duplicate_recipe_expansions_avoided':before_route_dedup-count,
         'path_generation':path_generations,
-        'literal_duplicates_removed':count-len(configs),'routes':routes,'settings':copy.deepcopy(settings),
-        'interpretation':'Explicit finite grammar; S has independent unknown keys, T is a literal gather. Only adjacent gathers/identity routes simplify. Coordinates are ordinal hypotheses, not measured geometry. No language-score or crib-based tuning in generation.'}
+        'literal_duplicates_removed':count-len(literal_identities),'affine_family_duplicates_removed':len(literal_identities)-len(configs),
+        'routes':routes,'settings':copy.deepcopy(settings),
+        'affine_normalization_enabled':normalize_affine,'symbolic_recipe_scalar_operations':algebra_work,
+        'interpretation':'Explicit finite grammar; S has independent unknown keys, T is a literal gather. Adjacent gathers/identity routes simplify. Optional affine normalization identifies exact uncribbed plaintext sets for this ciphertext before job creation; all original recipes stay as aliases. Coordinates are ordinal hypotheses, not measured geometry.'}

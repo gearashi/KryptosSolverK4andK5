@@ -1,0 +1,654 @@
+{
+  "schema": "kryptos.improvement-plan.v1",
+  "phase": "Q",
+  "created_date": "2026-10-28",
+  "baseline": "6d9ab963fee0bd97b4e640b954d62f7f7d2a8059",
+  "scope": "User-authorized implementation and evaluation of all 90 numbered proposals, launcher repairs, hardware tests, gearashi release and measured hardware recommendations.",
+  "primary_acceptance": "Same declared correct result with fewer search decisions or completed candidate evaluations; speed alone is not acceptance. Count all preprocessing/probing/factor/replay work separately.",
+  "rules": [
+    "No-op aliases do not implement distinct algorithms.",
+    "Conditional methods retain explicit assumptions.",
+    "An unimplemented or unmeasured proposal is incomplete, never rejected merely for lacking evidence.",
+    "Keep unsuccessful comparisons and capped/inconclusive runs.",
+    "Default exclusions must be justified within the declared finite domain."
+  ],
+  "entries": [
+    {
+      "id": "Q01",
+      "number": 1,
+      "title": "Learn minimal route/key conflicts",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q02",
+      "number": 2,
+      "title": "Conflict-directed backjumping",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q03",
+      "number": 3,
+      "title": "Propagate learned conflicts",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q04",
+      "number": 4,
+      "title": "Learn reusable score exclusions",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q05",
+      "number": 5,
+      "title": "Transfer guarded conflicts across related recipes",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q06",
+      "number": 6,
+      "title": "Failed-choice probing",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q07",
+      "number": 7,
+      "title": "Preserve correlations among key phases",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q08",
+      "number": 8,
+      "title": "Joint constraint separator decomposition",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q09",
+      "number": 9,
+      "title": "Incremental SAT/SMT backend",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q10",
+      "number": 10,
+      "title": "Lazy expensive constraint generation",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q11",
+      "number": 11,
+      "title": "Combine compatible substitution stages",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q12",
+      "number": 12,
+      "title": "Transport key schedules through transpositions",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q13",
+      "number": 13,
+      "title": "Canonicalize key-phase partitions before generation",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q14",
+      "number": 14,
+      "title": "Primitive-period search without repeated multiples",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q15",
+      "number": 15,
+      "title": "Crib-difference constraints",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q16",
+      "number": 16,
+      "title": "Incremental F2/F13 route elimination",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q17",
+      "number": 17,
+      "title": "Select modular component first",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q18",
+      "number": 18,
+      "title": "Sparse affine coordinate basis",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q19",
+      "number": 19,
+      "title": "Quotient score-invisible freedoms with tie reconstruction",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q20",
+      "number": 20,
+      "title": "Direct plaintext-coordinate feasibility search",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q21",
+      "number": 21,
+      "title": "Affine-family containment",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q22",
+      "number": 22,
+      "title": "Affine-family intersections",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q23",
+      "number": 23,
+      "title": "Disjoint campaign coverage",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q24",
+      "number": 24,
+      "title": "Merge equivalent unfinished states",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q25",
+      "number": 25,
+      "title": "Certified route/key symmetries",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q26",
+      "number": 26,
+      "title": "Residual reuse under verified variable renaming",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q27",
+      "number": 27,
+      "title": "Provably dominated parameter values",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q28",
+      "number": 28,
+      "title": "Persist certified deductions across checkpoints",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q29",
+      "number": 29,
+      "title": "Share proven subtree coverage across campaigns",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q30",
+      "number": 30,
+      "title": "Equivalent alphabets and nonlinear family canonicalization",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q31",
+      "number": 31,
+      "title": "AND/OR search graph",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q32",
+      "number": 32,
+      "title": "Separator-message caching",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q33",
+      "number": 33,
+      "title": "Reusable junction-tree conditional queries",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q34",
+      "number": 34,
+      "title": "Small cycle cutsets",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q35",
+      "number": 35,
+      "title": "Bounded elimination-order planning",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q36",
+      "number": 36,
+      "title": "Functional factor simplification after conditioning",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q37",
+      "number": 37,
+      "title": "Reachable joint factor images",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q38",
+      "number": 38,
+      "title": "Bounded residual decision diagrams",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q39",
+      "number": 39,
+      "title": "Lazy exact top-k component combination",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q40",
+      "number": 40,
+      "title": "Exact chain/strip dynamic programming",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q41",
+      "number": 41,
+      "title": "Matching-aware route score bounds",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q42",
+      "number": 42,
+      "title": "Overlap-consistent language-window bounds",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q43",
+      "number": 43,
+      "title": "Threshold-conditioned propagation",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q44",
+      "number": 44,
+      "title": "Adaptive bound refinement",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q45",
+      "number": 45,
+      "title": "Certified factor reparameterization",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q46",
+      "number": 46,
+      "title": "Cycle-consistency constraints",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q47",
+      "number": 47,
+      "title": "Modular-projection bounds",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q48",
+      "number": 48,
+      "title": "Multi-language frontier with separate thresholds",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q49",
+      "number": 49,
+      "title": "Abort partial scoring with certified remainder",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q50",
+      "number": 50,
+      "title": "Whole-hypothesis group bounds",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q51",
+      "number": 51,
+      "title": "Bounded strong branching",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q52",
+      "number": 52,
+      "title": "Reliable pseudocost branching",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q53",
+      "number": 53,
+      "title": "Conflict-weighted variable ordering",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q54",
+      "number": 54,
+      "title": "Separator-exposing variable selection",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q55",
+      "number": 55,
+      "title": "Feasible promising value ordering",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q56",
+      "number": 56,
+      "title": "Branch on n-gram relations with other alternative",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q57",
+      "number": 57,
+      "title": "Larger exact neighborhood repair",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q58",
+      "number": 58,
+      "title": "Joint route/key neighborhood guidance",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q59",
+      "number": 59,
+      "title": "Repair relaxation witnesses",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q60",
+      "number": 60,
+      "title": "Proof-progress portfolio scheduling",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q61",
+      "number": 61,
+      "title": "Share verified incumbents across disjoint workers",
+      "owner": "factors",
+      "status": "proposed"
+    },
+    {
+      "id": "Q62",
+      "number": 62,
+      "title": "Symbolic recipe grammar",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q63",
+      "number": 63,
+      "title": "Meet-in-the-middle stage relations",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q64",
+      "number": 64,
+      "title": "Counterexample-guided recipe synthesis",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q65",
+      "number": 65,
+      "title": "Shorter explanation priority",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q66",
+      "number": 66,
+      "title": "Joint unknown alphabet/route recovery",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q67",
+      "number": 67,
+      "title": "Algebraic feedback/autokey schedules",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q68",
+      "number": 68,
+      "title": "Explicit speculative crib disjunctions",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q69",
+      "number": 69,
+      "title": "Propagation through fractionation",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q70",
+      "number": 70,
+      "title": "Joint null/padding placements",
+      "owner": "constraints",
+      "status": "proposed"
+    },
+    {
+      "id": "Q71",
+      "number": 71,
+      "title": "Constraint-driven geometric paths",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q72",
+      "number": 72,
+      "title": "Disconnected-region rejection",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q73",
+      "number": 73,
+      "title": "Endpoint/degree propagation",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q74",
+      "number": 74,
+      "title": "Articulation/forced-bridge constraints",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q75",
+      "number": 75,
+      "title": "Grid-frontier dynamic programming",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q76",
+      "number": 76,
+      "title": "Meet-in-the-middle geometric paths",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q77",
+      "number": 77,
+      "title": "Crib/key constraints on partial spatial routes",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q78",
+      "number": 78,
+      "title": "Certified geometric symmetries",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q79",
+      "number": 79,
+      "title": "Frozen bounded grammar from solved passages",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q80",
+      "number": 80,
+      "title": "Bounded tableau/physical registration",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q81",
+      "number": 81,
+      "title": "Word-boundary scoring lattices",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q82",
+      "number": 82,
+      "title": "Morphology/grammar guidance",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q83",
+      "number": 83,
+      "title": "Explicit limited language switching",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q84",
+      "number": 84,
+      "title": "Locally verified LLM/chat seeds",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q85",
+      "number": 85,
+      "title": "Finite codebook ENE/BC hypotheses",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q86",
+      "number": 86,
+      "title": "Codebook length/inventory/modular constraints",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q87",
+      "number": 87,
+      "title": "Source-derived key transducers and deduplication",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q88",
+      "number": 88,
+      "title": "Corpus-robust language objective",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q89",
+      "number": 89,
+      "title": "Joint K4/K5 with independent constraints",
+      "owner": "models",
+      "status": "proposed"
+    },
+    {
+      "id": "Q90",
+      "number": 90,
+      "title": "Traceable K5 extraction bank",
+      "owner": "models",
+      "status": "proposed"
+    }
+  ],
+  "additional_work": [
+    "Windows setup and launch recovery tests",
+    "All available CPU threads and RTX2060 CUDA correctness/throughput benchmarks",
+    "Clean package and browser validation",
+    "Publish through gearashi preserving clean contributor history",
+    "Hardware-specific settings grounded in measured workloads"
+  ]
+}

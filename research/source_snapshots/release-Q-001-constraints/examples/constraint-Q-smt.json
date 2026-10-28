@@ -1,0 +1,16 @@
+{
+  "method": "smt",
+  "parameters": {
+    "problem": {
+      "domains": {"route":[0,1],"phase0":[0,1,2],"phase1":[0,1,2]},
+      "relations": [
+        {"scope":["route","phase0","phase1"],"rows":[[0,0,1],[0,1,2],[1,2,0]]}
+      ]
+    },
+    "queries": [{},{"route":0},{"route":0,"phase0":2}],
+    "lazy": true,
+    "enumerate": true,
+    "max_models": 100,
+    "timeout_ms": 10000
+  }
+}

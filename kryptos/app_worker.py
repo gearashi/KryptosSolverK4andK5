@@ -21,6 +21,9 @@ def execute(job):
     if job["kind"]=="ping":
         return {"pid":os.getpid(),"protocol":"kryptos.private-worker.v1"}
     command=job["command"]
+    from .research_methods import COMMANDS,execute as run_research_method
+    if command in COMMANDS:
+        return run_research_method(command,job["request"])
     if command in ("validate-holdout","validate-controls","validate-ablations"):
         from .validation_protocols import run_validation
         return run_validation(command,job["request"])

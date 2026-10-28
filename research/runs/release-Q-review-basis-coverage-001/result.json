@@ -1,0 +1,101 @@
+{
+  "schema": "kryptos.independent-basis-coverage-review.v1",
+  "all_checks_passed": true,
+  "verdict": "computationally verified only in the stated finite range",
+  "python": "3.12.2",
+  "paired_plaintext_key_image_checks": 44,
+  "selected_coordinate_checks": 2076,
+  "accepted_sparse_changes": 24,
+  "literal_actual_recipe_replays": 220,
+  "subtree_proof_reuse_checks": 19,
+  "subtree_proof_tamper_rejections": 24,
+  "invalid_helper_inputs_rejected": 3,
+  "score_projection": {
+    "representatives": 2,
+    "all_tie_coordinates": 26
+  },
+  "affine_relation_comparisons": 1152,
+  "coverage": {
+    "family_sizes": [
+      26,
+      676,
+      26,
+      1
+    ],
+    "distinct_plaintexts": 702,
+    "work": {
+      "complete_candidate_evaluations": 702,
+      "independent_family_evaluations": 729,
+      "duplicate_score_evaluations_avoided": 27,
+      "scored_windows": 702
+    },
+    "preparation": {
+      "enumerated_assignments": 729,
+      "literal_replays": 2185,
+      "candidate_reconstruction_replays": 728,
+      "recipe_conversion_replays": 728,
+      "final_verification_replays": 729,
+      "algebra_scalar_operations": 105
+    }
+  },
+  "input_sha256_before": {
+    "research/review_Q_basis_coverage.py": "d918658fd6d8011263ee39be2758091d9fb3b6cac52e1c49b5bf83305bc2dab0",
+    "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json": "970349f122f82589dc432103ffe7c5dde6bc8a9a39081dbd601dfda48a49e064",
+    "kryptos/__main__.py": "3a09c16f59f8524f00b0410d390656423e8af3c5876bdf30010ca242ee8d1383",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/constraint_algebra.py": "c89810dfc160b4cfe19b00760debfe6a703474be96f8ae7d5004f1cda1877994",
+    "kryptos/constraint_cover_proof.py": "f8bf59f8d2ac32e3bf5774128e84e46d4f3bc26fefe60283524bfcbaf3d377ce",
+    "kryptos/constraint_coverage.py": "3f533617f9965e69fe2e9ab0f02724c1eb4039db1b957713a8ec1072c2092a1f",
+    "kryptos/constraint_lab.py": "7fe8993d0b8463a482561a8ecd35e8cdc694a3ea2a8be67884926217e972877c",
+    "kryptos/constraint_reuse.py": "2020e704339a3f9a56397d9bdaaf90c180a8c7f5a2b4d5f37f2ca15670be37fc",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/next_cli.py": "0c8af0a31ce83a838de8af33a6a4b6207594452e981d340cff3293aada403299",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/search_runtime.py": "891701335124b45667af3f0e95183acc7b46389afb18f270b03d82bfb2903a9d"
+  },
+  "input_sha256_after": {
+    "research/review_Q_basis_coverage.py": "d918658fd6d8011263ee39be2758091d9fb3b6cac52e1c49b5bf83305bc2dab0",
+    "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json": "970349f122f82589dc432103ffe7c5dde6bc8a9a39081dbd601dfda48a49e064",
+    "kryptos/__main__.py": "3a09c16f59f8524f00b0410d390656423e8af3c5876bdf30010ca242ee8d1383",
+    "kryptos/advanced_cli.py": "a6440168fdbc5a6f372e5e709b8a44593339b67741338e0a3addf7c1a7b7e02e",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+    "kryptos/constraint_algebra.py": "c89810dfc160b4cfe19b00760debfe6a703474be96f8ae7d5004f1cda1877994",
+    "kryptos/constraint_cover_proof.py": "f8bf59f8d2ac32e3bf5774128e84e46d4f3bc26fefe60283524bfcbaf3d377ce",
+    "kryptos/constraint_coverage.py": "3f533617f9965e69fe2e9ab0f02724c1eb4039db1b957713a8ec1072c2092a1f",
+    "kryptos/constraint_lab.py": "7fe8993d0b8463a482561a8ecd35e8cdc694a3ea2a8be67884926217e972877c",
+    "kryptos/constraint_reuse.py": "2020e704339a3f9a56397d9bdaaf90c180a8c7f5a2b4d5f37f2ca15670be37fc",
+    "kryptos/correlated_bound.py": "276d0bf738477d8bcb77ccf7c3e6f96548660d698aac8134b0f41f7a87e72909",
+    "kryptos/data.py": "2f143d57fa9b450b4ee9a6ef1fd2a95224b171d2a01902eeebbc4b12ad0e35b2",
+    "kryptos/explanations.py": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/grid.py": "8f925d660b24a63240f56b9a56eaefba90905d052df1e88d16159622698b5405",
+    "kryptos/language.py": "4679dde2d13a1b8829f4ffa1bf2b85b02ae1293f95aa9e5e3f305f0bdd69aacf",
+    "kryptos/layer_plan.py": "d4bfb2bf384c334b2cc8c5c6c90b91544666f1549b11e761424ea0bf6c0f2261",
+    "kryptos/next_cli.py": "0c8af0a31ce83a838de8af33a6a4b6207594452e981d340cff3293aada403299",
+    "kryptos/position_residues.py": "b92d9fa32e67d9ac629ff37a3e0919c701b78b17f3be6d2217181a4d737e4130",
+    "kryptos/recovery.py": "bc90ee80697219a5bf13a870077bbc3a0d33f5200999235e26a77ceb13e4ce1d",
+    "kryptos/replay_expanded.py": "1b009d1e6143d2681dd9de6ff3e473e2351130a985ca147a772d0d5af3eb6dbd",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/scoring.py": "aeb5f12fec47c99f36c6074da1849b929281eb160b3bede00317aa9bd4aaed90",
+    "kryptos/search_runtime.py": "891701335124b45667af3f0e95183acc7b46389afb18f270b03d82bfb2903a9d"
+  },
+  "non_claims": [
+    "No universal efficiency gain",
+    "No claim that sparse basis is globally sparsest",
+    "Finite coverage materializes all supplied families before scoring",
+    "No K4/K5 authentication"
+  ]
+}

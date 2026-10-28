@@ -1,0 +1,169 @@
+{
+  "schema_version": 2,
+  "claim_id": "Q62_64_65_INDEPENDENT_REVIEW",
+  "repository": {
+    "commit": "6d9ab963fee0bd97b4e640b954d62f7f7d2a8059",
+    "dirty": true
+  },
+  "command": [
+    "C:\\KryptosSolverK4andK5\\.venv\\Scripts\\python.exe",
+    "-B",
+    "research/review_Q_grammar.py",
+    "--output",
+    "research/runs/release-Q-review-grammar-001/result.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.12.2"
+      },
+      {
+        "name": "Python",
+        "version": "3.12.2"
+      }
+    ],
+    "hardware": "Windows-10-10.0.19044-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Eighteen finite grammar syntax paths preserve literal output families on six plaintext probes; eighty CEGIS bank comparisons match exhaustive shared-key feasibility and all accepted witnesses replay.",
+    "coefficient_domain": "Z/26Z with exact integer residues",
+    "conventions": "Shared known alphabet; every substitution stage has independent unrestricted keys; same key vector used across supplied example pairs.",
+    "inputs": [
+      "18 length-two S/T syntax paths",
+      "six plaintext residue probes",
+      "ten recipe candidates",
+      "two named alphabets",
+      "five generating recipes with valid/perturbed examples",
+      "both priority modes and one/three initial examples"
+    ],
+    "bounds": {
+      "message_length": 2,
+      "maximum_key_slots": 2,
+      "cegis_bank_comparisons": 80
+    },
+    "non_claims": [
+      "No authenticated Kryptos solution",
+      "Finite implementation check does not establish every possible recipe correct"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-10-28T17:15:46.561478+00:00",
+    "runtime_seconds": 0.563,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 60.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "research/review_Q_grammar.py",
+    "kryptos/recipe_grammar.py",
+    "kryptos/recipe_algebra.py",
+    "kryptos/family_identity.py",
+    "kryptos/constraint_algebra.py",
+    "kryptos/constraint_lab.py",
+    "kryptos/general_layers.py",
+    "kryptos/scheduled_layers.py",
+    "kryptos/ciphers.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "research/review_Q_grammar.py",
+      "sha256": "4460c60ace81c6911791f8535fd5a89cf867f1169ec8b21b50b8aa1ba6f03f3e",
+      "sha256_after": "4460c60ace81c6911791f8535fd5a89cf867f1169ec8b21b50b8aa1ba6f03f3e"
+    },
+    {
+      "path": "kryptos/recipe_grammar.py",
+      "sha256": "d5001617705067820cd5f3844064b0a9184bb2ee2201538f254f276d165703a4",
+      "sha256_after": "d5001617705067820cd5f3844064b0a9184bb2ee2201538f254f276d165703a4"
+    },
+    {
+      "path": "kryptos/recipe_algebra.py",
+      "sha256": "db7649b5bc53d1ff6e5e47f1b2ff348f2b657b6de6ecbb8902822f6a2dfa252d",
+      "sha256_after": "db7649b5bc53d1ff6e5e47f1b2ff348f2b657b6de6ecbb8902822f6a2dfa252d"
+    },
+    {
+      "path": "kryptos/family_identity.py",
+      "sha256": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+      "sha256_after": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1"
+    },
+    {
+      "path": "kryptos/constraint_algebra.py",
+      "sha256": "e5e275fd549b2304814c01fc7f5e069e502d3f85bc856094df749a175791b977",
+      "sha256_after": "e5e275fd549b2304814c01fc7f5e069e502d3f85bc856094df749a175791b977"
+    },
+    {
+      "path": "kryptos/constraint_lab.py",
+      "sha256": "bc7c86e1ed469ed7b63be1c4bed35c4829f1aafd068e004d0d675e4b1e5a50a3",
+      "sha256_after": "bc7c86e1ed469ed7b63be1c4bed35c4829f1aafd068e004d0d675e4b1e5a50a3"
+    },
+    {
+      "path": "kryptos/general_layers.py",
+      "sha256": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+      "sha256_after": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464"
+    },
+    {
+      "path": "kryptos/scheduled_layers.py",
+      "sha256": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+      "sha256_after": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8"
+    },
+    {
+      "path": "kryptos/ciphers.py",
+      "sha256": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+      "sha256_after": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35"
+    }
+  ],
+  "output_directory": "research/runs/release-Q-review-grammar-001",
+  "declared_results": [
+    "research/runs/release-Q-review-grammar-001/result.json"
+  ],
+  "outputs": [
+    {
+      "path": "research/runs/release-Q-review-grammar-001/stdout.txt",
+      "sha256": "3f5944258b9ad4cb4417e260c1ab1d858756f426004c796474e1c528fe1aa8f7",
+      "kind": "log"
+    },
+    {
+      "path": "research/runs/release-Q-review-grammar-001/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "research/runs/release-Q-review-grammar-001/result.json",
+      "sha256": "5232b81a8d00e635aa89afe557ed36c68406c2bb893ad1ced8a290cbfff0f4ac",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

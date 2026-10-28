@@ -1,0 +1,163 @@
+{
+  "schema": "kryptos.import-inspection.v1",
+  "valid": true,
+  "classification": "replayed_model_consistency",
+  "artifact_sha256": "be7b03699bae5558040fff5d8bf313516c5fb98accdb29ccf5235a2ad8fec1e3",
+  "raw_artifact_sha256": "df0a371ac5cac0189ef4b0d9814d7979f0c6971a749ca59d3b16f90a6b2d3301",
+  "artifact_schema": "kryptos.candidate-export.v1",
+  "legacy_wrapper": false,
+  "recipe_sha256": "cc766115c636e22fb49531bdc1be25ee7eadb88cba5f2117861bb3657d2c42fe",
+  "ciphertext_sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd",
+  "candidate_index": 0,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "index": 0,
+      "preview": "AIDCLFONIG"
+    }
+  ],
+  "declared_target": "custom",
+  "ciphertext": "DKBIJHIFGN",
+  "plaintext": "AIDCLFONIG",
+  "reencrypted_ciphertext": "DKBIJHIFGN",
+  "trace": [
+    {
+      "stage": 1,
+      "operation": "gather",
+      "input": "AIDCLFONIG",
+      "output": "IFGDOCNALI",
+      "output_sha256": "3f922c9f525fc32bff2f2c6044d59b9064bcda8546b06b0b4f8bfa20548a6ed8",
+      "output_to_input": [
+        1,
+        5,
+        9,
+        2,
+        6,
+        3,
+        7,
+        0,
+        4,
+        8
+      ],
+      "input_to_output": [
+        7,
+        0,
+        3,
+        5,
+        8,
+        1,
+        4,
+        6,
+        9,
+        2
+      ],
+      "output_to_original": [
+        1,
+        5,
+        9,
+        2,
+        6,
+        3,
+        7,
+        0,
+        4,
+        8
+      ],
+      "original_to_output": [
+        7,
+        0,
+        3,
+        5,
+        8,
+        1,
+        4,
+        6,
+        9,
+        2
+      ],
+      "formula": "output[j] = input[permutation[j]]"
+    },
+    {
+      "stage": 2,
+      "operation": "repeat_substitution",
+      "input": "IFGDOCNALI",
+      "output": "DKBIJHIFGN",
+      "output_sha256": "4d8adfa9e4e3e81881b66c41fc221c3bff41f3efc38f6c8b0f2ead3afe21a9fd",
+      "output_to_input": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "input_to_output": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "output_to_original": [
+        1,
+        5,
+        9,
+        2,
+        6,
+        3,
+        7,
+        0,
+        4,
+        8
+      ],
+      "original_to_output": [
+        7,
+        0,
+        3,
+        5,
+        8,
+        1,
+        4,
+        6,
+        9,
+        2
+      ],
+      "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "cipher": "vigenere",
+      "key_symbols": "VFVFVFVFVF",
+      "key_positions": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "formula": "C=P+K mod26"
+    }
+  ],
+  "position_convention": "zero-based",
+  "crib_matches": 1,
+  "crib_total": 1,
+  "crib_failures": [],
+  "ciphertext_differences": [],
+  "reencryption_matches": true,
+  "source_identity_match": null,
+  "provenance_note": "Artifact and recipe hashes identify supplied data. Saved verification, source/model hashes and path strings are untrusted metadata; no imported path was opened. Current source identity was not compared.",
+  "authenticated_solution": false,
+  "search_started": false,
+  "interpretation": "Literal replay checks the supplied recipe and clues only. It does not authenticate the ciphertext, plaintext, source identity or Kryptos solution."
+}

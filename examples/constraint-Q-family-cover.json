@@ -1,0 +1,19 @@
+{
+  "method": "family_cover",
+  "parameters": {
+    "families": [
+      {"cipher_request":{
+        "target":"custom","ciphertext":"TIITITATEDRFTUXU","cribs":[{"start":1,"text":"T"}],"alphabet":"standard",
+        "stages":[{"operation":"substitution","period":2}],
+        "model_path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+      }},
+      {"cipher_request":{
+        "target":"custom","ciphertext":"TIITITATEDRFTUXU","cribs":[{"start":1,"text":"T"}],"alphabet":"standard",
+        "stages":[{"operation":"substitution","period":1},{"operation":"substitution","period":2}],
+        "model_path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+      }}
+    ],
+    "top":3,
+    "max_assignments":1000
+  }
+}

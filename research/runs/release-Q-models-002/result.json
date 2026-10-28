@@ -1,0 +1,2134 @@
+{
+  "schema": "kryptos.Q-model-audit.v1",
+  "python": "3.12.2",
+  "contract_sha256": "d25a21ffda2cb4d71a803c3e50e1705e8ad28c87a3c09eea82ae33db9ca5574b",
+  "geometry": [
+    {
+      "case": "2x3",
+      "input": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "start": 0,
+        "end": 5
+      },
+      "route_count": 1,
+      "oracle": {
+        "states": 10,
+        "decisions": 2,
+        "complete_routes": 1
+      },
+      "variants": {
+        "plain": {
+          "states": 10,
+          "decisions": 2,
+          "complete_routes": 1,
+          "topology_checks": 0,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 9,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "connectivity": {
+          "states": 10,
+          "decisions": 2,
+          "complete_routes": 1,
+          "topology_checks": 9,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 9,
+          "connectivity_rejections": 1,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "degrees": {
+          "states": 7,
+          "decisions": 1,
+          "complete_routes": 1,
+          "topology_checks": 25,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 6,
+          "connectivity_rejections": 0,
+          "degree_rejections": 1,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "articulation_bridges": {
+          "states": 7,
+          "decisions": 1,
+          "complete_routes": 1,
+          "topology_checks": 25,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 6,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 6,
+          "bridge_rejections": 1,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "combined": {
+          "states": 7,
+          "decisions": 1,
+          "complete_routes": 1,
+          "topology_checks": 51,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 6,
+          "connectivity_rejections": 0,
+          "degree_rejections": 1,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 5,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        }
+      },
+      "frontier": {
+        "schema": "kryptos.geometry-frontier.v1",
+        "complete": true,
+        "count": 1,
+        "route": [
+          0,
+          3,
+          4,
+          1,
+          2,
+          5
+        ],
+        "work": {
+          "states": 16,
+          "edge_transitions": 30,
+          "merged_states": 0,
+          "peak_frontier_states": 4
+        },
+        "scope": "all labelled orthogonal Hamiltonian paths with the declared endpoints; count and one witness"
+      },
+      "meet": {
+        "half_states": 12,
+        "decisions": 4,
+        "join_checks": 8,
+        "complete_routes": 1
+      }
+    },
+    {
+      "case": "3x3",
+      "input": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "start": 0,
+        "end": 8
+      },
+      "route_count": 2,
+      "oracle": {
+        "states": 41,
+        "decisions": 7,
+        "complete_routes": 2
+      },
+      "variants": {
+        "plain": {
+          "states": 41,
+          "decisions": 7,
+          "complete_routes": 2,
+          "topology_checks": 0,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 40,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "connectivity": {
+          "states": 37,
+          "decisions": 7,
+          "complete_routes": 2,
+          "topology_checks": 35,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 36,
+          "connectivity_rejections": 6,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "degrees": {
+          "states": 21,
+          "decisions": 5,
+          "complete_routes": 2,
+          "topology_checks": 101,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 20,
+          "connectivity_rejections": 0,
+          "degree_rejections": 4,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "articulation_bridges": {
+          "states": 21,
+          "decisions": 5,
+          "complete_routes": 2,
+          "topology_checks": 99,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 20,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 2,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 17,
+          "bridge_rejections": 2,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "combined": {
+          "states": 21,
+          "decisions": 5,
+          "complete_routes": 2,
+          "topology_checks": 199,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 20,
+          "connectivity_rejections": 0,
+          "degree_rejections": 4,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 15,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        }
+      },
+      "frontier": {
+        "schema": "kryptos.geometry-frontier.v1",
+        "complete": true,
+        "count": 2,
+        "route": [
+          0,
+          1,
+          2,
+          5,
+          4,
+          3,
+          6,
+          7,
+          8
+        ],
+        "work": {
+          "states": 36,
+          "edge_transitions": 70,
+          "merged_states": 1,
+          "peak_frontier_states": 4
+        },
+        "scope": "all labelled orthogonal Hamiltonian paths with the declared endpoints; count and one witness"
+      },
+      "meet": {
+        "half_states": 38,
+        "decisions": 10,
+        "join_checks": 20,
+        "complete_routes": 2
+      }
+    },
+    {
+      "case": "3x4",
+      "input": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "start": 0,
+        "end": 11
+      },
+      "route_count": 4,
+      "oracle": {
+        "states": 161,
+        "decisions": 33,
+        "complete_routes": 4
+      },
+      "variants": {
+        "plain": {
+          "states": 161,
+          "decisions": 33,
+          "complete_routes": 4,
+          "topology_checks": 0,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 160,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "connectivity": {
+          "states": 112,
+          "decisions": 28,
+          "complete_routes": 4,
+          "topology_checks": 108,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 111,
+          "connectivity_rejections": 28,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "degrees": {
+          "states": 53,
+          "decisions": 12,
+          "complete_routes": 4,
+          "topology_checks": 312,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 52,
+          "connectivity_rejections": 0,
+          "degree_rejections": 11,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "articulation_bridges": {
+          "states": 52,
+          "decisions": 12,
+          "complete_routes": 4,
+          "topology_checks": 296,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 51,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 6,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 42,
+          "bridge_rejections": 5,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "combined": {
+          "states": 52,
+          "decisions": 12,
+          "complete_routes": 4,
+          "topology_checks": 591,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 51,
+          "connectivity_rejections": 0,
+          "degree_rejections": 10,
+          "articulation_rejections": 1,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 37,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        }
+      },
+      "frontier": {
+        "schema": "kryptos.geometry-frontier.v1",
+        "complete": true,
+        "count": 4,
+        "route": [
+          0,
+          1,
+          2,
+          3,
+          7,
+          6,
+          5,
+          4,
+          8,
+          9,
+          10,
+          11
+        ],
+        "work": {
+          "states": 75,
+          "edge_transitions": 148,
+          "merged_states": 3,
+          "peak_frontier_states": 9
+        },
+        "scope": "all labelled orthogonal Hamiltonian paths with the declared endpoints; count and one witness"
+      },
+      "meet": {
+        "half_states": 110,
+        "decisions": 32,
+        "join_checks": 63,
+        "complete_routes": 4
+      }
+    },
+    {
+      "case": "disconnected",
+      "input": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "start": 0,
+        "end": 3
+      },
+      "route_count": 0,
+      "oracle": {
+        "states": 2,
+        "decisions": 0,
+        "complete_routes": 0
+      },
+      "variants": {
+        "plain": {
+          "states": 2,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 0,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 1,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "connectivity": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 1,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 1,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "degrees": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 4,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 1,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "articulation_bridges": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 1,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 1,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "combined": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 1,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 1,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        }
+      },
+      "frontier": {
+        "schema": "kryptos.geometry-frontier.v1",
+        "complete": true,
+        "count": 0,
+        "route": null,
+        "work": {
+          "states": 1,
+          "edge_transitions": 2,
+          "merged_states": 0,
+          "peak_frontier_states": 1
+        },
+        "scope": "all labelled orthogonal Hamiltonian paths with the declared endpoints; count and one witness"
+      },
+      "meet": {
+        "half_states": 4,
+        "decisions": 0,
+        "join_checks": 1,
+        "complete_routes": 0
+      }
+    },
+    {
+      "case": "cross",
+      "input": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            -1,
+            0
+          ]
+        ],
+        "start": 1,
+        "end": 2
+      },
+      "route_count": 0,
+      "oracle": {
+        "states": 4,
+        "decisions": 1,
+        "complete_routes": 0
+      },
+      "variants": {
+        "plain": {
+          "states": 4,
+          "decisions": 1,
+          "complete_routes": 0,
+          "topology_checks": 0,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 3,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "connectivity": {
+          "states": 4,
+          "decisions": 1,
+          "complete_routes": 0,
+          "topology_checks": 4,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 3,
+          "connectivity_rejections": 2,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "degrees": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 5,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 1,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "articulation_bridges": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 1,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 1,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "combined": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 6,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 1,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        }
+      },
+      "frontier": {
+        "schema": "kryptos.geometry-frontier.v1",
+        "complete": true,
+        "count": 0,
+        "route": null,
+        "work": {
+          "states": 3,
+          "edge_transitions": 6,
+          "merged_states": 0,
+          "peak_frontier_states": 1
+        },
+        "scope": "all labelled orthogonal Hamiltonian paths with the declared endpoints; count and one witness"
+      },
+      "meet": {
+        "half_states": 6,
+        "decisions": 1,
+        "join_checks": 2,
+        "complete_routes": 0
+      }
+    },
+    {
+      "case": "ragged",
+      "input": {
+        "cells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "start": 0,
+        "end": 6
+      },
+      "route_count": 0,
+      "oracle": {
+        "states": 11,
+        "decisions": 3,
+        "complete_routes": 0
+      },
+      "variants": {
+        "plain": {
+          "states": 11,
+          "decisions": 3,
+          "complete_routes": 0,
+          "topology_checks": 0,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 10,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "connectivity": {
+          "states": 8,
+          "decisions": 3,
+          "complete_routes": 0,
+          "topology_checks": 8,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 7,
+          "connectivity_rejections": 3,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "degrees": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 7,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 1,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "articulation_bridges": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 7,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 0,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 1,
+          "bridge_rejections": 1,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        },
+        "combined": {
+          "states": 1,
+          "decisions": 0,
+          "complete_routes": 0,
+          "topology_checks": 8,
+          "crib_checks": 0,
+          "registration_checks": 0,
+          "symmetry_checks": 0,
+          "connectivity_rejections": 0,
+          "degree_rejections": 1,
+          "articulation_rejections": 0,
+          "crib_rejections": 0,
+          "grammar_rejections": 0,
+          "symmetry_rejections": 0,
+          "bridge_checks": 0,
+          "bridge_rejections": 0,
+          "setup_registration_vectors": 1,
+          "setup_automorphisms": 1
+        }
+      },
+      "frontier": {
+        "schema": "kryptos.geometry-frontier.v1",
+        "complete": true,
+        "count": 0,
+        "route": null,
+        "work": {
+          "states": 5,
+          "edge_transitions": 10,
+          "merged_states": 0,
+          "peak_frontier_states": 2
+        },
+        "scope": "all labelled orthogonal Hamiltonian paths with the declared endpoints; count and one witness"
+      },
+      "meet": {
+        "half_states": 15,
+        "decisions": 5,
+        "join_checks": 6,
+        "complete_routes": 0
+      }
+    }
+  ],
+  "language": [
+    {
+      "text": "AAAAAA",
+      "switches": 0,
+      "optimum": 15,
+      "enumeration": {
+        "states": 358,
+        "complete_evaluations": 215
+      },
+      "lattice": {
+        "states": 23,
+        "transitions": 53,
+        "lexical_match_checks": 68,
+        "merged_prefixes": 31
+      }
+    },
+    {
+      "text": "AAAAAA",
+      "switches": 1,
+      "optimum": 15,
+      "enumeration": {
+        "states": 796,
+        "complete_evaluations": 489
+      },
+      "lattice": {
+        "states": 41,
+        "transitions": 118,
+        "lexical_match_checks": 162,
+        "merged_prefixes": 78
+      }
+    },
+    {
+      "text": "AAAAAA",
+      "switches": 2,
+      "optimum": 15,
+      "enumeration": {
+        "states": 1410,
+        "complete_evaluations": 934
+      },
+      "lattice": {
+        "states": 55,
+        "transitions": 164,
+        "lexical_match_checks": 232,
+        "merged_prefixes": 110
+      }
+    },
+    {
+      "text": "AAABAA",
+      "switches": 0,
+      "optimum": 2,
+      "enumeration": {
+        "states": 137,
+        "complete_evaluations": 68
+      },
+      "lattice": {
+        "states": 21,
+        "transitions": 34,
+        "lexical_match_checks": 51,
+        "merged_prefixes": 14
+      }
+    },
+    {
+      "text": "AAABAA",
+      "switches": 1,
+      "optimum": 2,
+      "enumeration": {
+        "states": 439,
+        "complete_evaluations": 215
+      },
+      "lattice": {
+        "states": 37,
+        "transitions": 87,
+        "lexical_match_checks": 130,
+        "merged_prefixes": 51
+      }
+    },
+    {
+      "text": "AAABAA",
+      "switches": 2,
+      "optimum": 17,
+      "enumeration": {
+        "states": 1080,
+        "complete_evaluations": 675
+      },
+      "lattice": {
+        "states": 50,
+        "transitions": 127,
+        "lexical_match_checks": 189,
+        "merged_prefixes": 78
+      }
+    },
+    {
+      "text": "ABAAZ",
+      "switches": 0,
+      "optimum": -13,
+      "enumeration": {
+        "states": 42,
+        "complete_evaluations": 13
+      },
+      "lattice": {
+        "states": 16,
+        "transitions": 22,
+        "lexical_match_checks": 33,
+        "merged_prefixes": 7
+      }
+    },
+    {
+      "text": "ABAAZ",
+      "switches": 1,
+      "optimum": 1,
+      "enumeration": {
+        "states": 146,
+        "complete_evaluations": 62
+      },
+      "lattice": {
+        "states": 27,
+        "transitions": 57,
+        "lexical_match_checks": 84,
+        "merged_prefixes": 31
+      }
+    },
+    {
+      "text": "ABAAZ",
+      "switches": 2,
+      "optimum": 1,
+      "enumeration": {
+        "states": 273,
+        "complete_evaluations": 139
+      },
+      "lattice": {
+        "states": 35,
+        "transitions": 79,
+        "lexical_match_checks": 118,
+        "merged_prefixes": 45
+      }
+    }
+  ],
+  "codebook": [
+    {
+      "length": 6,
+      "constraints": {},
+      "outputs": 6,
+      "enumeration": {
+        "states": 52,
+        "complete_evaluations": 24
+      },
+      "without_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 0,
+        "states": 18,
+        "transitions": 25,
+        "merged_prefixes": 8,
+        "filter_rejections": 0,
+        "complete_interpretations": 24
+      },
+      "with_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 21,
+        "states": 18,
+        "transitions": 25,
+        "merged_prefixes": 8,
+        "filter_rejections": 0,
+        "complete_interpretations": 24
+      }
+    },
+    {
+      "length": 6,
+      "constraints": {
+        "target_length": 4
+      },
+      "outputs": 4,
+      "enumeration": {
+        "states": 52,
+        "complete_evaluations": 24
+      },
+      "without_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 0,
+        "states": 16,
+        "transitions": 24,
+        "merged_prefixes": 6,
+        "filter_rejections": 3,
+        "complete_interpretations": 11
+      },
+      "with_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 21,
+        "states": 14,
+        "transitions": 22,
+        "merged_prefixes": 5,
+        "filter_rejections": 4,
+        "complete_interpretations": 10
+      }
+    },
+    {
+      "length": 6,
+      "constraints": {
+        "inventory": {
+          "X": 2
+        }
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 52,
+        "complete_evaluations": 24
+      },
+      "without_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 0,
+        "states": 18,
+        "transitions": 25,
+        "merged_prefixes": 8,
+        "filter_rejections": 0,
+        "complete_interpretations": 24
+      },
+      "with_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 42,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 6,
+      "constraints": {
+        "residues": [
+          {
+            "symbol": "X",
+            "modulus": 3,
+            "value": 1
+          }
+        ]
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 52,
+        "complete_evaluations": 24
+      },
+      "without_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 0,
+        "states": 18,
+        "transitions": 25,
+        "merged_prefixes": 8,
+        "filter_rejections": 0,
+        "complete_interpretations": 24
+      },
+      "with_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 36,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 6,
+      "constraints": {
+        "target_length": 2,
+        "inventory": {
+          "X": 7
+        }
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 52,
+        "complete_evaluations": 24
+      },
+      "without_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 0,
+        "states": 7,
+        "transitions": 16,
+        "merged_prefixes": 1,
+        "filter_rejections": 9,
+        "complete_interpretations": 1
+      },
+      "with_filters": {
+        "setup_match_checks": 18,
+        "suffix_transitions": 42,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 9,
+      "constraints": {},
+      "outputs": 19,
+      "enumeration": {
+        "states": 326,
+        "complete_evaluations": 149
+      },
+      "without_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 0,
+        "states": 59,
+        "transitions": 85,
+        "merged_prefixes": 27,
+        "filter_rejections": 0,
+        "complete_interpretations": 149
+      },
+      "with_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 45,
+        "states": 59,
+        "transitions": 85,
+        "merged_prefixes": 27,
+        "filter_rejections": 0,
+        "complete_interpretations": 149
+      }
+    },
+    {
+      "length": 9,
+      "constraints": {
+        "target_length": 4
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 326,
+        "complete_evaluations": 149
+      },
+      "without_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 0,
+        "states": 26,
+        "transitions": 60,
+        "merged_prefixes": 7,
+        "filter_rejections": 28,
+        "complete_interpretations": 1
+      },
+      "with_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 45,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 9,
+      "constraints": {
+        "inventory": {
+          "X": 2
+        }
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 326,
+        "complete_evaluations": 149
+      },
+      "without_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 0,
+        "states": 59,
+        "transitions": 85,
+        "merged_prefixes": 27,
+        "filter_rejections": 0,
+        "complete_interpretations": 149
+      },
+      "with_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 90,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 9,
+      "constraints": {
+        "residues": [
+          {
+            "symbol": "X",
+            "modulus": 3,
+            "value": 1
+          }
+        ]
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 326,
+        "complete_evaluations": 149
+      },
+      "without_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 0,
+        "states": 59,
+        "transitions": 85,
+        "merged_prefixes": 27,
+        "filter_rejections": 0,
+        "complete_interpretations": 149
+      },
+      "with_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 69,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 9,
+      "constraints": {
+        "target_length": 2,
+        "inventory": {
+          "X": 7
+        }
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 326,
+        "complete_evaluations": 149
+      },
+      "without_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 0,
+        "states": 7,
+        "transitions": 21,
+        "merged_prefixes": 1,
+        "filter_rejections": 14,
+        "complete_interpretations": 0
+      },
+      "with_filters": {
+        "setup_match_checks": 27,
+        "suffix_transitions": 90,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 12,
+      "constraints": {},
+      "outputs": 60,
+      "enumeration": {
+        "states": 2031,
+        "complete_evaluations": 927
+      },
+      "without_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 0,
+        "states": 188,
+        "transitions": 274,
+        "merged_prefixes": 87,
+        "filter_rejections": 0,
+        "complete_interpretations": 927
+      },
+      "with_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 78,
+        "states": 188,
+        "transitions": 274,
+        "merged_prefixes": 87,
+        "filter_rejections": 0,
+        "complete_interpretations": 927
+      }
+    },
+    {
+      "length": 12,
+      "constraints": {
+        "target_length": 4
+      },
+      "outputs": 1,
+      "enumeration": {
+        "states": 2031,
+        "complete_evaluations": 927
+      },
+      "without_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 0,
+        "states": 31,
+        "transitions": 86,
+        "merged_prefixes": 7,
+        "filter_rejections": 49,
+        "complete_interpretations": 1
+      },
+      "with_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 78,
+        "states": 5,
+        "transitions": 12,
+        "merged_prefixes": 0,
+        "filter_rejections": 8,
+        "complete_interpretations": 1
+      }
+    },
+    {
+      "length": 12,
+      "constraints": {
+        "inventory": {
+          "X": 2
+        }
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 2031,
+        "complete_evaluations": 927
+      },
+      "without_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 0,
+        "states": 188,
+        "transitions": 274,
+        "merged_prefixes": 87,
+        "filter_rejections": 0,
+        "complete_interpretations": 927
+      },
+      "with_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 156,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 12,
+      "constraints": {
+        "residues": [
+          {
+            "symbol": "X",
+            "modulus": 3,
+            "value": 1
+          }
+        ]
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 2031,
+        "complete_evaluations": 927
+      },
+      "without_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 0,
+        "states": 188,
+        "transitions": 274,
+        "merged_prefixes": 87,
+        "filter_rejections": 0,
+        "complete_interpretations": 927
+      },
+      "with_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 111,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    },
+    {
+      "length": 12,
+      "constraints": {
+        "target_length": 2,
+        "inventory": {
+          "X": 7
+        }
+      },
+      "outputs": 0,
+      "enumeration": {
+        "states": 2031,
+        "complete_evaluations": 927
+      },
+      "without_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 0,
+        "states": 7,
+        "transitions": 21,
+        "merged_prefixes": 1,
+        "filter_rejections": 14,
+        "complete_interpretations": 0
+      },
+      "with_filters": {
+        "setup_match_checks": 36,
+        "suffix_transitions": 156,
+        "states": 1,
+        "transitions": 0,
+        "merged_prefixes": 0,
+        "filter_rejections": 1,
+        "complete_interpretations": 0
+      }
+    }
+  ],
+  "other": {
+    "Q71": {
+      "full_permutation_evaluations": 120,
+      "complete_graph_routes": 3
+    },
+    "Q77": {
+      "postfilter_complete_routes": 17,
+      "accepted_routes": 0,
+      "incremental": {
+        "states": 3,
+        "decisions": 3,
+        "complete_routes": 0,
+        "topology_checks": 71,
+        "crib_checks": 5,
+        "registration_checks": 5,
+        "symmetry_checks": 6,
+        "connectivity_rejections": 0,
+        "degree_rejections": 0,
+        "articulation_rejections": 0,
+        "crib_rejections": 4,
+        "grammar_rejections": 0,
+        "symmetry_rejections": 0,
+        "bridge_checks": 3,
+        "bridge_rejections": 0,
+        "setup_registration_vectors": 1,
+        "setup_automorphisms": 1
+      }
+    },
+    "Q77_positive": {
+      "cribs": {
+        "0": "A",
+        "2": "C",
+        "4": "B",
+        "7": "A"
+      },
+      "postfilter_complete_routes": 17,
+      "accepted_routes": 8,
+      "incremental": {
+        "states": 72,
+        "decisions": 20,
+        "complete_routes": 8,
+        "topology_checks": 757,
+        "crib_checks": 23,
+        "registration_checks": 23,
+        "symmetry_checks": 76,
+        "connectivity_rejections": 0,
+        "degree_rejections": 9,
+        "articulation_rejections": 4,
+        "crib_rejections": 5,
+        "grammar_rejections": 0,
+        "symmetry_rejections": 0,
+        "bridge_checks": 51,
+        "bridge_rejections": 0,
+        "setup_registration_vectors": 1,
+        "setup_automorphisms": 1
+      }
+    },
+    "Q80": {
+      "separate_registration_route_checks": 51,
+      "accepted_routes": 4,
+      "shared": {
+        "states": 42,
+        "decisions": 11,
+        "complete_routes": 4,
+        "topology_checks": 475,
+        "crib_checks": 20,
+        "registration_checks": 20,
+        "symmetry_checks": 45,
+        "connectivity_rejections": 0,
+        "degree_rejections": 6,
+        "articulation_rejections": 1,
+        "crib_rejections": 4,
+        "grammar_rejections": 0,
+        "symmetry_rejections": 0,
+        "bridge_checks": 31,
+        "bridge_rejections": 0,
+        "setup_registration_vectors": 3,
+        "setup_automorphisms": 1
+      }
+    },
+    "Q80_coordinate_compilation": {
+      "registrations": [
+        {
+          "id": "rotated",
+          "offsets": [
+            2,
+            1
+          ],
+          "source": "synthetic registration"
+        }
+      ],
+      "rejected": [
+        {
+          "id": "missing",
+          "missing_input_indices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "mappings": [
+        {
+          "id": "rotated",
+          "transform": {
+            "id": "rotated",
+            "matrix": [
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "offset": [
+              3,
+              3
+            ]
+          },
+          "tableau_coordinates": [
+            [
+              3,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "work": {
+        "coordinate_lookups": 4
+      },
+      "interpretation": "Finite rigid ordinal registrations only; source/physical correspondence is a caller-declared hypothesis."
+    },
+    "Q78": {
+      "labelled_routes": 8,
+      "representatives": 1,
+      "work": {
+        "states": 9,
+        "decisions": 2,
+        "complete_routes": 1,
+        "topology_checks": 96,
+        "crib_checks": 0,
+        "registration_checks": 0,
+        "symmetry_checks": 96,
+        "connectivity_rejections": 0,
+        "degree_rejections": 0,
+        "articulation_rejections": 0,
+        "crib_rejections": 0,
+        "grammar_rejections": 0,
+        "symmetry_rejections": 4,
+        "bridge_checks": 8,
+        "bridge_rejections": 0,
+        "setup_registration_vectors": 1,
+        "setup_automorphisms": 8
+      }
+    },
+    "Q79": {
+      "postfilter_routes": 3,
+      "accepted_routes": 1,
+      "work": {
+        "states": 8,
+        "decisions": 2,
+        "complete_routes": 1,
+        "topology_checks": 61,
+        "crib_checks": 0,
+        "registration_checks": 0,
+        "symmetry_checks": 8,
+        "connectivity_rejections": 0,
+        "degree_rejections": 1,
+        "articulation_rejections": 0,
+        "crib_rejections": 0,
+        "grammar_rejections": 1,
+        "symmetry_rejections": 0,
+        "bridge_checks": 6,
+        "bridge_rejections": 0,
+        "setup_registration_vectors": 1,
+        "setup_automorphisms": 1
+      },
+      "grammar_sha256": "a00f8fd47f387487ef7dbf9f48ef310331b1b3a5ec0621c175a445e92f1893e9"
+    },
+    "Q82": {
+      "entries": [
+        {
+          "text": "AMO",
+          "tag": "verb",
+          "score": 6
+        },
+        {
+          "text": "PORTA",
+          "tag": "noun",
+          "score": 4
+        }
+      ],
+      "witnesses": [
+        {
+          "text": "AMO",
+          "tag": "verb",
+          "derivations": [
+            {
+              "stem": "AM",
+              "suffix": "O",
+              "class": "v",
+              "score": 6
+            }
+          ]
+        },
+        {
+          "text": "PORTA",
+          "tag": "noun",
+          "derivations": [
+            {
+              "stem": "PORT",
+              "suffix": "A",
+              "class": "a",
+              "score": 4
+            }
+          ]
+        }
+      ],
+      "source": "synthetic Latin-shaped stems",
+      "work": {
+        "stem_suffix_checks": 4
+      }
+    },
+    "Q85_ENE_BC": {
+      "schema": "kryptos.codebook-lattice.v1",
+      "input": "EASTNORTHEASTBERLINCLOCK",
+      "outputs": [
+        {
+          "text": "ENEBC",
+          "interpretation_count": 1,
+          "segments": [
+            {
+              "start": 0,
+              "stop": 13,
+              "input": "EASTNORTHEAST",
+              "output": "ENE"
+            },
+            {
+              "start": 13,
+              "stop": 24,
+              "input": "BERLINCLOCK",
+              "output": "BC"
+            }
+          ]
+        }
+      ],
+      "work": {
+        "setup_match_checks": 48,
+        "suffix_transitions": 2,
+        "states": 3,
+        "transitions": 2,
+        "merged_prefixes": 0,
+        "filter_rejections": 0,
+        "complete_interpretations": 1
+      },
+      "source": "user-suggested conditional codebook",
+      "model_sha256": "b6018ace56a0fa6e5ab805c6d3084f82f571243210a882f3690d07216df34c90",
+      "complete": true,
+      "interpretation": "Exact within supplied codebook and output constraints; ENE/BC are not substitutions for confirmed literal cribs."
+    },
+    "Q84": {
+      "accepted": 1,
+      "rejected": 1
+    },
+    "Q87": {
+      "keys": [
+        {
+          "key": "A",
+          "aliases": [
+            {
+              "source_id": "a",
+              "source": "synthetic",
+              "input_sha256": "fb1d5269bb7ad575b786f85cf22f95d043d7a055d1634bc3b3a8159181c74811",
+              "transform": {
+                "operation": "initials"
+              },
+              "raw_key": "AA"
+            }
+          ]
+        },
+        {
+          "key": "AB",
+          "aliases": [
+            {
+              "source_id": "a",
+              "source": "synthetic",
+              "input_sha256": "fb1d5269bb7ad575b786f85cf22f95d043d7a055d1634bc3b3a8159181c74811",
+              "transform": {
+                "operation": "letters"
+              },
+              "raw_key": "ABAB"
+            },
+            {
+              "source_id": "b",
+              "source": "synthetic",
+              "input_sha256": "fea4c5ce720c1d6a1cbc47c1607cc4ea172a69de8948e76d67910120597950fc",
+              "transform": {
+                "operation": "letters"
+              },
+              "raw_key": "AB"
+            },
+            {
+              "source_id": "b",
+              "source": "synthetic",
+              "input_sha256": "fea4c5ce720c1d6a1cbc47c1607cc4ea172a69de8948e76d67910120597950fc",
+              "transform": {
+                "operation": "initials"
+              },
+              "raw_key": "AB"
+            }
+          ]
+        },
+        {
+          "key": "BA",
+          "aliases": [
+            {
+              "source_id": "a",
+              "source": "synthetic",
+              "input_sha256": "fb1d5269bb7ad575b786f85cf22f95d043d7a055d1634bc3b3a8159181c74811",
+              "transform": {
+                "operation": "letters",
+                "reverse": true
+              },
+              "raw_key": "BABA"
+            },
+            {
+              "source_id": "b",
+              "source": "synthetic",
+              "input_sha256": "fea4c5ce720c1d6a1cbc47c1607cc4ea172a69de8948e76d67910120597950fc",
+              "transform": {
+                "operation": "letters",
+                "reverse": true
+              },
+              "raw_key": "BA"
+            }
+          ]
+        }
+      ],
+      "work": {
+        "transforms": 6,
+        "distinct_repeating_keys": 3
+      },
+      "interpretation": "Explicit bounded source hypotheses; deduplication applies only to repeating-key semantics."
+    },
+    "Q88": {
+      "candidates": [
+        {
+          "text": "AB",
+          "aliases": [
+            "c"
+          ],
+          "score": 4,
+          "corpus_scores": [
+            6,
+            4
+          ]
+        },
+        {
+          "text": "AA",
+          "aliases": [
+            "a",
+            "d"
+          ],
+          "score": 2,
+          "corpus_scores": [
+            10,
+            2
+          ]
+        },
+        {
+          "text": "BB",
+          "aliases": [
+            "b"
+          ],
+          "score": 2,
+          "corpus_scores": [
+            2,
+            6
+          ]
+        }
+      ],
+      "objective": "minimum",
+      "model_sha256": "b12d916f96f0e55deab0fdaefd2e705f3867ea4abdcba5b91cfa20367359ec58",
+      "work": {
+        "complete_candidate_evaluations": 3,
+        "model_evaluations": 6,
+        "factor_evaluations": 12
+      },
+      "interpretation": "Exact ranking for the declared corpus objective; robustness does not authenticate plaintext."
+    },
+    "Q89": {
+      "literal_joint_constraints": {
+        "feasible": true,
+        "cribs": {
+          "0": "A",
+          "2": "B",
+          "4": "C"
+        },
+        "witnesses": [
+          {
+            "extraction": "k5-control",
+            "output_position": 0,
+            "input_position": 0,
+            "symbol": "A",
+            "independent_source": "synthetic independently supplied output ABC"
+          },
+          {
+            "extraction": "k5-control",
+            "output_position": 1,
+            "input_position": 2,
+            "symbol": "B",
+            "independent_source": "synthetic independently supplied output ABC"
+          },
+          {
+            "extraction": "k5-control",
+            "output_position": 2,
+            "input_position": 4,
+            "symbol": "C",
+            "independent_source": "synthetic independently supplied output ABC"
+          }
+        ],
+        "conflicts": [],
+        "interpretation": "Conditional on caller-declared independent evidence and simultaneous extraction constraints; no K5 text is assumed."
+      },
+      "postfilter_complete_routes": 17,
+      "constrained": {
+        "states": 3,
+        "decisions": 3,
+        "complete_routes": 0,
+        "topology_checks": 71,
+        "crib_checks": 5,
+        "registration_checks": 5,
+        "symmetry_checks": 6,
+        "connectivity_rejections": 0,
+        "degree_rejections": 0,
+        "articulation_rejections": 0,
+        "crib_rejections": 4,
+        "grammar_rejections": 0,
+        "symmetry_rejections": 0,
+        "bridge_checks": 3,
+        "bridge_rejections": 0,
+        "setup_registration_vectors": 1,
+        "setup_automorphisms": 1
+      }
+    },
+    "Q90": {
+      "outputs": [
+        {
+          "text": "AA",
+          "witnesses": [
+            {
+              "id": "a",
+              "indices": [
+                0,
+                2
+              ],
+              "source": "synthetic even",
+              "rule_sha256": "f82bee6399cc3f07004311e700a66c08f8b6c01725dca6354ddc9b74b1192087",
+              "input_sha256": "741304c81459c3abb2f47b6d46de04f8be0b3dd9319e401fe1c0006e175323b7",
+              "mapping": [
+                {
+                  "output_position": 0,
+                  "input_position": 0,
+                  "symbol": "A"
+                },
+                {
+                  "output_position": 1,
+                  "input_position": 2,
+                  "symbol": "A"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "indices": [
+                2,
+                0
+              ],
+              "source": "synthetic reversed even",
+              "rule_sha256": "e77254acd685299ad2ae6a917777baf75e1c421a2ecdf795041f19ed4fc27661",
+              "input_sha256": "741304c81459c3abb2f47b6d46de04f8be0b3dd9319e401fe1c0006e175323b7",
+              "mapping": [
+                {
+                  "output_position": 0,
+                  "input_position": 2,
+                  "symbol": "A"
+                },
+                {
+                  "output_position": 1,
+                  "input_position": 0,
+                  "symbol": "A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "BB",
+          "witnesses": [
+            {
+              "id": "c",
+              "indices": [
+                1,
+                3
+              ],
+              "source": "synthetic odd",
+              "rule_sha256": "8ac27067bae4d836239353141b7c9ef9aa73181660fb308a633a3128a7b82f2d",
+              "input_sha256": "741304c81459c3abb2f47b6d46de04f8be0b3dd9319e401fe1c0006e175323b7",
+              "mapping": [
+                {
+                  "output_position": 0,
+                  "input_position": 1,
+                  "symbol": "B"
+                },
+                {
+                  "output_position": 1,
+                  "input_position": 3,
+                  "symbol": "B"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "work": {
+        "raw_rules": 3,
+        "distinct_output_evaluations": 2,
+        "character_gathers": 6
+      },
+      "interpretation": "Finite caller-specified extraction bank; equal outputs share downstream work but retain distinct rule witnesses."
+    }
+  },
+  "all_checks_passed": true
+}

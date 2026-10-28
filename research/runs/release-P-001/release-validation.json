@@ -1,0 +1,187 @@
+{
+  "schema": "kryptos.release-validation.v1",
+  "version": "0.5.0",
+  "date": "2026-10-26",
+  "publication": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "status": "Published; exact source/tag, all four CI jobs, public asset hashes and gearashi attribution verified",
+    "tag": "v0.5.0",
+    "required_account": "gearashi",
+    "verified_source_commit": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+    "ci_run": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0",
+    "verified_assets": {
+      "KryptosSolverK4AndK5.zip": "7d04cc3ed5855f616e29401983ec995aa9a9a678c3470b225234f4b1a59e1271",
+      "SHA256SUMS": "153947bac75726da767db601766b44953d0a2644c462795798edbb246021a203",
+      "validation.json": "113e17695462d04e52ece04febc76fd64e6597a6c52c7d9ca44252f40014c9d7"
+    },
+    "ci_jobs_passed": 4,
+    "attribution": {
+      "author": "gearashi",
+      "committer": "gearashi",
+      "release_author": "gearashi",
+      "contributors": [
+        "gearashi"
+      ]
+    },
+    "evidence": [
+      "research/runs/release-P-001/github-ci.json",
+      "research/runs/release-P-001/github-release.json",
+      "research/runs/release-P-001/github-attribution.json"
+    ]
+  },
+  "historical_release": "research/runs/release-O-001/release-validation.json",
+  "fresh_checkout": {
+    "schema": "kryptos.package-tests.v1",
+    "tests": 448,
+    "passed": 447,
+    "skipped": 1,
+    "seconds": 151.875,
+    "actual_cuda": true,
+    "cuda_path_removed": true,
+    "files_verified": 2495,
+    "tested_files_unchanged": true,
+    "log": "research/runs/release-P-001/fresh-checkout-tests.txt",
+    "log_sha256": "bfa61dca847eac849f03198df5bda9a6d1b60b0742e80380092224dd18c1cad3",
+    "method": "Curated tracked and nonignored source/evidence copied byte-for-byte; installed venv used only as interpreter; isolated cwd/runtime, no excluded caches or corpora."
+  },
+  "browser": {
+    "core": {
+      "path": "research/runs/release-P-001/browser/browser-report.json",
+      "sha256": "39cf3ac7ed3a59989305cfd26faddb1d283352610fd7ff51637a21efdd08b339",
+      "passed": 43,
+      "errors": []
+    },
+    "workspace": {
+      "path": "research/runs/release-P-001/workspace-browser/report.json",
+      "sha256": "abf649709812d323e0c22f3fc65e2d9d511fdc79c23ed658dd0dde198e76a5b4",
+      "passed": 22,
+      "errors": []
+    },
+    "phase_P": {
+      "path": "research/runs/release-P-001/search-P-browser/report.json",
+      "sha256": "4d5fe1a25f171e02aff93080b2b82b5d53d324af8b7554a8d5d0d3da66838c02",
+      "passed": 23,
+      "errors": []
+    },
+    "total_checks": 88,
+    "node_checks": 6,
+    "cuda_policy": "required",
+    "hardware": {
+      "cpu": true,
+      "workers_max": 4,
+      "cuda": {
+        "ready": true,
+        "devices": [
+          {
+            "id": 0,
+            "name": "NVIDIA GeForce RTX 2060",
+            "compute_capability": [
+              7,
+              5
+            ],
+            "total_memory_bytes": 6442123264
+          }
+        ],
+        "environment": {
+          "mode": "cuda12_component_wheels",
+          "configured_cuda_path": null,
+          "dll_directories": [
+            "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin",
+            "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin"
+          ],
+          "libraries": {
+            "cudart": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin\\cudart64_12.dll",
+            "nvrtc": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin\\nvrtc64_120_0.dll"
+          },
+          "toolkit_root": null,
+          "package_versions": {
+            "cupy": "14.2.0",
+            "runtime": "12.9.79",
+            "nvrtc": "12.9.86"
+          }
+        },
+        "cupy_version": "14.2.0",
+        "driver_version": 13050,
+        "runtime_version": 12090,
+        "compiled_kernel_verified": true,
+        "current_device": 0,
+        "available": true
+      }
+    },
+    "app_version": "0.5.0"
+  },
+  "computations": [
+    {
+      "kind": "joint",
+      "manifest": "research/runs/release-P-001/joint/manifest.json",
+      "sha256": "04fcb2bc0ffdd4b090f5d3aadb31a9eda7e6fc3d83be0044e95ea9b1968220b4",
+      "status": "completed",
+      "input_count": 121
+    },
+    {
+      "kind": "factor",
+      "manifest": "research/runs/release-P-001/factor/manifest.json",
+      "sha256": "8b203430f117d5471ed54dbd4ea1148849a0f39c23b1f59f054f9c4a3eee9709",
+      "status": "completed",
+      "input_count": 121
+    },
+    {
+      "kind": "campaign",
+      "manifest": "research/runs/release-P-002/campaign/manifest.json",
+      "sha256": "4d98d9cfbd978764ecb422bbaf007f0d02045bf5e6a0bf022fa6d6d467be793c",
+      "status": "completed",
+      "input_count": 121
+    },
+    {
+      "kind": "independent-irregular-grid",
+      "manifest": "research/runs/review-P-joint-irregular-001/manifest.json",
+      "sha256": "fa81b37076965fe51e1d8ac6337e3fce77ecd9eaec7963e925c50c209e0e29c2",
+      "status": "completed",
+      "input_count": 55
+    }
+  ],
+  "preserved_failure": {
+    "manifest": "research/runs/release-P-001/campaign/manifest.json",
+    "status": "failed",
+    "cause": "Independent audit replay helper incorrectly required a top-level alphabet on an expanded scheduled recipe. Production unchanged; corrected helper passed identical controls under P002.",
+    "repair": "research/campaign_P_audit_repair.md"
+  },
+  "reviews": [
+    "research/review_P_joint.md",
+    "research/review_P_factor.md",
+    "research/review_P_campaign.md",
+    "research/review_P_browser.md"
+  ],
+  "integration_review": {
+    "source": "root integration review",
+    "production_hashes": "research/runs/release-P-001/tested-production.json",
+    "production_hashes_sha256": "497f1f6989a2c31365f95a6f459c62c4c8467b2aeda9d11c9c4aa17bd7290fa0",
+    "all_tested_production_matches_current": true,
+    "findings": [
+      "Positive minima enforced for component assignment/operation caps before dispatch.",
+      "Constrained route completion blocks, rather than null distinct route counts, enforce per-activation budgets.",
+      "Campaign inspection uses immutable historical snapshots before the live owner result.",
+      "Campaign heading now explicitly counts completed-family aliases;23 final P browser assertions pass.",
+      "All new strategies default off. P02 has no demonstrated decision/candidate saving; P08 saves factor work only.",
+      "No source or test changes after the successful packaged suite."
+    ]
+  },
+  "scope": {
+    "primary_criterion": "Fewer decisions or complete candidate evaluations for identical exact results; intermediate factor/bound work reported separately.",
+    "new_strategies_default_off": true,
+    "gpu": "Actual installed RTX2060 checks with CUDA_PATH unset, separate from CPU-only CI.",
+    "kryptos_solution": false,
+    "general_nogood_learning": false,
+    "reserved_O_bank_retuned": false
+  },
+  "remaining": [],
+  "local_launch": {
+    "path": "research/runs/release-P-001/local-launch.json",
+    "sha256": "e0f63c6474a0b19d3030fc1a5f5bc5de593095b16a22844012727a1599a807ac",
+    "version": "0.5.0",
+    "state": "idle",
+    "compiled_cuda_ready": true
+  },
+  "delivery_metadata_policy": "Post-publication documentation/evidence-only commit on main; immutable tag and assets remain at verified_source_commit."
+}

@@ -1,0 +1,10 @@
+{
+  "method": "geometry",
+  "parameters": {
+    "cells": [[0,0],[0,1],[0,2],[1,0],[1,1],[1,2],[2,0],[2,1],[2,2]],
+    "start": 4,
+    "symmetry": true,
+    "max_states": 20000,
+    "max_routes": 1000
+  }
+}

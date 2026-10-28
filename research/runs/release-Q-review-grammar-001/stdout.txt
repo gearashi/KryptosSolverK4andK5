@@ -1,0 +1,1 @@
+{"all_checks_passed": true, "syntax_paths": 18, "literal_image_comparisons": 108, "literal_matrix_checks": 972, "cegis_bank_comparisons": 80, "literal_witness_pair_replays": 312, "exhaustive_oracle_key_vectors": 36414}

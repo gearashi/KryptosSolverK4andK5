@@ -12,6 +12,7 @@ import sys
 import uuid
 
 from .search_runtime import optimize_lazy,_validate
+from .resource_governor import MAX_CPU_WORKERS
 
 
 ALLOWED_OPTIONS={"max_nodes","time_limit_seconds","max_frontier","max_cache_entries",
@@ -48,8 +49,8 @@ def _process_job(item):
 
 
 def optimize_batch(jobs,*,workers=1):
-    if type(workers) is not int or not 1<=workers<=4:
-        raise ValueError("workers must be in1..4")
+    if type(workers) is not int or not 1<=workers<=MAX_CPU_WORKERS:
+        raise ValueError(f"workers must be in1..{MAX_CPU_WORKERS}")
     if not isinstance(jobs,list) or not 1<=len(jobs)<=32:
         raise ValueError("batch needs1..32 jobs")
     ids=set()

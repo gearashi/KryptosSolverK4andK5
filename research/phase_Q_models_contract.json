@@ -1,0 +1,16 @@
+{
+  "schema": "kryptos.phase-Q-model-contract.v1",
+  "frozen_before_runs": true,
+  "items": [71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90],
+  "assertion_tested": "Bounded geometry, language and extraction algorithms agree with independent literal enumeration or replay in their explicitly supplied finite models.",
+  "domain": "Exact integer graph, string, score and modular arithmetic. Coordinates are ordinal row/column pairs. Gathered plaintext at route position j is alphabet[(cipher[cell]-registration[cell]-key[j%period]) mod alphabet size].",
+  "geometry_cases": ["2x3 full rectangle", "3x3 full rectangle", "3x4 full rectangle", "four-cell disconnected graph", "five-cell cross", "ragged seven-cell grid"],
+  "geometry_comparisons": ["plain Hamiltonian prefix enumeration", "connectivity-only", "degree-only", "articulation-only", "combined propagation", "edge-frontier counting", "meet-in-middle", "postfilter versus incremental periodic-key cribs", "verified D4 orbit representatives", "postfilter versus frozen order-one turn grammar", "independent registration enumeration versus shared route-prefix propagation"],
+  "language_cases": ["ambiguous A/AA/AAA segmentation", "finite stem/suffix Latin-shaped lexicon", "two languages with zero/one/two switches", "unknown-character fallback", "grammar tag scores"],
+  "codebook_cases": ["A/AA/AAA to X/XX/Y ambiguous mappings with length constraints", "exact symbol inventories", "modular symbol counts", "contradictory constraints", "ENE/BC explicit mapping"],
+  "other_cases": ["valid/invalid/literal-crib-incompatible recipe suggestions", "source-key transforms and repeated-period aliases", "minimum/sum two-corpus objective", "independent K5 constraints pulled back to K4 indices and conflict controls", "duplicate-output extraction witnesses"],
+  "work": "Record decisions, complete route/candidate evaluations, prefix states, edge transitions, half states, join checks, topology checks, suffix preprocessing, lattice transitions, replay and gathers separately. No wall-clock-only efficiency claims.",
+  "bounds": {"geometry_cells_tested_maximum": 12, "search_states_per_call": 2000000, "routes_per_call": 100000, "codebook_source_length_maximum": 12, "random_cases": 0},
+  "non_claims": ["No authenticated K4 or K5 plaintext", "No true physical geometry inferred", "No natural language or codebook assumption elevated to fact", "No universal efficiency improvement", "No user-provided K5 independence assertion independently authenticated"],
+  "commands": [".venv/Scripts/python.exe -B -m unittest discover -s tests -p test_model_lab_Q.py -v", ".venv/Scripts/python.exe -B research/audit_Q_models.py --output research/runs/release-Q-models-001/result.json"]
+}

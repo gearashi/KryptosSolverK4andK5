@@ -1,0 +1,2 @@
+Kryptos Lab 0.6.0: http://127.0.0.1:62555/
+No search starts until you select Start. Ctrl+C stops the local server.

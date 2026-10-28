@@ -1,15 +1,17 @@
 [CmdletBinding()]
 param(
     [switch]$Gpu,
+    [switch]$Sat,
     [string]$Python = "",
     [switch]$Help
 )
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 if ($Help) {
-    Write-Output "Usage: .\Setup.ps1 [-Gpu] [-Python path-to-python] [-Help]"
+    Write-Output "Usage: .\Setup.ps1 [-Gpu] [-Sat] [-Python path-to-python] [-Help]"
     Write-Output "Create/reuse .venv and verify CPU imports. Only -Gpu installs pinned CUDA packages."
     Write-Output "Existing .venv is preserved; -Python selects the interpreter only when creating it."
+    Write-Output "-Sat installs the optional pinned Z3 backend for finite constraint experiments."
     exit 0
 }
 Push-Location -LiteralPath $PSScriptRoot
@@ -52,6 +54,12 @@ try {
         & $venvPython -m pip install --requirement (Join-Path $PSScriptRoot "requirements-gpu.txt")
         if ($LASTEXITCODE -ne 0) { throw "GPU dependency installation failed. CPU use remains available." }
         Write-Output "GPU packages installed. The dashboard checks a compiled CUDA kernel on launch; a compatible NVIDIA driver is required."
+    }
+    if ($Sat) {
+        & $venvPython -m pip install --requirement (Join-Path $PSScriptRoot "requirements-sat.txt")
+        if ($LASTEXITCODE -ne 0) { throw "Optional SMT dependency installation failed. Other CPU methods remain available." }
+        & $venvPython -c "import z3; print('Optional SMT backend ready: Z3 ' + z3.get_version_string())"
+        if ($LASTEXITCODE -ne 0) { throw "Optional SMT import check failed." }
     }
     Write-Output "Run .\OpenDashboard.cmd to open the idle local application."
 } finally {

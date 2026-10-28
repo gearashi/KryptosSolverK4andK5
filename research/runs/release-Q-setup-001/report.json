@@ -1,0 +1,166 @@
+{
+  "schema": "kryptos.windows-entrypoint-check.v1",
+  "passed": true,
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "cpu_search_started": false,
+  "cuda_path_present_in_child": false,
+  "removed_cuda_variable_names": [],
+  "before_packages": {
+    "distribution_count": 7,
+    "selected_versions": {
+      "cupy-cuda12x": "14.2.0",
+      "nvidia-cuda-runtime-cu12": "12.9.79",
+      "nvidia-cuda-nvrtc-cu12": "12.9.86",
+      "z3-solver": "5.3.2.0"
+    }
+  },
+  "existing_8767_port_open_before": false,
+  "production_edits": false,
+  "sources": {
+    "Setup.cmd": "32ac7fe6a1b6990df2a186bf373fdfc98da0088d180426ab855b3940ac02fee0",
+    "Setup.ps1": "c370a95bebd2c75a11fcc7f67b440ed30270beb3fd36b3aea46754201ab139e3",
+    "OpenDashboard.cmd": "48f00633d010d53983305defb22842ee718e60484503a1d30b29004313685c48",
+    "OpenDashboard.ps1": "f20a63da3c357a52ad57a880730bf97743b50bc80b8b7f8ffe7d5fcf231b17b4",
+    "requirements-gpu.txt": "ccf281b2be54262f23fe1fd59aeca703d7dcb1928294367754655fe86e1a4078",
+    "requirements-sat.txt": "62c6106d91d38db6e2d3e027ed16f7e6a9a9a04cae796dd513d78e5be7578e8f",
+    "kryptos/app.py": "cdd238fc2d787e7202d7e500af63c8164161b6c116235df354ad855534ddedd6",
+    "kryptos/launcher.py": "0f618c36c1be374b9756caf636850cbda42f0d2ca4ed872783f6c37f5df350bf",
+    "kryptos/cuda_environment.py": "bf7410655f013076647f0b44dd6d6ac4c0db6a851a6ca411410da4dfa556ef2a",
+    "research/check_setup_Q.py": "ea059435aa6a57b2eba1c25623a862c77fbabb60d244dfa97fd216f095744610"
+  },
+  "setup": {
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "Setup.cmd",
+      "-Gpu",
+      "-Sat"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.1100000001024455
+  },
+  "after_packages": {
+    "distribution_count": 7,
+    "selected_versions": {
+      "cupy-cuda12x": "14.2.0",
+      "nvidia-cuda-runtime-cu12": "12.9.79",
+      "nvidia-cuda-nvrtc-cu12": "12.9.86",
+      "z3-solver": "5.3.2.0"
+    }
+  },
+  "packages_unchanged": true,
+  "already_satisfied_lines": 6,
+  "setup_cpu_import_ready": true,
+  "setup_smt_import_ready": true,
+  "launcher": {
+    "command": [
+      "C:\\WINDOWS\\system32\\cmd.exe",
+      "/d",
+      "/c",
+      "OpenDashboard.cmd",
+      "-Port",
+      "0",
+      "-NoBrowser",
+      "-StateDir",
+      "C:\\KryptosSolverK4andK5\\research\\runs\\release-Q-setup-001\\isolated-state"
+    ],
+    "http_ready": true,
+    "url": "http://127.0.0.1:62555/",
+    "elapsed_seconds": 2.405999999959022,
+    "version": "0.6.0",
+    "service": "kryptos-local-dashboard",
+    "instance_matches_descriptor": true,
+    "cuda": {
+      "ready": true,
+      "devices": [
+        {
+          "id": 0,
+          "name": "NVIDIA GeForce RTX 2060",
+          "compute_capability": [
+            7,
+            5
+          ],
+          "total_memory_bytes": 6442123264
+        }
+      ],
+      "environment": {
+        "mode": "cuda12_component_wheels",
+        "configured_cuda_path": null,
+        "dll_directories": [
+          "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin",
+          "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin"
+        ],
+        "libraries": {
+          "cudart": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin\\cudart64_12.dll",
+          "nvrtc": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin\\nvrtc64_120_0.dll"
+        },
+        "toolkit_root": null,
+        "package_versions": {
+          "cupy": "14.2.0",
+          "runtime": "12.9.79",
+          "nvrtc": "12.9.86"
+        }
+      },
+      "cupy_version": "14.2.0",
+      "driver_version": 13050,
+      "runtime_version": 12090,
+      "compiled_kernel_verified": true,
+      "current_device": 0,
+      "available": true
+    },
+    "idle": true,
+    "no_campaign": true
+  },
+  "owned_port_closed": true,
+  "direct_gpu_probe": {
+    "command": [
+      "C:\\KryptosSolverK4andK5\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-c",
+      "import json; from kryptos.accelerated import probe_backend; print(json.dumps(probe_backend(), allow_nan=False))"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.672000000020489,
+    "cuda": {
+      "ready": true,
+      "devices": [
+        {
+          "id": 0,
+          "name": "NVIDIA GeForce RTX 2060",
+          "compute_capability": [
+            7,
+            5
+          ],
+          "total_memory_bytes": 6442123264
+        }
+      ],
+      "environment": {
+        "mode": "cuda12_component_wheels",
+        "configured_cuda_path": null,
+        "dll_directories": [
+          "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin",
+          "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin"
+        ],
+        "libraries": {
+          "cudart": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_runtime\\bin\\cudart64_12.dll",
+          "nvrtc": "C:\\KryptosSolverK4andK5\\.venv\\Lib\\site-packages\\nvidia\\cuda_nvrtc\\bin\\nvrtc64_120_0.dll"
+        },
+        "toolkit_root": null,
+        "package_versions": {
+          "cupy": "14.2.0",
+          "runtime": "12.9.79",
+          "nvrtc": "12.9.86"
+        }
+      },
+      "cupy_version": "14.2.0",
+      "driver_version": 13050,
+      "runtime_version": 12090,
+      "compiled_kernel_verified": true,
+      "current_device": 0
+    }
+  },
+  "cuda_path_detection_warning": false,
+  "existing_8767_port_open_after": false,
+  "sources_unchanged": true
+}

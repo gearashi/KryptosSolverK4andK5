@@ -1,13 +1,18 @@
 """Deterministic, bounded page-boundary resource policy; no utilization promise."""
 import math
+import os
 
 MAX_EVENTS=1000
+MAX_CPU_WORKERS=32
+
+def hardware_worker_limit():
+    return max(1,min(MAX_CPU_WORKERS,os.cpu_count() or 1))
 
 def validate_resources(values, backend="cpu"):
     if not isinstance(values,dict) or set(values)-{"workers","idle_ms","target_page_seconds","adaptive"}:
         raise ValueError("Unknown resource control")
     out=dict(values)
-    for name,lo,hi in (("workers",1,4),("idle_ms",0,5000)):
+    for name,lo,hi in (("workers",1,MAX_CPU_WORKERS),("idle_ms",0,5000)):
         if name in out and (type(out[name]) is not int or not lo<=out[name]<=hi):
             raise ValueError(f"{name} must be an integer in {lo}..{hi}")
     if "adaptive" in out and type(out["adaptive"]) is not bool:

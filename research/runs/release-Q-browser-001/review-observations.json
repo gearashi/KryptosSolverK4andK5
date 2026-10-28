@@ -1,0 +1,57 @@
+{
+  "schema": "kryptos.browser-Q-independent-review.v1",
+  "mode": "currentcheckout,CPUonly,ownedserver; not Git archive package",
+  "commands": [
+    {
+      "command": "constraint-lab",
+      "state": "completed",
+      "result_complete": true,
+      "analysis_complete": true,
+      "sha256": "d6d26d49c6d54c045d921d8462975010f39961730c12286d051dd216a438c8b9"
+    },
+    {
+      "command": "factor-lab",
+      "state": "completed",
+      "result_complete": true,
+      "analysis_complete": null,
+      "sha256": "97ff0989161b4770321d0ff1413dc14faf71b2ae9ef3f3c006c1054b025f151c"
+    },
+    {
+      "command": "grammar-lab",
+      "state": "completed",
+      "result_complete": true,
+      "analysis_complete": true,
+      "sha256": "33945acdc754fe6b3eee5bff1419c61f07e29b51a87ce5988088bdd79380f2a8"
+    },
+    {
+      "command": "model-lab",
+      "state": "completed",
+      "result_complete": true,
+      "analysis_complete": true,
+      "sha256": "017228a40599aa8425629c0b2c48ad74bb0c5ed420bc2a66fca79584a3e48740"
+    }
+  ],
+  "images_actually_viewed": [
+    {
+      "path": "research/runs/release-Q-browser-001/methods-Q-browser/methods-desktop.png",
+      "width": 1440,
+      "height": 4521,
+      "sha256": "eb5a3819540061e73e760f5c3c8ae0aacb7b81e7ca8d7d89bdaebca3d0ea4502"
+    },
+    {
+      "path": "research/runs/release-Q-browser-001/methods-Q-browser/methods-mobile.png",
+      "width": 390,
+      "height": 5192,
+      "sha256": "6ad88021196379a74f4252eab0c894c48a486d38849ed724f4b631335c4c3dd6"
+    }
+  ],
+  "isolated_port": 62097,
+  "isolated_port_closed_after_run": true,
+  "files": {
+    "research/runs/release-Q-browser-001/methods-Q-browser/report.json": "fb9beec8bf2a879491ef6965b1a69644d18f4b3bc85c077aa605f4a864bde873",
+    "research/runs/release-Q-browser-001/methods-Q-browser-console.txt": "2fddcaee51bfc49489e07394a19f0ce41d78861d7e801f8324607091fc2df52e",
+    "research/runs/release-Q-browser-001/methods-Q-browser-server.txt": "5bab0649122606296e8bf6c1c2c75f576e897f42e59a8d97bcf33d6b3352d497",
+    "research/browser_methods_Q.cjs": "d1a88030bf94a1069b26082d0b155f320dea2f5761a1b1b761beb2a5b7dfb78a",
+    "scripts/verify_package.py": "1da12c970e393a307148efc22f744b468823c862c7d0fbd1f873690dc690b98b"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "current_and_snapshot_hashes_match": true,
+  "execution_files": {
+    "research/runs/release-Q-001/constraints/manifest.json": "a7c713f5cc6c7626e375669d1d75db0b1211a828e0de93ae5618e9bb9ddb9aee",
+    "research/runs/release-Q-001/constraints/result.json": "dd9d5c8eaff1e5c8195cdf7d041a55ed02d2149a1cfb70d60ca8aa5cd4d4dbfb",
+    "research/runs/release-Q-001/constraints/stderr.txt": "51d01d828b9bc51ff6b51977f9cdd0150c6b53299c950b09bb2175c124887439",
+    "research/runs/release-Q-001/constraints/stdout.txt": "ad499721c4c3ed67a1b4b333787de41925fc76297ca0185409d1de697b200d97"
+  },
+  "input_count": 88,
+  "schema": "kryptos.Q-constraint-closure.v1",
+  "snapshot": "research/source_snapshots/release-Q-001-constraints",
+  "status": "completed"
+}

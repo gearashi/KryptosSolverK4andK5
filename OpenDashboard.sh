@@ -1,12 +1,13 @@
 #!/usr/bin/env sh
 set -eu
 usage() {
-    printf '%s\n' 'Usage: sh OpenDashboard.sh [--port 8767] [--no-browser] [--skip-gpu-probe] [--state-dir path] [--python path] [--help]' \
+    printf '%s\n' 'Usage: sh OpenDashboard.sh [--port 8767] [--strict-port] [--no-browser] [--skip-gpu-probe] [--state-dir path] [--python path] [--help]' \
         'Open the idle local dashboard. Uses .venv or Python 3.10+. Installs nothing.'
 }
 port=8767
 no_browser=0
 skip_gpu=0
+strict_port=0
 state_dir=''
 python=''
 while [ "$#" -gt 0 ]; do
@@ -18,6 +19,7 @@ while [ "$#" -gt 0 ]; do
             shift 2 ;;
         --no-browser) no_browser=1; shift ;;
         --skip-gpu-probe) skip_gpu=1; shift ;;
+        --strict-port) strict_port=1; shift ;;
         *) printf 'Unknown option: %s\n' "$1" >&2; usage >&2; exit 2 ;;
     esac
 done
@@ -39,5 +41,6 @@ fi
 set -- -B -m kryptos.app --port "$port"
 [ "$no_browser" -eq 0 ] || set -- "$@" --no-browser
 [ "$skip_gpu" -eq 0 ] || set -- "$@" --skip-gpu-probe
+[ "$strict_port" -eq 0 ] || set -- "$@" --strict-port
 [ -z "$state_dir" ] || set -- "$@" --state-dir "$state_dir"
 exec "$python" "$@"

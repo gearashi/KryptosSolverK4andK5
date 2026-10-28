@@ -1,0 +1,12 @@
+{
+  "method": "geometry",
+  "parameters": {
+    "cells": [[24,27],[24,28],[24,29],[24,30]],
+    "ciphertext": "OBKR",
+    "start": 0,
+    "end": 3,
+    "period": 1,
+    "max_states": 100,
+    "max_routes": 10
+  }
+}

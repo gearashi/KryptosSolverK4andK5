@@ -1,0 +1,15 @@
+{
+  "target": "custom",
+  "ciphertext": "TIITITATEDRFTUXU",
+  "cribs": [{"start": 1, "text": "T"}],
+  "alphabet": "standard",
+  "stages": [{"operation": "substitution", "period": 2}],
+  "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+  "elimination_bound": "overlap",
+  "elimination_max_entries": 20000,
+  "elimination_max_operations": 200000,
+  "max_nodes": 10000,
+  "max_frontier": 1000,
+  "max_cache_entries": 10000,
+  "time_limit_seconds": 5
+}

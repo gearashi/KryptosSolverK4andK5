@@ -3,6 +3,7 @@ param(
     [ValidateRange(0,65535)][int]$Port = 8767,
     [switch]$NoBrowser,
     [switch]$SkipGpuProbe,
+    [switch]$StrictPort,
     [string]$StateDir = "",
     [string]$Python = "",
     [switch]$Help
@@ -10,7 +11,8 @@ param(
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 if ($Help) {
-    Write-Output "Usage: .\OpenDashboard.ps1 [-Port 8767] [-NoBrowser] [-SkipGpuProbe] [-StateDir path] [-Python path] [-Help]"
+    Write-Output "Usage: .\OpenDashboard.ps1 [-Port 8767] [-NoBrowser] [-SkipGpuProbe] [-StrictPort] [-StateDir path] [-Python path] [-Help]"
+    Write-Output "Reopens an existing dashboard, or selects a free port if the preferred port is occupied."
     Write-Output "Open the local dashboard. No search starts on launch; Ctrl+C closes the server."
     Write-Output "Uses .venv when available, otherwise Python 3.10+. Installs nothing."
     exit 0
@@ -41,6 +43,7 @@ try {
     $launchArgs = @("-B", "-m", "kryptos.app", "--port", "$Port")
     if ($NoBrowser) { $launchArgs += "--no-browser" }
     if ($SkipGpuProbe) { $launchArgs += "--skip-gpu-probe" }
+    if ($StrictPort) { $launchArgs += "--strict-port" }
     if ($StateDir) { $launchArgs += @("--state-dir", $StateDir) }
     $prefix = $selected.Prefix
     & $selected.Command @prefix @launchArgs

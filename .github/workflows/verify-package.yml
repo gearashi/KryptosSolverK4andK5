@@ -24,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
+      - name: Install optional finite constraint backend for complete tests
+        run: python -m pip install --requirement requirements-sat.txt
       - name: Install browser test dependencies only
         run: npm install --no-save playwright@1.62.1
       - name: Install Chromium for browser verification
@@ -45,9 +47,11 @@ jobs:
             release-check/browser/
             release-check/workspace-browser/
             release-check/search-P-browser/
+            release-check/methods-Q-browser/
             release-check/*-server.txt
             release-check/workspace-browser-console.txt
             release-check/search-P-browser-console.txt
+            release-check/methods-Q-browser-console.txt
             release-check/archive-log.txt
 # No publication token, write permission or bot-authored release is used here.
 # A gearashi-authenticated operator runs scripts/publish_release.py after the

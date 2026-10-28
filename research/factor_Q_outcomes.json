@@ -1,0 +1,542 @@
+{
+  "schema": "kryptos.Q-factor-outcomes.v1",
+  "date": "2026-10-28",
+  "canonical_status": "completed",
+  "entry_count": 31,
+  "decision_counts": {
+    "rejected": 1,
+    "retained-conditional": 13,
+    "retained-optional": 14,
+    "retained-supporting": 3
+  },
+  "entries": [
+    {
+      "id": "Q31",
+      "number": 31,
+      "title": "AND/OR search graph",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.ContextSolver",
+      "outcome": "Fewer full evaluations than basic search, but more internal decisions than previous auto decomposition on31/33 controls.",
+      "nearest_comparator": "previous auto decomposition",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q32",
+      "number": 32,
+      "title": "Separator-message caching",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.ContextSolver._solve",
+      "outcome": "Repeated chain query adds zero branch decisions after19 on first query; all lookup/conditioning work charged.",
+      "nearest_comparator": "same context solver recomputed; no general advantage over previous exact auto claimed",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q33",
+      "number": 33,
+      "title": "Reusable junction-tree conditional queries",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.JunctionQueries",
+      "outcome": "Repeated conditional query performs zero new factor lookups; whole-problem primary decisions tie old auto on33/33.",
+      "nearest_comparator": "previous exact auto decomposition",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q34",
+      "number": 34,
+      "title": "Small cycle cutsets",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.cutset_solve",
+      "outcome": "Exact cutset plus forest messages; primary counts tie old auto in these controls. Streaming planner prevents unbounded combination allocation.",
+      "nearest_comparator": "previous exact auto decomposition",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q35",
+      "number": 35,
+      "title": "Bounded elimination-order planning",
+      "status": "validated",
+      "decision": "retained-supporting",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.plan_elimination",
+      "outcome": "Bounded beam ordering supports exact junction/projection methods; no independent primary gain demonstrated.",
+      "nearest_comparator": "previous greedy exact-decomposition planning",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q36",
+      "number": 36,
+      "title": "Functional factor simplification after conditioning",
+      "status": "validated",
+      "decision": "retained-supporting",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.simplify",
+      "outcome": "Remove a coordinate only after every contextual slice agrees; fewer residual dimensions but no separate primary win claimed.",
+      "nearest_comparator": "original unsimplified factors",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q37",
+      "number": 37,
+      "title": "Reachable joint factor images",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.factor_bounds.reachable_image_upper",
+      "outcome": "13 whole images instead of28561 Cartesian coordinate tuples on one redundant-generator control;520 image transitions charged. Not claimed better than existing subgroup-membership bound.",
+      "nearest_comparator": "literal Cartesian image enumeration; existing correlated bound remains available",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q38",
+      "number": 38,
+      "title": "Bounded residual decision diagrams",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.DecisionDiagram",
+      "outcome": "Exact compiled conditional/top-k queries; initial internal branching grows versus previous auto, so compilation cost remains visible.",
+      "nearest_comparator": "previous exact auto decomposition and repeated uncached queries",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q39",
+      "number": 39,
+      "title": "Lazy exact top-k component combination",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.independent_top_k",
+      "outcome": "Independent component top10 uses28 complete heap-combination scores; zero-tail lexical fallback can erase benefit.",
+      "nearest_comparator": "full Cartesian product of component candidates",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q40",
+      "number": 40,
+      "title": "Exact chain/strip dynamic programming",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.factor_advanced.chain_solve",
+      "outcome": "Exact strip DP within explicit separator cap; primary decisions tie old auto on33/33 controls.",
+      "nearest_comparator": "previous exact auto decomposition",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q41",
+      "number": 41,
+      "title": "Matching-aware route score bounds",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.factor_joint_bound.compute_column_matching_bound",
+      "outcome": "One-to-one column relaxation tightens generic control504 to216; joint integration uses only wholly column-local windows and has explicit fallback.",
+      "nearest_comparator": "independent row/window upper bounds",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q42",
+      "number": 42,
+      "title": "Overlap-consistent language-window bounds",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.factor_bounds._tree_bound",
+      "outcome": "One primary-decision win versus old mini-bucket, many ties and some weaker cases; keeps only certified upper bounds.",
+      "nearest_comparator": "previous mini-bucket and four-factor group bound",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q43",
+      "number": 43,
+      "title": "Threshold-conditioned propagation",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.factor_bounds.threshold_domains",
+      "outcome": "Eight domain values removed in the chain with a supplied oracle-optimum threshold. Soundness test, not evidence of discovering that threshold.",
+      "nearest_comparator": "unfiltered domains at the same supplied threshold",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q44",
+      "number": 44,
+      "title": "Adaptive bound refinement",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.factor_bounds._tree_bound(adaptive=True)",
+      "outcome": "Compared with static overlap, decisions improve3/33 and worsen2/33.",
+      "nearest_comparator": "static factor-tree bound",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q45",
+      "number": 45,
+      "title": "Certified factor reparameterization",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.factor_bounds.reparameterized_bound",
+      "outcome": "Exact rational transfers; versus overlap decisions improve5/33 and worsen1/33. Planning/arithmetic charged.",
+      "nearest_comparator": "independent and overlap factor bounds",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q46",
+      "number": 46,
+      "title": "Cycle-consistency constraints",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.factor_bounds.cycle_bound",
+      "outcome": "Triangle729 upper tightens to81; versus overlap decisions improve6/33 with0 worse.",
+      "nearest_comparator": "static overlap tree relaxation",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q47",
+      "number": 47,
+      "title": "Modular-projection bounds",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.factor_bounds.projection_bound",
+      "outcome": "Modulo13 can be identity on the tested small domains; modulo2 has no additional primary win over old mini-bucket here. Exact finite relaxations, not field-homomorphism assumptions.",
+      "nearest_comparator": "previous mini-bucket and exact decomposition",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q48",
+      "number": 48,
+      "title": "Multi-language frontier with separate thresholds",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.multiobjective_search(aggregate=all)",
+      "outcome": "One frontier preserves each objective optimum and shares identical factor bounds. Opposed objectives can weaken pruning.",
+      "nearest_comparator": "separate objective traversals",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q49",
+      "number": 49,
+      "title": "Abort partial scoring with certified remainder",
+      "status": "validated",
+      "decision": "retained-supporting",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.score_until",
+      "outcome": "Early rejection reads only first of seven factors in control; rejection after final factor counts as complete evaluation.",
+      "nearest_comparator": "complete scoring of every candidate",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q50",
+      "number": 50,
+      "title": "Whole-hypothesis group bounds",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.multiobjective_search(aggregate=max)",
+      "outcome": "Whole-bank upper excludes groups under explicitly comparable declared products; unlisted hypotheses remain outside scope.",
+      "nearest_comparator": "separate comparable hypothesis traversals",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q51",
+      "number": 51,
+      "title": "Bounded strong branching",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.search_runtime.optimize_lazy ordering=strong",
+      "outcome": "Both primary wins and regressions; at most four variables probed and complete probes charged.",
+      "nearest_comparator": "impact/natural ordering",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q52",
+      "number": 52,
+      "title": "Reliable pseudocost branching",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.factor_search ordering=pseudocost",
+      "outcome": "Reliability estimates change only ordering; complete finite oracles match, work can increase.",
+      "nearest_comparator": "natural ordering with same value order",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q53",
+      "number": 53,
+      "title": "Conflict-weighted variable ordering",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.factor_search ordering=conflict",
+      "outcome": "Weights from score exclusions guide ordering only, never hard infeasibility. Both favorable and unfavorable cases retained.",
+      "nearest_comparator": "natural ordering with same value order",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q54",
+      "number": 54,
+      "title": "Separator-exposing variable selection",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.search_runtime.optimize_lazy ordering=separator",
+      "outcome": "Separator planning can save or add decisions; planning counted and bounded.",
+      "nearest_comparator": "impact/natural ordering",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q55",
+      "number": 55,
+      "title": "Feasible promising value ordering",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.factor_search value_order=bound",
+      "outcome": "Primary decisions and full evaluations improve22/33 and worsen1/33 against literal value order.",
+      "nearest_comparator": "natural value order with same branching",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q56",
+      "number": 56,
+      "title": "Branch on n-gram relations with other alternative",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.factor_search relation_branching=True",
+      "outcome": "Explicit preferred joint gram images plus complementary other rows retain all assignments; relation decisions and preparation counted.",
+      "nearest_comparator": "ordinary coordinate branching",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q57",
+      "number": 57,
+      "title": "Larger exact neighborhood repair",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.neighborhood_seed",
+      "outcome": "Triple neighborhood escapes pairwise plateau score3 to9, but more preparation and internal decisions; no universal net primary reduction.",
+      "nearest_comparator": "pair-only neighborhood",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q58",
+      "number": 58,
+      "title": "Joint route/key neighborhood guidance",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.joint_neighborhood",
+      "outcome": "Joint key repair across an explicit route-neighbor bank finds verified score12 versus route-a9; does not cover unlisted routes.",
+      "nearest_comparator": "one fixed route and bounded key neighborhood",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q59",
+      "number": 59,
+      "title": "Repair relaxation witnesses",
+      "status": "validated",
+      "decision": "retained-conditional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.repair_relaxation_witness",
+      "outcome": "Inconsistent local maximizers supply proposals only; repairs checked against original factors. No probability/authentication claim.",
+      "nearest_comparator": "unverified relaxation proposals or zero seed",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q60",
+      "number": 60,
+      "title": "Proof-progress portfolio scheduling",
+      "status": "rejected",
+      "decision": "rejected",
+      "active": false,
+      "implementation": "kryptos.search_guidance_q.portfolio_search (research prototype only)",
+      "outcome": "Only3/24 controls completed under fixed rounds; all3 used more decisions and complete evaluations. Active dispatcher rejects the method.",
+      "nearest_comparator": "single natural strategy",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    },
+    {
+      "id": "Q61",
+      "number": 61,
+      "title": "Share verified incumbents across disjoint workers",
+      "status": "validated",
+      "decision": "retained-optional",
+      "active": true,
+      "implementation": "kryptos.search_guidance_q.parallel_search",
+      "outcome": "Eight-worker control40 to20 decisions but24 to28 complete evaluations, including12 shared replays; scheduling dependent.",
+      "nearest_comparator": "same disjoint workers without incumbent sharing",
+      "evidence": [
+        "research/runs/release-Q-002/factor/manifest.json",
+        "research/runs/release-Q-002/factor/result.json",
+        "tests/test_factor_advanced.py"
+      ],
+      "limitations": "Finite controls only; optional or conditional scope is explicit. Supporting primitives are not independent primary-count wins."
+    }
+  ],
+  "interpretation": "Validated means exact finite implementation checks passed. It does not mean every item independently beats the strongest previous solver. Q60 is rejected and inactive. No default changes."
+}

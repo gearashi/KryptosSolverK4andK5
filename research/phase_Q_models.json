@@ -1,0 +1,350 @@
+{
+  "schema": "kryptos.phase-Q-model-outcomes.v1",
+  "entries": [
+    {
+      "id": "Q71",
+      "roadmap_number": 71,
+      "title": "Constraint-driven geometric paths",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "Conditional Hamiltonian gather;120 permutations to3 completed routes on2x3",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q72",
+      "roadmap_number": 72,
+      "title": "Residual connectivity",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry/connectivity",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "33 to28 decisions on3x4;4routes preserved",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q73",
+      "roadmap_number": 73,
+      "title": "Endpoint and degree propagation",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry/degrees",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "33 to12 decisions on3x4;4routes preserved",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q74",
+      "roadmap_number": 74,
+      "title": "Articulation and mandatory bridges",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry/articulation",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "33 to12 decisions;bridge-only benefit not established",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q75",
+      "roadmap_number": 75,
+      "title": "Grid frontier dynamic programming",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry_frontier",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "Exact count and one witness;148 edge transitions instead of enumerating4fullroutes on3x4",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q76",
+      "roadmap_number": 76,
+      "title": "Meet-in-middle geometric paths",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry_meet",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "33 to32 decisions on3x4,110halfstates and63joins;smaller cases can be worse",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q77",
+      "roadmap_number": 77,
+      "title": "Partial spatial crib/key propagation",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry/cribs",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "17 to8 completed routes onpositive control;literal set preserved",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q78",
+      "roadmap_number": 78,
+      "title": "Certified geometric symmetry",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "geometry/symmetry",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "8routes to1orbit with exact orbit reconstruction",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q79",
+      "roadmap_number": 79,
+      "title": "Frozen solved-route grammar",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "turn_grammar",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "3 to1completed control routes under explicitly transferred grammar",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q80",
+      "roadmap_number": 80,
+      "title": "Bounded tableau registration",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "tableau_registrations and geometry/registrations",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "51separate fullroute checks to4completions plus20prefix registration checks",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q81",
+      "roadmap_number": 81,
+      "title": "Word-boundary lattice",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "language_lattice",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "215complete segmentations to23states53transitions and1witness",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q82",
+      "roadmap_number": 82,
+      "title": "Morphology and grammar guidance",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "morphology and language_lattice/grammar",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "Finite class licensing and grammar scoring verified;no separate compiler efficiency win",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q83",
+      "roadmap_number": 83,
+      "title": "Bounded language switching",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "language_lattice/max_switches",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "934complete segmentations to55states164transitions under2switches",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q84",
+      "roadmap_number": 84,
+      "title": "Verified chat proposals",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "verify_seeds",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "Replay/literal crib gate verified;no LLM service or measured incumbent-search win",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q85",
+      "roadmap_number": 85,
+      "title": "Finite ENE/BC codebook",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "codebook",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "927tokenizations to60distinct output evaluations on12Acontrol",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q86",
+      "roadmap_number": 86,
+      "title": "Codebook length/inventory/modular filters",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "codebook/necessary_filters",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "60 to0complete outputs oncontradictory inventory,156suffix transitions",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q87",
+      "roadmap_number": 87,
+      "title": "Source key transducers",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "source_keys",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "6transforms to3distinct repeatingkeys withallaliases",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q88",
+      "roadmap_number": 88,
+      "title": "Declared robust corpus objective",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "robust_rank",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "Exactminimum/sum rankings verified;no objective-only search efficiency claim",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q89",
+      "roadmap_number": 89,
+      "title": "Joint K4/K5 independent constraints",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "joint_cribs",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "Pullbackwitnesses/conflicts verified,synthetic17route contradiction eliminated;independence callerdeclared",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    },
+    {
+      "id": "Q90",
+      "roadmap_number": 90,
+      "title": "Traceable extraction bank",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "extractions",
+      "scope": "Explicit finite conditional model or verified guidance; not an authenticated Kryptos mechanism",
+      "measured_outcome": "3rules to2distinct outputs,allmappings retained",
+      "evidence": [
+        "tests/test_model_lab_Q.py",
+        "research/runs/release-Q-models-003/manifest.json",
+        "research/runs/release-Q-models-003/result.json"
+      ],
+      "integrated": "kryptos.model_lab.run; root research-method API/CLI integration",
+      "limitations": "See research/IMPROVEMENTS_Q_MODELS.md for item-specific scope and separate work accounting"
+    }
+  ],
+  "all_numbered_items_implemented": true,
+  "all_items_independent_efficiency_wins": false,
+  "audit_label": "self-review with independent finite literal oracles",
+  "test_count": 18,
+  "current_run": "research/runs/release-Q-models-003"
+}

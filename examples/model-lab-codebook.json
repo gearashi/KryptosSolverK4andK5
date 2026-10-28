@@ -1,0 +1,10 @@
+{
+  "method": "codebook",
+  "parameters": {
+    "text": "EASTNORTHEASTBERLINCLOCK",
+    "codebook": {"EASTNORTHEAST": "ENE", "BERLINCLOCK": "BC", "EAST": "E", "NORTHEAST": "NE"},
+    "source": "Explicit user-suggested abbreviation hypothesis; confirmed literal cribs remain unchanged",
+    "target_length": 5,
+    "necessary_filters": true
+  }
+}

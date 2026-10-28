@@ -10,6 +10,7 @@ import sys
 import threading
 import time
 import uuid
+from .resource_governor import MAX_CPU_WORKERS
 
 
 class WorkerCancelled(InterruptedError):
@@ -57,15 +58,15 @@ class _Slot:
 
 
 class PersistentWorkerPool:
-    """Thread-safe pool of1..4 serial workers; timeout includes queue/startup.
+    """Thread-safe bounded process pool; timeout includes queue/startup.
 
     A unique subdirectory is created beneath folder. env overlays the current
     environment; cwd defaults to the repository. Returned wire-format decimal
     wrappers are decoded to native integers. The caller owns durable commits.
     """
     def __init__(self, size, python=None, env=None, cwd=None, folder=None):
-        if type(size) is not int or not 1 <= size <= 4:
-            raise ValueError("pool size must be in1..4")
+        if type(size) is not int or not 1 <= size <= MAX_CPU_WORKERS:
+            raise ValueError(f"pool size must be in1..{MAX_CPU_WORKERS}")
         if folder is None:
             raise ValueError("an explicit private worker folder is required")
         self.python = str(python or sys.executable)

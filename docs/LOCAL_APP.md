@@ -4,7 +4,7 @@ The browser workbench runs on your computer at `http://127.0.0.1:8767/`. Opening
 
 ## Setup and launch
 
-CPU use needs Python 3.10 or later and only its standard library. Setup creates `.venv` when absent and preserves an existing environment. It verifies imports and installs no network packages unless GPU setup is explicitly requested.
+CPU use needs Python 3.10 or later and only its standard library. Setup creates `.venv` when absent and preserves an existing environment. It verifies imports and installs no network packages unless GPU or optional SMT setup is explicitly requested.
 
 On Windows, double-click `Setup.cmd` once, then `OpenDashboard.cmd`, or run:
 
@@ -66,7 +66,7 @@ The default local state directory is `runtime/`, excluded from version control. 
 - **Pause** finishes the current scan wave or `optimize-plus` slice, commits its saved position/frontier, then pauses. It is not an immediate interruption. Other exact commands can be stopped/restarted.
 - **Stop** terminates current workers and discards the in-flight wave. Earlier committed pages and results remain. Resuming repeats work from the last committed position.
 - The displayed run time limit is checked **between waves**. It is not a strict deadline for an already running wave. Each worker has a separate **60-second outer deadline**; reduce batch size or command bounds if a worker reaches it.
-- CPU family scans can use up to four workers. CUDA uses one worker/context. More workers can increase resource use without improving useful throughput.
+- CPU family scans can use up to32 workers (limited to detected logical processors in the selector). CUDA uses one worker/context. More workers can increase resource use without improving useful throughput.
 - Resource controls queue changes to worker count, idle interval, and adaptive page timing. Changes apply at a committed boundary and are recorded with the offset. Adaptation changes page size by at most a factor of two per wave, with hysteresis and a bounded event log; it does not promise a particular CPU utilization percentage.
 - Ctrl+C in the launcher terminal shuts down the service. Closing the browser alone does not stop the server or its work. An interrupted service is recovered from saved state on restart; a changed source/model identity prevents incompatible resume.
 
@@ -125,3 +125,11 @@ See [workspace and release operations](WORKSPACE_AND_RELEASE.md) for persistent
 drafts/presets, filtered archived history, damaged-record diagnostics, bounded
 hashed backups and separate read-only recovery. Opening or restoring a draft
 never starts a computation. Recovered checkpoint data is not executable.
+
+## Reliable Windows startup in version0.6
+
+The launcher reopens an existing matching server for the same saved workspace. If the requested port is occupied or reserved, it binds an OS-selected free port and opens that actual URL after an HTTP readiness check. `-StrictPort` disables fallback when a fixed port is required. `-Port 0` requests a free port directly (write `-Port 0` as two arguments). A browser association error leaves the server running and prints the URL. A malformed or stale discovery record is ignored; discovery uses loopback only and never follows redirects.
+
+CUDA probing runs in an owned child process with a30-second limit. A failure leaves CPU operation available. `-SkipGpuProbe` bypasses probing. `Setup.cmd -Sat` installs the optional finite-constraint SMT backend; `Setup.cmd -Gpu -Sat` requests both optional dependency sets.
+
+Setup/launch tests include a disposable environment in a folder containing spaces, invocation from another directory, initial batch-file launch, occupied-port fallback and reopening.

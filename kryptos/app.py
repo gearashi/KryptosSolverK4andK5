@@ -10,8 +10,8 @@ from pathlib import Path
 import re
 import secrets
 import threading
+import time
 from urllib.parse import parse_qs,urlsplit
-import webbrowser
 
 from .advanced_cli import json_safe_integers
 from .app_jobs import RunManager,ROOT,MODELS,validate_start
@@ -19,8 +19,11 @@ from .data import K4_CIPHERTEXT,K4_CRIBS
 from .campaigns import CampaignManager,preview_campaign
 from .import_inspector import inspect_import
 from .workspace_store import WorkspaceStore,MAX_BUNDLE
+from . import launcher
+from .app_jobs import atomic_json
+from .resource_governor import hardware_worker_limit
 
-VERSION="0.5.0"
+VERSION="0.6.0"
 
 
 def validation_presets():
@@ -86,6 +89,7 @@ def browser_safe_integers(value):
 
 
 def make_server(state_dir,port=8767,*,probe=True):
+    instance=secrets.token_hex(24)
     manager=RunManager(Path(state_dir)/"runs")
     try:
         campaigns=CampaignManager(manager)
@@ -111,17 +115,7 @@ def make_server(state_dir,port=8767,*,probe=True):
                     "recovered_runs":len(workspace.recovered_runs),"recovered_campaigns":len(workspace.recovered_campaigns),
                     "recoveries":[{k:v for k,v in r.items() if k!="editing"} for r in workspace.recoveries.values()],
                     "backup_max_bytes":MAX_BUNDLE,"restore_policy":"Separate read-only recovery; no jobs or frontiers are activated."}
-    capabilities={"cpu":True,"workers_max":4,"cuda":{"ready":False,"available":False,"error":"GPU probe has not run"}}
-    if probe:
-        for name in ("TEMP","TMP","CUPY_CACHE_DIR"):
-            os.environ[name]=manager.worker_env[name]
-        try:
-            from .accelerated import probe_backend
-            value=probe_backend()
-            cuda=value.get("cuda",value)
-            capabilities["cuda"]={**cuda,"available":bool(cuda.get("ready",cuda.get("available",False)))}
-        except Exception as error:
-            capabilities["cuda"]={"ready":False,"available":False,"error":str(error)}
+    capabilities={"cpu":True,"workers_max":hardware_worker_limit(),"cuda":{"ready":False,"available":False,"error":"GPU probe has not run"}}
 
     class Handler(BaseHTTPRequestHandler):
         server_version="KryptosLocal/"+VERSION
@@ -160,7 +154,10 @@ def make_server(state_dir,port=8767,*,probe=True):
                 return
             parsed=urlsplit(self.path)
             try:
-                if parsed.path=="/api/info":
+                if parsed.path=="/api/health":
+                    self._send(200,{"service":launcher.SERVICE,"version":VERSION,
+                        "instance":instance,"state_identity":launcher.state_identity(state_dir)})
+                elif parsed.path=="/api/info":
                     goal_path=ROOT/"research/improvement-state.json"
                     self._send(200,{"version":VERSION,"k4":{"ciphertext":K4_CIPHERTEXT,"cribs":list(K4_CRIBS)},
                         "presets":presets(),"validation_presets":validation_presets(),"models":MODELS,"capabilities":capabilities,"control_token":token,
@@ -168,6 +165,9 @@ def make_server(state_dir,port=8767,*,probe=True):
                         "knowledge":{"k4":"No authenticated solution from this project","k5":"No authenticated public input bundled; supply explicit ciphertext and assumptions"}})
                 elif parsed.path=="/api/status":
                     self._send(200,{"run":manager.view(),"campaign":campaigns.view()})
+                elif parsed.path=="/api/methods":
+                    from .research_methods import catalog
+                    self._send(200,catalog())
                 elif parsed.path=="/api/campaigns":
                     live=campaigns.list_campaigns()
                     with workspace.lock:
@@ -191,10 +191,10 @@ def make_server(state_dir,port=8767,*,probe=True):
                     self._send(200,workspace_health())
                 elif re.fullmatch(r"/api/workspace/recovery/[a-f0-9]{32}",parsed.path):
                     self._send(200,{"recovery":workspace.recoveries[parsed.path.rsplit("/",1)[1]]})
-                elif parsed.path in {"/","/static/index.html","/static/app.js","/static/workspace.js","/static/style.css","/static/mark.svg"}:
+                elif parsed.path in {"/","/static/index.html","/static/app.js","/static/workspace.js","/static/methods.js","/static/style.css","/static/mark.svg"}:
                     filename="index.html" if parsed.path=="/" else parsed.path.rsplit("/",1)[1]
                     path=ROOT/"kryptos/static"/filename
-                    mime={"index.html":"text/html; charset=utf-8","app.js":"application/javascript; charset=utf-8","workspace.js":"application/javascript; charset=utf-8","style.css":"text/css; charset=utf-8","mark.svg":"image/svg+xml"}[filename]
+                    mime={"index.html":"text/html; charset=utf-8","app.js":"application/javascript; charset=utf-8","workspace.js":"application/javascript; charset=utf-8","methods.js":"application/javascript; charset=utf-8","style.css":"text/css; charset=utf-8","mark.svg":"image/svg+xml"}[filename]
                     self._send(200,path.read_bytes(),mime)
                 elif parsed.path=="/favicon.ico":
                     self._send(204,b"","image/x-icon")
@@ -275,13 +275,25 @@ def make_server(state_dir,port=8767,*,probe=True):
 
     try:
         server=ThreadingHTTPServer(("127.0.0.1",port),Handler)
-    except OSError:
+    except OSError as error:
         campaigns.close()
         manager.close()
+        error.kryptos_bind_error=True
         raise
+    if probe:
+        for name in ("TEMP","TMP","CUPY_CACHE_DIR"):
+            os.environ[name]=manager.worker_env[name]
+        try:
+            value=launcher.bounded_gpu_probe(manager.python,manager.worker_env,manager.worker_env["TMP"])
+            cuda=value.get("cuda",value)
+            capabilities["cuda"]={**cuda,"available":bool(cuda.get("ready",cuda.get("available",False)))}
+        except Exception as error:
+            capabilities["cuda"]={"ready":False,"available":False,"error":str(error)}
+
     server.manager=manager
     server.campaigns=campaigns
     server.workspace=workspace
+    server.instance=instance
     return server
 
 
@@ -291,25 +303,55 @@ def main():
     p.add_argument("--state-dir",type=Path,default=ROOT/"runtime")
     p.add_argument("--no-browser",action="store_true")
     p.add_argument("--skip-gpu-probe",action="store_true")
+    p.add_argument("--strict-port",action="store_true",help="Fail instead of choosing a free port if the requested port is unavailable")
     args=p.parse_args()
     if not 0<=args.port<=65535:
         p.error("port must be in0..65535")
+    existing=launcher.find_existing(args.state_dir)
+    if existing:
+        if existing.get("version") != VERSION:
+            p.error(f"A different app version already owns this saved workspace at {existing['url']}. Close its terminal before starting this version, or choose another --state-dir.")
+        print(f"Kryptos Lab {VERSION}: {existing['url']}\nReopened the existing server; its jobs remain unchanged.",flush=True)
+        if not args.no_browser:
+            launcher.open_browser(existing["url"])
+        return
     try:
-        server=make_server(args.state_dir,args.port,probe=not args.skip_gpu_probe)
+        try:
+            server=make_server(args.state_dir,args.port,probe=not args.skip_gpu_probe)
+        except OSError as error:
+            if args.strict_port or args.port==0 or not getattr(error,"kryptos_bind_error",False) or not launcher.port_unavailable(error):
+                raise
+            print(f"Port {args.port} is unavailable; selecting a free local port.",flush=True)
+            server=make_server(args.state_dir,0,probe=not args.skip_gpu_probe)
     except (OSError,RuntimeError) as error:
         p.error(f"Cannot open local server: {error}")
     url=f"http://127.0.0.1:{server.server_port}/"
-    print(f"Kryptos Lab {VERSION}: {url}\nNo search starts until you select Start. Ctrl+C stops the local server.",flush=True)
-    if not args.no_browser:
-        webbrowser.open(url)
+    thread=threading.Thread(target=server.serve_forever,kwargs={"poll_interval":.2},daemon=True)
+    thread.start()
+    descriptor=Path(args.state_dir)/launcher.DESCRIPTOR
     try:
-        server.serve_forever(poll_interval=0.2)
+        if not launcher.wait_ready(url,server.instance):
+            raise RuntimeError("The server bound a port but did not pass its HTTP readiness check")
+        atomic_json(descriptor,{"url":url,"instance":server.instance,"pid":os.getpid()})
+        print(f"Kryptos Lab {VERSION}: {url}\nNo search starts until you select Start. Ctrl+C stops the local server.",flush=True)
+        if not args.no_browser:
+            launcher.open_browser(url)
+        while thread.is_alive():
+            time.sleep(.2)
     except KeyboardInterrupt:
         pass
     finally:
+        server.shutdown()
+        thread.join(timeout=3)
         server.campaigns.close()
         server.manager.close()
         server.server_close()
+        try:
+            saved=json.loads(descriptor.read_text(encoding="utf-8"))
+            if saved.get("instance")==server.instance:
+                descriptor.unlink()
+        except (OSError,ValueError,AttributeError):
+            pass
 
 
 if __name__=="__main__":

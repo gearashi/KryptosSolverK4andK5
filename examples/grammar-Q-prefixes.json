@@ -1,0 +1,82 @@
+{
+  "method": "generate",
+  "parameters": {
+    "length": 4,
+    "slots": [
+      [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "variant"
+        }
+      ],
+      [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "variant"
+        }
+      ],
+      [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "variant"
+        }
+      ],
+      [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "variant"
+        }
+      ],
+      [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "variant"
+        }
+      ],
+      [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "variant"
+        }
+      ]
+    ],
+    "max_nodes": 100,
+    "max_transitions": 100
+  }
+}

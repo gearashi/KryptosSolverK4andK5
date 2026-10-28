@@ -30,4 +30,12 @@ Optional PK challenge benchmarks cite [Paradigm](https://www.paradigm.xyz/writin
 
 CPU operation uses the Python standard library. Explicit GPU setup installs the packages pinned in `requirements-gpu.txt`, including CuPy's CUDA 12 wheel and NVIDIA runtime/compiler libraries, into the local environment. Those dependencies are distributed by their respective publishers under their own terms; their packages and licenses are not relicensed by this repository. The `.venv` and GPU caches are excluded from publication. CUDA and NVIDIA product names identify the optional backend, not an endorsement.
 
+## Optional finite constraint backend
+
+The explicit `Setup.cmd -Sat` option installs the Z3 solver pinned in
+`requirements-sat.txt`. Z3 retains its MIT license and is not redistributed in
+the source archive. The other CPU algorithms and CUDA family scans do not
+require it. Its incremental solver is used only for supplied finite models;
+an inconclusive backend response is never an impossibility proof.
+
 No authenticated K4 or K5 decipherment is claimed. No authenticated public K5 ciphertext is bundled. More detailed packaging decisions are in [SOURCE_DISTRIBUTION.md](docs/SOURCE_DISTRIBUTION.md).

@@ -1,0 +1,183 @@
+{
+  "schema_version": 2,
+  "claim_id": "Q71_90_FINITE_MODELS",
+  "repository": {
+    "commit": "6d9ab963fee0bd97b4e640b954d62f7f7d2a8059",
+    "dirty": true
+  },
+  "command": [
+    "C:\\KryptosSolverK4andK5\\.venv\\Scripts\\python.exe",
+    "-B",
+    "research/audit_Q_models.py",
+    "--output",
+    "research/runs/release-Q-models-001/result.json"
+  ],
+  "environment": {
+    "software": [
+      {
+        "name": "runner-python",
+        "version": "3.12.2"
+      },
+      {
+        "name": "Python",
+        "version": "3.12.2"
+      }
+    ],
+    "hardware": "Windows-10-10.0.19044-SP0"
+  },
+  "mathematics": {
+    "assertion_tested": "Bounded geometry, language and extraction algorithms agree with independent literal enumeration or replay in their explicitly supplied finite models.",
+    "coefficient_domain": "exact integers and finite modular arithmetic",
+    "conventions": "Exact integer graph, string, score and modular arithmetic. Coordinates are ordinal row/column pairs. Gathered plaintext at route position j is alphabet[(cipher[cell]-registration[cell]-key[j%period]) mod alphabet size].",
+    "inputs": [
+      "2x3 full rectangle",
+      "3x3 full rectangle",
+      "3x4 full rectangle",
+      "four-cell disconnected graph",
+      "five-cell cross",
+      "ragged seven-cell grid",
+      "ambiguous A/AA/AAA segmentation",
+      "finite stem/suffix Latin-shaped lexicon",
+      "two languages with zero/one/two switches",
+      "unknown-character fallback",
+      "grammar tag scores",
+      "A/AA/AAA to X/XX/Y ambiguous mappings with length constraints",
+      "exact symbol inventories",
+      "modular symbol counts",
+      "contradictory constraints",
+      "ENE/BC explicit mapping",
+      "valid/invalid/literal-crib-incompatible recipe suggestions",
+      "source-key transforms and repeated-period aliases",
+      "minimum/sum two-corpus objective",
+      "independent K5 constraints pulled back to K4 indices and conflict controls",
+      "duplicate-output extraction witnesses"
+    ],
+    "bounds": {
+      "geometry_cells_tested_maximum": 12,
+      "search_states_per_call": 2000000,
+      "routes_per_call": 100000,
+      "codebook_source_length_maximum": 12,
+      "random_cases": 0
+    },
+    "non_claims": [
+      "No authenticated K4 or K5 plaintext",
+      "No true physical geometry inferred",
+      "No natural language or codebook assumption elevated to fact",
+      "No universal efficiency improvement",
+      "No user-provided K5 independence assertion independently authenticated"
+    ]
+  },
+  "randomness": {
+    "used": false,
+    "generator": "",
+    "seed": null
+  },
+  "run": {
+    "started_at": "2026-10-28T16:54:27.411342+00:00",
+    "runtime_seconds": 0.234,
+    "exit_status": 0,
+    "status": "completed",
+    "timeout_seconds": 60.0,
+    "max_output_bytes": 1048576,
+    "resource_limits": {
+      "memory_bytes": null,
+      "cpu_seconds": null,
+      "max_cores": null,
+      "max_threads": null
+    },
+    "missing_results": [],
+    "invalid_results": []
+  },
+  "execution_artifacts": [
+    "research/phase_Q_models_contract.json",
+    "research/audit_Q_models.py",
+    "research/run_Q_models_audit.py",
+    "kryptos/geometry_constraints.py",
+    "kryptos/language_constraints.py",
+    "kryptos/model_lab.py",
+    "kryptos/explanations.py",
+    "kryptos/ciphers.py"
+  ],
+  "input_artifacts": [
+    {
+      "path": "research/phase_Q_models_contract.json",
+      "sha256": "d25a21ffda2cb4d71a803c3e50e1705e8ad28c87a3c09eea82ae33db9ca5574b",
+      "sha256_after": "d25a21ffda2cb4d71a803c3e50e1705e8ad28c87a3c09eea82ae33db9ca5574b"
+    },
+    {
+      "path": "research/audit_Q_models.py",
+      "sha256": "7277915cb4dc43666c8f36b371b4f3f0b1867b058809c5d243dad01199d7cad0",
+      "sha256_after": "7277915cb4dc43666c8f36b371b4f3f0b1867b058809c5d243dad01199d7cad0"
+    },
+    {
+      "path": "research/run_Q_models_audit.py",
+      "sha256": "966d3d96b6a640116cfb8cc95e40508612867c1f753336a028899c21fbba31f6",
+      "sha256_after": "966d3d96b6a640116cfb8cc95e40508612867c1f753336a028899c21fbba31f6"
+    },
+    {
+      "path": "kryptos/geometry_constraints.py",
+      "sha256": "d48c6bf1eac49e7ef7a3d0bcc92b58fe3c8cc4f1c079cf55314b0b48137f3b25",
+      "sha256_after": "d48c6bf1eac49e7ef7a3d0bcc92b58fe3c8cc4f1c079cf55314b0b48137f3b25"
+    },
+    {
+      "path": "kryptos/language_constraints.py",
+      "sha256": "d202f430af4159611e9caebed14dfe6c926c7565743e584c2c73ff1f243dfd22",
+      "sha256_after": "d202f430af4159611e9caebed14dfe6c926c7565743e584c2c73ff1f243dfd22"
+    },
+    {
+      "path": "kryptos/model_lab.py",
+      "sha256": "32de6ca4e1a147309da806162b99034c2d8dbefcd2a49c1f75d64bcd1533ef6c",
+      "sha256_after": "32de6ca4e1a147309da806162b99034c2d8dbefcd2a49c1f75d64bcd1533ef6c"
+    },
+    {
+      "path": "kryptos/explanations.py",
+      "sha256": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35",
+      "sha256_after": "7dd6129aca6d16826f7dc0102992ae3f2ca26de420b6c3bea9b10063818f3a35"
+    },
+    {
+      "path": "kryptos/ciphers.py",
+      "sha256": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35",
+      "sha256_after": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35"
+    }
+  ],
+  "output_directory": "research/runs/release-Q-models-001",
+  "declared_results": [
+    "research/runs/release-Q-models-001/result.json"
+  ],
+  "outputs": [
+    {
+      "path": "research/runs/release-Q-models-001/stdout.txt",
+      "sha256": "dddcbb5abc7e3032c727e7252261977cd1a14d9199bf6b9e838d1a13e2e3be2f",
+      "kind": "log"
+    },
+    {
+      "path": "research/runs/release-Q-models-001/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "log"
+    },
+    {
+      "path": "research/runs/release-Q-models-001/result.json",
+      "sha256": "cb6f236877eefc6f8aa594c5f7b669e7a66555a7a225f58d3de1c0f627c9861f",
+      "kind": "result"
+    }
+  ],
+  "checks": [
+    {
+      "check": "input hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "process exited successfully within enforced limits",
+      "passed": true
+    },
+    {
+      "check": "declared result files are present and regular",
+      "passed": true
+    }
+  ],
+  "result": "Run completed; mathematical assertion requires interpretation and review.",
+  "residual_risks": [
+    "Command success does not establish the mathematical interpretation.",
+    "Only listed input artifacts are pinned; external dependencies need recorded versions."
+  ]
+}

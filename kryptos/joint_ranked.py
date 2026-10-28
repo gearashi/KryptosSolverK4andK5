@@ -74,12 +74,12 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
         columnar._integer(value, name, low, high)
     if pruning not in ("off", "admissible"):
         raise ValueError("pruning must be off or admissible")
-    if propagation not in ("off","fixed_point") or branching not in ("prefix","constrained") or symmetry not in ("off","identical_chunks"):
+    if propagation not in ("off","fixed_point","relational") or branching not in ("prefix","constrained") or symmetry not in ("off","identical_chunks"):
         raise ValueError("invalid joint propagation, branching or symmetry option")
     if type(early_segmentation) is not bool:
         raise ValueError("early_segmentation must be boolean")
-    if score_bound not in ("independent","shared_key") or score_bound=="shared_key" and pruning!="admissible":
-        raise ValueError("shared_key bounds require pruning=admissible")
+    if score_bound not in ("independent","shared_key","matching") or score_bound in ("shared_key","matching") and pruning!="admissible":
+        raise ValueError("shared_key/matching bounds require pruning=admissible")
     columnar._integer(max_bound_cache_entries,"max_bound_cache_entries",0,10000)
     joint_mode=propagation!="off" or branching!="prefix" or symmetry!="off"
     options=dict(propagation=propagation,early_segmentation=early_segmentation,
@@ -133,10 +133,10 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
         score_mask=score_mask, pruning=pruning, joint_options=options, model_sha256=_digest(dict(
             alphabet=model.alphabet, order=model.order, counts=dict(model.counts), p=str(p), q=str(q))),
         sources={name:hashlib.sha256((root/name).read_bytes()).hexdigest()
-                 for name in ("joint_ranked.py","joint_ranked_helpers.py","joint_columnar.py","columnar.py","explanations.py","language.py")})
+                 for name in ("joint_ranked.py","joint_ranked_helpers.py","joint_columnar.py","columnar.py","explanations.py","language.py","factor_joint_bound.py")})
     pattern_cache = {}
     grams = sorted(model.counts.items(), key=lambda item: (-item[1], item[0])) if pruning == "admissible" else []
-    shared_bound=SharedKeyBound(alphabet,cipher,model.counts,p,q,max_bound_cache_entries) if score_bound=="shared_key" else None
+    shared_bound=SharedKeyBound(alphabet,cipher,model.counts,p,q,max_bound_cache_entries) if score_bound in ("shared_key","matching") else None
     if shared_bound is not None:budget.work["shared_bound_setup_grams"]=len(model.counts)
     symmetry_cache={}
     symmetry_examples={}
@@ -239,8 +239,9 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                 for col in domain:
                     budget.tick("early_suffix_edges")
                     requirements[slot,col]={}
-            if propagation=="fixed_point":
-                reduced,_=reduce_joint(domains,[FULL]*used,requirements,budget,fixed_point=True)
+            if propagation in ("fixed_point","relational"):
+                reduced,_=reduce_joint(domains,[FULL]*used,requirements,budget,fixed_point=True,
+                    pair_consistency=propagation=="relational")
                 feasible=reduced is not None
             else:
                 feasible=columnar._matching(domains,budget) is not None
@@ -278,6 +279,7 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                     if bindings is not None and len(domain)==1:
                         bindings[i]=(cvalues[j],phase)
         upper = 1
+        window_bounds={}
         for start in starts:
             budget.tick("bound_windows")
             maximum = 0
@@ -299,6 +301,16 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                 if correlated<local_upper:budget.work["shared_bound_tightenings"]+=1
                 local_upper=min(local_upper,correlated)
             upper *= local_upper
+            window_bounds[start]=local_upper
+        if score_bound=='matching':
+            from .factor_joint_bound import compute_column_matching_bound
+            matching=compute_column_matching_bound(current=current,columns=columns,offsets=offsets,
+                cvalues=cvalues,requirements=requirements,key_domains=key_domains,period=period,order=order,
+                starts=starts,ngram_order=model.order,shared_bound=shared_bound,window_bounds=window_bounds,budget=budget)
+            if matching.get('bound_available'):
+                matching_upper=matching['upper_bound']
+                if matching_upper<upper:budget.work['matching_score_bound_tightenings']+=1
+                upper=min(upper,matching_upper)
         threshold = min(row["exact"] for row in retained.values())
         # Equality must remain searchable: plaintext and recipe lexical ties
         # cannot be resolved from a score bound alone.
@@ -443,7 +455,8 @@ def rank_joint_columnar(ciphertext, cribs, *, model, period, order="ST", cipher=
                     reduced=(current,masks)
                 else:
                     reduced,_=reduce_joint(current,masks,requirements,budget,
-                        fixed_point=propagation=="fixed_point",groups=groups_for(pattern))
+                        fixed_point=propagation in ("fixed_point","relational"),groups=groups_for(pattern),
+                        pair_consistency=propagation=="relational")
                 if reduced is not None:
                     current,masks=reduced
                     keys=singleton_values(masks)

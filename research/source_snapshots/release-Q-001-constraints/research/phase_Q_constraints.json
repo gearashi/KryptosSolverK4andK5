@@ -1,0 +1,11 @@
+{
+  "schema": "kryptos.phase-Q-constraint-contract.v1",
+  "created": "2026-10-28",
+  "assertion_tested": "On the declared finite integer table-relation and F2/F13 controls, optional propagation, learning, normalization and set operations preserve the exact feasible assignments/plaintexts and deterministic top-k.",
+  "coefficient_domain": "Exact integers, F2, F13 and CRT modulo 26",
+  "domains": {"table_variables": "0..12 variables with domains of at most 26 explicit integer values", "oracle_product_limit": 200000, "seed": 90371},
+  "primary_metrics": ["branch_decisions", "complete_candidate_evaluations"],
+  "additional_metrics": ["relation_row_checks", "probe_checks", "conflict_minimization_checks", "algebra_scalar_operations", "proof_reverification_assignments"],
+  "acceptance": "Exact oracle agreement is required. A local measured reduction can justify an optional technique, never a universal improvement or a Kryptos decipherment. Proposal statuses are tracked individually; missing implementation or evidence stays incomplete.",
+  "non_claims": ["No unknown Kryptos model is inferred", "No timing-only gain is called fewer search steps", "Generic finite-relation APIs do not by themselves establish integration into the existing main cipher optimizer", "No excluded configuration is called infeasible merely because of a resource cap"]
+}

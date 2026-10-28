@@ -13,7 +13,7 @@ CPU use requires Python 3.10 or newer and only the standard library. On Windows,
 .\OpenDashboard.cmd
 ```
 
-The dashboard opens at `http://127.0.0.1:8767/` and remains idle until **Start experiment**. Setup creates a project `.venv` if needed and preserves an existing one. It downloads no packages for CPU use.
+The dashboard prefers `http://127.0.0.1:8767/` and selects a free local port if that port is occupied. It prints the actual address, waits for an HTTP readiness check, then opens your browser. It remains idle until **Start experiment**. Reopening the launcher reuses the same running workspace. Setup creates a project `.venv` if needed and preserves an existing one. It downloads no packages for CPU use.
 
 Optional NVIDIA GPU setup is explicit:
 
@@ -36,7 +36,7 @@ See [the local application guide](docs/LOCAL_APP.md) for interpreter selection, 
 - **Validation** reruns selection with withheld clue values removed, compares positive and shuffled controls, and refits recipes after removing a stage or route. The harder preset uses K4's separated clue positions with multilingual texts and competing layered/grid methods. These are bounded diagnostics, not solution probabilities.
 - **Inspect & trace** independently replays imported JSON and follows individual letters through substitutions, gathers, and coordinate shifts. Imported verification claims and file paths are treated as data.
 - **Pause** commits the current scan wave, exact optimizer frontier or ranked joint route/key frontier. **Stop** discards in-flight work and preserves earlier commits. Resume checks saved-data integrity and source/model identity. Exact slices can grow within the declared limit when rebuilding a large frontier consumes a slice.
-- The run time budget is checked between waves; every worker has a separate 60-second outer deadline. CPU family scans support up to four workers; CUDA uses one worker/context. Worker count, idle intervals and adaptive page duration can change at committed boundaries, with a saved event history.
+- The run time budget is checked between waves; every worker has a separate 60-second outer deadline. CPU family scans support up to32 workers (limited to detected logical processors in the selector); CUDA uses one worker/context. Worker count, idle intervals and adaptive page duration can change at committed boundaries, with a saved event history.
 - Known clue letters and every n-gram touching them are masked from ordinary language scoring. A reporting-only sensitivity diagnostic can also mask letters fixed indirectly by the model.
 - Re-encryption, crib consistency and a high language score do not authenticate a solution. Results describe their assumptions and actual bounded coverage. Nothing is submitted to an external service.
 
@@ -68,13 +68,17 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 ## Validation and packaged data
 
-[Download v0.5.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0). Its exact source passed all four Windows/Linux CI jobs, and the public assets were hash-verified. Published through gearashi.
+Version **0.6.0** implements and evaluates [all90 numbered proposals](research/IMPROVEMENTS_Q.md).89 remain available as optional methods, conditional models or supporting primitives. The restarted portfolio is disabled after its negative comparison. This is not a claim of89 independent search-efficiency wins: several methods tie previous strategies or exchange fewer decisions for more preparation and replay.
 
-Version **0.5.0** adds [eight optional phase P search techniques](research/IMPROVEMENTS_P.md), with exact-result checks and explicit work accounting. On frozen controls, equivalent-route suppression reduces candidate evaluations from 4,056 to 676; a shared-key bound reduces 52 to 26; exact residual solving/reuse reduces proof nodes from 11 to 3 but adds one factor evaluation. The ragged-prefix check rejects earlier without reducing branch decisions or candidate evaluations. Some options add substantial work, so all default off and unfavorable results remain documented.
+The new **Research methods** panel exposes bounded relation/SMT, factor, geometry/language/codebook and symbolic-recipe experiments, with original requests, technique traces and explicit completeness. The ordinary optimizer and joint route/key searches gain optional propagation, bounds and exact decomposition methods. [The method guide](docs/RESEARCH_METHODS.md) explains entry points and assumptions.
 
-The clean package ran **448 tests: 447 passed and one optional raw-source audit skipped** because original third-party pages are not distributed. Actual NVIDIA GPU tests passed with `CUDA_PATH` unset. All **88 browser checks** and **6 Node checks** passed, covering CPU/CUDA ranking, exact continuation, drafts, recovery, optional controls and immutable shared-scan snapshots. See [release validation](research/release-validation.json) for hashes and scope.
+Windows launch now checks actual HTTP readiness, handles occupied/reserved ports, reuses the matching running workspace and survives browser-opening failure. CUDA discovery runs in a bounded owned child, so an unavailable GPU cannot indefinitely delay the CPU dashboard. Setup and launch wrappers are tested from paths containing spaces and another working directory. Optional finite SMT support is installed with `Setup.cmd -Sat` (or `sh Setup.sh --sat`).
 
-Three phase P computation audits retain immutable inputs, exact oracles and work counters. The joint audit checks 133 completed comparisons; the factor audit checks 864 partial contexts and 96 complete searches; the campaign audit checks six controls and 295 literal replays. The original campaign audit-helper failure and corrected rerun are both preserved. The [fourteen phase O improvements](research/IMPROVEMENTS_O.md) and their harder multilingual benchmark remain historical evidence; its generating-text ranks 1, 1, 2, 4 illustrate that language scores do not certify a solution.
+Canonical audits include561 exact factor comparisons, independent finite relation/affine checks, geometry subgraph enumeration and80 recipe-bank comparisons against36,414 literal key vectors. Failed, capped and unfavorable comparisons remain recorded. [Release validation](research/release-validation.json) states the final clean-package test counts and publication status. Historical [phase P](research/IMPROVEMENTS_P.md) and [phase O](research/IMPROVEMENTS_O.md) evidence remains intact.
+
+Actual hardware checks on the i7-4790 / RTX2060 compare196,608 timed candidate evaluations across all8 CPU threads and CUDA configurations, with identical certified top20 results. The best tested family-scan settings are **CUDA, one worker,8,192 candidates/page, certified ranking**, or **CPU, eight workers,2,048/page**. See [hardware settings and measured limits](docs/HARDWARE_SETTINGS.md). Hardware throughput is separate from reducing search steps.
+
+The clean package passed **539 of540 Python tests**, with one optional raw-source audit skipped, plus **117 browser checks** and **6 Node checks**. Actual CUDA tests and the full GPU/SMT setup-and-launch check passed with `CUDA_PATH` unset.
 
 See [search strategies](docs/SEARCH_STRATEGIES.md) and [workspace/release operations](docs/WORKSPACE_AND_RELEASE.md) for options, saved evidence, scope and limits. Release publication checks the exact tag, complete Windows/Linux CI matrix, asset hashes and gearashi attribution.
 

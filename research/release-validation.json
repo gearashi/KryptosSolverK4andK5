@@ -1,75 +1,59 @@
 {
   "schema": "kryptos.release-validation.v1",
-  "version": "0.5.0",
-  "date": "2026-10-26",
+  "version": "0.6.0",
+  "date": "2026-10-28",
   "publication": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "status": "Published; exact source/tag, all four CI jobs, public asset hashes and gearashi attribution verified",
-    "tag": "v0.5.0",
-    "required_account": "gearashi",
-    "verified_source_commit": "944aea9bc6d4d07702a902945fddbe46ac173d02",
-    "ci_run": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40347346638",
-    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0",
-    "verified_assets": {
-      "KryptosSolverK4AndK5.zip": "7d04cc3ed5855f616e29401983ec995aa9a9a678c3470b225234f4b1a59e1271",
-      "SHA256SUMS": "153947bac75726da767db601766b44953d0a2644c462795798edbb246021a203",
-      "validation.json": "113e17695462d04e52ece04febc76fd64e6597a6c52c7d9ca44252f40014c9d7"
-    },
-    "ci_jobs_passed": 4,
-    "attribution": {
-      "author": "gearashi",
-      "committer": "gearashi",
-      "release_author": "gearashi",
-      "contributors": [
-        "gearashi"
-      ]
-    },
-    "evidence": [
-      "research/runs/release-P-001/github-ci.json",
-      "research/runs/release-P-001/github-release.json",
-      "research/runs/release-P-001/github-attribution.json"
-    ]
+    "status": "Local package and hardware gates passed; exact GitHub CI/tag/publication pending",
+    "tag": "v0.6.0",
+    "required_account": "gearashi"
   },
-  "historical_release": "research/runs/release-O-001/release-validation.json",
+  "historical_release": "research/runs/release-P-001/release-validation.json",
   "fresh_checkout": {
     "schema": "kryptos.package-tests.v1",
-    "tests": 448,
-    "passed": 447,
+    "tests": 540,
+    "passed": 539,
     "skipped": 1,
-    "seconds": 151.875,
+    "seconds": 109.078,
     "actual_cuda": true,
     "cuda_path_removed": true,
-    "files_verified": 2495,
+    "files_verified": 2960,
     "tested_files_unchanged": true,
-    "log": "research/runs/release-P-001/fresh-checkout-tests.txt",
-    "log_sha256": "bfa61dca847eac849f03198df5bda9a6d1b60b0742e80380092224dd18c1cad3",
+    "log": "research/runs/release-Q-package-001/fresh-checkout-tests.txt",
+    "log_sha256": "2d5da3114b9ff05c58ea3b58f8e58cc10b1925cc607873447af664736354ec00",
     "method": "Curated tracked and nonignored source/evidence copied byte-for-byte; installed venv used only as interpreter; isolated cwd/runtime, no excluded caches or corpora."
   },
   "browser": {
     "core": {
-      "path": "research/runs/release-P-001/browser/browser-report.json",
-      "sha256": "39cf3ac7ed3a59989305cfd26faddb1d283352610fd7ff51637a21efdd08b339",
+      "path": "research/runs/release-Q-package-001/browser/browser-report.json",
+      "sha256": "146effea8fcf00a0d53a73cc821aa20a39557bbdfb90cd10c3c10df55b70455b",
       "passed": 43,
       "errors": []
     },
     "workspace": {
-      "path": "research/runs/release-P-001/workspace-browser/report.json",
-      "sha256": "abf649709812d323e0c22f3fc65e2d9d511fdc79c23ed658dd0dde198e76a5b4",
+      "path": "research/runs/release-Q-package-001/workspace-browser/report.json",
+      "sha256": "974bfce781d0dc70e1c49ff587e75ddd8374e0cfa6eaff08995286f007a85dd1",
       "passed": 22,
       "errors": []
     },
     "phase_P": {
-      "path": "research/runs/release-P-001/search-P-browser/report.json",
-      "sha256": "4d5fe1a25f171e02aff93080b2b82b5d53d324af8b7554a8d5d0d3da66838c02",
+      "path": "research/runs/release-Q-package-001/search-P-browser/report.json",
+      "sha256": "a9e60e40b08eec212106f62951c36eb663554a388253c0c74311695178b83213",
       "passed": 23,
       "errors": []
     },
-    "total_checks": 88,
+    "phase_Q": {
+      "path": "research/runs/release-Q-package-001/methods-Q-browser/report.json",
+      "sha256": "fb9beec8bf2a879491ef6965b1a69644d18f4b3bc85c077aa605f4a864bde873",
+      "passed": 29,
+      "errors": []
+    },
+    "total_checks": 117,
     "node_checks": 6,
     "cuda_policy": "required",
     "hardware": {
       "cpu": true,
-      "workers_max": 4,
+      "workers_max": 8,
       "cuda": {
         "ready": true,
         "devices": [
@@ -109,79 +93,139 @@
         "available": true
       }
     },
-    "app_version": "0.5.0"
+    "app_version": "0.6.0"
   },
   "computations": [
     {
-      "kind": "joint",
-      "manifest": "research/runs/release-P-001/joint/manifest.json",
-      "sha256": "04fcb2bc0ffdd4b090f5d3aadb31a9eda7e6fc3d83be0044e95ea9b1968220b4",
+      "kind": "constraints",
+      "path": "research/runs/release-Q-001/constraints/manifest.json",
+      "sha256": "a7c713f5cc6c7626e375669d1d75db0b1211a828e0de93ae5618e9bb9ddb9aee",
       "status": "completed",
-      "input_count": 121
+      "input_count": 88,
+      "later_changes": [
+        "kryptos/factor_advanced.py"
+      ],
+      "scope_note": "Constraint whole-module snapshot predates disabling the unrelated factor portfolio dispatch; exercised constraint path unchanged."
     },
     {
-      "kind": "factor",
-      "manifest": "research/runs/release-P-001/factor/manifest.json",
-      "sha256": "8b203430f117d5471ed54dbd4ea1148849a0f39c23b1f59f054f9c4a3eee9709",
+      "kind": "factors",
+      "path": "research/runs/release-Q-002/factor/manifest.json",
+      "sha256": "2c75e7b9730f8459520b5bb1216aa19efadc98a8b2c6ed7a91bb65f755a92eab",
       "status": "completed",
-      "input_count": 121
+      "input_count": 75,
+      "later_changes": [],
+      "scope_note": "Current declared inputs match recorded hashes."
     },
     {
-      "kind": "campaign",
-      "manifest": "research/runs/release-P-002/campaign/manifest.json",
-      "sha256": "4d98d9cfbd978764ecb422bbaf007f0d02045bf5e6a0bf022fa6d6d467be793c",
+      "kind": "models",
+      "path": "research/runs/release-Q-models-003/manifest.json",
+      "sha256": "38bae878f77512cd25fc8d98719c4ef40c23c900288f908be9b2e1ca9b53b9a7",
       "status": "completed",
-      "input_count": 121
+      "input_count": 8,
+      "later_changes": [],
+      "scope_note": "Current declared inputs match recorded hashes."
     },
     {
-      "kind": "independent-irregular-grid",
-      "manifest": "research/runs/review-P-joint-irregular-001/manifest.json",
-      "sha256": "fa81b37076965fe51e1d8ac6337e3fce77ecd9eaec7963e925c50c209e0e29c2",
+      "kind": "grammar",
+      "path": "research/runs/release-Q-grammar-001/manifest.json",
+      "sha256": "3f704a1780ac3aa9c01127a730583cc5ea4ffd8cbe487d5f06e604414cab51e5",
       "status": "completed",
-      "input_count": 55
+      "input_count": 11,
+      "later_changes": [],
+      "scope_note": "Current declared inputs match recorded hashes."
+    },
+    {
+      "kind": "grammar-independent",
+      "path": "research/runs/release-Q-review-grammar-003/manifest.json",
+      "sha256": "39418d4af49ec7fcf5159c490a20040a59d39f3bd86bb1613c91429193286d1c",
+      "status": "completed",
+      "input_count": 9,
+      "later_changes": [],
+      "scope_note": "Current declared inputs match recorded hashes."
+    },
+    {
+      "kind": "basis-coverage-independent",
+      "path": "research/runs/release-Q-review-basis-coverage-001/manifest.json",
+      "sha256": "da1abc7dad933a4c31f67972ab5fe5ab6a73f80673e900db82fdf5e3d37a5c55",
+      "status": "completed",
+      "input_count": 25,
+      "later_changes": [],
+      "scope_note": "Current declared inputs match recorded hashes."
     }
   ],
-  "preserved_failure": {
-    "manifest": "research/runs/release-P-001/campaign/manifest.json",
-    "status": "failed",
-    "cause": "Independent audit replay helper incorrectly required a top-level alphabet on an expanded scheduled recipe. Production unchanged; corrected helper passed identical controls under P002.",
-    "repair": "research/campaign_P_audit_repair.md"
+  "hardware_comparison": {
+    "path": "research/runs/release-Q-hardware-002/result.json",
+    "sha256": "be8556bce1653ae4f091ddcdece904a451756af55fb88c4f4562a0845b5bdc31",
+    "timed_evaluations": 196608,
+    "all_rankings_match": true,
+    "workers_tested": [
+      1,
+      4,
+      8
+    ],
+    "cuda_pages_tested": [
+      512,
+      2048,
+      8192
+    ],
+    "recommendation": "docs/HARDWARE_SETTINGS.md",
+    "scope": "Fixed32768-candidate ranking perconfiguration; warmups/setup separate; no100percent-utilization claim"
+  },
+  "setup": {
+    "path": "research/runs/release-Q-setup-001/report.json",
+    "sha256": "9f1393b2a00d1ba3b69721e65ff566ae85e962e5dd7859ee2d539f10814a6c47",
+    "passed": true,
+    "fresh_CPU_environment": "Covered by actual spaced-path batch unit test",
+    "existing_GPU_SMT_environment": "Actual Setup.cmd -Gpu -Sat followed by actual port0 batch launch; packages unchanged"
+  },
+  "preserved_failures": [
+    {
+      "path": "research/runs/release-Q-001/factor/manifest.json",
+      "status": "inputs-changed",
+      "replacement": "research/runs/release-Q-002/factor/manifest.json"
+    },
+    {
+      "path": "research/runs/release-Q-hardware-001/failure.json",
+      "cause": "Requested32768 distinct candidates exceeds period27 family17576; changed fixture toperiod28 with456976 candidates; solver unchanged."
+    }
+  ],
+  "outcomes": {
+    "plan": "research/phase_Q_plan.json",
+    "implemented_evaluated": 90,
+    "retained_optional_conditional_supporting": 89,
+    "rejected_inactive": [
+      60
+    ],
+    "all_independent_primary_work_wins": false
   },
   "reviews": [
-    "research/review_P_joint.md",
-    "research/review_P_factor.md",
-    "research/review_P_campaign.md",
-    "research/review_P_browser.md"
+    "research/review_Q_constraints.md",
+    "research/review_Q_factors_from_constraints.md",
+    "research/review_Q_grammar.md",
+    "research/review_Q_basis_coverage.md",
+    "research/review_Q_browser_methods.md",
+    "research/review_Q_windows_setup.md"
   ],
   "integration_review": {
-    "source": "root integration review",
-    "production_hashes": "research/runs/release-P-001/tested-production.json",
-    "production_hashes_sha256": "497f1f6989a2c31365f95a6f459c62c4c8467b2aeda9d11c9c4aa17bd7290fa0",
+    "production_hashes": {
+      "path": "research/runs/release-Q-001/tested-production.json",
+      "sha256": "8307d4bfb674267dfcb848924c9d377a24fe1d8b09a272dfae453e5a11dbba50"
+    },
     "all_tested_production_matches_current": true,
-    "findings": [
-      "Positive minima enforced for component assignment/operation caps before dispatch.",
-      "Constrained route completion blocks, rather than null distinct route counts, enforce per-activation budgets.",
-      "Campaign inspection uses immutable historical snapshots before the live owner result.",
-      "Campaign heading now explicitly counts completed-family aliases;23 final P browser assertions pass.",
-      "All new strategies default off. P02 has no demonstrated decision/candidate saving; P08 saves factor work only.",
-      "No source or test changes after the successful packaged suite."
-    ]
+    "later_changes_since_hardware": "Factor-lab accounting and rejected portfolio dispatch; public constraint boundary validation. Accelerated hardware path unchanged. Final integrated package suite passes."
   },
   "scope": {
-    "primary_criterion": "Fewer decisions or complete candidate evaluations for identical exact results; intermediate factor/bound work reported separately.",
-    "new_strategies_default_off": true,
-    "gpu": "Actual installed RTX2060 checks with CUDA_PATH unset, separate from CPU-only CI.",
+    "primary_criterion": "Fewer decisions or complete candidate evaluations for the same declared result; preprocessing, intermediate factor/graph work, verification and replay separate.",
+    "new_strategies_optional": true,
+    "gpu": "Actual RTX2060 testing with CUDA_PATH unset; GitHub CI is separatelyCPU-only.",
     "kryptos_solution": false,
-    "general_nogood_learning": false,
-    "reserved_O_bank_retuned": false
+    "no_authenticated_K5_input_bundled": true
   },
-  "remaining": [],
-  "local_launch": {
-    "path": "research/runs/release-P-001/local-launch.json",
-    "sha256": "e0f63c6474a0b19d3030fc1a5f5bc5de593095b16a22844012727a1599a807ac",
-    "version": "0.5.0",
-    "state": "idle",
-    "compiled_cuda_ready": true
-  },
+  "remaining": [
+    "Exact source GitHub CI matrix",
+    "Annotated v0.6.0 tag and gearashi release",
+    "Public asset and attribution verification",
+    "Idle local launch"
+  ],
   "delivery_metadata_policy": "Post-publication documentation/evidence-only commit on main; immutable tag and assets remain at verified_source_commit."
 }

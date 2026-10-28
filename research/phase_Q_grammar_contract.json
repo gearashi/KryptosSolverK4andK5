@@ -1,0 +1,45 @@
+{
+  "schema": "kryptos.Q62-65-contract.v1",
+  "assertion_tested": "Symbolic grammar covers every literal syntax path and merging preserves complete transformation sets over fixed small alphabets/lengths with unrestricted independent key slots; CEGIS acceptance agrees with literal key enumeration and replay on all supplied pairs.",
+  "frozen_controls": {
+    "prefix_duplicates": {
+      "length": 4,
+      "slots": 6,
+      "choices_per_slot": 2,
+      "choices": "Vigenere or variant period1"
+    },
+    "source_sign_negative_controls": [
+      "gather swap",
+      "Beaufort sign"
+    ],
+    "cegis": {
+      "length": 3,
+      "pairs": 3,
+      "bank": [
+        "Vigenere period1",
+        "Beaufort period1",
+        "Vigenere period2",
+        "gather-only"
+      ],
+      "alphabet": "standard",
+      "oracle_key_cap": 676
+    }
+  },
+  "primary_work": [
+    "symbolic_transitions",
+    "recipe_candidates",
+    "key_proposals"
+  ],
+  "secondary_work": [
+    "compiled_scalar_operations",
+    "equation_rows",
+    "solver_scalar_operations",
+    "literal_pair_checks"
+  ],
+  "limits": [
+    "A grammar cap is inconclusive",
+    "Grammar restriction is explicit; does not cover arbitrary unknown ciphers",
+    "Description priority does not exclude recipes",
+    "Training pairs are supplied assumptions, not authenticated K4 answers"
+  ]
+}

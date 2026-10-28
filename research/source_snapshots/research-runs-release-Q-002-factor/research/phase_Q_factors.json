@@ -1,0 +1,18 @@
+{
+  "schema": "kryptos.phase-Q-factor-contract.v1",
+  "scope": "Roadmap items 31 through 61; bounded finite-factor algorithms and optional search guidance",
+  "status": "contract-frozen-before-experiments",
+  "assertion_tested": "On the declared finite integer product problems, completed exact solvers and retained bounds agree with an independent Cartesian oracle; guidance never excludes candidates. Each numbered idea has a separate implementation and acceptance record.",
+  "coefficient_domain": "Nonnegative integer factors; rational reparameterizations are exact fractions",
+  "conventions": "Maximize product, break ties by the complete original-coordinate lexicographic assignment. Zero is a score, never infeasibility. Resource limits are inconclusive.",
+  "primary_work": ["search branch decisions", "complete objective evaluations"],
+  "secondary_work": ["factor evaluations", "table entries materialized", "planning operations", "bound probes", "context-cache checks", "replay evaluations"],
+  "validation_plan": [
+    "Frozen hand controls: chain, disconnected components, repeated separator context, zero annihilation, conflicting local maxima, all-different matching, higher-order plateau, symmetric ties",
+    "Seeded independent random Cartesian oracles, including partial assignments and powered factors",
+    "Caps return inconclusive and do not fabricate an optimum or exclusion",
+    "Compare integrated default baseline and each enabled compatible option with exact result and primary work accounting"
+  ],
+  "randomness": {"used": true, "generator": "random.Random", "seed": 31061},
+  "non_claims": ["Universal work reduction", "Kryptos decipherment", "GPU acceleration for inherently branching factor algorithms", "Every architecture is simultaneously beneficial"]
+}

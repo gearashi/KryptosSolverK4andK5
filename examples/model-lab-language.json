@@ -1,0 +1,12 @@
+{
+  "method": "language_lattice",
+  "parameters": {
+    "text": "AMOPORTAZ",
+    "lexicons": [{"language": "Latin-shaped synthetic control", "source": "Hand-authored tiny control, not a complete Latin corpus", "entries": [
+      {"text": "AMO", "tag": "verb", "score": 6},
+      {"text": "PORTA", "tag": "noun", "score": 4}
+    ]}],
+    "unknown_score": -10,
+    "grammar": [{"previous": "verb", "next": "noun", "score": 1}]
+  }
+}

@@ -1,0 +1,2823 @@
+{
+  "schema": "kryptos.Q-independent-constraint-review.v1",
+  "seed": 316128,
+  "generator": "random.Random",
+  "comparisons": 400,
+  "literal_assignments_per_case": 16,
+  "status": "completed",
+  "inputs_before": {
+    "kryptos/constraint_lab.py": "bc7c86e1ed469ed7b63be1c4bed35c4829f1aafd068e004d0d675e4b1e5a50a3",
+    "kryptos/constraint_reuse.py": "ed1572ee69583f9b5d3ce03046de4c2cda4925acae11254dae9766987054e864",
+    "research/review_Q_constraints.py": "b0d79af13db0adc4998be7248215ceb78dfdb558204fd2cbcb77dc1e0ce597c3"
+  },
+  "inputs_after": {
+    "kryptos/constraint_lab.py": "bc7c86e1ed469ed7b63be1c4bed35c4829f1aafd068e004d0d675e4b1e5a50a3",
+    "kryptos/constraint_reuse.py": "ed1572ee69583f9b5d3ce03046de4c2cda4925acae11254dae9766987054e864",
+    "research/review_Q_constraints.py": "b0d79af13db0adc4998be7248215ceb78dfdb558204fd2cbcb77dc1e0ce597c3"
+  },
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "cases": [
+    {
+      "case": 0,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 0,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 1,
+      "propagation": false,
+      "feasible_assignments": 14,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 1,
+      "propagation": true,
+      "feasible_assignments": 14,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 2,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 2,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 3,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 3,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 4,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 4,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 5,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 5,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 6,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 6,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 7,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 7,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 8,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 8,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 9,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 9,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 10,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 10,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 11,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 11,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 12,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 12,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 13,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 13,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 14,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 14,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 15,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 15,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 16,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 16,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 17,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 17,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 18,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 18,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 19,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 19,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 20,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 20,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 21,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 21,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 22,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 22,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 23,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 23,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 24,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 24,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 25,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 25,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 26,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 26,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 27,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 27,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 28,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 28,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 29,
+      "propagation": false,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 29,
+      "propagation": true,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 30,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 30,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 31,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 31,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 32,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 32,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 33,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 33,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 34,
+      "propagation": false,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 34,
+      "propagation": true,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 35,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 35,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 36,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 36,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 37,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 37,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 38,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 38,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 39,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 39,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 40,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 40,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 41,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 41,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 42,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 42,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 43,
+      "propagation": false,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 43,
+      "propagation": true,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 44,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 44,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 45,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 45,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 46,
+      "propagation": false,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 46,
+      "propagation": true,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 47,
+      "propagation": false,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 47,
+      "propagation": true,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 48,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 48,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 49,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 49,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 50,
+      "propagation": false,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 50,
+      "propagation": true,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 51,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 51,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 52,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 52,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 53,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 53,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 54,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 54,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 55,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 55,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 56,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 56,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 57,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 57,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 58,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 58,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 59,
+      "propagation": false,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 59,
+      "propagation": true,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 60,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 60,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 61,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 61,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 62,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 62,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 63,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 63,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 64,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 64,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 65,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 65,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 66,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 66,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 67,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 67,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 68,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 68,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 69,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 69,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 70,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 70,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 71,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 71,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 72,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 72,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 73,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 73,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 74,
+      "propagation": false,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 74,
+      "propagation": true,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 75,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 75,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 76,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 76,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 77,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 77,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 78,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 78,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 79,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 79,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 80,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 80,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 81,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 81,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 82,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 82,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 83,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 83,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 84,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 84,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 85,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 85,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 86,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 86,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 87,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 87,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 88,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 88,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 89,
+      "propagation": false,
+      "feasible_assignments": 16,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 89,
+      "propagation": true,
+      "feasible_assignments": 16,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 90,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 90,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 91,
+      "propagation": false,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 91,
+      "propagation": true,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 92,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 92,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 93,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 93,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 94,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 94,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 95,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 95,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 96,
+      "propagation": false,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 96,
+      "propagation": true,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 97,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 97,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 98,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 98,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 99,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 99,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 100,
+      "propagation": false,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 100,
+      "propagation": true,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 101,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 101,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 102,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 102,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 103,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 103,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 104,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 104,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 105,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 105,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 106,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 106,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 107,
+      "propagation": false,
+      "feasible_assignments": 16,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 107,
+      "propagation": true,
+      "feasible_assignments": 16,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 108,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 108,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 109,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 109,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 110,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 110,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 111,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 111,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 112,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 112,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 113,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 113,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 114,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 114,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 115,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 115,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 116,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 116,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 117,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 117,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 118,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 118,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 119,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 119,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 120,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 120,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 121,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 121,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 122,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 122,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 123,
+      "propagation": false,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 123,
+      "propagation": true,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 124,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 124,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 125,
+      "propagation": false,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 125,
+      "propagation": true,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 126,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 126,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 127,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 127,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 128,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 128,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 129,
+      "propagation": false,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 129,
+      "propagation": true,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 130,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 130,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 131,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 131,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 132,
+      "propagation": false,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 132,
+      "propagation": true,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 133,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 133,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 134,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 134,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 135,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 135,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 136,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 136,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 137,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 137,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 138,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 138,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 139,
+      "propagation": false,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 139,
+      "propagation": true,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 140,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 140,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 141,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 141,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 142,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 142,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 143,
+      "propagation": false,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 143,
+      "propagation": true,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 144,
+      "propagation": false,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 144,
+      "propagation": true,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 145,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 145,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 146,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 146,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 147,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 147,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 148,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 148,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 149,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 149,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 150,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 150,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 151,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 151,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 152,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 152,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 153,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 153,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 154,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 154,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 155,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 155,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 156,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 156,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 157,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 157,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 158,
+      "propagation": false,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 158,
+      "propagation": true,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 159,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 159,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 160,
+      "propagation": false,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 160,
+      "propagation": true,
+      "feasible_assignments": 3,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 161,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 161,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 162,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 162,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 163,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 163,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 164,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 164,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 165,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 165,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 166,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 166,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 167,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 167,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 168,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 168,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 169,
+      "propagation": false,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 169,
+      "propagation": true,
+      "feasible_assignments": 12,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 170,
+      "propagation": false,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 170,
+      "propagation": true,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 171,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 171,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 172,
+      "propagation": false,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 172,
+      "propagation": true,
+      "feasible_assignments": 10,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 173,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 173,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 174,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 174,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 175,
+      "propagation": false,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 175,
+      "propagation": true,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 176,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 176,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 177,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 177,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 178,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 178,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 179,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 179,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 180,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 180,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 181,
+      "propagation": false,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 181,
+      "propagation": true,
+      "feasible_assignments": 9,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 182,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 182,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 183,
+      "propagation": false,
+      "feasible_assignments": 16,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 183,
+      "propagation": true,
+      "feasible_assignments": 16,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 184,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 184,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 185,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 185,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 186,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 186,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 187,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 187,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 188,
+      "propagation": false,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 188,
+      "propagation": true,
+      "feasible_assignments": 4,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 189,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 189,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 190,
+      "propagation": false,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 190,
+      "propagation": true,
+      "feasible_assignments": 5,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 191,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 191,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 192,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 192,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 193,
+      "propagation": false,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 193,
+      "propagation": true,
+      "feasible_assignments": 1,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 194,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 194,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 195,
+      "propagation": false,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 195,
+      "propagation": true,
+      "feasible_assignments": 7,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 196,
+      "propagation": false,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 196,
+      "propagation": true,
+      "feasible_assignments": 2,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 197,
+      "propagation": false,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 197,
+      "propagation": true,
+      "feasible_assignments": 6,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 198,
+      "propagation": false,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 198,
+      "propagation": true,
+      "feasible_assignments": 8,
+      "checked_exported_nogoods": 0,
+      "top_k_matches": true
+    },
+    {
+      "case": 199,
+      "propagation": false,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    },
+    {
+      "case": 199,
+      "propagation": true,
+      "feasible_assignments": 0,
+      "checked_exported_nogoods": 1,
+      "top_k_matches": true
+    }
+  ],
+  "assertion_tested": "Top4 equals direct Cartesian relation membership and literal factor-sum arithmetic; every exported nogood excludes no feasible assignment",
+  "limits": "200 authored random binary models, all feature switches together, propagation on/off. Not all configurations, product objectives, imported proofs or unbounded models."
+}

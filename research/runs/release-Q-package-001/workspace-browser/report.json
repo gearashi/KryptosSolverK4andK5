@@ -1,0 +1,32 @@
+{
+  "schema": "kryptos.browser-workspace.v1",
+  "passed": 22,
+  "checks": [
+    "Dedicated workspace opens without computation",
+    "Incomplete recipes, K5 source and notes survive reload",
+    "Restoring a draft never starts a job",
+    "New optimizer strategies default off",
+    "Optional block and mini-bucket controls write bounded request fields",
+    "Joint admissible pruning is explicit",
+    "Measured device choice discloses extra work and uses one worker",
+    "Personal preset survives reload and loads without execution",
+    "Loaded personal preset can explicitly start a bounded control",
+    "Tagged archive is searchable and original evidence remains intact",
+    "Unarchive reverses visibility without deleting the record",
+    "Workspace backup includes editing state and saved run",
+    "Recovered draft and presets remain available for explicit loading",
+    "Recovery creates a new read-only identity with resume disabled",
+    "Recovery leaves original job and current editing state unchanged",
+    "Recovered records cannot be executed through resume",
+    "Tampered backup is rejected before restore",
+    "Stale-tab draft conflict is visible and preserves newer state",
+    "workspace mobile has no horizontal page overflow",
+    "history mobile has no horizontal page overflow",
+    "No browser JavaScript errors",
+    "No active computation remains"
+  ],
+  "errors": [],
+  "app_version": "0.6.0",
+  "script_sha256": "3b808cd99992116206e4e1b3da516a57f7dec40fcaf827c926cd70411a17234d",
+  "scope": "Bounded CPU control, durable editing, reversible metadata, inert recovery and mobile rendering; no GPU or solver-efficiency claim."
+}

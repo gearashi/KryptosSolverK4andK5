@@ -202,7 +202,9 @@ class _Evaluator:
                       "factor_evaluations":0,"cheap_preparation_entries":0,
                       "cheap_bound_calls":0,"cheap_bound_rejections":0,
                       "cheap_factor_checks":0,"cheap_cached_factor_hits":0,
-                      "residual_witness_factor_evaluations":0}
+                      "residual_witness_factor_evaluations":0,
+                      "branch_decisions":0,"complete_objective_evaluations":0,
+                      "complete_seed_replays":0,"complete_residual_replays":0}
         self.grams = [] if self.model is None else sorted(self.model["counts"].items(),key=lambda kv:(-kv[1],kv[0]))
         self.correlated = None if self.model is None else CorrelatedNgramBound(self.model["alphabet"],self.model["counts"],self.model["p"],self.model["q"])
         self.global_factor_bounds = None
@@ -314,6 +316,8 @@ class _Evaluator:
         return upper
 
     def upper(self,assignment):
+        if -1 not in assignment:
+            self.stats["complete_objective_evaluations"] += 1
         bounds=[]
         for group in self.groups:
             if len(group)==1:
@@ -345,16 +349,22 @@ class _Evaluator:
                 self.cache[key]=upper
             bounds.append(upper)
         upper = math.prod(bounds)
-        if self.elimination_bound == "mini_bucket" and upper and any(v < 0 for v in assignment):
-            key = ("mini_bucket", tuple(assignment))
+        if self.elimination_bound != "off" and upper and any(v < 0 for v in assignment):
+            key = (self.elimination_bound, tuple(assignment))
             if key in self.cache:
                 self.stats["cache_hits"] += 1
                 return min(upper, self.cache[key])
-            from .factor_decomposition import mini_bucket_upper
-            report = mini_bucket_upper(self.problem, assignment, **self.elimination_options)
+            if self.elimination_bound == "mini_bucket":
+                from .factor_decomposition import mini_bucket_upper
+                report = mini_bucket_upper(self.problem, assignment, **self.elimination_options)
+            else:
+                from .factor_bounds import certified_bounds
+                report = certified_bounds(self.problem, assignment, techniques=[self.elimination_bound],
+                    max_entries=self.elimination_options["max_entries"],
+                    max_operations=self.elimination_options["max_operations"])
             self.stats["elimination_attempts"] += 1
-            self.stats["elimination_operations"] += report["work"]["operations"]
-            self.stats["elimination_factor_evaluations"] += report["work"]["factor_evaluations"]
+            self.stats["elimination_operations"] += report["work"].get("operations", 0)
+            self.stats["elimination_factor_evaluations"] += report["work"].get("factor_evaluations", 0)
             if report["bound_available"]:
                 if report["upper_bound"] < upper:
                     self.stats["elimination_tightenings"] += 1
@@ -390,8 +400,8 @@ def _identity(problem,ordering,local_limit,groups=(),group_exact_limit=4096,
             "residual_cache":residual_cache,"residual_cache_max_entries":residual_cache_max_entries,
             "residual_cache_max_assignments":residual_cache_max_assignments,
             "residual_cache_max_operations":residual_cache_max_operations,"cheap_bound_first":cheap_bound_first,
-            "sources":{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ("search_runtime.py","language.py","correlated_bound.py","factor_decomposition.py","guided_search.py")},
-            "version":"adaptive-search-v5; invocation-local verified component reuse; threshold-only cheap gates; full persisted bounds; original-coordinate lexical ties"}
+            "sources":{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ("search_runtime.py","language.py","correlated_bound.py","factor_decomposition.py","factor_advanced.py","factor_bounds.py","guided_search.py")},
+            "version":"adaptive-search-v6; bounded advanced factor alternatives; full persisted bounds; original-coordinate lexical ties"}
 
 
 def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=10000,
@@ -416,12 +426,12 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
     _integer(local_exact_limit,"local_exact_limit",1,100000)
     _integer(factor_group_size,"factor_group_size",0,8)
     _integer(group_exact_limit,"group_exact_limit",1,100000)
-    if decomposition not in ("off", "auto"):
-        raise ValueError("decomposition must be off or auto")
+    if decomposition not in ("off", "auto", "and_or", "junction", "diagram", "chain", "cutset"):
+        raise ValueError("unknown decomposition method")
     _integer(decomposition_max_entries,"decomposition_max_entries",1,1000000)
     _integer(decomposition_max_operations,"decomposition_max_operations",1,10000000)
-    if elimination_bound not in ("off", "mini_bucket"):
-        raise ValueError("elimination_bound must be off or mini_bucket")
+    if elimination_bound not in ("off", "mini_bucket", "overlap", "adaptive", "cycles", "reparameterization", "mod2", "mod13"):
+        raise ValueError("unknown elimination bound")
     _integer(elimination_bucket_entries,"elimination_bucket_entries",1,100000)
     _integer(elimination_max_entries,"elimination_max_entries",1,1000000)
     _integer(elimination_max_operations,"elimination_max_operations",1,10000000)
@@ -438,8 +448,8 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
         raise ValueError("at most100 complete assignment seeds are allowed")
     if isinstance(time_limit_seconds,bool) or not isinstance(time_limit_seconds,(int,float)) or not math.isfinite(time_limit_seconds) or not 0<time_limit_seconds<=600:
         raise ValueError("time limit must be in (0,600]")
-    if ordering not in ("impact","natural"):
-        raise ValueError("ordering must be impact or natural")
+    if ordering not in ("impact","natural","separator","strong"):
+        raise ValueError("ordering must be impact, natural, separator or strong")
     if checkpoint_path is not None and Path(checkpoint_path).exists():
         raise ValueError("checkpoint output exists; choose a fresh path")
     actual_started = time.monotonic()
@@ -496,6 +506,7 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
     for seed in initial_assignments:
         point=tuple(seed) if isinstance(seed,(list,tuple)) else seed
         value=score_assignment(problem,point)  # validates the domain, never trusts a supplied score
+        evaluator.stats["complete_seed_replays"]+=1
         seed_scores.append({"assignment":list(point),"score_hex":hex(value)})
         if value>best_score or (value==best_score and point<best):
             best,best_score=point,value
@@ -511,11 +522,38 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
             involved = [f for f in evaluator.factors if i in f["scope"]]
             return (sum(sum(point[j]>=0 for j in f["scope"]) for f in involved),
                     sum(f.get("power",1) for f in involved),-domains[i],-i)
+        if ordering=="separator":
+            from .factor_advanced import Table, Work, Limit, separator_variable
+            work = Work(max_operations=10000, max_entries=1)
+            tables = tuple(Table(tuple(v for v in f["scope"] if point[v]<0), ())
+                           for f in evaluator.factors if any(point[v]<0 for v in f["scope"]))
+            try:
+                chosen = separator_variable(tables,domains,work) if tables else unknown[0]
+            except Limit:
+                chosen = max(unknown,key=impact)
+            evaluator.stats["branch_planning_operations"] = evaluator.stats.get("branch_planning_operations",0)+work.counts["operations"]
+            return chosen
+        if ordering=="strong":
+            # Probe at most four candidate coordinates. These are ordinary
+            # certified bounds, charged to the evaluator and cached normally.
+            # Probing changes ordering only and cannot exclude a branch.
+            choices=[]
+            for variable in sorted(unknown,key=impact,reverse=True)[:4]:
+                bounds=[]
+                for value in range(domains[variable]):
+                    trial=list(point)
+                    trial[variable]=value
+                    bounds.append(evaluator.upper(tuple(trial)))
+                    evaluator.stats["strong_branch_probes"]=evaluator.stats.get("strong_branch_probes",0)+1
+                choices.append((max(bounds),sum(bounds),domains[variable],variable))
+            return min(choices)[-1]
         return max(unknown,key=impact)
     nodes=leaves=pruned=requeued=0
     decomposition_report={"mode":decomposition,"attempts":0,"solved_residuals":0,"fallbacks":{},
                           "operations":0,"factor_evaluations":0,"max_separator_variables":0,
-                          "max_components":0,"peak_planned_entries":0}
+                          "max_components":0,"peak_planned_entries":0,"strategy_work":{}}
+    advanced_solver=None
+    advanced_disabled=False
     stop="exhausted"
     while frontier:
         if nodes>=max_nodes:
@@ -543,6 +581,7 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                         or any(v>=0 and answer[i]!=v for i,v in enumerate(point))):
                     raise AssertionError("residual witness violates its original domain")
                 value=1
+                evaluator.stats["complete_residual_replays"]+=1
                 for factor in evaluator.factors:
                     evaluator.stats["residual_witness_factor_evaluations"]+=1
                     value*=evaluator._value(factor,tuple(answer[v] for v in factor["scope"]))**factor.get("power",1)
@@ -556,17 +595,46 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                 requeued+=1
                 stop="time_limit"
                 break
-        if decomposition=="auto" and decomposition_report["operations"]<decomposition_max_operations and elapsed()<time_limit_seconds:
-            from .factor_decomposition import exact_decomposition
-            reduced=exact_decomposition(problem,point,max_entries=decomposition_max_entries,
-                max_operations=decomposition_max_operations-decomposition_report["operations"],
-                time_limit_seconds=max(1e-9,time_limit_seconds-elapsed()))
+        if decomposition!="off" and not advanced_disabled and decomposition_report["operations"]<decomposition_max_operations and elapsed()<time_limit_seconds:
+            if decomposition=="auto":
+                from .factor_decomposition import exact_decomposition
+                reduced=exact_decomposition(problem,point,max_entries=decomposition_max_entries,
+                    max_operations=decomposition_max_operations-decomposition_report["operations"],
+                    time_limit_seconds=max(1e-9,time_limit_seconds-elapsed()))
+            else:
+                from .factor_advanced import ContextSolver,JunctionQueries,DecisionDiagram,Limit,chain_solve,cutset_solve
+                remaining_operations=decomposition_max_operations-decomposition_report["operations"]
+                options=dict(max_entries=decomposition_max_entries,max_operations=remaining_operations)
+                if decomposition in ("chain","cutset"):
+                    reduced=(chain_solve if decomposition=="chain" else cutset_solve)(problem,point,**options)
+                else:
+                    before_work=dict(advanced_solver.work.counts) if advanced_solver is not None else {}
+                    try:
+                        if advanced_solver is None:
+                            cls={"and_or":ContextSolver,"junction":JunctionQueries,"diagram":DecisionDiagram}[decomposition]
+                            advanced_solver=object.__new__(cls)
+                            cls.__init__(advanced_solver,problem,**options)
+                        if decomposition=="diagram":
+                            report=advanced_solver.top_k(1,point)
+                            candidate=report["candidates"][0] if report["complete"] and report["candidates"] else None
+                            reduced=dict(report,score=candidate["score"] if candidate else None,
+                                         assignment=candidate["assignment"] if candidate else None)
+                        else:
+                            reduced=advanced_solver.query(point)
+                    except Limit as exc:
+                        advanced_disabled=True
+                        reduced=dict(complete=False,score=None,assignment=None,stop_reason=str(exc))
+                    reduced["work"]={key:value-before_work.get(key,0) for key,value in advanced_solver.work.counts.items()}
+                reduced["work"]={"operations":0,"factor_evaluations":0,"max_separator_variables":0,
+                    "components":0,"planned_entries":0,**reduced["work"]}
             decomposition_report["attempts"]+=1
             decomposition_report["operations"]+=reduced["work"]["operations"]
             decomposition_report["factor_evaluations"]+=reduced["work"]["factor_evaluations"]
             decomposition_report["max_separator_variables"]=max(decomposition_report["max_separator_variables"],reduced["work"]["max_separator_variables"])
             decomposition_report["max_components"]=max(decomposition_report["max_components"],reduced["work"]["components"])
             decomposition_report["peak_planned_entries"]=max(decomposition_report["peak_planned_entries"],reduced["work"]["planned_entries"])
+            for counter,value in reduced["work"].items():
+                decomposition_report["strategy_work"][counter]=decomposition_report["strategy_work"].get(counter,0)+value
             if reduced["complete"]:
                 answer=tuple(reduced["assignment"])
                 # Verify the returned witness against the original factors.
@@ -584,6 +652,7 @@ def optimize_lazy(problem,*,max_nodes=10000,time_limit_seconds=10,max_frontier=1
                 requeued+=1
                 stop="time_limit"
                 break
+        evaluator.stats["branch_decisions"]+=1
         variable=choose(point)
         children=[]
         for value in range(domains[variable]):

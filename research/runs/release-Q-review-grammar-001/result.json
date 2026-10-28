@@ -1,0 +1,354 @@
+{
+  "schema": "kryptos.independent-grammar-review.v1",
+  "all_checks_passed": true,
+  "verdict": "computationally verified only in the stated finite range",
+  "python": "3.12.2",
+  "syntax_paths": 18,
+  "retained_classes": 4,
+  "literal_image_comparisons": 108,
+  "literal_matrix_checks": 972,
+  "cegis_bank_comparisons": 80,
+  "literal_witness_pair_replays": 312,
+  "exhaustive_oracle_key_vectors": 36414,
+  "cases": [
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "beaufort"
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        4,
+        8
+      ]
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "beaufort"
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 2,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        5
+      ]
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 2,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        1,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "alphabet": "standard",
+      "generating_stages": [
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "beaufort"
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        4,
+        8
+      ]
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "beaufort"
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 2,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        5
+      ]
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 2,
+          "cipher": "vigenere"
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "substitution",
+          "period": 1,
+          "cipher": "vigenere"
+        },
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": false,
+      "accepted_indices": [
+        1,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "alphabet": "kryptos",
+      "generating_stages": [
+        {
+          "operation": "gather",
+          "permutation": [
+            1,
+            0
+          ]
+        }
+      ],
+      "perturbed": true,
+      "accepted_indices": []
+    }
+  ],
+  "input_sha256_before": {
+    "research/review_Q_grammar.py": "4460c60ace81c6911791f8535fd5a89cf867f1169ec8b21b50b8aa1ba6f03f3e",
+    "kryptos/recipe_grammar.py": "d5001617705067820cd5f3844064b0a9184bb2ee2201538f254f276d165703a4",
+    "kryptos/recipe_algebra.py": "db7649b5bc53d1ff6e5e47f1b2ff348f2b657b6de6ecbb8902822f6a2dfa252d",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/constraint_algebra.py": "e5e275fd549b2304814c01fc7f5e069e502d3f85bc856094df749a175791b977",
+    "kryptos/constraint_lab.py": "bc7c86e1ed469ed7b63be1c4bed35c4829f1aafd068e004d0d675e4b1e5a50a3",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35"
+  },
+  "input_sha256_after": {
+    "research/review_Q_grammar.py": "4460c60ace81c6911791f8535fd5a89cf867f1169ec8b21b50b8aa1ba6f03f3e",
+    "kryptos/recipe_grammar.py": "d5001617705067820cd5f3844064b0a9184bb2ee2201538f254f276d165703a4",
+    "kryptos/recipe_algebra.py": "db7649b5bc53d1ff6e5e47f1b2ff348f2b657b6de6ecbb8902822f6a2dfa252d",
+    "kryptos/family_identity.py": "6e2136a2d70d917e71f7e3740d92b629a44bbf7ca7ef162919aaf5583654f7b1",
+    "kryptos/constraint_algebra.py": "e5e275fd549b2304814c01fc7f5e069e502d3f85bc856094df749a175791b977",
+    "kryptos/constraint_lab.py": "bc7c86e1ed469ed7b63be1c4bed35c4829f1aafd068e004d0d675e4b1e5a50a3",
+    "kryptos/general_layers.py": "a054af474d80be9880b399941364c166b16cf7dcfa4083d9ff460be1f1073464",
+    "kryptos/scheduled_layers.py": "974c860d461c5e2b7127ef954437cff3092363bd36e191dcb7eb1e07d104c6c8",
+    "kryptos/ciphers.py": "93c1d1c9995810122d155a647c1798a614dbf76d92fed14a229102a21da69a35"
+  },
+  "non_claims": [
+    "No Kryptos method or plaintext authenticated",
+    "Not exhaustive over all message lengths or recipes",
+    "Independent literal algorithms share the Python interpreter and may share conceptual errors"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": "kryptos.improvement-ledger.v1",
   "created_date": "2026-10-13",
-  "phase": "P-eight-counted-work-improvements",
+  "phase": "Q-ninety-proposals",
   "goal_controller": "User-authorized finite continuation; no scheduled automation",
   "allowed_statuses": [
     "proposed",
@@ -19,9 +19,9 @@
   "termination": {
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
-    "final_review_complete": true,
-    "publication_complete": true,
-    "reviewed_actionable_backlog_complete": true
+    "final_review_complete": false,
+    "publication_complete": false,
+    "reviewed_actionable_backlog_complete": false
   },
   "entries": [
     {
@@ -1543,7 +1543,7 @@
     "remaining": null,
     "verified_at_utc": "2026-10-25T18:20:02.200721+00:00"
   },
-  "execution_status": "complete",
+  "execution_status": "active",
   "pause": {
     "date": "2026-10-25",
     "instruction": "Pause for now. Finish the rest of the improvements when I tell you to.",
@@ -1553,5 +1553,18 @@
     "phase_P_committed_or_published": false,
     "resumed_by_user": "continue on2026-10-26"
   },
-  "resumed_date": "2026-10-26"
+  "resumed_date": "2026-10-26",
+  "phase_Q": {
+    "plan": "research/phase_Q_plan.json",
+    "status": "implemented-evaluated; package/publication pending",
+    "resumed_date": "2026-10-28",
+    "publication_identity": "gearashi",
+    "implemented": 90,
+    "retained": 89,
+    "rejected_inactive": [
+      60
+    ],
+    "outcomes": "research/phase_Q_plan.json",
+    "all_independent_primary_wins": false
+  }
 }

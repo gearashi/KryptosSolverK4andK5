@@ -1,0 +1,36 @@
+{
+  "created_utc": "2026-10-28T17:24:09.273521+00:00",
+  "request": {
+    "target": "k4",
+    "alphabet": "kryptos",
+    "stages": [
+      {
+        "operation": "substitution",
+        "period": 27
+      }
+    ],
+    "model_path": "research/runs/evaluation-J-001/artifacts/english-two-author-trigram.json"
+  },
+  "model_sha256": "970349f122f82589dc432103ffe7c5dde6bc8a9a39081dbd601dfda48a49e064",
+  "assertion_tested": "Identical certified top20 for the first32768 distinct plaintexts across CPU worker counts/page sizes and actual CUDA; every retained candidate has literal replay.",
+  "cpu_workers": [
+    1,
+    4,
+    8
+  ],
+  "cpu_page_sizes": [
+    2048
+  ],
+  "cuda_page_sizes": [
+    512,
+    2048,
+    8192
+  ],
+  "candidates_per_configuration": 32768,
+  "warmup": "One256-candidate page per worker, excluded from timed throughput but explicitly counted.",
+  "non_claims": [
+    "Not a completed K4 family search or a decipherment",
+    "No search decision reduction from hardware speed",
+    "GPU utilization can be limited by certified CPU rescoring and tiny kernels"
+  ]
+}

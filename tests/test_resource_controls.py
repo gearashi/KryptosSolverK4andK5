@@ -185,7 +185,8 @@ class ResourceControlsTests(unittest.TestCase):
         replacement.close()
 
     def test_resource_limits_and_hysteresis(self):
-        for values in ({"workers":True},{"workers":5},{"idle_ms":-1},{"adaptive":1},{"target_page_seconds":float("nan")}):
+        self.assertEqual(validate_resources({"workers":8})["workers"],8)
+        for values in ({"workers":True},{"workers":33},{"idle_ms":-1},{"adaptive":1},{"target_page_seconds":float("nan")}):
             with self.assertRaises(ValueError): validate_resources(values)
         with self.assertRaises(ValueError): validate_resources({"workers":2},"cuda")
         self.assertEqual(next_batch_size(100,1.1,1),100)

@@ -1,0 +1,29 @@
+PASS Opening the dashboard leaves computation idle
+PASS Worker selector exposes all detected logical processors within cap
+PASS Live worker selector has the same hardware capacity
+PASS Research methods tab opens
+PASS The complete 90-item ledger is shown
+PASS constraint-lab example loads its exact engine
+PASS constraint-lab managed experiment completes
+PASS constraint-lab preserves its declared request
+PASS constraint-lab result is not presented as a Kryptos solution
+PASS factor-lab example loads its exact engine
+PASS factor-lab managed experiment completes
+PASS factor-lab preserves its declared request
+PASS factor-lab result is not presented as a Kryptos solution
+PASS model-lab example loads its exact engine
+PASS model-lab managed experiment completes
+PASS model-lab preserves its declared request
+PASS model-lab result is not presented as a Kryptos solution
+PASS grammar-lab example loads its exact engine
+PASS grammar-lab managed experiment completes
+PASS grammar-lab preserves its declared request
+PASS grammar-lab result is not presented as a Kryptos solution
+PASS Leaving methods hides its view
+PASS Optimizer ordering writes selected strategy
+PASS Optimizer decomposition writes selected strategy
+PASS Optimizer elimination_bound writes selected strategy
+PASS Joint relational propagation is selectable
+PASS Research methods fits a mobile viewport
+PASS No JavaScript errors
+PASS No active computation remains

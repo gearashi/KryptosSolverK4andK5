@@ -1,0 +1,91 @@
+{
+  "domains": {
+    "route": [
+      0,
+      1,
+      2
+    ],
+    "key": [
+      0,
+      1,
+      2
+    ],
+    "phase": [
+      0,
+      1,
+      2
+    ]
+  },
+  "relations": [
+    {
+      "scope": [
+        "route",
+        "key"
+      ],
+      "rows": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "scope": [
+        "key",
+        "phase"
+      ],
+      "rows": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "scope": [
+        "route",
+        "phase"
+      ],
+      "rows": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    }
+  ],
+  "top": 3,
+  "options": {
+    "propagation": true,
+    "learning": true,
+    "minimize_conflicts": true,
+    "backjump": true,
+    "probing": true,
+    "memoize": true
+  },
+  "max_work": 200000
+}

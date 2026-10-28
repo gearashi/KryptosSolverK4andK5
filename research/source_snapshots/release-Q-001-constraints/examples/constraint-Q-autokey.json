@@ -1,0 +1,12 @@
+{
+  "method": "autokey",
+  "parameters": {
+    "ciphertext": "UGLXLABZ",
+    "cribs": [{"start":1,"text":"TE"}],
+    "seed_length": 2,
+    "feedback": "plaintext",
+    "cipher": "vigenere",
+    "alphabet": "standard",
+    "max_candidates": 676
+  }
+}

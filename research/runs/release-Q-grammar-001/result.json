@@ -1,0 +1,555 @@
+{
+  "schema": "kryptos.Q-grammar-work.v1",
+  "all_checks_passed": true,
+  "prefixes": {
+    "literal_tree_edges": 126,
+    "symbolic": {
+      "schema": "kryptos.symbolic-grammar.v1",
+      "complete": true,
+      "nodes": [
+        {
+          "id": 0,
+          "depth": 0,
+          "representative": [],
+          "incoming": [],
+          "represented_paths": 1
+        },
+        {
+          "id": 1,
+          "depth": 1,
+          "representative": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            }
+          ],
+          "incoming": [
+            {
+              "parent": 0,
+              "choice": 0
+            },
+            {
+              "parent": 0,
+              "choice": 1
+            }
+          ],
+          "represented_paths": 2,
+          "transformation_sha256": "c687bd23751b7791525403d997caeac685d872ff80a081adb7ba58796ff9c757"
+        },
+        {
+          "id": 2,
+          "depth": 2,
+          "representative": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            }
+          ],
+          "incoming": [
+            {
+              "parent": 1,
+              "choice": 0
+            },
+            {
+              "parent": 1,
+              "choice": 1
+            }
+          ],
+          "represented_paths": 4,
+          "transformation_sha256": "c687bd23751b7791525403d997caeac685d872ff80a081adb7ba58796ff9c757"
+        },
+        {
+          "id": 3,
+          "depth": 3,
+          "representative": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            }
+          ],
+          "incoming": [
+            {
+              "parent": 2,
+              "choice": 0
+            },
+            {
+              "parent": 2,
+              "choice": 1
+            }
+          ],
+          "represented_paths": 8,
+          "transformation_sha256": "c687bd23751b7791525403d997caeac685d872ff80a081adb7ba58796ff9c757"
+        },
+        {
+          "id": 4,
+          "depth": 4,
+          "representative": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            }
+          ],
+          "incoming": [
+            {
+              "parent": 3,
+              "choice": 0
+            },
+            {
+              "parent": 3,
+              "choice": 1
+            }
+          ],
+          "represented_paths": 16,
+          "transformation_sha256": "c687bd23751b7791525403d997caeac685d872ff80a081adb7ba58796ff9c757"
+        },
+        {
+          "id": 5,
+          "depth": 5,
+          "representative": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            }
+          ],
+          "incoming": [
+            {
+              "parent": 4,
+              "choice": 0
+            },
+            {
+              "parent": 4,
+              "choice": 1
+            }
+          ],
+          "represented_paths": 32,
+          "transformation_sha256": "c687bd23751b7791525403d997caeac685d872ff80a081adb7ba58796ff9c757"
+        },
+        {
+          "id": 6,
+          "depth": 6,
+          "representative": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            },
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "variant"
+            }
+          ],
+          "incoming": [
+            {
+              "parent": 5,
+              "choice": 0
+            },
+            {
+              "parent": 5,
+              "choice": 1
+            }
+          ],
+          "represented_paths": 64,
+          "transformation_sha256": "c687bd23751b7791525403d997caeac685d872ff80a081adb7ba58796ff9c757"
+        }
+      ],
+      "leaves": [
+        6
+      ],
+      "represented_complete_recipes": 64,
+      "retained_transformation_classes": 1,
+      "work": {
+        "symbolic_transitions": 12,
+        "compiled_scalar_operations": 1064,
+        "merged_prefixes": 6,
+        "canonicalization_calls": 24,
+        "canonicalization_input_coefficients": 336
+      },
+      "slots": [
+        [
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "vigenere"
+          },
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "variant"
+          }
+        ],
+        [
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "vigenere"
+          },
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "variant"
+          }
+        ],
+        [
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "vigenere"
+          },
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "variant"
+          }
+        ],
+        [
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "vigenere"
+          },
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "variant"
+          }
+        ],
+        [
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "vigenere"
+          },
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "variant"
+          }
+        ],
+        [
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "vigenere"
+          },
+          {
+            "operation": "substitution",
+            "period": 1,
+            "cipher": "variant"
+          }
+        ]
+      ],
+      "work_accounting_limits": "RREF and hashing scalar operations are not instrumented; their calls and input coefficients are counted separately. Symbol-validation compilation is preprocessing, outside transition counts.",
+      "assumptions": "Independent unrestricted substitution keys; one shared known alphabet; explicit gathers. Source permutation and plaintext signs must match before key-offset subspaces may merge.",
+      "class_count_interpretation": "Conservative signature classes; different classes may still describe equal transformation families.",
+      "proof": "A prefix is y=D*P*x+A*k. Equal D,P and equal column images of A over F2 and F13 give the same offset set over Z/26 by CRT. Applying the same subsequent gather or independent substitution preserves this equality. Keys remain reconstructible through each original recipe."
+    }
+  },
+  "cegis": {
+    "lazy_examples": {
+      "schema": "kryptos.recipe-cegis.v1",
+      "complete": true,
+      "accepted": [
+        {
+          "input_index": 0,
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "vigenere"
+            }
+          ],
+          "key_values": [
+            1
+          ],
+          "literal_replay_pairs": 3,
+          "technique": "Counterexample-guided recipe/key synthesis with incremental F2/F13 equations and independent literal stage replay"
+        },
+        {
+          "input_index": 2,
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 2,
+              "cipher": "vigenere"
+            }
+          ],
+          "key_values": [
+            1,
+            1
+          ],
+          "literal_replay_pairs": 3,
+          "technique": "Counterexample-guided recipe/key synthesis with incremental F2/F13 equations and independent literal stage replay"
+        }
+      ],
+      "rejected": [
+        {
+          "input_index": 3,
+          "contradiction_examples": [
+            0
+          ]
+        },
+        {
+          "input_index": 1,
+          "contradiction_examples": [
+            0,
+            1
+          ]
+        }
+      ],
+      "active_examples": [
+        0,
+        1
+      ],
+      "work": {
+        "recipe_candidates": 4,
+        "literal_pair_checks": 8,
+        "equation_rows": 36,
+        "solver_scalar_operations": 102,
+        "counterexamples": 1,
+        "key_proposals": 3,
+        "compiled_scalar_operations": 36
+      },
+      "authenticated_solution": false,
+      "assumptions": "The SAME unknown keys explain every supplied pair. Examples are caller-supplied constraints, not established Kryptos facts."
+    },
+    "all_examples_initially": {
+      "schema": "kryptos.recipe-cegis.v1",
+      "complete": true,
+      "accepted": [
+        {
+          "input_index": 0,
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "vigenere"
+            }
+          ],
+          "key_values": [
+            1
+          ],
+          "literal_replay_pairs": 3,
+          "technique": "Counterexample-guided recipe/key synthesis with incremental F2/F13 equations and independent literal stage replay"
+        },
+        {
+          "input_index": 2,
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 2,
+              "cipher": "vigenere"
+            }
+          ],
+          "key_values": [
+            1,
+            1
+          ],
+          "literal_replay_pairs": 3,
+          "technique": "Counterexample-guided recipe/key synthesis with incremental F2/F13 equations and independent literal stage replay"
+        }
+      ],
+      "rejected": [
+        {
+          "input_index": 3,
+          "contradiction_examples": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "input_index": 1,
+          "contradiction_examples": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "active_examples": [
+        0,
+        1,
+        2
+      ],
+      "work": {
+        "recipe_candidates": 4,
+        "literal_pair_checks": 6,
+        "equation_rows": 72,
+        "solver_scalar_operations": 180,
+        "counterexamples": 0,
+        "key_proposals": 2,
+        "compiled_scalar_operations": 36
+      },
+      "authenticated_solution": false,
+      "assumptions": "The SAME unknown keys explain every supplied pair. Examples are caller-supplied constraints, not established Kryptos facts."
+    }
+  },
+  "priority": {
+    "input_order": {
+      "schema": "kryptos.recipe-cegis.v1",
+      "complete": false,
+      "criterion_first_witness_satisfied": true,
+      "stop_reason": "first_verified_witness",
+      "accepted": [
+        {
+          "input_index": 2,
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "vigenere"
+            }
+          ],
+          "key_values": [
+            1
+          ],
+          "literal_replay_pairs": 3,
+          "technique": "Counterexample-guided recipe/key synthesis with incremental F2/F13 equations and independent literal stage replay"
+        }
+      ],
+      "rejected": [
+        {
+          "input_index": 0,
+          "contradiction_examples": [
+            0,
+            1
+          ]
+        },
+        {
+          "input_index": 1,
+          "contradiction_examples": [
+            0,
+            1
+          ]
+        }
+      ],
+      "work": {
+        "recipe_candidates": 3,
+        "literal_pair_checks": 5,
+        "equation_rows": 36,
+        "solver_scalar_operations": 132,
+        "counterexamples": 1,
+        "key_proposals": 2,
+        "compiled_scalar_operations": 45
+      },
+      "interpretation": "Every supplied example is verified. The remaining recipe bank has not been searched or excluded."
+    },
+    "shorter_first": {
+      "schema": "kryptos.recipe-cegis.v1",
+      "complete": false,
+      "criterion_first_witness_satisfied": true,
+      "stop_reason": "first_verified_witness",
+      "accepted": [
+        {
+          "input_index": 2,
+          "stages": [
+            {
+              "operation": "substitution",
+              "period": 1,
+              "cipher": "vigenere"
+            }
+          ],
+          "key_values": [
+            1
+          ],
+          "literal_replay_pairs": 3,
+          "technique": "Counterexample-guided recipe/key synthesis with incremental F2/F13 equations and independent literal stage replay"
+        }
+      ],
+      "rejected": [],
+      "work": {
+        "recipe_candidates": 1,
+        "literal_pair_checks": 3,
+        "equation_rows": 6,
+        "solver_scalar_operations": 18,
+        "counterexamples": 0,
+        "key_proposals": 1,
+        "compiled_scalar_operations": 9
+      },
+      "interpretation": "Every supplied example is verified. The remaining recipe bank has not been searched or excluded."
+    }
+  },
+  "limits": [
+    "Fixed authored controls; no universal advantage",
+    "CEGIS may need more solver passes than adding all examples",
+    "First-witness stopping does not exclude the rest of the bank",
+    "Signature calls and input coefficients are counted, not all RREF or serialization operations",
+    "No authenticated K4/K5 plaintext or method"
+  ]
+}

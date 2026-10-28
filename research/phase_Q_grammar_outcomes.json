@@ -1,0 +1,79 @@
+{
+  "schema": "kryptos.phase-Q-grammar-outcomes.v1",
+  "entries": [
+    {
+      "id": "Q62",
+      "roadmap_number": 62,
+      "title": "Symbolic recipe grammar",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "kryptos.recipe_grammar.generate",
+      "scope": "Explicit finite substitution/gather grammar with independent unrestricted keys and one known alphabet",
+      "measured_outcome": "Six binary substitution slots represent all 64 syntax paths with 12 symbolic transitions rather than the 126 edges of the literal prefix tree; seven DAG nodes and one retained conservative transformation class.",
+      "work": {
+        "literal_prefix_tree_edges": 126,
+        "symbolic_transitions": 12,
+        "compiled_scalar_operations": 1064,
+        "canonicalization_calls": 24,
+        "canonicalization_input_coefficients": 336,
+        "merged_prefixes": 6
+      },
+      "limitations": "The transition improvement is not a complete arithmetic-cost comparison. Symbol-validation preprocessing, canonical RREF scalar operations, hashing and serialization are not fully instrumented. Conservative classes can miss valid equivalences. This does not cover arbitrary unknown cipher mechanisms or authenticate Kryptos plaintext.",
+      "evidence": [
+        "research/phase_Q_grammar_contract.json",
+        "research/runs/release-Q-grammar-001/manifest.json",
+        "research/runs/release-Q-grammar-001/result.json",
+        "research/runs/release-Q-review-grammar-003/manifest.json",
+        "research/review_Q_grammar.md"
+      ],
+      "integrated": "grammar-lab generate through research-method API/CLI"
+    },
+    {
+      "id": "Q64",
+      "roadmap_number": 64,
+      "title": "Counterexample-guided recipe synthesis",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "kryptos.recipe_grammar.synthesize",
+      "scope": "One unknown key vector must explain every explicitly sourced example in a finite recipe bank",
+      "measured_outcome": "On the frozen four-recipe, three-example bank, one initial example preserves accepted recipes [0,2], cuts equation rows from 72 to 36 and solver scalar operations from 180 to 102; it increases key proposals from 2 to 3 and literal pair checks from 6 to 8. All four recipes are considered in both modes.",
+      "work": {
+        "all_examples_initially": {"recipe_candidates": 4, "equation_rows": 72, "solver_scalar_operations": 180, "key_proposals": 2, "literal_pair_checks": 6, "compiled_scalar_operations": 36},
+        "one_example_initially": {"recipe_candidates": 4, "equation_rows": 36, "solver_scalar_operations": 102, "key_proposals": 3, "literal_pair_checks": 8, "compiled_scalar_operations": 36, "counterexamples": 1}
+      },
+      "limitations": "A measured tradeoff, not a universally lower-step method or a reduction in recipe candidates on this control. Keep initial-example count selectable; caller-provided examples remain assumptions. Independent correctness review exhaustively checks 80 small bank comparisons.",
+      "evidence": [
+        "research/phase_Q_grammar_contract.json",
+        "research/runs/release-Q-grammar-001/manifest.json",
+        "research/runs/release-Q-grammar-001/result.json",
+        "research/runs/release-Q-review-grammar-003/manifest.json",
+        "research/review_Q_grammar.md"
+      ],
+      "integrated": "grammar-lab synthesize through research-method API/CLI"
+    },
+    {
+      "id": "Q65",
+      "roadmap_number": 65,
+      "title": "Shorter explanation priority",
+      "status": "validated",
+      "decision": "retain_optional",
+      "implementation": "kryptos.recipe_grammar.priority_bank and synthesize(priority=True)",
+      "scope": "Order-only description preference over a complete explicit recipe bank; optional first verified witness stopping",
+      "measured_outcome": "The fixed three-recipe control reaches the same independently replayed recipe at input index 2 after one instead of three recipe candidates; key proposals fall 2 to 1 and literal pair checks 5 to 3.",
+      "work": {
+        "input_order": {"recipe_candidates": 3, "equation_rows": 36, "solver_scalar_operations": 132, "key_proposals": 2, "literal_pair_checks": 5, "compiled_scalar_operations": 45},
+        "shorter_first": {"recipe_candidates": 1, "equation_rows": 6, "solver_scalar_operations": 18, "key_proposals": 1, "literal_pair_checks": 3, "compiled_scalar_operations": 9},
+        "priority_preprocessing": "Three description evaluations and a sort; detailed comparison and serialization operations are not instrumented in synthesis work counters"
+      },
+      "limitations": "First-witness runs explicitly return complete=false because the remaining bank is unexplored. This conditional ordering advantage is not fewer candidates for complete enumeration, does not justify excluding long explanations, and can reverse on another bank.",
+      "evidence": [
+        "research/phase_Q_grammar_contract.json",
+        "research/runs/release-Q-grammar-001/manifest.json",
+        "research/runs/release-Q-grammar-001/result.json",
+        "research/runs/release-Q-review-grammar-003/manifest.json",
+        "research/review_Q_grammar.md"
+      ],
+      "integrated": "grammar-lab priority/synthesize through research-method API/CLI"
+    }
+  ]
+}

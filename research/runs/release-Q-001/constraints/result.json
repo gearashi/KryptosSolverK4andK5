@@ -1,0 +1,2966 @@
+{
+  "affine_set_checks": [
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 2,
+      "left": 0,
+      "left_subset_right": true,
+      "prime": 2,
+      "right": 0,
+      "right_subset_left": true,
+      "scalar_operations": 4
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 2,
+      "left": 0,
+      "left_subset_right": true,
+      "prime": 2,
+      "right": 1,
+      "right_subset_left": false,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [],
+        "prime": 2
+      },
+      "intersection_size": 1,
+      "left": 0,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 2,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 0,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 3,
+      "right_subset_left": false,
+      "scalar_operations": 4
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 2,
+      "left": 1,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 0,
+      "right_subset_left": true,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 4,
+      "left": 1,
+      "left_subset_right": true,
+      "prime": 2,
+      "right": 1,
+      "right_subset_left": true,
+      "scalar_operations": 12
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 2,
+      "left": 1,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 2,
+      "right_subset_left": false,
+      "scalar_operations": 18
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 1,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 3,
+      "right_subset_left": false,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [],
+        "prime": 2
+      },
+      "intersection_size": 1,
+      "left": 2,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 0,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 2,
+      "left": 2,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 1,
+      "right_subset_left": false,
+      "scalar_operations": 18
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 4,
+      "left": 2,
+      "left_subset_right": true,
+      "prime": 2,
+      "right": 2,
+      "right_subset_left": true,
+      "scalar_operations": 12
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          1
+        ],
+        "basis": [],
+        "prime": 2
+      },
+      "intersection_size": 1,
+      "left": 2,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 3,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 3,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 0,
+      "right_subset_left": false,
+      "scalar_operations": 4
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 3,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 1,
+      "right_subset_left": false,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          1
+        ],
+        "basis": [],
+        "prime": 2
+      },
+      "intersection_size": 1,
+      "left": 3,
+      "left_subset_right": false,
+      "prime": 2,
+      "right": 2,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          1
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 2
+      },
+      "intersection_size": 2,
+      "left": 3,
+      "left_subset_right": true,
+      "prime": 2,
+      "right": 3,
+      "right_subset_left": true,
+      "scalar_operations": 4
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 13,
+      "left": 0,
+      "left_subset_right": true,
+      "prime": 13,
+      "right": 0,
+      "right_subset_left": true,
+      "scalar_operations": 4
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 13,
+      "left": 0,
+      "left_subset_right": true,
+      "prime": 13,
+      "right": 1,
+      "right_subset_left": false,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [],
+        "prime": 13
+      },
+      "intersection_size": 1,
+      "left": 0,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 2,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 0,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 3,
+      "right_subset_left": false,
+      "scalar_operations": 4
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 13,
+      "left": 1,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 0,
+      "right_subset_left": true,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 169,
+      "left": 1,
+      "left_subset_right": true,
+      "prime": 13,
+      "right": 1,
+      "right_subset_left": true,
+      "scalar_operations": 12
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 13,
+      "left": 1,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 2,
+      "right_subset_left": false,
+      "scalar_operations": 18
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 1,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 3,
+      "right_subset_left": false,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [],
+        "prime": 13
+      },
+      "intersection_size": 1,
+      "left": 2,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 0,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 13,
+      "left": 2,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 1,
+      "right_subset_left": false,
+      "scalar_operations": 18
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          0
+        ],
+        "basis": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 169,
+      "left": 2,
+      "left_subset_right": true,
+      "prime": 13,
+      "right": 2,
+      "right_subset_left": true,
+      "scalar_operations": 12
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          1
+        ],
+        "basis": [],
+        "prime": 13
+      },
+      "intersection_size": 1,
+      "left": 2,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 3,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 3,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 0,
+      "right_subset_left": false,
+      "scalar_operations": 4
+    },
+    {
+      "intersection": null,
+      "intersection_size": 0,
+      "left": 3,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 1,
+      "right_subset_left": false,
+      "scalar_operations": 10
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          1
+        ],
+        "basis": [],
+        "prime": 13
+      },
+      "intersection_size": 1,
+      "left": 3,
+      "left_subset_right": false,
+      "prime": 13,
+      "right": 2,
+      "right_subset_left": false,
+      "scalar_operations": 15
+    },
+    {
+      "intersection": {
+        "base": [
+          0,
+          0,
+          1
+        ],
+        "basis": [
+          [
+            1,
+            0,
+            0
+          ]
+        ],
+        "prime": 13
+      },
+      "intersection_size": 13,
+      "left": 3,
+      "left_subset_right": true,
+      "prime": 13,
+      "right": 3,
+      "right_subset_left": true,
+      "scalar_operations": 4
+    }
+  ],
+  "assertion_tested": "Exact finite relation top-k, conflict preservation, symbolic recipe replay, F2/F13 family relations, joint ranked12 literal oracles and bounded conditional cipher adapters on the fixed controls.",
+  "conflict_controls": {
+    "baseline": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 16,
+      "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+        "nogoods": [],
+        "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "branch_decisions": 38,
+        "complete_candidate_evaluations": 16,
+        "literal_relation_checks": 48,
+        "nodes": 39,
+        "relation_row_checks": 702,
+        "total_work": 843
+      }
+    },
+    "isomorphic_residual_dag": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 16,
+      "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+        "nogoods": [],
+        "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "branch_decisions": 36,
+        "complete_candidate_evaluations": 16,
+        "dead_state_reuses": 1,
+        "literal_relation_checks": 48,
+        "nodes": 37,
+        "relation_row_checks": 666,
+        "residual_renamings": 224,
+        "residual_signature_rows": 630,
+        "total_work": 1658
+      }
+    },
+    "learn_backjump": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 16,
+      "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+        "nogoods": [
+          [
+            [
+              "a",
+              0
+            ],
+            [
+              "c",
+              0
+            ]
+          ],
+          [
+            [
+              "a",
+              0
+            ],
+            [
+              "c",
+              1
+            ]
+          ],
+          [
+            [
+              "a",
+              0
+            ]
+          ]
+        ],
+        "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "backjumps": 1,
+        "branch_decisions": 35,
+        "complete_candidate_evaluations": 16,
+        "conflict_minimization_checks": 6,
+        "learned_clause_checks": 93,
+        "learned_conflicts": 2,
+        "literal_relation_checks": 48,
+        "nodes": 36,
+        "relation_row_checks": 756,
+        "resolved_conflicts": 1,
+        "total_work": 994
+      }
+    },
+    "probing": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 16,
+      "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+        "nogoods": [],
+        "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "branch_decisions": 32,
+        "complete_candidate_evaluations": 16,
+        "literal_relation_checks": 48,
+        "nodes": 33,
+        "probe_checks": 66,
+        "probe_value_removals": 2,
+        "relation_row_checks": 1782,
+        "total_work": 1979
+      }
+    },
+    "residual_dag": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 16,
+      "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+        "nogoods": [],
+        "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "branch_decisions": 36,
+        "complete_candidate_evaluations": 16,
+        "dead_state_reuses": 1,
+        "literal_relation_checks": 48,
+        "nodes": 37,
+        "relation_row_checks": 666,
+        "residual_renamings": 35,
+        "residual_signature_rows": 630,
+        "total_work": 1469
+      }
+    },
+    "reverified_deductions": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 0,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 0,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 0,
+            "e": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1,
+            "e": 1
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 16,
+      "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "cdd49cacb3e34a2e68727840d4b3fdd121efb1ecd30dd94abb8b7f3e4f34d7d1",
+        "nogoods": [
+          [
+            [
+              "a",
+              0
+            ],
+            [
+              "c",
+              0
+            ]
+          ],
+          [
+            [
+              "a",
+              0
+            ],
+            [
+              "c",
+              1
+            ]
+          ],
+          [
+            [
+              "a",
+              0
+            ]
+          ]
+        ],
+        "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "cc665e3acf4e44d323942752efb7dfeda39652349eac00e090cd61638438f52d",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "branch_decisions": 30,
+        "complete_candidate_evaluations": 16,
+        "learned_clause_checks": 96,
+        "learned_unit_removals": 1,
+        "literal_relation_checks": 104,
+        "nodes": 31,
+        "proof_reverification_assignments": 32,
+        "relation_row_checks": 576,
+        "total_work": 886
+      }
+    }
+  },
+  "correlation_controls": {
+    "off": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 0,
+            "b": 0,
+            "c": 0,
+            "d": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 2,
+            "b": 2,
+            "c": 2,
+            "d": 2
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 3,
+      "hard_identity": "f253aba09d9125b2516e6583b3f51962976132ba0fb6ff72cbbd4f6509bfc5ed",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "f253aba09d9125b2516e6583b3f51962976132ba0fb6ff72cbbd4f6509bfc5ed",
+        "nogoods": [],
+        "objective_identity": "bbd3838de7d0e02ada41eca1461a626158d1d4dd35cc64591d5f4414adf61f35",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "bbd3838de7d0e02ada41eca1461a626158d1d4dd35cc64591d5f4414adf61f35",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "branch_decisions": 120,
+        "complete_candidate_evaluations": 81,
+        "literal_relation_checks": 81,
+        "nodes": 121,
+        "total_work": 403
+      }
+    },
+    "on": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 0,
+            "b": 0,
+            "c": 0,
+            "d": 0
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "d": 1
+          },
+          "score": 0
+        },
+        {
+          "assignment": {
+            "a": 2,
+            "b": 2,
+            "c": 2,
+            "d": 2
+          },
+          "score": 0
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 3,
+      "hard_identity": "f253aba09d9125b2516e6583b3f51962976132ba0fb6ff72cbbd4f6509bfc5ed",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "f253aba09d9125b2516e6583b3f51962976132ba0fb6ff72cbbd4f6509bfc5ed",
+        "nogoods": [],
+        "objective_identity": "bbd3838de7d0e02ada41eca1461a626158d1d4dd35cc64591d5f4414adf61f35",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "bbd3838de7d0e02ada41eca1461a626158d1d4dd35cc64591d5f4414adf61f35",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "branch_decisions": 3,
+        "complete_candidate_evaluations": 3,
+        "literal_relation_checks": 3,
+        "nodes": 4,
+        "relation_row_checks": 21,
+        "total_work": 34
+      }
+    }
+  },
+  "cross_run_coverage": {
+    "baseline": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 2,
+            "b": 1,
+            "c": 0
+          },
+          "score": 9
+        },
+        {
+          "assignment": {
+            "a": 2,
+            "b": 1,
+            "c": 1
+          },
+          "score": 9
+        },
+        {
+          "assignment": {
+            "a": 2,
+            "b": 0,
+            "c": 0
+          },
+          "score": 8
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 12,
+      "hard_identity": "0c1b03560e1c720d6d4b7939af5db5d0a6a3f33908d05d866afbf93ef04bf7d3",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "0c1b03560e1c720d6d4b7939af5db5d0a6a3f33908d05d866afbf93ef04bf7d3",
+        "nogoods": [],
+        "objective_identity": "7b3e35016a7e8ee59c2dd84999836b67a7981cf7ea4f3739b186c7ffbbe4e695",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "7b3e35016a7e8ee59c2dd84999836b67a7981cf7ea4f3739b186c7ffbbe4e695",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "bound_factor_rows": 90,
+        "branch_decisions": 21,
+        "complete_candidate_evaluations": 12,
+        "complete_factor_evaluations": 12,
+        "nodes": 22,
+        "total_work": 157
+      }
+    },
+    "created": {
+      "authenticated_solution": false,
+      "complete": true,
+      "coverage": {
+        "assumptions": {
+          "a": 2
+        },
+        "candidates": [
+          {
+            "assignment": {
+              "a": 2,
+              "b": 1,
+              "c": 0
+            },
+            "score": 9
+          },
+          {
+            "assignment": {
+              "a": 2,
+              "b": 1,
+              "c": 1
+            },
+            "score": 9
+          },
+          {
+            "assignment": {
+              "a": 2,
+              "b": 0,
+              "c": 0
+            },
+            "score": 8
+          }
+        ],
+        "hard_identity": "0c1b03560e1c720d6d4b7939af5db5d0a6a3f33908d05d866afbf93ef04bf7d3",
+        "objective_identity": "7b3e35016a7e8ee59c2dd84999836b67a7981cf7ea4f3739b186c7ffbbe4e695",
+        "schema": "kryptos.subtree-coverage.v1",
+        "top": 3,
+        "tree": {
+          "children": [
+            [
+              0,
+              {
+                "children": [
+                  [
+                    0,
+                    {
+                      "kind": "leaf"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "kind": "leaf"
+                    }
+                  ]
+                ],
+                "kind": "split",
+                "variable": "c"
+              }
+            ],
+            [
+              1,
+              {
+                "children": [
+                  [
+                    0,
+                    {
+                      "kind": "leaf"
+                    }
+                  ],
+                  [
+                    1,
+                    {
+                      "kind": "leaf"
+                    }
+                  ]
+                ],
+                "kind": "split",
+                "variable": "c"
+              }
+            ]
+          ],
+          "kind": "split",
+          "variable": "b"
+        }
+      },
+      "interpretation": "A complete finite-model subtree proof. Later runs must revalidate this JSON artifact before reusing coverage.",
+      "schema": "kryptos.subtree-coverage-generation.v1",
+      "work": {
+        "bound_factor_rows": 6,
+        "complete_factor_evaluations": 4,
+        "coverage_generation_branch_decisions": 6,
+        "coverage_generation_complete_evaluations": 4,
+        "coverage_generation_nodes": 7,
+        "total_work": 27
+      }
+    },
+    "reused": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "a": 2,
+            "b": 1,
+            "c": 0
+          },
+          "score": 9
+        },
+        {
+          "assignment": {
+            "a": 2,
+            "b": 1,
+            "c": 1
+          },
+          "score": 9
+        },
+        {
+          "assignment": {
+            "a": 2,
+            "b": 0,
+            "c": 0
+          },
+          "score": 8
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 0,
+      "hard_identity": "0c1b03560e1c720d6d4b7939af5db5d0a6a3f33908d05d866afbf93ef04bf7d3",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "0c1b03560e1c720d6d4b7939af5db5d0a6a3f33908d05d866afbf93ef04bf7d3",
+        "nogoods": [],
+        "objective_identity": "7b3e35016a7e8ee59c2dd84999836b67a7981cf7ea4f3739b186c7ffbbe4e695",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "7b3e35016a7e8ee59c2dd84999836b67a7981cf7ea4f3739b186c7ffbbe4e695",
+      "schema": "kryptos.finite-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "bound_factor_rows": 18,
+        "branch_decisions": 3,
+        "complete_factor_evaluations": 7,
+        "coverage_candidate_reverification": 3,
+        "coverage_leaf_reverification": 4,
+        "coverage_proof_reverification_nodes": 7,
+        "coverage_region_checks": 4,
+        "covered_subtrees_reused": 1,
+        "nodes": 4,
+        "score_pruned_nodes": 2,
+        "total_work": 53
+      }
+    }
+  },
+  "example_reports": {
+    "affine": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "authenticated_solution": false,
+          "classification": "model_consistency_witness",
+          "encryption_recipe": {
+            "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "schema": "kryptos.encryption-recipe.v1",
+            "stages": [
+              {
+                "cipher": "vigenere",
+                "key_pattern": "AB",
+                "operation": "repeat_substitution"
+              }
+            ]
+          },
+          "evidence": {
+            "authenticated_solution": false,
+            "crib_matches": 1,
+            "literal_reencryption_matches": true,
+            "stage_outputs": [
+              {
+                "operation": "repeat_substitution",
+                "output": "TIITITATEDRFTUXU",
+                "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                "stage": 1
+              }
+            ]
+          },
+          "exact_objective_hex": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd",
+          "keys": [
+            "AB"
+          ],
+          "plaintext": "THISISASECRETTXT",
+          "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+          "reencryption_matches": true,
+          "technique": "Finite affine n-gram tables with optional sparse basis and exact relation branch search",
+          "values_mod13": [
+            7
+          ],
+          "values_mod2": [
+            1
+          ]
+        },
+        {
+          "authenticated_solution": false,
+          "classification": "model_consistency_witness",
+          "encryption_recipe": {
+            "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "schema": "kryptos.encryption-recipe.v1",
+            "stages": [
+              {
+                "cipher": "vigenere",
+                "key_pattern": "AQ",
+                "operation": "repeat_substitution"
+              }
+            ]
+          },
+          "evidence": {
+            "authenticated_solution": false,
+            "crib_matches": 1,
+            "literal_reencryption_matches": true,
+            "stage_outputs": [
+              {
+                "operation": "repeat_substitution",
+                "output": "TIITITATEDRFTUXU",
+                "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                "stage": 1
+              }
+            ]
+          },
+          "exact_objective_hex": "0xa444fbfc3cfdde13f31a539454e73454048eada0c74f96977ee1b8993bc746d84727ef35ab457f447e509e443da8d698dd2a30d6db94baeb55ca066b6807d0915e979098ab674db8a7511e4f298843933855242597e373a2cf9f6433fbd",
+          "keys": [
+            "AQ"
+          ],
+          "plaintext": "TSIDIDADENRPTEXE",
+          "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+          "reencryption_matches": true,
+          "technique": "Finite affine n-gram tables with optional sparse basis and exact relation branch search",
+          "values_mod13": [
+            5
+          ],
+          "values_mod2": [
+            0
+          ]
+        },
+        {
+          "authenticated_solution": false,
+          "classification": "model_consistency_witness",
+          "encryption_recipe": {
+            "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            "schema": "kryptos.encryption-recipe.v1",
+            "stages": [
+              {
+                "cipher": "vigenere",
+                "key_pattern": "AA",
+                "operation": "repeat_substitution"
+              }
+            ]
+          },
+          "evidence": {
+            "authenticated_solution": false,
+            "crib_matches": 1,
+            "literal_reencryption_matches": true,
+            "stage_outputs": [
+              {
+                "operation": "repeat_substitution",
+                "output": "TIITITATEDRFTUXU",
+                "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                "stage": 1
+              }
+            ]
+          },
+          "exact_objective_hex": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd",
+          "keys": [
+            "AA"
+          ],
+          "plaintext": "TIITITATEDRFTUXU",
+          "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+          "reencryption_matches": true,
+          "technique": "Finite affine n-gram tables with optional sparse basis and exact relation branch search",
+          "values_mod13": [
+            8
+          ],
+          "values_mod2": [
+            0
+          ]
+        }
+      ],
+      "cipher_request": {
+        "alphabet": "standard",
+        "ciphertext": "TIITITATEDRFTUXU",
+        "cribs": [
+          {
+            "start": 1,
+            "text": "T"
+          }
+        ],
+        "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json",
+        "stages": [
+          {
+            "operation": "substitution",
+            "period": 2
+          }
+        ],
+        "target": "custom"
+      },
+      "complete": true,
+      "distinct_plaintext_count": 26,
+      "feasible_assignments_evaluated": 8,
+      "hard_identity": "517c31f26be4d969df9a0f23ca13c5d5463c352fd2d2494c6f5d19d2104e6d3d",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "517c31f26be4d969df9a0f23ca13c5d5463c352fd2d2494c6f5d19d2104e6d3d",
+        "nogoods": [],
+        "objective_identity": "e0af1d1ccfed45a521f3fc1d105a457917917a8c71dc059e9ab229338ddc1a39",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "e0af1d1ccfed45a521f3fc1d105a457917917a8c71dc059e9ab229338ddc1a39",
+      "preparation": {
+        "algebra_scalar_operations": 216,
+        "candidate_reconstruction_replays": 3,
+        "factor_table_rows": 338,
+        "final_verification_replays": 3,
+        "literal_replays": 9,
+        "recipe_conversion_replays": 3,
+        "sparse_basis": [
+          {
+            "convention": "field plaintext residue at each selected position equals the corresponding search coordinate",
+            "positions": [
+              1
+            ],
+            "scalar_operations": 36
+          },
+          {
+            "convention": "field plaintext residue at each selected position equals the corresponding search coordinate",
+            "positions": [
+              1
+            ],
+            "scalar_operations": 36
+          }
+        ]
+      },
+      "ranking_tie_convention": "plaintext lexicographic order; original recipe keys reconstructed and literal replay retained",
+      "schema": "kryptos.affine-relation-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "bound_factor_rows": 8112,
+        "branch_decisions": 28,
+        "complete_candidate_evaluations": 8,
+        "complete_factor_evaluations": 104,
+        "nodes": 29,
+        "score_pruned_nodes": 18,
+        "total_work": 8299
+      }
+    },
+    "autokey": {
+      "assumptions": {
+        "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "cipher": "vigenere",
+        "feedback": "plaintext",
+        "seed_length": 2
+      },
+      "authenticated_solution": false,
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "plaintext": "TESTTHIS",
+          "reencrypted_ciphertext": "UGLXLABZ",
+          "reencryption_matches": true,
+          "seed_key": "BC",
+          "technique": "Exact F2/F13 feedback equations followed by literal autokey replay"
+        }
+      ],
+      "complete": true,
+      "feasible": true,
+      "scalar_operations": 472,
+      "schema": "kryptos.autokey-search.v1"
+    },
+    "family-cover": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "exact_objective_hex": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd",
+          "plaintext": "THISISASECRETTXT",
+          "recipe_families": [
+            0,
+            1
+          ]
+        },
+        {
+          "exact_objective_hex": "0xa444fbfc3cfdde13f31a539454e73454048eada0c74f96977ee1b8993bc746d84727ef35ab457f447e509e443da8d698dd2a30d6db94baeb55ca066b6807d0915e979098ab674db8a7511e4f298843933855242597e373a2cf9f6433fbd",
+          "plaintext": "TSIDIDADENRPTEXE",
+          "recipe_families": [
+            0,
+            1
+          ]
+        },
+        {
+          "exact_objective_hex": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd",
+          "plaintext": "TIITITATEDRFTUXU",
+          "recipe_families": [
+            0,
+            1
+          ]
+        }
+      ],
+      "complete": true,
+      "families": [
+        {
+          "candidates": [
+            {
+              "authenticated_solution": false,
+              "classification": "model_consistency_witness",
+              "encryption_recipe": {
+                "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "schema": "kryptos.encryption-recipe.v1",
+                "stages": [
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "AB",
+                    "operation": "repeat_substitution"
+                  }
+                ]
+              },
+              "evidence": {
+                "authenticated_solution": false,
+                "crib_matches": 1,
+                "literal_reencryption_matches": true,
+                "stage_outputs": [
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "TIITITATEDRFTUXU",
+                    "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                    "stage": 1
+                  }
+                ]
+              },
+              "exact_objective_hex": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd",
+              "keys": [
+                "AB"
+              ],
+              "plaintext": "THISISASECRETTXT",
+              "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+              "reencryption_matches": true,
+              "score_owner_family": 0,
+              "technique": "Exact overlapping-family coverage: score each distinct plaintext once, retain and replay each original recipe",
+              "values_mod13": [
+                1
+              ],
+              "values_mod2": [
+                1
+              ]
+            },
+            {
+              "authenticated_solution": false,
+              "classification": "model_consistency_witness",
+              "encryption_recipe": {
+                "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "schema": "kryptos.encryption-recipe.v1",
+                "stages": [
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "AQ",
+                    "operation": "repeat_substitution"
+                  }
+                ]
+              },
+              "evidence": {
+                "authenticated_solution": false,
+                "crib_matches": 1,
+                "literal_reencryption_matches": true,
+                "stage_outputs": [
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "TIITITATEDRFTUXU",
+                    "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                    "stage": 1
+                  }
+                ]
+              },
+              "exact_objective_hex": "0xa444fbfc3cfdde13f31a539454e73454048eada0c74f96977ee1b8993bc746d84727ef35ab457f447e509e443da8d698dd2a30d6db94baeb55ca066b6807d0915e979098ab674db8a7511e4f298843933855242597e373a2cf9f6433fbd",
+              "keys": [
+                "AQ"
+              ],
+              "plaintext": "TSIDIDADENRPTEXE",
+              "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+              "reencryption_matches": true,
+              "score_owner_family": 0,
+              "technique": "Exact overlapping-family coverage: score each distinct plaintext once, retain and replay each original recipe",
+              "values_mod13": [
+                3
+              ],
+              "values_mod2": [
+                0
+              ]
+            },
+            {
+              "authenticated_solution": false,
+              "classification": "model_consistency_witness",
+              "encryption_recipe": {
+                "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "schema": "kryptos.encryption-recipe.v1",
+                "stages": [
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "AA",
+                    "operation": "repeat_substitution"
+                  }
+                ]
+              },
+              "evidence": {
+                "authenticated_solution": false,
+                "crib_matches": 1,
+                "literal_reencryption_matches": true,
+                "stage_outputs": [
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "TIITITATEDRFTUXU",
+                    "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                    "stage": 1
+                  }
+                ]
+              },
+              "exact_objective_hex": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd",
+              "keys": [
+                "AA"
+              ],
+              "plaintext": "TIITITATEDRFTUXU",
+              "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+              "reencryption_matches": true,
+              "score_owner_family": 0,
+              "technique": "Exact overlapping-family coverage: score each distinct plaintext once, retain and replay each original recipe",
+              "values_mod13": [
+                0
+              ],
+              "values_mod2": [
+                0
+              ]
+            }
+          ],
+          "complete": true,
+          "distinct_plaintexts": 26,
+          "family_index": 0
+        },
+        {
+          "candidates": [
+            {
+              "authenticated_solution": false,
+              "classification": "model_consistency_witness",
+              "encryption_recipe": {
+                "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "schema": "kryptos.encryption-recipe.v1",
+                "stages": [
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "B",
+                    "operation": "repeat_substitution"
+                  },
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "ZA",
+                    "operation": "repeat_substitution"
+                  }
+                ]
+              },
+              "evidence": {
+                "authenticated_solution": false,
+                "crib_matches": 1,
+                "literal_reencryption_matches": true,
+                "stage_outputs": [
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "UIJTJTBTFDSFUUYU",
+                    "sha256": "cf260b751e62da0ea1188e32165c065a57c4ff8dd0ce25760ba486f7883829f5",
+                    "stage": 1
+                  },
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "TIITITATEDRFTUXU",
+                    "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                    "stage": 2
+                  }
+                ]
+              },
+              "exact_objective_hex": "0x4538268326f4e28bb4ce742e549ef2577ab8095382c3a545b918610f548b16587fe11cd9a82526310697b05e8237bbbff08780e102c642cbf59d5f7c6e10c458f4f24375925655b65211d91cc5de2ff7ba5062a838aae789e3a2cf9f6433fbd",
+              "keys": [
+                "B",
+                "ZA"
+              ],
+              "plaintext": "THISISASECRETTXT",
+              "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+              "reencryption_matches": true,
+              "score_owner_family": 0,
+              "technique": "Exact overlapping-family coverage: score each distinct plaintext once, retain and replay each original recipe",
+              "values_mod13": [
+                12
+              ],
+              "values_mod2": [
+                1
+              ]
+            },
+            {
+              "authenticated_solution": false,
+              "classification": "model_consistency_witness",
+              "encryption_recipe": {
+                "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "schema": "kryptos.encryption-recipe.v1",
+                "stages": [
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "Q",
+                    "operation": "repeat_substitution"
+                  },
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "KA",
+                    "operation": "repeat_substitution"
+                  }
+                ]
+              },
+              "evidence": {
+                "authenticated_solution": false,
+                "crib_matches": 1,
+                "literal_reencryption_matches": true,
+                "stage_outputs": [
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "JIYTYTQTUDHFJUNU",
+                    "sha256": "733818da76bb7f9ad9d3cc5ec1bebdcc5e5d8af6f482de84c771742ea33deea7",
+                    "stage": 1
+                  },
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "TIITITATEDRFTUXU",
+                    "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                    "stage": 2
+                  }
+                ]
+              },
+              "exact_objective_hex": "0xa444fbfc3cfdde13f31a539454e73454048eada0c74f96977ee1b8993bc746d84727ef35ab457f447e509e443da8d698dd2a30d6db94baeb55ca066b6807d0915e979098ab674db8a7511e4f298843933855242597e373a2cf9f6433fbd",
+              "keys": [
+                "Q",
+                "KA"
+              ],
+              "plaintext": "TSIDIDADENRPTEXE",
+              "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+              "reencryption_matches": true,
+              "score_owner_family": 0,
+              "technique": "Exact overlapping-family coverage: score each distinct plaintext once, retain and replay each original recipe",
+              "values_mod13": [
+                10
+              ],
+              "values_mod2": [
+                0
+              ]
+            },
+            {
+              "authenticated_solution": false,
+              "classification": "model_consistency_witness",
+              "encryption_recipe": {
+                "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                "schema": "kryptos.encryption-recipe.v1",
+                "stages": [
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "A",
+                    "operation": "repeat_substitution"
+                  },
+                  {
+                    "cipher": "vigenere",
+                    "key_pattern": "AA",
+                    "operation": "repeat_substitution"
+                  }
+                ]
+              },
+              "evidence": {
+                "authenticated_solution": false,
+                "crib_matches": 1,
+                "literal_reencryption_matches": true,
+                "stage_outputs": [
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "TIITITATEDRFTUXU",
+                    "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                    "stage": 1
+                  },
+                  {
+                    "operation": "repeat_substitution",
+                    "output": "TIITITATEDRFTUXU",
+                    "sha256": "36489f58291dc428f01bb37c7618311a154b2d176e9700bee995748aeceecbd0",
+                    "stage": 2
+                  }
+                ]
+              },
+              "exact_objective_hex": "0x96b3f3da6a33bbd8ea9bc27eb88114328db230089389b23493967cd64ce18cfe3ea52b5e0127898602bf93973379de07b1cf9f7bcfcad16db9d02e7849059fdd69c04c009008661dd65a3a8be0a69080a52df92f8ba2cf9f6433fbd",
+              "keys": [
+                "A",
+                "AA"
+              ],
+              "plaintext": "TIITITATEDRFTUXU",
+              "reencrypted_ciphertext": "TIITITATEDRFTUXU",
+              "reencryption_matches": true,
+              "score_owner_family": 0,
+              "technique": "Exact overlapping-family coverage: score each distinct plaintext once, retain and replay each original recipe",
+              "values_mod13": [
+                0
+              ],
+              "values_mod2": [
+                0
+              ]
+            }
+          ],
+          "complete": true,
+          "distinct_plaintexts": 26,
+          "family_index": 1
+        }
+      ],
+      "interpretation": "Finite complete families only. Unique objective work is reused across overlaps; all enumeration and literal recipe replays are separately counted. No unknown Kryptos family is excluded.",
+      "model_file_sha256": "6c72406f9bb46af5e1b74316db6e4a3162b4ab5b289220e1a8cd1174f7420e39",
+      "preparation": {
+        "algebra_scalar_operations": 706,
+        "candidate_reconstruction_replays": 52,
+        "enumerated_assignments": 52,
+        "final_verification_replays": 52,
+        "literal_replays": 156,
+        "recipe_conversion_replays": 52
+      },
+      "schema": "kryptos.disjoint-family-coverage.v1",
+      "score_mask": [
+        0
+      ],
+      "work": {
+        "complete_candidate_evaluations": 26,
+        "duplicate_score_evaluations_avoided": 26,
+        "independent_family_evaluations": 52,
+        "scored_windows": 338
+      }
+    },
+    "null-padding": {
+      "assumptions": {
+        "cipher": "vigenere",
+        "insertion_before_substitution": true,
+        "null_count": 1,
+        "null_symbols": "X",
+        "period": 1
+      },
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "key": "B",
+          "padded_plaintext": "TEXST",
+          "plaintext": "TEST",
+          "reencrypted_ciphertext": "UFYTU",
+          "reencryption_matches": true,
+          "removed_positions_zero_based": [
+            2
+          ],
+          "technique": "Joint cursor/phase relation propagation and literal null insertion replay"
+        }
+      ],
+      "complete": true,
+      "feasible_assignments_evaluated": 1,
+      "hard_identity": "9cb8b34d55f8eb6cc04d913f80cf919620da5776829dd00751a3850622f8c0e7",
+      "interpretation": "Exact top-k only when complete; hard tuple conflicts and score exclusions are separate. Declared relations are hypotheses, not discovered Kryptos facts.",
+      "learned": {
+        "hard_identity": "9cb8b34d55f8eb6cc04d913f80cf919620da5776829dd00751a3850622f8c0e7",
+        "nogoods": [],
+        "objective_identity": "540924ee0c8b5747e7a7c8948382d525328edb94dd0cd55df2807785a8727f6f",
+        "score_exclusions": []
+      },
+      "limit": null,
+      "objective_identity": "540924ee0c8b5747e7a7c8948382d525328edb94dd0cd55df2807785a8727f6f",
+      "preparation": {
+        "transition_rows": 13
+      },
+      "schema": "kryptos.null-padding-search.v1",
+      "score_exclusions": [],
+      "work": {
+        "complete_candidate_evaluations": 1,
+        "literal_relation_checks": 5,
+        "nodes": 1,
+        "relation_row_checks": 26,
+        "total_work": 33
+      }
+    },
+    "smt": {
+      "authenticated_solution": false,
+      "backend_version": "5.3.2",
+      "complete": true,
+      "interpretation": "Exact declared finite relations only. Incremental assumptions and lazily activated constraints preserve the model; unknown is inconclusive.",
+      "lazy": true,
+      "queries": [
+        {
+          "assignments": [
+            {
+              "phase0": 0,
+              "phase1": 1,
+              "route": 0
+            },
+            {
+              "phase0": 1,
+              "phase1": 2,
+              "route": 0
+            },
+            {
+              "phase0": 2,
+              "phase1": 0,
+              "route": 1
+            }
+          ],
+          "complete": true,
+          "limit": null,
+          "status": "enumerated"
+        },
+        {
+          "assignments": [
+            {
+              "phase0": 0,
+              "phase1": 1,
+              "route": 0
+            },
+            {
+              "phase0": 1,
+              "phase1": 2,
+              "route": 0
+            }
+          ],
+          "complete": true,
+          "limit": null,
+          "status": "enumerated"
+        },
+        {
+          "assignments": [],
+          "complete": true,
+          "limit": null,
+          "status": "enumerated"
+        }
+      ],
+      "schema": "kryptos.incremental-smt.v1",
+      "work": {
+        "activated_relations": 2,
+        "candidate_relation_checks": 1,
+        "counterexamples": 1,
+        "solver_checks": 9
+      }
+    },
+    "symmetry": {
+      "authenticated_solution": false,
+      "candidates": [
+        {
+          "assignment": {
+            "key0": 1,
+            "key1": 2
+          },
+          "score": 7
+        },
+        {
+          "assignment": {
+            "key0": 2,
+            "key1": 1
+          },
+          "score": 7
+        },
+        {
+          "assignment": {
+            "key0": 0,
+            "key1": 2
+          },
+          "score": 6
+        },
+        {
+          "assignment": {
+            "key0": 2,
+            "key1": 0
+          },
+          "score": 6
+        },
+        {
+          "assignment": {
+            "key0": 0,
+            "key1": 1
+          },
+          "score": 5
+        },
+        {
+          "assignment": {
+            "key0": 1,
+            "key1": 0
+          },
+          "score": 5
+        }
+      ],
+      "complete": true,
+      "interpretation": "Certified variable/value symmetries only; exact factor multiset invariant. One feasibility/score evaluation per orbit; all tied assignments reconstructed before top-k.",
+      "schema": "kryptos.certified-symmetry-search.v1",
+      "work": {
+        "cartesian_reference_assignments": 9,
+        "complete_candidate_evaluations": 6,
+        "complete_factor_evaluations": 6,
+        "complete_score_evaluations": 3,
+        "expanded_feasible_assignments": 6,
+        "literal_relation_checks": 6,
+        "orbit_transformations": 9,
+        "total_work": 12
+      }
+    }
+  },
+  "hypothesis_bank": {
+    "baseline_jobs": 39,
+    "normalization": {
+      "affine_family_duplicates_removed": 37,
+      "affine_normalization_enabled": true,
+      "distinct_recipes": 2,
+      "expanded_recipes": 39,
+      "expanded_recipes_before_path_dedup": 39,
+      "interpretation": "Explicit finite grammar; S has independent unknown keys, T is a literal gather. Adjacent gathers/identity routes simplify. Optional affine normalization identifies exact uncribbed plaintext sets for this ciphertext before job creation; all original recipes stay as aliases. Coordinates are ordinal hypotheses, not measured geometry.",
+      "literal_duplicates_removed": 0,
+      "path_duplicate_recipe_expansions_avoided": 0,
+      "path_generation": [],
+      "routes": [
+        {
+          "id": "identity",
+          "permutation": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "schema": "kryptos.hypothesis-grammar.v1",
+      "settings": {
+        "ciphers": [
+          "vigenere",
+          "beaufort",
+          "variant"
+        ],
+        "normalize_affine_families": true,
+        "patterns": [
+          "S",
+          "SS",
+          "SSS"
+        ],
+        "periods": [
+          1
+        ],
+        "routes": [
+          "identity"
+        ]
+      },
+      "symbolic_recipe_scalar_operations": 1944
+    },
+    "normalized_jobs": 2,
+    "preserved_parameter_recipes": 39
+  },
+  "non_claims": [
+    "No K4/K5 plaintext authenticated",
+    "No universal reduction in decisions or candidate evaluations",
+    "Relation/table materialization, proof replay, bound rows and basis preparation are counted in addition to primary search work",
+    "Finite helpers have explicit model/range scope; persisted deductions are not a resumable frontier",
+    "Cross-family finite-bank reuse is not an arbitrary persistent campaign subtree cache"
+  ],
+  "schema": "kryptos.phase-Q-constraint-audit.v1",
+  "software": {
+    "python": "3.12.2",
+    "z3": "5.3.2"
+  },
+  "status": "completed",
+  "tests": {
+    "additional_explicit_affine_pairs": 32,
+    "additional_random_affine_pairs": 48,
+    "errors": 0,
+    "failures": 0,
+    "literal_joint_oracle_cases": 12,
+    "random_relation_models": 50,
+    "random_seed": 90371,
+    "run": 34,
+    "skipped": 0,
+    "variants_per_random_model": 4
+  }
+}

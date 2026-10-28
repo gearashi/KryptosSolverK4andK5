@@ -218,7 +218,7 @@ def run_residues(request):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("recover", "layers", "grid", "residues", "columns", "general", "optimize", "alphabet", "layout", "joint", "joint-ranked", "scheduled", "mixed", "alphabet-plus", "optimize-plus", "batch", "validate-holdout", "validate-controls", "validate-ablations", "doctor"))
+    parser.add_argument("command", choices=("recover", "layers", "grid", "residues", "columns", "general", "optimize", "alphabet", "layout", "joint", "joint-ranked", "scheduled", "mixed", "alphabet-plus", "optimize-plus", "batch", "validate-holdout", "validate-controls", "validate-ablations", "constraint-lab", "factor-lab", "model-lab", "grammar-lab", "doctor"))
     parser.add_argument("--request", type=Path, help="JSON request; omitted uses canonical K4 defaults")
     parser.add_argument("--output", type=Path, help="new JSON output file; otherwise standard output")
     args = parser.parse_args()
@@ -230,8 +230,9 @@ def main():
         from .next_cli import run_next
         from .joint_ranked import run_joint_ranked
         from .validation_protocols import run_validation
+        from .research_methods import COMMANDS, execute as run_research_method
         original = {"recover": run_recovery, "layers": run_layers, "grid": run_grid, "residues": run_residues}
-        result = (doctor() if args.command == "doctor" else run_joint_ranked(request,_target) if args.command=='joint-ranked'
+        result = (run_research_method(args.command,request) if args.command in COMMANDS else doctor() if args.command == "doctor" else run_joint_ranked(request,_target) if args.command=='joint-ranked'
                   else run_validation(args.command,request) if args.command=='validate-ablations' else original[args.command](request)
                   if args.command in original else run_next(args.command, request, _target)
                   if args.command in ("joint", "scheduled", "mixed", "alphabet-plus", "optimize-plus", "batch", "validate-holdout", "validate-controls")

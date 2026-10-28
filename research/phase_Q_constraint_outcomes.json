@@ -1,0 +1,635 @@
+{
+  "schema": "kryptos.phase-Q-constraint-outcomes.v1",
+  "owner": "constraints_q",
+  "entries": [
+    {
+      "id": 1,
+      "title": "Minimal hard conflicts",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab.RelationSearch.core",
+      "scope": "Deletion-minimal relative to exact tuple propagation; resolved multi-value conflicts are sound but not minimum-cardinality UNSAT cores.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 2,
+      "title": "Conflict-directed backjumping",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab.RelationSearch.visit",
+      "scope": "Backjumps only over decisions absent from a verified hard conflict; score exclusions never count as conflicts.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 3,
+      "title": "Propagate learned conflicts",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab.RelationSearch.propagate",
+      "scope": "Unit propagation on forbidden assignment conjunctions within the identical hard model.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 4,
+      "title": "Reusable score exclusions",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab.RelationSearch._import",
+      "scope": "Exported bounds have objective identity, threshold and assumptions; imports are independently exhaustively checked within the declared cap.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 5,
+      "title": "Guarded conflict transfer",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_reuse.transfer_conflicts",
+      "scope": "Explicit variable renaming; target domains narrow and each source hard relation must be structurally implied by a target relation.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 6,
+      "title": "Failed-choice probing",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab.RelationSearch.visit",
+      "scope": "Only a propagation-proved impossible value is removed; probe work is counted.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 7,
+      "title": "Preserve key correlations",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "joint_ranked_helpers.reduce_joint; constraint_lab",
+      "scope": "Whole tuple relations plus the ranked joint relational option, which enforces pairwise edge/shared-phase compatibility.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 8,
+      "title": "Constraint separators",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_reuse.enumerate_components",
+      "scope": "Exact component conditional tables and natural join; feasibility-only, score factors explicitly rejected.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 9,
+      "title": "Incremental SMT backend",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_smt.IncrementalSMT",
+      "scope": "Optional pinned Z3; scopes, assumptions and unknown status; feasibility only, score factors explicitly rejected.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 10,
+      "title": "Lazy expensive constraints",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_smt.IncrementalSMT.check",
+      "scope": "Activate an explicit omitted hard relation only when a concrete proposed model violates it.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 11,
+      "title": "Combine substitution stages",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "recipe_algebra.compile_recipe",
+      "scope": "One symbolic linear transform retains every original independent/shared key column; family normal form merges effective image spaces.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 12,
+      "title": "Transport key schedules",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "recipe_algebra.compile_recipe",
+      "scope": "Gather transports plaintext source coordinates, signs and every symbolic key coefficient together.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 13,
+      "title": "Canonical phase/family representations",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "recipe_algebra.canonical_phase_partition; hypotheses.generate_configs",
+      "scope": "Phase equality partitions have inverse labels; optional generator family normalization runs before campaign jobs and keeps original aliases.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 14,
+      "title": "Primitive period enumeration",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "recipe_algebra.primitive_key_bank",
+      "scope": "Bounded explicit key bank retains each distinct infinite repeating sequence once, with every declared period alias.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 15,
+      "title": "Crib-difference cancellation",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_algebra.crib_difference_constraints",
+      "scope": "Redundant exact difference rows include source equation weights; original equations remain required.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 16,
+      "title": "Incremental modular equations",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_algebra.IncrementalField",
+      "scope": "F2/F13 row insertion retains exact contradiction certificates and affine solutions; reusable during route construction.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 17,
+      "title": "Modular component order",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_algebra.choose_field",
+      "scope": "Explicit counted pilot reductions select a contradictory/smaller residual field first; both modular components still required.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 18,
+      "title": "Sparse affine coordinates",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_algebra.sparse_field; constraint_lab.run_affine",
+      "scope": "Invertible column operations strictly lower support and transform key lifts simultaneously; local sparsity only.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 19,
+      "title": "Score-invisible quotient",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_reuse.score_projection_groups",
+      "scope": "Bounded projection groups retain every coordinate reconstruction; all ties must expand before applying top-k.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 20,
+      "title": "Plaintext-coordinate search",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_algebra.plaintext_coordinate_field; constraint_lab.run_affine",
+      "scope": "Exact pivot plaintext residues become search coordinates; original keys and full literal recipe reconstructed.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 21,
+      "title": "Affine containment",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_algebra.affine_relation",
+      "scope": "Exact F2/F13 inclusion with equal ambient coordinate conventions; no cross-alphabet assumption.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 22,
+      "title": "Unequal affine intersection",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_algebra.affine_relation",
+      "scope": "Exact canonical intersection and cardinality, including empty/point/full cases.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 23,
+      "title": "Disjoint family coverage",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_coverage.run",
+      "scope": "Bounded complete family bank scores each distinct plaintext once and preserves all per-recipe replay witnesses.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 24,
+      "title": "Unfinished residual DAG",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_reuse.residual_signature; constraint_lab.RelationSearch.visit",
+      "scope": "Memoizes hard-unsatisfiable residual functions after substituting fixed values; score-pruned nodes never enter this cache.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 25,
+      "title": "Certified broader symmetries",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_symmetry.certify; constraint_symmetry.run",
+      "scope": "Explicit bijective variable/value maps must preserve hard relations and objective factor multisets; score one orbit representative and reconstruct all ties.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 26,
+      "title": "Verified variable-renaming reuse",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_reuse.residual_signature",
+      "scope": "Exhaustive canonical variable renaming up to six unresolved variables, exact named-order fallback beyond that cap.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 27,
+      "title": "Provable value dominance",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_reuse.dominates_one_best",
+      "scope": "Bounded exhaustive replacement proof for one-best only; top-k/all-solutions use is explicitly excluded.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 28,
+      "title": "Persist certified deductions",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab learned JSON artifacts",
+      "scope": "Hard conflicts and score exclusions survive separate runs with identity guards and independent proof revalidation; no saved frontier claim.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 29,
+      "title": "Cross-run subtree coverage",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_cover_proof.create/verify; constraint_lab coverage artifacts",
+      "scope": "Portable region top-k with split/conflict/bound proof tree; later campaign/run independently validates every node before suppressing covered subtree search.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 30,
+      "title": "Alphabet/nonlinear finite-family equivalence",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "recipe_algebra.alphabet_affine_equivalence; constraint_coverage.run",
+      "scope": "Affine numeric alphabet relabeling has explicit scale/shift; bounded nonlinear banks share plaintext scoring only after every supplied literal recipe replays.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 63,
+      "title": "Stage-relation meet in the middle",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab.relational_join",
+      "scope": "Exact natural join indexes shared intermediate variables and retains all compatible input/output witnesses.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 66,
+      "title": "Joint unknown alphabet and route",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_models.unknown_alphabet_routes",
+      "scope": "Bijective unknown alphabet, explicit route bank and repeating key modeled jointly in SMT; every returned full plaintext is independently replayed.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 67,
+      "title": "Feedback/autokey equations",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "recipe_algebra.compile_autokey; constraint_models.autokey",
+      "scope": "Exact F2/F13 plaintext/ciphertext feedback equations for Vigenere/Beaufort/variant, with separate literal feedback replay.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 68,
+      "title": "Labeled alternative cribs",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_lab.disjunctive_relation",
+      "scope": "Finite union preserves separately named alternative support witnesses, without changing confirmed literal cribs.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 69,
+      "title": "Fractionation propagation",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_models.fractionation_relation",
+      "scope": "Whole-block input/output coordinate relation feeds exact tuple propagation; bounded materialization and explicit alphabet/radices.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    },
+    {
+      "id": 70,
+      "title": "Joint null placements",
+      "status": "validated",
+      "decision": "keep_optional_with_declared_scope",
+      "implementation": "constraint_models.null_padding",
+      "scope": "Monotone retained-letter cursor and key-phase relations solve declared insertion-before-key placements; null alphabet/count explicit and every witness replayed.",
+      "evidence": [
+        "tests/test_constraint_lab.py",
+        "tests/test_recipe_algebra.py",
+        "tests/test_constraint_integration_q.py",
+        "research/audit_Q_constraints.py",
+        "research/runs/release-Q-001/constraints/result.json",
+        "research/runs/release-Q-001/constraints/manifest.json"
+      ],
+      "measurement_limit": "Correctness and local controls only. Not every item has an isolated primary-work win; preprocessing, proof verification and replay can outweigh saved decisions. No universal K4/K5 benefit claimed."
+    }
+  ],
+  "root_owned": [
+    62,
+    64,
+    65
+  ],
+  "canonical_audit": "research/audit_Q_constraints.py --output <fresh-result.json>",
+  "non_claims": [
+    "No K4/K5 solution authenticated",
+    "No constant claim of fewer total operations",
+    "Persistent deductions and subtree proof artifacts are independently revalidated; they are not trusted external instructions"
+  ],
+  "canonical_result": "research/runs/release-Q-001/constraints/result.json",
+  "canonical_manifest": "research/runs/release-Q-001/constraints/manifest.json",
+  "canonical_status": "completed; validator passed;88 inputs agreed before/after/snapshot at run time",
+  "later_source_changes": {
+    "kryptos/factor_advanced.py": "Disabled the independently rejected Q60 portfolio dispatch after this audit. It is outside the exercised constraint dependency path; final packaged regression suite covers the integrated release."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "method": "affine",
+  "parameters": {
+    "cipher_request": {
+      "target": "custom",
+      "ciphertext": "TIITITATEDRFTUXU",
+      "cribs": [{"start":1,"text":"T"}],
+      "alphabet": "standard",
+      "stages": [{"operation":"substitution","period":2}],
+      "model_path": "research/models/multilingual-001/artifacts/pg1342-english-trigram.json"
+    },
+    "plaintext_coordinates": true,
+    "top": 3,
+    "max_factor_rows": 20000,
+    "max_work": 1000000
+  }
+}

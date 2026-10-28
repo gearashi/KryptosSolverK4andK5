@@ -1,0 +1,23 @@
+PASS Opening the dashboard starts no search
+PASS All five ranked-joint reductions default off
+PASS Joint controls write explicit bounded options
+PASS Disabling pruning clears the dependent shared-key bound
+PASS A bounded joint run saves an exact resumable frontier
+PASS Interleaved order counts disclose completion blocks
+PASS Resume preserves options and advances one bounded candidate
+PASS Candidate evidence names the saved search techniques
+PASS Residual reuse and cheap bounds default off
+PASS Optimizer controls retain explicit work caps
+PASS Optional optimizer controls execute a bounded exact job
+PASS Shared incomplete scans default off
+PASS Sharing preference survives reload without launching a campaign
+PASS Campaign preview creates no computation
+PASS Three jobs continue one certified family
+PASS Committed work covers disjoint pages and exactly26 candidates
+PASS Earlier job snapshots stay partial after owner completion
+PASS Campaign headline counts completed-family aliases separately from shared prefixes
+PASS Inspecting the first job uses its historical partial result
+PASS workbench mobile has no horizontal overflow
+PASS campaigns mobile has no horizontal overflow
+PASS No browser JavaScript errors
+PASS No active computation remains

@@ -1,0 +1,13 @@
+{
+  "method": "null_padding",
+  "parameters": {
+    "ciphertext": "UFYTU",
+    "cribs": [{"start":1,"text":"TEST"}],
+    "null_count": 1,
+    "null_symbols": "X",
+    "period": 1,
+    "alphabet": "standard",
+    "options": {"propagation":true,"probing":true,"learning":true,"minimize_conflicts":true,"backjump":true},
+    "top": 20
+  }
+}

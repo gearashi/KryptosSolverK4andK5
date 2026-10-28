@@ -16,11 +16,13 @@ import uuid
 from .advanced_cli import json_safe_integers
 from .parallel_search import _decode
 from .__main__ import _target
-from .resource_governor import validate_resources,next_batch_size,MAX_EVENTS
+from .resource_governor import validate_resources,next_batch_size,MAX_EVENTS,MAX_CPU_WORKERS
 from .process_lifetime import launch_owned
+from .research_methods import COMMANDS as RESEARCH_COMMANDS
 
 ROOT=Path(__file__).resolve().parents[1]
 EXACT_COMMANDS={"joint","joint-ranked","scheduled","mixed","alphabet-plus","optimize-plus","general","columns","alphabet","optimize","recover","layers","grid","residues","layout","validate-holdout","validate-controls","validate-ablations"}
+EXACT_COMMANDS |= RESEARCH_COMMANDS
 MODELS=[{"id":name,"label":name.title()+" · two authors","path":f"research/runs/evaluation-J-001/artifacts/{name}-two-author-trigram.json"}
         for name in ("english","spanish","french","italian","latin")]
 MODELS.append({"id":"english-pilot","label":"English · pilot control","path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json"})
@@ -73,7 +75,27 @@ def validate_start(body):
         raise ValueError("Select a bundled scoring model")
     if "model_paths" in request and (not isinstance(request["model_paths"],list) or not 1<=len(request["model_paths"])<=5 or any(p not in MODEL_PATHS for p in request["model_paths"])):
         raise ValueError("Select1..5 bundled scoring models")
-    if command!="validate-controls":
+    if command in RESEARCH_COMMANDS:
+        if kind != "exact":
+            raise ValueError("Research method commands are bounded CPU jobs")
+        if command=="constraint-lab" and request.get("method")=="affine":
+            parameters=request.get("parameters")
+            if not isinstance(parameters,dict) or not isinstance(parameters.get("cipher_request"),dict):
+                raise ValueError("The affine adapter requires an explicit cipher request")
+            nested=validate_start({"kind":"exact","command":"optimize-plus","request":parameters["cipher_request"]})
+            parameters["cipher_request"]=nested["request"]
+        if command=="constraint-lab" and request.get("method")=="family_cover":
+            parameters=request.get("parameters")
+            if not isinstance(parameters,dict) or not isinstance(parameters.get("families"),list):
+                raise ValueError("Family cover requires an explicit family list")
+            for family in parameters["families"]:
+                if not isinstance(family,dict):raise ValueError("Invalid family entry")
+                if "cipher_request" in family:
+                    nested=validate_start({"kind":"exact","command":"optimize-plus","request":family["cipher_request"]})
+                    family["cipher_request"]=nested["request"]
+                elif family.get("model_path") not in MODEL_PATHS:
+                    raise ValueError("Select a bundled scoring model for every explicit family")
+    elif command!="validate-controls":
         target,text,cribs,known=_target(request)
         if len(text)>512:
             raise ValueError("Dashboard messages are limited to 512 letters")
@@ -97,8 +119,8 @@ def validate_start(body):
     choices={}
     booleans=[]
     if command=="joint-ranked":
-        choices={"propagation":{"off","fixed_point"},"branching":{"prefix","constrained"},
-                 "score_bound":{"independent","shared_key"},"symmetry":{"off","identical_chunks"}}
+        choices={"propagation":{"off","fixed_point","relational"},"branching":{"prefix","constrained"},
+                 "score_bound":{"independent","shared_key","matching"},"symmetry":{"off","identical_chunks"}}
         booleans=["early_segmentation"]
     elif command=="optimize-plus":
         choices={"residual_cache":{"off","components"}}
@@ -116,7 +138,7 @@ def validate_start(body):
             raise ValueError(f"Per-command time_limit_seconds must be in(0,{cap}]")
     if "stages" in request and (not isinstance(request["stages"],list) or not 1<=len(request["stages"])<=16):
         raise ValueError("Supply 1..16 stages")
-    settings={"backend":backend,"workers":integer(body.get("workers",1),"workers",1,4),
+    settings={"backend":backend,"workers":integer(body.get("workers",1),"workers",1,MAX_CPU_WORKERS),
         "batch_size":integer(body.get("batch_size",512),"batch_size",1,8192),
         "max_batches":integer(body.get("max_batches",100),"max_batches",1,1000000),
         "time_limit_seconds":integer(body.get("time_limit_seconds",60),"time_limit_seconds",1,86400)}
@@ -144,6 +166,15 @@ def source_identity(request):
     if "model_path" in request:
         files.append(ROOT/request["model_path"])
     files.extend(ROOT/p for p in request.get("model_paths",[]))
+    if request.get("method")=="affine" and isinstance(request.get("parameters"),dict):
+        nested=request["parameters"].get("cipher_request",{})
+        if nested.get("model_path"):
+            files.append(ROOT/nested["model_path"])
+    if request.get("method")=="family_cover" and isinstance(request.get("parameters"),dict):
+        for family in request["parameters"].get("families",[]):
+            nested=family.get("cipher_request",family)
+            if nested.get("model_path"):
+                files.append(ROOT/nested["model_path"])
     return {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 
 
@@ -663,6 +694,8 @@ class RunManager:
                     staged["progress"].update(completed=1,total=1)
                     staged["batches_committed"]+=1
                     staged.update(state="completed",backend_actual="cpu",backends_used=["cpu"])
+                    if record["command"] in RESEARCH_COMMANDS and result.get("complete") is False:
+                        staged["state"]="limited"
                     self._save(staged)
                     record.update(staged)
             else:

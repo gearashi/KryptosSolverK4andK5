@@ -1,6 +1,13 @@
 # K4/K5 investigation
 
-## Current application checkpoint N — 2026-10-20
+## Current application checkpoint Q — 2026-10-28
+
+Version0.6.0 implements and evaluates the full90-item requested list.89 implementations remain available as optional/conditional methods or supporting primitives; the restart portfolio is disabled after failing its bounded comparison. They are not89 independently demonstrated primary-work improvements. The [complete item ledger](IMPROVEMENTS_Q.md) preserves scope, implementation, evidence and negative results. K4/K5 remain unresolved here.
+
+The launch/setup work handles occupied ports, actual readiness, existing workspace reuse and bounded CUDA probing. The [hardware guide](../docs/HARDWARE_SETTINGS.md) records all8 CPU threads and actual RTX2060 comparisons. [Release validation](release-validation.json) is the authority for packaged tests and publication status. Completing this90-item implementation batch does not establish that no future useful improvement exists.
+
+
+## Historical application checkpoint N — 2026-10-20
 
 All eight requested improvements are implemented in version 0.3.0: language-ranked unknown routes/keys, bounded generated layer hypotheses, guided valid-family seeds, exact factor decomposition, verified cross-campaign reuse, managed optimizer frontier pause/resume, a reserved separated-clue multilingual bank, and refitted stage/route ablations. [Checkpoint N](IMPROVEMENTS_N.md) maps each feature and follow-up fix to its evidence.
 

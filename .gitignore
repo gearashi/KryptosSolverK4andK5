@@ -25,6 +25,8 @@ cupy_cache/
 !/research/source_snapshots/release-N-*/
 !/research/source_snapshots/release-O-*/
 !/research/source_snapshots/release-P-*/
+!/research/source_snapshots/release-Q-*/
+!/research/source_snapshots/research-runs-release-Q-*/
 !/research/source_snapshots/sculpture-J/
 /research/source_snapshots/sculpture-J/*
 !/research/source_snapshots/sculpture-J/pk2_fixture.json
@@ -49,6 +51,8 @@ cupy_cache/
 !/research/runs/release-N-*/
 !/research/runs/release-O-*/
 !/research/runs/release-P-*/
+!/research/runs/release-Q-*/
+!/research/runs/review-Q-*/
 !/research/runs/review-P-joint-irregular-001/
 !/research/runs/evaluation-J-001/
 /research/runs/evaluation-J-001/*
@@ -72,3 +76,4 @@ cupy_cache/
 /research/runs/release-O-*/**/*isolated-state/
 
 /research/runs/release-P-*/**/*isolated-state/
+/research/runs/release-Q-*/**/*isolated-state/

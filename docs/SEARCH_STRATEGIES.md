@@ -295,3 +295,9 @@ ordinal text positions, not measured sculpture geometry.
 separately. Any censored selection suppresses the empirical exceedance rate.
 That rate is a finite control statistic, never a probability of authenticity.
 See [phase O evidence](../research/IMPROVEMENTS_O.md) and the frozen protocols.
+
+## Version0.6 conditional methods
+
+The [90-item ledger](../research/IMPROVEMENTS_Q.md) records every phase Q proposal, including unsuccessful comparisons. The [Research methods panel and CLI](RESEARCH_METHODS.md) expose finite relation/SMT, factor, model and grammar experiments. Existing cipher optimizers accept optional `and_or`, `junction`, `diagram`, `chain` and `cutset` decomposition; `strong`/`separator` ordering; and `overlap`, `adaptive`, `cycles`, `reparameterization`, `mod2`/`mod13` bounds. Joint route/key search accepts `relational` propagation and an admissible `matching` bound.
+
+Keep the existing `auto` decomposition as the initial comparator: new exact alternatives tied it on primary decisions in the fixed whole-problem suite. Their query reuse and representation facilities can help particular workloads. Strong branching and more elaborate bounds can add more work than they save. The restarted portfolio is unavailable after its negative comparison. [Measured hardware settings](HARDWARE_SETTINGS.md) apply to CPU/CUDA family scans; exact constraint algorithms remain CPU methods.

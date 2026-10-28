@@ -328,7 +328,8 @@ def run_next(command,request,parse_target):
         jobs=request.get("jobs")
         if not isinstance(jobs,list) or not 1<=len(jobs)<=32:
             raise ValueError("batch needs1..32 optimization requests")
-        workers=_integer(request.get("workers",2),"workers",1,4)
+        from .resource_governor import MAX_CPU_WORKERS
+        workers=_integer(request.get("workers",2),"workers",1,MAX_CPU_WORKERS)
         names=set()
         for raw in jobs:
             _check(raw,{"id","request"})
