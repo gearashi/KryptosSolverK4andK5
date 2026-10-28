@@ -1,0 +1,48 @@
+{
+  "verified_at_utc": "2026-10-28T17:56:22.494366+00:00",
+  "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+  "remote_main": "23474de7bc0fd0adf9e168868cc01b001fc53a10",
+  "author_login": "gearashi",
+  "committer_login": "gearashi",
+  "contributors": [
+    "gearashi"
+  ],
+  "transport": "GitHub CLI with certificate verification",
+  "ci": {
+    "id": 40739234916,
+    "url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40739234916",
+    "head_sha": "23474de7bc0fd0adf9e168868cc01b001fc53a10",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 122995987104,
+        "name": "package (ubuntu-latest, 3.10)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40739234916/job/122995987104"
+      },
+      {
+        "id": 122995987488,
+        "name": "package (windows-latest, 3.10)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40739234916/job/122995987488"
+      },
+      {
+        "id": 122995987685,
+        "name": "package (windows-latest, 3.12)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40739234916/job/122995987685"
+      },
+      {
+        "id": 122995987791,
+        "name": "package (ubuntu-latest, 3.12)",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40739234916/job/122995987791"
+      }
+    ]
+  }
+}

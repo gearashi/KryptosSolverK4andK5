@@ -1,0 +1,28 @@
+{
+  "id": 427007278,
+  "url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0",
+  "author": "gearashi",
+  "tag": "v0.6.0",
+  "published_at": "2026-10-28T17:57:13Z",
+  "body": "Kryptos Research Workbench v0.6.0\n\nAll 90 requested proposals were implemented and evaluated.89 remain as optional methods, conditional models or supporting primitives; the restart portfolio is disabled following its negative comparison. Several retained methods tie older strategies or trade reduced search for more preparation/replay, so this is not 89 independent search-efficiency wins. See [all 90 outcomes](https://github.com/gearashi/KryptosSolverK4andK5/blob/v0.6.0/research/IMPROVEMENTS_Q.md).\n\nThe new Research methods panel exposes relation/SMT, factor, geometry/language/codebook and symbolic-recipe experiments with saved technique traces. Existing cipher searches gain optional propagation, bounds, decomposition and verified reuse.\n\nLaunch/setup repairs add HTTP readiness checks, automatic fallback from occupied ports, reuse of a matching local server, bounded CUDA probing and browser-failure recovery. Actual Windows batch setup and launch passed, including paths with spaces and CUDA_PATH unset.\n\nLocal clean-package validation: 539 Python tests passed; one optional raw-source audit skipped; 117 browser checks and 6 Node checks passed. Actual i7-4790/RTX2060 testing compared 196,608 timed candidate evaluations across all 8 CPU threads and CUDA configurations with identical certified top 20 results. GitHub CI separately validates CPU packages on Windows/Linux with Python 3.10/3.12.\n\nBest tested family-scan settings for the tested computer:CUDA,  certified ranking, 1 worker, 8,192/page; CPU alternative 8 workers, 2,048/page. [Hardware settings and limits](https://github.com/gearashi/KryptosSolverK4andK5/blob/v0.6.0/docs/HARDWARE_SETTINGS.md).\n\nStart with Setup.cmd (optionally -Gpu -Sat), then OpenDashboard.cmd. The app remains idle until an experiment is started. GPL-3.0-only; published through gearashi. This project has not authenticated a K4 or K5 solution.\n\nExact source: 23474de7bc0fd0adf9e168868cc01b001fc53a10. [Verified package workflow](https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40739234916).\n",
+  "assets": [
+    {
+      "name": "KryptosSolverK4AndK5.zip",
+      "state": "uploaded",
+      "url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/download/v0.6.0/KryptosSolverK4AndK5.zip",
+      "size": 36796017
+    },
+    {
+      "name": "SHA256SUMS",
+      "state": "uploaded",
+      "url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/download/v0.6.0/SHA256SUMS",
+      "size": 92
+    },
+    {
+      "name": "validation.json",
+      "state": "uploaded",
+      "url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/download/v0.6.0/validation.json",
+      "size": 960
+    }
+  ]
+}

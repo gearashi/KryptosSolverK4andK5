@@ -17,11 +17,11 @@
     "reliability"
   ],
   "termination": {
-    "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
+    "scope": "All90 requested phaseQ implementations/evaluations completed; keep89 scoped methods/primitives, disable rejectedQ60; tested local CPU/GPU app and gearashi release delivered.",
     "not_a_claim": "Global algorithmic optimality, exhaustive coverage of unknown Kryptos methods, or a verified decipherment.",
-    "final_review_complete": false,
-    "publication_complete": false,
-    "reviewed_actionable_backlog_complete": false
+    "final_review_complete": true,
+    "publication_complete": true,
+    "reviewed_actionable_backlog_complete": true
   },
   "entries": [
     {
@@ -1494,13 +1494,13 @@
   ],
   "delivery": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "verified_source_commit": "944aea9bc6d4d07702a902945fddbe46ac173d02",
-    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0",
+    "verified_source_commit": "23474de7bc0fd0adf9e168868cc01b001fc53a10",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0",
     "local_url": "http://127.0.0.1:8767/",
     "startup": "OpenDashboard.cmd",
-    "state_at_delivery": "Version0.5.0 published and running locally, idle; actual compiled RTX2060 CUDA probe succeeded without CUDA_PATH.",
+    "state_at_delivery": "Version0.6.0 published and running locally, idle; compiled RTX2060 CUDA verified without CUDA_PATH.",
     "remaining": null,
-    "verified_at_utc": "2026-10-26T15:29:08.668531+00:00"
+    "verified_at_utc": "2026-10-28T17:58:24.246226+00:00"
   },
   "historical_phase_L_termination": {
     "scope": "No remaining accepted actionable improvement after a complete post-integration review; usable local CPU/GPU app and reviewed publication package delivered.",
@@ -1543,7 +1543,7 @@
     "remaining": null,
     "verified_at_utc": "2026-10-25T18:20:02.200721+00:00"
   },
-  "execution_status": "active",
+  "execution_status": "completed-requested-batch",
   "pause": {
     "date": "2026-10-25",
     "instruction": "Pause for now. Finish the rest of the improvements when I tell you to.",
@@ -1556,7 +1556,7 @@
   "resumed_date": "2026-10-26",
   "phase_Q": {
     "plan": "research/phase_Q_plan.json",
-    "status": "implemented-evaluated; package/publication pending",
+    "status": "completed-and-published",
     "resumed_date": "2026-10-28",
     "publication_identity": "gearashi",
     "implemented": 90,
@@ -1565,6 +1565,18 @@
       60
     ],
     "outcomes": "research/phase_Q_plan.json",
-    "all_independent_primary_wins": false
+    "all_independent_primary_wins": false,
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0",
+    "source_commit": "23474de7bc0fd0adf9e168868cc01b001fc53a10"
+  },
+  "historical_phase_P_delivery": {
+    "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
+    "verified_source_commit": "944aea9bc6d4d07702a902945fddbe46ac173d02",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.5.0",
+    "local_url": "http://127.0.0.1:8767/",
+    "startup": "OpenDashboard.cmd",
+    "state_at_delivery": "Version0.5.0 published and running locally, idle; actual compiled RTX2060 CUDA probe succeeded without CUDA_PATH.",
+    "remaining": null,
+    "verified_at_utc": "2026-10-26T15:29:08.668531+00:00"
   }
 }

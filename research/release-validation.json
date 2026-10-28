@@ -4,9 +4,31 @@
   "date": "2026-10-28",
   "publication": {
     "repository": "https://github.com/gearashi/KryptosSolverK4andK5",
-    "status": "Local package and hardware gates passed; exact GitHub CI/tag/publication pending",
+    "status": "Published; exact source/tag, all four CI jobs, public asset hashes and gearashi attribution verified",
     "tag": "v0.6.0",
-    "required_account": "gearashi"
+    "required_account": "gearashi",
+    "verified_source_commit": "23474de7bc0fd0adf9e168868cc01b001fc53a10",
+    "release_url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0",
+    "ci_run": "https://github.com/gearashi/KryptosSolverK4andK5/actions/runs/40739234916",
+    "ci_jobs_passed": 4,
+    "verified_assets": {
+      "KryptosSolverK4AndK5.zip": "28dcb7528c1e25d163d533c00d9d9f1117d641ae0b3f9c7d5e41a4051cd0d0d9",
+      "SHA256SUMS": "7daaaf59eb827498bc0d7547e6b45aa61682977d8b6bae17a4821ec5842ef00a",
+      "validation.json": "80d392bf87e1398dedc9913408fafca7cf2aea8d024880e9653ad9ce001721fc"
+    },
+    "attribution": {
+      "author": "gearashi",
+      "committer": "gearashi",
+      "release_author": "gearashi",
+      "contributors": [
+        "gearashi"
+      ]
+    },
+    "evidence": [
+      "research/runs/release-Q-001/github-ci-attribution.json",
+      "research/runs/release-Q-001/github-release.json"
+    ],
+    "public_verification_transport": "Windows curl8.13/Schannel; HTTPS-only redirects; certificate verification enabled"
   },
   "historical_release": "research/runs/release-P-001/release-validation.json",
   "fresh_checkout": {
@@ -221,11 +243,14 @@
     "kryptos_solution": false,
     "no_authenticated_K5_input_bundled": true
   },
-  "remaining": [
-    "Exact source GitHub CI matrix",
-    "Annotated v0.6.0 tag and gearashi release",
-    "Public asset and attribution verification",
-    "Idle local launch"
-  ],
-  "delivery_metadata_policy": "Post-publication documentation/evidence-only commit on main; immutable tag and assets remain at verified_source_commit."
+  "remaining": [],
+  "delivery_metadata_policy": "Post-publication documentation/evidence-only commit on main; immutable tag and assets remain at verified_source_commit.",
+  "local_launch": {
+    "path": "research/runs/release-Q-001/local-launch.json",
+    "sha256": "f058ee538d6bc127d4dc008a317a7b28482544e4ad1cdf0d0fb5cc7f8e3885cd",
+    "version": "0.6.0",
+    "state": "idle",
+    "compiled_cuda_ready": true,
+    "url": "http://127.0.0.1:8767/"
+  }
 }

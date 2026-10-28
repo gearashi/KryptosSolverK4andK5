@@ -1,0 +1,13 @@
+{
+  "published": true,
+  "identity": "gearashi",
+  "tag": "v0.6.0",
+  "commit": "23474de7bc0fd0adf9e168868cc01b001fc53a10",
+  "url": "https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0",
+  "verified_assets": {
+    "KryptosSolverK4AndK5.zip": "28dcb7528c1e25d163d533c00d9d9f1117d641ae0b3f9c7d5e41a4051cd0d0d9",
+    "SHA256SUMS": "7daaaf59eb827498bc0d7547e6b45aa61682977d8b6bae17a4821ec5842ef00a",
+    "validation.json": "80d392bf87e1398dedc9913408fafca7cf2aea8d024880e9653ad9ce001721fc"
+  },
+  "public_verification_transport": "Windows curl8.13/Schannel; HTTPS-only redirects; certificate verification enabled"
+}
