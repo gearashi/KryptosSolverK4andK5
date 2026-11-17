@@ -68,7 +68,7 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 ## Validation and packaged data
 
-[Download v0.6.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0). Published through gearashi after all four Windows/Linux package checks; public download hashes verified.
+[Download v0.7.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.7.0). Published through gearashi after all four Windows/Linux package checks; public download hashes verified ([record](research/runs/release-S-001/github-release.json)). CUDA evidence is from [v0.6.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0); v0.7.0 adds no GPU code.
 
 Version **0.7.0** adds the [exact clue tests](research/round_S/README.md): seven batteries that decide whole cipher families from the 24 published K4 clue letters without trying a key, with a dashboard page and a command line. All are negative on K4 under their stated assumptions; K4 remains unsolved here.
 
