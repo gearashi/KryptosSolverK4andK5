@@ -94,6 +94,10 @@ GPU tests require `KRYPTOS_TEST_CUDA=1` in the configured GPU environment. An op
 
 Frozen language-count models, normalized fixtures and the authored code snapshots needed by the release audits are included. Downloaded full books, third-party page/code caches, runtime state and bulky historical outputs remain local. Some historical research scripts therefore require separately obtaining the cited inputs. See [source distribution](docs/SOURCE_DISTRIBUTION.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Project-authored software and documentation are licensed under GPL-3.0-only; third-party material retains its own terms.
 
+## Exact clue tests
+
+The **Exact clue tests** page and `python -B -m kryptos.exact_batteries` decide whole cipher families from the 24 published K4 clue letters without trying a key: periodic and compound keys with fixed or one unknown alphabet, key recurrences, Trifid for every possible cube, Porta, Slidefair, and transposition layered with a periodic keyed substitution. All are negative on K4 under the stated assumptions; see [round S](research/round_S/README.md) for coverage, controls and limits.
+
 ## License
 
 Copyright (C) 2026 gearashi.

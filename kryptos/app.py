@@ -22,6 +22,7 @@ from .workspace_store import WorkspaceStore,MAX_BUNDLE
 from . import launcher
 from .app_jobs import atomic_json
 from .resource_governor import hardware_worker_limit
+from .exact_batteries import ExactRunner,catalog as exact_catalog
 
 VERSION="0.6.0"
 
@@ -104,6 +105,8 @@ def make_server(state_dir,port=8767,*,probe=True):
         manager.close()
         raise
 
+    exact_runner=ExactRunner()
+
     def run_view(key=None):
         if key in workspace.recovered_runs:
             return workspace.recovered(key)
@@ -168,6 +171,8 @@ def make_server(state_dir,port=8767,*,probe=True):
                 elif parsed.path=="/api/methods":
                     from .research_methods import catalog
                     self._send(200,catalog())
+                elif parsed.path=="/api/exact-tests":
+                    self._send(200,{**exact_catalog(),"run":exact_runner.view()})
                 elif parsed.path=="/api/campaigns":
                     live=campaigns.list_campaigns()
                     with workspace.lock:
@@ -191,10 +196,10 @@ def make_server(state_dir,port=8767,*,probe=True):
                     self._send(200,workspace_health())
                 elif re.fullmatch(r"/api/workspace/recovery/[a-f0-9]{32}",parsed.path):
                     self._send(200,{"recovery":workspace.recoveries[parsed.path.rsplit("/",1)[1]]})
-                elif parsed.path in {"/","/static/index.html","/static/app.js","/static/workspace.js","/static/methods.js","/static/style.css","/static/mark.svg"}:
+                elif parsed.path in {"/","/static/index.html","/static/app.js","/static/workspace.js","/static/methods.js","/static/exact.js","/static/style.css","/static/mark.svg"}:
                     filename="index.html" if parsed.path=="/" else parsed.path.rsplit("/",1)[1]
                     path=ROOT/"kryptos/static"/filename
-                    mime={"index.html":"text/html; charset=utf-8","app.js":"application/javascript; charset=utf-8","workspace.js":"application/javascript; charset=utf-8","methods.js":"application/javascript; charset=utf-8","style.css":"text/css; charset=utf-8","mark.svg":"image/svg+xml"}[filename]
+                    mime={"index.html":"text/html; charset=utf-8","app.js":"application/javascript; charset=utf-8","workspace.js":"application/javascript; charset=utf-8","methods.js":"application/javascript; charset=utf-8","exact.js":"application/javascript; charset=utf-8","style.css":"text/css; charset=utf-8","mark.svg":"image/svg+xml"}[filename]
                     self._send(200,path.read_bytes(),mime)
                 elif parsed.path=="/favicon.ico":
                     self._send(204,b"","image/x-icon")
@@ -264,6 +269,12 @@ def make_server(state_dir,port=8767,*,probe=True):
                     if not isinstance(body,dict) or set(body)!={"campaign_id"}:
                         raise ValueError("Campaign controls require campaign_id only")
                     response={"campaign":campaigns.control(self.path.rsplit("/",1)[1],body["campaign_id"])}
+                elif self.path=="/api/exact-tests/start":
+                    response={"run":exact_runner.start(body)}
+                elif self.path=="/api/exact-tests/stop":
+                    if body!={}:
+                        raise ValueError("Stop requires an empty object")
+                    response={"run":exact_runner.cancel()}
                 else:
                     self._send(404,{"error":"Unknown operation"})
                     return
@@ -292,6 +303,7 @@ def make_server(state_dir,port=8767,*,probe=True):
 
     server.manager=manager
     server.campaigns=campaigns
+    server.exact_runner=exact_runner
     server.workspace=workspace
     server.instance=instance
     return server

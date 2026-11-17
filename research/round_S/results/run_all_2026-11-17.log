@@ -1,0 +1,145 @@
+== basic statistics ==
+BNYPVTT
+MZFPKWG
+DKZXTJC
+DIGKUHU
+AUEKCAR
+width 14
+?OBKRUOXOGHULB
+SOLIFBBWFLRVQQ
+PRNGKSSOTWTQSJ
+QSSEKZZWATJKLU
+DIAWINFBNYPVTT
+MZFPKWGDKZXTJC
+DIGKUHUAUEKCAR
+width 21
+?OBKRUOXOGHULBSOLIFBB
+WFLRVQQPRNGKSSOTWTQSJ
+QSSEKZZWATJKLUDIAWINF
+BNYPVTTMZFPKWGDKZXTJC
+DIGKUHUAUEKCAR
+width 31
+?OBKRUOXOGHULBSOLIFBBWFLRVQQPRN
+GKSSOTWTQSJQSSEKZZWATJKLUDIAWIN
+FBNYPVTTMZFPKWGDKZXTJCDIGKUHUAU
+EKCAR
+max equal adjacent-column pairs at width 7: 5 shuffles >=: 0.0006 ; best over widths 3-32: 5 shuffles >=: 0.0162
+== battery 1: key models, fixed alphabets ==
+tests=11583936 decidable=2566038 consistent_any_score=5902515 flagged=0 threshold=7.5
+== battery 2: unknown mixed alphabets ==
+tests=32214000 decidable=4543320 flagged=0 threshold=7.5
+== battery 3: periods, recurrences, polynomials ==
+== 1. periodic key, exact survivors (period: residual equations) ==
+fixed alphabets Pstd/Cstd/vig    survive: none
+fixed alphabets Pstd/Cstd/beau   survive: none
+fixed alphabets Pstd/Ckry/vig    survive: none
+fixed alphabets Pstd/Ckry/beau   survive: none
+fixed alphabets Pkry/Cstd/vig    survive: none
+fixed alphabets Pkry/Cstd/beau   survive: none
+fixed alphabets Pkry/Ckry/vig    survive: none
+fixed alphabets Pkry/Ckry/beau   survive: none
+unknown plain alphabet, cipher alphabet std: survive: 13:0, 16:0, 18:0, 19:1, 20:0, 23:0, 24:0, 25:0, 26:0
+unknown plain alphabet, cipher alphabet kry: survive: 13:0, 16:0, 18:0, 19:1, 20:0, 23:0, 24:0, 25:0, 26:0
+unknown cipher alphabet, plain alphabet std: survive: 13:0, 16:0, 19:1, 20:0, 23:0, 24:0, 26:0
+unknown cipher alphabet, plain alphabet kry: survive: 13:0, 16:0, 19:1, 20:0, 23:0, 24:0, 26:0
+== 2. recurrences on the key stream (consistent cases with >=3 residual equations are listed) ==
+recurrence/polynomial models tested: 552 consistent with >=3 residual equations: 0
+== battery 4: Trifid, every cube ==
+settings tested: 19204 surviving: 0
+variant=q direction=enc survivors (period:[block starts]): none
+variant=q direction=dec survivors (period:[block starts]): none
+variant=n direction=enc survivors (period:[block starts]): none
+variant=n direction=dec survivors (period:[block starts]): none
+== battery 5: running key from Kryptos's own texts ==
+tests: 9360000 | best fixed-alphabet agreement: (9, ('tableau rows', 13, 254, 'kry', 'std', 'kry', 'beau')) | fixed fits (>=12 of 24): [] | unknown-alphabet fits: []
+== battery 6: keyword alphabets with an English running key ==
+[real K4] keywords: 390446 distinct alphabets: 321558 candidates scored: 18328806
+[real K4] English reference (held-out text, 5000 fragments): 1% -280.2  10% -210.0  median -178.7
+[real K4] top: -207.0 MAGNETOTHERAPY W kry std beau QSVBXALGARBALEGLOTHERSPR
+[real K4] top: -207.0 IRREPAIRABLE W W W vig CEFEEREDADFIZGWENTACTTWI
+[real K4] top: -210.0 GKP W W kry beau IICHTONDWATDEMONAPAMEWAY
+[real K4] top: -210.4 PHYCOXANTHIN W std W vig QXUFIESIEROVBCESOBEITHER
+[real K4] top: -210.4 SCISSORSTAILED W kry kry beau QWRREWASSUSSEPDAPSUNSITI
+[real K4] share of English fragments scoring above this run's best: 0.882
+== battery 7: transposition + periodic keyed substitution ==
+permutations=1657160 tests=344689280 flagged=0 minres=6
+== small classical checks ==
+Porta with std alphabet: 16 of 24 clue letters stay in the same half -> excluded
+Porta with kry alphabet: 16 of 24 clue letters stay in the same half -> excluded
+Slidefair vig std alphabet, pairs start even: 1 of 11 known pairs consistent -> excluded
+Slidefair var std alphabet, pairs start even: 1 of 11 known pairs consistent -> excluded
+Slidefair beau std alphabet, pairs start even: 0 of 11 known pairs consistent -> excluded
+Slidefair vig std alphabet, pairs start odd: 0 of 11 known pairs consistent -> excluded
+Slidefair var std alphabet, pairs start odd: 0 of 11 known pairs consistent -> excluded
+Slidefair beau std alphabet, pairs start odd: 1 of 11 known pairs consistent -> excluded
+Slidefair vig kry alphabet, pairs start even: 0 of 11 known pairs consistent -> excluded
+Slidefair var kry alphabet, pairs start even: 0 of 11 known pairs consistent -> excluded
+Slidefair beau kry alphabet, pairs start even: 0 of 11 known pairs consistent -> excluded
+Slidefair vig kry alphabet, pairs start odd: 1 of 11 known pairs consistent -> excluded
+Slidefair var kry alphabet, pairs start odd: 1 of 11 known pairs consistent -> excluded
+Slidefair beau kry alphabet, pairs start odd: 0 of 11 known pairs consistent -> excluded
+solutions (al,b,g): []
+== controls 1 ==
+PLANT per7+per5 flags: 323
+    FLAG Pkry/Ckry/vig | PER(5)+PER(7) prog=0 auto=(0,L0,a0) auto2=(0,L0,a0) eq=24 rank2=11 rank13=11 score=18.4
+    FLAG Pkry/Ckry/vig | PER(5)+PER(14) prog=0 auto=(0,L0,a0) auto2=(0,L0,a0) eq=24 rank2=17 rank13=17 score=9.9
+    FLAG Pkry/Ckry/vig | PER(5)+PER(21) prog=0 auto=(0,L0,a0) auto2=(0,L0,a0) eq=24 rank2=17 rank13=17 score=9.9
+PLANT per7+row7+prog flags: 3662
+    FLAG Pkry/Ckry/vig | PER(7)+ROW(w3,o0) prog=0 auto=(0,L0,a0) auto2=(0,L0,a0) eq=24 rank2=15 rank13=15 score=12.7
+    FLAG Pkry/Ckry/vig | PER(7)+ROW(w7,o1) prog=0 auto=(0,L0,a0) auto2=(0,L0,a0) eq=24 rank2=10 rank13=10 score=19.8
+    FLAG Pkry/Ckry/vig | PER(7)+ROW(w14,o1) prog=0 auto=(0,L0,a0) auto2=(0,L0,a0) eq=24 rank2=10 rank13=10 score=19.8
+PLANT per3+ptauto7 flags: 1
+    FLAG Pkry/Ckry/vig | PER(1)+PER(3) prog=0 auto=(1,L7,a1) auto2=(0,L0,a0) eq=10 rank2=4 rank13=4 score=8.5
+PLANT per2+ctauto7 flags: 2971
+    FLAG Pkry/Ckry/vig | PER(1)+PER(2) prog=0 auto=(1,L7,a0) auto2=(2,L7,a1) eq=10 rank2=4 rank13=4 score=8.5
+    FLAG Pkry/Ckry/vig | PER(1)+PER(2) prog=0 auto=(1,L7,a1) auto2=(2,L7,a1) eq=10 rank2=4 rank13=4 score=8.5
+    FLAG Pkry/Ckry/vig | PER(1)+PER(2) prog=0 auto=(2,L7,a1) auto2=(0,L0,a0) eq=24 rank2=3 rank13=3 score=29.7
+PLANT per4+keyauto5 flags: 357
+    FLAG Pkry/Ckry/vig | PER(1)+PER(4) prog=0 auto=(1,L5,a1) auto2=(2,L5,a1) eq=14 rank2=6 rank13=6 score=11.3
+    FLAG Pkry/Ckry/vig | PER(2)+PER(4) prog=0 auto=(1,L5,a1) auto2=(2,L5,a1) eq=14 rank2=6 rank13=6 score=11.3
+    FLAG Pkry/Ckry/vig | PER(3)+PER(4) prog=0 auto=(1,L5,a1) auto2=(2,L5,a1) eq=14 rank2=8 rank13=8 score=8.5
+shuffles: 20 total false flags: 0
+real K4: ([], 'tests=11583936 decidable=2566038 consistent_any_score=5902515 flagged=0 threshold=7.5')
+== controls 2 ==
+PLANT A: unknown plain alphabet + period 5 | flags: 141
+    FLAG mode=A rhs=1 | PLET(0,0) PER(1,0) PER(5,0) | eq=24 cols=19 rank2=17 rank13=17 score=9.9
+    FLAG mode=A rhs=1 | PLET(0,0) PER(5,0) | eq=24 cols=18 rank2=17 rank13=17 score=9.9
+PLANT B: unknown cipher alphabet + period 3 + row step 7 | flags: 0
+PLANT A: unknown plain alphabet + period 2 + ciphertext lag 7 via unknown alphabet | flags: 0
+PLANT D: period 4 + plaintext lag 7 via unknown alphabet | flags: 0
+shuffles: 20 total false flags: 0
+real K4: ([], 'tests=32214000 decidable=4543320 flagged=0 threshold=7.5')
+TRUE MODEL B: unknown cipher alphabet + period 3 + row step 7 -> ['FLAG mode=B rhs=1 | CLET(0,0) PER(3,0) ROWLIN(7,1) | eq=24 cols=19 rank2=18 rank13=18 score=8.5']
+TRUE MODEL A: unknown plain alphabet + period 2 + ciphertext lag 7 via unknown alphabet -> ['FLAG mode=A rhs=0 | PLET(0,0) PER(2,0) CAUTOunk(7,0) | eq=24 cols=32 rank2=24 rank13=24 score=0.0']
+TRUE MODEL D: period 4 + plaintext lag 7 via unknown alphabet -> ['FLAG mode=D rhs=6 | PER(4,0) PAUTOunk(7,0) | eq=10 cols=13 rank2=10 rank13=10 score=0.0']
+== controls 4 ==
+PLANT variant=n period=7 start=3 dir=enc: true setting survives: True | all survivors: [(('q', 'enc', 7), [4]), (('n', 'enc', 7), [3])]
+PLANT variant=q period=7 start=0 dir=enc: true setting survives: True | all survivors: [(('q', 'enc', 7), [0]), (('n', 'enc', 7), [6])]
+PLANT variant=n period=10 start=4 dir=dec: true setting survives: True | all survivors: [(('q', 'dec', 10), [5]), (('n', 'dec', 10), [4])]
+PLANT variant=q period=14 start=0 dir=dec: true setting survives: True | all survivors: [(('q', 'dec', 14), [0]), (('n', 'dec', 14), [13])]
+20 shuffles of K4: surviving settings in total: 0 of 384080
+== controls 6 ==
+[shuffle 0] top: -206.7 UNLOOKEDFOR kry W W var HEHEMETHIMQXMMUSEDSDECZK
+[shuffle 1] top: -196.6 PRECONDYLOID kry W W beau NLATHEENATFNDXNTELESEITK
+[shuffle 2] top: -208.1 PERIPHERALLY W W kry var CHEMSCALEALOVNYISLOOMAJK
+[plant PARCHMENT] top: -167.9 PARCHMENT W W std vig WASTHEWORSTOFTHEAGEOFFOO
+[plant PARCHMENT] share of English fragments scoring above this run's best: 0.264
+== controls 7 ==
+PLANT 1 (97 letters, columnar 7, substitute then transpose) flags: 1
+    ['FLAG n=97 columnar w=7 up=1 order=0236541 | conv=6 mode=substitute-then-transpose period=8 residual=16 key=PALIMPSE']
+PLANT 2 (98 cells, turns w=14 style=0 then w=7 style=1, transpose then substitute) flags: 16
+    ['FLAG n=98 turns w=14 style=0 then w=7 style=1 | conv=1 mode=transpose-then-substitute period=5 residual=19 key=DRJWF']
+shuffles: 20 false flags: 0
+real K4: ([], 'permutations=1657160 tests=344689280 flagged=0 minres=6')
+== controls 3 and 5 (5 shuffles each) ==
+shuffle 0 | recurrence/polynomial models tested: 552 consistent with >=3 residual equations: 0 | tests: 9360000 | best fixed-alphabet agreement: (9, ('K2 cipher', 12, 364, 'kry', 'std', 'kry', 'beau')) | fixed fits (>=12 of 24): [] | unk
+shuffle 1 | recurrence/polynomial models tested: 552 consistent with >=3 residual equations: 0 | tests: 9360000 | best fixed-alphabet agreement: (8, ('K1-K4 cipher reversed', 8, 488, 'kry', 'std', 'kry', 'var')) | fixed fits (>=12 of 24)
+shuffle 2 | recurrence/polynomial models tested: 552 consistent with >=3 residual equations: 0 | tests: 9360000 | best fixed-alphabet agreement: (8, ('K3 plain', 8, 67, 'kry', 'std', 'std', 'var')) | fixed fits (>=12 of 24): [] | unknown
+shuffle 3 | recurrence/polynomial models tested: 552 consistent with >=3 residual equations: 0 | tests: 9360000 | best fixed-alphabet agreement: (8, ('K1-K4 cipher', 10, 243, 'std', 'kry', 'std', 'var')) | fixed fits (>=12 of 24): [] | u
+shuffle 4 | recurrence/polynomial models tested: 552 consistent with >=3 residual equations: 0 | tests: 9360000 | best fixed-alphabet agreement: (9, ('K1-K3 plain reversed', 20, 86, 'kry', 'kry', 'std', 'vig')) | fixed fits (>=12 of 24):
+
+== addendum to the log: battery 2 rebuilt with a wider coverage rule (models with up to 3 shared constants are now tested) ==
+tests=32214000 decidable=4706000 flagged=0 threshold=7.5
+controls after the change: planted unknown-alphabet period-5 message 219 flags; 20 shuffles 0 flags
+== extra check: grid_tableau.py ==
+models: 1980 | consistent with at least 1 letter left over: [(1, 7, 2, 'plain', 'std'), (1, 4, 3, 'cipher', 'std')]
