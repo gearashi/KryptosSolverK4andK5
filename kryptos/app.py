@@ -24,7 +24,7 @@ from .app_jobs import atomic_json
 from .resource_governor import hardware_worker_limit
 from .exact_batteries import ExactRunner,catalog as exact_catalog
 
-VERSION="0.6.0"
+VERSION="0.7.0"
 
 
 def validation_presets():

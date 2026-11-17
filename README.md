@@ -70,6 +70,8 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 [Download v0.6.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0). Published through gearashi after all four Windows/Linux package checks; public download hashes verified.
 
+Version **0.7.0** adds the [exact clue tests](research/round_S/README.md): seven batteries that decide whole cipher families from the 24 published K4 clue letters without trying a key, with a dashboard page and a command line. All are negative on K4 under their stated assumptions; K4 remains unsolved here.
+
 Version **0.6.0** implements and evaluates [all 90 numbered proposals](research/IMPROVEMENTS_Q.md).89 remain available as optional methods, conditional models or supporting primitives. The restarted portfolio is disabled after its negative comparison. This is not a claim of89 independent search-efficiency wins: several methods tie previous strategies or exchange fewer decisions for more preparation and replay.
 
 The new **Research methods** panel exposes bounded relation/SMT, factor, geometry/language/codebook and symbolic-recipe experiments, with original requests, technique traces and explicit completeness. The ordinary optimizer and joint route/key searches gain optional propagation, bounds and exact decomposition methods. [The method guide](docs/RESEARCH_METHODS.md) explains entry points and assumptions.

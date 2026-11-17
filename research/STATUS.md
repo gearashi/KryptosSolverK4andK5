@@ -1,6 +1,12 @@
 # K4/K5 investigation
 
-## Current application checkpoint Q — 2026-10-28
+## Current application checkpoint S — 2026-11-17
+
+Version 0.7.0 adds exact clue tests: seven batteries that decide whole cipher families from the 24 published K4 clue letters with one algebraic check each (periodic and compound keys with fixed or one unknown alphabet, key recurrences, Trifid for every possible cube, Porta, Slidefair, and transposition layered with a periodic keyed substitution). Every battery is negative on K4 under its stated assumptions, finds its planted control messages and reports no survivor on shuffled ciphertexts. [Round S](round_S/README.md) records coverage, controls and limits. This is not a decipherment and excludes only the stated families.
+
+K4/K5 remain unresolved here; no authenticated public K5 ciphertext is bundled.
+
+## Historical application checkpoint Q — 2026-10-28
 
 Version0.6.0 implements and evaluates the full90-item requested list.89 implementations remain available as optional/conditional methods or supporting primitives; the restart portfolio is disabled after failing its bounded comparison. They are not89 independently demonstrated primary-work improvements. The [complete item ledger](IMPROVEMENTS_Q.md) preserves scope, implementation, evidence and negative results. K4/K5 remain unresolved here.
 
