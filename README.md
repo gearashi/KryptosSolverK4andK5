@@ -70,6 +70,8 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 [Download v0.6.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0). Published through gearashi after all four Windows/Linux package checks; public download hashes verified.
 
+Version **0.7.0** adds the [exact clue tests](research/round_S/README.md): seven batteries that decide whole cipher families from the 24 published K4 clue letters without trying a key, with a dashboard page and a command line. All are negative on K4 under their stated assumptions; K4 remains unsolved here.
+
 Version **0.6.0** implements and evaluates [all 90 numbered proposals](research/IMPROVEMENTS_Q.md).89 remain available as optional methods, conditional models or supporting primitives. The restarted portfolio is disabled after its negative comparison. This is not a claim of89 independent search-efficiency wins: several methods tie previous strategies or exchange fewer decisions for more preparation and replay.
 
 The new **Research methods** panel exposes bounded relation/SMT, factor, geometry/language/codebook and symbolic-recipe experiments, with original requests, technique traces and explicit completeness. The ordinary optimizer and joint route/key searches gain optional propagation, bounds and exact decomposition methods. [The method guide](docs/RESEARCH_METHODS.md) explains entry points and assumptions.
@@ -93,6 +95,10 @@ python -B -m unittest discover -s tests -v
 GPU tests require `KRYPTOS_TEST_CUDA=1` in the configured GPU environment. An optional raw-source audit skips when its excluded snapshots are absent; packaged dataset integrity tests still run.
 
 Frozen language-count models, normalized fixtures and the authored code snapshots needed by the release audits are included. Downloaded full books, third-party page/code caches, runtime state and bulky historical outputs remain local. Some historical research scripts therefore require separately obtaining the cited inputs. See [source distribution](docs/SOURCE_DISTRIBUTION.md) and [third-party notices](THIRD_PARTY_NOTICES.md). Project-authored software and documentation are licensed under GPL-3.0-only; third-party material retains its own terms.
+
+## Exact clue tests
+
+The **Exact clue tests** page and `python -B -m kryptos.exact_batteries` decide whole cipher families from the 24 published K4 clue letters without trying a key: periodic and compound keys with fixed or one unknown alphabet, key recurrences, Trifid for every possible cube, Porta, Slidefair, and transposition layered with a periodic keyed substitution. All are negative on K4 under the stated assumptions; see [round S](research/round_S/README.md) for coverage, controls and limits.
 
 ## License
 

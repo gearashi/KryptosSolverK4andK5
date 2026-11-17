@@ -11,6 +11,7 @@
   <script src="/static/app.js" defer></script>
   <script defer src="/static/workspace.js"></script>
   <script defer src="/static/methods.js"></script>
+  <script defer src="/static/exact.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to workbench</a>
@@ -26,6 +27,7 @@
       <button class="nav-link" data-view="history"><span aria-hidden="true">◷</span> Saved runs <small id="history-count">05</small></button>
       <button class="nav-link" data-view="workspace"><span aria-hidden="true">▣</span> Workspace <small>07</small></button>
       <button class="nav-link" data-view="methods"><span aria-hidden="true">∑</span> Research methods <small>08</small></button>
+      <button class="nav-link" data-view="exact"><span aria-hidden="true">≡</span> Exact clue tests <small>09</small></button>
       <button class="nav-link" data-view="guide"><span aria-hidden="true">◇</span> Research guide <small>06</small></button>
     </nav>
     <div class="passage-map"><p class="nav-heading">THE SCULPTURE</p>
@@ -119,6 +121,16 @@
       <p id="methods-status" role="status">Choose a declared example; no computation starts automatically.</p>
       <details><summary>Result, techniques, witnesses and counted work</summary><pre id="methods-result" class="json-output"></pre></details></section>
       <section class="panel"><h2>The 90-proposal record</h2><p class="field-help">A proposed or incomplete entry is not an implemented benefit. Validation applies to the stated finite scope.</p><ol id="methods-ledger"></ol></section>
+    </section>
+    <section id="exact-view" class="view" hidden>
+      <header class="page-heading"><div><p class="eyebrow">WHOLE KEY SPACES, NO KEY TRIED</p><h1>Exact clue tests.</h1><p class="lead">Decide a cipher family from the 24 published clue letters with one algebraic check.</p></div></header>
+      <section class="panel"><p id="exact-policy" class="section-description"></p><p id="exact-assumptions" class="field-help"></p>
+      <label for="exact-battery">Test battery</label><select id="exact-battery"></select><p id="exact-description" class="field-help"></p>
+      <label for="exact-cipher">Ciphertext (97 letters; leave empty for K4)</label><input id="exact-cipher" type="text" maxlength="97" spellcheck="false" autocomplete="off" placeholder="K4 as inscribed">
+      <div class="button-row"><button id="exact-start" class="button primary" disabled>Run test battery</button><button id="exact-stop" class="button" disabled>Stop</button></div>
+      <p id="exact-status" role="status">Choose a battery; no computation starts automatically.</p>
+      <div id="exact-summary" class="table-scroll"></div>
+      <details><summary>Complete result (JSON)</summary><pre id="exact-result" class="json-output"></pre></details></section>
     </section>
     <section id="guide-view" class="view" hidden><header class="page-heading"><div><p class="eyebrow">EVIDENCE BEFORE CONCLUSIONS</p><h1>Know what a fit means.</h1><p class="lead">A practical guide to using this research workbench.</p></div></header><div class="guide-grid"><article class="panel guide-card"><span class="guide-number">01</span><h2>Start with a declared model</h2><p>A cipher, alphabet, route and key schedule define one hypothesis. A completed search applies only to its recorded bounds. An interrupted search cannot exclude the family.</p></article><article class="panel guide-card"><span class="guide-number">02</span><h2>Read candidates critically</h2><p>The public K4 clues constrain 24 of 97 letters. Even an exact fit and a successful re-encryption can leave many valid plaintexts. A language score is a ranking aid, never an authentication test.</p></article><article class="panel guide-card"><span class="guide-number">03</span><h2>Keep K5 assumptions explicit</h2><p>This workbench has no authenticated public K5 ciphertext preset. Supply and label your own hypothesis. K4 clues are not automatically transferred to K5.</p></article><article class="panel guide-card"><span class="guide-number">04</span><h2>Use the right compute path</h2><p>Exact constraint solvers run on the CPU. CUDA is available only for supported accelerated families when the local engine detects a compatible device. More workers or a GPU do not guarantee faster useful results.</p></article></div><section class="panel sources-panel"><div class="panel-heading"><h2>Source record</h2><span class="tag" id="sources-date">LOCAL RECORD</span></div><p id="knowledge-status" class="section-description"></p><div id="source-links" class="source-links"></div></section></section>
     <footer><span>KRYPTOS RESEARCH WORKBENCH <i>/</i> LOCAL CPU + OPTIONAL CUDA</span><span>Independent project · no automatic submissions</span></footer>
