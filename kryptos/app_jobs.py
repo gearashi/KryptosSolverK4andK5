@@ -22,7 +22,7 @@ from .research_methods import COMMANDS as RESEARCH_COMMANDS
 
 ROOT=Path(__file__).resolve().parents[1]
 EXACT_COMMANDS={"joint","joint-ranked","scheduled","mixed","alphabet-plus","optimize-plus","general","columns","alphabet","optimize","recover","layers","grid","residues","layout","validate-holdout","validate-controls","validate-ablations"}
-EXACT_COMMANDS |= RESEARCH_COMMANDS
+EXACT_COMMANDS |= RESEARCH_COMMANDS | {"round-t"}
 MODELS=[{"id":name,"label":name.title()+" · two authors","path":f"research/runs/evaluation-J-001/artifacts/{name}-two-author-trigram.json"}
         for name in ("english","spanish","french","italian","latin")]
 MODELS.append({"id":"english-pilot","label":"English · pilot control","path":"research/models/multilingual-001/artifacts/pg1342-english-trigram.json"})
@@ -75,7 +75,21 @@ def validate_start(body):
         raise ValueError("Select a bundled scoring model")
     if "model_paths" in request and (not isinstance(request["model_paths"],list) or not 1<=len(request["model_paths"])<=5 or any(p not in MODEL_PATHS for p in request["model_paths"])):
         raise ValueError("Select1..5 bundled scoring models")
-    if command in RESEARCH_COMMANDS:
+    if command == "round-t":
+        from .data import K4_CIPHERTEXT, K4_CRIBS
+        from .round_t import PRESETS
+        if kind != "exact" or backend != "cpu":
+            raise ValueError("Round T presets use the CPU")
+        if set(request) - {"preset", "target", "ciphertext", "cribs"}:
+            raise ValueError("Round T presets have fixed bounds")
+        preset = request.get("preset")
+        if not isinstance(preset, str) or preset not in PRESETS:
+            raise ValueError("Choose a listed Round T preset")
+        target, text, cribs, _ = _target(request)
+        if target != "k4" or text != K4_CIPHERTEXT or cribs != K4_CRIBS:
+            raise ValueError("Round T presets require the published K4 ciphertext and clues")
+        request.update(target=target, ciphertext=text, cribs=cribs)
+    elif command in RESEARCH_COMMANDS:
         if kind != "exact":
             raise ValueError("Research method commands are bounded CPU jobs")
         if command=="constraint-lab" and request.get("method")=="affine":
@@ -296,6 +310,20 @@ class RunManager:
             total=value["progress"]["total"]
             value["progress"]["total_decimal"]=str(total) if total is not None else None
             return value
+
+    def round_t_coverage(self):
+        """Only complete, local K4 jobs with passing controls advance the queue."""
+        with self.lock:
+            done = set()
+            for record in self.records.values():
+                if record["command"] != "round-t" or record["state"] != "completed":
+                    continue
+                result = record.get("result") or {}
+                preset = record["request"].get("preset")
+                if (result.get("completed") is True and result.get("controls", {}).get("passed") is True
+                        and isinstance(preset, str) and result.get("preset") == preset):
+                    done.add(preset)
+            return sorted(done)
 
     def list_runs(self):
         with self.lock:
@@ -694,6 +722,12 @@ class RunManager:
                     staged["progress"].update(completed=1,total=1)
                     staged["batches_committed"]+=1
                     staged.update(state="completed",backend_actual="cpu",backends_used=["cpu"])
+                    if record["command"] == "round-t":
+                        tested = result["tested"]
+                        staged["progress"].update(completed=tested, total=tested, unit="settings")
+                        if not result["completed"]:
+                            staged.update(state="limited")
+                            staged["progress"]["total"] = None
                     if record["command"] in RESEARCH_COMMANDS and result.get("complete") is False:
                         staged["state"]="limited"
                     self._save(staged)

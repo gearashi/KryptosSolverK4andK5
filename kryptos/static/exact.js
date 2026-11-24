@@ -4,20 +4,24 @@
   let api, batteries=[], timer=null, busy=false;
   const cell=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;return e;};
   const describe=()=>{const b=batteries.find(x=>x.id===$("exact-battery").value);$("exact-description").textContent=b?`${b.description} Typical time: about ${b.typical_seconds} s.`:"";};
-  const summary=result=>{
+  const summary=(result,stopped)=>{
     const table=document.createElement("table");table.className="evidence-table";
     const head=document.createElement("tr");for(const h of ["Settings tested","Decidable","Survivors","Seconds"])head.append(cell("th",h));
     const row=document.createElement("tr");for(const v of [result.tested,result.decidable,result.survivor_count,result.seconds])row.append(cell("td",String(v)));
     table.append(head,row);
     const list=document.createElement("ol");for(const s of (result.survivors||[]).slice(0,50))list.append(cell("li",`${s.model}${s.key?` · key ${s.key}`:""}${s.residual!==undefined?` · ${s.residual} clue letters left over`:""}`));
-    const verdict=cell("p",result.stopped?"Stopped early: only part of this family was tested, so nothing is excluded.":result.survivor_count?"Survivors fit the clue letters. A survivor is a family to examine, not a solution.":"No setting of this family fits the clue letters under the stated assumptions.");verdict.className="field-help";
+    const text = stopped || result.stopped ? "Stopped. The full family remains open." :
+      result.survivor_count ? "Inspect the surviving settings and the threshold for this battery." :
+      "No setting met this battery’s survival criterion. Settings with too few independent clues can remain unresolved.";
+    const verdict=cell("p",result.title + ". " + text + " Paired controls were not run with this battery." +
+      (result.note ? " " + result.note : ""));verdict.className="field-help";
     $("exact-summary").replaceChildren(table,verdict,list);
   };
   const show=run=>{
     const active=run.state==="running";
     $("exact-status").textContent=run.battery?`${run.battery} · ${run.state}${run.error?` · ${run.error}`:""}`:"Choose a battery; no computation starts automatically.";
     $("exact-result").textContent=run.result?JSON.stringify(run.result,null,2):"";
-    if(run.result)summary(run.result);else if(active)$("exact-summary").replaceChildren();
+    if(run.result)summary(run.result,run.state==="stopped");else if(active)$("exact-summary").replaceChildren();
     $("exact-stop").disabled=!active;$("exact-start").disabled=active||busy;
     clearTimeout(timer);if(active)timer=setTimeout(poll,750);
   };

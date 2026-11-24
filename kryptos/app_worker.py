@@ -21,6 +21,9 @@ def execute(job):
     if job["kind"]=="ping":
         return {"pid":os.getpid(),"protocol":"kryptos.private-worker.v1"}
     command=job["command"]
+    if command == "round-t":
+        from .round_t import run_preset
+        return run_preset(job["request"]["preset"])
     from .research_methods import COMMANDS,execute as run_research_method
     if command in COMMANDS:
         return run_research_method(command,job["request"])

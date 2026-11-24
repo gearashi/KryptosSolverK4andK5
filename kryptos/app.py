@@ -38,6 +38,14 @@ def validation_presets():
                 ("validate-ablations","validate-ablations","Refit after removing a technique", "Remove each substitution or neutralize a route, refit remaining keys without held answers, and compare withheld predictions."))]
 
 
+def round_t_queue():
+    from .round_t import PRESETS
+    # Add an ID only after the full K4 run and controls are recorded.
+    recorded = set()
+    return [{"id": key, "title": spec["title"], "scope": spec["scope"],
+             "recorded": key in recorded} for key, spec in PRESETS.items()]
+
+
 def presets():
     model=MODELS[0]["path"]
     records=[{"id":"k4-joint","label":"K4 · joint column/key check","description":"Test all width-7 column orders with a period-2 Vigenère key. This small family can be excluded without finding K4's actual method.",
@@ -163,11 +171,11 @@ def make_server(state_dir,port=8767,*,probe=True):
                 elif parsed.path=="/api/info":
                     goal_path=ROOT/"research/improvement-state.json"
                     self._send(200,{"version":VERSION,"k4":{"ciphertext":K4_CIPHERTEXT,"cribs":list(K4_CRIBS)},
-                        "presets":presets(),"validation_presets":validation_presets(),"models":MODELS,"capabilities":capabilities,"control_token":token,
+                        "presets":presets(),"round_t_queue":round_t_queue(),"validation_presets":validation_presets(),"models":MODELS,"capabilities":capabilities,"control_token":token,
                         "goal":json.loads(goal_path.read_text()) if goal_path.exists() else None,
                         "knowledge":{"k4":"No authenticated solution from this project","k5":"No authenticated public input bundled; supply explicit ciphertext and assumptions"}})
                 elif parsed.path=="/api/status":
-                    self._send(200,{"run":manager.view(),"campaign":campaigns.view()})
+                    self._send(200,{"run":manager.view(),"campaign":campaigns.view(),"round_t_done":manager.round_t_coverage()})
                 elif parsed.path=="/api/methods":
                     from .research_methods import catalog
                     self._send(200,catalog())
