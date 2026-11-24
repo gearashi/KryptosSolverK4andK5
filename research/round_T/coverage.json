@@ -1,0 +1,60 @@
+{
+  "schema": "kryptos.round-t.coverage.v1",
+  "ciphertext_sha256": "eea813570c7f1fd3b34674e47b5c3da8948026f5cefee612a0b38ffaa515ceab",
+  "cribs": [
+    {
+      "start": 22,
+      "text": "EAST"
+    },
+    {
+      "start": 26,
+      "text": "NORTHEAST"
+    },
+    {
+      "start": 64,
+      "text": "BERLIN"
+    },
+    {
+      "start": 70,
+      "text": "CLOCK"
+    }
+  ],
+  "results": [
+    {
+      "preset": "shared-pair",
+      "tested": 96,
+      "planned": 96,
+      "flagged_count": 0,
+      "held_out": 10,
+      "completed": true,
+      "controls": {
+        "passed": true,
+        "planted_found": 2,
+        "planted_total": 2,
+        "shuffled_flagged": 0,
+        "shuffled_total": 20
+      },
+      "claim_id": "K4-T-shared-pair",
+      "result_sha256": "90f97859d323acb1efe879080cc57b8984da472bcf15ad1582f797fab97b7675",
+      "contract_sha256": "61146455aa5620f9bb1344e1fecd2888c0606eebe17c78e83c57b3bf90d97a5b"
+    },
+    {
+      "preset": "column-cipher",
+      "tested": 264,
+      "planned": 264,
+      "flagged_count": 0,
+      "held_out": 20,
+      "completed": true,
+      "controls": {
+        "passed": true,
+        "planted_found": 2,
+        "planted_total": 2,
+        "shuffled_flagged": 0,
+        "shuffled_total": 20
+      },
+      "claim_id": "K4-T-column-cipher",
+      "result_sha256": "ba79bbb0f46fac6266c208f2109ea79816316fdfac7a48e2773d12f7910ef933",
+      "contract_sha256": "5c8736a0613ce5e859c8f429035ec77a045a399dbb222bfd4b270321980c6f29"
+    }
+  ]
+}

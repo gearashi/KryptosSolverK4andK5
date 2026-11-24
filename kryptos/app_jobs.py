@@ -55,6 +55,25 @@ def integer(value,name,lo,hi):
     return value
 
 
+def round_t_completed(result):
+    """A coverage entry needs the complete finite run and its control counts."""
+    if not isinstance(result, dict) or result.get("completed") is not True:
+        return False
+    controls = result.get("controls")
+    if not isinstance(controls, dict) or controls.get("passed") is not True:
+        return False
+    required = ("tested", "planned", "flagged_count", "held_out")
+    checks = ("planted_found", "planted_total", "shuffled_flagged", "shuffled_total")
+    if any(type(result.get(key)) is not int for key in required):
+        return False
+    if any(type(controls.get(key)) is not int for key in checks):
+        return False
+    from .round_t import SHUFFLES
+    return (result["tested"] == result["planned"] > 0 and 0 <= result["flagged_count"] <= result["tested"]
+            and 6 <= result["held_out"] <= 24 and controls["planted_found"] == controls["planted_total"] == 2
+            and controls["shuffled_flagged"] == 0 and controls["shuffled_total"] == SHUFFLES)
+
+
 def validate_start(body):
     allowed={"kind","command","request","backend","workers","batch_size","max_batches","time_limit_seconds","note","ranking_mode","adaptive","idle_ms","target_page_seconds"}
     if not isinstance(body,dict) or set(body)-allowed:
@@ -320,8 +339,7 @@ class RunManager:
                     continue
                 result = record.get("result") or {}
                 preset = record["request"].get("preset")
-                if (result.get("completed") is True and result.get("controls", {}).get("passed") is True
-                        and isinstance(preset, str) and result.get("preset") == preset):
+                if isinstance(preset, str) and round_t_completed(result) and result.get("preset") == preset:
                     done.add(preset)
             return sorted(done)
 

@@ -55,8 +55,8 @@ static void run(int mode,Term*ts,int nt){
   for(int e=0;e<nk;e++){ int i=known[e],ok=1; for(int j=0;j<nt;j++){int c,f; if(!term(ts[j],i,&c,&f)){ok=0;break;} ec[ne][j]=off[j]+c; ef[ne][j]=f;} if(!ok) continue;
     for(int j=0;j<nt;j++) if(map[ec[ne][j]]<0) map[ec[ne][j]]=nc++; ei[ne]=i; ne++; }
   if(ne<8||nc+nr>W) return;
-  { int rb=nc-3; if(rb<0) rb=0; if(rb>ne) rb=ne; /* rank is at most nc; shared constants can lower it by up to 3 */
-    if((ne-rb)*1.415<THRESH-0.01){ ntests+=nr; return; } }
+  /* Nested periods and repeated clue letters can make many columns dependent.
+     Determine both ranks before counting a setting against the threshold. */
   for(int e=0;e<ne;e++){ memset(M2[e],0,sizeof(int)*(nc+nr)); memset(M13[e],0,sizeof(int)*(nc+nr));
     for(int j=0;j<nt;j++){int c=map[ec[e][j]]; M2[e][c]=(M2[e][c]+ef[e][j])%2; M13[e][c]=(M13[e][c]+ef[e][j])%13;}
     int i=ei[e];

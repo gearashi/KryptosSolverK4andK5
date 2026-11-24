@@ -24,8 +24,10 @@ KRY = "KRYPTOSABCDEFGHIJLMNQUVWXZ"
 ALPHABETS = {"standard": STD, "kryptos": KRY}
 N = 97
 FLAG_RESIDUAL = 6  # clue letters that must be left over as an independent test before a fit is reported
-ASSUMPTIONS = ("Clue letters and positions as published; no enciphering slip in those 24 letters. "
-               "A family is reported only when at least six clue letters remain as an independent test.")
+ASSUMPTIONS = ("The tests assume all 24 published clue letters and positions are correct. "
+               "Periodic, compound and transposition tests require six residual clues. "
+               "The recurrence and grid screens require three and two respectively. "
+               "Trifid, Porta and Slidefair screen for structural contradictions.")
 
 
 def clue_map(cribs=None):
@@ -388,8 +390,8 @@ BATTERIES = {
 
 
 def catalog():
-    return {"interpretation": ("Exact tests on the 24 published K4 clue letters. An empty survivor list excludes the stated family only; "
-                               "it is not a statement about K4 as a whole, and no plaintext is produced."),
+    return {"interpretation": ("These tests use the 24 published clue letters. A negative result excludes settings that contradict them. "
+                               "A consistent setting with too few independent clues can fall below the reporting threshold."),
             "assumptions": ASSUMPTIONS,
             "batteries": [{"id": key, "title": value["title"], "description": " ".join((value["run"].__doc__ or "").split()), "typical_seconds": value["typical_seconds"]}
                           for key, value in BATTERIES.items()]}

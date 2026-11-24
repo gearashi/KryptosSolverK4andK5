@@ -21,7 +21,7 @@ Two working hypotheses motivated the round:
 | `pairs` | Porta and Slidefair, any key and period | 14 | Excluded |
 | `transposition` | Not in place: transposition layered with a periodic keyed substitution in either order (key period 1 to 13). 97 letters: every columnar order up to 8 columns (9 with `--max-width 9`); 98 cells: every column order of the complete 14 x 7 grid and K3-style single and double grid turns; all with inverses | 42,773,120 (width 8) or 344,689,280 (width 9) | No survivor |
 
-A setting is reported as a survivor only when the clue letters fit **and** at least six of them are left over as an independent test. A fit with fewer letters left over is undecidable, not a hit.
+The periodic, compound and transposition tests report fits with at least six residual clue letters. The recurrence screen lists fits with three or more residuals, and the grid screen uses two. Trifid looks for forced cube-coordinate clashes. Porta and Slidefair check structural identities. Read the criterion for the selected battery before interpreting a survivor or an empty result.
 
 ```
 python -B -m kryptos.exact_batteries            # all batteries on K4
@@ -43,6 +43,16 @@ python -B -m kryptos.exact_batteries periodic --cipher <97 letters>   # controls
 | `selfkey.py` | Running key read from the sculpture's own texts (K1 to K3 plaintext and ciphertext, Morse text, tableau), any start, step 1 to 20, forwards or backwards | 9,360,000 settings | Best agreement 9 of 24 letters, which is chance level | 5 shuffles: 8 or 9 of 24 |
 | `keyword_runkey.py` | Keyword-mixed alphabet from 390,446 words in any role, with an English running key | 18,328,806 candidates | Best score equals shuffled text | Planted keyword recovered with a readable key |
 | `transpo_periodic.c` | The `transposition` battery at width 9 | 1,657,160 transpositions | 0 flagged | 2 planted messages flagged; 0 flags in 20 shuffles |
+
+### Battery 2 coverage correction (24 November 2026)
+
+The 17 November counts and controls above describe the archived program. Its rank estimate skipped models with nested periods or other dependent columns. For example, each period-8 column is the sum of two period-16 columns. On the 24 clues the combined design has 24 occupied columns but rank 16 over both fields. This leaves eight independent checks.
+
+The current `standalone/linear_battery2.c` computes both ranks directly. A K4 rerun gave 32,214,000 labelled models, **4,726,044 at or above the score threshold** and **zero flags**. The archived threshold count was 4,706,000. This count uses a score of at least 7.5 decimal digits from the residuals over the two fields. The two residual counts can differ. Consistency permits partial letter assignments and any positive result still requires an injective alphabet. The historical shuffle totals in the table refer to the archived rank filter.
+
+The four actual planted ciphertexts in `battery2_controls.py` leave 7, 5, 0 and 0 independent checks at their generating settings. The original low-threshold diagnostic restarted the random sequence at the second plant and checked different ciphertexts. The diagnostic now uses the same four messages as the main controls.
+
+With exact ranks, the period-5 plant gave 219 flags including the generating model. All 20 matched shuffles were rerun. Of their 644,280,000 labelled settings, 91,889,822 met the weighted threshold and zero flagged. On real K4, requiring six residuals in each prime field gave 2,565,368 eligible settings in battery 1 and 4,717,772 in corrected battery 2, with zero flags in either family.
 
 ## Limits
 

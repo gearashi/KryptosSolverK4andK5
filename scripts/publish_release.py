@@ -79,7 +79,7 @@ def publish(args):
             return {"ready": True, "published": False, "identity": user["login"], "tag": args.tag, "commit": commit, "assets": expected,
                     "next": "Repeat with --publish after reviewing this exact tagged package."}
         notes = directory / "release-notes.md"
-        notes.write_text(f"Kryptos Research Workbench {args.tag}\n\nValidated source: `{commit}`. Windows and Linux CPU/package/browser gates passed in [workflow run](https://github.com/{REPOSITORY}/actions/runs/{args.run_id}).\n\nCPU CI is not CUDA hardware evidence. CUDA requires compatible NVIDIA hardware and separately recorded hardware-qualified checks. This project has not authenticated a K4 or K5 solution.\n", encoding="utf-8")
+        notes.write_text(f"Kryptos Research Workbench {args.tag}\n\nValidated source: `{commit}`. Windows and Linux CPU/package/browser gates passed in [workflow run](https://github.com/{REPOSITORY}/actions/runs/{args.run_id}).\n\nOn Windows, extract the ZIP and run `.\\Setup.cmd`, then `.\\OpenDashboard.cmd`. Setup detects NVIDIA graphics, finds or installs a compatible Python 3.12 and checks a compiled CUDA kernel. Use `-Cpu` for the standard-library CPU profile, or add `-Sat` for Z3.\n\nThe dashboard opens with **What to run next**. Start runs an outstanding clue experiment and explains the settings, controls and result. K4 remains unsolved. K5 research is deferred.\n", encoding="utf-8")
         gh("release", "create", args.tag, *map(str, assets), "--repo", REPOSITORY, "--verify-tag", "--title", "Kryptos Research Workbench " + args.tag, "--notes-file", str(notes))
         release = json.loads(gh("api", f"repos/{REPOSITORY}/releases/tags/{args.tag}"))
         published = check_release(release, args.tag, expected)

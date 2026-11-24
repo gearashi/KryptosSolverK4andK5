@@ -1,3 +1,4 @@
+from contextlib import contextmanager
 import errno
 from http.client import IncompleteRead, BadStatusLine
 import json
@@ -21,7 +22,37 @@ from kryptos.process_lifetime import launch_owned
 ROOT = Path(__file__).resolve().parents[1]
 
 
+@contextmanager
+def launcher_workspace(prefix):
+    temp = tempfile.TemporaryDirectory(prefix=prefix)
+    try:
+        yield temp.name
+    finally:
+        # Windows may retain a file briefly after the owned jobs and the
+        # parent's log handles have closed. Persistent sharing failures surface.
+        deadline = time.monotonic() + 2
+        while True:
+            try:
+                temp.cleanup()
+                break
+            except OSError as error:
+                if getattr(error, "winerror", None) not in (32, 33) or time.monotonic() >= deadline:
+                    raise
+                time.sleep(.025)
+
+
 class LauncherTests(unittest.TestCase):
+    def run_to_exit(self, args, capture, timeout, env=None):
+        with capture.open("w", encoding="utf-8") as stream:
+            child = launch_owned(args, cwd=ROOT, env=env, stdout=stream, stderr=stream)
+            try:
+                code = child.wait(timeout=timeout)
+            finally:
+                child.close()
+        output = capture.read_text(encoding="utf-8", errors="replace")
+        self.assertEqual(code, 0, output)
+        return output
+
     def test_malformed_health_response_and_redirect_cannot_break_discovery(self):
         for error in (IncompleteRead(b"partial"),BadStatusLine("invalid response")):
             client=MagicMock()
@@ -101,7 +132,7 @@ class LauncherTests(unittest.TestCase):
         self.assertFalse(launcher.port_unavailable(RuntimeError("state owned")))
 
     def test_actual_launch_falls_back_and_second_launch_reuses_server(self):
-        with tempfile.TemporaryDirectory(prefix="kryptos-launch-") as folder, socket.socket() as occupied:
+        with launcher_workspace("kryptos-launch-") as folder, socket.socket() as occupied:
             occupied.bind(("127.0.0.1",0));occupied.listen()
             port=occupied.getsockname()[1]
             args=[sys.executable,"-B","-m","kryptos.app","--port",str(port),
@@ -117,26 +148,26 @@ class LauncherTests(unittest.TestCase):
                         time.sleep(.05)
                     self.assertIsNotNone(existing,(Path(folder)/"output.txt").read_text())
                     self.assertNotEqual(existing["url"],f"http://127.0.0.1:{port}/")
-                    reused=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,timeout=10)
-                    self.assertEqual(reused.returncode,0,reused.stderr)
-                    self.assertIn("Reopened the existing server",reused.stdout)
+                    reused = self.run_to_exit(args, Path(folder)/"reopened.txt", 10)
+                    self.assertIn("Reopened the existing server", reused)
                     self.assertIsNone(process.poll())
                 finally:
                     process.close()
 
     @unittest.skipUnless(os.name=="nt","Windows batch setup contract")
     def test_batch_wrappers_setup_and_launch_from_spaced_path(self):
-        with tempfile.TemporaryDirectory(prefix="Kryptos setup with spaces ") as folder:
-            directory=Path(folder)
+        with launcher_workspace("Kryptos setup with spaces ") as folder:
+            directory = Path(folder)
             for name in ("Setup.cmd","Setup.ps1","OpenDashboard.cmd","OpenDashboard.ps1"):
                 shutil.copyfile(ROOT/name,directory/name)
             env=dict(os.environ,PYTHONPATH=str(ROOT),PYTHONUTF8="1")
-            # Invoke the .cmd from a different working directory, with paths that require quoting.
-            command=f'"{directory / "Setup.cmd"}" -Cpu -Python "{sys.executable}"'
-            result=subprocess.run('cmd.exe /d /s /c "'+command+'"',cwd=ROOT,
-                                  env=env,capture_output=True,text=True,timeout=60)
-            self.assertEqual(result.returncode,0,result.stdout+result.stderr)
-            self.assertIn("CPU application ready",result.stdout)
+            def run_wrapper(name, options, timeout):
+                # CALL preserves a spaced batch path launched from another cwd.
+                command = ["cmd.exe", "/d", "/c", "call", str(directory/name), *options]
+                return self.run_to_exit(command, directory/(name+".log"), timeout, env)
+
+            setup = run_wrapper("Setup.cmd", ["-Cpu", "-Python", sys.executable], 60)
+            self.assertIn("CPU application ready", setup)
             args=["cmd.exe","/d","/c","OpenDashboard.cmd","-Port","0","-NoBrowser","-SkipGpuProbe",
                   "-StateDir",str(directory/"saved state")]
             with (directory/"output.txt").open("w",encoding="utf-8") as log:
@@ -149,12 +180,13 @@ class LauncherTests(unittest.TestCase):
                         if existing:break
                         time.sleep(.05)
                     self.assertIsNotNone(existing,(directory/"output.txt").read_text())
-                    command=f'"{directory / "OpenDashboard.cmd"}" -NoBrowser -SkipGpuProbe -StateDir "{directory / "saved state"}"'
-                    reopened=subprocess.run('cmd.exe /d /s /c "'+command+'"',cwd=ROOT,env=env,capture_output=True,text=True,timeout=15)
-                    self.assertEqual(reopened.returncode,0,reopened.stdout+reopened.stderr)
-                    self.assertIn("Reopened",reopened.stdout)
+                    reopened = run_wrapper("OpenDashboard.cmd",
+                                           ["-NoBrowser", "-SkipGpuProbe", "-StateDir", str(directory/"saved state")], 15)
+                    self.assertIn("Reopened", reopened)
                 finally:
                     process.close()
+                    self.assertIsNone(process.job)
+                    self.assertIsNone(process.process)
 
 
 if __name__=="__main__":

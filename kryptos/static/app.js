@@ -83,6 +83,10 @@
   function renderQueue() {
     const queue = state.info?.round_t_queue;
     if (!queue || !state.roundTDone) return;
+    if (!queue.length) {
+      $("round-t-queue").textContent = "The bundled K4 coverage could not be verified. Restore research/round_T/coverage.json to see the recommended presets.";
+      return;
+    }
     const local = new Set(state.roundTDone);
     const signature = JSON.stringify(state.roundTDone);
     if (signature !== coverageSignature) {
@@ -95,7 +99,11 @@
         button.type = "button";
         if (index === 0) button.id = "start-next";
         button.dataset.roundTPreset = item.id;
-        row.append(node("strong", "", item.title), node("p", "field-help", item.scope), button);
+        let scope = item.scope;
+        if (item.id === "column-plain" && !waiting.some(other => other.id === "column-cipher")) {
+          scope += " Compare it with the completed ciphertext-side test to see whether the side carrying the alphabet matters.";
+        }
+        row.append(node("strong", "", item.title), node("p", "field-help", scope), button);
         list.append(row);
       }
       const container = $("round-t-queue");
@@ -110,6 +118,13 @@
           button.type = "button";
           button.dataset.roundTPreset = item.id;
           row.append(button, document.createTextNode(local.has(item.id) ? "  Recorded in this workspace" : "  Recorded in Round T"));
+          if (item.evidence) {
+            const e = item.evidence, c = e.controls;
+            row.append(node("span", "field-help", " · " + exactNumber(e.tested) + " settings, " +
+              e.flagged_count + " flagged, " + e.held_out + " independent clue letters. Controls passed with " +
+              c.planted_found + "/" + c.planted_total + " plants recovered and " + c.shuffled_flagged +
+              "/" + c.shuffled_total + " shuffles flagged."));
+          }
           details.append(row);
         }
         container.append(details);

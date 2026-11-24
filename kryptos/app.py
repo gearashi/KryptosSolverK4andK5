@@ -1,5 +1,6 @@
 """Local browser dashboard. Opening the page never starts a search."""
 import argparse
+from functools import cache
 import hashlib
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 import json
@@ -20,11 +21,11 @@ from .campaigns import CampaignManager,preview_campaign
 from .import_inspector import inspect_import
 from .workspace_store import WorkspaceStore,MAX_BUNDLE
 from . import launcher
-from .app_jobs import atomic_json
+from .app_jobs import atomic_json, round_t_completed
 from .resource_governor import hardware_worker_limit
 from .exact_batteries import ExactRunner,catalog as exact_catalog
 
-VERSION="0.7.0"
+VERSION="0.8.0"
 
 
 def validation_presets():
@@ -38,17 +39,25 @@ def validation_presets():
                 ("validate-ablations","validate-ablations","Refit after removing a technique", "Remove each substitution or neutralize a route, refit remaining keys without held answers, and compare withheld predictions."))]
 
 
+@cache
 def round_t_queue():
     from .round_t import PRESETS
-    # Add an ID only after the full K4 run and controls are recorded.
-    recorded = set()
+    try:
+        source = json.loads((ROOT / "research/round_T/coverage.json").read_text(encoding="utf-8"))
+        if (source["schema"] != "kryptos.round-t.coverage.v1" or source["cribs"] != K4_CRIBS
+                or source["ciphertext_sha256"] != hashlib.sha256(K4_CIPHERTEXT.encode("ascii")).hexdigest()
+                or not isinstance(source["results"], list)):
+            return []
+        recorded = {row["preset"]: row for row in source["results"] if round_t_completed(row)}
+    except (OSError, KeyError, TypeError, ValueError):
+        return []
     return [{"id": key, "title": spec["title"], "scope": spec["scope"],
-             "recorded": key in recorded} for key, spec in PRESETS.items()]
+             "recorded": key in recorded, "evidence": recorded.get(key)} for key, spec in PRESETS.items()]
 
 
 def presets():
     model=MODELS[0]["path"]
-    records=[{"id":"k4-joint","label":"K4 · joint column/key check","description":"Test all width-7 column orders with a period-2 Vigenère key. This small family can be excluded without finding K4's actual method.",
+    records=[{"id":"k4-joint","label":"K4 · joint column/key check","description":"Repeat a Round S check on width-7 column orders and a period-2 Vigenère key. For new K4 work, use What to run next.",
         "kind":"exact","command":"joint","request":{"target":"k4","width":7,"period":2,"order":"ST","alphabet":"kryptos","max_states":20000,"time_limit_seconds":3}},
         {"id":"k4-scan","label":"K4 · period-27 family scan","description":"Enumerate distinct crib-compatible repeating-key plaintexts in bounded pages. Language scores are hypotheses, not authenticated answers.",
          "kind":"accelerated","command":"optimize-plus","request":{"target":"k4","alphabet":"kryptos","stages":[{"operation":"substitution","period":27}],"model_path":model}},
