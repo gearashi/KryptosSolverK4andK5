@@ -45,6 +45,6 @@ All 90 proposal outcomes, including conditional capabilities and unsuccessful co
 
 ## Starting the dashboard
 
-Run `Setup.cmd -Gpu -Sat` once to enable the pinned optional GPU and SMT dependencies, then `OpenDashboard.cmd`. For standard-library CPU use, omit both options. The launcher waits for the actual HTTP service, selects another local port if 8767 is occupied, and opens the resulting URL. It prints that URL if automatic browser opening is unavailable. `OpenDashboard.cmd -Port 0` explicitly requests an available port; `-StrictPort` requests an error instead of fallback.
+Run `Setup.cmd -Gpu -Sat` once to enable the pinned optional GPU and SMT dependencies, then `OpenDashboard.cmd`. Windows Setup selects CUDA automatically on an NVIDIA PC. For standard-library CPU use, run `Setup.cmd -Cpu`. The launcher waits for the actual HTTP service, selects another local port if 8767 is occupied, and opens the resulting URL. It prints that URL if automatic browser opening is unavailable. `OpenDashboard.cmd -Port 0` explicitly requests an available port; `-StrictPort` requests an error instead of fallback.
 
 The app stays idle until you start an experiment. Leave the launcher window open while using it; Ctrl+C closes the server. Reopening the launcher reuses the matching running workspace.

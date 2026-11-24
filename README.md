@@ -13,16 +13,16 @@ CPU use requires Python 3.10 or newer and only the standard library. On Windows,
 .\OpenDashboard.cmd
 ```
 
-The dashboard prefers `http://127.0.0.1:8767/` and selects a free local port if that port is occupied. It prints the actual address, waits for an HTTP readiness check, then opens your browser. It remains idle until **Start experiment**. Reopening the launcher reuses the same running workspace. Setup creates a project `.venv` if needed and preserves an existing one. It downloads no packages for CPU use.
+The dashboard prefers `http://127.0.0.1:8767/` and selects a free local port if that port is occupied. It prints the actual address, waits for an HTTP readiness check, then opens your browser. It remains idle until **Start experiment**. Reopening the launcher reuses the same running workspace. On Windows, Setup detects NVIDIA display hardware and verifies CUDA before selecting the GPU profile. For standard-library CPU use on any PC, run `Setup.cmd -Cpu`.
 
-Optional NVIDIA GPU setup is explicit:
+To explicitly request GPU support and the optional SAT/SMT solver:
 
 ```powershell
-.\Setup.cmd -Gpu
+.\Setup.cmd -Gpu -Sat
 .\OpenDashboard.cmd
 ```
 
-The tested CUDA environment uses an RTX 2060 and 64-bit Python 3.12.2. Exact package versions are pinned in [requirements-gpu.txt](requirements-gpu.txt); a compatible NVIDIA driver is required. Setup does not install drivers.
+CUDA uses its own 64-bit Python 3.12 environment in `.venv-gpu`. Setup finds or installs this interpreter even if your normal Python is 3.15. It downloads the pinned binary wheels and checks that the workbench kernel compiles, runs and returns 42. A missing NVIDIA display driver requires installing the driver from NVIDIA. Close a running dashboard before reopening it to use the newly selected profile. [GPU requirements](requirements-gpu.txt)
 
 On Linux or macOS, use `sh Setup.sh` and `sh OpenDashboard.sh` for CPU operation. Optional CUDA setup is `sh Setup.sh --gpu` on a supported NVIDIA platform. The hardware validation was performed on Windows. Direct launch from any compatible environment is `python -B -m kryptos.app`.
 
@@ -68,7 +68,7 @@ Historical controls include independently published PK fixtures and 175,760 crib
 
 ## Validation and packaged data
 
-[Download v0.7.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.7.0). Published through gearashi after all four Windows/Linux package checks; public download hashes verified ([record](research/runs/release-S-001/github-release.json)). CUDA evidence is from [v0.6.0](https://github.com/gearashi/KryptosSolverK4andK5/releases/tag/v0.6.0); v0.7.0 adds no GPU code.
+Version **0.8.0** sets up CUDA automatically on Windows machines with NVIDIA graphics. Open **What to run next** for one-click clue experiments that account for recorded coverage. Each result shows its scope, setting count and controls. K4 remains unsolved. [Download the latest release](https://github.com/gearashi/KryptosSolverK4andK5/releases/latest)
 
 Version **0.7.0** adds the [exact clue tests](research/round_S/README.md): seven batteries that decide whole cipher families from the 24 published K4 clue letters without trying a key, with a dashboard page and a command line. All are negative on K4 under their stated assumptions; K4 remains unsolved here.
 

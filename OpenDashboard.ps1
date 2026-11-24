@@ -14,13 +14,19 @@ if ($Help) {
     Write-Output "Usage: .\OpenDashboard.ps1 [-Port 8767] [-NoBrowser] [-SkipGpuProbe] [-StrictPort] [-StateDir path] [-Python path] [-Help]"
     Write-Output "Reopens an existing dashboard, or selects a free port if the preferred port is occupied."
     Write-Output "Open the local dashboard. No search starts on launch; Ctrl+C closes the server."
-    Write-Output "Uses .venv when available, otherwise Python 3.10+. Installs nothing."
+    Write-Output "Uses the last configured project profile or an explicitly selected interpreter."
     exit 0
 }
 Push-Location -LiteralPath $PSScriptRoot
 try {
     $choices = @()
     $venvPython = Join-Path $PSScriptRoot ".venv\Scripts\python.exe"
+    if (Test-Path -LiteralPath (Join-Path $PSScriptRoot ".venv-gpu\use-for-dashboard")) {
+        $venvPython = Join-Path $PSScriptRoot ".venv-gpu\Scripts\python.exe"
+        if (-not $Python -and -not (Test-Path -LiteralPath $venvPython)) {
+            throw "The configured GPU environment is missing. Run .\Setup.cmd -Gpu."
+        }
+    }
     if ($Python) {
         $choices = @(@{ Command = $Python; Prefix = @() })
     } elseif (Test-Path -LiteralPath $venvPython) {

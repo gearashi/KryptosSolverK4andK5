@@ -1,5 +1,6 @@
 # Optional GPU path only. CPU operation uses the Python standard library.
-# Tested on 64-bit Python 3.12.2 with an NVIDIA RTX 2060 and CUDA 12 packages.
+# Windows Setup selects 64-bit CPython 3.12 for this profile. The CuPy pin
+# has no Windows CPython 3.15 wheel. Tested on 3.12.2 and 3.12.10 with an RTX 2060.
 cupy-cuda12x==14.2.0
 nvidia-cuda-runtime-cu12==12.9.79
 nvidia-cuda-nvrtc-cu12==12.9.86

@@ -1,5 +1,7 @@
 # Local environments, runtime state, compiled caches and publication staging.
 /.venv/
+/.venv-gpu/
+/.python312/
 /.publication-origin/
 /runtime/
 __pycache__/

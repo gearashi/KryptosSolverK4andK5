@@ -12,6 +12,7 @@ import json
 import math
 from pathlib import Path
 import platform
+import sys
 import time
 
 from .cuda_environment import load_cupy, prepare_cuda_environment
@@ -279,6 +280,18 @@ def probe_backend():
         result["cuda"].update(ready=True, compiled_kernel_verified=True, current_device=cp.cuda.Device().id)
     except Exception as exc:
         result["cuda"].update(error_type=type(exc).__name__, error=str(exc), compiled_kernel_verified=False)
+        if sys.platform == "win32":
+            if isinstance(exc, ModuleNotFoundError) and exc.name == "cupy":
+                result["cuda"]["reason"] = (
+                    "CUDA packages are missing from this interpreter. Close the dashboard, "
+                    "run .\\Setup.cmd -Gpu, then reopen it."
+                )
+            elif getattr(exc, "status", None) in (35, 36, 222, 803):
+                result["cuda"]["driver_action_required"] = True
+                result["cuda"]["reason"] = (
+                    "The NVIDIA display driver is missing or incompatible with CUDA 12. "
+                    "Install the current NVIDIA display driver and reopen the dashboard."
+                )
     return result
 
 

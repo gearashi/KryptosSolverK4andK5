@@ -98,11 +98,17 @@ def open_browser(url, report=print):
     return False
 
 
-def bounded_gpu_probe(python,environment,directory,timeout=30):
+def bounded_gpu_probe(python,environment,directory,timeout=None):
     """A stuck driver/compiler cannot prevent startup indefinitely."""
     from .process_lifetime import launch_owned
+    if timeout is None:
+        profile = Path(python).parent.parent
+        verified = profile.name == ".venv-gpu" and (profile / "use-for-dashboard").is_file()
+        timeout = 120 if verified else 30
     code="import json; from kryptos.accelerated import probe_backend; print(json.dumps(probe_backend(),allow_nan=False))"
-    with tempfile.TemporaryDirectory(prefix="gpu-probe-",dir=directory) as folder:
+    # A Windows file scanner may briefly retain probe.json after the read.
+    # Cache cleanup must not discard the device result or mask a probe error.
+    with tempfile.TemporaryDirectory(prefix="gpu-probe-",dir=directory,ignore_cleanup_errors=True) as folder:
         output=Path(folder)/"probe.json"
         errors=Path(folder)/"stderr.txt"
         with output.open("w",encoding="utf-8") as stdout, errors.open("w",encoding="utf-8") as stderr:

@@ -4,7 +4,7 @@ The browser workbench runs on your computer at `http://127.0.0.1:8767/`. Opening
 
 ## Setup and launch
 
-CPU use needs Python 3.10 or later and only its standard library. Setup creates `.venv` when absent and preserves an existing environment. It verifies imports and installs no network packages unless GPU or optional SMT setup is explicitly requested.
+CPU use needs Python 3.10 or later and only its standard library. On Windows, Setup detects an NVIDIA display adapter and selects the GPU profile. On other PCs it creates or reuses a CPU environment in `.venv`. Use `Setup.cmd -Cpu` to select CPU only, including on an NVIDIA PC.
 
 On Windows, double-click `Setup.cmd` once, then `OpenDashboard.cmd`, or run:
 
@@ -13,14 +13,14 @@ On Windows, double-click `Setup.cmd` once, then `OpenDashboard.cmd`, or run:
 .\OpenDashboard.cmd
 ```
 
-For optional NVIDIA GPU dependencies:
+To explicitly select NVIDIA GPU support:
 
 ```powershell
 .\Setup.cmd -Gpu
 .\OpenDashboard.cmd
 ```
 
-The tested GPU environment is 64-bit Python 3.12.2, an NVIDIA RTX 2060, `cupy-cuda12x==14.2.0`, `nvidia-cuda-runtime-cu12==12.9.79` and `nvidia-cuda-nvrtc-cu12==12.9.86`. These are the pins in `requirements-gpu.txt`. A compatible NVIDIA driver is also required; setup does not install drivers. Windows setup prefers Python 3.12 when creating a new environment. `-Python C:\path\python.exe` selects another creation interpreter, without replacing an existing `.venv`.
+The tested GPU environment is 64-bit Python 3.12.2, an NVIDIA RTX 2060, `cupy-cuda12x==14.2.0`, `nvidia-cuda-runtime-cu12==12.9.79` and `nvidia-cuda-nvrtc-cu12==12.9.86`. These are the pins in `requirements-gpu.txt`. A compatible NVIDIA driver is also required; setup does not install drivers. Windows GPU setup uses a separate `.venv-gpu` with 64-bit CPython 3.12 because the pinned CuPy release has no Windows 3.15 wheel. Setup looks for an installed 3.12 first. If needed, it downloads the full 3.12.10 x64 runtime from python.org, checks its published SHA-256, and extracts it in `.python312` for this project. It installs the wheels and checks a compiled kernel before switching the launcher to the GPU profile. CPU setup accepts `-Python C:\path\python.exe` when creating its environment. Close any running dashboard before reopening it after a profile change.
 
 On Linux or macOS, CPU launch is:
 
@@ -31,7 +31,7 @@ sh OpenDashboard.sh
 
 `sh Setup.sh --gpu` requests the optional CUDA packages. GPU use requires a platform supported by that CUDA stack and an NVIDIA device; macOS has no supported CUDA backend here. Unix launcher syntax is provided; the recorded hardware test was on Windows. To select an interpreter, use `--python /path/to/python`.
 
-Launchers install nothing. They prefer `.venv` and otherwise use a compatible system Python. To bypass them:
+Launchers install nothing. Windows opens the configured CPU or GPU profile. Without setup the launchers use a compatible system Python. To bypass them:
 
 ```text
 python -B -m kryptos.app
@@ -130,6 +130,6 @@ never starts a computation. Recovered checkpoint data is not executable.
 
 The launcher reopens an existing matching server for the same saved workspace. If the requested port is occupied or reserved, it binds an OS-selected free port and opens that actual URL after an HTTP readiness check. `-StrictPort` disables fallback when a fixed port is required. `-Port 0` requests a free port directly (write `-Port 0` as two arguments). A browser association error leaves the server running and prints the URL. A malformed or stale discovery record is ignored; discovery uses loopback only and never follows redirects.
 
-CUDA probing runs in an owned child process with a30-second limit. A failure leaves CPU operation available. `-SkipGpuProbe` bypasses probing. `Setup.cmd -Sat` installs the optional finite-constraint SMT backend; `Setup.cmd -Gpu -Sat` requests both optional dependency sets.
+CUDA probing runs in an owned child process with a 30-second limit. The verified Windows GPU profile allows 120 seconds for cold compilation. A failure leaves CPU operation available. `-SkipGpuProbe` bypasses probing. `Setup.cmd -Sat` installs the optional finite-constraint SMT backend in the selected profile. `Setup.cmd -Gpu -Sat` requests both dependency sets.
 
 Setup/launch tests include a disposable environment in a folder containing spaces, invocation from another directory, initial batch-file launch, occupied-port fallback and reopening.

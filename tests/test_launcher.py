@@ -37,6 +37,26 @@ class LauncherTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError,"CPU dashboard remains available"):
                 launcher.bounded_gpu_probe(sys.executable,os.environ.copy(),folder,timeout=.01)
         child.close.assert_called_once()
+    @unittest.skipUnless(os.name == "nt", "Windows file sharing")
+    def test_probe_result_survives_a_locked_scratch_file(self):
+        held = []
+        def probe(args, *, cwd, env, stdout, stderr):
+            stdout.write('{"cuda": {"ready": true}}')
+            stdout.flush()
+            held.append(open(stdout.name, "rb"))
+            child = MagicMock()
+            child.wait.return_value = 0
+            return child
+
+        with tempfile.TemporaryDirectory() as folder:
+            try:
+                with patch("kryptos.process_lifetime.launch_owned", side_effect=probe):
+                    result = launcher.bounded_gpu_probe(sys.executable, os.environ.copy(), folder)
+                self.assertTrue(result["cuda"]["ready"])
+            finally:
+                for handle in held:
+                    handle.close()
+
     def test_urls_cannot_escape_loopback_or_include_credentials(self):
         for value in (None, {}, "https://127.0.0.1:1/", "http://localhost:2/",
                       "http://127.0.0.1.evil:2/", "http://user@127.0.0.1:2/",
@@ -112,7 +132,7 @@ class LauncherTests(unittest.TestCase):
                 shutil.copyfile(ROOT/name,directory/name)
             env=dict(os.environ,PYTHONPATH=str(ROOT),PYTHONUTF8="1")
             # Invoke the .cmd from a different working directory, with paths that require quoting.
-            command=f'"{directory / "Setup.cmd"}" -Python "{sys.executable}"'
+            command=f'"{directory / "Setup.cmd"}" -Cpu -Python "{sys.executable}"'
             result=subprocess.run('cmd.exe /d /s /c "'+command+'"',cwd=ROOT,
                                   env=env,capture_output=True,text=True,timeout=60)
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)
